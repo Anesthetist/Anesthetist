@@ -147,6 +147,80 @@ async def list_tools() -> list[Tool]:
                 "required": ["query"],
             },
         ),
+        # ── Write tools ──
+        Tool(
+            name="create_note",
+            description="Create a new note in the vault. Provide note type, slug (kebab-case), frontmatter as JSON, and markdown body. The note file will be created in the appropriate directory.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "note_type": {
+                        "type": "string",
+                        "enum": ["concept", "evidence", "observation", "audience", "output"],
+                    },
+                    "slug": {"type": "string", "description": "Kebab-case filename without .md"},
+                    "frontmatter": {
+                        "type": "object",
+                        "description": "Frontmatter fields as JSON. Must include: id, type, title, status, creator, created, modified.",
+                    },
+                    "body": {"type": "string", "description": "Markdown body content"},
+                },
+                "required": ["note_type", "slug", "frontmatter", "body"],
+            },
+        ),
+        Tool(
+            name="update_note",
+            description="Update an existing note. Provide frontmatter_updates (only changed fields) and/or new body. Existing fields are preserved.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string", "description": "Note slug or URN"},
+                    "frontmatter_updates": {
+                        "type": "object",
+                        "description": "Fields to update (others preserved)",
+                    },
+                    "body": {"type": "string", "description": "New body (omit to keep existing)"},
+                },
+                "required": ["id"],
+            },
+        ),
+        Tool(
+            name="promote_status",
+            description="Change a note's quality gate: draft -> review -> canonical",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string", "description": "Note slug or URN"},
+                    "status": {"type": "string", "enum": ["draft", "review", "canonical"]},
+                },
+                "required": ["id", "status"],
+            },
+        ),
+        Tool(
+            name="add_evidence_link",
+            description="Add a prov:wasDerivedFrom evidence link to a concept",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "concept_id": {"type": "string", "description": "Concept slug"},
+                    "evidence_urn": {"type": "string", "description": "Evidence URN to link"},
+                },
+                "required": ["concept_id", "evidence_urn"],
+            },
+        ),
+        Tool(
+            name="add_skos_relation",
+            description="Add a SKOS relationship (broader, narrower, related) between concepts",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "slug": {"type": "string", "description": "Source concept slug"},
+                    "relation_type": {"type": "string", "enum": ["skos:broader", "skos:narrower", "skos:related"]},
+                    "target_slug": {"type": "string", "description": "Target concept slug"},
+                },
+                "required": ["slug", "relation_type", "target_slug"],
+            },
+        ),
     ]
 
 
@@ -212,6 +286,60 @@ async def call_tool(name: str, arguments: dict) -> list[TextContent]:
         notes = vault.search(arguments["query"])
         result = [note_summary(n) for n in notes]
         return [TextContent(type="text", text=json.dumps(result, indent=2))]
+
+    # ── Write tools ──
+
+    elif name == "create_note":
+        try:
+            path = vault.create_note(
+                arguments["note_type"],
+                arguments["slug"],
+                arguments["frontmatter"],
+                arguments["body"],
+            )
+            return [TextContent(type="text", text=f"Created: {path.relative_to(vault.vault_root)}")]
+        except FileExistsError as e:
+            return [TextContent(type="text", text=f"Error: {e}")]
+        except Exception as e:
+            return [TextContent(type="text", text=f"Error creating note: {e}")]
+
+    elif name == "update_note":
+        path = vault.update_note(
+            arguments["id"],
+            arguments.get("frontmatter_updates"),
+            arguments.get("body"),
+        )
+        if not path:
+            return [TextContent(type="text", text=f"Note not found: {arguments['id']}")]
+        return [TextContent(type="text", text=f"Updated: {path.relative_to(vault.vault_root)}")]
+
+    elif name == "promote_status":
+        try:
+            path = vault.promote_status(arguments["id"], arguments["status"])
+            if not path:
+                return [TextContent(type="text", text=f"Note not found: {arguments['id']}")]
+            return [TextContent(type="text", text=f"Promoted {arguments['id']} to {arguments['status']}")]
+        except ValueError as e:
+            return [TextContent(type="text", text=f"Error: {e}")]
+
+    elif name == "add_evidence_link":
+        path = vault.add_evidence_link(arguments["concept_id"], arguments["evidence_urn"])
+        if not path:
+            return [TextContent(type="text", text=f"Concept not found: {arguments['concept_id']}")]
+        return [TextContent(type="text", text=f"Linked {arguments['evidence_urn']} to {arguments['concept_id']}")]
+
+    elif name == "add_skos_relation":
+        try:
+            path = vault.add_skos_relation(
+                arguments["slug"],
+                arguments["relation_type"],
+                arguments["target_slug"],
+            )
+            if not path:
+                return [TextContent(type="text", text=f"Concept not found: {arguments['slug']}")]
+            return [TextContent(type="text", text=f"Added {arguments['relation_type']} link: {arguments['slug']} -> {arguments['target_slug']}")]
+        except ValueError as e:
+            return [TextContent(type="text", text=f"Error: {e}")]
 
     return [TextContent(type="text", text=f"Unknown tool: {name}")]
 

@@ -263,3 +263,98 @@ class VaultIndex:
             if any(query_lower in s.lower() for s in subjects):
                 results.append(note)
         return results
+
+    # ── Write operations ──────────────────────────────────────────────
+
+    def _type_to_dir(self, note_type: str) -> str:
+        mapping = {
+            "concept": "concepts",
+            "evidence": "evidence",
+            "observation": "observations",
+            "audience": "audiences",
+            "output": "outputs",
+        }
+        return mapping.get(note_type, note_type)
+
+    def create_note(self, note_type: str, slug: str, frontmatter_dict: dict, body: str) -> Path:
+        """Create a new note file and add it to the index."""
+        dir_name = self._type_to_dir(note_type)
+        dir_path = self.vault_root / dir_name
+        dir_path.mkdir(exist_ok=True)
+
+        filepath = dir_path / f"{slug}.md"
+        if filepath.exists():
+            raise FileExistsError(f"Note already exists: {filepath}")
+
+        self._write_note_file(filepath, frontmatter_dict, body)
+
+        note = self._parse_file(filepath)
+        if note:
+            self._file_mtimes[filepath] = filepath.stat().st_mtime
+            self._index_note(note)
+
+        return filepath
+
+    def update_note(self, slug_or_id: str, frontmatter_updates: dict = None, body: str = None) -> Optional[Path]:
+        """Update an existing note's frontmatter and/or body."""
+        note = self.get_note(slug_or_id)
+        if not note:
+            return None
+
+        filepath = note.file_path
+        post = frontmatter.load(filepath)
+
+        if frontmatter_updates:
+            for k, v in frontmatter_updates.items():
+                post.metadata[k] = v
+
+        if body is not None:
+            post.content = body
+
+        self._write_note_file(filepath, dict(post.metadata), post.content)
+
+        # Re-index
+        self._remove_note(note)
+        new_note = self._parse_file(filepath)
+        if new_note:
+            self._file_mtimes[filepath] = filepath.stat().st_mtime
+            self._index_note(new_note)
+
+        return filepath
+
+    def promote_status(self, slug_or_id: str, new_status: str) -> Optional[Path]:
+        """Change a note's status (draft -> review -> canonical)."""
+        valid = ["draft", "review", "canonical"]
+        if new_status not in valid:
+            raise ValueError(f"Invalid status '{new_status}'. Must be one of: {valid}")
+        return self.update_note(slug_or_id, {"status": new_status})
+
+    def add_evidence_link(self, concept_slug: str, evidence_urn: str) -> Optional[Path]:
+        """Add an evidence URN to a concept's prov:wasDerivedFrom list."""
+        note = self.get_note(concept_slug)
+        if not note:
+            return None
+        derived = note.metadata.get("prov:wasDerivedFrom", []) or []
+        if evidence_urn not in derived:
+            derived.append(evidence_urn)
+        return self.update_note(concept_slug, {"prov:wasDerivedFrom": derived})
+
+    def add_skos_relation(self, slug: str, relation_type: str, target_slug: str) -> Optional[Path]:
+        """Add a SKOS relationship (broader, narrower, related) to a concept."""
+        valid_rels = ["skos:broader", "skos:narrower", "skos:related"]
+        if relation_type not in valid_rels:
+            raise ValueError(f"Invalid relation '{relation_type}'. Must be one of: {valid_rels}")
+        note = self.get_note(slug)
+        if not note:
+            return None
+        rels = note.metadata.get(relation_type, []) or []
+        if target_slug not in rels:
+            rels.append(target_slug)
+        return self.update_note(slug, {relation_type: rels})
+
+    def _write_note_file(self, filepath: Path, metadata: dict, body: str):
+        """Write a note file with YAML frontmatter."""
+        post = frontmatter.Post(body, **metadata)
+        with open(filepath, "w") as f:
+            f.write(frontmatter.dumps(post))
+            f.write("\n")
