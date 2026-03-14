@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "srl-vault": {
+      "command": "/Users/somnisticshq/Documents/Somnistics/Library-Graph/mcp-server/.venv/bin/python",
+      "args": ["/Users/somnisticshq/Documents/Somnistics/Library-Graph/mcp-server/server.py"],
+      "env": {
+        "VAULT_ROOT": "/Users/somnisticshq/Documents/Somnistics/Library-Graph"
+      }
+    }
+  }
+}

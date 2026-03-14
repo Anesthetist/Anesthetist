@@ -29,8 +29,8 @@ class VaultIndex:
 
     INDEXED_DIRS = ["concepts", "evidence", "observations", "audiences", "outputs"]
 
-    def __init__(self, vault_root: Path):
-        self.vault_root = vault_root
+    def __init__(self, vault_root):
+        self.vault_root = Path(vault_root)
         self.notes_by_id: dict[str, NoteRecord] = {}
         self.notes_by_slug: dict[str, NoteRecord] = {}
         self.notes_by_type: dict[str, list[NoteRecord]] = {}
