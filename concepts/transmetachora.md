@@ -2,7 +2,7 @@
 id: "urn:srl:concept:transmetachora"
 type: concept
 title: "TransMetachora"
-status: review
+status: canonical
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
