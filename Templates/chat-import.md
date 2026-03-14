@@ -1,18 +1,21 @@
 ---
-title: "{{title}}"
+id: "urn:srl:chat:{{platform}}-{{slug}}"
 type: chat-import
-source: ""
-platform: ""
+title: "{{title}}"
+status: draft
 created: {{date}}
 imported: {{date}}
+platform: ""
+dc:source: ""
 participants: []
-tags: []
+extracted_concepts: []
+extracted_evidence: []
+key_takeaways: []
 ---
 
 # {{title}}
 
 ## Context
-
 
 ## Key Takeaways
 

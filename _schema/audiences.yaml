@@ -1,0 +1,81 @@
+# SRL Knowledge Vault — Registered Audience Profiles
+# Each audience gets a full note in audiences/ — this file registers them.
+
+audiences:
+  crna:
+    id: "urn:srl:audience:crna"
+    title: "Certified Registered Nurse Anesthetist"
+    evidence_depth: clinical
+    language_register: technical
+    key_concerns:
+      - patient safety during state transitions
+      - burnout prevention / clinician durability
+      - CE credit eligibility (AANA Category A)
+      - practical integration into OR workflow
+      - evidence-based (skeptical of wellness fluff)
+
+  ed-nurse:
+    id: "urn:srl:audience:ed-nurse"
+    title: "Emergency Department Nurse"
+    evidence_depth: moderate
+    language_register: professional
+    key_concerns:
+      - high-frequency stress exposure
+      - rapid reset between patients
+      - moral injury / compassion fatigue
+      - shift-compatible interventions
+
+  corporate-executive:
+    id: "urn:srl:audience:corporate-executive"
+    title: "Corporate Executive / Enterprise Buyer"
+    evidence_depth: moderate
+    language_register: professional
+    key_concerns:
+      - ROI and productivity metrics
+      - team resilience at scale
+      - competitive advantage framing
+      - integration with existing wellness programs
+
+  yoga-breathwork-practitioner:
+    id: "urn:srl:audience:yoga-breathwork-practitioner"
+    title: "Yoga / Breathwork Practitioner"
+    evidence_depth: moderate
+    language_register: accessible
+    key_concerns:
+      - bridge between practice tradition and neuroscience
+      - evidence validation of existing practices
+      - client-facing language and credibility
+
+  investor:
+    id: "urn:srl:audience:investor"
+    title: "Investor / SAFE Holder"
+    evidence_depth: minimal
+    language_register: professional
+    key_concerns:
+      - market size and defensibility
+      - traction metrics
+      - team credibility
+      - path to $1M ARR
+      - clinical LLM moat thesis
+
+  researcher:
+    id: "urn:srl:audience:researcher"
+    title: "Academic / Clinical Researcher"
+    evidence_depth: deep
+    language_register: academic
+    key_concerns:
+      - methodological rigor
+      - reproducibility
+      - novel contribution to literature
+      - IRB / ethical considerations
+
+  law-student-blip:
+    id: "urn:srl:audience:law-student-blip"
+    title: "Law Student (BLIP Clinic)"
+    evidence_depth: minimal
+    language_register: accessible
+    key_concerns:
+      - exam stress management
+      - focus and cognitive performance
+      - quick adoption (minimal learning curve)
+      - evidence that it works for high-pressure professions

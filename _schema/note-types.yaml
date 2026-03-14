@@ -1,0 +1,121 @@
+# SRL Knowledge Vault — Note Type Definitions
+# Each note in the vault MUST have a `type` field matching one of these.
+
+types:
+  concept:
+    description: "SKOS Concept — one atomic idea, richly linked"
+    layer: 1
+    required_fields:
+      - id            # urn:srl:concept:{slug}
+      - type          # "concept"
+      - title
+      - status        # draft | review | canonical
+      - creator
+      - created
+      - modified
+      - version
+      - dc:subject    # list of subject tags
+      - dc:source     # list of source URNs
+      - skos:broader  # parent concepts
+      - skos:narrower # child concepts
+      - skos:related  # sibling/lateral links
+      - prov:wasDerivedFrom  # evidence + observation URNs
+    optional_fields:
+      - prov:reviewedBy
+      - prov:reviewDate
+      - aliases       # alternate names / synonyms
+      - trademarked   # boolean, for ™ terms
+
+  evidence:
+    description: "Dublin Core source note — study, book, paper, foundational text"
+    layer: 0
+    required_fields:
+      - id            # urn:srl:evidence:{author-year-slug}
+      - type          # "evidence"
+      - title
+      - status
+      - creator       # note author (Randy unless otherwise)
+      - created
+      - modified
+      - dc:creator    # original work's author(s)
+      - dc:date       # publication year
+      - dc:subject
+      - dc:identifier # DOI, PubMed ID, ISBN, URL
+      - dc:type       # journal-article | book | book-chapter | review | clinical-trial | thesis | report
+    optional_fields:
+      - dc:publisher
+      - dc:description  # abstract or summary
+      - clinical_interpretation  # Randy's clinical read of this evidence
+
+  observation:
+    description: "Embodied/clinical knowledge — Layer 0.5"
+    layer: 0.5
+    required_fields:
+      - id            # urn:srl:observation:{slug}
+      - type          # "observation"
+      - title
+      - status
+      - creator
+      - created
+      - modified
+      - dc:subject
+      - observation_type  # pattern | somatic-marker | craft-knowledge | exemplar-story | contrast-case
+    optional_fields:
+      - clinical_context    # where/when this was observed
+      - years_of_evidence   # how long this pattern has been observed
+      - prov:wasDerivedFrom # related evidence if any
+      - skos:related        # related concepts
+
+  audience:
+    description: "Audience profile — who you're speaking to + evidence depth"
+    layer: 2
+    required_fields:
+      - id            # urn:srl:audience:{slug}
+      - type          # "audience"
+      - title
+      - status
+      - creator
+      - created
+      - modified
+      - evidence_depth  # minimal | moderate | deep | clinical
+      - key_concerns    # what matters most to this audience
+      - language_register  # technical | professional | accessible | academic
+    optional_fields:
+      - example_outputs
+      - skos:related
+
+  output:
+    description: "Generated artifact — NeuroMinute, CEU course, deck, etc."
+    layer: 3
+    required_fields:
+      - id            # urn:srl:output:{slug}
+      - type          # "output"
+      - title
+      - status
+      - creator
+      - created
+      - modified
+      - output_type   # neurominute | ceu-course | deck | proposal | creative | ip-doc
+      - target_audience  # audience URN
+      - prov:wasDerivedFrom  # concept + evidence URNs used
+    optional_fields:
+      - version
+      - dc:format     # pdf | md | pptx | mp3
+
+  chat-import:
+    description: "Imported AI conversation — raw or lightly processed"
+    layer: source
+    required_fields:
+      - id            # urn:srl:chat:{platform}-{slug}
+      - type          # "chat-import"
+      - title
+      - status
+      - created
+      - imported
+      - platform      # chatgpt | claude | claude-coworker
+      - dc:source     # original file path or URL
+    optional_fields:
+      - participants
+      - extracted_concepts  # list of concept URNs extracted from this chat
+      - extracted_evidence  # list of evidence URNs
+      - key_takeaways

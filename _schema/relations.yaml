@@ -1,0 +1,69 @@
+# SRL Knowledge Vault — SKOS Relationship Types
+# Defines how notes link to each other across the graph.
+
+skos_relations:
+  broader:
+    description: "Parent concept (more general)"
+    inverse: narrower
+    example: "gap-moment-training skos:broader somnistics"
+
+  narrower:
+    description: "Child concept (more specific)"
+    inverse: broader
+    example: "somnistics skos:narrower gap-moment-training"
+
+  related:
+    description: "Lateral/associative link between concepts"
+    inverse: related
+    symmetric: true
+    example: "titration-to-effect skos:related minimum-effective-dose"
+
+# Provenance relations (PROV-O)
+prov_relations:
+  wasDerivedFrom:
+    description: "This note's claims trace to these sources"
+    domain: [concept, observation, output]
+    range: [evidence, observation, concept]
+    example: "gap-moment-training prov:wasDerivedFrom porges-2011"
+
+  wasGeneratedBy:
+    description: "This output was produced by this process/agent"
+    domain: [output]
+    range: [string]  # agent name or process description
+
+  reviewedBy:
+    description: "Human reviewer who verified this note"
+    domain: [concept, evidence, observation]
+    range: [string]  # person name
+
+# Dublin Core relations
+dc_relations:
+  source:
+    description: "Where this material originally came from"
+    example: "Google Drive path, PubMed ID, URL"
+
+  relation:
+    description: "Generic DC link to another resource"
+    example: "dc:relation urn:srl:concept:related-thing"
+
+# Custom SRL relations
+srl_relations:
+  clinicallyInformedBy:
+    description: "This concept is shaped by clinical observation"
+    domain: [concept]
+    range: [observation]
+
+  targetedAt:
+    description: "This output is tailored for this audience"
+    domain: [output]
+    range: [audience]
+
+  supportsRedArrow:
+    description: "This work advances one of the five red arrows to profitability"
+    domain: [concept, output, evidence]
+    range:
+      - "1:credibility-to-downloads"
+      - "2:traction-to-enterprise-proof"
+      - "3:pilot-to-contract"
+      - "4:data-to-clinical-llm-moat"
+      - "5:platform-to-1m-arr"
