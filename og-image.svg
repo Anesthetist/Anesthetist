@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#22253A"/>
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(95,200,155,0.06)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- Glow -->
+  <circle cx="1100" cy="530" r="300" fill="none" style="filter:url(#glow)"/>
+  <radialGradient id="g1" cx="1100" cy="530" r="300" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#5FC89B" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#5FC89B" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="1100" cy="530" r="300" fill="url(#g1)"/>
+  <!-- Brand -->
+  <text x="600" y="175" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="400" letter-spacing="6" fill="#5FC89B">PAUSALITY</text>
+  <text x="600" y="200" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="300" letter-spacing="4" fill="#F5F5F0" opacity="0.5">THE SCIENCE OF THE PAUSE</text>
+  <!-- Title -->
+  <text x="600" y="290" text-anchor="middle" font-family="sans-serif" font-size="52" font-weight="400" fill="#F5F5F0" letter-spacing="-1">CRNA <tspan fill="#5FC89B">Resilience</tspan> Toolkit</text>
+  <text x="600" y="340" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="300" fill="#F5F5F0" opacity="0.7">Evidence-Based Autonomic Regulation Protocols</text>
+  <text x="600" y="370" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="300" fill="#F5F5F0" opacity="0.7">for Nurse Anesthetists</text>
+  <!-- Stats -->
+  <text x="370" y="460" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="500" fill="#5FC89B">12</text>
+  <text x="370" y="485" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="300" fill="#F5F5F0" opacity="0.5" letter-spacing="2">PEER-REVIEWED CITATIONS</text>
+  <text x="600" y="460" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="500" fill="#5FC89B">5</text>
+  <text x="600" y="485" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="300" fill="#F5F5F0" opacity="0.5" letter-spacing="2">CLINICAL PROTOCOLS</text>
+  <text x="830" y="460" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="500" fill="#5FC89B">60s</text>
+  <text x="830" y="485" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="300" fill="#F5F5F0" opacity="0.5" letter-spacing="2">PER INTERVENTION</text>
+  <!-- Footer -->
+  <text x="60" y="600" font-family="sans-serif" font-size="13" font-weight="300" fill="#F5F5F0" opacity="0.35">Randy Graybeal, CRNA  |  Somnistics Research Labs  |  2026</text>
+  <text x="1140" y="600" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="400" letter-spacing="3" fill="#5FC89B" opacity="0.5">somnistics.com</text>
+</svg>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    font-family: 'Poppins', sans-serif;
+    background: #22253A;
+    color: #F5F5F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(95,200,155,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(95,200,155,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  body::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(95,200,155,0.1) 0%, transparent 70%);
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 0 60px;
+  }
+  .brand {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    color: #5FC89B;
+    margin-bottom: 8px;
+  }
+  .tagline {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+  h1 span { color: #5FC89B; }
+  .subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.7;
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+  .stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 28px;
+    font-weight: 500;
+    color: #5FC89B;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 300;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .author {
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    font-size: 13px;
+    font-weight: 300;
+    opacity: 0.4;
+    z-index: 1;
+  }
+  .logo-corner {
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: #5FC89B;
+    opacity: 0.6;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+  <div class="content">
+    <div class="brand">PAUSALITY</div>
+    <div class="tagline">The Science of the Pause</div>
+    <h1>CRNA <span>Resilience</span> Toolkit</h1>
+    <div class="subtitle">Evidence-Based Autonomic Regulation Protocols<br>for Nurse Anesthetists</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">12</div>
+        <div class="stat-label">Peer-Reviewed Citations</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Clinical Protocols</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">60s</div>
+        <div class="stat-label">Per Intervention</div>
+      </div>
+    </div>
+  </div>
+  <div class="author">Randy Graybeal, CRNA | Somnistics Research Labs | 2026</div>
+  <div class="logo-corner">somnistics.com</div>
+</body>
+</html>
