@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRNA Resilience Toolkit — Pausality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #22253A;
+    --sage: #5FC89B;
+    --offwhite: #F5F5F0;
+    --sage-light: rgba(95, 200, 155, 0.10);
+    --sage-mid: rgba(95, 200, 155, 0.18);
+    --navy-light: rgba(34, 37, 58, 0.06);
+    --text: #2C2F3E;
+    --text-secondary: #555968;
+    --border: #D8D9DE;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Poppins', -apple-system, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    background: var(--offwhite);
+    line-height: 1.65;
+  }
+
+  /* ─── TITLE PAGE ─── */
+  .title-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--navy);
+    color: var(--offwhite);
+  }
+
+  .title-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(95,200,155,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(95,200,155,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .title-page::after {
+    content: '';
+    position: absolute;
+    bottom: -120px;
+    right: -120px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(95,200,155,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .brand {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3rem;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    color: var(--sage);
+    margin-bottom: 0.25rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .title-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+  }
+
+  .title-content h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.03em;
+  }
+
+  .title-content h1 span {
+    color: var(--sage);
+  }
+
+  .title-subtitle {
+    font-size: 1.05rem;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+
+  .title-meta {
+    font-size: 0.85rem;
+    font-weight: 300;
+    opacity: 0.55;
+    line-height: 1.8;
+  }
+
+  .title-meta strong {
+    font-weight: 400;
+    color: var(--sage);
+    opacity: 1;
+  }
+
+  .divider-line {
+    width: 60px;
+    height: 2px;
+    background: var(--sage);
+    margin: 2rem auto;
+    opacity: 0.5;
+  }
+
+  /* ─── MAIN CONTENT ─── */
+  .content-wrap {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .section-number {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  /* ─── CALLOUT BOX ─── */
+  .callout {
+    background: var(--sage-light);
+    border-left: 3px solid var(--sage);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .callout p { margin-bottom: 0; }
+
+  .callout-stat {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .callout-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .stat-card .callout-stat {
+    font-size: 1.8rem;
+    color: var(--sage);
+  }
+
+  /* ─── RESEARCH CARDS ─── */
+  .research-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .research-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--sage);
+    border-radius: 3px 0 0 3px;
+  }
+
+  .research-card .citation {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--sage);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .research-card .finding {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .research-card .finding strong {
+    font-weight: 400;
+    color: var(--navy);
+  }
+
+  .research-card .mechanism {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+
+  /* ─── PROTOCOL CARDS ─── */
+  .protocol-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+
+  .protocol-header {
+    background: var(--navy);
+    color: var(--offwhite);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .protocol-number {
+    background: var(--sage);
+    color: var(--navy);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .protocol-title {
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+
+  .protocol-body {
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--sage);
+  }
+
+  .protocol-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 2rem;
+  }
+
+  .protocol-field {
+    margin-bottom: 0.5rem;
+  }
+
+  .protocol-field .label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 0.15rem;
+  }
+
+  .protocol-field .value {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .protocol-field .value strong {
+    font-weight: 400;
+    color: var(--navy);
+  }
+
+  .protocol-field.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .rx-badge {
+    display: inline-block;
+    background: var(--sage-light);
+    color: var(--navy);
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+  }
+
+  /* ─── MEASUREMENT SECTION ─── */
+  .metric-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .metric-list li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .metric-list li:last-child { border-bottom: none; }
+
+  .metric-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--sage-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  .metric-text .metric-name {
+    font-weight: 400;
+    color: var(--navy);
+    font-size: 0.95rem;
+  }
+
+  .metric-text .metric-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+  }
+
+  /* ─── EVIDENCE TABLE ─── */
+  .evidence-table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+
+  thead th {
+    background: var(--navy);
+    color: var(--offwhite);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--navy-light); }
+
+  td a {
+    color: var(--sage);
+    text-decoration: none;
+    font-size: 0.78rem;
+    word-break: break-all;
+  }
+
+  td a:hover { text-decoration: underline; }
+
+  /* ─── SOLUTION SECTION ─── */
+  .domain-track {
+    display: flex;
+    gap: 0;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .domain-step {
+    flex: 1;
+    padding: 1rem;
+    background: white;
+    text-align: center;
+    position: relative;
+  }
+
+  .domain-step:not(:last-child) {
+    border-right: 1px solid var(--border);
+  }
+
+  .domain-step .step-num {
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--sage);
+    margin-bottom: 0.35rem;
+  }
+
+  .domain-step .step-title {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .domain-step .step-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .arrow-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+  }
+
+  .arrow-indicator span {
+    width: 40px;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── FOOTER ─── */
+  .toolkit-footer {
+    background: var(--navy);
+    color: var(--offwhite);
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .footer-cta {
+    background: rgba(95,200,155,0.12);
+    border: 1px solid rgba(95,200,155,0.25);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .footer-cta strong {
+    font-weight: 400;
+    color: var(--sage);
+  }
+
+  .footer-legal {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: var(--sage);
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-url {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ─── SECTION DIVIDER ─── */
+  .section-divider {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 1rem 0;
+  }
+
+  /* ─── BULLET LISTS ─── */
+  ul.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  ul.clean-list li {
+    padding: 0.4rem 0 0.4rem 1.25rem;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  ul.clean-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  /* ─── PRINT STYLES ─── */
+  @media print {
+    body { background: white; font-size: 11pt; }
+
+    .title-page {
+      min-height: auto;
+      padding: 3cm 2cm;
+      page-break-after: always;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .title-page::before, .title-page::after { display: none; }
+
+    section { page-break-inside: avoid; padding: 1.5rem 0; }
+
+    .protocol-card { page-break-inside: avoid; }
+
+    .content-wrap { max-width: 100%; padding: 0 1.5cm; }
+
+    .toolkit-footer {
+      page-break-before: always;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .evidence-table-wrap { font-size: 9pt; }
+
+    h2 { page-break-after: avoid; }
+
+    .stat-grid, .protocol-grid { break-inside: avoid; }
+  }
+
+  @media (max-width: 640px) {
+    .stat-grid { grid-template-columns: 1fr; }
+    .protocol-grid { grid-template-columns: 1fr; }
+    .domain-track { flex-direction: column; }
+    .domain-step:not(:last-child) {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .title-content h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════
+     TITLE PAGE
+     ════════════════════════════════════════════════════════════════ -->
+<div class="title-page">
+  <div class="brand">
+    <div class="brand-name">PAUSALITY</div>
+    <div class="brand-tagline">The Science of the Pause</div>
+  </div>
+
+  <div class="title-content">
+    <h1>CRNA Resilience Toolkit:<br><span>Latest Findings in Neuroscience Research</span> for Nurse Anesthetists</h1>
+    <div class="divider-line"></div>
+    <p class="title-subtitle">Evidence-Based Autonomic Regulation for High-Stakes Clinical Practice</p>
+    <div class="title-meta">
+      <strong>Randy Graybeal, CRNA</strong><br>
+      Somnistics Research Labs<br>
+      2026
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 1: THE PROBLEM
+     ════════════════════════════════════════════════════════════════ -->
+<section>
+  <span class="section-number">Section 01</span>
+  <h2>The Problem: Neural Transition Failure</h2>
+
+  <p>Every CRNA manages dozens of autonomic state transitions per shift — from vigilance during induction to controlled calm during maintenance to rapid re-engagement for emergence. Each transition demands a full neural reset. When that reset is incomplete, residual sympathetic activation compounds.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <span class="callout-stat">30–40</span>
+      <span class="callout-label">State transitions per shift</span>
+    </div>
+    <div class="stat-card">
+      <span class="callout-stat">90%</span>
+      <span class="callout-label">Invisible accumulation</span>
+    </div>
+    <div class="stat-card">
+      <span class="callout-stat">&gt;60%</span>
+      <span class="callout-label">Report burnout symptoms</span>
+    </div>
+    <div class="stat-card">
+      <span class="callout-stat">$80–150K</span>
+      <span class="callout-label">Replacement cost per CRNA</span>
+    </div>
+  </div>
+
+  <p>The neurovisceral integration model (Thayer &amp; Lane, 2009) demonstrates that heart rate variability directly indexes prefrontal–subcortical circuit integrity. When HRV drops, so does executive function, attentional control, and emotional regulation — precisely the capacities CRNAs depend on for patient safety.</p>
+
+  <div class="callout">
+    <p>Polyvagal theory (Porges, 2011) identifies the ventral vagal complex as the neural platform for calm, focused engagement. Under sustained sympathetic load without recovery, clinicians lose access to this state — not through personal failure, but through a predictable neurophysiological mechanism.</p>
+  </div>
+
+  <p>The problem is not a lack of resilience. The problem is that the nervous system was never given the training reps to recover between demands. This is a dosing failure, not a character failure.</p>
+</section>
+
+<hr class="section-divider">
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 2: LATEST RESEARCH
+     ════════════════════════════════════════════════════════════════ -->
+<section>
+  <span class="section-number">Section 02</span>
+  <h2>Latest Harvard &amp; Peer-Reviewed Research (2024–2026)</h2>
+
+  <p>The following findings from the Sacchet Lab at Harvard/Massachusetts General Hospital and leading research institutions provide the mechanistic evidence for autonomic regulation interventions in high-demand clinical populations.</p>
+
+  <div class="research-card">
+    <div class="citation">Sezer &amp; Sacchet, 2025 — Harvard / MGH</div>
+    <div class="finding"><strong>"Relaxed alertness"</strong> — concurrent sympathetic and parasympathetic activation during structured breathing practice. Cardiac resonance and respiratory coupling produce the ventral vagal state described by polyvagal theory. This is not relaxation. It is <strong>high-performance neural integration</strong>.</div>
+    <div class="mechanism">Mechanism: Simultaneous SNS + PNS co-activation via baroreflex-respiratory coupling</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Kerr et al., 2013 — Harvard / Brown</div>
+    <div class="finding">Autonomic regulation begins in the <strong>somatosensory cortex</strong>, not in cognition. Alpha-wave modulation in S1 cortex precedes attentional changes. The body leads; the mind follows. This validates a <strong>body-first, bottom-up</strong> intervention model.</div>
+    <div class="mechanism">Mechanism: Somatosensory alpha modulation → top-down attentional gain control</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Ehmann et al., 2025 — Harvard / MGH (Quantitative)</div>
+    <div class="finding">Long-term practitioners demonstrate <strong>enhanced interoceptive awareness</strong>, reduced amygdala reactivity, and emotional neutrality under pressure. These are dose-dependent structural and functional brain changes — analogous to pharmacological remodeling.</div>
+    <div class="mechanism">Mechanism: Insular cortex thickening + amygdala downregulation with cumulative practice hours</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Ehmann et al., 2025 — Harvard / MGH (Qualitative)</div>
+    <div class="finding">Qualitative analysis of <strong>28 advanced practitioners</strong> (mean 20,435 hours) documents resolution of anxiety, PTSD, and addictive patterns. Clinically significant outcomes achieved through sustained, structured neural state training.</div>
+    <div class="mechanism">Mechanism: Long-term neuroplastic reorganization of threat-processing circuits</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Treves et al., 2024 — 68-Study Systematic Review</div>
+    <div class="finding">Meta-analytic evidence across 68 studies: <strong>decreased amygdala reactivity</strong>, increased insular cortex thickness, and decreased default mode network (DMN) connectivity correlate with greater trait autonomic regulation capacity.</div>
+    <div class="mechanism">Mechanism: Structural and functional reorganization across salience, executive, and default networks</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Nath et al., 2025 — Harvard / MGH</div>
+    <div class="finding"><strong>Heartbeat-evoked potentials (HEP)</strong> identified as a neural biomarker for interoceptive depth. HEP amplitude tracks the degree to which the brain registers and processes internal body signals — a measurable index of autonomic awareness.</div>
+    <div class="mechanism">Mechanism: Cortical processing of cardiac afferent signals via insular-cingulate pathways</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Rayani et al., 2025 — Harvard / MGH</div>
+    <div class="finding"><strong>rTMS enhances dispositional autonomic regulation capacity</strong> in PTSD patients. The neural substrates of interoceptive awareness are augmentable — they respond to targeted intervention, whether neuromodulatory or behavioral.</div>
+    <div class="mechanism">Mechanism: rTMS-induced plasticity in prefrontal-insular circuits</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Balban et al., 2023 — Stanford University</div>
+    <div class="finding"><strong>5 minutes of structured breathing outperformed meditation</strong> for acute mood and autonomic state regulation. Cyclic sighing (extended exhale pattern) produced the most significant parasympathetic activation.</div>
+    <div class="mechanism">Mechanism: Extended exhale → vagal efferent firing → rapid parasympathetic engagement</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Zaccaro et al., 2018 — Systematic Review</div>
+    <div class="finding">Slow breathing at rates <strong>below 10 breaths per minute</strong> consistently increases HRV, parasympathetic activation, and reduces anxiety across clinical and non-clinical populations.</div>
+    <div class="mechanism">Mechanism: Respiratory-cardiac coupling amplification at sub-10 bpm frequencies</div>
+  </div>
+
+  <div class="research-card">
+    <div class="citation">Lehrer et al., 2000</div>
+    <div class="finding"><strong>Resonant frequency breathing (~0.1 Hz / ~6 breaths per minute)</strong> maximizes baroreflex gain and heart rate variability amplitude. This is the pharmacological equivalent of hitting peak receptor occupancy — maximum autonomic effect per breath.</div>
+    <div class="mechanism">Mechanism: Baroreflex resonance at cardiovascular system's natural oscillatory frequency</div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 3: THE SOLUTION
+     ════════════════════════════════════════════════════════════════ -->
+<section>
+  <span class="section-number">Section 03</span>
+  <h2>The Somnistics Solution: Gap Moment Training&trade;</h2>
+
+  <h3>What Is a Gap Moment?</h3>
+  <p>A Gap Moment is any transitional window already present in your clinical workflow — between cases, after handoff, walking to the next OR, charting before induction. You experience 30 to 40 of these per shift. Currently, they go unused. Gap Moment Training repurposes them as <strong>autonomic regulation reps</strong>.</p>
+
+  <h3>The NeuroMinute&trade;</h3>
+  <p>A NeuroMinute is a 60-second structured protocol — the <strong>minimum effective dose</strong> for measurable autonomic state change. Research confirms that 60 seconds of patterned breathing at resonant frequency produces a detectable shift in HRV, cortisol trajectory, and prefrontal engagement.</p>
+
+  <div class="callout">
+    <p><strong>Dosing protocol:</strong> 5 NeuroMinutes per day, scattered across naturally occurring Gap Moments. Total investment: 5 minutes. This is <strong>titration to effect</strong> — the same pharmacological principle you apply daily, now applied to your own nervous system.</p>
+  </div>
+
+  <h3>The Anterocept&trade; Spectrum — Progressive Domains</h3>
+  <p>Training follows a progressive, domain-based structure. Like building hemodynamic management skills, each domain adds complexity to the preceding one.</p>
+
+  <div class="domain-track">
+    <div class="domain-step">
+      <div class="step-num">Domain 1</div>
+      <div class="step-title">Breath Awareness</div>
+      <div class="step-desc">Single-signal coupling. Respiratory pattern recognition and control.</div>
+    </div>
+    <div class="domain-step">
+      <div class="step-num">Domain 2</div>
+      <div class="step-title">Multi-Signal Coupling</div>
+      <div class="step-desc">Respiratory-cardiac coherence. HRV biofeedback integration.</div>
+    </div>
+    <div class="domain-step">
+      <div class="step-num">Domain 3</div>
+      <div class="step-title">Integrated Awareness</div>
+      <div class="step-desc">Full interoceptive field. Autonomic state recognition and modulation.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 4: FIVE CLINICAL PROTOCOLS
+     ════════════════════════════════════════════════════════════════ -->
+<section>
+  <span class="section-number">Section 04</span>
+  <h2>Five Clinical Protocols</h2>
+  <p>Each protocol is designed for a specific moment in the CRNA workflow. They are sequenced by clinical context, not difficulty. Use them as written — no modification required for initial adoption.</p>
+
+  <!-- Protocol 1 -->
+  <div class="protocol-card">
+    <div class="protocol-header">
+      <div class="protocol-number">1</div>
+      <div class="protocol-title">The Pre-Induction Reset</div>
+    </div>
+    <div class="protocol-body">
+      <div class="protocol-grid">
+        <div class="protocol-field">
+          <div class="label">Timing</div>
+          <div class="value">60 seconds before entering OR</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Breathing Pattern</div>
+          <div class="value"><strong>5/5 Coherent Breathing</strong><br>5-count inhale, 5-count exhale<br>(6 breaths per minute)</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Target</div>
+          <div class="value">Vagal activation, baseline HRV elevation</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Mechanism</div>
+          <div class="value">Baroreflex stimulation at resonant frequency (~0.1 Hz)</div>
+        </div>
+        <div class="protocol-field full-width">
+          <div class="label">Expected Response</div>
+          <div class="value">HR drop 3–8 bpm, RMSSD increase. Attentional sharpening with reduced baseline tension.</div>
+        </div>
+      </div>
+      <span class="rx-badge">Rx: Domain 1 — Breath Awareness</span>
+    </div>
+  </div>
+
+  <!-- Protocol 2 -->
+  <div class="protocol-card">
+    <div class="protocol-header">
+      <div class="protocol-number">2</div>
+      <div class="protocol-title">The Post-Emergence Recovery</div>
+    </div>
+    <div class="protocol-body">
+      <div class="protocol-grid">
+        <div class="protocol-field">
+          <div class="label">Timing</div>
+          <div class="value">60 seconds after patient handoff</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Breathing Pattern</div>
+          <div class="value"><strong>4/7 Extended Exhale</strong><br>4-count inhale, 7-count exhale</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Target</div>
+          <div class="value">Clear residual sympathetic activation</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Mechanism</div>
+          <div class="value">Extended exhale maximizes vagal efferent firing rate</div>
+        </div>
+        <div class="protocol-field full-width">
+          <div class="label">Expected Response</div>
+          <div class="value">Cortisol clearance initiation, attentional broadening. Subjective sense of "case completion" rather than residual vigilance.</div>
+        </div>
+      </div>
+      <span class="rx-badge">Rx: Domain 1 — Breath Awareness</span>
+    </div>
+  </div>
+
+  <!-- Protocol 3 -->
+  <div class="protocol-card">
+    <div class="protocol-header">
+      <div class="protocol-number">3</div>
+      <div class="protocol-title">The Inter-Case Transition</div>
+    </div>
+    <div class="protocol-body">
+      <div class="protocol-grid">
+        <div class="protocol-field">
+          <div class="label">Timing</div>
+          <div class="value">Walking between ORs</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Pattern</div>
+          <div class="value"><strong>30s Body Scan + 30s Intention Setting</strong><br>Interoceptive check followed by cognitive re-engagement</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Target</div>
+          <div class="value">Prevent neural transition failure</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Mechanism</div>
+          <div class="value">Interoceptive reset (insula activation) + prefrontal re-engagement</div>
+        </div>
+        <div class="protocol-field full-width">
+          <div class="label">Expected Response</div>
+          <div class="value">State completeness — no residual bleed from previous case. Clean cognitive slate for next patient.</div>
+        </div>
+      </div>
+      <span class="rx-badge">Rx: Domain 2 — Multi-Signal Coupling</span>
+    </div>
+  </div>
+
+  <!-- Protocol 4 -->
+  <div class="protocol-card">
+    <div class="protocol-header">
+      <div class="protocol-number">4</div>
+      <div class="protocol-title">The Critical Incident Recovery</div>
+    </div>
+    <div class="protocol-body">
+      <div class="protocol-grid">
+        <div class="protocol-field">
+          <div class="label">Timing</div>
+          <div class="value">After any high-stress event</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Breathing Pattern</div>
+          <div class="value"><strong>3/3/3/3 Rapid Regulation</strong><br>3-count inhale, 3-count hold, 3-count exhale, 3-count hold (~90 seconds)</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Target</div>
+          <div class="value">Amygdala deactivation (requires ~90 seconds)</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Mechanism</div>
+          <div class="value">Fast-cycle ventral vagal recruitment via rhythmic autonomic oscillation</div>
+        </div>
+        <div class="protocol-field full-width">
+          <div class="label">Expected Response</div>
+          <div class="value">Working memory restoration, emotional reactivity threshold reset. Capacity to resume clinical decision-making without impairment.</div>
+        </div>
+      </div>
+      <span class="rx-badge">Rx: Domain 2 — Multi-Signal Coupling</span>
+    </div>
+  </div>
+
+  <!-- Protocol 5 -->
+  <div class="protocol-card">
+    <div class="protocol-header">
+      <div class="protocol-number">5</div>
+      <div class="protocol-title">The Shift-End Integration</div>
+    </div>
+    <div class="protocol-body">
+      <div class="protocol-grid">
+        <div class="protocol-field">
+          <div class="label">Timing</div>
+          <div class="value">Before leaving the facility</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Breathing Pattern</div>
+          <div class="value"><strong>10/0/10/0 "Anesthetist's Breath"</strong><br>10-count inhale, 10-count exhale<br>(3 breaths per minute)</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Target</div>
+          <div class="value">Complete autonomic reset, prevent carry-home stress</div>
+        </div>
+        <div class="protocol-field">
+          <div class="label">Mechanism</div>
+          <div class="value">Deep vagal activation + interoceptive closure at sub-resonant frequency</div>
+        </div>
+        <div class="protocol-field full-width">
+          <div class="label">Expected Response</div>
+          <div class="value">Clean transition to home/recovery state. No sympathetic residue carried into personal life. Subjective experience of "the shift is over."</div>
+        </div>
+      </div>
+      <span class="rx-badge">Rx: Domain 3 — Integrated Awareness</span>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 5: MEASURING YOUR RESPONSE
+     ════════════════════════════════════════════════════════════════ -->
+<section>
+  <span class="section-number">Section 05</span>
+  <h2>Measuring Your Response</h2>
+
+  <p>Autonomic regulation training without measurement is guesswork. The following metrics allow you to track dose-response relationships with the same precision you bring to hemodynamic management.</p>
+
+  <ul class="metric-list">
+    <li>
+      <div class="metric-icon">R</div>
+      <div class="metric-text">
+        <div class="metric-name">RMSSD — Primary Metric</div>
+        <div class="metric-desc">Root mean square of successive differences in R-R intervals. The gold-standard HRV metric for parasympathetic tone. Compatible with Apple Watch, Garmin, and WHOOP. Record before and after each protocol to quantify your acute autonomic response.</div>
+      </div>
+    </li>
+    <li>
+      <div class="metric-icon">&Delta;</div>
+      <div class="metric-text">
+        <div class="metric-name">HR / HRV Delta — Acute Response</div>
+        <div class="metric-desc">Measure heart rate and HRV immediately before and after each NeuroMinute. Expected: HR decrease of 3–8 bpm, RMSSD increase of 5–15 ms. Track your personal response curve over the first 14 days.</div>
+      </div>
+    </li>
+    <li>
+      <div class="metric-icon">W</div>
+      <div class="metric-text">
+        <div class="metric-name">Weekly Trajectory Tracking</div>
+        <div class="metric-desc">Plot your morning resting HRV weekly. With consistent 5x/day dosing, expect a measurable upward trend in baseline RMSSD within 2–3 weeks — evidence of autonomic remodeling, not just acute state change.</div>
+      </div>
+    </li>
+    <li>
+      <div class="metric-icon">M</div>
+      <div class="metric-text">
+        <div class="metric-name">MAIA-2 — Interoceptive Awareness</div>
+        <div class="metric-desc">The Multidimensional Assessment of Interoceptive Awareness (Version 2). Self-report instrument for interoceptive awareness across 8 subscales. Take at baseline, 30 days, and 90 days. Validated in clinical populations.</div>
+      </div>
+    </li>
+    <li>
+      <div class="metric-icon">B</div>
+      <div class="metric-text">
+        <div class="metric-name">BOLT Score — CO<sub>2</sub> Tolerance Baseline</div>
+        <div class="metric-desc">Body Oxygen Level Test. Comfortable breath-hold time after normal exhale. Indexes chemoreceptor sensitivity and ventilatory efficiency. Baseline &lt;20s indicates significant room for respiratory optimization.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<hr class="section-divider">
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECTION 6: EVIDENCE SUMMARY TABLE
+     ════════════════════════════════════════════════════════════════ -->
+<section>
+  <span class="section-number">Section 06</span>
+  <h2>Evidence Summary</h2>
+
+  <p>All cited research, organized for clinical reference. DOI links provided for institutional access.</p>
+
+  <div class="evidence-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Citation</th>
+          <th>Key Finding</th>
+          <th>DOI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Porges, 2011</td>
+          <td>Polyvagal theory: ventral vagal complex mediates calm, focused engagement; hierarchical autonomic response model</td>
+          <td><a href="https://doi.org/10.1093/acprof:oso/9780393707007.001.0001">Book</a></td>
+        </tr>
+        <tr>
+          <td>Thayer &amp; Lane, 2009</td>
+          <td>Neurovisceral integration model: HRV indexes prefrontal–subcortical circuit integrity and executive function capacity</td>
+          <td><a href="https://doi.org/10.1016/j.neubiorev.2008.08.007">10.1016/j.neubiorev.2008.08.007</a></td>
+        </tr>
+        <tr>
+          <td>Sezer &amp; Sacchet, 2025</td>
+          <td>"Relaxed alertness" — concurrent SNS + PNS activation; cardiac resonance and respiratory coupling during practice</td>
+          <td><a href="https://sacchetlab.mgh.harvard.edu">Sacchet Lab</a></td>
+        </tr>
+        <tr>
+          <td>Kerr et al., 2013</td>
+          <td>Somatosensory alpha modulation precedes attentional changes; body-first intervention model validated</td>
+          <td><a href="https://doi.org/10.3389/fnhum.2013.00012">10.3389/fnhum.2013.00012</a></td>
+        </tr>
+        <tr>
+          <td>Ehmann et al., 2025 (quant.)</td>
+          <td>Enhanced interoceptive awareness, reduced amygdala reactivity, emotional neutrality in long-term practitioners</td>
+          <td><a href="https://sacchetlab.mgh.harvard.edu">Sacchet Lab</a></td>
+        </tr>
+        <tr>
+          <td>Ehmann et al., 2025 (qual.)</td>
+          <td>28 advanced practitioners (mean 20,435 hrs): resolution of anxiety, PTSD, addiction through sustained neural training</td>
+          <td><a href="https://sacchetlab.mgh.harvard.edu">Sacchet Lab</a></td>
+        </tr>
+        <tr>
+          <td>Treves et al., 2024</td>
+          <td>68-study review: decreased amygdala reactivity, increased insular thickness, decreased DMN connectivity</td>
+          <td><a href="https://doi.org/10.1016/j.neubiorev.2024.105577">10.1016/j.neubiorev.2024.105577</a></td>
+        </tr>
+        <tr>
+          <td>Nath et al., 2025</td>
+          <td>Heartbeat-evoked potentials (HEP) as neural biomarker for interoceptive depth</td>
+          <td><a href="https://sacchetlab.mgh.harvard.edu">Sacchet Lab</a></td>
+        </tr>
+        <tr>
+          <td>Rayani et al., 2025</td>
+          <td>rTMS enhances dispositional autonomic regulation capacity in PTSD patients</td>
+          <td><a href="https://sacchetlab.mgh.harvard.edu">Sacchet Lab</a></td>
+        </tr>
+        <tr>
+          <td>Balban et al., 2023</td>
+          <td>5 min structured breathing &gt; meditation for mood; cyclic sighing most effective pattern</td>
+          <td><a href="https://doi.org/10.1016/j.xcrm.2022.100895">10.1016/j.xcrm.2022.100895</a></td>
+        </tr>
+        <tr>
+          <td>Zaccaro et al., 2018</td>
+          <td>Slow breathing &lt;10 bpm consistently increases HRV and parasympathetic activation across populations</td>
+          <td><a href="https://doi.org/10.3389/fnhum.2018.00353">10.3389/fnhum.2018.00353</a></td>
+        </tr>
+        <tr>
+          <td>Lehrer et al., 2000</td>
+          <td>Resonant frequency (~0.1 Hz / ~6 bpm) maximizes baroreflex gain and HRV amplitude</td>
+          <td><a href="https://doi.org/10.1023/A:1009587312731">10.1023/A:1009587312731</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div><!-- /content-wrap -->
+
+<!-- ════════════════════════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════════════════════════ -->
+<div class="toolkit-footer">
+  <div class="footer-cta">
+    <strong>Download the Pausality app</strong> to get guided versions of these protocols with real-time biometric feedback and progressive domain training.
+  </div>
+
+  <div class="footer-brand">PAUSALITY</div>
+  <div class="footer-url">Somnistics Research Labs &nbsp;|&nbsp; somnistics.com</div>
+
+  <div class="footer-legal">
+    Gap Moment Training&trade;, NeuroMinute&trade;, Anterocept&trade;, and Pausality&trade; are trademarks of Somnistics Research Labs.<br>
+    &copy; 2026 Somnistics Research Labs. All rights reserved.
+  </div>
+</div>
+
+</body>
+</html>
