@@ -2,7 +2,7 @@
 id: "urn:srl:concept:multi-phase-interoceptive-coupling"
 type: concept
 title: "Multi-Phase Interoceptive Coupling"
-status: review
+status: canonical
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

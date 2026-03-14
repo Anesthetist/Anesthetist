@@ -2,7 +2,7 @@
 id: "urn:srl:concept:kosha-architecture"
 type: concept
 title: "Kosha Architecture"
-status: review
+status: canonical
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
@@ -17,7 +17,8 @@ dc:source:
   - "chatgpt-export:crna-onboarding-koshas-framework"
   - "chatgpt-export:koshas-for-crna-training"
   - "chatgpt-export:understanding-vijnanamaya-kosha"
-skos:broader: []
+skos:broader:
+  - somnistics
 skos:narrower: []
 skos:related:
   - interoception

@@ -2,7 +2,7 @@
 id: "urn:srl:concept:self-remembering"
 type: concept
 title: "Self-Remembering"
-status: review
+status: canonical
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
@@ -17,7 +17,8 @@ dc:source:
   - "chatgpt-export:insight-meditation-guidance"
   - "chatgpt-export:vitarka-vicara-synthesis"
   - "chatgpt-export:gap-moments-across-philosophies"
-skos:broader: []
+skos:broader:
+  - somnistics
 skos:narrower: []
 skos:related:
   - relevance-realization

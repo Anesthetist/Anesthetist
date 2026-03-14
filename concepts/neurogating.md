@@ -21,7 +21,8 @@ dc:source:
   - "chatgpt-export:review-of-professional-profile"
 skos:broader:
   - somnistics
-skos:narrower: []
+skos:narrower:
+  - readyscore
 skos:related:
   - state-transition
   - gap-moment-training
@@ -65,6 +66,26 @@ Neurogating™ is the closed-loop detection-and-response engine within the Pausa
 ## IP Strategy
 
 Core patent-worthy innovation: integrated stochastic anomaly detection for closed-loop psychophysiological training. Filed as provisional patent focusing on real-time sensor fusion and predictive cognitive state modeling.
+
+## Gap Moment Detection Engine
+
+The inference layer within Neurogating that specifically identifies transition moments. It combines:
+- **Biometric signals:** HRV drop, HR spike, respiratory rate change
+- **Context signals:** Calendar transitions, location changes (walking→standing), time-of-day patterns
+- **Behavioral signals:** Phone unlock patterns, movement cessation, posture change
+- **Historical patterns:** Individual user's gap moment timing learned over days/weeks
+
+When a gap moment is detected, the engine selects and delivers the appropriate [[neurominute]] protocol based on the user's current state, time of day, and intervention history. Neuroception ([[porges-2011-polyvagal-theory]]) is the biological precedent — Neurogating is its technological analog.
+
+## ReadyScore (Output Layer)
+
+ReadyScore is the user-facing output of Neurogating: a simplified color-coded indicator (green/yellow/red) that tells the clinician whether they are in an optimal autonomic state for the next task. Architecture:
+- **Inputs (hidden layer):** HRV (RMSSD), respiratory rate, heart rate, movement data, context signals
+- **Processing:** ML model classifies autonomic state, applies personalized thresholds
+- **Output:** Single ReadyScore value with color coding
+- **Decision rule:** If ΔReadyScore >= +12% threshold after a [[neurominute]] → "ready"; else run alternate protocol
+
+Design principle: the user sees only the minimum information needed to act. The AI sees the full multi-modal data.
 
 ## Evidence Base
 

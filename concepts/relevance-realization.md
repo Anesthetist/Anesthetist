@@ -2,7 +2,7 @@
 id: "urn:srl:concept:relevance-realization"
 type: concept
 title: "Relevance Realization"
-status: review
+status: canonical
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
@@ -15,7 +15,8 @@ dc:subject:
 dc:source:
   - "chatgpt-export:somnistics-and-inner-vision"
   - "chatgpt-export:resonance-with-somnistics"
-skos:broader: []
+skos:broader:
+  - somnistics
 skos:narrower: []
 skos:related:
   - hemispheric-rebalancing

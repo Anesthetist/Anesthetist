@@ -1,6 +1,6 @@
 ---
 id: "urn:srl:concept:consciousness-engineering"
-type: concept
+type: output
 title: "Consciousness Engineering"
 status: review
 creator: "Randy Graybeal"

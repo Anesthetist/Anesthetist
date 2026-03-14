@@ -1,6 +1,6 @@
 ---
 id: "urn:srl:concept:21-day-curriculum"
-type: concept
+type: output
 title: "21-Day NeuroMinute Curriculum"
 status: draft
 creator: "Randy Graybeal"

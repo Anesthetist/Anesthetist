@@ -1,6 +1,6 @@
 ---
 id: "urn:srl:concept:readyscore"
-type: concept
+type: output
 title: "ReadyScore"
 status: review
 creator: "Randy Graybeal"
