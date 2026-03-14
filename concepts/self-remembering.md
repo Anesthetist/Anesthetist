@@ -2,41 +2,79 @@
 id: "urn:srl:concept:self-remembering"
 type: concept
 title: "Self-Remembering"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
-version: 1.0
+version: 1.1
 dc:subject:
   - contemplative-practice
   - awareness
   - attention
-dc:source: []
+  - fourth-way
+  - gurdjieff
+dc:source:
+  - "chatgpt-export:insight-meditation-guidance"
+  - "chatgpt-export:vitarka-vicara-synthesis"
+  - "chatgpt-export:gap-moments-across-philosophies"
 skos:broader: []
 skos:narrower: []
 skos:related:
   - relevance-realization
   - interoception
   - state-transition
-prov:wasDerivedFrom: []
-aliases: []
+  - gap-moment-training
+  - kosha-architecture
+  - anterocept
+prov:wasDerivedFrom:
+  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+aliases:
+  - Gurdjieff self-remembering
+  - divided attention
 trademarked: false
 ---
 
 # Self-Remembering
 
-Definition pending extraction from source documents.
+A practice from the Fourth Way tradition (Gurdjieff, Ouspensky) of deliberately maintaining awareness of oneself *while* engaged in activity — holding dual attention on both the external task and the internal observer. In somnistics, self-remembering is the meta-skill underlying all other practices: the capacity to notice one's own state during transitions rather than operating on autopilot.
+
+## Definition
+
+Self-remembering is the deliberate act of including oneself in one's own field of awareness. Most people are absorbed in external activity (forgetting the self) or absorbed in internal rumination (forgetting the world). Self-remembering holds both simultaneously — a "divided attention" that is paradoxically more integrated than single-pointed focus.
+
+## Somnistics Integration
+
+Self-remembering maps onto several SRL constructs:
+- **Gap Moment recognition:** The first step in [[gap-moment-training]] is *noticing* that a transition is occurring — this is self-remembering applied to workflow
+- **Anterocept Domain 3:** The integrated interoceptive-exteroceptive awareness in [[anterocept]] is a form of self-remembering (awareness of inner and outer simultaneously)
+- **Kosha traversal:** Self-remembering across all five [[kosha-architecture]] layers simultaneously represents the deepest practice level
+- **Frankl's gap:** "Between stimulus and response there is a space" — self-remembering is the capacity that opens that space
+
+## Cross-Traditional Parallels
+
+| Tradition | Term | Mechanism |
+|-----------|------|-----------|
+| Fourth Way | Self-remembering | Divided attention: observer + observed |
+| Zen Buddhism | Shikantaza | "Just sitting" — bare awareness without object |
+| Vedānta | Sākṣī (witness consciousness) | The unchanging observer across states |
+| Phenomenology | Epoché (Husserl) | Suspension of the natural attitude |
+| IFS | Self-energy | The aware, curious, calm center |
 
 ## Evidence Base
 
--
+- [[porges-2011-polyvagal-theory]] — self-remembering requires the ventral vagal state (safety + alertness); it is impossible in sympathetic activation or dorsal vagal shutdown
+- Contemplative neuroscience literature on meta-awareness and default mode network deactivation
 
 ## Clinical Observations
 
--
+- Experienced CRNAs describe moments of "clinical presence" where they are simultaneously aware of the patient, the monitors, the team, and their own internal state — this is self-remembering in clinical practice
+- The practice is trainable: [[anterocept]] and [[polyanchora]] progressively develop the capacity for simultaneous internal/external awareness
 
 ## Related Concepts
 
-- [[relevance-realization]]
-- [[interoception]]
-- [[state-transition]]
+- [[relevance-realization]] — Vervaeke's framework connects self-remembering to how agents determine what is relevant
+- [[interoception]] — body awareness is the interoceptive foundation of self-remembering
+- [[state-transition]] — self-remembering notices the transition moment
+- [[gap-moment-training]] — gap moments are natural opportunities for self-remembering practice
+- [[kosha-architecture]] — full self-remembering spans all five sheaths
+- [[anterocept]] — the progressive training methodology for developing self-remembering capacity

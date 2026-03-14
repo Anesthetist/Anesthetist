@@ -2,42 +2,68 @@
 id: "urn:srl:concept:hemispheric-rebalancing"
 type: concept
 title: "Hemispheric Rebalancing"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
-version: 1.0
+version: 1.1
 dc:subject:
   - neuroscience
   - hemispheric-lateralization
   - cognitive-science
-dc:source: []
+  - attention-modes
+dc:source:
+  - "chatgpt-export:mcgilchrist-evaluation-framework"
+  - "chatgpt-export:somnistics-and-inner-vision"
+  - "chatgpt-export:resonance-with-somnistics"
 skos:broader: []
 skos:narrower: []
 skos:related:
   - relevance-realization
   - cognitive-variability-analysis
   - state-transition
+  - interoception
+  - polyanchora
 prov:wasDerivedFrom:
-  - mcgilchrist-master-and-emissary
-aliases: []
+  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
+aliases:
+  - hemispheric lateralization
+  - left-right brain integration
 trademarked: false
 ---
 
 # Hemispheric Rebalancing
 
-Restoring balance between left- and right-hemisphere modes of attention, related to Iain McGilchrist's Master and His Emissary framework.
+Restoring balance between left-hemisphere (narrow, focused, analytic, categorical) and right-hemisphere (broad, contextual, relational, embodied) modes of attention. Based on Iain McGilchrist's *The Master and His Emissary* framework, applied within somnistics as a model for understanding how breath-based interventions shift attentional mode.
+
+## McGilchrist's Framework Applied to SRL
+
+- **Left hemisphere:** Focused attention, categorization, manipulation, language, abstraction. Dominant in modern clinical training and protocol-driven medicine.
+- **Right hemisphere:** Broad awareness, context, embodied knowing, empathy, novelty detection. The "master" that should guide the "emissary."
+- **The problem:** Clinical training over-develops left-hemisphere skills at the expense of right-hemisphere awareness — producing technically excellent but interoceptively impoverished practitioners.
+- **The solution:** Somnistics practices (especially [[polyanchora]] and [[anterocept]]) re-activate right-hemisphere broad awareness while maintaining left-hemisphere technical precision.
+
+## Somnistics Integration
+
+Breath-based practices shift the attentional mode from narrow (left-dominant) to broad (right-engaged) by:
+- Reducing prefrontal analytical activity (left) through breath focus
+- Activating insular and somatosensory cortex (right-lateralized for body awareness)
+- Opening the "broad awareness" field that enables pattern recognition and clinical intuition
 
 ## Evidence Base
 
--
+- [[mcgilchrist-2009-master-emissary]] — comprehensive argument for hemispheric lateralization of attention modes and the cultural dominance of left-hemisphere processing
+- EEG studies showing alpha asymmetry shifts during meditation and breath practices
 
 ## Clinical Observations
 
--
+- The most dangerous clinical errors occur when CRNAs are in "tunnel vision" (left-hemisphere lock) — focused on one parameter while missing the broader clinical picture
+- Hemispheric rebalancing practices train the ability to hold both focal precision and broad awareness simultaneously
 
 ## Related Concepts
 
-- [[relevance-realization]]
-- [[cognitive-variability-analysis]]
-- [[state-transition]]
+- [[relevance-realization]] — Vervaeke's framework for how the brain determines relevance (closely related to right-hemisphere contextual processing)
+- [[cognitive-variability-analysis]] — EEG component can detect hemispheric dominance shifts
+- [[state-transition]] — hemispheric rebalancing is a specific type of cognitive state transition
+- [[interoception]] — body awareness is primarily right-hemisphere mediated
+- [[polyanchora]] — multi-anchor attention training engages broad (right-hemisphere) awareness

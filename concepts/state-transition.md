@@ -2,16 +2,20 @@
 id: "urn:srl:concept:state-transition"
 type: concept
 title: "State Transition"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
-version: 1.0
+version: 1.1
 dc:subject:
   - neurophysiology
   - somnistics
   - state-dynamics
-dc:source: []
+  - amygdala
+  - prefrontal-cortex
+dc:source:
+  - "chatgpt-export:co-creation-of-somnistics-system"
+  - "chatgpt-export:gap-moment-practices"
 skos:broader: []
 skos:narrower: []
 skos:related:
@@ -19,28 +23,46 @@ skos:related:
   - somnistics
   - autonomic-regulation
   - neurogating
-prov:wasDerivedFrom: []
+  - polyvagal-theory
+  - anterocept
+prov:wasDerivedFrom:
+  - "urn:srl:evidence:porges-2011-polyvagal-theory"
 aliases:
   - state transitions
   - neural state transition
+  - state shift
 trademarked: false
 ---
 
 # State Transition
 
-Moving between neural and physiological states -- the fundamental unit of change that somnistics trains practitioners to navigate.
+The moment of shifting from one autonomic or cognitive state to another — sympathetic→parasympathetic, fragmented attention→focused attention, freeze→engagement. Gap moments are *engineered state transitions*: the somnistics insight is that these transitions are the fundamental unit of change and the primary training surface.
+
+## Neurophysiology
+
+- **Amygdala deactivation** takes ~90 seconds minimum after threat response — this is why the 60-second [[neurominute]] format is the minimum effective dose
+- **Dorsolateral prefrontal cortex reactivation** supports conscious choice during the transition window
+- **Breath-anchored transitions** expedite these neurophysiological shifts by directly stimulating the ventral vagal pathway
+
+## Clinical Application
+
+Structured 60-second practices during transitions prevent "residual sympathetic bleed" between cases — the phenomenon where arousal from one stressful case carries into the next, degrading performance cumulatively across a shift.
 
 ## Evidence Base
 
--
+- [[porges-2011-polyvagal-theory]] — autonomic state transitions follow the polyvagal hierarchy; neuroception determines whether transitions move toward safety or threat
+- Amygdala deactivation timing literature (LeDoux, Rauch) — minimum 60-90 seconds for cortical override of limbic activation
 
 ## Clinical Observations
 
--
+- CRNAs experience 30-40 state transitions per shift. Without intervention, each transition carries residual activation from the previous state.
+- The most dangerous transitions are post-critical: after an emergency or difficult case, the clinician must rapidly shift from high sympathetic activation to calm precision for the next patient.
 
 ## Related Concepts
 
-- [[gap-moment-training]]
-- [[somnistics]]
-- [[autonomic-regulation]]
-- [[neurogating]]
+- [[gap-moment-training]] — gap moments are the windows where state transitions are trainable
+- [[somnistics]] — the discipline is defined as training neural state transitions under pressure
+- [[autonomic-regulation]] — the physiological capacity underlying flexible state transitions
+- [[neurogating]] — detects transition points and triggers appropriate interventions
+- [[polyvagal-theory]] — the theoretical model for autonomic state hierarchy
+- [[anterocept]] — trains awareness of the transition itself

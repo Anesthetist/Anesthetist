@@ -2,24 +2,32 @@
 id: "urn:srl:concept:cognitive-variability-analysis"
 type: concept
 title: "Cognitive Variability Analysis"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
-version: 1.0
+version: 1.1
 dc:subject:
   - cognitive-science
   - EEG
   - biofeedback
   - analytics
-dc:source: []
-skos:broader: []
+  - AI-driven
+  - machine-learning
+  - cognitive-load
+dc:source:
+  - "chatgpt-export:cva-framework-exploration"
+skos:broader:
+  - somnistics
 skos:narrower: []
 skos:related:
   - hemispheric-rebalancing
   - state-transition
   - autonomic-regulation
-prov:wasDerivedFrom: []
+  - neurogating
+  - vagal-tone
+prov:wasDerivedFrom:
+  - "urn:srl:evidence:porges-2011-polyvagal-theory"
 aliases:
   - CVA
 trademarked: false
@@ -27,18 +35,44 @@ trademarked: false
 
 # Cognitive Variability Analysis
 
-A framework for analyzing cognitive patterns, related to EEG and Muse 2 biofeedback work.
+An AI-driven methodology that dynamically adapts goal-setting, work rhythms, and performance tracking based on real-time fluctuations in cognitive load, emotional states, and neurophysiological biomarkers. CVA treats cognitive state as a vital sign — enabling surgical teams to coordinate support in real time.
+
+## Definition
+
+CVA refers to fluctuations in a clinician's mental state — attention, workload, and alertness — over time. In AI-driven performance management systems, CVA means using neurophysiological data to track these fluctuations and inform adaptive interventions. For CRNAs, CVA highlights how stress and fatigue impact decision-making during high-stakes procedures, distinguishing normal variability from signs of cognitive fatigue or overload.
+
+## Biomarker Framework
+
+- **HRV (Heart Rate Variability):** Time-domain metrics (SDNN, pNN50) — low HRV reflects high mental workload
+- **Pupillometry:** Pupil dilation and gaze patterns — highly sensitive to cognitive load changes (95% detection from eye movement data alone)
+- **EEG Brainwave Patterns:** Frontal theta power, theta-gamma coupling during intense processing
+- **Work Behaviors:** Reaction times, vigilance lapses, communication patterns (keystroke dynamics, speech cadence)
+- **Hybrid AI Models:** RNNs, transformers, and unsupervised anomaly detection achieving >90% accuracy in cognitive load recognition
+
+## Adaptive Workflow Applications (CRNA Context)
+
+1. **Workload Pacing** — Suggest brief pauses or assistance when cognitive load peaks
+2. **Adaptive Scheduling** — Allocate complex cases to times when alertness is highest
+3. **Cognitive Priming** — Trigger guided breathing or mental resets via [[neurogating]]
+4. **Task Redistribution** — Reallocate work within anesthesia team when one member's state shows overload
+5. **Treats cognitive state as vital sign** — enables real-time team coordination
 
 ## Evidence Base
 
--
+- [[porges-2011-polyvagal-theory]] — polyvagal framework for understanding autonomic state as a cognitive readiness indicator
+- Machine learning literature: RNN/GRU hybrid networks >90% accuracy; one-class SVMs detecting 95% of high-workload events from eye movement data
+- Kim et al. (2020) — HRV as cognitive load predictor; Thayer & Lane (2019) — neurovisceral integration model
 
 ## Clinical Observations
 
--
+- In anesthesia, cognitive fatigue often goes undetected until an error occurs. CVA provides early warning before performance degrades.
+- The framework integrates with [[neurogating]] for closed-loop adaptive intervention triggering
 
 ## Related Concepts
 
-- [[hemispheric-rebalancing]]
-- [[state-transition]]
-- [[autonomic-regulation]]
+- [[somnistics]] (broader)
+- [[neurogating]] — CVA provides the cognitive state data that feeds Neurogating's adaptive logic
+- [[hemispheric-rebalancing]] — hemispheric lateralization patterns detectable via EEG component of CVA
+- [[state-transition]] — CVA tracks transitions between cognitive states
+- [[autonomic-regulation]] — HRV-based CVA metrics directly measure autonomic regulation capacity
+- [[vagal-tone]] — low vagal tone correlates with reduced cognitive flexibility in CVA models
