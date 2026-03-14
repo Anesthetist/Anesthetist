@@ -1,44 +1,45 @@
 ---
-id: "urn:srl:concept:autonomic-regulation"
-type: concept
-title: "Autonomic Regulation"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- ANS regulation
+- autonomic flexibility
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - neurophysiology
-  - autonomic-nervous-system
-  - somnistics
-  - HRV
-  - GSR
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:ai-vagal-tone-differentiation"
-  - "chatgpt-export:crna-autonomic-workflow-insights"
-  - "chatgpt-export:breathing-basics-for-professionals"
+- chatgpt-export:ai-vagal-tone-differentiation
+- chatgpt-export:crna-autonomic-workflow-insights
+- chatgpt-export:breathing-basics-for-professionals
+dc:subject:
+- neurophysiology
+- autonomic-nervous-system
+- somnistics
+- HRV
+- GSR
+id: urn:srl:concept:autonomic-regulation
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators
+- urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd
+- urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness
+- urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system
+- urn:srl:evidence:thayer-lane-2009-neurovisceral-integration
+- urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
+- urn:srl:evidence:walker-2009-sleep-emotional-brain
 skos:broader: []
 skos:narrower:
-  - vagal-tone
-  - resonant-breathing-frequency
+- vagal-tone
+- resonant-breathing-frequency
 skos:related:
-  - polyvagal-theory
-  - interoception
-  - somnistics
-  - state-transition
-  - gap-moment-training
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
-  - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
-  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
-  - "urn:srl:evidence:thayer-lane-2009-neurovisceral-integration"
-  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
-  - "urn:srl:evidence:walker-2009-sleep-emotional-brain"
-aliases:
-  - ANS regulation
-  - autonomic flexibility
+- polyvagal-theory
+- interoception
+- somnistics
+- state-transition
+- gap-moment-training
+- retrocausal-presentiment
+status: canonical
+title: Autonomic Regulation
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Autonomic Regulation

@@ -1,53 +1,54 @@
 ---
-id: "urn:srl:concept:interoception"
-type: concept
-title: "Interoception"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- interoceptive awareness
+- body awareness
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - neuroscience
-  - body-awareness
-  - somnistics
-  - insular-cortex
-  - MAIA-2
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:somnistics-and-interoception"
-  - "chatgpt-export:interoception-for-high-performers"
-  - "chatgpt-export:interoception-outcome-strategy"
-  - "chatgpt-export:multi-phase-interoceptiv-analysis"
+- chatgpt-export:somnistics-and-interoception
+- chatgpt-export:interoception-for-high-performers
+- chatgpt-export:interoception-outcome-strategy
+- chatgpt-export:multi-phase-interoceptiv-analysis
+dc:subject:
+- neuroscience
+- body-awareness
+- somnistics
+- insular-cortex
+- MAIA-2
+id: urn:srl:concept:interoception
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:craig-2009-interoception-awareness
+- urn:srl:evidence:critchley-2017-interoception-emotion
+- urn:srl:evidence:damasio-1996-somatic-marker
+- urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm
+- urn:srl:evidence:farb-2019-mindfulness-neuroplasticity
+- urn:srl:evidence:ferentzi-2022-heartbeat-counting
+- urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t
+- urn:srl:evidence:giotakos-2025-insula-interoception-time
+- urn:srl:evidence:holzel-2011-mindfulness-gray-matter
+- urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms
+- urn:srl:evidence:mehling-2012-maia-original
+- urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation
+- urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness
+- urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
 skos:broader: []
 skos:narrower:
-  - anterocept
-  - multi-phase-interoceptive-coupling
+- anterocept
+- multi-phase-interoceptive-coupling
 skos:related:
-  - vagal-tone
-  - autonomic-regulation
-  - kosha-architecture
-  - relevance-realization
-  - polyanchora
-  - self-remembering
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:craig-2009-interoception-awareness"
-  - "urn:srl:evidence:critchley-2017-interoception-emotion"
-  - "urn:srl:evidence:damasio-1996-somatic-marker"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
-  - "urn:srl:evidence:farb-2019-mindfulness-neuroplasticity"
-  - "urn:srl:evidence:ferentzi-2022-heartbeat-counting"
-  - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
-  - "urn:srl:evidence:giotakos-2025-insula-interoception-time"
-  - "urn:srl:evidence:holzel-2011-mindfulness-gray-matter"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:mehling-2012-maia-original"
-  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
-  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
-  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
-aliases:
-  - interoceptive awareness
-  - body awareness
+- vagal-tone
+- autonomic-regulation
+- kosha-architecture
+- relevance-realization
+- polyanchora
+- self-remembering
+- retrocausal-presentiment
+status: canonical
+title: Interoception
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Interoception

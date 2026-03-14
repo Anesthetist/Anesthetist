@@ -1,35 +1,36 @@
 ---
-id: "urn:srl:concept:neuroharmonics"
-type: concept
-title: "NeuroHarmonics"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- NeuroHarmonics™
+- NeuroHarmonics™ Entrainer
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - somnistics
-  - novel-concept
-  - auditory-entrainment
-  - frequency-architecture
-  - adaptive-soundscape
+creator: Randy Graybeal
 dc:source:
-  - "SRL White Papers (PDF):NeuroHarmonics Entrainer Neuroscientific Framework"
+- SRL White Papers (PDF):NeuroHarmonics Entrainer Neuroscientific Framework
+dc:subject:
+- somnistics
+- novel-concept
+- auditory-entrainment
+- frequency-architecture
+- adaptive-soundscape
+id: urn:srl:concept:neuroharmonics
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review
+- urn:srl:evidence:keizer-2010-gamma-neurofeedback
 skos:broader:
-  - neuro-ouroboros
+- neuro-ouroboros
 skos:narrower: []
 skos:related:
-  - binaural-beats-vagal-coupling
-  - neurominute
-  - vagal-tone
-  - neurogating
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review"
-  - "urn:srl:evidence:keizer-2010-gamma-neurofeedback"
-aliases:
-  - "NeuroHarmonics™"
-  - "NeuroHarmonics™ Entrainer"
+- binaural-beats-vagal-coupling
+- neurominute
+- vagal-tone
+- neurogating
+- gamma-state-binding
+status: canonical
+title: NeuroHarmonics
 trademarked: true
+type: concept
+version: 1.0
 ---
 
 # NeuroHarmonics™

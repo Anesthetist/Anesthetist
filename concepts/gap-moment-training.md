@@ -41,6 +41,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ruskin-2015-anesthesia-emergencies
 - urn:srl:observation:obsessive-care-planning-rush
 - urn:srl:observation:blue-angels-embodied-visualization
+- urn:srl:observation:vcu-aana-burnout-wellness-initiative-2025
 skos:broader:
 - somnistics
 skos:narrower:

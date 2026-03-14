@@ -1,41 +1,42 @@
 ---
-id: "urn:srl:concept:hemispheric-rebalancing"
-type: concept
-title: "Hemispheric Rebalancing"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- hemispheric lateralization
+- left-right brain integration
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - neuroscience
-  - hemispheric-lateralization
-  - cognitive-science
-  - attention-modes
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:mcgilchrist-evaluation-framework"
-  - "chatgpt-export:somnistics-and-inner-vision"
-  - "chatgpt-export:resonance-with-somnistics"
+- chatgpt-export:mcgilchrist-evaluation-framework
+- chatgpt-export:somnistics-and-inner-vision
+- chatgpt-export:resonance-with-somnistics
+dc:subject:
+- neuroscience
+- hemispheric-lateralization
+- cognitive-science
+- attention-modes
+id: urn:srl:concept:hemispheric-rebalancing
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:farb-2019-mindfulness-neuroplasticity
+- urn:srl:evidence:holzel-2011-mindfulness-gray-matter
+- urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms
+- urn:srl:evidence:mcgilchrist-2009-master-emissary
+- urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience
+- urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness
+- urn:srl:evidence:vervaeke-relevance-realization
 skos:broader: []
 skos:narrower: []
 skos:related:
-  - relevance-realization
-  - cognitive-variability-analysis
-  - state-transition
-  - interoception
-  - polyanchora
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:farb-2019-mindfulness-neuroplasticity"
-  - "urn:srl:evidence:holzel-2011-mindfulness-gray-matter"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
-  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
-  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
-  - "urn:srl:evidence:vervaeke-relevance-realization"
-aliases:
-  - hemispheric lateralization
-  - left-right brain integration
+- relevance-realization
+- cognitive-variability-analysis
+- state-transition
+- interoception
+- polyanchora
+- gamma-state-binding
+status: canonical
+title: Hemispheric Rebalancing
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Hemispheric Rebalancing

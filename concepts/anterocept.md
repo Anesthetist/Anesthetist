@@ -1,56 +1,59 @@
 ---
-id: "urn:srl:concept:anterocept"
-type: concept
-title: "Anterocept"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- Anterocept(TM)
+- Anterocept™
+- Anterocept™ Spectrum
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - somnistics
-  - novel-concept
-  - interoception
-  - sensory-integration
-  - neuroplasticity
-  - insular-cortex
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:anterocept-spectrum-overview"
-  - "chatgpt-export:novel-concepts-catalog"
+- chatgpt-export:anterocept-spectrum-overview
+- chatgpt-export:novel-concepts-catalog
+dc:subject:
+- somnistics
+- novel-concept
+- interoception
+- sensory-integration
+- neuroplasticity
+- insular-cortex
+id: urn:srl:concept:anterocept
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:craig-2009-interoception-awareness
+- urn:srl:evidence:critchley-2017-interoception-emotion
+- urn:srl:evidence:damasio-1996-somatic-marker
+- urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm
+- urn:srl:evidence:farb-2019-mindfulness-neuroplasticity
+- urn:srl:evidence:ferentzi-2022-heartbeat-counting
+- urn:srl:evidence:giotakos-2025-insula-interoception-time
+- urn:srl:evidence:holzel-2011-mindfulness-gray-matter
+- urn:srl:evidence:josipovic-2019-nondual-awareness
+- urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms
+- urn:srl:evidence:mehling-2012-maia-original
+- urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026
+- urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system
+- urn:srl:evidence:smith-2025-maia2-tbi-alexithymia
+- urn:srl:evidence:tang-2015-neuroscience-meditation
+- urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
+- urn:srl:evidence:van-der-kolk-2014-body-keeps-score
+- urn:srl:evidence:journal-nonlocality-placebo-retrocausality
 skos:broader:
-  - interoception
+- interoception
 skos:narrower: []
 skos:related:
-  - polyanchora
-  - multi-phase-interoceptive-coupling
-  - neurominute
-  - state-transition
-  - kosha-architecture
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:craig-2009-interoception-awareness"
-  - "urn:srl:evidence:critchley-2017-interoception-emotion"
-  - "urn:srl:evidence:damasio-1996-somatic-marker"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
-  - "urn:srl:evidence:farb-2019-mindfulness-neuroplasticity"
-  - "urn:srl:evidence:ferentzi-2022-heartbeat-counting"
-  - "urn:srl:evidence:giotakos-2025-insula-interoception-time"
-  - "urn:srl:evidence:holzel-2011-mindfulness-gray-matter"
-  - "urn:srl:evidence:josipovic-2019-nondual-awareness"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:mehling-2012-maia-original"
-  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
-  - "urn:srl:evidence:smith-2025-maia2-tbi-alexithymia"
-  - "urn:srl:evidence:tang-2015-neuroscience-meditation"
-  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
-  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
-aliases:
-  - "Anterocept(TM)"
-  - "Anterocept™"
-  - "Anterocept™ Spectrum"
+- polyanchora
+- multi-phase-interoceptive-coupling
+- neurominute
+- state-transition
+- kosha-architecture
+- retrocausal-presentiment
+- nonlocal-consciousness
+status: canonical
+title: Anterocept
 trademarked: true
+type: concept
+version: 1.1
 ---
 
 # Anterocept™

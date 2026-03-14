@@ -34,6 +34,7 @@ prov:wasDerivedFrom:
 - urn:srl:observation:crna-humming-commute-regulation
 - urn:srl:evidence:iyengar-1981-light-on-pranayama
 - urn:srl:observation:blue-angels-embodied-visualization
+- urn:srl:observation:vcu-aana-burnout-wellness-initiative-2025
 skos:broader:
 - gap-moment-training
 skos:narrower: []

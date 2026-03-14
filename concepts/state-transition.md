@@ -1,48 +1,51 @@
 ---
-id: "urn:srl:concept:state-transition"
-type: concept
-title: "State Transition"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- state transitions
+- neural state transition
+- state shift
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - neurophysiology
-  - somnistics
-  - state-dynamics
-  - amygdala
-  - prefrontal-cortex
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:co-creation-of-somnistics-system"
-  - "chatgpt-export:gap-moment-practices"
+- chatgpt-export:co-creation-of-somnistics-system
+- chatgpt-export:gap-moment-practices
+dc:subject:
+- neurophysiology
+- somnistics
+- state-dynamics
+- amygdala
+- prefrontal-cortex
+id: urn:srl:concept:state-transition
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:brosschot-2006-perseverative-cognition
+- urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators
+- urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm
+- urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience
+- urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence
+- urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025
+- urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026
+- urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness
+- urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system
+- urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg
+- urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
+- urn:srl:evidence:walker-2009-sleep-emotional-brain
+- urn:srl:evidence:pear-lab-rng-studies
 skos:broader: []
 skos:narrower: []
 skos:related:
-  - gap-moment-training
-  - somnistics
-  - autonomic-regulation
-  - neurogating
-  - polyvagal-theory
-  - anterocept
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:brosschot-2006-perseverative-cognition"
-  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
-  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
-  - "urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence"
-  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
-  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
-  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
-  - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
-  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
-  - "urn:srl:evidence:walker-2009-sleep-emotional-brain"
-aliases:
-  - state transitions
-  - neural state transition
-  - state shift
+- gap-moment-training
+- somnistics
+- autonomic-regulation
+- neurogating
+- polyvagal-theory
+- anterocept
+- nonlocal-consciousness
+- gamma-state-binding
+status: canonical
+title: State Transition
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # State Transition

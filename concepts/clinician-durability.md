@@ -1,44 +1,46 @@
 ---
-id: "urn:srl:concept:clinician-durability"
-type: concept
-title: "Clinician Durability"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- career longevity
+- burnout prevention
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - burnout-prevention
-  - career-longevity
-  - resilience
-  - workforce-retention
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:clinical-wisdom-as-asset"
-  - "google-drive:Blog-Draft-CRNA-Built-Breathing-App.md"
-  - "google-drive:2026-02-28 Somnistics Persona Project Brief Red Team.md"
+- chatgpt-export:clinical-wisdom-as-asset
+- google-drive:Blog-Draft-CRNA-Built-Breathing-App.md
+- google-drive:2026-02-28 Somnistics Persona Project Brief Red Team.md
+dc:subject:
+- burnout-prevention
+- career-longevity
+- resilience
+- workforce-retention
+id: urn:srl:concept:clinician-durability
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:cole-2022-icu-wellbeing-beyond-covid
+- urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators
+- urn:srl:evidence:horvath-2021-srna-pandemic-burnout
+- urn:srl:evidence:mcewan-2007-allostatic-load-brain
+- urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare
+- urn:srl:evidence:putnam-2025-anesthesiology-stress-snapshot
+- urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd
+- urn:srl:evidence:shalev-2012-ptsd-prevention
+- urn:srl:evidence:walker-2009-sleep-emotional-brain
+- urn:srl:evidence:wilbanks-2025-safety-culture-burnout
+- urn:srl:concept:career-longitudinal-gmt
+- urn:srl:observation:vcu-aana-burnout-wellness-initiative-2025
 skos:broader:
-  - somnistics
+- somnistics
 skos:narrower: []
 skos:related:
-  - gap-moment-training
-  - vagal-tone
-  - autonomic-regulation
-  - bandwidth-saturation-micro-events
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:cole-2022-icu-wellbeing-beyond-covid"
-  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
-  - "urn:srl:evidence:horvath-2021-srna-pandemic-burnout"
-  - "urn:srl:evidence:mcewan-2007-allostatic-load-brain"
-  - "urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare"
-  - "urn:srl:evidence:putnam-2025-anesthesiology-stress-snapshot"
-  - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
-  - "urn:srl:evidence:shalev-2012-ptsd-prevention"
-  - "urn:srl:evidence:walker-2009-sleep-emotional-brain"
-  - "urn:srl:evidence:wilbanks-2025-safety-culture-burnout"
-aliases:
-  - career longevity
-  - burnout prevention
+- gap-moment-training
+- vagal-tone
+- autonomic-regulation
+- bandwidth-saturation-micro-events
+status: canonical
+title: Clinician Durability
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # Clinician Durability

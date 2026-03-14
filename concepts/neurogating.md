@@ -1,57 +1,58 @@
 ---
-id: "urn:srl:concept:neurogating"
-type: concept
-title: "Neurogating"
-status: canonical
-creator: "Randy Graybeal"
-created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - somnistics
-  - novel-concept
-  - AI-driven
-  - anomaly-detection
-  - sensor-fusion
-  - cognitive-load
-  - adaptive-intervention
-dc:source:
-  - "chatgpt-export:cognitive-emotional-state-interface"
-  - "chatgpt-export:novel-concepts-catalog"
-  - "chatgpt-export:review-of-professional-profile"
-skos:broader:
-  - somnistics
-skos:narrower:
-  - readyscore
-skos:related:
-  - state-transition
-  - gap-moment-training
-  - cognitive-variability-analysis
-  - neurominute
-  - anterocept
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:chung-2021-wearable-hrv-biofeedback-anxiety"
-  - "urn:srl:evidence:elgendi-2026-wearable-anxiety-systematic-review"
-  - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
-  - "urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare"
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
-  - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
-  - "urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence"
-  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
-  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
-  - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
-  - "urn:srl:evidence:thayer-lane-2009-neurovisceral-integration"
-  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
-  - "urn:srl:evidence:yuan-2016-vagus-nerve-stimulation"
 aliases:
-  - "Neurogating(TM)"
-  - "Neurogating™"
-  - "NeurogatingTM"
-  - "NeuroGating™"
+- Neurogating(TM)
+- Neurogating™
+- NeurogatingTM
+- NeuroGating™
+created: 2026-03-14
+creator: Randy Graybeal
+dc:source:
+- chatgpt-export:cognitive-emotional-state-interface
+- chatgpt-export:novel-concepts-catalog
+- chatgpt-export:review-of-professional-profile
+dc:subject:
+- somnistics
+- novel-concept
+- AI-driven
+- anomaly-detection
+- sensor-fusion
+- cognitive-load
+- adaptive-intervention
+id: urn:srl:concept:neurogating
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:chung-2021-wearable-hrv-biofeedback-anxiety
+- urn:srl:evidence:elgendi-2026-wearable-anxiety-systematic-review
+- urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t
+- urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review
+- urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms
+- urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience
+- urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd
+- urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence
+- urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025
+- urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026
+- urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg
+- urn:srl:evidence:thayer-lane-2009-neurovisceral-integration
+- urn:srl:evidence:van-der-kolk-2014-body-keeps-score
+- urn:srl:evidence:yuan-2016-vagus-nerve-stimulation
+skos:broader:
+- somnistics
+skos:narrower:
+- readyscore
+skos:related:
+- state-transition
+- gap-moment-training
+- cognitive-variability-analysis
+- neurominute
+- anterocept
+- retrocausal-presentiment
+status: canonical
+title: Neurogating
 trademarked: true
+type: concept
+version: 1.1
 ---
 
 # Neurogating™

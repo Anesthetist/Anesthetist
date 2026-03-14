@@ -1,41 +1,42 @@
 ---
-id: "urn:srl:concept:polyvagal-theory"
-type: concept
-title: "Polyvagal Theory"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- PVT
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - neurophysiology
-  - autonomic-nervous-system
-  - theory
-  - neuroception
-  - social-engagement
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:ai-vagal-tone-differentiation"
-  - "chatgpt-export:novel-concepts-catalog"
+- chatgpt-export:ai-vagal-tone-differentiation
+- chatgpt-export:novel-concepts-catalog
+dc:subject:
+- neurophysiology
+- autonomic-nervous-system
+- theory
+- neuroception
+- social-engagement
+id: urn:srl:concept:polyvagal-theory
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:gerritsen-2018-respiratory-vagal
+- urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review
+- urn:srl:evidence:porges-2007-vagal-tone-faces-voices
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system
+- urn:srl:evidence:siegel-2012-interpersonal-neurobiology
+- urn:srl:evidence:yuan-2016-vagus-nerve-stimulation
 skos:broader: []
 skos:narrower: []
 skos:related:
-  - vagal-tone
-  - autonomic-regulation
-  - gap-moment-training
-  - interoception
-  - neurogating
-  - state-transition
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:gerritsen-2018-respiratory-vagal"
-  - "urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review"
-  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
-  - "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
-  - "urn:srl:evidence:yuan-2016-vagus-nerve-stimulation"
-aliases:
-  - PVT
+- vagal-tone
+- autonomic-regulation
+- gap-moment-training
+- interoception
+- neurogating
+- state-transition
+- retrocausal-presentiment
+status: canonical
+title: Polyvagal Theory
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Polyvagal Theory
