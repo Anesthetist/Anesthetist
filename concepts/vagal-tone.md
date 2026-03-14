@@ -1,53 +1,55 @@
 ---
-id: "urn:srl:concept:vagal-tone"
-type: concept
-title: "Vagal Tone"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- HRV coherence
+- parasympathetic tone
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - neurophysiology
-  - autonomic-nervous-system
-  - parasympathetic
-  - HRV
-  - biomarker
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:ai-vagal-tone-differentiation"
-  - "chatgpt-export:breath-hrv-biomarker-map"
+- chatgpt-export:ai-vagal-tone-differentiation
+- chatgpt-export:breath-hrv-biomarker-map
+dc:subject:
+- neurophysiology
+- autonomic-nervous-system
+- parasympathetic
+- HRV
+- biomarker
+id: urn:srl:concept:vagal-tone
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:balban-2023-cyclic-sighing
+- urn:srl:evidence:chung-2021-wearable-hrv-biofeedback-anxiety
+- urn:srl:evidence:gerritsen-2018-respiratory-vagal
+- urn:srl:evidence:goessl-2017-hrv-biofeedback-stress-anxiety
+- urn:srl:evidence:kim-2026-humming-breathing-resonance
+- urn:srl:evidence:laborde-2017-hrv-psychophysiology
+- urn:srl:evidence:lehrer-2000-resonance-frequency
+- urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis
+- urn:srl:evidence:little-2025-a52-breath-method
+- urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation
+- urn:srl:evidence:ozen-2026-deep-breathing-vs-vns
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system
+- urn:srl:evidence:thayer-lane-2009-neurovisceral-integration
+- urn:srl:evidence:van-der-kolk-2014-body-keeps-score
+- urn:srl:evidence:yuan-2016-vagus-nerve-stimulation
+- urn:srl:evidence:zaccaro-2018-breathing-systematic-review
+- urn:srl:evidence:zaliene-2025-breathing-dysfunctional-rct
+- urn:srl:observation:crna-humming-commute-regulation
+- urn:srl:evidence:iyengar-1981-light-on-pranayama
 skos:broader:
-  - autonomic-regulation
+- autonomic-regulation
 skos:narrower: []
 skos:related:
-  - polyvagal-theory
-  - resonant-breathing-frequency
-  - interoception
-  - neurominute
-  - cognitive-variability-analysis
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:balban-2023-cyclic-sighing"
-  - "urn:srl:evidence:chung-2021-wearable-hrv-biofeedback-anxiety"
-  - "urn:srl:evidence:gerritsen-2018-respiratory-vagal"
-  - "urn:srl:evidence:goessl-2017-hrv-biofeedback-stress-anxiety"
-  - "urn:srl:evidence:kim-2026-humming-breathing-resonance"
-  - "urn:srl:evidence:laborde-2017-hrv-psychophysiology"
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis"
-  - "urn:srl:evidence:little-2025-a52-breath-method"
-  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
-  - "urn:srl:evidence:ozen-2026-deep-breathing-vs-vns"
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
-  - "urn:srl:evidence:thayer-lane-2009-neurovisceral-integration"
-  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
-  - "urn:srl:evidence:yuan-2016-vagus-nerve-stimulation"
-  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
-  - "urn:srl:evidence:zaliene-2025-breathing-dysfunctional-rct"
-aliases:
-  - HRV coherence
-  - parasympathetic tone
+- polyvagal-theory
+- resonant-breathing-frequency
+- interoception
+- neurominute
+- cognitive-variability-analysis
+status: canonical
+title: Vagal Tone
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Vagal Tone

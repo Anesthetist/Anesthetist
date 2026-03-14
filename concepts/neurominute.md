@@ -1,52 +1,55 @@
 ---
-id: "urn:srl:concept:neurominute"
-type: concept
-title: "NeuroMinute"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- NeuroMinute(TM)
+- NeuroMinute™
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - somnistics
-  - intervention-format
-  - micro-training
-  - breathwork
-  - interoception
-  - biofeedback
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:neuro-minute-script-guide"
-  - "chatgpt-export:targeting-pathways-with-neurominutes"
-  - "chatgpt-export:novel-concepts-catalog"
-  - "chatgpt-export:novel-concept-registry"
+- chatgpt-export:neuro-minute-script-guide
+- chatgpt-export:targeting-pathways-with-neurominutes
+- chatgpt-export:novel-concepts-catalog
+- chatgpt-export:novel-concept-registry
+dc:subject:
+- somnistics
+- intervention-format
+- micro-training
+- breathwork
+- interoception
+- biofeedback
+id: urn:srl:concept:neurominute
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:balban-2023-cyclic-sighing
+- urn:srl:evidence:dillard-2023-slow-breathing-vr
+- urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm
+- urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t
+- urn:srl:evidence:garcia-argibay-2019-binaural-beats
+- urn:srl:evidence:gerritsen-2018-respiratory-vagal
+- urn:srl:evidence:kim-2026-humming-breathing-resonance
+- urn:srl:evidence:porges-2007-vagal-tone-faces-voices
+- urn:srl:evidence:prinsloo-2011-hrv-biofeedback-immediate
+- urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026
+- urn:srl:evidence:siegel-2012-interpersonal-neurobiology
+- urn:srl:evidence:zaccaro-2018-breathing-systematic-review
+- urn:srl:observation:crna-humming-commute-regulation
+- urn:srl:evidence:iyengar-1981-light-on-pranayama
+- urn:srl:observation:blue-angels-embodied-visualization
 skos:broader:
-  - gap-moment-training
+- gap-moment-training
 skos:narrower: []
 skos:related:
-  - minimum-effective-dose
-  - resonant-breathing-frequency
-  - anterocept
-  - multi-phase-interoceptive-coupling
-  - polyanchora
-  - neuro-ouroboros
-  - titration-to-effect
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:balban-2023-cyclic-sighing"
-  - "urn:srl:evidence:dillard-2023-slow-breathing-vr"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
-  - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
-  - "urn:srl:evidence:garcia-argibay-2019-binaural-beats"
-  - "urn:srl:evidence:gerritsen-2018-respiratory-vagal"
-  - "urn:srl:evidence:kim-2026-humming-breathing-resonance"
-  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
-  - "urn:srl:evidence:prinsloo-2011-hrv-biofeedback-immediate"
-  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
-  - "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
-  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
-aliases:
-  - "NeuroMinute(TM)"
-  - "NeuroMinute™"
+- minimum-effective-dose
+- resonant-breathing-frequency
+- anterocept
+- multi-phase-interoceptive-coupling
+- polyanchora
+- neuro-ouroboros
+- titration-to-effect
+status: canonical
+title: NeuroMinute
 trademarked: true
+type: concept
+version: 1.1
 ---
 
 # NeuroMinute™

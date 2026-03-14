@@ -1,48 +1,50 @@
 ---
-id: "urn:srl:concept:resonant-breathing-frequency"
-type: concept
-title: "Resonant Breathing Frequency"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- RBF
+- resonance frequency breathing
+- 0.1 Hz breathing
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - breathwork
-  - HRV
-  - biofeedback
-  - baroreflex
-  - cardiorespiratory-coupling
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:breathing-basics-for-professionals"
-  - "chatgpt-export:breath-hrv-biomarker-map"
-  - "chatgpt-export:breathing-protocol-comparison"
+- chatgpt-export:breathing-basics-for-professionals
+- chatgpt-export:breath-hrv-biomarker-map
+- chatgpt-export:breathing-protocol-comparison
+dc:subject:
+- breathwork
+- HRV
+- biofeedback
+- baroreflex
+- cardiorespiratory-coupling
+id: urn:srl:concept:resonant-breathing-frequency
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:gerritsen-2018-respiratory-vagal
+- urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review
+- urn:srl:evidence:goessl-2017-hrv-biofeedback-stress-anxiety
+- urn:srl:evidence:kim-2026-humming-breathing-resonance
+- urn:srl:evidence:lehrer-2000-resonance-frequency
+- urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis
+- urn:srl:evidence:little-2025-a52-breath-method
+- urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system
+- urn:srl:evidence:yuan-2016-vagus-nerve-stimulation
+- urn:srl:evidence:zaccaro-2018-breathing-systematic-review
+- urn:srl:evidence:zaliene-2025-breathing-dysfunctional-rct
+- urn:srl:observation:crna-humming-commute-regulation
+- urn:srl:evidence:iyengar-1981-light-on-pranayama
 skos:broader:
-  - autonomic-regulation
+- autonomic-regulation
 skos:narrower: []
 skos:related:
-  - vagal-tone
-  - neurominute
-  - interoception
-  - minimum-effective-dose
-  - titration-to-effect
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:gerritsen-2018-respiratory-vagal"
-  - "urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review"
-  - "urn:srl:evidence:goessl-2017-hrv-biofeedback-stress-anxiety"
-  - "urn:srl:evidence:kim-2026-humming-breathing-resonance"
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis"
-  - "urn:srl:evidence:little-2025-a52-breath-method"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
-  - "urn:srl:evidence:yuan-2016-vagus-nerve-stimulation"
-  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
-  - "urn:srl:evidence:zaliene-2025-breathing-dysfunctional-rct"
-aliases:
-  - RBF
-  - resonance frequency breathing
-  - 0.1 Hz breathing
+- vagal-tone
+- neurominute
+- interoception
+- minimum-effective-dose
+- titration-to-effect
+status: canonical
+title: Resonant Breathing Frequency
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Resonant Breathing Frequency
