@@ -1,7 +1,8 @@
 # PubMed Systematic Literature Mining Plan
 
-**Status:** Ready for execution in fresh session
+**Status:** IN PROGRESS — ~100 PMIDs collected, 5 evidence notes created, background agent resolving top 15
 **Created:** 2026-03-14
+**Updated:** 2026-03-14 (session 2)
 **Purpose:** Deepen the evidence layer (Layer 0) with peer-reviewed citations across all SRL concept domains
 
 ---
@@ -10,15 +11,71 @@
 
 From successful PubMed searches before session dropped:
 
+Session 1 (15 PMIDs):
 ```
 41391628, 40176306, 40386190, 41425202, 39943329, 37678565,
 34586995, 39945155, 40201059, 35916600, 36075318, 30880101,
 30735529, 24956066, 38981179
 ```
 
-**Step 1:** `get_article_metadata` for all 15 PMIDs
-**Step 2:** Create evidence/ notes for each relevant hit
-**Step 3:** Link to existing concept notes via prov:wasDerivedFrom
+Session 2 — Resonance Frequency Breathing (20 PMIDs):
+```
+41686399, 41745654, 41391628, 40176306, 40304861, 40386190,
+39924637, 41425202, 39863733, 39943329, 38507210, 37678565,
+32958502, 37177701, 36469169, 36350478, 35668146, 35254592,
+34187114, 35258750
+```
+
+Session 2 — Interoception + Insular Cortex (16 PMIDs):
+```
+41432193, 40201059, 39554092, 39323912, 38782961, 35916600,
+35511695, 36075318, 33173522, 30880101, 30735529, 30467392,
+28378203, 27119360, 24956066, 23855999
+```
+
+Session 2 — Breathing + HRV + Stress RCTs (12 PMIDs):
+```
+41704158, 41439857, 41136540, 40792649, 40748900, 40045527,
+36630953, 35589024, 30252845, 26111942, 16097498, 15811982
+```
+
+Session 2 — Smartwatch PPG HRV Accuracy (14 PMIDs):
+```
+41513763, 41213119, 41209862, 39946784, 39993288, 38810479,
+34962889, 36480505, 36146394, 35624593, 34113853, 31636284,
+31946820, 29060387
+```
+
+Session 2 — Second Victim Peer Support (15 of 52 PMIDs):
+```
+41726107, 41499327, 41411493, 41321805, 40924563, 40940665,
+40721736, 40725941, 40672382, 40620328, 40485771, 40528566,
+39945967, 39586103, 39844005
+```
+
+Session 2 — Jhana/ACAM fMRI (2 PMIDs):
+```
+40215476, 39681243
+```
+
+Session 2 — Additional singles:
+```
+38981179 (healthcare burnout biofeedback)
+40386190 (polyvagal breathing clinical)
+34308526 (wearable HRV app)
+41142084, 35659408, 32844247 (anesthesia provider resilience)
+37248564, 35326319 (mindfulness insular neuroplasticity)
+40489292, 11044688 (non-invasive VNS + RSA)
+```
+
+**Evidence notes already created (5):**
+- dillard-2023-slow-breathing-vr (PMID 37628548)
+- ferentzi-2022-heartbeat-counting (PMID 35965165)
+- gerritsen-2018-respiratory-vagal (PMID 30356789)
+- holzel-2011-mindfulness-gray-matter (PMID 21071182)
+- keizer-2010-gamma-neurofeedback (PMID 19895855)
+
+**Next:** Background agent resolving top 15 PMIDs via web search → create evidence notes → link to concepts
 
 ---
 
