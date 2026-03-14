@@ -29,6 +29,8 @@ skos:related:
   - self-remembering
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
 aliases:
   - five-sheath model
   - pancha kosha
@@ -59,6 +61,8 @@ Each layer builds on the previous: you cannot access Vijnanamaya (wisdom) withou
 ## Evidence Base
 
 - [[porges-2011-polyvagal-theory]] — vagal tone (Pranamaya layer) directly supports emotional regulation (Manomaya layer) and cognitive clarity (Vijnanamaya layer)
+- [[ehmann-2025-mindfulness-cognition-ltm]] — progressive cognitive-behavioral changes in long-term meditators map onto kosha layers: physical → energetic → mental → wisdom → integration
+- [[sacchet-lab-meditation-frameworks-2023-2026]] — contemplative theory frameworks (Thin Model, MEND, meditative development stages) provide modern scientific scaffolding for the five-sheath progressive model
 - The kosha model provides a pre-existing structural framework that maps cleanly onto modern neuroscience: physical → energetic → emotional → cognitive → transcendent
 
 ## Clinical Observations

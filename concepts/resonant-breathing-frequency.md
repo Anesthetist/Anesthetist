@@ -29,6 +29,7 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
   - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
 aliases:
   - RBF
   - resonance frequency breathing
@@ -54,6 +55,7 @@ The individualized breathing rate (approximately 4.5-6.5 breaths/min, typically 
 
 - [[lehrer-2000-resonance-frequency]] — foundational paper establishing the protocol; each individual has a unique resonant frequency; training produces large increases in HRV and baroreflex gain
 - [[zaccaro-2018-breathing-systematic-review]] — systematic evidence for slow breathing effects on autonomic and CNS activity
+- [[sezer-2025-meditation-autonomic-nervous-system]] — cardiac resonance during long-term meditation practice validates resonant frequency as autonomic training mechanism
 - Single 60-second slow-breath trial raises HF-HRV in trauma survivors
 - 8-week daily practice shows cortical thickness gains in dlPFC and insula
 

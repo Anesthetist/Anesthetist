@@ -32,6 +32,10 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
+  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
 aliases:
   - interoceptive awareness
   - body awareness
@@ -73,6 +77,10 @@ The sense of the internal state of the body — awareness of heartbeat, breathin
 
 - [[porges-2011-polyvagal-theory]] — neuroception is a form of interoceptive processing
 - [[van-der-kolk-2014-body-keeps-score]] — trauma disrupts interoception; body-based interventions restore it
+- [[kerr-2013-mindfulness-body-alpha-rhythms]] — mindfulness starts with the body: somatosensory attention and top-down alpha modulation as interoceptive mechanism
+- [[ehmann-2025-mindfulness-cognition-ltm]] — long-term meditators show enhanced interoceptive awareness; "neurophenomenological gestalt" of embodied cognition
+- [[nath-2025-heartbeat-evoked-potentials-meditation]] — HEP as objective neural biomarker of interoceptive processing depth
+- [[treves-2024-mindful-brain-neural-correlates]] — increased insular cortex thickness correlates with trait mindfulness (insula = primary interoceptive cortex)
 - Insular cortex research on posterior/anterior functional distinction
 - MAIA-2 validation studies
 

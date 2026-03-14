@@ -24,6 +24,7 @@ skos:related:
   - resonant-breathing-frequency
 prov:wasDerivedFrom:
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
 aliases:
   - MED
 trademarked: false
@@ -47,6 +48,7 @@ Borrowed from pharmacology (where MED minimizes side effects while achieving the
 ## Evidence Base
 
 - [[lehrer-2000-resonance-frequency]] — resonance frequency effects are measurable within a single 60-second session
+- [[sezer-2025-meditation-autonomic-nervous-system]] — ANS changes detectable in brief meditation intervals in long-term practitioners; validates that minimum effective dose produces measurable autonomic shifts
 - Meta-analysis: brief daily mindfulness beats sporadic long sessions for mood outcomes
 - Micro-dose awe research (5-second panoramic visualization) cuts depressive rumination
 - Myelination efficiency literature: frequency x novelty > duration

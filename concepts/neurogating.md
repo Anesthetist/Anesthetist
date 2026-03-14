@@ -32,6 +32,8 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:observation:neurogating-clinical-triggers"
+  - "urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence"
+  - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
 aliases:
   - "Neurogating(TM)"
   - "Neurogating™"
@@ -92,6 +94,8 @@ Design principle: the user sees only the minimum information needed to act. The 
 - [[porges-2011-polyvagal-theory]] — neuroception as the biological precedent for automated threat/safety detection; Neurogating is the technological analog
 - Machine learning literature: RNN/GRU hybrid networks achieving >90% accuracy in cognitive load classification
 - Eye movement data achieving 95% specificity in anomaly detection for high-workload events
+- [[sacchet-2012-volitional-neuromagnetic-coherence]] — foundational evidence for volitional control of brain coherence via neurofeedback; validates the closed-loop detection-and-response principle underlying Neurogating
+- [[ganesan-2025-neurofeedback-meditation-7t]] — PCC-targeted neurofeedback at 7T helps novices disengage from self-referential thought; demonstrates feasibility of real-time neural state detection and adaptive intervention
 
 ## Clinical Observations
 

@@ -25,6 +25,7 @@ skos:related:
   - neuro-ouroboros
 prov:wasDerivedFrom:
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
 aliases:
   - dose-response
   - adaptive dosing
@@ -50,6 +51,7 @@ Just as anesthesiologists titrate IV medications to patient response (observing 
 ## Evidence Base
 
 - [[lehrer-2000-resonance-frequency]] — resonance frequency effects compound with regular practice; the protocol is learnable in 10 sessions
+- [[sezer-2025-meditation-autonomic-nervous-system]] — individual variation in autonomic responses to meditation supports the titration principle; cardiac resonance frequency varies by practitioner
 - Pharmacological dose-response literature — the principle that minimum effective dose avoids side effects while achieving therapeutic target
 - Neuroplasticity research: myelination efficiency favors frequent short exposures over infrequent long sessions
 

@@ -31,6 +31,8 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:observation:polyanchora-or-lock-in"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
 aliases:
   - "Polyanchora(TM)"
   - "Polyanchora™"
@@ -73,6 +75,8 @@ Multi-sensory attention recruits overlapping fronto-parietal hubs, raising corti
 - [[porges-2011-polyvagal-theory]] — ventral vagal activation supports the social engagement system that enables multi-modal awareness
 - Fronto-parietal network literature on cross-modal attention and phase synchrony
 - Working memory research on multi-sensory integration benefits
+- [[kerr-2013-mindfulness-body-alpha-rhythms]] — top-down alpha modulation across somatosensory cortex supports multi-anchor attentional switching mechanism
+- [[prakash-2025-mindfulness-network-neuroscience]] — network neuroscience metrics (segregation, integration) validate the fronto-parietal engagement underlying multi-anchor attention training
 
 ## Clinical Observations
 

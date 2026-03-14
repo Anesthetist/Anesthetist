@@ -35,6 +35,8 @@ prov:wasDerivedFrom:
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
   - "urn:srl:observation:shift-transitions-30-40"
   - "urn:srl:observation:gap-moment-philosophical-anchors"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
 aliases:
   - "Gap Moment Training(TM)"
   - "Gap Moment Training™"
@@ -82,6 +84,8 @@ Gap Moment Training draws on deep cross-traditional resonance:
 - [[lehrer-2000-resonance-frequency]] — breathing at resonant frequency produces measurable autonomic shifts within a single session, validating the 60-second intervention window
 - [[porges-2011-polyvagal-theory]] — neuroception (subconscious threat detection) governs autonomic state shifts; conscious breathing interventions access the ventral vagal pathway
 - [[zaccaro-2018-breathing-systematic-review]] — systematic evidence for slow breathing effects on autonomic and central nervous system activity
+- [[sezer-2025-meditation-autonomic-nervous-system]] — autonomic flexibility in long-term meditators validates that brief, repeated practice (gap moment format) produces durable ANS changes
+- [[ehmann-2025-mental-health-advanced-meditators]] — advanced meditators report resolution of anxiety, PTSD, addiction; validates that structured practice targeting state transitions produces clinical-grade outcomes
 
 ## Clinical Observations
 

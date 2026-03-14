@@ -29,6 +29,8 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:observation:mpic-clinical-application"
+  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
 aliases:
   - MPIC
   - "Multi-Phase Interoceptiv™ Coupling"
@@ -76,6 +78,8 @@ Strengthens the insula-cingulate-brainstem integration pathway. Increases:
 - [[porges-2011-polyvagal-theory]] — polyvagal network coordination; vagal activation through multi-signal awareness
 - Insular cortex research on interoceptive accuracy and its relationship to emotional regulation
 - Clinical interoception literature on multi-signal attention training benefits
+- [[nath-2025-heartbeat-evoked-potentials-meditation]] — HEP changes during meditation depth validate multi-signal interoceptive coupling; cardiac interoception as measurable biomarker for MPIC progression
+- [[ehmann-2025-mindfulness-cognition-ltm]] — long-term meditators show enhanced multi-modal interoceptive processing, validating progressive coupling of internal signals
 
 ## Clinical Observations
 

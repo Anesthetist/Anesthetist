@@ -25,6 +25,7 @@ prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
   - "urn:srl:observation:co-regulation-team-breath"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
 aliases:
   - interpersonal regulation
   - vagal synchrony
@@ -53,6 +54,7 @@ The "Team Breath Before You Start" — one synchronized slow breath after surgic
 - [[porges-2011-polyvagal-theory]] — social engagement system links face, voice, breath via cranial nerves
 - [[siegel-2012-interpersonal-neurobiology]] — the mind as relational process; co-regulation as development mechanism
 - [[co-regulation-team-breath]] — observed clinical effects of team-level regulation
+- [[sezer-2025-meditation-autonomic-nervous-system]] — autonomic synchrony and respiratory coupling as mechanisms for interpersonal co-regulation during contemplative practice
 
 ## Related Concepts
 

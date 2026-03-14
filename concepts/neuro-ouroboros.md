@@ -33,6 +33,8 @@ prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
   - "urn:srl:observation:neuro-ouroboros-progressive-effects"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
 aliases:
   - "Neuro-Oroboros"
   - "Neuro-Oroboros™"
@@ -76,6 +78,8 @@ Each day's NeuroMinute:
 - [[porges-2011-polyvagal-theory]] — ventral vagal pathway strengthening through progressive breathing training
 - [[lehrer-2000-resonance-frequency]] — resonance frequency effects persist and compound with regular practice over 10+ sessions
 - Neuroplasticity literature on progressive skill acquisition and spaced repetition
+- [[ehmann-2025-mindfulness-cognition-ltm]] — progressive cognitive-behavioral changes in long-term meditators validate the recursive deepening architecture; each practice phase builds capacity for the next
+- [[sacchet-lab-jhana-studies-2024-2025]] — 7T fMRI shows progressive neural reorganization across meditation depth levels, validating the 21-day progressive architecture
 
 ## Clinical Observations
 

@@ -26,6 +26,9 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:observation:interoceptive-blindness-clinicians"
   - "urn:srl:observation:maia2-pedagogical-mapping"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
 aliases:
   - body literacy
   - physiological self-monitoring
@@ -54,6 +57,9 @@ MAIA-2 (Multidimensional Assessment of Interoceptive Awareness) 8 subscales prov
 
 - MAIA-2 validation studies (Mehling et al., 2012, 2018)
 - [[interoceptive-blindness-clinicians]] — the deficit that interoceptive literacy corrects
+- [[kerr-2013-mindfulness-body-alpha-rhythms]] — top-down alpha modulation as the neural mechanism underlying learned interoceptive literacy; body-first attention training builds alpha-gated body awareness
+- [[nath-2025-heartbeat-evoked-potentials-meditation]] — HEP amplitude as objective measurement of interoceptive literacy progression (complements subjective MAIA-2)
+- [[ehmann-2025-mindfulness-cognition-ltm]] — long-term meditators demonstrate the full spectrum of interoceptive literacy: from basic noticing to complex multi-modal awareness
 
 ## Related Concepts
 

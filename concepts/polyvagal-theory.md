@@ -27,6 +27,7 @@ skos:related:
   - state-transition
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
 aliases:
   - PVT
 trademarked: false
@@ -61,6 +62,7 @@ HRV patterns differentiate ventral vs. dorsal vagal states:
 ## Evidence Base
 
 - [[porges-2011-polyvagal-theory]] — the foundational text; comprehensive presentation of the three-tier model
+- [[sezer-2025-meditation-autonomic-nervous-system]] — Harvard review documenting concurrent sympathetic + parasympathetic activation ("relaxed alertness") extends polyvagal framework; ventral vagal engagement during meditation
 - Slow, rhythmic breathing directly stimulates the ventral vagal pathway
 - RSA is a measurable, trainable index of vagal function
 

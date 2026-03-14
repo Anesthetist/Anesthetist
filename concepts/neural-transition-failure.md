@@ -24,6 +24,8 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:observation:error-archetypes-qrc"
   - "urn:srl:observation:bandwidth-saturation-micro-events"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
 aliases:
   - residual sympathetic bleed
   - autonomic carry-over
@@ -56,6 +58,11 @@ After a stressful event (difficult intubation, patient crisis, interpersonal con
 ## Somnistics Solution
 
 [[gap-moment-training]] is specifically designed to prevent neural transition failure by ensuring complete autonomic reset at each transition point. A single 60-second [[neurominute]] between cases can interrupt the compounding cascade.
+
+## Evidence Base
+
+- [[sezer-2025-meditation-autonomic-nervous-system]] — long-term meditation produces durable ANS flexibility; the opposite of neural transition failure. Cardiac resonance and respiratory coupling as markers of successful transition completion
+- [[rayani-2025-brain-stimulation-mindfulness-ptsd]] — PTSD involves chronic neural transition failure (stuck in sympathetic activation); rTMS-enhanced mindfulness provides evidence for reversibility
 
 ## Related Concepts
 

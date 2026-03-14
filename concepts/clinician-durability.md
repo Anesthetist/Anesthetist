@@ -28,6 +28,8 @@ prov:wasDerivedFrom:
   - "urn:srl:observation:bandwidth-saturation-micro-events"
   - "urn:srl:observation:error-archetypes-qrc"
   - "urn:srl:observation:sleep-debt-clinical-performance"
+  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
+  - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
 aliases:
   - career longevity
   - burnout prevention
@@ -62,6 +64,8 @@ Clinician durability reframes burnout prevention from "managing stress events" t
 - [[bandwidth-saturation-micro-events]] — cumulative micro-events as the real burnout mechanism
 - [[error-archetypes-qrc]] — state drift causes errors, which causes moral injury, which accelerates burnout
 - [[sleep-debt-clinical-performance]] — sleep quality as foundation
+- [[ehmann-2025-mental-health-advanced-meditators]] — advanced meditators report resolution of anxiety, PTSD, addiction, and burnout symptoms; validates that sustained contemplative practice builds the autonomic infrastructure underlying career durability
+- [[rayani-2025-brain-stimulation-mindfulness-ptsd]] — rTMS enhances dispositional mindfulness in PTSD patients; demonstrates that autonomic regulation capacity is augmentable in trauma-exposed populations, supporting the durability-as-infrastructure thesis
 
 ## Related Concepts
 

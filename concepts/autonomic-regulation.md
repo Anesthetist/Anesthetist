@@ -30,6 +30,8 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
 aliases:
   - ANS regulation
   - autonomic flexibility
@@ -65,6 +67,8 @@ The body's capacity to shift flexibly between sympathetic (activation), parasymp
 
 - [[porges-2011-polyvagal-theory]] — three-tier autonomic hierarchy; neuroception governs state shifts
 - [[zaccaro-2018-breathing-systematic-review]] — systematic evidence for breathing effects on ANS
+- [[sezer-2025-meditation-autonomic-nervous-system]] — Harvard review of ANS effects in long-term meditators; documents "relaxed alertness" (concurrent sympathetic + parasympathetic activation) and cardiac resonance
+- [[treves-2024-mindful-brain-neural-correlates]] — 68-study systematic review: decreased amygdala reactivity correlates with greater autonomic flexibility
 
 ## Clinical Observations
 

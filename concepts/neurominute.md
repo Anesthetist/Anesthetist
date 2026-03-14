@@ -34,6 +34,8 @@ prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
   - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
 aliases:
   - "NeuroMinute(TM)"
   - "NeuroMinute™"
@@ -78,6 +80,8 @@ Designed to develop neural density along pathways associated with decreased ment
 - [[lehrer-2000-resonance-frequency]] — breathing at resonant frequency produces measurable HRV shifts within a single session, validating the 60-second format
 - [[porges-2011-polyvagal-theory]] — slow rhythmic breathing directly stimulates the ventral vagal pathway; RSA as measurable index
 - [[zaccaro-2018-breathing-systematic-review]] — systematic evidence for autonomic and CNS effects of controlled breathing
+- [[kerr-2013-mindfulness-body-alpha-rhythms]] — somatosensory alpha modulation measurable within brief practice windows, validating 60-second intervention format
+- [[sezer-2025-meditation-autonomic-nervous-system]] — cardiac resonance and respiratory coupling effects detectable in brief meditation intervals
 
 ## Clinical Observations
 

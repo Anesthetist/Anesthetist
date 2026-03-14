@@ -29,6 +29,8 @@ skos:related:
   - anterocept
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
 aliases:
   - Gurdjieff self-remembering
   - divided attention
@@ -64,6 +66,8 @@ Self-remembering maps onto several SRL constructs:
 ## Evidence Base
 
 - [[porges-2011-polyvagal-theory]] — self-remembering requires the ventral vagal state (safety + alertness); it is impossible in sympathetic activation or dorsal vagal shutdown
+- [[ehmann-2025-mindfulness-cognition-ltm]] — altered self-awareness in long-term meditators maps onto the self-remembering capacity: simultaneous awareness of self-as-observer and engaged activity
+- [[shinozuka-2025-cessation-consciousness-eeg-meg]] — extended cessation states represent the extreme end of self-remembering: the observer persists even as content disappears
 - Contemplative neuroscience literature on meta-awareness and default mode network deactivation
 
 ## Clinical Observations

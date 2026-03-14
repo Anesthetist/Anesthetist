@@ -26,6 +26,8 @@ skos:related:
   - cognitive-variability-analysis
 prov:wasDerivedFrom:
   - "urn:srl:evidence:vervaeke-relevance-realization"
+  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
+  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
 aliases:
   - RR
   - salience detection
@@ -50,6 +52,8 @@ Relevance realization is not a single process but an ecology of processes (oppon
 ## Evidence Base
 
 - [[vervaeke-relevance-realization]] — Vervaeke's academic work on the cognitive science of relevance, wisdom, and meaning-making
+- [[treves-2024-mindful-brain-neural-correlates]] — decreased amygdala reactivity and altered DMN connectivity with greater trait mindfulness reflect enhanced relevance detection: less noise, more signal
+- [[sezer-2022-resting-state-fmri-mindfulness]] — salience network and frontoparietal network FC changes during mindfulness map directly onto the attention control and self-awareness components of relevance realization
 - Salience network neuroscience (anterior insula + ACC as the relevance detection hub)
 
 ## Clinical Observations

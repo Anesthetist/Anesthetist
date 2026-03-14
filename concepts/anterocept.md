@@ -29,6 +29,9 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:observation:anterocept-progressive-training"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
 aliases:
   - "Anterocept(TM)"
   - "Anterocept™"
@@ -72,6 +75,9 @@ As a micro-module within Pausality, Anterocept™ delivers:
 - Insular cortex studies (posterior/anterior distinction in interoceptive processing)
 - Farb et al. (2019) — mindfulness-induced changes in insula and corpus callosum
 - Tang et al. (2019) — neuroplasticity evidence for interoceptive training
+- [[kerr-2013-mindfulness-body-alpha-rhythms]] — body-first somatosensory attention validates Anterocept Domain 1 "awareness before technique" principle; top-down alpha modulation as progressive interoceptive training mechanism
+- [[ehmann-2025-mindfulness-cognition-ltm]] — long-term meditators exhibit the exact progressive interoceptive enhancement Anterocept trains: from basic body awareness to complex multi-modal integration
+- [[nath-2025-heartbeat-evoked-potentials-meditation]] — HEP as objective biomarker for tracking Anterocept domain progression (Domain 1→2→3 should show increasing HEP amplitude)
 
 ## Clinical Observations
 

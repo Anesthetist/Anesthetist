@@ -25,6 +25,7 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:observation:interoceptive-blindness-clinicians"
   - "urn:srl:observation:awareness-before-technique"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
 aliases:
   - breath blindness
   - diaphragm disconnect
@@ -49,6 +50,10 @@ Diaphragmatic blindness is the interoceptive deficit where a person cannot accur
 ## Somnistics Solution
 
 Domain 1 of [[anterocept]] specifically targets diaphragmatic blindness: simple breath awareness exercises with haptic feedback confirming diaphragmatic vs. thoracic breathing. Only after this blindness is corrected can protocols like the [[anesthetists-breath-protocol]] be effectively practiced.
+
+## Evidence Base
+
+- [[kerr-2013-mindfulness-body-alpha-rhythms]] — somatosensory alpha modulation demonstrates the neural mechanism: diaphragmatic blindness reflects impaired top-down attentional allocation to body regions; mindfulness training restores this alpha-gated body awareness
 
 ## Related Concepts
 

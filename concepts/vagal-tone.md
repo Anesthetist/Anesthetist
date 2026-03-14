@@ -28,6 +28,8 @@ skos:related:
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
 aliases:
   - HRV coherence
   - parasympathetic tone
@@ -59,6 +61,8 @@ From [[polyvagal-theory]], two distinct vagal circuits:
 
 - [[porges-2011-polyvagal-theory]] — RSA as measurable index of ventral vagal function; slow rhythmic breathing directly stimulates the ventral vagal pathway
 - [[lehrer-2000-resonance-frequency]] — resonant frequency breathing maximally stimulates baroreflex, producing large increases in HRV and vagal tone
+- [[sezer-2025-meditation-autonomic-nervous-system]] — cardiac resonance and respiratory coupling in long-term meditators; parasympathetic markers track meditation depth
+- [[nath-2025-heartbeat-evoked-potentials-meditation]] — heartbeat-evoked potentials (HEP) as neural marker of interoceptive-vagal integration during meditation
 - 60-second slow breathing raises HF-HRV in trauma survivors (single-session effects)
 - 8-week daily practice shows cortical thickness gains in dlPFC and insula
 

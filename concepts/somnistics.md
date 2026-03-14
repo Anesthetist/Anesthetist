@@ -38,6 +38,10 @@ prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
   - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
+  - "urn:srl:evidence:ganesan-2025-enigma-meditation-consortium"
 aliases:
   - "Somnistics™"
 trademarked: false
@@ -97,6 +101,10 @@ The differentiator: precision regulation for high-stakes professionals, embedded
 - [[lehrer-2000-resonance-frequency]] — resonant breathing as the core physiological mechanism
 - [[van-der-kolk-2014-body-keeps-score]] — embodied trauma processing and somatic approaches
 - [[zaccaro-2018-breathing-systematic-review]] — systematic evidence for breathing interventions
+- [[sezer-2025-meditation-autonomic-nervous-system]] — Harvard review establishing autonomic nervous system changes from long-term meditation; validates somnistics as applied ANS training science
+- [[kerr-2013-mindfulness-body-alpha-rhythms]] — body-first somatosensory attention as mechanism validates somnistics' breath-first, body-first approach
+- [[ehmann-2025-mental-health-advanced-meditators]] — clinical outcomes (PTSD, anxiety, addiction resolution) from advanced meditation practice validate somnistics' clinical credibility claims
+- [[ganesan-2025-enigma-meditation-consortium]] — ENIGMA-Meditation worldwide consortium establishes the institutional credibility infrastructure for meditation neuroscience research
 
 ## Clinical Observations
 

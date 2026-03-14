@@ -27,6 +27,9 @@ skos:related:
   - anterocept
 prov:wasDerivedFrom:
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
 aliases:
   - state transitions
   - neural state transition
@@ -51,6 +54,9 @@ Structured 60-second practices during transitions prevent "residual sympathetic 
 ## Evidence Base
 
 - [[porges-2011-polyvagal-theory]] — autonomic state transitions follow the polyvagal hierarchy; neuroception determines whether transitions move toward safety or threat
+- [[sezer-2025-meditation-autonomic-nervous-system]] — ANS state transitions during meditation mapped via HRV, cardiac resonance, and respiratory coupling
+- [[sacchet-lab-jhana-studies-2024-2025]] — 7T fMRI evidence for progressive neural state transitions during advanced meditation (DMN reorganization, gradient flattening, criticality dynamics)
+- [[ehmann-2025-mindfulness-cognition-ltm]] — cognitive state transitions in long-term meditators: enhanced emotional neutrality, reduced amygdala reactivity
 - Amygdala deactivation timing literature (LeDoux, Rauch) — minimum 60-90 seconds for cortical override of limbic activation
 
 ## Clinical Observations
