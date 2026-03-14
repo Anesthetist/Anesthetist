@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:josipovic-2019-nondual-awareness"
 type: evidence
 title: "Nondual Awareness: Consciousness-as-such as Non-Representational Reflexivity"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

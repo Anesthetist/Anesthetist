@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:lehrer-2000-resonance-frequency"
 type: evidence
 title: "Resonance frequency biofeedback training to increase cardiac variability: Rationale and manual for training"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

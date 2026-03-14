@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:balban-2023-cyclic-sighing"
 type: evidence
 title: "Brief structured respiration practices enhance mood and reduce physiological arousal"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

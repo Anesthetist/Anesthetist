@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:vervaeke-relevance-realization"
 type: evidence
 title: "Relevance Realization and the Emerging Framework in Cognitive Science"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

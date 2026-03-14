@@ -2,7 +2,7 @@
 id: "urn:srl:concept:autonomic-regulation"
 type: concept
 title: "Autonomic Regulation"
-status: review
+status: canonical
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

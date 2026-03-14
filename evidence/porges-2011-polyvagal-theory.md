@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:porges-2011-polyvagal-theory"
 type: evidence
 title: "The Polyvagal Theory: Neurophysiological Foundations of Emotions, Attachment, Communication, and Self-Regulation"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

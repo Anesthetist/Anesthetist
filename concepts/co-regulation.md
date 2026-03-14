@@ -2,7 +2,7 @@
 id: "urn:srl:concept:co-regulation"
 type: concept
 title: "Co-Regulation"
-status: review
+status: canonical
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

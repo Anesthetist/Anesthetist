@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:mcgilchrist-2009-master-emissary"
 type: evidence
 title: "The Master and His Emissary: The Divided Brain and the Making of the Western World"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

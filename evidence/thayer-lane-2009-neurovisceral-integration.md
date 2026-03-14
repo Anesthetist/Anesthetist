@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:thayer-lane-2009-neurovisceral-integration"
 type: evidence
 title: "Claude Bernard and the heart-brain connection: Further elaboration of a model of neurovisceral integration"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

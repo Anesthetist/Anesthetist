@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:farb-2019-mindfulness-neuroplasticity"
 type: evidence
 title: "Interoception, contemplative practice, and health"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

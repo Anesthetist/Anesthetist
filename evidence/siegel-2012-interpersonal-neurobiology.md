@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
 type: evidence
 title: "The Developing Mind: How Relationships and the Brain Interact to Shape Who We Are"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

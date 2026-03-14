@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
 type: evidence
 title: "The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:garcia-argibay-2019-binaural-beats"
 type: evidence
 title: "Efficacy of binaural auditory beats in cognition, anxiety, and pain perception"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14

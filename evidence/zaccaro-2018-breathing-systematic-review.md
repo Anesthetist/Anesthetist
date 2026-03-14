@@ -2,7 +2,7 @@
 id: "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
 type: evidence
 title: "How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing"
-status: draft
+status: review
 creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
