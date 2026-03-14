@@ -1,0 +1,15 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/
+.obsidian/hotkeys.json
+.trash/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large binary assets (track with Git LFS if needed)
+*.mp4
+*.mov
+*.zip

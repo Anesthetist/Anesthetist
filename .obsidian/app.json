@@ -1,0 +1,11 @@
+{
+  "strictLineBreaks": false,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showLineNumber": true,
+  "readableLineLength": true,
+  "autoConvertHtml": true,
+  "defaultViewMode": "source",
+  "livePreview": true
+}
