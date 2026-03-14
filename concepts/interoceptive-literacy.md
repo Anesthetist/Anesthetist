@@ -24,11 +24,9 @@ skos:related:
   - clinician-durability
   - awareness-before-technique
 prov:wasDerivedFrom:
-  - "urn:srl:observation:interoceptive-blindness-clinicians"
-  - "urn:srl:observation:maia2-pedagogical-mapping"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:ferentzi-2022-heartbeat-counting"
+  - "urn:srl:evidence:mehling-2012-maia-original"
+  - "urn:srl:evidence:smith-2025-maia2-tbi-alexithymia"
 aliases:
   - body literacy
   - physiological self-monitoring

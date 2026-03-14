@@ -26,10 +26,18 @@ skos:related:
   - polyvagal-theory
   - anterocept
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
-  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
+  - "urn:srl:evidence:brosschot-2006-perseverative-cognition"
+  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
   - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
+  - "urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence"
+  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
+  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
+  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
+  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
+  - "urn:srl:evidence:walker-2009-sleep-emotional-brain"
 aliases:
   - state transitions
   - neural state transition

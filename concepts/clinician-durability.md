@@ -25,11 +25,16 @@ skos:related:
   - autonomic-regulation
   - bandwidth-saturation-micro-events
 prov:wasDerivedFrom:
-  - "urn:srl:observation:bandwidth-saturation-micro-events"
-  - "urn:srl:observation:error-archetypes-qrc"
-  - "urn:srl:observation:sleep-debt-clinical-performance"
+  - "urn:srl:evidence:cole-2022-icu-wellbeing-beyond-covid"
   - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
+  - "urn:srl:evidence:horvath-2021-srna-pandemic-burnout"
+  - "urn:srl:evidence:mcewan-2007-allostatic-load-brain"
+  - "urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare"
+  - "urn:srl:evidence:putnam-2025-anesthesiology-stress-snapshot"
   - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
+  - "urn:srl:evidence:shalev-2012-ptsd-prevention"
+  - "urn:srl:evidence:walker-2009-sleep-emotional-brain"
+  - "urn:srl:evidence:wilbanks-2025-safety-culture-burnout"
 aliases:
   - career longevity
   - burnout prevention

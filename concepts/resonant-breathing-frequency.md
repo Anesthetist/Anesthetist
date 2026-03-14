@@ -27,9 +27,17 @@ skos:related:
   - minimum-effective-dose
   - titration-to-effect
 prov:wasDerivedFrom:
+  - "urn:srl:evidence:gerritsen-2018-respiratory-vagal"
+  - "urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review"
+  - "urn:srl:evidence:goessl-2017-hrv-biofeedback-stress-anxiety"
+  - "urn:srl:evidence:kim-2026-humming-breathing-resonance"
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
+  - "urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis"
+  - "urn:srl:evidence:little-2025-a52-breath-method"
   - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:yuan-2016-vagus-nerve-stimulation"
+  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
+  - "urn:srl:evidence:zaliene-2025-breathing-dysfunctional-rct"
 aliases:
   - RBF
   - resonance frequency breathing

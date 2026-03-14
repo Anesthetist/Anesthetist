@@ -28,10 +28,13 @@ skos:related:
   - state-transition
   - gap-moment-training
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
+  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
+  - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
+  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
   - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:thayer-lane-2009-neurovisceral-integration"
   - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
+  - "urn:srl:evidence:walker-2009-sleep-emotional-brain"
 aliases:
   - ANS regulation
   - autonomic flexibility

@@ -24,7 +24,7 @@ skos:related:
   - vagal-tone
   - self-remembering
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
 aliases:
   - "SomnoAffinity™"
   - "SomnoAffinity™ Affirmation Loop"

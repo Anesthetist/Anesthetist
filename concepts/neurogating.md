@@ -30,10 +30,22 @@ skos:related:
   - neurominute
   - anterocept
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:observation:neurogating-clinical-triggers"
-  - "urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence"
+  - "urn:srl:evidence:chung-2021-wearable-hrv-biofeedback-anxiety"
+  - "urn:srl:evidence:elgendi-2026-wearable-anxiety-systematic-review"
   - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
+  - "urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare"
+  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
+  - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
+  - "urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence"
+  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
+  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
+  - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
+  - "urn:srl:evidence:thayer-lane-2009-neurovisceral-integration"
+  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
+  - "urn:srl:evidence:yuan-2016-vagus-nerve-stimulation"
 aliases:
   - "Neurogating(TM)"
   - "Neurogating™"

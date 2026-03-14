@@ -23,8 +23,7 @@ skos:related:
   - resonant-breathing-frequency
   - awareness-before-technique
 prov:wasDerivedFrom:
-  - "urn:srl:observation:interoceptive-blindness-clinicians"
-  - "urn:srl:observation:awareness-before-technique"
+  - "urn:srl:evidence:critchley-2017-interoception-emotion"
   - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
 aliases:
   - breath blindness

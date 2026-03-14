@@ -31,11 +31,18 @@ skos:related:
   - neuro-ouroboros
   - titration-to-effect
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
+  - "urn:srl:evidence:balban-2023-cyclic-sighing"
+  - "urn:srl:evidence:dillard-2023-slow-breathing-vr"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
+  - "urn:srl:evidence:garcia-argibay-2019-binaural-beats"
+  - "urn:srl:evidence:gerritsen-2018-respiratory-vagal"
+  - "urn:srl:evidence:kim-2026-humming-breathing-resonance"
+  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
+  - "urn:srl:evidence:prinsloo-2011-hrv-biofeedback-immediate"
+  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
+  - "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
   - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
 aliases:
   - "NeuroMinute(TM)"
   - "NeuroMinute™"

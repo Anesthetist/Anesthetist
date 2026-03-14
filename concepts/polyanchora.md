@@ -29,10 +29,9 @@ skos:related:
   - multi-phase-interoceptive-coupling
   - neuro-ouroboros
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:observation:polyanchora-or-lock-in"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
+  - "urn:srl:evidence:garcia-argibay-2019-binaural-beats"
+  - "urn:srl:evidence:keizer-2010-gamma-neurofeedback"
+  - "urn:srl:evidence:tang-2015-neuroscience-meditation"
 aliases:
   - "Polyanchora(TM)"
   - "Polyanchora™"

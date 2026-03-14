@@ -31,12 +31,22 @@ skos:related:
   - state-transition
   - minimum-effective-dose
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:observation:shift-transitions-30-40"
-  - "urn:srl:observation:gap-moment-philosophical-anchors"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:brosschot-2006-perseverative-cognition"
+  - "urn:srl:evidence:dillard-2023-slow-breathing-vr"
   - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
+  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:horvath-2021-srna-pandemic-burnout"
+  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
+  - "urn:srl:evidence:mcewan-2007-allostatic-load-brain"
+  - "urn:srl:evidence:paul-2007-breathing-instruction-anxiety"
+  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:prinsloo-2011-hrv-biofeedback-immediate"
+  - "urn:srl:evidence:putnam-2025-anesthesiology-stress-snapshot"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:shalev-2012-ptsd-prevention"
+  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
+  - "urn:srl:evidence:vervaeke-relevance-realization"
+  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
 aliases:
   - "Gap Moment Training(TM)"
   - "Gap Moment Training™"

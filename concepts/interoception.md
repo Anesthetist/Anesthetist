@@ -30,11 +30,19 @@ skos:related:
   - polyanchora
   - self-remembering
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:craig-2009-interoception-awareness"
+  - "urn:srl:evidence:critchley-2017-interoception-emotion"
+  - "urn:srl:evidence:damasio-1996-somatic-marker"
   - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:farb-2019-mindfulness-neuroplasticity"
+  - "urn:srl:evidence:ferentzi-2022-heartbeat-counting"
+  - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
+  - "urn:srl:evidence:giotakos-2025-insula-interoception-time"
+  - "urn:srl:evidence:holzel-2011-mindfulness-gray-matter"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:mehling-2012-maia-original"
   - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
+  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
   - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
 aliases:
   - interoceptive awareness

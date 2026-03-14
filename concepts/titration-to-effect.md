@@ -25,7 +25,6 @@ skos:related:
   - neuro-ouroboros
 prov:wasDerivedFrom:
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
 aliases:
   - dose-response
   - adaptive dosing

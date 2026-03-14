@@ -25,9 +25,10 @@ skos:related:
   - state-transition
   - cognitive-variability-analysis
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:vervaeke-relevance-realization"
-  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
+  - "urn:srl:evidence:damasio-1996-somatic-marker"
+  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
   - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
+  - "urn:srl:evidence:vervaeke-relevance-realization"
 aliases:
   - RR
   - salience detection

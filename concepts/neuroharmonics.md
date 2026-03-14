@@ -24,7 +24,8 @@ skos:related:
   - vagal-tone
   - neurogating
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:garcia-argibay-2019-binaural-beats"
+  - "urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review"
+  - "urn:srl:evidence:keizer-2010-gamma-neurofeedback"
 aliases:
   - "NeuroHarmonics™"
   - "NeuroHarmonics™ Entrainer"

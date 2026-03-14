@@ -22,10 +22,10 @@ skos:related:
   - gap-moment-training
   - state-transition
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
-  - "urn:srl:observation:co-regulation-team-breath"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:cole-2022-icu-wellbeing-beyond-covid"
+  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
+  - "urn:srl:evidence:schechter-2010-breathing-clinician-education"
+  - "urn:srl:evidence:wilbanks-2025-safety-culture-burnout"
 aliases:
   - interpersonal regulation
   - vagal synchrony

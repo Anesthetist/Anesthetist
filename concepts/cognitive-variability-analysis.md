@@ -27,7 +27,13 @@ skos:related:
   - neurogating
   - vagal-tone
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:keizer-2010-gamma-neurofeedback"
+  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
+  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
+  - "urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence"
+  - "urn:srl:evidence:thayer-lane-2009-neurovisceral-integration"
+  - "urn:srl:evidence:vervaeke-relevance-realization"
+  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
 aliases:
   - CVA
 trademarked: false

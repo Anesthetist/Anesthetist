@@ -27,10 +27,10 @@ skos:related:
   - autonomic-regulation
   - vagal-tone
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:observation:mpic-clinical-application"
   - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
+  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
 aliases:
   - MPIC
   - "Multi-Phase Interoceptiv™ Coupling"

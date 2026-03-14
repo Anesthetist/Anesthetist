@@ -30,11 +30,14 @@ skos:related:
   - autonomic-regulation
   - state-transition
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:observation:neuro-ouroboros-progressive-effects"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
-  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
+  - "urn:srl:evidence:chowdhury-2024-jhana-fmri-eeg"
+  - "urn:srl:evidence:demir-2025-jhana-7t-gradients"
+  - "urn:srl:evidence:holzel-2011-mindfulness-gray-matter"
+  - "urn:srl:evidence:josipovic-2019-nondual-awareness"
+  - "urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis"
+  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
+  - "urn:srl:evidence:tang-2015-neuroscience-meditation"
+  - "urn:srl:evidence:vervaeke-relevance-realization"
 aliases:
   - "Neuro-Oroboros"
   - "Neuro-Oroboros™"

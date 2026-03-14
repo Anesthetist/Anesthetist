@@ -26,8 +26,13 @@ skos:related:
   - neurogating
   - state-transition
 prov:wasDerivedFrom:
+  - "urn:srl:evidence:gerritsen-2018-respiratory-vagal"
+  - "urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review"
+  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
   - "urn:srl:evidence:porges-2011-polyvagal-theory"
   - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
+  - "urn:srl:evidence:yuan-2016-vagus-nerve-stimulation"
 aliases:
   - PVT
 trademarked: false

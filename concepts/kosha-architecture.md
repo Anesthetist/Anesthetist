@@ -28,9 +28,10 @@ skos:related:
   - neuro-ouroboros
   - self-remembering
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
-  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
+  - "urn:srl:evidence:josipovic-2019-nondual-awareness"
+  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
+  - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
+  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
 aliases:
   - five-sheath model
   - pancha kosha

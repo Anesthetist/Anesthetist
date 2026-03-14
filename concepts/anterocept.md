@@ -27,11 +27,25 @@ skos:related:
   - state-transition
   - kosha-architecture
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:observation:anterocept-progressive-training"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:craig-2009-interoception-awareness"
+  - "urn:srl:evidence:critchley-2017-interoception-emotion"
+  - "urn:srl:evidence:damasio-1996-somatic-marker"
   - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:farb-2019-mindfulness-neuroplasticity"
+  - "urn:srl:evidence:ferentzi-2022-heartbeat-counting"
+  - "urn:srl:evidence:giotakos-2025-insula-interoception-time"
+  - "urn:srl:evidence:holzel-2011-mindfulness-gray-matter"
+  - "urn:srl:evidence:josipovic-2019-nondual-awareness"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:mehling-2012-maia-original"
   - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
+  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:sacchet-lab-meditation-frameworks-2023-2026"
+  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:smith-2025-maia2-tbi-alexithymia"
+  - "urn:srl:evidence:tang-2015-neuroscience-meditation"
+  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
+  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
 aliases:
   - "Anterocept(TM)"
   - "Anterocept™"

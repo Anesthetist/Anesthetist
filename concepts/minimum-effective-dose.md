@@ -23,8 +23,16 @@ skos:related:
   - gap-moment-training
   - resonant-breathing-frequency
 prov:wasDerivedFrom:
+  - "urn:srl:evidence:balban-2023-cyclic-sighing"
+  - "urn:srl:evidence:dillard-2023-slow-breathing-vr"
   - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis"
+  - "urn:srl:evidence:little-2025-a52-breath-method"
+  - "urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare"
+  - "urn:srl:evidence:ozen-2026-deep-breathing-vs-vns"
+  - "urn:srl:evidence:prinsloo-2011-hrv-biofeedback-immediate"
+  - "urn:srl:evidence:schechter-2010-breathing-clinician-education"
+  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
 aliases:
   - MED
 trademarked: false

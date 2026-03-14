@@ -25,7 +25,13 @@ skos:related:
   - interoception
   - polyanchora
 prov:wasDerivedFrom:
+  - "urn:srl:evidence:farb-2019-mindfulness-neuroplasticity"
+  - "urn:srl:evidence:holzel-2011-mindfulness-gray-matter"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
   - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
+  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
+  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
+  - "urn:srl:evidence:vervaeke-relevance-realization"
 aliases:
   - hemispheric lateralization
   - left-right brain integration

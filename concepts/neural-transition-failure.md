@@ -22,9 +22,8 @@ skos:related:
   - error-archetypes-qrc
   - clinician-durability
 prov:wasDerivedFrom:
-  - "urn:srl:observation:error-archetypes-qrc"
-  - "urn:srl:observation:bandwidth-saturation-micro-events"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
+  - "urn:srl:evidence:brosschot-2006-perseverative-cognition"
+  - "urn:srl:evidence:mcewan-2007-allostatic-load-brain"
   - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
 aliases:
   - residual sympathetic bleed

@@ -28,9 +28,23 @@ skos:related:
   - kosha-architecture
   - anterocept
 prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:chowdhury-2024-jhana-fmri-eeg"
+  - "urn:srl:evidence:craig-2009-interoception-awareness"
+  - "urn:srl:evidence:demir-2025-jhana-7t-gradients"
+  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
   - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
+  - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
+  - "urn:srl:evidence:giotakos-2025-insula-interoception-time"
+  - "urn:srl:evidence:josipovic-2019-nondual-awareness"
+  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
+  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
+  - "urn:srl:evidence:porges-2011-polyvagal-theory"
+  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
   - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
+  - "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
+  - "urn:srl:evidence:tang-2015-neuroscience-meditation"
+  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
+  - "urn:srl:evidence:vervaeke-relevance-realization"
 aliases:
   - Gurdjieff self-remembering
   - divided attention
