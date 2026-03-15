@@ -1,5 +1,14 @@
 ---
-clinical_interpretation: ''
+clinical_interpretation: "A deep study of Light on Pranayama is necessary to understand
+  somnistics. This is not supplementary reading — it is foundational. Iyengar mapped
+  the thoracic cage experientially with a precision that no Western respiratory
+  physiology textbook achieves. His chapter on preparing the mind establishes the
+  awareness-before-technique principle 40 years before interoceptive science named
+  it. Chapter 14 (The Art of Inhalation and Exhalation, p.99) is the most complete
+  articulation of breath as a trainable skill that exists anywhere. Every NeuroMinute
+  protocol, every Anterocept progression, every element of the CE curriculum draws
+  from this lineage — validated by Lehrer, Zaccaro, Balban, and Kim, but originating
+  here. — Randy Graybeal, MSN, CRNA"
 created: '2026-03-14'
 creator: Randy Graybeal
 dc:creator:
