@@ -1,50 +1,53 @@
 ---
-id: "urn:srl:concept:somnistics"
-type: concept
-title: "Somnistics"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- Somnistics™
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - somnistics
-  - applied-science
-  - neural-state-transitions
-  - neuroscience
-  - somatics
-  - cognitive-science
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:somnistics-definition-refinement"
-  - "chatgpt-export:co-creation-of-somnistics-system"
-  - "chatgpt-export:novel-concept-registry"
-  - "google-drive:memory/glossary.md"
+- chatgpt-export:somnistics-definition-refinement
+- chatgpt-export:co-creation-of-somnistics-system
+- chatgpt-export:novel-concept-registry
+- google-drive:memory/glossary.md
+dc:subject:
+- somnistics
+- applied-science
+- neural-state-transitions
+- neuroscience
+- somatics
+- cognitive-science
+id: urn:srl:concept:somnistics
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:lehrer-2000-resonance-frequency
+- urn:srl:evidence:van-der-kolk-2014-body-keeps-score
+- urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system
+- urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms
+- urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators
+- urn:srl:evidence:ganesan-2025-enigma-meditation-consortium
+- urn:srl:evidence:nosbisch-2026-crna-lived-experiences-empowerment
 skos:broader: []
 skos:narrower:
-  - gap-moment-training
-  - neurominute
-  - neurogating
-  - anterocept
-  - polyanchora
-  - neuro-ouroboros
-  - cognitive-variability-analysis
+- gap-moment-training
+- neurominute
+- neurogating
+- anterocept
+- polyanchora
+- neuro-ouroboros
+- cognitive-variability-analysis
+- neurotagging
 skos:related:
-  - autonomic-regulation
-  - state-transition
-  - interoception
-  - polyvagal-theory
-  - kosha-architecture
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
-  - "urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
-  - "urn:srl:evidence:ganesan-2025-enigma-meditation-consortium"
-aliases:
-  - "Somnistics™"
+- autonomic-regulation
+- state-transition
+- interoception
+- polyvagal-theory
+- kosha-architecture
+- relevance-realization
+status: canonical
+title: Somnistics
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Somnistics

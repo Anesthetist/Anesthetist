@@ -1,36 +1,44 @@
 ---
-id: "urn:srl:concept:interoceptive-literacy"
-type: concept
-title: "Interoceptive Literacy"
-status: canonical
-creator: "Randy Graybeal"
-created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - interoception
-  - clinical-education
-  - self-monitoring
-  - MAIA-2
-dc:source:
-  - "google-drive:AANA-Category-A-Application-Pausality-FINAL.md"
-skos:broader:
-  - interoception
-skos:narrower:
-  - diaphragmatic-blindness
-skos:related:
-  - anterocept
-  - maia2-pedagogical-mapping
-  - clinician-durability
-  - awareness-before-technique
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:ferentzi-2022-heartbeat-counting"
-  - "urn:srl:evidence:mehling-2012-maia-original"
-  - "urn:srl:evidence:smith-2025-maia2-tbi-alexithymia"
 aliases:
-  - body literacy
-  - physiological self-monitoring
+- body literacy
+- physiological self-monitoring
+created: 2026-03-14
+creator: Randy Graybeal
+dc:source:
+- google-drive:AANA-Category-A-Application-Pausality-FINAL.md
+dc:subject:
+- interoception
+- clinical-education
+- self-monitoring
+- MAIA-2
+id: urn:srl:concept:interoceptive-literacy
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:ferentzi-2022-heartbeat-counting
+- urn:srl:evidence:mehling-2012-maia-original
+- urn:srl:evidence:smith-2025-maia2-tbi-alexithymia
+- urn:srl:evidence:zhang-2022-maia2c-chinese-validation
+- urn:srl:evidence:campo-2026-mindfulness-athletes-hrv-interoception
+- urn:srl:evidence:kim-2026-interoceptive-sensibility-depression-suicidality
+- urn:srl:evidence:garnsey-2026-yoga-interoceptive-awareness-wellbeing-rct
+- urn:srl:evidence:kvamme-2026-aphantasia-interoception-mental-health
+- urn:srl:evidence:christov-moore-2026-chills-meditation-interoceptive-awareness
+- urn:srl:evidence:nosbisch-2026-crna-lived-experiences-empowerment
+- urn:srl:evidence:jansson-2026-nurse-anesthetist-professional-learning
+skos:broader:
+- interoception
+skos:narrower:
+- diaphragmatic-blindness
+skos:related:
+- anterocept
+- maia2-pedagogical-mapping
+- clinician-durability
+- awareness-before-technique
+status: canonical
+title: Interoceptive Literacy
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # Interoceptive Literacy

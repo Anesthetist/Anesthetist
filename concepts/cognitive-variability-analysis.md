@@ -1,42 +1,45 @@
 ---
-id: "urn:srl:concept:cognitive-variability-analysis"
-type: concept
-title: "Cognitive Variability Analysis"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- CVA
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - cognitive-science
-  - EEG
-  - biofeedback
-  - analytics
-  - AI-driven
-  - machine-learning
-  - cognitive-load
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:cva-framework-exploration"
+- chatgpt-export:cva-framework-exploration
+dc:subject:
+- cognitive-science
+- EEG
+- biofeedback
+- analytics
+- AI-driven
+- machine-learning
+- cognitive-load
+id: urn:srl:concept:cognitive-variability-analysis
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:keizer-2010-gamma-neurofeedback
+- urn:srl:evidence:mcgilchrist-2009-master-emissary
+- urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience
+- urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence
+- urn:srl:evidence:thayer-lane-2009-neurovisceral-integration
+- urn:srl:evidence:vervaeke-relevance-realization
+- urn:srl:evidence:zaccaro-2018-breathing-systematic-review
+- urn:srl:evidence:frontiers-2026-sleep-quality-cognition-older-adults
+- urn:srl:evidence:nakamura-2026-respiration-rr-interval-attention
+- urn:srl:evidence:naiki-2025-wearable-hrv-surgeon-stress
 skos:broader:
-  - somnistics
+- somnistics
 skos:narrower: []
 skos:related:
-  - hemispheric-rebalancing
-  - state-transition
-  - autonomic-regulation
-  - neurogating
-  - vagal-tone
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:keizer-2010-gamma-neurofeedback"
-  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
-  - "urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience"
-  - "urn:srl:evidence:sacchet-2012-volitional-neuromagnetic-coherence"
-  - "urn:srl:evidence:thayer-lane-2009-neurovisceral-integration"
-  - "urn:srl:evidence:vervaeke-relevance-realization"
-  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
-aliases:
-  - CVA
+- hemispheric-rebalancing
+- state-transition
+- autonomic-regulation
+- neurogating
+- vagal-tone
+status: canonical
+title: Cognitive Variability Analysis
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Cognitive Variability Analysis

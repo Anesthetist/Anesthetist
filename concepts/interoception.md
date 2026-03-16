@@ -32,10 +32,21 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation
 - urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness
 - urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
+- urn:srl:evidence:zhang-2022-maia2c-chinese-validation
+- urn:srl:evidence:patapoutian-2025-nih-interoception-atlas
+- urn:srl:evidence:plos-2025-interoception-whole-person-health-4m
+- urn:srl:evidence:frontiers-2026-maternal-touch-interoception-development
+- urn:srl:evidence:cox-2026-interoceptomimetics-aging
+- urn:srl:evidence:kim-2026-interoceptive-sensibility-depression-suicidality
+- urn:srl:evidence:alkaabi-2026-interoception-network-rat-brain
+- urn:srl:evidence:garnsey-2026-yoga-interoceptive-awareness-wellbeing-rct
+- urn:srl:evidence:kvamme-2026-aphantasia-interoception-mental-health
+- urn:srl:evidence:ma-2026-insulo-frontal-stress-cognitive-rigidity
 skos:broader: []
 skos:narrower:
 - anterocept
 - multi-phase-interoceptive-coupling
+- diaphragmatic-literacy
 skos:related:
 - vagal-tone
 - autonomic-regulation

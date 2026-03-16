@@ -42,10 +42,15 @@ prov:wasDerivedFrom:
 - urn:srl:observation:obsessive-care-planning-rush
 - urn:srl:observation:blue-angels-embodied-visualization
 - urn:srl:observation:vcu-aana-burnout-wellness-initiative-2025
+- urn:srl:observation:field-guide-living-topology
+- urn:srl:evidence:jansson-2026-nurse-anesthetist-professional-learning
+- urn:srl:evidence:mcdermott-2026-meaning-purpose-clinician-wellbeing
 skos:broader:
 - somnistics
 skos:narrower:
 - neurominute
+- gap-moment-literacy
+- gap-moment-detection-engine
 skos:related:
 - titration-to-effect
 - polyvagal-theory
@@ -53,6 +58,7 @@ skos:related:
 - anterocept
 - state-transition
 - minimum-effective-dose
+- gap-moment-detection-engine
 status: canonical
 title: Gap Moment Training
 trademarked: true

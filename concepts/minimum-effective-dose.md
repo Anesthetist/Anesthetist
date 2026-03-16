@@ -1,41 +1,44 @@
 ---
-id: "urn:srl:concept:minimum-effective-dose"
-type: concept
-title: "Minimum Effective Dose"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- MED
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - dosing-principles
-  - pharmacology
-  - somnistics
-  - neuroplasticity
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:breathing-basics-for-professionals"
-  - "chatgpt-export:co-creation-of-somnistics-system"
+- chatgpt-export:breathing-basics-for-professionals
+- chatgpt-export:co-creation-of-somnistics-system
+dc:subject:
+- dosing-principles
+- pharmacology
+- somnistics
+- neuroplasticity
+id: urn:srl:concept:minimum-effective-dose
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:balban-2023-cyclic-sighing
+- urn:srl:evidence:dillard-2023-slow-breathing-vr
+- urn:srl:evidence:lehrer-2000-resonance-frequency
+- urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis
+- urn:srl:evidence:little-2025-a52-breath-method
+- urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare
+- urn:srl:evidence:ozen-2026-deep-breathing-vs-vns
+- urn:srl:evidence:prinsloo-2011-hrv-biofeedback-immediate
+- urn:srl:evidence:schechter-2010-breathing-clinician-education
+- urn:srl:evidence:zaccaro-2018-breathing-systematic-review
+- urn:srl:evidence:campo-2026-mindfulness-athletes-hrv-interoception
+- urn:srl:evidence:kim-2026-wearable-hrv-stress-monitoring-caregivers
+- urn:srl:evidence:kor-2025-hybrid-mindfulness-hrv-caregivers-rct
 skos:broader:
-  - titration-to-effect
+- titration-to-effect
 skos:narrower: []
 skos:related:
-  - neurominute
-  - gap-moment-training
-  - resonant-breathing-frequency
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:balban-2023-cyclic-sighing"
-  - "urn:srl:evidence:dillard-2023-slow-breathing-vr"
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis"
-  - "urn:srl:evidence:little-2025-a52-breath-method"
-  - "urn:srl:evidence:merrigan-2024-mindfulness-motion-healthcare"
-  - "urn:srl:evidence:ozen-2026-deep-breathing-vs-vns"
-  - "urn:srl:evidence:prinsloo-2011-hrv-biofeedback-immediate"
-  - "urn:srl:evidence:schechter-2010-breathing-clinician-education"
-  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
-aliases:
-  - MED
+- neurominute
+- gap-moment-training
+- resonant-breathing-frequency
+status: canonical
+title: Minimum Effective Dose
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Minimum Effective Dose

@@ -35,6 +35,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:iyengar-1981-light-on-pranayama
 - urn:srl:observation:blue-angels-embodied-visualization
 - urn:srl:observation:vcu-aana-burnout-wellness-initiative-2025
+- urn:srl:observation:content-template-forge-sop
+- urn:srl:evidence:nakamura-2026-respiration-rr-interval-attention
 skos:broader:
 - gap-moment-training
 skos:narrower: []
@@ -46,6 +48,9 @@ skos:related:
 - polyanchora
 - neuro-ouroboros
 - titration-to-effect
+- co-regulation
+- self-remembering
+- hemispheric-rebalancing
 status: canonical
 title: NeuroMinute
 trademarked: true

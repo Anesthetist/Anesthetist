@@ -1,45 +1,46 @@
 ---
-id: "urn:srl:concept:commoncog-operating-principles"
-type: concept
-title: "Commoncog Operating Principles"
-status: review
-creator: "Randy Graybeal"
+aliases:
+- Commoncog framework
+- Cedric Chin principles
+- second brain operating system
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - operating-system
-  - tacit-knowledge
-  - expertise-acceleration
-  - OODA
-  - small-markets
-  - measurement
-  - Cedric-Chin
+creator: Randy Graybeal
 dc:source:
-  - "google-drive:SRL_Commoncog_Strategic_Framework_Integration_v1.0.md"
-  - "google-drive:Strategic Master Plan - 7 Powers + Commoncog + Category Theory Integration.md"
-  - "google-drive:Cedric Chin lessons for scaling.docx"
+- google-drive:SRL_Commoncog_Strategic_Framework_Integration_v1.0.md
+- google-drive:Strategic Master Plan - 7 Powers + Commoncog + Category Theory Integration.md
+- google-drive:Cedric Chin lessons for scaling.docx
+dc:subject:
+- operating-system
+- tacit-knowledge
+- expertise-acceleration
+- OODA
+- small-markets
+- measurement
+- Cedric-Chin
+id: urn:srl:concept:commoncog-operating-principles
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:observation:tacit-knowledge-extraction-cdm
+- urn:srl:observation:seven-powers-compound-loops
+- urn:srl:observation:revenue-arrow-functor
+- urn:srl:observation:category-theory-state-transitions
+- urn:srl:evidence:chin-2025-joy-of-small-markets
 skos:broader:
-  - somnistics
+- somnistics
 skos:narrower: []
 skos:related:
-  - seven-powers-compound-loops
-  - category-theory-state-transitions
-  - tacit-knowledge-extraction-cdm
-  - gmt-career-arc
-  - somnistics-certification
-  - consciousness-engineering
-  - gap-moment-training
-prov:wasDerivedFrom:
-  - "urn:srl:observation:tacit-knowledge-extraction-cdm"
-  - "urn:srl:observation:seven-powers-compound-loops"
-  - "urn:srl:observation:revenue-arrow-functor"
-  - "urn:srl:observation:category-theory-state-transitions"
-aliases:
-  - Commoncog framework
-  - Cedric Chin principles
-  - second brain operating system
+- seven-powers-compound-loops
+- category-theory-state-transitions
+- tacit-knowledge-extraction-cdm
+- gmt-career-arc
+- somnistics-certification
+- consciousness-engineering
+- gap-moment-training
+status: review
+title: Commoncog Operating Principles
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # Commoncog Operating Principles

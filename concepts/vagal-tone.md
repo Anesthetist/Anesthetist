@@ -36,6 +36,13 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:zaliene-2025-breathing-dysfunctional-rct
 - urn:srl:observation:crna-humming-commute-regulation
 - urn:srl:evidence:iyengar-1981-light-on-pranayama
+- urn:srl:evidence:cox-2026-interoceptomimetics-aging
+- urn:srl:evidence:alkaabi-2026-interoception-network-rat-brain
+- urn:srl:evidence:kane-2025-hrv-monitoring-doctors-stress-recovery
+- urn:srl:evidence:he-2026-icu-nurse-fatigue-hrv-cortisol
+- urn:srl:evidence:naiki-2025-wearable-hrv-surgeon-stress
+- urn:srl:evidence:feigel-2025-digital-phenotype-allostatic-load
+- urn:srl:evidence:feingold-2026-trauma-nightmares-autonomic-biomarkers
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

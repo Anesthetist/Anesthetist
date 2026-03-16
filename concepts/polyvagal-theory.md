@@ -22,6 +22,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:sezer-2025-meditation-autonomic-nervous-system
 - urn:srl:evidence:siegel-2012-interpersonal-neurobiology
 - urn:srl:evidence:yuan-2016-vagus-nerve-stimulation
+- urn:srl:evidence:pmc-2026-polyvagal-theory-critique-grossman
+- urn:srl:evidence:cox-2026-interoceptomimetics-aging
+- urn:srl:evidence:alkaabi-2026-interoception-network-rat-brain
 skos:broader: []
 skos:narrower: []
 skos:related:

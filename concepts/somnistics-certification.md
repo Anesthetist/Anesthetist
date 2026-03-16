@@ -1,51 +1,53 @@
 ---
-id: "urn:srl:concept:somnistics-certification"
-type: concept
-title: "Somnistics Certification: Prehabilitative Mental Hygiene Standard"
-status: review
-creator: "Randy Graybeal"
-created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - certification
-  - standard-of-practice
-  - prehabilitation
-  - mental-hygiene
-  - shared-language
-  - presidential-fitness
-dc:source:
-  - "cowork-session:2026-03-14"
-skos:broader:
-  - somnistics
-skos:narrower: []
-skos:related:
-  - gap-moment-training
-  - gmt-career-arc
-  - clinician-durability
-  - interoceptive-literacy
-  - diaphragmatic-blindness
-  - anterocept
-  - neuro-ouroboros
-  - consciousness-engineering
-  - co-regulation
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:mehling-2012-maia-original"
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-  - "urn:srl:evidence:putnam-2025-anesthesiology-stress-snapshot"
-  - "urn:srl:evidence:wilbanks-2025-safety-culture-burnout"
-  - "urn:srl:evidence:shalev-2012-ptsd-prevention"
-  - "urn:srl:evidence:mcewan-2007-allostatic-load-brain"
-  - "urn:srl:observation:gmt-career-arc"
-  - "urn:srl:observation:interoceptive-suppression-burnout-root"
-  - "urn:srl:observation:error-archetypes-qrc"
 aliases:
-  - Somnistics Certified Practitioner
-  - SCP
-  - prehabilitative mental hygiene
-  - PMH standard
+- Somnistics Certified Practitioner
+- SCP
+- prehabilitative mental hygiene
+- PMH standard
+created: 2026-03-14
+creator: Randy Graybeal
+dc:source:
+- cowork-session:2026-03-14
+dc:subject:
+- certification
+- standard-of-practice
+- prehabilitation
+- mental-hygiene
+- shared-language
+- presidential-fitness
+id: urn:srl:concept:somnistics-certification
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:mehling-2012-maia-original
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:lehrer-2000-resonance-frequency
+- urn:srl:evidence:putnam-2025-anesthesiology-stress-snapshot
+- urn:srl:evidence:wilbanks-2025-safety-culture-burnout
+- urn:srl:evidence:shalev-2012-ptsd-prevention
+- urn:srl:evidence:mcewan-2007-allostatic-load-brain
+- urn:srl:observation:gmt-career-arc
+- urn:srl:observation:interoceptive-suppression-burnout-root
+- urn:srl:observation:error-archetypes-qrc
+- urn:srl:evidence:diwan-2026-opioid-free-anesthesia-nurse-anesthetists
+skos:broader:
+- somnistics
+skos:narrower:
+- somnistics-readiness-battery
+skos:related:
+- gap-moment-training
+- gmt-career-arc
+- clinician-durability
+- interoceptive-literacy
+- diaphragmatic-blindness
+- anterocept
+- neuro-ouroboros
+- consciousness-engineering
+- co-regulation
+status: review
+title: 'Somnistics Certification: Prehabilitative Mental Hygiene Standard'
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # Somnistics Certification: Prehabilitative Mental Hygiene Standard

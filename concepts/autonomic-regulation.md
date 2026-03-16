@@ -24,6 +24,19 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:thayer-lane-2009-neurovisceral-integration
 - urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
 - urn:srl:evidence:walker-2009-sleep-emotional-brain
+- urn:srl:evidence:jama-2025-hrv-biofeedback-substance-use-rct
+- urn:srl:evidence:springer-2026-hrv-biofeedback-cardiovascular-meta-analysis
+- urn:srl:evidence:cox-2026-interoceptomimetics-aging
+- urn:srl:evidence:campo-2026-mindfulness-athletes-hrv-interoception
+- urn:srl:evidence:ma-2026-insulo-frontal-stress-cognitive-rigidity
+- urn:srl:evidence:kane-2025-hrv-monitoring-doctors-stress-recovery
+- urn:srl:evidence:he-2026-icu-nurse-fatigue-hrv-cortisol
+- urn:srl:evidence:kim-2026-wearable-hrv-stress-monitoring-caregivers
+- urn:srl:evidence:naiki-2025-wearable-hrv-surgeon-stress
+- urn:srl:evidence:feigel-2025-digital-phenotype-allostatic-load
+- urn:srl:evidence:kor-2025-hybrid-mindfulness-hrv-caregivers-rct
+- urn:srl:evidence:feingold-2026-trauma-nightmares-autonomic-biomarkers
+- urn:srl:evidence:vujovic-2026-physical-environment-psychiatric-nurses-hrv
 skos:broader: []
 skos:narrower:
 - vagal-tone

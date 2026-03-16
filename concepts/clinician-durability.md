@@ -28,6 +28,24 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:wilbanks-2025-safety-culture-burnout
 - urn:srl:concept:career-longitudinal-gmt
 - urn:srl:observation:vcu-aana-burnout-wellness-initiative-2025
+- urn:srl:observation:trend-clinician-burnout-ai-scribes-2026
+- urn:srl:evidence:chin-2025-joy-of-small-markets
+- urn:srl:evidence:ma-2026-insulo-frontal-stress-cognitive-rigidity
+- urn:srl:evidence:kane-2025-hrv-monitoring-doctors-stress-recovery
+- urn:srl:evidence:he-2026-icu-nurse-fatigue-hrv-cortisol
+- urn:srl:evidence:kim-2026-wearable-hrv-stress-monitoring-caregivers
+- urn:srl:evidence:naiki-2025-wearable-hrv-surgeon-stress
+- urn:srl:evidence:feigel-2025-digital-phenotype-allostatic-load
+- urn:srl:evidence:kor-2025-hybrid-mindfulness-hrv-caregivers-rct
+- urn:srl:evidence:nosbisch-2026-crna-lived-experiences-empowerment
+- urn:srl:evidence:feingold-2026-trauma-nightmares-autonomic-biomarkers
+- urn:srl:evidence:jansson-2026-nurse-anesthetist-professional-learning
+- urn:srl:evidence:diwan-2026-opioid-free-anesthesia-nurse-anesthetists
+- urn:srl:evidence:vetter-2026-advanced-practice-nurses-anesthesia
+- urn:srl:evidence:paramita-2026-doctor-burnout-bangladesh
+- urn:srl:evidence:mcquaid-2026-female-urm-physician-wellbeing
+- urn:srl:evidence:mcdermott-2026-meaning-purpose-clinician-wellbeing
+- urn:srl:evidence:vujovic-2026-physical-environment-psychiatric-nurses-hrv
 skos:broader:
 - somnistics
 skos:narrower: []

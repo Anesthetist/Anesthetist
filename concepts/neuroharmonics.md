@@ -17,6 +17,9 @@ modified: 2026-03-14
 prov:wasDerivedFrom:
 - urn:srl:evidence:gitler-2025-hrv-biofeedback-ssp-review
 - urn:srl:evidence:keizer-2010-gamma-neurofeedback
+- urn:srl:evidence:psypost-2026-meditation-brain-fluid-dynamics
+- urn:srl:evidence:diaz-lozano-2026-stochastic-noise-hrv-coherence
+- urn:srl:evidence:christov-moore-2026-chills-meditation-interoceptive-awareness
 skos:broader:
 - neuro-ouroboros
 skos:narrower: []

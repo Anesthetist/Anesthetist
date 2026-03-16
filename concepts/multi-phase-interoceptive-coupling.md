@@ -1,40 +1,41 @@
 ---
-id: "urn:srl:concept:multi-phase-interoceptive-coupling"
-type: concept
-title: "Multi-Phase Interoceptive Coupling"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- MPIC
+- Multi-Phase Interoceptiv™ Coupling
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - somnistics
-  - novel-concept
-  - interoception
-  - polyvagal-network
-  - insula-cingulate-brainstem
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:multi-phase-interoceptiv-analysis"
-  - "chatgpt-export:document-summary-request"
-  - "chatgpt-export:novel-concepts-catalog"
+- chatgpt-export:multi-phase-interoceptiv-analysis
+- chatgpt-export:document-summary-request
+- chatgpt-export:novel-concepts-catalog
+dc:subject:
+- somnistics
+- novel-concept
+- interoception
+- polyvagal-network
+- insula-cingulate-brainstem
+id: urn:srl:concept:multi-phase-interoceptive-coupling
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:van-der-kolk-2014-body-keeps-score
+- urn:srl:evidence:zaccaro-2018-breathing-systematic-review
 skos:broader:
-  - interoception
+- interoception
 skos:narrower: []
 skos:related:
-  - anterocept
-  - polyanchora
-  - neurominute
-  - autonomic-regulation
-  - vagal-tone
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:nath-2025-heartbeat-evoked-potentials-meditation"
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
-  - "urn:srl:evidence:zaccaro-2018-breathing-systematic-review"
-aliases:
-  - MPIC
-  - "Multi-Phase Interoceptiv™ Coupling"
+- anterocept
+- polyanchora
+- neurominute
+- autonomic-regulation
+- vagal-tone
+- neuroharmonics
+status: canonical
+title: Multi-Phase Interoceptive Coupling
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Multi-Phase Interoceptive Coupling

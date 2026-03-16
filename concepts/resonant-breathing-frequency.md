@@ -31,6 +31,10 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:zaliene-2025-breathing-dysfunctional-rct
 - urn:srl:observation:crna-humming-commute-regulation
 - urn:srl:evidence:iyengar-1981-light-on-pranayama
+- urn:srl:evidence:nature-2025-hrv-coherence-frequencies-emotional-states
+- urn:srl:evidence:nakamura-2026-respiration-rr-interval-attention
+- urn:srl:evidence:diaz-lozano-2026-stochastic-noise-hrv-coherence
+- urn:srl:evidence:kor-2025-hybrid-mindfulness-hrv-caregivers-rct
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

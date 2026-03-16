@@ -30,6 +30,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
 - urn:srl:evidence:walker-2009-sleep-emotional-brain
 - urn:srl:evidence:pear-lab-rng-studies
+- urn:srl:observation:burroughs-inner-zone-anesthetic-consciousness
+- urn:srl:evidence:ma-2026-insulo-frontal-stress-cognitive-rigidity
 skos:broader: []
 skos:narrower: []
 skos:related:
@@ -41,6 +43,7 @@ skos:related:
 - anterocept
 - nonlocal-consciousness
 - gamma-state-binding
+- self-remembering
 status: canonical
 title: State Transition
 trademarked: false

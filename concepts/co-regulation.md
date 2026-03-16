@@ -1,36 +1,38 @@
 ---
-id: "urn:srl:concept:co-regulation"
-type: concept
-title: "Co-Regulation"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- interpersonal regulation
+- vagal synchrony
+- team breath
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - interpersonal-neurobiology
-  - social-engagement
-  - team-dynamics
-  - vagal-synchrony
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:crna-autonomic-workflow-insights"
+- chatgpt-export:crna-autonomic-workflow-insights
+dc:subject:
+- interpersonal-neurobiology
+- social-engagement
+- team-dynamics
+- vagal-synchrony
+id: urn:srl:concept:co-regulation
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:cole-2022-icu-wellbeing-beyond-covid
+- urn:srl:evidence:porges-2007-vagal-tone-faces-voices
+- urn:srl:evidence:schechter-2010-breathing-clinician-education
+- urn:srl:evidence:wilbanks-2025-safety-culture-burnout
+- urn:srl:evidence:frontiers-2026-maternal-touch-interoception-development
 skos:broader:
-  - polyvagal-theory
+- polyvagal-theory
 skos:narrower: []
 skos:related:
-  - vagal-tone
-  - gap-moment-training
-  - state-transition
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:cole-2022-icu-wellbeing-beyond-covid"
-  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
-  - "urn:srl:evidence:schechter-2010-breathing-clinician-education"
-  - "urn:srl:evidence:wilbanks-2025-safety-culture-burnout"
-aliases:
-  - interpersonal regulation
-  - vagal synchrony
-  - team breath
+- vagal-tone
+- gap-moment-training
+- state-transition
+- neuroharmonics
+status: canonical
+title: Co-Regulation
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # Co-Regulation

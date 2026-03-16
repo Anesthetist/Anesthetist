@@ -40,7 +40,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:journal-nonlocality-placebo-retrocausality
 skos:broader:
 - interoception
-skos:narrower: []
+skos:narrower:
+- diaphragmatic-literacy
 skos:related:
 - polyanchora
 - multi-phase-interoceptive-coupling

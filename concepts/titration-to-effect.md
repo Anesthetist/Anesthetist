@@ -1,34 +1,35 @@
 ---
-id: "urn:srl:concept:titration-to-effect"
-type: concept
-title: "Titration to Effect"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- dose-response
+- adaptive dosing
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - pharmacology
-  - dosing-principles
-  - somnistics
-  - adaptive-design
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:crna-autonomic-workflow-insights"
-  - "chatgpt-export:somnistics-definition-refinement"
+- chatgpt-export:crna-autonomic-workflow-insights
+- chatgpt-export:somnistics-definition-refinement
+dc:subject:
+- pharmacology
+- dosing-principles
+- somnistics
+- adaptive-design
+id: urn:srl:concept:titration-to-effect
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:lehrer-2000-resonance-frequency
+- urn:srl:evidence:diaz-lozano-2026-stochastic-noise-hrv-coherence
 skos:broader: []
 skos:narrower:
-  - minimum-effective-dose
+- minimum-effective-dose
 skos:related:
-  - gap-moment-training
-  - neurominute
-  - neurogating
-  - neuro-ouroboros
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:lehrer-2000-resonance-frequency"
-aliases:
-  - dose-response
-  - adaptive dosing
+- gap-moment-training
+- neurominute
+- neurogating
+- neuro-ouroboros
+status: canonical
+title: Titration to Effect
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Titration to Effect

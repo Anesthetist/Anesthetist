@@ -1,47 +1,50 @@
 ---
-id: "urn:srl:concept:neuro-ouroboros"
-type: concept
-title: "Neuro-Ouroboros"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- Neuro-Oroboros
+- Neuro-Oroboros™
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - somnistics
-  - novel-concept
-  - feedback-loops
-  - curriculum-design
-  - neuroplasticity
-  - recursive-training
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:crna-biosensor-study-design"
-  - "chatgpt-export:embodied-knowledge-ontology"
-  - "chatgpt-export:vagalbeats-cognitive-flow-training"
-  - "chatgpt-export:novel-concept-registry"
+- chatgpt-export:crna-biosensor-study-design
+- chatgpt-export:embodied-knowledge-ontology
+- chatgpt-export:vagalbeats-cognitive-flow-training
+- chatgpt-export:novel-concept-registry
+dc:subject:
+- somnistics
+- novel-concept
+- feedback-loops
+- curriculum-design
+- neuroplasticity
+- recursive-training
+id: urn:srl:concept:neuro-ouroboros
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:chowdhury-2024-jhana-fmri-eeg
+- urn:srl:evidence:demir-2025-jhana-7t-gradients
+- urn:srl:evidence:holzel-2011-mindfulness-gray-matter
+- urn:srl:evidence:josipovic-2019-nondual-awareness
+- urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis
+- urn:srl:evidence:mcgilchrist-2009-master-emissary
+- urn:srl:evidence:tang-2015-neuroscience-meditation
+- urn:srl:evidence:vervaeke-relevance-realization
+- urn:srl:observation:vagalbeats-metadata-architecture
+- urn:srl:observation:field-guide-living-topology
 skos:broader:
-  - gap-moment-training
+- gap-moment-training
 skos:narrower: []
 skos:related:
-  - neurominute
-  - anterocept
-  - polyanchora
-  - multi-phase-interoceptive-coupling
-  - autonomic-regulation
-  - state-transition
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:chowdhury-2024-jhana-fmri-eeg"
-  - "urn:srl:evidence:demir-2025-jhana-7t-gradients"
-  - "urn:srl:evidence:holzel-2011-mindfulness-gray-matter"
-  - "urn:srl:evidence:josipovic-2019-nondual-awareness"
-  - "urn:srl:evidence:lehrer-2020-hrv-biofeedback-meta-analysis"
-  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
-  - "urn:srl:evidence:tang-2015-neuroscience-meditation"
-  - "urn:srl:evidence:vervaeke-relevance-realization"
-aliases:
-  - "Neuro-Oroboros"
-  - "Neuro-Oroboros™"
+- neurominute
+- anterocept
+- polyanchora
+- multi-phase-interoceptive-coupling
+- autonomic-regulation
+- state-transition
+- neurogating
+status: canonical
+title: Neuro-Ouroboros
 trademarked: true
+type: concept
+version: 1.1
 ---
 
 # Neuro-Ouroboros™
