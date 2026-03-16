@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Figtree:wght@300;400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Poppins', sans-serif; background: #1a1a2e; }
+  .slide {
+    width: 1920px; height: 1080px; position: relative; overflow: hidden;
+    margin: 40px auto; page-break-after: always;
+  }
+  .slide--dark { background: #22253A; color: #FFFFFF; }
+  .slide--light { background: #F5F5F0; color: #22253A; }
+
+  /* EKG Watermark */
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+    z-index: 0;
+  }
+  .slide--dark::after,
+  .slide--light::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .slide--dark .ekg {
+    position: absolute;
+    bottom: 180px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    z-index: 0;
+  }
+  .slide--dark .ekg svg path { stroke: rgba(255,255,255,0.05); }
+  .slide--light .ekg svg path { stroke: rgba(34,37,58,0.08); }
+  .ekg {
+    position: absolute;
+    bottom: 180px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    z-index: 0;
+  }
+
+  .slide__content { position: relative; z-index: 1; padding: 60px 75px; height: 100%; }
+  .slide__title { font-weight: 400; font-size: 52px; line-height: 1.1; margin-bottom: 8px; }
+  .slide__subtitle { font-weight: 300; font-size: 22px; line-height: 1.25; letter-spacing: -0.025em; color: #969696; margin-bottom: 40px; }
+  .slide--light .slide__subtitle { color: #4A4D5C; }
+  .slide__body { font-weight: 300; font-size: 20px; line-height: 1.25; letter-spacing: -0.025em; }
+  .slide__stat { font-weight: 400; font-size: 72px; color: #5FC89B; line-height: 1.0; }
+  .slide__stat-label { font-weight: 300; font-size: 16px; color: #FFFFFF; margin-top: 4px; }
+  .slide--light .slide__stat-label { color: #4A4D5C; }
+  .slide__stat-cite { font-weight: 300; font-size: 11px; color: #969696; margin-top: 2px; }
+  .slide__footer { position: absolute; bottom: 30px; left: 60px; font-weight: 300; font-size: 13px; color: #969696; z-index: 1; }
+
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 80px; margin-top: 30px; }
+  .stat-item { }
+
+  .card { background: #EDEDED; border-radius: 8px; padding: 32px 28px; }
+  .card--dark { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); }
+  .card--white { background: #FFFFFF; border-left: 4px solid #5FC89B; }
+  .card--white-blue { background: #FFFFFF; border-left: 4px solid #3A61AD; }
+  .card--white-red { background: #FFFFFF; border-left: 4px solid #E85D4A; }
+  .card__title { font-weight: 400; font-size: 20px; margin-bottom: 10px; }
+  .card__body { font-weight: 300; font-size: 15px; color: #4A4D5C; letter-spacing: -0.025em; line-height: 1.3; }
+  .slide--dark .card__body { color: rgba(255,255,255,0.7); }
+
+  .cards-row { display: grid; gap: 24px; margin-top: 30px; }
+  .cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .cards-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .cards-2x2 { grid-template-columns: 1fr 1fr; }
+  .cards-2 { grid-template-columns: 1fr 1fr; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 24px; font-weight: 300; font-size: 17px; letter-spacing: -0.025em; }
+  table th { background: #22253A; color: #FFFFFF; padding: 14px 20px; text-align: left; font-weight: 400; font-size: 16px; }
+  .slide--dark table th { background: rgba(255,255,255,0.1); }
+  table td { padding: 12px 20px; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 16px; }
+  .slide--dark table td { border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.85); }
+
+  .sage { color: #5FC89B; }
+  .sage-bold { color: #5FC89B; font-weight: 400; }
+  .navy { color: #22253A; }
+  .gray { color: #4A4D5C; }
+  .red { color: #E85D4A; }
+
+  .logo-lockup {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .logo-lockup img { width: 280px; }
+
+  .watch-right {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 480px;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  .comparison-table { margin-top: 20px; }
+  .comparison-table td:first-child { font-weight: 400; }
+
+  .highlight-box {
+    background: rgba(95,200,155,0.08);
+    border: 1px solid rgba(95,200,155,0.2);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-top: 24px;
+  }
+  .slide--dark .highlight-box {
+    background: rgba(95,200,155,0.06);
+    border: 1px solid rgba(95,200,155,0.15);
+  }
+
+  .quote {
+    font-family: 'Figtree', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.4;
+    margin-top: 40px;
+    padding-left: 24px;
+    border-left: 4px solid #5FC89B;
+  }
+
+  .signal-row { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px; }
+  .signal-num { font-weight: 400; font-size: 28px; color: #5FC89B; min-width: 36px; }
+  .signal-text { font-weight: 300; font-size: 17px; letter-spacing: -0.025em; line-height: 1.3; }
+  .signal-text strong { font-weight: 400; }
+
+  .tag { display: inline-block; background: #5FC89B; color: #22253A; font-size: 11px; font-weight: 400; padding: 3px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .tag--red { background: #E85D4A; color: #FFFFFF; }
+  .tag--blue { background: #3A61AD; color: #FFFFFF; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Brand Title -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="logo-lockup">
+    <div style="font-size: 80px; font-weight: 400; background: linear-gradient(45deg, #3A61AD 0%, #1479B6 33%, #5FC89B 66%, #96F0BE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px;">P</div>
+    <div style="font-size: 36px; font-weight: 300; letter-spacing: 0.15em; color: #FFFFFF;">pausality</div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 2: Deck Title + Watch -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content" style="display: flex; align-items: center;">
+    <div style="max-width: 55%;">
+      <div class="slide__title">Competitive Intelligence<br>Briefing</div>
+      <div class="slide__subtitle" style="margin-top: 16px; color: #969696;">Session Recap: March 15, 2026</div>
+      <div style="margin-top: 32px; font-weight: 300; font-size: 18px; color: rgba(255,255,255,0.6); letter-spacing: -0.025em; line-height: 1.4;">
+        Market sizing, competitive landscape, and<br>investor-ready intelligence for preseed conversations
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 3: TAM / SAM / SOM -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">Market Opportunity</div>
+    <div class="slide__subtitle">Digital Stress Management + Biofeedback + Enterprise Mental Wellness</div>
+
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="slide__stat">$18.5B</div>
+        <div class="slide__stat-label" style="font-size: 20px; margin-top: 8px;">Total Addressable Market</div>
+        <div class="slide__stat-cite">Corporate wellness stress mgmt + mental wellness apps + biofeedback</div>
+      </div>
+      <div class="stat-item">
+        <div class="slide__stat">$3.8B</div>
+        <div class="slide__stat-label" style="font-size: 20px; margin-top: 8px;">Serviceable Addressable Market</div>
+        <div class="slide__stat-cite">US high-stress professionals: healthcare, enterprise, tactical</div>
+      </div>
+      <div class="stat-item">
+        <div class="slide__stat">$27M</div>
+        <div class="slide__stat-label" style="font-size: 20px; margin-top: 8px;">Year 2 Obtainable</div>
+        <div class="slide__stat-cite">57,000 CRNAs + perioperative staff</div>
+      </div>
+      <div class="stat-item">
+        <div class="slide__stat">$142M</div>
+        <div class="slide__stat-label" style="font-size: 20px; margin-top: 8px;">Year 3-5 Obtainable</div>
+        <div class="slide__stat-cite">Healthcare + enterprise + consumer + platform licensing</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 4: Industry CAGRs -->
+<div class="slide slide--light">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">Every Tailwind Is Accelerating</div>
+    <div class="slide__subtitle">The fastest-growing segments are exactly where Pausality plays</div>
+
+    <div class="cards-row cards-3">
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #5FC89B; border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400;">27.8%</div>
+        <div class="card__title" style="margin-top: 8px;">Digital Therapeutics</div>
+        <div class="card__body">$10.4B to $32.5B by 2030</div>
+        <div style="font-size: 11px; color: #969696; margin-top: 6px;">Grand View Research</div>
+      </div>
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #3A61AD; border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400;">19.2%</div>
+        <div class="card__title" style="margin-top: 8px;">Mental Wellness Apps</div>
+        <div class="card__body">$8.6B to $35.3B by 2034</div>
+        <div style="font-size: 11px; color: #969696; margin-top: 6px;">Fortune Business Insights</div>
+      </div>
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #E85D4A; border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400;">17.0%</div>
+        <div class="card__title" style="margin-top: 8px;">Employer Mental Health</div>
+        <div class="card__body">Fastest-growing enterprise segment</div>
+        <div style="font-size: 11px; color: #969696; margin-top: 6px;">Fortune Business Insights</div>
+      </div>
+    </div>
+
+    <div class="cards-row cards-3" style="margin-top: 20px;">
+      <div class="card" style="border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400;">15.6%</div>
+        <div class="card__title" style="margin-top: 8px;">Wearable Medical Devices</div>
+        <div class="card__body">$48.3B to $99.6B by 2030</div>
+      </div>
+      <div class="card" style="border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400;">10.1%</div>
+        <div class="card__title" style="margin-top: 8px;">Biofeedback Devices</div>
+        <div class="card__body">$4.1B to $6.0B by 2030</div>
+      </div>
+      <div class="card" style="border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400;">7.6%</div>
+        <div class="card__title" style="margin-top: 8px;">Global Wellness Economy</div>
+        <div class="card__body">$7.2T to $9.8T by 2029</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer" style="color: #969696;">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 5: 5 Critical Signals -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">Seven Signals from This Week</div>
+    <div class="slide__subtitle">Live intelligence scan, March 15, 2026</div>
+
+    <div style="margin-top: 12px;">
+      <div class="signal-row">
+        <div class="signal-num">01</div>
+        <div class="signal-text">
+          <strong>Breathwrk sold to Peloton for $2.2M</strong> after raising $7.7M from Sapphire, Bessemer, DCM. A breathing app without clinical moat is worth nothing in M&A. <span class="tag--red tag">Warning</span>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-num">02</div>
+        <div class="signal-text">
+          <strong>ChatGPT Health launched with Apple Health integration.</strong> 230M weekly health queries. Connects medical records, wearables, wellness apps. OpenAI is becoming the health data hub. <span class="tag--red tag">Big Tech</span>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-num">03</div>
+        <div class="signal-text">
+          <strong>Google, Samsung, Meta all entering health AI.</strong> Gemini health coach on Fitbit/iPhone. Samsung Brain Health at CES. Meta smartwatch "Malibu 2" with health tracking + Meta AI. <span class="tag--red tag">Big Tech</span>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-num">04</div>
+        <div class="signal-text">
+          <strong>Neurotech funding exploded.</strong> Merge Labs $250M seed ($850M valuation, OpenAI-backed). Neurable $35M Series A for brain-sensing headphones. Elemind $12M for neurostim wearable. <span class="tag--blue tag">Neurotech</span>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-num">05</div>
+        <div class="signal-text">
+          <strong>NEUROFIT discovered: closest narrative competitor.</strong> "Nervous System Trainer" positioning, 60K users, ex-Snapchat founder. Same language, different product. <span class="tag">New Entrant</span>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-num">06</div>
+        <div class="signal-text">
+          <strong>Calm revenue dropped 24%.</strong> Lost 500K subscribers. Headspace valuation -89%. B2C mindfulness model is dying. <span class="tag--red tag">Market Shift</span>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-num">07</div>
+        <div class="signal-text">
+          <strong>Digital health M&A hit ~200 deals in 2025</strong> and accelerating. Sword/Kaia $285M. Spring/Alma. Lyra/Bend Health. Amazon Health AI expanding from One Medical. <span class="tag">M&A Wave</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 6: The Breathwrk Lesson -->
+<div class="slide slide--light">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">The 130x Difference</div>
+    <div class="slide__subtitle">Why clinical moats determine exit value</div>
+
+    <div class="two-col" style="margin-top: 20px;">
+      <div>
+        <div class="card--white-red" style="background: #FFFFFF; border-left: 4px solid #E85D4A; border-radius: 8px; padding: 32px 28px; margin-bottom: 24px;">
+          <div style="font-size: 48px; color: #E85D4A; font-weight: 400;">$2.2M</div>
+          <div class="card__title" style="margin-top: 8px;">Breathwrk &rarr; Peloton</div>
+          <div class="card__body" style="margin-top: 12px;">
+            Had: #1 breathing app, VC backing, consumer brand<br>
+            Missing: Clinical validation, biometric feedback, enterprise distribution
+          </div>
+        </div>
+
+        <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #5FC89B; border-radius: 8px; padding: 32px 28px;">
+          <div style="font-size: 48px; color: #5FC89B; font-weight: 400;">$285M</div>
+          <div class="card__title" style="margin-top: 8px;">Kaia Health &rarr; Sword Health</div>
+          <div class="card__body" style="margin-top: 12px;">
+            Had: Clinical validation, enterprise contracts, FDA pathway<br>
+            Exactly what Pausality is building
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card__title" style="font-size: 22px; margin-bottom: 20px;">Pausality Moat Components</div>
+        <table style="font-size: 15px;">
+          <tr><th style="font-size: 14px;">Component</th><th style="font-size: 14px;">Breathwrk</th><th style="font-size: 14px;">Pausality</th></tr>
+          <tr><td>Clinical founder credibility</td><td class="red">No</td><td class="sage">28-year CRNA</td></tr>
+          <tr><td>Real-time biometric feedback</td><td class="red">No</td><td class="sage">Apple Watch HRV</td></tr>
+          <tr><td>Enterprise distribution</td><td class="red">No</td><td class="sage">Hospital systems</td></tr>
+          <tr><td>Clinical validation pathway</td><td class="red">No</td><td class="sage">MAIA-2 + AANA CE</td></tr>
+          <tr><td>Workflow-embedded (60 sec)</td><td class="red">No</td><td class="sage">Gap Moment Training</td></tr>
+          <tr><td>Progressive curriculum</td><td class="red">No</td><td class="sage">21 sessions</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer" style="color: #969696;">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 7: The Duopoly Is Crumbling -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">Category Leaders Are Vulnerable</div>
+    <div class="slide__subtitle">The mindfulness app gold rush is over</div>
+
+    <div class="two-col" style="margin-top: 20px;">
+      <div>
+        <div class="card--dark" style="border-radius: 8px; padding: 32px 28px; margin-bottom: 20px;">
+          <div style="font-size: 18px; font-weight: 400; margin-bottom: 16px;">Calm</div>
+          <div class="stat-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+              <div style="font-size: 36px; color: #E85D4A; font-weight: 400;">-24%</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.6);">Revenue YoY (2025)</div>
+            </div>
+            <div>
+              <div style="font-size: 36px; color: #E85D4A; font-weight: 400;">-500K</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.6);">Subscribers lost</div>
+            </div>
+          </div>
+          <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 16px;">Pivoting to brand licensing. Revenue: $210M (2025)</div>
+        </div>
+
+        <div class="card--dark" style="border-radius: 8px; padding: 32px 28px;">
+          <div style="font-size: 18px; font-weight: 400; margin-bottom: 16px;">Headspace</div>
+          <div class="stat-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+              <div style="font-size: 36px; color: #E85D4A; font-weight: 400;">-89%</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.6);">Valuation decline ($3B to $320M)</div>
+            </div>
+            <div>
+              <div style="font-size: 36px; color: #E85D4A; font-weight: 400;">15%</div>
+              <div style="font-size: 13px; color: rgba(255,255,255,0.6);">Workforce laid off</div>
+            </div>
+          </div>
+          <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 16px;">Therapists moved to contractors. Pivoting to EAP via Virgin Pulse</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card--dark" style="border-radius: 8px; padding: 32px 28px; border-left: 4px solid #5FC89B;">
+          <div style="font-size: 18px; font-weight: 400; margin-bottom: 16px; color: #5FC89B;">What This Means for Pausality</div>
+          <div style="font-weight: 300; font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.5; letter-spacing: -0.025em;">
+            B2C mindfulness apps are compressing. The survivors are pivoting to enterprise and clinical.<br><br>
+            Pausality is enterprise-first by design, not by desperation.<br><br>
+            Headspace at $320M with 4,000 enterprise orgs is the most acquirable distribution asset in wellness. Compressed valuation + intact distribution = potential channel partner for SRL.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 8: Who Buys Pausality -->
+<div class="slide slide--light">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">The Acquirers Are Hungry</div>
+    <div class="slide__subtitle">Who buys Pausality and why</div>
+
+    <div class="cards-row cards-3" style="margin-top: 10px;">
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #5FC89B; border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 14px; color: #5FC89B; font-weight: 400; margin-bottom: 8px;">TIER 1</div>
+        <div class="card__title">Apple Health</div>
+        <div class="card__body" style="line-height: 1.5;">
+          Project Mulberry retreated. Jeff Williams retired. Buy-not-build signal confirmed.<br><br>
+          Watch + AirPods integration is a natural fit. Window is open now.
+        </div>
+      </div>
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #5FC89B; border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 14px; color: #5FC89B; font-weight: 400; margin-bottom: 8px;">TIER 1</div>
+        <div class="card__title">WHOOP ($3.6B)</div>
+        <div class="card__body" style="line-height: 1.5;">
+          Pre-IPO. 600+ new hires. Needs validated protocol IP before going public.<br><br>
+          They detect stress. They cannot resolve it. We can.
+        </div>
+      </div>
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #5FC89B; border-radius: 8px; padding: 28px 24px;">
+        <div style="font-size: 14px; color: #5FC89B; font-weight: 400; margin-bottom: 8px;">TIER 1</div>
+        <div class="card__title">Oura ($11B)</div>
+        <div class="card__body" style="line-height: 1.5;">
+          Team USA partnership. Platform expanding via acquisitions.<br><br>
+          Partnered with Headspace because they cannot build clinical interventions.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <table style="font-size: 15px;">
+        <tr><th style="font-size: 14px;">Exit Path</th><th style="font-size: 14px;">Timeline</th><th style="font-size: 14px;">Estimated Range</th></tr>
+        <tr><td>Acqui-hire (Apple, WHOOP, Oura)</td><td>12-24 months</td><td class="sage-bold">$5M-$25M</td></tr>
+        <tr><td>Strategic acquisition (Calm, Headspace, ResMed)</td><td>18-36 months</td><td class="sage-bold">$15M-$75M</td></tr>
+        <tr><td>Enterprise health platform (Lyra, Spring Health)</td><td>24-48 months</td><td class="sage-bold">$25M-$150M</td></tr>
+        <tr><td>IPO / standalone category leader</td><td>5-7 years</td><td class="sage-bold">$250M-$1B+</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="slide__footer" style="color: #969696;">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 9: CRNA Beachhead -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">The Beachhead: 57,000 CRNAs</div>
+    <div class="slide__subtitle">The highest-credibility profession in healthcare, completely unserved</div>
+
+    <div class="two-col" style="margin-top: 16px;">
+      <div>
+        <div class="stat-grid" style="grid-template-columns: 1fr 1fr; gap: 30px;">
+          <div>
+            <div class="slide__stat" style="font-size: 56px;">57K</div>
+            <div class="slide__stat-label">CRNAs in the US</div>
+            <div class="slide__stat-cite">BLS / AANA</div>
+          </div>
+          <div>
+            <div class="slide__stat" style="font-size: 56px;">42-72%</div>
+            <div class="slide__stat-label">Burnout prevalence</div>
+            <div class="slide__stat-cite">PubMed integrative reviews</div>
+          </div>
+          <div>
+            <div class="slide__stat" style="font-size: 56px;">+38%</div>
+            <div class="slide__stat-label">Employment growth to 2032</div>
+            <div class="slide__stat-cite">BLS (fastest healthcare role)</div>
+          </div>
+          <div>
+            <div class="slide__stat" style="font-size: 56px;">69.7%</div>
+            <div class="slide__stat-label">Use zero mindfulness apps</div>
+            <div class="slide__stat-cite">SRL Survey (459 CRNAs)</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card--dark" style="border-radius: 8px; padding: 28px 24px; border-left: 4px solid #5FC89B; margin-bottom: 20px;">
+          <div style="font-size: 16px; font-weight: 400; color: #5FC89B; margin-bottom: 12px;">Revenue Ramp</div>
+          <table style="font-size: 14px;">
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 12px; color: rgba(255,255,255,0.6);">Year 1</td><td style="padding: 8px 12px;">$1.2M-$3.5M</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 12px; color: rgba(255,255,255,0.6);">Year 2</td><td style="padding: 8px 12px;">$5M-$15M</td></tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 8px 12px; color: rgba(255,255,255,0.6);">Year 3</td><td style="padding: 8px 12px;">$27M-$65M</td></tr>
+            <tr><td style="padding: 8px 12px; color: rgba(255,255,255,0.6);">Year 5</td><td style="padding: 8px 12px;"><span class="sage">$65M-$142M</span></td></tr>
+          </table>
+        </div>
+
+        <div class="quote" style="font-size: 20px; color: rgba(255,255,255,0.85); border-color: rgba(95,200,155,0.4);">
+          459 CRNAs described exactly the product we are building, before they knew it existed.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 10: Big Tech Enters Health -->
+<div class="slide slide--light">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">Big Tech Is Coming for Health</div>
+    <div class="slide__subtitle">Every major platform is building a health AI layer. None of them have clinical protocols.</div>
+
+    <div class="cards-row cards-2x2" style="margin-top: 16px;">
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #E85D4A; border-radius: 8px; padding: 24px 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div class="card__title" style="margin: 0;">OpenAI / ChatGPT Health</div>
+          <span class="tag--red tag">Jan 2026</span>
+        </div>
+        <div class="card__body" style="line-height: 1.4;">
+          Dedicated health tab with Apple Health, medical records, MyFitnessPal, Peloton integration. <strong>230M weekly health queries.</strong> Purpose-built encryption. Not for diagnosis, but becoming the default health Q&A layer.
+        </div>
+      </div>
+      <div class="card--white-blue" style="background: #FFFFFF; border-left: 4px solid #3A61AD; border-radius: 8px; padding: 24px 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div class="card__title" style="margin: 0;">Google / Gemini Health Coach</div>
+          <span class="tag--blue tag">Live</span>
+        </div>
+        <div class="card__body" style="line-height: 1.4;">
+          24/7 AI health coach via Fitbit Premium, now on iPhone. Built on <strong>Large Sensor Model</strong> trained on largest wearable dataset ever + <strong>Personal Health LLM</strong> (Gemini fine-tuned for health). Multi-week plans, nutrition, sleep coaching.
+        </div>
+      </div>
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #5FC89B; border-radius: 8px; padding: 24px 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div class="card__title" style="margin: 0;">Samsung Brain Health</div>
+          <span class="tag">CES 2026</span>
+        </div>
+        <div class="card__body" style="line-height: 1.4;">
+          AI-powered cognitive health features for Galaxy Watch + Ring. Early dementia detection via gait, speech, sleep analysis. Stress/breathing monitoring. Moving wearables from fitness tracking to <strong>brain health.</strong>
+        </div>
+      </div>
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #E85D4A; border-radius: 8px; padding: 24px 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div class="card__title" style="margin: 0;">Meta "Malibu 2" Smartwatch</div>
+          <span class="tag--red tag">2026</span>
+        </div>
+        <div class="card__body" style="line-height: 1.4;">
+          Health-tracking smartwatch with Meta AI integration. Companion to Ray-Ban smart glasses ecosystem. Neural wristband for gesture control. <strong>Meta entering the health wearable space directly.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-row cards-2x2" style="margin-top: 16px;">
+      <div class="card--white-blue" style="background: #FFFFFF; border-left: 4px solid #3A61AD; border-radius: 8px; padding: 24px 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div class="card__title" style="margin: 0;">Microsoft Copilot Health</div>
+          <span class="tag--red tag">Mar 12, 2026</span>
+        </div>
+        <div class="card__body" style="line-height: 1.4;">
+          Launched 3 days ago. Integrates Apple Health, Oura, Fitbit + <strong>50,000 US EHRs</strong> via HealthEx. Harvard Health content. Provider directories. Isolated security. The most EHR-connected health AI platform yet.
+        </div>
+      </div>
+      <div class="card--white" style="background: #FFFFFF; border-left: 4px solid #5FC89B; border-radius: 8px; padding: 24px 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div class="card__title" style="margin: 0;">Amazon Health AI</div>
+          <span class="tag">Mar 2026</span>
+        </div>
+        <div class="card__body" style="line-height: 1.4;">
+          Expanded from One Medical ($3.9B acquisition) to Amazon.com and app. Personalized health assistant: records, Rx renewals, appointments. <strong>Amazon-scale distribution.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote" style="font-family: 'Figtree', sans-serif; font-size: 19px; margin-top: 20px; color: #22253A; border-left: 4px solid #5FC89B; padding-left: 20px;">
+      Big Tech builds the health data layer. They do not build clinical protocols.<br>
+      Pausality is the protocol layer that plugs into every one of these platforms.
+    </div>
+  </div>
+  <div class="slide__footer" style="color: #969696;">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 11: EHR Giants — The Gap -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">The EHR Giants Are Solving the Wrong Half</div>
+    <div class="slide__subtitle">Epic and Oracle/Cerner reduce the cause of burnout. Nobody helps clinicians recover from the stress that remains.</div>
+
+    <div class="two-col" style="margin-top: 16px;">
+      <div>
+        <div class="card--dark" style="border-radius: 8px; padding: 28px 24px; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <div style="font-size: 20px; font-weight: 400;">Epic Systems</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.4);">~$4.6B revenue, 38% US market share</div>
+          </div>
+          <div style="font-weight: 300; font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: -0.025em;">Their burnout strategy: eliminate documentation burden</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div>
+              <div style="font-size: 28px; color: #5FC89B; font-weight: 400;">-50%</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Documentation time (DAX Copilot)</div>
+            </div>
+            <div>
+              <div style="font-size: 28px; color: #5FC89B; font-weight: 400;">-70%</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Burnout feelings reported</div>
+            </div>
+            <div>
+              <div style="font-size: 28px; color: #5FC89B; font-weight: 400;">-44%</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Physician turnover (John Muir)</div>
+            </div>
+            <div>
+              <div style="font-size: 28px; color: #5FC89B; font-weight: 400;">2/3</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Epic hospitals using ambient AI</div>
+            </div>
+          </div>
+          <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 14px; letter-spacing: -0.025em; line-height: 1.3;">
+            AI suite: <strong>Art</strong> (clinician AI assistant, launching Nov 2026), <strong>Emmie</strong> (patient comms), <strong>Penny</strong> (revenue cycle). DAX Copilot with Microsoft/Nuance. Epic App Market has SilverCloud + NeuroFlow for mental health referrals.
+          </div>
+        </div>
+
+        <div class="card--dark" style="border-radius: 8px; padding: 28px 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <div style="font-size: 20px; font-weight: 400;">Oracle Health (Cerner)</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.4);">Acquired for $28.3B</div>
+          </div>
+          <div style="font-weight: 300; font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 14px; letter-spacing: -0.025em;">Same strategy: voice-driven AI to cut clicks and charting</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div>
+              <div style="font-size: 28px; color: #5FC89B; font-weight: 400;">-40%</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Documentation time (Clinical AI Agent)</div>
+            </div>
+            <div>
+              <div style="font-size: 28px; color: #5FC89B; font-weight: 400;">200K+</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Hours saved across 300+ orgs</div>
+            </div>
+          </div>
+          <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 14px; letter-spacing: -0.025em; line-height: 1.3;">
+            Clinical Digital Assistant: voice + multimodal AI. Device Validation Program launched Feb 2026 for medical device connectivity. Nabla ambient AI embedded in Cerner.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card--dark" style="border-radius: 8px; padding: 28px 24px; border-left: 4px solid #5FC89B; margin-bottom: 20px;">
+          <div style="font-size: 18px; font-weight: 400; color: #5FC89B; margin-bottom: 14px;">The Gap They Are Not Filling</div>
+          <div style="font-weight: 300; font-size: 15px; color: rgba(255,255,255,0.8); letter-spacing: -0.025em; line-height: 1.5;">
+            Epic and Oracle are reducing <strong>administrative burden</strong>: fewer clicks, faster charting, less pajama time.<br><br>
+            They are <em>not</em> building:<br>
+          </div>
+          <div style="margin-top: 12px; margin-left: 4px;">
+            <div style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 8px; letter-spacing: -0.025em;">
+              <span style="color: #E85D4A; margin-right: 8px;">&#x2717;</span>Real-time nervous system regulation
+            </div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 8px; letter-spacing: -0.025em;">
+              <span style="color: #E85D4A; margin-right: 8px;">&#x2717;</span>Biometric-verified stress recovery
+            </div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 8px; letter-spacing: -0.025em;">
+              <span style="color: #E85D4A; margin-right: 8px;">&#x2717;</span>Workflow-embedded micro-interventions
+            </div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 8px; letter-spacing: -0.025em;">
+              <span style="color: #E85D4A; margin-right: 8px;">&#x2717;</span>Progressive ANS training curricula
+            </div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em;">
+              <span style="color: #E85D4A; margin-right: 8px;">&#x2717;</span>Clinician self-care beyond "less paperwork"
+            </div>
+          </div>
+        </div>
+
+        <div class="card--dark" style="border-radius: 8px; padding: 24px 24px; border-left: 4px solid #3A61AD;">
+          <div style="font-size: 16px; font-weight: 400; color: #3A61AD; margin-bottom: 10px;">The Distribution Opportunity</div>
+          <div style="font-weight: 300; font-size: 14px; color: rgba(255,255,255,0.75); letter-spacing: -0.025em; line-height: 1.4;">
+            Epic's App Market already lists SilverCloud (digital mental health) and NeuroFlow (behavioral health). The marketplace model is proven.<br><br>
+            <strong>Pausality in the Epic App Market</strong> = instant distribution to 2/3 of US hospitals. Epic doesn't want to build this. They want a validated partner to fill the gap.<br><br>
+            <em>Epic reduces the friction. Pausality builds the recovery.</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 12: Neurotech Convergence -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">The Neurotech Wave</div>
+    <div class="slide__subtitle">$362M+ in neurotech funding in the last 6 months. The category is being created now.</div>
+
+    <div class="cards-row cards-2x2" style="margin-top: 20px;">
+      <div class="card--dark" style="border-radius: 8px; padding: 28px 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div style="font-size: 18px; font-weight: 400;">Merge Labs</div>
+          <span class="tag--red tag">$250M Seed</span>
+        </div>
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400; margin-bottom: 6px;">$850M</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Valuation at seed stage</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 10px; letter-spacing: -0.025em; line-height: 1.3;">
+          OpenAI wrote the largest check. Bain Capital, Interface Fund. Bridging biological and artificial intelligence. Sam Altman's personal BCI bet.
+        </div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 28px 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div style="font-size: 18px; font-weight: 400;">Neurable</div>
+          <span class="tag--blue tag">$35M Series A</span>
+        </div>
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400; margin-bottom: 6px;">$65M</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Total raised</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 10px; letter-spacing: -0.025em; line-height: 1.3;">
+          Brain-sensing headphones. Real-time cognitive insights: fatigue, focus, recovery. HyperX gaming partnership. Licensing to 5 OEMs by 2028.
+        </div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 28px 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div style="font-size: 18px; font-weight: 400;">Elemind Technologies</div>
+          <span class="tag">$12M Seed</span>
+        </div>
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400; margin-bottom: 6px;">$20M</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Total raised (Village Global: Bezos, Hoffman, Gates)</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 10px; letter-spacing: -0.025em; line-height: 1.3;">
+          AI-enhanced neurostim wearable. "Electric medicine" without drugs. FSA/HSA eligible. 20% MoM growth Q4 2025.
+        </div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 28px 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div style="font-size: 18px; font-weight: 400;">Subsense</div>
+          <span class="tag--blue tag">$27M Total</span>
+        </div>
+        <div style="font-size: 42px; color: #5FC89B; font-weight: 400; margin-bottom: 6px;">BCI</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Non-surgical brain-computer interface via nanoparticles</div>
+        <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 10px; letter-spacing: -0.025em; line-height: 1.3;">
+          Non-invasive approach. Expanding financing to accelerate clinical development. SOSV/HAX accelerator-backed.
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 24px;">
+      <div class="two-col" style="gap: 40px;">
+        <div>
+          <div style="font-size: 15px; font-weight: 400; color: #5FC89B; margin-bottom: 8px;">What This Means for Pausality</div>
+          <div style="font-weight: 300; font-size: 14px; color: rgba(255,255,255,0.75); letter-spacing: -0.025em; line-height: 1.4;">
+            Neurotech validates the thesis that nervous system state is measurable and trainable. Every one of these companies needs clinical protocols and intervention content. They build sensors. We build what happens after the sensor fires.
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 15px; font-weight: 400; color: #5FC89B; margin-bottom: 8px;">The Investor Framing</div>
+          <div style="font-weight: 300; font-size: 14px; color: rgba(255,255,255,0.75); letter-spacing: -0.025em; line-height: 1.4;">
+            "Big Tech builds the health data layer. Neurotech builds the sensing layer. Nobody is building the <em>intervention</em> layer. That is what Pausality is. We are the protocol engine that sits between the sensor and the outcome."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<!-- SLIDE 12: Why Now -->
+<div class="slide slide--dark">
+  <div class="ekg"><svg width="1920" height="120" viewBox="0 0 1920 120"><path d="M0,60 L350,60 L370,60 L380,20 L390,100 L400,40 L410,80 L420,60 L600,60 L1300,60 L1320,60 L1330,20 L1340,100 L1350,40 L1360,80 L1370,60 L1920,60" fill="none" stroke-width="2"/></svg></div>
+  <div class="slide__content">
+    <div class="slide__title">Why Now</div>
+    <div class="slide__subtitle">Eight tailwinds. One window.</div>
+
+    <div class="cards-row" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-top: 12px;">
+      <div class="card--dark" style="border-radius: 8px; padding: 20px 18px;">
+        <div style="color: #5FC89B; font-weight: 400; font-size: 13px; margin-bottom: 6px;">01 Breathing Institutionalized</div>
+        <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em; line-height: 1.3;">Climatic $10M seed on "breathing as daily habit." VC confirmation of our thesis.</div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 20px 18px;">
+        <div style="color: #5FC89B; font-weight: 400; font-size: 13px; margin-bottom: 6px;">02 Big Tech Entering Health</div>
+        <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em; line-height: 1.3;">ChatGPT Health (230M weekly queries). Gemini health coach. Samsung Brain Health. They build the data layer; they need our protocols.</div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 20px 18px;">
+        <div style="color: #5FC89B; font-weight: 400; font-size: 13px; margin-bottom: 6px;">03 Neurotech Funding Exploding</div>
+        <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em; line-height: 1.3;">Merge Labs $250M (OpenAI-backed). Neurable $35M. Elemind $12M. They build sensors; nobody builds interventions.</div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 20px 18px;">
+        <div style="color: #5FC89B; font-weight: 400; font-size: 13px; margin-bottom: 6px;">04 Apple Buying, Not Building</div>
+        <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em; line-height: 1.3;">Project Mulberry retreated. Jeff Williams retired. Acquisition window for Watch/AirPods integration open.</div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 20px 18px;">
+        <div style="color: #5FC89B; font-weight: 400; font-size: 13px; margin-bottom: 6px;">05 WHOOP Pre-IPO</div>
+        <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em; line-height: 1.3;">600+ new hires. IPO 2026-2028. Needs protocol IP. They measure recovery but cannot prescribe it.</div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 20px 18px;">
+        <div style="color: #5FC89B; font-weight: 400; font-size: 13px; margin-bottom: 6px;">06 Mindfulness Compressing</div>
+        <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em; line-height: 1.3;">Calm -24% rev. Headspace -89% valuation. B2C generalists dying. Enterprise specialists winning.</div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 20px 18px;">
+        <div style="color: #5FC89B; font-weight: 400; font-size: 13px; margin-bottom: 6px;">07 M&A Accelerating</div>
+        <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em; line-height: 1.3;">200 digital health deals in 2025. Sword/Kaia $285M. The consolidation playbook is proven.</div>
+      </div>
+      <div class="card--dark" style="border-radius: 8px; padding: 20px 18px;">
+        <div style="color: #5FC89B; font-weight: 400; font-size: 13px; margin-bottom: 6px;">08 No One Serves Clinicians</div>
+        <div style="font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: -0.025em; line-height: 1.3;">42-72% CRNA burnout. Mental health top-3 job factor. Zero credible products. We are the only one.</div>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 20px; display: flex; align-items: center; gap: 40px;">
+      <div>
+        <span style="font-weight: 300; font-size: 16px; color: rgba(255,255,255,0.7);">A breathing app without a moat:</span>
+        <span style="font-size: 28px; color: #E85D4A; font-weight: 400; margin-left: 12px;">$2.2M</span>
+      </div>
+      <div style="font-size: 24px; color: rgba(255,255,255,0.3);">&rarr;</div>
+      <div>
+        <span style="font-weight: 300; font-size: 16px; color: rgba(255,255,255,0.7);">A clinical therapeutic with validation:</span>
+        <span style="font-size: 28px; color: #5FC89B; font-weight: 400; margin-left: 12px;">$285M</span>
+      </div>
+      <div style="font-size: 24px; color: rgba(255,255,255,0.3);">&rarr;</div>
+      <div>
+        <span style="font-weight: 300; font-size: 16px; color: #5FC89B;">We are building the moat.</span>
+      </div>
+    </div>
+  </div>
+  <div class="slide__footer">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+</body>
+</html>
