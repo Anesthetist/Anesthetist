@@ -86,6 +86,31 @@ If an action doesn't advance a red arrow, it's not a priority.
 4. Enterprise Data → Clinical LLM Moat (planned)
 5. Platform + CEU → Multi-Stream $1M ARR (target)
 
+## Version Control Protocol
+
+Git commits are mandatory. The vault's history should read like a lab notebook.
+
+**When to commit:** After every coherent unit of work — a literature scan written to vault, a pipeline batch processed, an output created, a CLAUDE.md update. Never let more than one logical unit of work go uncommitted.
+
+**Commit message format:**
+```
+{action}: {what} — {why/context}
+
+Details:
+- {N} evidence notes created
+- {N} concepts enriched
+- {N} relationships wired
+- Sources: {PubMed scan / ChatGPT extraction / manual}
+```
+
+**Actions vocabulary:** `Add`, `Create`, `Enrich`, `Wire`, `Update`, `Fix`, `Remove`, `Scan`, `Extract`
+
+**After every bot run:** The coordinator or Vigil commits with a message that tells the story. Not "update files" — but "Scan: 10 interoception studies from PubMed (Feb-Mar 2026) — Nature interoceptomimetics paper, Campo RCT, 28 evidence links wired."
+
+**Push cadence:** Push to origin after each session or when Randy asks. Never force-push.
+
+**The test:** Can Randy run `git log --oneline` six months from now and understand exactly what happened and why?
+
 ## Communication Philosophy
 
 All SRL output — emails, research packages, investor materials, clinical content — follows these principles:
