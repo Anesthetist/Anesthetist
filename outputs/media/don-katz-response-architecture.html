@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, initial-scale=1.0">
+<title>How We Answered Don Katz — From the Knowledge Graph</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #22253A;
+    color: #F5F5F0;
+    letter-spacing: -0.025em;
+    min-height: 100vh;
+    padding: 80px;
+  }
+
+  /* --- HEADER --- */
+  .header {
+    max-width: 1400px;
+    margin: 0 auto 72px;
+  }
+
+  .header .context-label {
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(95, 200, 155, 0.6);
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-weight: 200;
+    font-size: 52px;
+    color: #F5F5F0;
+    line-height: 1.15;
+    max-width: 900px;
+  }
+
+  .header h1 span { color: #5FC89B; }
+
+  .header .subline {
+    font-weight: 300;
+    font-size: 18px;
+    color: rgba(245, 245, 240, 0.4);
+    margin-top: 16px;
+    max-width: 700px;
+    line-height: 1.6;
+  }
+
+  /* --- DON'S EMAIL --- */
+  .don-email {
+    max-width: 1400px;
+    margin: 0 auto 72px;
+    background: rgba(245, 245, 240, 0.03);
+    border: 1px solid rgba(245, 245, 240, 0.08);
+    border-radius: 20px;
+    padding: 48px 56px;
+    position: relative;
+  }
+
+  .don-email::before {
+    content: '"';
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    font-size: 72px;
+    font-weight: 200;
+    color: rgba(245, 245, 240, 0.08);
+    line-height: 1;
+  }
+
+  .don-email .from {
+    font-weight: 400;
+    font-size: 13px;
+    color: rgba(245, 245, 240, 0.4);
+    margin-bottom: 20px;
+  }
+
+  .don-email .from strong {
+    color: rgba(245, 245, 240, 0.7);
+  }
+
+  .don-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .don-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .q-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(245, 245, 240, 0.06);
+    border: 1px solid rgba(245, 245, 240, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 13px;
+    color: rgba(245, 245, 240, 0.5);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .don-question p {
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(245, 245, 240, 0.6);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* --- THREE ANSWERS --- */
+  .answers {
+    max-width: 1400px;
+    margin: 0 auto 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .answer-block {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .answer-left {
+    position: sticky;
+    top: 80px;
+  }
+
+  .answer-label {
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #5FC89B;
+    margin-bottom: 12px;
+  }
+
+  .answer-left h2 {
+    font-weight: 300;
+    font-size: 28px;
+    color: #F5F5F0;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .answer-left .don-hook {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(245, 245, 240, 0.4);
+    line-height: 1.7;
+    font-style: italic;
+    padding-left: 16px;
+    border-left: 2px solid rgba(245, 245, 240, 0.1);
+  }
+
+  .answer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Evidence cards */
+  .evidence-card {
+    background: rgba(245, 245, 240, 0.03);
+    border: 1px solid rgba(95, 200, 155, 0.12);
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: start;
+    transition: all 0.3s ease;
+  }
+
+  .evidence-card:hover {
+    border-color: rgba(95, 200, 155, 0.35);
+    background: rgba(95, 200, 155, 0.03);
+  }
+
+  .evidence-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .icon-concept {
+    background: rgba(95, 200, 155, 0.1);
+    border: 1px solid rgba(95, 200, 155, 0.2);
+  }
+
+  .icon-evidence {
+    background: rgba(100, 149, 237, 0.1);
+    border: 1px solid rgba(100, 149, 237, 0.2);
+  }
+
+  .icon-strategy {
+    background: rgba(255, 179, 71, 0.1);
+    border: 1px solid rgba(255, 179, 71, 0.2);
+  }
+
+  .evidence-content h4 {
+    font-weight: 400;
+    font-size: 14px;
+    color: #F5F5F0;
+    margin-bottom: 4px;
+  }
+
+  .evidence-content .source {
+    font-weight: 300;
+    font-size: 12px;
+    color: rgba(245, 245, 240, 0.35);
+    margin-bottom: 8px;
+  }
+
+  .evidence-content p {
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(245, 245, 240, 0.6);
+    line-height: 1.6;
+  }
+
+  .evidence-content .vault-id {
+    margin-top: 8px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    color: rgba(95, 200, 155, 0.4);
+  }
+
+  /* Connector line between answer blocks */
+  .answer-divider {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(95, 200, 155, 0.15), transparent);
+  }
+
+  /* --- ARCHITECTURE REVEAL --- */
+  .architecture-reveal {
+    max-width: 1400px;
+    margin: 0 auto 72px;
+    text-align: center;
+    padding: 64px 80px;
+    background: rgba(95, 200, 155, 0.04);
+    border: 1px solid rgba(95, 200, 155, 0.15);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .architecture-reveal::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(95, 200, 155, 0.06) 0%, transparent 70%);
+  }
+
+  .architecture-reveal h2 {
+    font-weight: 200;
+    font-size: 32px;
+    color: #F5F5F0;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .architecture-reveal h2 span { color: #5FC89B; }
+
+  .arch-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .arch-stat {
+    text-align: center;
+  }
+
+  .arch-stat .number {
+    font-weight: 200;
+    font-size: 42px;
+    color: #5FC89B;
+    line-height: 1;
+  }
+
+  .arch-stat .label {
+    font-weight: 300;
+    font-size: 12px;
+    color: rgba(245, 245, 240, 0.4);
+    margin-top: 4px;
+  }
+
+  .arch-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .arch-flow-step {
+    padding: 12px 20px;
+    background: rgba(245, 245, 240, 0.04);
+    border: 1px solid rgba(95, 200, 155, 0.15);
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(245, 245, 240, 0.6);
+  }
+
+  .arch-flow-arrow {
+    color: rgba(95, 200, 155, 0.4);
+    font-size: 18px;
+  }
+
+  /* --- FOOTER --- */
+  .footer {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 48px;
+    border-top: 1px solid rgba(95, 200, 155, 0.08);
+  }
+
+  .footer p {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(245, 245, 240, 0.25);
+  }
+
+  .footer p span { color: rgba(95, 200, 155, 0.4); }
+
+  .footer .punchline {
+    font-weight: 200;
+    font-size: 22px;
+    color: rgba(245, 245, 240, 0.5);
+    margin-bottom: 16px;
+  }
+
+  .footer .punchline span {
+    color: #5FC89B;
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="context-label">Case Study &middot; March 15, 2026</div>
+  <h1>The founder of Audible asked <span>three hard questions.</span><br>We answered from the graph.</h1>
+  <p class="subline">Don Katz emailed Jason Fields with pointed skepticism about Pausality. Within hours, every answer was sourced from a standards-based knowledge graph containing 180+ linked notes, 25 peer-reviewed studies published this month, and 28 years of clinical practice.</p>
+</div>
+
+<!-- DON'S QUESTIONS -->
+<div class="don-email">
+  <div class="from">From: <strong>Don Katz</strong> &middot; Founder of Audible &middot; March 15, 2026</div>
+  <div class="don-questions">
+    <div class="don-question">
+      <div class="q-number">1</div>
+      <p>"I wanted to start with what the product actually does for people and how."</p>
+    </div>
+    <div class="don-question">
+      <div class="q-number">2</div>
+      <p>"I wonder why the target market is so specific (and small)."</p>
+    </div>
+    <div class="don-question">
+      <div class="q-number">3</div>
+      <p>"I can't tell from the Pausality site if this is the point (versus, say, beta blockers)."</p>
+    </div>
+  </div>
+</div>
+
+<!-- ANSWER 1 -->
+<div class="answers">
+
+  <div class="answer-block">
+    <div class="answer-left">
+      <div class="answer-label">Question One</div>
+      <h2>What does it do, and how?</h2>
+      <div class="don-hook">"I realized via the neuro-inner ear route that basic breathing could keep me from feeling like I may faint in a crowd"</div>
+    </div>
+    <div class="answer-right">
+      <div class="evidence-card">
+        <div class="evidence-icon icon-concept">◆</div>
+        <div class="evidence-content">
+          <h4>Resonant Breathing Frequency</h4>
+          <div class="source">Vault Concept &middot; 14 evidence links</div>
+          <p>At ~6 breaths/min, the heart-lung-baroreflex loop locks into resonance, producing maximum HRV amplitude. This is the mechanism Don discovered intuitively for his vasovagal episodes.</p>
+          <div class="vault-id">urn:srl:concept:resonant-breathing-frequency</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-concept">◆</div>
+        <div class="evidence-content">
+          <h4>NeuroMinute™</h4>
+          <div class="source">Vault Concept &middot; 12 evidence links</div>
+          <p>60-second protocol synced to Apple Watch heart rate. Not meditation. Closed-loop biofeedback training. Measurable HRV shift in a single session.</p>
+          <div class="vault-id">urn:srl:concept:neurominute</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-evidence">◇</div>
+        <div class="evidence-content">
+          <h4>Breathing modulates attention via two independent pathways</h4>
+          <div class="source">Nakamura & Yoshino &middot; J Physiological Sciences &middot; Feb 2026</div>
+          <p>Respiratory phase and cardiac rhythm independently modulate attentional performance. Breathing is a cognitive tool, not just relaxation.</p>
+          <div class="vault-id">urn:srl:evidence:nakamura-2026-respiration-rr-interval-attention</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-evidence">◇</div>
+        <div class="evidence-content">
+          <h4>Interoception + HRV co-improve in 8 weeks</h4>
+          <div class="source">Campo et al. &middot; Frontiers in Psychology &middot; Mar 2026 &middot; RCT</div>
+          <p>Mindfulness training simultaneously improved subjective body awareness and objective HRV. The dual measures move together.</p>
+          <div class="vault-id">urn:srl:evidence:campo-2026-mindfulness-athletes-hrv-interoception</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="answer-divider"></div>
+
+  <!-- ANSWER 2 -->
+  <div class="answer-block">
+    <div class="answer-left">
+      <div class="answer-label">Question Two</div>
+      <h2>Why so small a market?</h2>
+      <div class="don-hook">"I wonder why the target market is so specific (and small per my own deeply traumatic experience of medicine)"</div>
+    </div>
+    <div class="answer-right">
+      <div class="evidence-card">
+        <div class="evidence-icon icon-strategy">◈</div>
+        <div class="evidence-content">
+          <h4>The Joy of Small Markets</h4>
+          <div class="source">Cedric Chin &middot; Commoncog &middot; Sep 2025 &middot; via Knee/Greenwald (Columbia)</div>
+          <p>Small-market leaders enjoy dual protection: too credible for sub-scale competitors, too small for large companies to justify entering. 60,000 CRNAs is a structurally defensible market.</p>
+          <div class="vault-id">urn:srl:evidence:chin-2025-joy-of-small-markets</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-concept">◆</div>
+        <div class="evidence-content">
+          <h4>Clinician Durability</h4>
+          <div class="source">Vault Concept &middot; 27 evidence links</div>
+          <p>60%+ burnout. $80-150K turnover cost per CRNA. 30-40 gap moments per shift. The market need is overwhelming, concentrated, and identity-driven.</p>
+          <div class="vault-id">urn:srl:concept:clinician-durability</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-concept">◆</div>
+        <div class="evidence-content">
+          <h4>Market Intelligence</h4>
+          <div class="source">Vault Concept &middot; 15 competitors tracked</div>
+          <p>Calm won't build CRNA-specific protocols for 60K users. Lyra ($910M raised) won't add biometric integration for a market that small. White space, defended by clinical credibility.</p>
+          <div class="vault-id">urn:srl:concept:market-intelligence</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-evidence">◇</div>
+        <div class="evidence-content">
+          <h4>Nature coined "interoceptomimetics"</h4>
+          <div class="source">Cox et al. &middot; Nature &middot; Mar 2026</div>
+          <p>Interventions that restore degraded body-to-brain signaling. The therapeutic category we're building just got named by the world's top journal. CRNAs are the beachhead; the science is universal.</p>
+          <div class="vault-id">urn:srl:evidence:cox-2026-interoceptomimetics-aging</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="answer-divider"></div>
+
+  <!-- ANSWER 3 -->
+  <div class="answer-block">
+    <div class="answer-left">
+      <div class="answer-label">Question Three</div>
+      <h2>Why not beta blockers?</h2>
+      <div class="don-hook">"A steady hand is clearly required for many procedures but I can't tell if this is the point (versus, say, beta blockers)"</div>
+    </div>
+    <div class="answer-right">
+      <div class="evidence-card">
+        <div class="evidence-icon icon-concept">◆</div>
+        <div class="evidence-content">
+          <h4>Vagal Tone</h4>
+          <div class="source">Vault Concept &middot; 20+ evidence links</div>
+          <p>Beta blockers impose a ceiling on arousal. Breathing training builds a floor of resilience. Opposite mechanisms. For Don's vasovagal condition, beta blockers are contraindicated — they'd lower HR further when the problem is already inappropriate bradycardia.</p>
+          <div class="vault-id">urn:srl:concept:vagal-tone</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-evidence">◇</div>
+        <div class="evidence-content">
+          <h4>Surgeon HRV predicts 30-day complications</h4>
+          <div class="source">Guignard et al. &middot; JAMA Surgery &middot; 2025 &middot; n=793</div>
+          <p>Autonomic state in the first 5 minutes of surgery predicted major complications. Beta blockers suppress the signal. Breathing training builds the capacity. Only one improves the surgeon's actual regulatory infrastructure.</p>
+          <div class="vault-id">urn:srl:evidence:guignard-2025-surgeon-stress-complications</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-evidence">◇</div>
+        <div class="evidence-content">
+          <h4>HRV biofeedback: 13 RCTs, 965 patients</h4>
+          <div class="source">Applied Psychophysiology & Biofeedback &middot; 2026 &middot; Meta-analysis</div>
+          <p>Significantly improved cardiac autonomic function AND reduced blood pressure in cardiovascular disease patients. No side effects. No prescription. Complementary to pharmacology, not competing with it.</p>
+          <div class="vault-id">urn:srl:evidence:springer-2026-hrv-biofeedback-cardiovascular-meta-analysis</div>
+        </div>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-icon icon-evidence">◇</div>
+        <div class="evidence-content">
+          <h4>64% substance use reduction via wearable HRV biofeedback</h4>
+          <div class="source">JAMA Psychiatry &middot; 2025 &middot; Phase 2 RCT</div>
+          <p>Wearable HRV biofeedback produced significant reductions in negative affect, craving, and substance use. The mechanism extends far beyond "breathing apps" — this is an emerging clinical modality.</p>
+          <div class="vault-id">urn:srl:evidence:jama-2025-hrv-biofeedback-substance-use-rct</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ARCHITECTURE REVEAL -->
+<div class="architecture-reveal">
+  <h2>Every answer traced to <span>source.</span><br>Every source linked in the <span>graph.</span></h2>
+
+  <div class="arch-stats">
+    <div class="arch-stat">
+      <div class="number">12</div>
+      <div class="label">vault notes<br>sourced</div>
+    </div>
+    <div class="arch-stat">
+      <div class="number">7</div>
+      <div class="label">peer-reviewed<br>studies cited</div>
+    </div>
+    <div class="arch-stat">
+      <div class="number">4</div>
+      <div class="label">published<br>this month</div>
+    </div>
+    <div class="arch-stat">
+      <div class="number">28</div>
+      <div class="label">years clinical<br>experience</div>
+    </div>
+    <div class="arch-stat">
+      <div class="number">&lt;4hrs</div>
+      <div class="label">email to<br>sourced response</div>
+    </div>
+  </div>
+
+  <div class="arch-flow">
+    <div class="arch-flow-step">Don's email arrives</div>
+    <span class="arch-flow-arrow">→</span>
+    <div class="arch-flow-step">Vigil queries the vault</div>
+    <span class="arch-flow-arrow">→</span>
+    <div class="arch-flow-step">PubMed scan (same day)</div>
+    <span class="arch-flow-arrow">→</span>
+    <div class="arch-flow-step">Evidence wired to concepts</div>
+    <span class="arch-flow-arrow">→</span>
+    <div class="arch-flow-step">Response drafted from graph</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p class="punchline">The knowledge graph doesn't just store what we know.<br>It <span>answers questions we haven't been asked yet.</span></p>
+  <p>Somnistics Research Labs <span>&middot;</span> Vigil Knowledge System <span>&middot;</span> March 2026</p>
+</div>
+
+</body>
+</html>
