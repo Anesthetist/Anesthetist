@@ -46,12 +46,29 @@ Monitor for SRL-relevant conversations:
 
 **Platforms:** X/Twitter, Reddit (r/CRNA, r/nursing, r/anesthesiology, r/breathwork, r/biohacking), Instagram, TikTok, LinkedIn
 
+**X Lists (Curated Signal Sources):**
+Randy follows curated X lists that represent pre-filtered signal. These are higher-value than general search because the list curator (e.g., Brian Rommel) has already identified who matters. Monitor these lists for:
+- Emerging trends before they hit mainstream
+- Thought leader positioning shifts
+- Conference/event signals
+- Cross-pollination opportunities (someone in a wellness list discussing clinical applications)
+- Language and framing that resonates in adjacent communities
+
+**X List Monitoring Protocol:**
+1. Identify Randy's followed X lists (Brian Rommel's lists + others)
+2. For each list, scan weekly for: most-engaged posts, recurring themes, new voices, SRL-relevant discussions
+3. Flag posts that align with SRL's thesis or create resonance opportunities
+4. Track which list members have the most engagement on SRL-adjacent topics
+5. Identify potential collaborators, podcast guests, or content partners from list activity
+6. Note language patterns that work — how do respected voices in these communities talk about stress, breathing, performance, nervous system?
+
 **Signal types:**
 - Pain signals: clinicians describing burnout, stress, exhaustion
 - Curiosity signals: questions about HRV, breathing, nervous system regulation
 - Competitor mentions: what people say about Calm, Headspace, WHOOP
 - SRL mentions: any mention of Pausality, somnistics, NeuroMinute
 - Influencer activity: who's talking about breathwork, HRV, clinician wellness
+- List-sourced signals: trends emerging from curated X lists before they go mainstream
 
 ### 4. Content Performance Tracking
 
