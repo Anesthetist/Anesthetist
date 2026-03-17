@@ -16,6 +16,8 @@ So I started reading. BKS Iyengar — *Light on Yoga*, *Light on Life*, *Light o
 
 Pranayama — the science of breath — was the bridge. Iyengar showed me that breath layered on top of the physical postures changes everything. The body becomes a landscape you can navigate from the inside. Oh. That was life-changing.
 
+Then I read *The Body Keeps the Score*. And I started looking at heart rate variability — what happens to HRV when you apply specific breathing techniques. The data confirmed what my body had already learned on the mat: breath changes physiology in measurable, repeatable ways. That's when the clinician in me woke up. This wasn't philosophy anymore. This was pharmacology without a drug.
+
 That was five years ago. Since then I've been looking intensely at integral performance techniques for call shifts. How to think well under pressure. How to sustain clinical precision across a 28-year career without the progressive erosion of judgment, empathy, and vigilance that we euphemistically call "burnout." I built a company around what I found — Somnistics Research Labs — and a product called Pausality: 60-second breathing protocols with real-time Apple Watch biofeedback. Not meditation. Nervous system training.
 
 Over six months of building, I accumulated 861 ChatGPT conversations. Every strategic decision, clinical insight, novel concept, and research thread — trapped in chat transcripts. Meanwhile, I had a knowledge graph in Obsidian with 180+ linked notes covering our science and evidence. But the two systems weren't talking to each other, and the graph wasn't growing on its own.
