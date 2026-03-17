@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, initial-scale=1.0">
+<title>Vigil — SRL Knowledge System Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #22253A;
+    color: #F5F5F0;
+    letter-spacing: -0.025em;
+    min-height: 100vh;
+    padding: 80px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .header h1 {
+    font-weight: 200;
+    font-size: 48px;
+    color: #5FC89B;
+    margin-bottom: 8px;
+  }
+
+  .header p {
+    font-weight: 300;
+    font-size: 18px;
+    color: rgba(245, 245, 240, 0.6);
+  }
+
+  .architecture {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 32px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: rgba(245, 245, 240, 0.04);
+    border: 1px solid rgba(95, 200, 155, 0.15);
+    border-radius: 20px;
+    padding: 36px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(95, 200, 155, 0.4);
+    background: rgba(245, 245, 240, 0.06);
+  }
+
+  .card-label {
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #5FC89B;
+    margin-bottom: 16px;
+  }
+
+  .card h2 {
+    font-weight: 400;
+    font-size: 22px;
+    color: #F5F5F0;
+    margin-bottom: 20px;
+  }
+
+  .card p {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(245, 245, 240, 0.7);
+    line-height: 1.7;
+  }
+
+  .card .stat {
+    display: inline-block;
+    background: rgba(95, 200, 155, 0.1);
+    border: 1px solid rgba(95, 200, 155, 0.2);
+    border-radius: 8px;
+    padding: 6px 14px;
+    margin: 4px 4px 4px 0;
+    font-size: 13px;
+    font-weight: 300;
+    color: #5FC89B;
+  }
+
+  .stats-row {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Vigil card spans full width */
+  .vigil-card {
+    grid-column: 1 / -1;
+    background: rgba(95, 200, 155, 0.06);
+    border-color: rgba(95, 200, 155, 0.3);
+    text-align: center;
+    padding: 40px;
+  }
+
+  .vigil-card h2 {
+    font-size: 28px;
+    font-weight: 300;
+  }
+
+  .vigil-card .subtitle {
+    font-size: 16px;
+    color: rgba(245, 245, 240, 0.5);
+    font-weight: 300;
+    margin-top: 4px;
+  }
+
+  /* Flow arrows */
+  .flow-row {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 0;
+  }
+
+  .flow-arrow {
+    color: rgba(95, 200, 155, 0.4);
+    font-size: 24px;
+    font-weight: 200;
+  }
+
+  .flow-label {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(245, 245, 240, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Bot list styling */
+  .bot-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .bot-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(245, 245, 240, 0.06);
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(245, 245, 240, 0.7);
+  }
+
+  .bot-list li:last-child { border-bottom: none; }
+
+  .bot-list li strong {
+    color: #5FC89B;
+    font-weight: 400;
+  }
+
+  /* Vault layers */
+  .vault-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .vault-layer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: rgba(95, 200, 155, 0.04);
+    border: 1px solid rgba(95, 200, 155, 0.1);
+  }
+
+  .vault-layer .name {
+    font-weight: 400;
+    font-size: 14px;
+    color: #F5F5F0;
+  }
+
+  .vault-layer .count {
+    font-weight: 300;
+    font-size: 13px;
+    color: #5FC89B;
+  }
+
+  /* Feedback loop */
+  .feedback-loop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+  }
+
+  .feedback-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #5FC89B;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  .feedback-text {
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(245, 245, 240, 0.6);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 60px;
+    color: rgba(245, 245, 240, 0.25);
+    font-weight: 300;
+    font-size: 13px;
+  }
+
+  .footer span { color: rgba(95, 200, 155, 0.4); }
+
+  /* Pulse animation for Vigil */
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(95, 200, 155, 0.1); }
+    50% { box-shadow: 0 0 40px 8px rgba(95, 200, 155, 0.08); }
+  }
+
+  .vigil-card { animation: pulse 4s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Vigil</h1>
+  <p>Self-Improving Knowledge System &mdash; Somnistics Research Labs</p>
+</div>
+
+<div class="architecture">
+
+  <!-- Row 1: Sources -->
+  <div class="card">
+    <div class="card-label">Sources</div>
+    <h2>ChatGPT Migration</h2>
+    <p>861 conversations from 6 months of strategic thinking, clinical insight, and concept development.</p>
+    <div class="stats-row">
+      <span class="stat">861 files</span>
+      <span class="stat">39.7M characters</span>
+      <span class="stat">3 processed</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Sources</div>
+    <h2>PubMed Literature</h2>
+    <p>Automated scans for interoception, clinician durability, and performance psychology.</p>
+    <div class="stats-row">
+      <span class="stat">3 scans complete</span>
+      <span class="stat">76 studies found</span>
+      <span class="stat">25 written to vault</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Sources</div>
+    <h2>External Intelligence</h2>
+    <p>Commoncog, web research, competitive landscape, Google Drive imports.</p>
+    <div class="stats-row">
+      <span class="stat">Weekly comp scans</span>
+      <span class="stat">15 competitors tracked</span>
+      <span class="stat">58 contacts</span>
+    </div>
+  </div>
+
+  <!-- Flow -->
+  <div class="flow-row">
+    <span class="flow-label">sources flow into</span>
+    <span class="flow-arrow">&darr;</span>
+  </div>
+
+  <!-- Row 2: Pipeline + Vault -->
+  <div class="card">
+    <div class="card-label">Extraction Pipeline</div>
+    <h2>Six Specialized Bots</h2>
+    <ul class="bot-list">
+      <li><strong>Triage</strong> &mdash; Scan, classify, score, queue</li>
+      <li><strong>Miner</strong> &mdash; Extract Randy's voice, structure candidates</li>
+      <li><strong>Writer</strong> &mdash; Validate, deduplicate, write via MCP</li>
+      <li><strong>Accelerator</strong> &mdash; Auto-resolve 80%+ of review items</li>
+      <li><strong>Citation Resolver</strong> &mdash; PubMed/DOI verification</li>
+      <li><strong>Coordinator</strong> &mdash; Orchestrate, track, retrospect</li>
+    </ul>
+  </div>
+
+  <div class="card" style="grid-row: span 2;">
+    <div class="card-label">Knowledge Graph</div>
+    <h2>Living Vault</h2>
+    <p style="margin-bottom: 20px;">Standards-based Obsidian vault. Dublin Core + SKOS + PROV-O.</p>
+    <div class="vault-layers">
+      <div class="vault-layer">
+        <span class="name">Concepts</span>
+        <span class="count">46 notes &middot; SKOS linked</span>
+      </div>
+      <div class="vault-layer">
+        <span class="name">Evidence</span>
+        <span class="count">90+ notes &middot; Dublin Core</span>
+      </div>
+      <div class="vault-layer">
+        <span class="name">Observations</span>
+        <span class="count">40+ notes &middot; Clinical knowledge</span>
+      </div>
+      <div class="vault-layer">
+        <span class="name">Audiences</span>
+        <span class="count">4 profiles</span>
+      </div>
+      <div class="vault-layer">
+        <span class="name">Outputs</span>
+        <span class="count">Articles &middot; Decks &middot; CEU</span>
+      </div>
+    </div>
+    <div class="stats-row" style="margin-top: 20px;">
+      <span class="stat">96 edges wired yesterday</span>
+      <span class="stat">36 notes added</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Self-Improvement</div>
+    <h2>Three Feedback Loops</h2>
+    <div class="feedback-loop">
+      <div class="feedback-dot"></div>
+      <span class="feedback-text"><strong style="color:#5FC89B;">Reflexion</strong> &mdash; Post-run self-reflection stored as episodic memory</span>
+    </div>
+    <div class="feedback-loop">
+      <div class="feedback-dot"></div>
+      <span class="feedback-text"><strong style="color:#5FC89B;">Pattern Libraries</strong> &mdash; Accumulated heuristics compound every run</span>
+    </div>
+    <div class="feedback-loop">
+      <div class="feedback-dot"></div>
+      <span class="feedback-text"><strong style="color:#5FC89B;">Cross-Bot Feedback</strong> &mdash; Writer evaluates miner, coordinator tracks trends</span>
+    </div>
+    <p style="margin-top: 20px; font-size: 13px;">Randy's accept/reject decisions feed back through all bots. The review queue shrinks every cycle.</p>
+  </div>
+
+  <!-- Flow -->
+  <div class="flow-row">
+    <span class="flow-label">orchestrated by</span>
+    <span class="flow-arrow">&darr;</span>
+  </div>
+
+  <!-- Row 3: Vigil -->
+  <div class="card vigil-card">
+    <div class="card-label">Orchestrator</div>
+    <h2>Vigil</h2>
+    <p class="subtitle">Named for the watchfulness that defines CRNA practice</p>
+    <p style="margin-top: 16px; max-width: 800px; margin-left: auto; margin-right: auto;">
+      Routes work to specialized bots. Synthesizes vault content for Randy's questions.
+      Manages the pipeline. Never does the extraction or writing directly.
+      Operates within the nursing process &mdash; ADPIE.
+    </p>
+    <div class="stats-row" style="justify-content: center; margin-top: 20px;">
+      <span class="stat">7 bots managed</span>
+      <span class="stat">42 protocol files</span>
+      <span class="stat">858 files queued</span>
+      <span class="stat">24/7 when Mac Mini is live</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Somnistics Research Labs <span>&middot;</span> Library Graph <span>&middot;</span> March 2026
+</div>
+
+</body>
+</html>

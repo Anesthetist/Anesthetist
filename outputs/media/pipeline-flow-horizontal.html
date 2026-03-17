@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, initial-scale=1.0">
+<title>Vigil Pipeline Flow</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #F5F5F0;
+    color: #22253A;
+    letter-spacing: -0.025em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 60px;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .title h1 {
+    font-weight: 200;
+    font-size: 40px;
+    color: #22253A;
+  }
+
+  .title h1 span { color: #5FC89B; }
+
+  .title p {
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(34, 37, 58, 0.5);
+    margin-top: 4px;
+  }
+
+  .pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    max-width: 1600px;
+    width: 100%;
+  }
+
+  .stage {
+    flex: 1;
+    position: relative;
+    padding: 36px 32px;
+    background: white;
+    border: 1px solid rgba(34, 37, 58, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stage:first-child {
+    border-radius: 20px 0 0 20px;
+  }
+
+  .stage:last-child {
+    border-radius: 0 20px 20px 0;
+  }
+
+  .stage + .stage {
+    border-left: none;
+  }
+
+  .stage-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #5FC89B;
+    color: #22253A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .stage-label {
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #5FC89B;
+    margin-bottom: 4px;
+  }
+
+  .stage h3 {
+    font-weight: 400;
+    font-size: 18px;
+    color: #22253A;
+    margin-bottom: 12px;
+  }
+
+  .stage p {
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(34, 37, 58, 0.6);
+    line-height: 1.7;
+    flex-grow: 1;
+  }
+
+  .stage .output {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(34, 37, 58, 0.06);
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(34, 37, 58, 0.4);
+  }
+
+  .stage .output strong {
+    color: #5FC89B;
+    font-weight: 400;
+  }
+
+  /* Arrow connectors */
+  .stage:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #5FC89B;
+    z-index: 2;
+    background: #F5F5F0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(95, 200, 155, 0.3);
+  }
+
+  /* Feedback bar at bottom */
+  .feedback-bar {
+    margin-top: 40px;
+    max-width: 1600px;
+    width: 100%;
+    background: #22253A;
+    border-radius: 16px;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .feedback-bar .loop {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .feedback-bar .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5FC89B;
+  }
+
+  .feedback-bar .loop-text {
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(245, 245, 240, 0.6);
+  }
+
+  .feedback-bar .loop-text strong {
+    color: #5FC89B;
+    font-weight: 400;
+  }
+
+  .feedback-label {
+    font-weight: 300;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(245, 245, 240, 0.3);
+  }
+
+  /* Randy indicator */
+  .randy-card {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .randy-card p {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(34, 37, 58, 0.4);
+  }
+
+  .randy-card p strong {
+    color: #22253A;
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+
+<div class="title">
+  <h1>How <span>Vigil</span> Processes Knowledge</h1>
+  <p>From raw transcripts to curated vault &mdash; automatically, with human judgment where it matters</p>
+</div>
+
+<div class="pipeline">
+  <div class="stage">
+    <div class="stage-number">1</div>
+    <div class="stage-label">Assessment</div>
+    <h3>Triage</h3>
+    <p>Scan 861 ChatGPT files. Classify by category. Score extraction value. Prioritize the queue. Favor Randy's original thinking over AI-generated content.</p>
+    <div class="output"><strong>Output:</strong> extraction-queue.md</div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-number">2</div>
+    <div class="stage-label">Diagnosis</div>
+    <h3>Mine</h3>
+    <p>Extract Randy's voice from each transcript. Identify novel concepts, clinical observations, evidence claims. Distinguish signal from noise (15% / 85%).</p>
+    <div class="output"><strong>Output:</strong> extraction reports</div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-number">3</div>
+    <div class="stage-label">Planning</div>
+    <h3>Validate</h3>
+    <p>Check schema compliance. Search for duplicates. Decide: create, update, or flag. Quality gates enforce standards. Dublin Core + SKOS + PROV-O.</p>
+    <div class="output"><strong>Output:</strong> validated candidates</div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-number">4</div>
+    <div class="stage-label">Implementation</div>
+    <h3>Write</h3>
+    <p>Create vault notes via MCP. Wire SKOS relationships. Link evidence chains. Log every action. Never write directly &mdash; always through the server.</p>
+    <div class="output"><strong>Output:</strong> vault notes + audit log</div>
+  </div>
+
+  <div class="stage">
+    <div class="stage-number">5</div>
+    <div class="stage-label">Evaluation</div>
+    <h3>Review</h3>
+    <p>Auto-resolve 80%+ of flagged items. Pre-draft clinical interpretations. Verify citations via PubMed. Present a 30-second dashboard to Randy.</p>
+    <div class="output"><strong>Output:</strong> review-dashboard.md</div>
+  </div>
+</div>
+
+<div class="feedback-bar">
+  <span class="feedback-label">Feedback Loops</span>
+  <div class="loop">
+    <div class="dot"></div>
+    <span class="loop-text"><strong>Reflexion</strong> &mdash; self-reflection after every run</span>
+  </div>
+  <div class="loop">
+    <div class="dot"></div>
+    <span class="loop-text"><strong>Patterns</strong> &mdash; heuristics that compound</span>
+  </div>
+  <div class="loop">
+    <div class="dot"></div>
+    <span class="loop-text"><strong>Cross-bot</strong> &mdash; writer evaluates miner</span>
+  </div>
+  <div class="loop">
+    <div class="dot"></div>
+    <span class="loop-text"><strong>Randy</strong> &mdash; decisions feed back to all bots</span>
+  </div>
+</div>
+
+<div class="randy-card">
+  <p><strong>Randy reviews 5-10 items.</strong> The bots handle the rest. The queue shrinks every cycle.</p>
+</div>
+
+</body>
+</html>

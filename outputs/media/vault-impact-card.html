@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1.0">
+<title>Vault Impact — March 15, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #22253A;
+    color: #F5F5F0;
+    letter-spacing: -0.025em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 60px;
+  }
+
+  .impact-card {
+    width: 1080px;
+    background: linear-gradient(135deg, #22253A 0%, #2a2d44 100%);
+    border: 1px solid rgba(95, 200, 155, 0.2);
+    border-radius: 28px;
+    padding: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .impact-card::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(95, 200, 155, 0.06) 0%, transparent 70%);
+  }
+
+  .impact-card::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(95, 200, 155, 0.04) 0%, transparent 70%);
+  }
+
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand {
+    font-weight: 200;
+    font-size: 14px;
+    color: rgba(245, 245, 240, 0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .date {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(245, 245, 240, 0.35);
+  }
+
+  .title-section {
+    text-align: center;
+    margin-bottom: 56px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .title-section h1 {
+    font-weight: 200;
+    font-size: 44px;
+    color: #5FC89B;
+    margin-bottom: 8px;
+  }
+
+  .title-section p {
+    font-weight: 300;
+    font-size: 18px;
+    color: rgba(245, 245, 240, 0.5);
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .metric {
+    text-align: center;
+    padding: 28px 16px;
+    background: rgba(95, 200, 155, 0.04);
+    border: 1px solid rgba(95, 200, 155, 0.1);
+    border-radius: 16px;
+  }
+
+  .metric .number {
+    font-weight: 200;
+    font-size: 48px;
+    color: #5FC89B;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metric .label {
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(245, 245, 240, 0.5);
+    line-height: 1.4;
+  }
+
+  .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight {
+    padding: 24px;
+    border-left: 2px solid rgba(95, 200, 155, 0.3);
+    padding-left: 24px;
+  }
+
+  .highlight h3 {
+    font-weight: 400;
+    font-size: 15px;
+    color: #5FC89B;
+    margin-bottom: 8px;
+  }
+
+  .highlight p {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(245, 245, 240, 0.6);
+    line-height: 1.7;
+  }
+
+  .footer-bar {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(95, 200, 155, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-bar .tag {
+    display: inline-block;
+    background: rgba(95, 200, 155, 0.08);
+    border: 1px solid rgba(95, 200, 155, 0.15);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(95, 200, 155, 0.7);
+    margin-right: 8px;
+  }
+
+  .footer-bar .status {
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(245, 245, 240, 0.3);
+  }
+</style>
+</head>
+<body>
+
+<div class="impact-card">
+  <div class="top-row">
+    <span class="brand">Somnistics Research Labs</span>
+    <span class="date">Session Report &middot; March 15, 2026</span>
+  </div>
+
+  <div class="title-section">
+    <h1>Knowledge Graph Growth</h1>
+    <p>Single-session vault impact powered by Vigil</p>
+  </div>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="number">36</div>
+      <div class="label">New vault<br>notes</div>
+    </div>
+    <div class="metric">
+      <div class="number">96</div>
+      <div class="label">Graph edges<br>wired</div>
+    </div>
+    <div class="metric">
+      <div class="number">42</div>
+      <div class="label">Bot protocol<br>files built</div>
+    </div>
+    <div class="metric">
+      <div class="number">858</div>
+      <div class="label">Files queued<br>for extraction</div>
+    </div>
+  </div>
+
+  <div class="highlights">
+    <div class="highlight">
+      <h3>Interoceptomimetics</h3>
+      <p>Nature (March 2026) coined the term for interventions that restore degraded body-to-brain signaling. That's what we build.</p>
+    </div>
+    <div class="highlight">
+      <h3>JAMA Surgery Landmark</h3>
+      <p>Surgeon HRV in the first 5 minutes of surgery predicts 30-day complications. n=793. The autonomic-outcome link is proven.</p>
+    </div>
+    <div class="highlight">
+      <h3>Self-Improving Pipeline</h3>
+      <p>6 bots with reflexion, pattern libraries, and cross-bot feedback. The review queue shrinks every cycle as bots learn from Randy's decisions.</p>
+    </div>
+    <div class="highlight">
+      <h3>Seven Literature Gaps</h3>
+      <p>No published study combines wearable HRV biofeedback with clinician burnout intervention. No breathing interventions for perioperative clinicians. SRL fills every gap.</p>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div>
+      <span class="tag">Dublin Core</span>
+      <span class="tag">SKOS</span>
+      <span class="tag">PROV-O</span>
+      <span class="tag">MCP Server</span>
+      <span class="tag">Obsidian</span>
+    </div>
+    <span class="status">24 commits pushed &middot; working tree clean</span>
+  </div>
+</div>
+
+</body>
+</html>
