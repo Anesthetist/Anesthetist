@@ -19,7 +19,9 @@ dc:subject:
   - cortical-activity
   - parasympathetic-activation
   - anxiety-reduction
-dc:identifier: "doi:10.3389/fnhum.2018.00353"
+dc:identifier:
+  - "doi:10.3389/fnhum.2018.00353"
+  - "PMID:30245619"
 dc:type: "review"
 dc:publisher: "Frontiers in Human Neuroscience"
 dc:description: "Systematic review of 15 studies examining the psychophysiological effects of slow breathing techniques (below 10 breaths per minute). Found consistent evidence for increased HRV, enhanced parasympathetic activity, reduced anxiety, increased alpha and theta EEG power, and improved emotional regulation. Provides the evidentiary foundation for the claim that slow, controlled breathing produces reliable autonomic and psychological benefits."

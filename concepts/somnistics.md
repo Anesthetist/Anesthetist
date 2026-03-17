@@ -26,6 +26,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators
 - urn:srl:evidence:ganesan-2025-enigma-meditation-consortium
 - urn:srl:evidence:nosbisch-2026-crna-lived-experiences-empowerment
+- urn:srl:evidence:abahuje-2023-residents-hrv-leadership-stress
 skos:broader: []
 skos:narrower:
 - gap-moment-training

@@ -5,7 +5,7 @@ creator: Randy Graybeal
 dc:creator:
 - Nakamura NH
 - Yoshino K
-dc:date: 2026
+dc:date: 2025
 dc:description: Demonstrates that breathing phase (inspiratory onset) and RR interval
   variability independently modulate attentional performance via distinct cardiorespiratory-cognitive
   pathways. Breathing is an active modulator of cognitive performance.
@@ -18,7 +18,7 @@ dc:subject:
 - cardiorespiratory-coupling
 - cognitive-performance
 dc:type: journal-article
-id: urn:srl:evidence:nakamura-2026-respiration-rr-interval-attention
+id: urn:srl:evidence:nakamura-2025-respiration-rr-interval-attention
 modified: '2026-03-15'
 status: draft
 title: Task-related attentional processes are distinctly modulated by respiration
@@ -26,11 +26,11 @@ title: Task-related attentional processes are distinctly modulated by respiratio
 type: evidence
 ---
 
-# Respiration and RR Interval Distinctly Modulate Attention (Nakamura & Yoshino 2026)
+# Respiration and RR Interval Distinctly Modulate Attention (Nakamura & Yoshino 2025)
 
 ## Summary
 
-Published in *Journal of Physiological Sciences* (February 2026), this study demonstrates that breathing phase (specifically inspiratory onset) and RR interval variability independently modulate attentional performance through distinct cardiorespiratory-cognitive pathways. This establishes breathing as an active modulator of cognitive performance — not merely a relaxation tool — operating through separable respiratory and cardiac channels.
+Published in *Journal of Physiological Sciences* (2025), this study demonstrates that breathing phase (specifically inspiratory onset) and RR interval variability independently modulate attentional performance through distinct cardiorespiratory-cognitive pathways. This establishes breathing as an active modulator of cognitive performance — not merely a relaxation tool — operating through separable respiratory and cardiac channels.
 
 ## Key Claims Relevant to SRL
 

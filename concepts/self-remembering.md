@@ -1,54 +1,56 @@
 ---
-id: "urn:srl:concept:self-remembering"
-type: concept
-title: "Self-Remembering"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- Gurdjieff self-remembering
+- divided attention
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - contemplative-practice
-  - awareness
-  - attention
-  - fourth-way
-  - gurdjieff
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:insight-meditation-guidance"
-  - "chatgpt-export:vitarka-vicara-synthesis"
-  - "chatgpt-export:gap-moments-across-philosophies"
+- chatgpt-export:insight-meditation-guidance
+- chatgpt-export:vitarka-vicara-synthesis
+- chatgpt-export:gap-moments-across-philosophies
+dc:subject:
+- contemplative-practice
+- awareness
+- attention
+- fourth-way
+- gurdjieff
+id: urn:srl:concept:self-remembering
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:chowdhury-2024-jhana-fmri-eeg
+- urn:srl:evidence:craig-2009-interoception-awareness
+- urn:srl:evidence:demir-2025-jhana-7t-gradients
+- urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators
+- urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm
+- urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t
+- urn:srl:evidence:giotakos-2025-insula-interoception-time
+- urn:srl:evidence:josipovic-2019-nondual-awareness
+- urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms
+- urn:srl:evidence:mcgilchrist-2009-master-emissary
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025
+- urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg
+- urn:srl:evidence:siegel-2012-interpersonal-neurobiology
+- urn:srl:evidence:tang-2015-neuroscience-meditation
+- urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
+- urn:srl:evidence:vervaeke-relevance-realization
+- urn:srl:evidence:jhana-2025-7t-fmri-acam
+- urn:srl:evidence:nondual-awareness-2025-biorxiv-brain-eeg
 skos:broader:
-  - somnistics
+- somnistics
 skos:narrower: []
 skos:related:
-  - relevance-realization
-  - interoception
-  - state-transition
-  - gap-moment-training
-  - kosha-architecture
-  - anterocept
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:chowdhury-2024-jhana-fmri-eeg"
-  - "urn:srl:evidence:craig-2009-interoception-awareness"
-  - "urn:srl:evidence:demir-2025-jhana-7t-gradients"
-  - "urn:srl:evidence:ehmann-2025-mental-health-advanced-meditators"
-  - "urn:srl:evidence:ehmann-2025-mindfulness-cognition-ltm"
-  - "urn:srl:evidence:ganesan-2025-neurofeedback-meditation-7t"
-  - "urn:srl:evidence:giotakos-2025-insula-interoception-time"
-  - "urn:srl:evidence:josipovic-2019-nondual-awareness"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
-  - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
-  - "urn:srl:evidence:siegel-2012-interpersonal-neurobiology"
-  - "urn:srl:evidence:tang-2015-neuroscience-meditation"
-  - "urn:srl:evidence:treves-2024-mindful-brain-neural-correlates"
-  - "urn:srl:evidence:vervaeke-relevance-realization"
-aliases:
-  - Gurdjieff self-remembering
-  - divided attention
+- relevance-realization
+- interoception
+- state-transition
+- gap-moment-training
+- kosha-architecture
+- anterocept
+status: canonical
+title: Self-Remembering
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Self-Remembering

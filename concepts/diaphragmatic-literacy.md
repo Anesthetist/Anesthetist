@@ -13,6 +13,7 @@ id: urn:srl:concept:diaphragmatic-literacy
 modified: '2026-03-15'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-anterocept-spectrum-overview
+- urn:srl:evidence:little-2026-breathwork-paramedicine-resilience
 skos:broader:
 - interoception
 skos:narrower: []

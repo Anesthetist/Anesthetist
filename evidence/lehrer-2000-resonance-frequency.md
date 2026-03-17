@@ -15,7 +15,9 @@ dc:subject:
   - cardiac-variability
   - baroreflex
   - biofeedback-training
-dc:identifier: "doi:10.1023/A:1009554825745"
+dc:identifier:
+  - "doi:10.1023/A:1009554825745"
+  - "PMID:10999236"
 dc:type: "journal-article"
 dc:publisher: "Applied Psychophysiology and Biofeedback"
 dc:description: "Foundational paper establishing the protocol for resonance frequency HRV biofeedback training, demonstrating that breathing at an individual's resonant frequency (~0.1 Hz / ~6 breaths per minute) maximizes heart rate variability through baroreflex stimulation."

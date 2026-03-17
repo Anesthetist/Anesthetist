@@ -20,6 +20,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:schechter-2010-breathing-clinician-education
 - urn:srl:evidence:wilbanks-2025-safety-culture-burnout
 - urn:srl:evidence:frontiers-2026-maternal-touch-interoception-development
+- urn:srl:evidence:frontiers-2026-interoception-maternal-affective-touch
+- urn:srl:evidence:powezka-2022-hrv-synchrony-surgical-teamwork
 skos:broader:
 - polyvagal-theory
 skos:narrower: []

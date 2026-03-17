@@ -3,7 +3,7 @@ clinical_interpretation: ''
 created: '2026-03-15'
 creator: Randy Graybeal
 dc:creator:
-- Kim
+- Park C
 - et al.
 dc:date: 2026
 dc:description: n=1000 community sample using K-MAIA showing that the 'Trusting' subdimension
@@ -13,12 +13,12 @@ dc:identifier: doi:10.1016/j.jad.2026.121368
 dc:publisher: Journal of Affective Disorders
 dc:subject:
 - interoception
-- MAIA-2
+- K-MAIA
 - depression
 - mental-health
 - suicide-prevention
 dc:type: journal-article
-id: urn:srl:evidence:kim-2026-interoceptive-sensibility-depression-suicidality
+id: urn:srl:evidence:park-2026-interoceptive-sensibility-depression-suicidality
 modified: '2026-03-15'
 status: draft
 title: Moderating effect of interoceptive sensibility on the relationship between
@@ -26,11 +26,11 @@ title: Moderating effect of interoceptive sensibility on the relationship betwee
 type: evidence
 ---
 
-# Interoceptive Sensibility Moderates Depression → Suicidal Ideation (Kim et al. 2026)
+# Interoceptive Sensibility Moderates Depression → Suicidal Ideation (Park et al. 2026)
 
 ## Summary
 
-Published in *Journal of Affective Disorders* (February 2026), this study examined n=1,000 community participants using the Korean MAIA (K-MAIA). The "Trusting" subdimension of interoceptive sensibility buffered the relationship between depressive symptoms and suicidal ideation. Four MAIA subdimensions — Attention Regulation, Mind-Body Connection, Return to Body, and Trusting — were negatively correlated with suicidal ideation.
+Published in *Journal of Affective Disorders* (February 2026), this study examined n=1,000 community participants using the K-MAIA (Korean MAIA validation). The "Trusting" subdimension of interoceptive sensibility buffered the relationship between depressive symptoms and suicidal ideation. Four MAIA subdimensions — Attention Regulation, Mind-Body Connection, Return to Body, and Trusting — were negatively correlated with suicidal ideation.
 
 ## Key Claims Relevant to SRL
 
@@ -38,7 +38,7 @@ Published in *Journal of Affective Disorders* (February 2026), this study examin
 - Four specific MAIA subdimensions are negatively correlated with suicidal ideation
 - Interoceptive sensibility is not a single construct — specific subdimensions have distinct protective effects
 - Large sample (n=1,000) provides robust statistical power
-- Validates MAIA-2 as a clinically meaningful instrument beyond wellness applications
+- Validates K-MAIA as a clinically meaningful instrument beyond wellness applications
 
 ## Concepts Derived
 

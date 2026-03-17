@@ -36,7 +36,9 @@ prov:wasDerivedFrom:
 - urn:srl:observation:blue-angels-embodied-visualization
 - urn:srl:observation:vcu-aana-burnout-wellness-initiative-2025
 - urn:srl:observation:content-template-forge-sop
-- urn:srl:evidence:nakamura-2026-respiration-rr-interval-attention
+- urn:srl:evidence:nakamura-2025-respiration-rr-interval-attention
+- urn:srl:evidence:queirolo-2026-hypnosis-stress-performance
+- urn:srl:evidence:longaretti-2025-mindfulness-flow-meta-analysis
 skos:broader:
 - gap-moment-training
 skos:narrower: []

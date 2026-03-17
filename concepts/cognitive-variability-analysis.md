@@ -24,8 +24,14 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:vervaeke-relevance-realization
 - urn:srl:evidence:zaccaro-2018-breathing-systematic-review
 - urn:srl:evidence:frontiers-2026-sleep-quality-cognition-older-adults
-- urn:srl:evidence:nakamura-2026-respiration-rr-interval-attention
+- urn:srl:evidence:nakamura-2025-respiration-rr-interval-attention
 - urn:srl:evidence:naiki-2025-wearable-hrv-surgeon-stress
+- urn:srl:evidence:penn-state-2026-night-waking-cognition
+- urn:srl:evidence:almukhtar-2024-cognitive-workload-surgery-systematic-review
+- urn:srl:evidence:howie-2024-surgical-sabermetrics
+- urn:srl:evidence:bordini-2025-cognitive-errors-difficult-airway
+- urn:srl:evidence:shaheen-2025-cognitive-load-or-learning
+- urn:srl:evidence:popov-2025-team-communication-simulation
 skos:broader:
 - somnistics
 skos:narrower: []

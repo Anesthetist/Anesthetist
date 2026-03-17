@@ -1,34 +1,35 @@
 ---
-id: "urn:srl:concept:somnoaffinity"
-type: concept
-title: "SomnoAffinity"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- SomnoAffinity™
+- SomnoAffinity™ Affirmation Loop
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - somnistics
-  - novel-concept
-  - affirmation
-  - self-referential
-  - dopaminergic
-  - neuroplasticity
+creator: Randy Graybeal
 dc:source:
-  - "SRL White Papers (PDF):SomnoAffinity Affirmation Loop Neuroscientific Framework"
+- SRL White Papers (PDF):SomnoAffinity Affirmation Loop Neuroscientific Framework
+dc:subject:
+- somnistics
+- novel-concept
+- affirmation
+- self-referential
+- dopaminergic
+- neuroplasticity
+id: urn:srl:concept:somnoaffinity
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:porges-2007-vagal-tone-faces-voices
+- urn:srl:evidence:penn-state-2026-night-waking-cognition
 skos:broader:
-  - neuro-ouroboros
+- neuro-ouroboros
 skos:narrower: []
 skos:related:
-  - neurominute
-  - vagal-tone
-  - self-remembering
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
-aliases:
-  - "SomnoAffinity™"
-  - "SomnoAffinity™ Affirmation Loop"
+- neurominute
+- vagal-tone
+- self-remembering
+status: canonical
+title: SomnoAffinity
 trademarked: true
+type: concept
+version: 1.0
 ---
 
 # SomnoAffinity™

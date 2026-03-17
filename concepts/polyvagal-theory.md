@@ -25,6 +25,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:pmc-2026-polyvagal-theory-critique-grossman
 - urn:srl:evidence:cox-2026-interoceptomimetics-aging
 - urn:srl:evidence:alkaabi-2026-interoception-network-rat-brain
+- urn:srl:evidence:grossman-2026-polyvagal-theory-untenable
 skos:broader: []
 skos:narrower: []
 skos:related:

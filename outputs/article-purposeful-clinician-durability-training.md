@@ -17,7 +17,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:he-2026-icu-nurse-fatigue-hrv-cortisol
 - urn:srl:evidence:naiki-2025-wearable-hrv-surgeon-stress
 - urn:srl:evidence:campo-2026-mindfulness-athletes-hrv-interoception
-- urn:srl:evidence:nakamura-2026-respiration-rr-interval-attention
+- urn:srl:evidence:nakamura-2025-respiration-rr-interval-attention
 - urn:srl:evidence:cox-2026-interoceptomimetics-aging
 - urn:srl:observation:literature-gaps-clinician-durability-2026
 status: review

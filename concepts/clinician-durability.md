@@ -46,6 +46,27 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:mcquaid-2026-female-urm-physician-wellbeing
 - urn:srl:evidence:mcdermott-2026-meaning-purpose-clinician-wellbeing
 - urn:srl:evidence:vujovic-2026-physical-environment-psychiatric-nurses-hrv
+- urn:srl:evidence:baylor-2026-hrvb-resilience-healthcare-workers
+- urn:srl:evidence:little-2026-breathwork-paramedicine-resilience
+- urn:srl:evidence:awtry-2025-surgeon-autonomic-complications
+- urn:srl:evidence:de-louche-2024-hrv-vascular-surgery-stress
+- urn:srl:evidence:alghamlas-2024-urologist-hrv-stress
+- urn:srl:evidence:almukhtar-2024-cognitive-workload-surgery-systematic-review
+- urn:srl:evidence:powezka-2022-hrv-synchrony-surgical-teamwork
+- urn:srl:evidence:howie-2024-surgical-sabermetrics
+- urn:srl:evidence:coopersmith-2024-mindfulness-interventions-surgeons
+- urn:srl:evidence:hajibandeh-2025-mindfulness-meta-analysis-surgeons
+- urn:srl:evidence:luton-2023-enhanced-stress-resilience-training
+- urn:srl:evidence:queirolo-2026-hypnosis-stress-performance
+- urn:srl:evidence:bordini-2025-cognitive-errors-difficult-airway
+- urn:srl:evidence:bieri-2025-flow-state-robotic-surgery-eeg
+- urn:srl:evidence:shirley-2024-mental-skills-orthopaedic-surgery
+- urn:srl:evidence:shaheen-2025-cognitive-load-or-learning
+- urn:srl:evidence:boyle-2025-environmental-factors-team-performance
+- urn:srl:evidence:abahuje-2023-residents-hrv-leadership-stress
+- urn:srl:evidence:popov-2025-team-communication-simulation
+- urn:srl:evidence:voity-2025-or-distractions-cognitive-load
+- urn:srl:evidence:milleville-2025-crna-decision-making
 skos:broader:
 - somnistics
 skos:narrower: []

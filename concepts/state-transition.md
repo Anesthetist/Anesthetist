@@ -32,6 +32,11 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:pear-lab-rng-studies
 - urn:srl:observation:burroughs-inner-zone-anesthetic-consciousness
 - urn:srl:evidence:ma-2026-insulo-frontal-stress-cognitive-rigidity
+- urn:srl:evidence:jhana-2025-7t-fmri-acam
+- urn:srl:evidence:nature-2025-global-hrv-coherence-frequencies
+- urn:srl:evidence:popov-2025-team-communication-simulation
+- urn:srl:evidence:voity-2025-or-distractions-cognitive-load
+- urn:srl:evidence:milleville-2025-crna-decision-making
 skos:broader: []
 skos:narrower: []
 skos:related:

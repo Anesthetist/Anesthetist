@@ -13,6 +13,7 @@ id: urn:srl:concept:gap-moment-detection-engine
 modified: '2026-03-15'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-multi-phase-interoceptiv-analysis
+- urn:srl:evidence:flow-state-2025-wearable-physiological-assessment
 skos:broader:
 - gap-moment-training
 skos:narrower: []

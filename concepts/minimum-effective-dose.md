@@ -27,6 +27,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:campo-2026-mindfulness-athletes-hrv-interoception
 - urn:srl:evidence:kim-2026-wearable-hrv-stress-monitoring-caregivers
 - urn:srl:evidence:kor-2025-hybrid-mindfulness-hrv-caregivers-rct
+- urn:srl:evidence:springer-2025-remote-hrvb-mental-health-meta-analysis
+- urn:srl:evidence:luton-2023-enhanced-stress-resilience-training
 skos:broader:
 - titration-to-effect
 skos:narrower: []

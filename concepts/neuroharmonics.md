@@ -20,6 +20,10 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:psypost-2026-meditation-brain-fluid-dynamics
 - urn:srl:evidence:diaz-lozano-2026-stochastic-noise-hrv-coherence
 - urn:srl:evidence:christov-moore-2026-chills-meditation-interoceptive-awareness
+- urn:srl:evidence:jhana-2025-7t-fmri-acam
+- urn:srl:evidence:nature-2025-global-hrv-coherence-frequencies
+- urn:srl:evidence:springer-2025-remote-hrvb-mental-health-meta-analysis
+- urn:srl:evidence:bieri-2025-flow-state-robotic-surgery-eeg
 skos:broader:
 - neuro-ouroboros
 skos:narrower: []

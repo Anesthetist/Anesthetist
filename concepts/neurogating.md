@@ -37,6 +37,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:thayer-lane-2009-neurovisceral-integration
 - urn:srl:evidence:van-der-kolk-2014-body-keeps-score
 - urn:srl:evidence:yuan-2016-vagus-nerve-stimulation
+- urn:srl:evidence:jhana-2025-7t-fmri-acam
+- urn:srl:evidence:flow-state-2025-wearable-physiological-assessment
+- urn:srl:evidence:nondual-awareness-2025-biorxiv-brain-eeg
 skos:broader:
 - somnistics
 skos:narrower:

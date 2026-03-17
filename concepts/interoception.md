@@ -37,11 +37,12 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:plos-2025-interoception-whole-person-health-4m
 - urn:srl:evidence:frontiers-2026-maternal-touch-interoception-development
 - urn:srl:evidence:cox-2026-interoceptomimetics-aging
-- urn:srl:evidence:kim-2026-interoceptive-sensibility-depression-suicidality
+- urn:srl:evidence:park-2026-interoceptive-sensibility-depression-suicidality
 - urn:srl:evidence:alkaabi-2026-interoception-network-rat-brain
 - urn:srl:evidence:garnsey-2026-yoga-interoceptive-awareness-wellbeing-rct
 - urn:srl:evidence:kvamme-2026-aphantasia-interoception-mental-health
 - urn:srl:evidence:ma-2026-insulo-frontal-stress-cognitive-rigidity
+- urn:srl:evidence:frontiers-2026-interoception-maternal-affective-touch
 skos:broader: []
 skos:narrower:
 - anterocept

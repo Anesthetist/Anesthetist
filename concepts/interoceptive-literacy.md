@@ -19,12 +19,14 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:smith-2025-maia2-tbi-alexithymia
 - urn:srl:evidence:zhang-2022-maia2c-chinese-validation
 - urn:srl:evidence:campo-2026-mindfulness-athletes-hrv-interoception
-- urn:srl:evidence:kim-2026-interoceptive-sensibility-depression-suicidality
+- urn:srl:evidence:park-2026-interoceptive-sensibility-depression-suicidality
 - urn:srl:evidence:garnsey-2026-yoga-interoceptive-awareness-wellbeing-rct
 - urn:srl:evidence:kvamme-2026-aphantasia-interoception-mental-health
 - urn:srl:evidence:christov-moore-2026-chills-meditation-interoceptive-awareness
 - urn:srl:evidence:nosbisch-2026-crna-lived-experiences-empowerment
 - urn:srl:evidence:jansson-2026-nurse-anesthetist-professional-learning
+- urn:srl:evidence:frontiers-2026-interoception-maternal-affective-touch
+- urn:srl:evidence:milleville-2025-crna-decision-making
 skos:broader:
 - interoception
 skos:narrower:

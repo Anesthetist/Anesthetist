@@ -45,6 +45,15 @@ prov:wasDerivedFrom:
 - urn:srl:observation:field-guide-living-topology
 - urn:srl:evidence:jansson-2026-nurse-anesthetist-professional-learning
 - urn:srl:evidence:mcdermott-2026-meaning-purpose-clinician-wellbeing
+- urn:srl:evidence:little-2026-breathwork-paramedicine-resilience
+- urn:srl:evidence:awtry-2025-surgeon-autonomic-complications
+- urn:srl:evidence:coopersmith-2024-mindfulness-interventions-surgeons
+- urn:srl:evidence:luton-2023-enhanced-stress-resilience-training
+- urn:srl:evidence:bordini-2025-cognitive-errors-difficult-airway
+- urn:srl:evidence:longaretti-2025-mindfulness-flow-meta-analysis
+- urn:srl:evidence:shirley-2024-mental-skills-orthopaedic-surgery
+- urn:srl:evidence:voity-2025-or-distractions-cognitive-load
+- urn:srl:evidence:milleville-2025-crna-decision-making
 skos:broader:
 - somnistics
 skos:narrower:

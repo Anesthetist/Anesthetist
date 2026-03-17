@@ -19,6 +19,7 @@ modified: '2026-03-14'
 prov:wasDerivedFrom:
 - urn:srl:evidence:pear-lab-rng-studies
 - urn:srl:evidence:journal-nonlocality-placebo-retrocausality
+- urn:srl:evidence:nondual-awareness-2025-biorxiv-brain-eeg
 skos:broader: []
 skos:narrower:
 - retrocausal-presentiment

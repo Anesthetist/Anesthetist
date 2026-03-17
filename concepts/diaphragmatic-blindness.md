@@ -1,34 +1,35 @@
 ---
-id: "urn:srl:concept:diaphragmatic-blindness"
-type: concept
-title: "Diaphragmatic Blindness"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- breath blindness
+- diaphragm disconnect
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - interoceptive-deficit
-  - breathing
-  - clinical-training
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:ai-and-human-evolution"
-  - "chatgpt-export:21-day-trauma-course"
+- chatgpt-export:ai-and-human-evolution
+- chatgpt-export:21-day-trauma-course
+dc:subject:
+- interoceptive-deficit
+- breathing
+- clinical-training
+id: urn:srl:concept:diaphragmatic-blindness
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:critchley-2017-interoception-emotion
+- urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms
+- urn:srl:evidence:little-2026-breathwork-paramedicine-resilience
 skos:broader:
-  - interoception
+- interoception
 skos:narrower: []
 skos:related:
-  - anterocept
-  - interoceptive-blindness-clinicians
-  - resonant-breathing-frequency
-  - awareness-before-technique
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:critchley-2017-interoception-emotion"
-  - "urn:srl:evidence:kerr-2013-mindfulness-body-alpha-rhythms"
-aliases:
-  - breath blindness
-  - diaphragm disconnect
+- anterocept
+- interoceptive-blindness-clinicians
+- resonant-breathing-frequency
+- awareness-before-technique
+status: canonical
+title: Diaphragmatic Blindness
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # Diaphragmatic Blindness

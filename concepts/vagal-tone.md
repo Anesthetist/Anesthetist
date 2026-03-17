@@ -43,6 +43,12 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:naiki-2025-wearable-hrv-surgeon-stress
 - urn:srl:evidence:feigel-2025-digital-phenotype-allostatic-load
 - urn:srl:evidence:feingold-2026-trauma-nightmares-autonomic-biomarkers
+- urn:srl:evidence:baylor-2026-hrvb-resilience-healthcare-workers
+- urn:srl:evidence:awtry-2025-surgeon-autonomic-complications
+- urn:srl:evidence:de-louche-2024-hrv-vascular-surgery-stress
+- urn:srl:evidence:alghamlas-2024-urologist-hrv-stress
+- urn:srl:evidence:queirolo-2026-hypnosis-stress-performance
+- urn:srl:evidence:abahuje-2023-residents-hrv-leadership-stress
 skos:broader:
 - autonomic-regulation
 skos:narrower: []
