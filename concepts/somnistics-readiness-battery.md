@@ -22,6 +22,7 @@ skos:related:
 - interoceptive-literacy
 - clinician-durability
 - gap-moment-literacy
+- diaphragmatic-literacy
 status: draft
 title: Somnistics Readiness Battery (SRB-60)
 type: concept

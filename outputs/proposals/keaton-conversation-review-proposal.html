@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Keaton — Conversation Review &amp; Proposal — Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0D1117;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #F8FAFC;
+    letter-spacing: -0.02em;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── Ambient waves ── */
+  .wave-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .wave-bg svg { position: absolute; width: 120%; left: -10%; }
+  .wave-top { top: -20px; opacity: 0.04; }
+  .wave-mid { top: 1100px; opacity: 0.03; }
+  .wave-bot { top: 2600px; opacity: 0.035; }
+
+  .header, .content, .footer { position: relative; z-index: 1; }
+
+  /* ── Header ── */
+  .header {
+    padding: 56px 48px 40px;
+    border-bottom: 1px solid rgba(74, 234, 220, 0.1);
+    background: linear-gradient(180deg, rgba(74, 234, 220, 0.03) 0%, transparent 100%);
+  }
+
+  .logo-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-icon {
+    width: 44px; height: 44px;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #4AEADC 0%, #4A7AEA 50%, #7A4AEA 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0D1117;
+  }
+
+  .logo-text {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(248, 250, 252, 0.45);
+  }
+
+  .header-date {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(248, 250, 252, 0.3);
+  }
+
+  .header-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #4AEADC, #4A7AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+  }
+
+  .header-title {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #F8FAFC;
+    margin-bottom: 6px;
+  }
+
+  .header-title span {
+    background: linear-gradient(90deg, #4AEADC, #7A4AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .header-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(248, 250, 252, 0.5);
+    margin-top: 10px;
+  }
+
+  /* ── Content ── */
+  .content { padding: 44px 48px; }
+
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(248, 250, 252, 0.85);
+    margin-bottom: 22px;
+    line-height: 1.85;
+  }
+
+  p strong {
+    font-weight: 500;
+    color: #F8FAFC;
+  }
+
+  p em {
+    color: #4AEADC;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .salutation {
+    font-size: 21px;
+    font-weight: 400;
+    color: #F8FAFC;
+    margin-bottom: 28px;
+  }
+
+  /* ── Section divider ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 44px 0 32px;
+  }
+
+  .section-divider .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(74, 234, 220, 0.15), rgba(122, 74, 234, 0.15));
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #4AEADC, #4A7AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+  }
+
+  /* ── Insight callout ── */
+  .insight {
+    text-align: center;
+    padding: 40px 28px;
+    margin: 40px 0;
+    border-top: 1px solid rgba(74, 234, 220, 0.1);
+    border-bottom: 1px solid rgba(74, 234, 220, 0.1);
+  }
+
+  .insight-text {
+    font-size: 23px;
+    font-weight: 400;
+    font-style: italic;
+    color: #F8FAFC;
+    line-height: 1.55;
+  }
+
+  .insight-text em {
+    font-style: normal;
+    font-weight: 600;
+    background: linear-gradient(90deg, #4AEADC, #4A7AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Aha cards ── */
+  .aha-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin: 28px 0;
+  }
+
+  .aha-card {
+    background: rgba(248, 250, 252, 0.02);
+    border: 1px solid rgba(74, 234, 220, 0.08);
+    border-radius: 14px;
+    padding: 28px 32px;
+  }
+
+  .aha-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #4AEADC, #4A7AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+  }
+
+  .aha-title {
+    font-size: 21px;
+    font-weight: 500;
+    color: #F8FAFC;
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+
+  .aha-body {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(248, 250, 252, 0.78);
+    line-height: 1.8;
+  }
+
+  .aha-body strong {
+    font-weight: 500;
+    color: #F8FAFC;
+  }
+
+  /* ── Story card ── */
+  .story-card {
+    background: rgba(74, 234, 220, 0.04);
+    border-left: 3px solid;
+    border-image: linear-gradient(180deg, #4AEADC, #7A4AEA) 1;
+    border-radius: 0 14px 14px 0;
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+
+  .story-card p {
+    color: rgba(248, 250, 252, 0.9);
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.85;
+  }
+
+  .story-card p:last-child { margin-bottom: 0; }
+
+  /* ── Proposal block ── */
+  .proposal-block {
+    background: linear-gradient(135deg, rgba(74, 234, 220, 0.05) 0%, rgba(74, 122, 234, 0.05) 50%, rgba(122, 74, 234, 0.05) 100%);
+    border: 1px solid rgba(74, 234, 220, 0.1);
+    border-radius: 16px;
+    padding: 36px 36px;
+    margin: 36px 0;
+  }
+
+  .proposal-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #4AEADC, #4A7AEA, #7A4AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .proposal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #F8FAFC;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+
+  .proposal-body {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(248, 250, 252, 0.8);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .proposal-body:last-child { margin-bottom: 0; }
+
+  /* ── Exchange grid ── */
+  .exchange-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 28px 0;
+  }
+
+  .exchange-card {
+    background: rgba(248, 250, 252, 0.02);
+    border: 1px solid rgba(74, 234, 220, 0.08);
+    border-radius: 14px;
+    padding: 24px 28px;
+  }
+
+  .exchange-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .exchange-label.keaton {
+    color: #7A4AEA;
+  }
+
+  .exchange-label.randy {
+    background: linear-gradient(90deg, #4AEADC, #4A7AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .exchange-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #F8FAFC;
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .exchange-items {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exchange-items li {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(248, 250, 252, 0.65);
+    line-height: 1.7;
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .exchange-items li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(74, 234, 220, 0.4);
+  }
+
+  /* ── Vision card ── */
+  .vision-card {
+    background: linear-gradient(135deg, rgba(122, 74, 234, 0.06) 0%, rgba(74, 122, 234, 0.04) 100%);
+    border: 1px solid rgba(122, 74, 234, 0.12);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin: 22px 0;
+  }
+
+  .vision-title {
+    font-size: 21px;
+    font-weight: 500;
+    color: #F8FAFC;
+    margin-bottom: 14px;
+    line-height: 1.35;
+  }
+
+  .vision-body {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(248, 250, 252, 0.78);
+    line-height: 1.8;
+  }
+
+  .vision-body strong {
+    font-weight: 500;
+    color: #F8FAFC;
+  }
+
+  /* ── Closing ── */
+  .closing {
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(74, 234, 220, 0.08);
+  }
+
+  .closing p { color: rgba(248, 250, 252, 0.85); }
+
+  .signature { margin-top: 36px; }
+
+  .sig-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: #F8FAFC;
+  }
+
+  .sig-title {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(248, 250, 252, 0.4);
+    margin-top: 3px;
+  }
+
+  .sig-company {
+    font-size: 15px;
+    font-weight: 500;
+    background: linear-gradient(90deg, #4AEADC, #4A7AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 2px;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    padding: 36px 48px 56px;
+    border-top: 1px solid rgba(74, 234, 220, 0.06);
+    margin-top: 24px;
+  }
+
+  .footer-tagline {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #4AEADC, #4A7AEA, #7A4AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.6;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(248, 250, 252, 0.2);
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  /* ── Print / PDF ── */
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .wrapper { max-width: 100%; }
+    .aha-card, .proposal-block, .vision-card, .exchange-card { break-inside: avoid; }
+    .story-card { break-inside: avoid; }
+  }
+
+  @page { size: letter; margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- Ambient waves -->
+  <div class="wave-bg">
+    <svg class="wave-top" viewBox="0 0 1200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 100 Q150 30 300 100 T600 100 T900 100 T1200 100" stroke="#4AEADC" stroke-width="1.5" fill="none"/>
+      <path d="M0 120 Q150 50 300 120 T600 120 T900 120 T1200 120" stroke="#4A7AEA" stroke-width="1" fill="none"/>
+      <path d="M0 140 Q150 70 300 140 T600 140 T900 140 T1200 140" stroke="#7A4AEA" stroke-width="0.8" fill="none"/>
+    </svg>
+    <svg class="wave-mid" viewBox="0 0 1200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 80 Q200 10 400 80 T800 80 T1200 80" stroke="#7A4AEA" stroke-width="1.2" fill="none"/>
+      <path d="M0 100 Q200 30 400 100 T800 100 T1200 100" stroke="#4A7AEA" stroke-width="1" fill="none"/>
+      <path d="M0 120 Q200 50 400 120 T800 120 T1200 120" stroke="#4AEADC" stroke-width="0.8" fill="none"/>
+    </svg>
+    <svg class="wave-bot" viewBox="0 0 1200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 90 Q300 20 600 90 T1200 90" stroke="#4AEADC" stroke-width="1" fill="none"/>
+      <path d="M0 110 Q300 40 600 110 T1200 110" stroke="#7A4AEA" stroke-width="0.8" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-bar">
+      <div class="logo-mark">
+        <div class="logo-icon">S</div>
+        <div class="logo-text">Somnistics Research Labs</div>
+      </div>
+      <div class="header-date">March 2026</div>
+    </div>
+    <div class="header-label">Conversation Review &amp; Proposal</div>
+    <div class="header-title">Two Builders Serving the <span>Same Community</span></div>
+    <div class="header-subtitle">Notes from our conversation — and an idea for what comes next</div>
+  </div>
+
+  <!-- Body -->
+  <div class="content">
+
+    <p class="salutation">Keaton,</p>
+
+    <p>I've been thinking about our conversation since we talked, and I wanted to put some of it down on paper — partly because it helped me organize my own thinking, and partly because I think there's something real here worth exploring together.</p>
+
+    <p>What you've built with Keatonware genuinely impressed me. Not because it's flashy — because it's <strong>thoughtful</strong>. You saw a real gap in how student nurse anesthetists prepare for clinical care, and you built something that meets them exactly where they are: stressed, overwhelmed with information, and trying to do right by patients they're about to put to sleep. That's not a trivial problem to solve well.</p>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- WHAT RESONATED -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="section-divider">
+      <span class="line"></span>
+      <span class="section-label">What Resonated</span>
+      <span class="line"></span>
+    </div>
+
+    <div class="aha-grid">
+
+      <div class="aha-card">
+        <div class="aha-tag">The Students</div>
+        <div class="aha-title">You're Building for the Most Stressed People in the Building</div>
+        <div class="aha-body">SRNAs are in a unique position — they're learning to manage the most critical physiological systems in the human body, in real time, with real patients, while simultaneously trying to prove themselves clinically and academically. The stress isn't abstract. It's <strong>"I need to understand everything about this patient's cardiac history, airway anatomy, and medication interactions before I walk into that OR in 20 minutes."</strong> Keatonware meets that moment. It helps them build the kind of exquisitely thoughtful care plans that turn a nervous student into a confident clinician. That's a beautiful thing to build for.</div>
+      </div>
+
+      <div class="aha-card">
+        <div class="aha-tag">The Approach</div>
+        <div class="aha-title">Safe, Compliant, Affordable — and That's the Point</div>
+        <div class="aha-body">What I appreciated about your approach is that you didn't try to build the most expensive, most feature-packed thing you could. You built something that's <strong>JCO compliant, CE eligible, and inexpensive enough that students can actually afford it</strong>. That's a values statement disguised as a product decision. You're saying: the people who need this the most shouldn't be priced out of it. I respect that deeply. It's the same instinct behind how we priced Pausality.</div>
+      </div>
+
+      <div class="aha-card">
+        <div class="aha-tag">The Gap</div>
+        <div class="aha-title">Care Plans Are Where Clinical Thinking Becomes Visible</div>
+        <div class="aha-body">This was the aha moment for me. An anesthesia care plan isn't just paperwork — it's the artifact that shows whether a student actually understands their patient. It's where pharmacology, pathophysiology, airway assessment, and patient-specific risk all converge into a single document that says <strong>"I thought about this person carefully before I put them to sleep."</strong> By making that process better — more structured, more supported, more thoughtful — you're not just improving documentation. You're improving the quality of clinical thinking. That's upstream of everything else.</div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- AHA MOMENTS -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="section-divider">
+      <span class="line"></span>
+      <span class="section-label">Aha Moments</span>
+      <span class="line"></span>
+    </div>
+
+    <div class="insight">
+      <div class="insight-text">Keatonware teaches students to <em>think about the patient</em>.<br>Pausality teaches clinicians to <em>think about themselves</em>.<br>Together, that's the whole picture.</div>
+    </div>
+
+    <p>That's what clicked for me during our conversation. You're building the cognitive preparation layer — helping students understand what's happening in the patient's body so they can make the best possible plan. We're building the physiological preparation layer — helping clinicians understand what's happening in their own body so they can show up regulated, present, and sharp.</p>
+
+    <p>Those aren't competing ideas. They're two halves of the same thing. The best clinician in the world still has a nervous system that responds to stress, fatigue, and pressure. And the most self-regulated clinician still needs to know their patient cold before they walk into that room.</p>
+
+    <div class="story-card">
+      <p>I've been a CRNA for 28 years. The thing I keep coming back to is that we train people exhaustively on the patient's physiology — and almost not at all on their own. We teach pharmacology, hemodynamics, ventilator management, airway algorithms. But we don't teach the clinician how to notice when their own heart rate is climbing, their breathing is shallow, or their autonomic nervous system is shifting into a state that affects decision-making. Keatonware addresses one side of that. Pausality addresses the other. I think there's something powerful in offering both.</p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- THE PROPOSAL -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="section-divider">
+      <span class="line"></span>
+      <span class="section-label">An Idea</span>
+      <span class="line"></span>
+    </div>
+
+    <p>I don't want to overcomplicate this. I think the simplest version is: we teach each other, we help each other, and we see where it goes. Here's what I'm thinking.</p>
+
+    <div class="proposal-block">
+      <div class="proposal-label">Proposal — Teach Each Other, Build Together</div>
+      <div class="proposal-title">A collaborative partnership between Keatonware and Somnistics Research Labs</div>
+      <div class="proposal-body">The foundation of this is simple: you know social media and audience building in a way I don't, and I know autonomic physiology and clinical science in a way that might be useful to you. Instead of each of us trying to learn the other's domain from scratch, what if we just taught each other directly — and built something better for the community we both care about in the process?</div>
+    </div>
+
+    <div class="exchange-grid">
+      <div class="exchange-card">
+        <div class="exchange-label keaton">What Keaton Brings</div>
+        <div class="exchange-title">Social &amp; Audience</div>
+        <ul class="exchange-items">
+          <li>Social media strategy and content creation for Pausality</li>
+          <li>Understanding of what resonates with the SRNA/CRNA community online</li>
+          <li>Content distribution and engagement expertise</li>
+          <li>Platform-specific knowledge (what works where, and why)</li>
+          <li>A direct line to the student audience we want to reach early</li>
+        </ul>
+      </div>
+      <div class="exchange-card">
+        <div class="exchange-label randy">What Randy Brings</div>
+        <div class="exchange-title">Clinical Science &amp; Research</div>
+        <ul class="exchange-items">
+          <li>28 years of clinical anesthesia experience</li>
+          <li>Deep knowledge of autonomic physiology and the evidence base</li>
+          <li>Access to the SRL research vault — peer-reviewed literature, curated and organized</li>
+          <li>Clinical credibility that strengthens Keatonware's positioning</li>
+          <li>A direct line to practicing CRNAs and clinical educators</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="vision-card">
+      <div class="vision-title">Paid Social Work for Pausality</div>
+      <div class="vision-body">Beyond the exchange, I'd also like to talk about a paid engagement — having you run social content for Pausality. You understand this community because you're building for them too. That's not something I can hire for on the open market. A social strategist who actually knows what a care plan is, who understands why SRNAs are stressed, who gets the difference between a wellness app and a clinical tool — that's rare. I'd rather pay someone who's already in this world than try to train someone who isn't.</div>
+    </div>
+
+    <div class="vision-card">
+      <div class="vision-title">Cross-Promotion That Actually Makes Sense</div>
+      <div class="vision-body">The audience overlap is almost perfect. SRNAs using Keatonware today are the practicing CRNAs using Pausality in two to three years. If a student gets introduced to both tools during their training — <strong>Keatonware for care planning, Pausality for self-regulation</strong> — they graduate with a more complete toolkit than any program is currently providing. We could cross-promote naturally, without it feeling forced, because the products genuinely complement each other. A Keatonware user who discovers Pausality isn't being sold something unrelated — they're getting the other half of clinical preparation.</div>
+    </div>
+
+    <div class="vision-card">
+      <div class="vision-title">The Student-to-Clinician Pipeline</div>
+      <div class="vision-body">Here's the longer view. If we think about the career arc of a nurse anesthetist — SRNA → new grad CRNA → experienced CRNA → educator — there's an opportunity to be present at every stage with tools that actually help. Keatonware serves the student phase. Pausality serves the practicing clinician phase. Together, we could build something that grows with people across their entire career. Not a platform play. Just two thoughtful tools, built by people who understand the profession, available when they're needed most.</div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- NEXT STEPS -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="section-divider">
+      <span class="line"></span>
+      <span class="section-label">What's Next</span>
+      <span class="line"></span>
+    </div>
+
+    <p>I don't want to put too much structure on this before we've had a chance to think about it together. But if this resonates, here's what I'd suggest as a starting point:</p>
+
+    <div class="aha-grid">
+      <div class="aha-card">
+        <div class="aha-tag">Step One</div>
+        <div class="aha-title">A Working Session</div>
+        <div class="aha-body">Let's get on a call and walk through each other's products in detail. I'll show you the full Pausality experience — the 21-day program, the biofeedback, the clinical science behind it. You walk me through Keatonware — the care planning workflow, what students love about it, where you want to take it. We'll both learn something, and we'll see where the natural connection points are.</div>
+      </div>
+
+      <div class="aha-card">
+        <div class="aha-tag">Step Two</div>
+        <div class="aha-title">Scope the Social Engagement</div>
+        <div class="aha-body">If the working session confirms what I think it will — that this is a genuine fit — let's talk specifics on a paid social engagement for Pausality. Scope, cadence, platforms, budget. I'd want your honest assessment of what Pausality needs and what would actually move the needle with this audience. No need to oversell it. Just tell me what you'd do if it were your product.</div>
+      </div>
+
+      <div class="aha-card">
+        <div class="aha-tag">Step Three</div>
+        <div class="aha-title">Pilot a Cross-Promotion</div>
+        <div class="aha-body">Something small and natural. Maybe a shared piece of content — a post or a short video about clinical preparation that touches on both care planning and self-regulation. See how the community responds. If it lands, we do more. If it doesn't, we learned something. Low risk, honest signal.</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- CLOSING -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div class="closing">
+      <p>I really enjoyed our conversation. It's not often I meet someone who's building for the same community with the same kind of thoughtfulness and care. Whatever shape this takes — a formal partnership, a paid engagement, or just two people who check in and share notes — I think we'll both be better for it.</p>
+
+      <p>Looking forward to the next one.</p>
+
+      <div class="signature">
+        <div class="sig-name">Randy Graybeal, MSN, CRNA</div>
+        <div class="sig-title">Founder &amp; CEO</div>
+        <div class="sig-company">Somnistics Research Labs</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-tagline">From relaxation to regulation</div>
+    <div class="footer-text">
+      Somnistics Research Labs<br>
+      Pausality — 60-second nervous system training with biometric proof
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

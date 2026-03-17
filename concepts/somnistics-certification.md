@@ -29,6 +29,7 @@ prov:wasDerivedFrom:
 - urn:srl:observation:interoceptive-suppression-burnout-root
 - urn:srl:observation:error-archetypes-qrc
 - urn:srl:evidence:diwan-2026-opioid-free-anesthesia-nurse-anesthetists
+- urn:srl:observation:somatic-certification-curriculum-architecture
 skos:broader:
 - somnistics
 skos:narrower:
