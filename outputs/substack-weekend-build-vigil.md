@@ -4,7 +4,15 @@
 
 ---
 
-I'm a nurse anesthetist. I've spent 28 years in operating rooms — transplant, pediatric trauma, cardiac. For the last year, I've been building Somnistics Research Labs, a company that trains the nervous system using 60-second breathing protocols with real-time Apple Watch biofeedback.
+In 2019, I asked myself a question I couldn't answer: *Is my heart rate higher or lower than my patients'?*
+
+I'm a nurse anesthetist. Twenty-eight years in operating rooms — transplant, pediatric trauma, cardiac. I spend my days monitoring other people's vital signs with obsessive precision. I calculate pediatric drug doses where the decimal moves two places between adults and children — knowing that the number one medication error in hospitals is a decimal error. I think about how not to stab yourself with a bloody needle at 3 AM on a call shift. I manage other people's nervous systems for a living. But I'd never once turned that attention on my own.
+
+My ankles were hurting when I got out of bed. So I started doing yoga on the Peloton app — no knowledge at all, just following along. I did a thousand classes. And somewhere in those thousand classes, something shifted. Each class has hundreds of expert cues — "pull your left hip forward," "soften your front ribs," "root through your big toe mound." Thousands of cues across thousands of classes. What I didn't realize at the time was that those cues were building an interoceptive map — a felt-sense atlas of my own body, created by the shapes the asanas demand.
+
+Then I learned about pratyahara — the yogic practice of sense withdrawal, breathing layered on top of the physical postures. Oh. That was life-changing. The body becomes a landscape you can navigate from the inside.
+
+That was five years ago. Since then I've been looking intensely at integral performance techniques for call shifts. How to think well under pressure. How to sustain clinical precision across a 28-year career without the progressive erosion of judgment, empathy, and vigilance that we euphemistically call "burnout." I built a company around what I found — Somnistics Research Labs — and a product called Pausality: 60-second breathing protocols with real-time Apple Watch biofeedback. Not meditation. Nervous system training.
 
 Over six months of building, I accumulated 861 ChatGPT conversations. Every strategic decision, clinical insight, novel concept, and research thread — trapped in chat transcripts. Meanwhile, I had a knowledge graph in Obsidian with 180+ linked notes covering our science and evidence. But the two systems weren't talking to each other, and the graph wasn't growing on its own.
 
