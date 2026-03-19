@@ -61,44 +61,32 @@ get_next_files() {
 
 # Build the mining prompt for a batch of files
 build_mining_prompt() {
-  local file_list=""
-  local tc=0
-
+  echo "You are the SRL Knowledge Miner + Vault Writer pipeline. Process these ChatGPT transcripts: extract Randy's voice, identify concepts/evidence/observations, check vault for duplicates, create notes via MCP tools, wire relationships."
+  echo ""
+  echo "## Files to process:"
   for f in "$@"; do
     local fpath="$VAULT_DIR/sources/chatgpt/$f"
     if [ -f "$fpath" ]; then
-      local chars=$(wc -c < "$fpath" | tr -d ' ')
-      tc=$((tc + chars))
-      file_list="$file_list\n- sources/chatgpt/$f ($chars chars)"
+      echo "- sources/chatgpt/$f ($(wc -c < "$fpath" | tr -d ' ') chars)"
     fi
   done
-
-  cat <<PROMPT
-You are the SRL Knowledge Miner + Vault Writer pipeline. Process these ChatGPT transcripts in a single pass: extract Randy's voice, identify concepts/evidence/observations, check vault for duplicates, create notes via MCP tools, wire relationships, and commit.
-
-## Files to process:
-$(echo -e "$file_list")
-
-## Protocol:
-1. Read each file. Extract Randy's assertions, corrections, coined terms, clinical anecdotes.
-2. For each extraction candidate, search the vault (mcp__srl-vault__search_vault) to check for duplicates.
-3. Create high-confidence, Randy-originated concepts via mcp__srl-vault__create_note.
-4. Create evidence notes for clearly cited books/papers.
-5. Create observations for clinical craft knowledge.
-6. Wire SKOS relationships and evidence links.
-7. Write an extraction report to outputs/extractions/{slug}-extraction.md
-8. Append all actions to outputs/vault-write-log.md
-
-## Rules:
-- status: draft, creator: randy
-- clinical_interpretation: "Pending review"
-- Prioritize Randy's words over ChatGPT's elaborations
-- Only vault SRL-original or core scientific concepts
-- Never write vault files directly — use MCP tools only
-- At the end, output a summary of what was created
-
-## Timestamp: $TIMESTAMP
-PROMPT
+  echo ""
+  echo "## Protocol:"
+  echo "1. Read each file. Extract Randy's assertions, corrections, coined terms, clinical anecdotes."
+  echo "2. Search vault (mcp__srl-vault__search_vault) to check for duplicates before creating."
+  echo "3. Create high-confidence Randy-originated concepts via mcp__srl-vault__create_note."
+  echo "4. Create evidence notes for clearly cited books/papers."
+  echo "5. Create observations for clinical craft knowledge."
+  echo "6. Wire SKOS relationships and evidence links."
+  echo "7. Write extraction report to outputs/extractions/{slug}-extraction.md"
+  echo "8. Append actions to outputs/vault-write-log.md"
+  echo ""
+  echo "## Rules:"
+  echo "- status: draft, creator: randy, clinical_interpretation: Pending review"
+  echo "- Prioritize Randy's words over ChatGPT elaborations"
+  echo "- Only vault SRL-original or core scientific concepts"
+  echo "- Use MCP tools only — never write vault files directly"
+  echo "- Output a summary of what was created"
 }
 
 echo "=== SRL Mining Pipeline — $TIMESTAMP ==="
@@ -133,26 +121,29 @@ for f in "${NEXT_FILES[@]}"; do
   echo "  - $f"
 done
 
-# Build and execute the mining prompt
-PROMPT=$(build_mining_prompt "${NEXT_FILES[@]}")
+# Build the mining prompt and write to file
+PROMPT_FILE="$VAULT_DIR/outputs/pipeline-logs/prompt-$TIMESTAMP.md"
+build_mining_prompt "${NEXT_FILES[@]}" > "$PROMPT_FILE"
 
 echo ""
 echo "Running Claude mining pipeline..."
+echo "Prompt saved to: $PROMPT_FILE"
 
-# Write prompt to temp file to avoid argument length limits
-PROMPT_FILE=$(mktemp)
-echo "$PROMPT" > "$PROMPT_FILE"
-
+# Pass prompt file path — Claude reads the file itself
 claude \
   -p \
   --model "$MODEL" \
   --effort "$EFFORT" \
-  --permission-mode auto \
-  --append-system-prompt "You are Vigil, the SRL vault orchestrator. Read CLAUDE.md for full context." \
-  "$(cat "$PROMPT_FILE")" \
-  2>&1 | tee "$VAULT_DIR/outputs/pipeline-logs/mine-$TIMESTAMP.log"
+  "Read the mining prompt at $PROMPT_FILE and execute it. Process the listed ChatGPT transcript files, extract knowledge, create vault notes via MCP tools, wire relationships, and write an extraction report." \
+  > "$VAULT_DIR/outputs/pipeline-logs/mine-$TIMESTAMP.log" 2>&1
 
-rm -f "$PROMPT_FILE"
+CLAUDE_EXIT=$?
+cat "$VAULT_DIR/outputs/pipeline-logs/mine-$TIMESTAMP.log"
+
+if [ $CLAUDE_EXIT -ne 0 ]; then
+  echo "ERROR: Claude exited with code $CLAUDE_EXIT"
+  exit $CLAUDE_EXIT
+fi
 
 # Commit results
 echo ""
