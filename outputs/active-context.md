@@ -1,6 +1,6 @@
 # Active Context — SRL
 
-**Last updated:** 2026-03-15
+**Last updated:** 2026-03-18
 
 ## Current Priorities
 
@@ -14,19 +14,15 @@
 
 - Catapult accelerator: apply or not? (2-3 year commitment)
 - Epic App Market: pursue integration? (distribution to 2/3 US hospitals)
-- Obsidian CLI: install for faster vault reads? (complement to MCP server)
 - Smart Connections plugin: install for semantic search?
 
 ## Recent Completions (This Session)
 
-- Competitive landscape bot created (`_bots/competitive-landscape/`)
-- TAM/SAM/SOM analysis ($18.5B / $3.8B / $27M)
-- 14-slide on-brand investor deck (Tony's design system)
-- Investor quick-response sheet (30+ companies)
-- Don Katz research package (autonomic dysregulation literature)
-- Cognitive development arc analysis (861 conversations)
-- Communication Philosophy added to CLAUDE.md
-- CLAUDE.md updated with "What NOT To Do" section and Active Context pattern
+- Obsidian CLI installed and verified (v1.12.4) — vault reads, search, property management, link health checks now available from terminal
+- Vault Architecture v2 committed — 6 infrastructure specs (evidence grading, controlled vocabulary, faceted taxonomy, compliance metadata, knowledge gap analysis)
+- Marketing Intelligence bot created
+- Instagram strategy + CRNA Resilience Toolkit lead magnet spec
+- 18 unresolved wikilinks identified via CLI health check (8 real concept gaps)
 
 ## Key People in Play
 

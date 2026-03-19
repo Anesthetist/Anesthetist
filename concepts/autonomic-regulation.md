@@ -50,6 +50,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:bieri-2025-flow-state-robotic-surgery-eeg
 - urn:srl:evidence:longaretti-2025-mindfulness-flow-meta-analysis
 - urn:srl:evidence:boyle-2025-environmental-factors-team-performance
+- crna-resilience-toolkit-series-v1
 skos:broader: []
 skos:narrower:
 - vagal-tone

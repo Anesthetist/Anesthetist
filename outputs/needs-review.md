@@ -39,6 +39,21 @@ Items flagged by the extraction pipeline that need Randy's clinical judgment, in
 - [ ] **Bio-Adaptive Stress Reset** — ChatGPT marketing language, not Randy's coined term. Likely skip. Source: anterocept-spectrum-overview-extraction
 - [ ] **Somnistics Certified Professional (SCP)** — Randy to confirm naming convention and Bronze/Silver/Gold/Platinum tier structure. Source: somnistics-definition-request-extraction
 
+## Concept Boundary Decisions — Developmental / Epistemological Layer (2026-03-18)
+
+*External frameworks Randy uses extensively. Do they get concept notes or stay as evidence-only references?*
+
+- [ ] **Kegan Developmental Stages (3-5)** — Academic scaffolding mapped to SRL's developmental model and neurophysiology. 4+ conversations reference it. Recommendation: evidence note (already being created), with key mappings captured as enrichments to existing concepts.
+- [ ] **Spiral Dynamics** — Used for SRL positioning ("Tier 2 for Tier 1"). Recommendation: evidence note, enrichment to somnistics concept.
+- [ ] **Springett Consciousness Stairway (9-stage model)** — External framework but deeply integrated into Stairway Meta-Awareness Protocol. Recommendation: captured within the protocol concept, not standalone.
+- [ ] **Springett Ice→Steam Model** — Kundalini as transformative continuum. Recommendation: evidence note enrichment, not standalone concept.
+- [ ] **Did 5-Minute Miracle influence NeuroMinute design?** — Miners flagged the parallel. Randy to confirm lineage.
+
+## Personal/Private Observations — Requires Randy Permission
+
+- [ ] **Mother relationship observation** — Flagged as potentially too personal. From kundalini extraction.
+- [ ] **Intergenerational case-control parallel** — Personal family pattern. From kundalini extraction.
+
 ## Other Flags
 
 *Anything else the bots couldn't resolve autonomously*

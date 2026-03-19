@@ -141,6 +141,27 @@ These boundaries are as important as the instructions above. They prevent drift.
 - **Do not over-claim.** If a statement isn't supported by a specific citation, say so. "The literature suggests" not "research proves." See `feedback_clinical_claims.md`.
 - **Do not include stale context.** If referencing competitive data, check the date. The landscape changes weekly.
 
+## Tool Routing
+
+Use the fastest tool for each operation. Never route everything through one interface.
+
+| Operation | Tool | Why |
+|-----------|------|-----|
+| Read a note | `Read` | Direct filesystem, zero overhead |
+| Find files by name/pattern | `Glob` | Instant pattern match |
+| Search file contents | `Grep` | ripgrep, sub-second |
+| Query by subject, status, type | MCP tools (`search_by_subject`, etc.) | Semantic vault queries |
+| Create/update vault notes | MCP tools (`create_note`, `update_note`) | Enforces schema + frontmatter |
+| Add evidence links, SKOS relations | MCP tools | Maintains graph integrity |
+| Backlinks, orphans, unresolved links | Obsidian CLI (`obsidian backlinks`, `obsidian orphans`, `obsidian unresolved`) | Only tool with live graph index |
+| Batch frontmatter edits | Obsidian CLI (`obsidian property:set`) | Updates Obsidian's index immediately |
+| Tag renames across vault | Obsidian CLI (`obsidian tags:rename`) | Bulk rename with auto-updates |
+| File moves preserving wikilinks | Obsidian CLI (`obsidian move`) | Auto-updates all `[[references]]` |
+| Full-text search with Obsidian index | Obsidian CLI (`obsidian search`) | Uses Obsidian's indexed search |
+| Vault health checks | Obsidian CLI (`obsidian orphans`, `obsidian unresolved`) | Graph-aware diagnostics |
+
+**Obsidian CLI requires Obsidian to be running** (auto-launches if not). Use `vault="Library-Graph"` when specifying the vault. The CLI PATH is `/Applications/Obsidian.app/Contents/MacOS`.
+
 ## Active Context
 
 At the start of any substantive session, read `outputs/active-context.md` (if it exists) for current priorities, open issues, and recent decisions. At the end of a session where priorities changed, update it. This file is ephemeral — it tracks what's live right now, not permanent knowledge.

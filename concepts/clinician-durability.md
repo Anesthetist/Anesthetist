@@ -67,6 +67,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:popov-2025-team-communication-simulation
 - urn:srl:evidence:voity-2025-or-distractions-cognitive-load
 - urn:srl:evidence:milleville-2025-crna-decision-making
+- crna-resilience-toolkit-series-v1
+- urn:srl:evidence:arena-strive-2024-app-coaching-clinician-burnout
 skos:broader:
 - somnistics
 skos:narrower: []
@@ -75,6 +77,7 @@ skos:related:
 - vagal-tone
 - autonomic-regulation
 - bandwidth-saturation-micro-events
+- archetype-fluidity
 status: canonical
 title: Clinician Durability
 trademarked: false

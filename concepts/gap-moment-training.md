@@ -54,6 +54,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:shirley-2024-mental-skills-orthopaedic-surgery
 - urn:srl:evidence:voity-2025-or-distractions-cognitive-load
 - urn:srl:evidence:milleville-2025-crna-decision-making
+- urn:srl:evidence:arena-strive-2024-app-coaching-clinician-burnout
 skos:broader:
 - somnistics
 skos:narrower:
@@ -68,6 +69,7 @@ skos:related:
 - state-transition
 - minimum-effective-dose
 - gap-moment-detection-engine
+- archetype-fluidity
 status: canonical
 title: Gap Moment Training
 trademarked: true

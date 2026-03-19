@@ -30,6 +30,7 @@ skos:related:
 - gap-moment-training
 - state-transition
 - neuroharmonics
+- phantom-limb-protocol
 status: canonical
 title: Co-Regulation
 trademarked: false
