@@ -61,6 +61,7 @@ skos:narrower:
 - neurominute
 - gap-moment-literacy
 - gap-moment-detection-engine
+- structured-interoception-training
 skos:related:
 - titration-to-effect
 - polyvagal-theory

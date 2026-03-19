@@ -1,25 +1,27 @@
 ---
-id: "urn:srl:observation:error-archetypes-qrc"
-type: observation
-title: "Six Error Archetypes from Quality Review Committee"
-status: draft
-creator: "Randy Graybeal"
+clinical_context: 10 years on Anesthesia Quality Review Committee with equal physician
+  vote, reviewing critical incidents
 created: 2026-03-14
-modified: 2026-03-14
+creator: Randy Graybeal
 dc:subject:
-  - patient-safety
-  - error-patterns
-  - state-drift
-  - upstream-intervention
+- patient-safety
+- error-patterns
+- state-drift
+- upstream-intervention
+id: urn:srl:observation:error-archetypes-qrc
+modified: 2026-03-14
 observation_type: pattern
-clinical_context: "10 years on Anesthesia Quality Review Committee with equal physician vote, reviewing critical incidents"
-years_of_evidence: 10
 prov:wasDerivedFrom: []
 skos:related:
-  - state-transition
-  - gap-moment-training
-  - neurogating
-  - cognitive-variability-analysis
+- state-transition
+- gap-moment-training
+- neurogating
+- cognitive-variability-analysis
+- state-drift
+status: draft
+title: Six Error Archetypes from Quality Review Committee
+type: observation
+years_of_evidence: 10
 ---
 
 # Six Error Archetypes from Quality Review Committee

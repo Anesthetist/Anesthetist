@@ -18,7 +18,15 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-crna-expertise-and-challenges
 skos:broader: []
 skos:narrower: []
-skos:related: []
+skos:related:
+- state-transition
+- neural-transition-failure
+- gap-moment-training
+- clinician-durability
+- embodied-metacognition
+- autonomic-regulation
+- autonomic-home-base
+- interoceptive-suppression-hypothesis
 status: draft
 title: State Drift
 type: concept
