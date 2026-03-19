@@ -102,3 +102,11 @@ Audit trail of all bot-initiated vault changes.
 | 2026-03-18 | CREATE concept | adversity-visualization | coherence-binaural-visualization-extraction | 7-step embodied failure visualization protocol from 28 years clinical practice. Proto-GMT. Generalized from Blue Angels observation to standalone concept. |
 | 2026-03-18 | SKOS (19 links) | 3 new concepts | coherence-binaural-visualization-extraction | 1 broader (NRCC→somnistics) + 18 related links across all 3 concepts to existing vault concepts |
 | 2026-03-18 | EVIDENCE (7 links) | 3 new concepts | coherence-binaural-visualization-extraction | prov:wasDerivedFrom links to source ChatGPT transcripts + Blue Angels observation |
+| 2026-03-18 | CREATE concept | vitarka-vicara-integration | eeg-neurofeedback-extraction | Randy's Iyengar/McGilchrist synthesis (Castle-Field Vision). Highest-confidence extraction. EEG correlates: alpha-theta crossover, gamma nesting. |
+| 2026-03-18 | CREATE concept | alpha-theta-crossover | eeg-neurofeedback-extraction | Measurable EEG biomarker: theta exceeds alpha, marking deep meditative state entry. Validation marker for somnistics protocols. |
+| 2026-03-18 | CREATE concept | dmn-voluntary-control | eeg-neurofeedback-extraction | Controlling when DMN is active, not suppressing it. Randy's switch-not-kill framing for clinical performance. |
+| 2026-03-18 | CREATE observation | eeg-data-pipeline | eeg-neurofeedback-extraction | Craft knowledge: Randy's Muse 2 + Mind Monitor + OSC streaming toolchain. Empirical platform behind NeuroHarmonics. |
+| 2026-03-18 | CREATE observation | vns-alpha-attenuation-concern | eeg-neurofeedback-extraction | Contrast case: auricular VNS may attenuate resting alpha and may not reach nucleus basalis. Competitive differentiator. |
+| 2026-03-18 | CREATE observation | randy-level-4-practitioner | eeg-neurofeedback-extraction | Exemplar story: "I spend all my time touching the core of being." Iyengar Level 4 self-assessment. Founder practice depth. |
+| 2026-03-18 | SKOS (24 links) | 3 concepts + 3 observations | eeg-neurofeedback-extraction | 3 broader + 21 related links wired across all 6 new notes to existing vault concepts + inter-note links |
+| 2026-03-18 | EVIDENCE (3 links) | 3 concepts | eeg-neurofeedback-extraction | prov:wasDerivedFrom links to source ChatGPT transcripts |
