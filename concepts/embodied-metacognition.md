@@ -33,6 +33,7 @@ skos:related:
 - embodied-clinical-intelligence
 - anterocept
 - stairway-meta-awareness-protocol
+- cognitive-development-arc
 status: draft
 title: Embodied Metacognition
 type: concept

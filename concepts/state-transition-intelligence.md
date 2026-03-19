@@ -21,6 +21,7 @@ skos:related:
 - neurogating
 - clinician-durability
 - autonomic-regulation
+- cognitive-development-arc
 status: draft
 title: State Transition Intelligence
 type: concept

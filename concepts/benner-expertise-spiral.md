@@ -21,6 +21,7 @@ skos:related:
 - embodied-clinical-intelligence
 - tacit-knowledge-extraction
 - learning-under-load
+- cognitive-development-arc
 status: draft
 title: Benner Expertise Spiral
 type: concept

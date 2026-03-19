@@ -20,6 +20,7 @@ skos:related:
 - self-remembering
 - interoceptive-literacy
 - agency-consciousness-integration
+- cognitive-development-arc
 status: draft
 title: Secure Attachment to Reality
 type: concept

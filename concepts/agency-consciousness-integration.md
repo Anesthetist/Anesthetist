@@ -15,7 +15,8 @@ modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-agency-development-integration
 skos:broader: []
-skos:narrower: []
+skos:narrower:
+- cognitive-development-arc
 skos:related:
 - self-remembering
 - clinician-durability

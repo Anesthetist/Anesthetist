@@ -1,0 +1,517 @@
+{
+  "review_session": "2026-03-19T05:09:00.055Z",
+  "reviewer": "Randy Graybeal",
+  "decisions": [
+    {
+      "id": "urn:srl:concept:diaphragmatic-literacy",
+      "title": "Diaphragmatic Literacy",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:neuroadaptive-training-system",
+      "title": "Neuroadaptive Training System",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:bio-adaptive-stress-reset",
+      "title": "Bio-Adaptive Stress Reset",
+      "category": "new-concept",
+      "decision": "maybe",
+      "provenance_override": null,
+      "notes": "",
+      "route": "flag-for-discussion"
+    },
+    {
+      "id": "urn:srl:concept:second-victim-phenomenon",
+      "title": "second-victim-phenomenon",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:interoceptive-accuracy",
+      "title": "interoceptive-accuracy",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:haptic-biofeedback",
+      "title": "haptic-biofeedback",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:interoceptive-technology",
+      "title": "interoceptive-technology",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:stress-inoculation-training",
+      "title": "stress-inoculation-training",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:five-breath-re-embodiment",
+      "title": "five-breath-re-embodiment",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:closed-loop-biofeedback",
+      "title": "closed-loop-biofeedback",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:multimodal-sensor-fusion",
+      "title": "multimodal-sensor-fusion",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:adaptive-intervention-protocol",
+      "title": "adaptive-intervention-protocol",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:phased-localization-strategy",
+      "title": "phased-localization-strategy",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:app-store-optimization",
+      "title": "app-store-optimization",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:capital-breathing-rhythm",
+      "title": "capital-breathing-rhythm",
+      "category": "new-concept",
+      "decision": "reject",
+      "provenance_override": null,
+      "notes": "",
+      "route": "skip"
+    },
+    {
+      "id": "urn:srl:concept:demand-biomarkers",
+      "title": "demand-biomarkers",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:metasomatic-entrepreneurship",
+      "title": "metasomatic-entrepreneurship",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:neural-capital-operating-system",
+      "title": "neural-capital-operating-system",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:epistemic-product-market-fit",
+      "title": "epistemic-product-market-fit",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:stairway-meta-awareness-protocol",
+      "title": "Stairway Meta-Awareness Protocol",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:agentic-time-weaving",
+      "title": "Agentic Time Weaving",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:embodied-probability-fields",
+      "title": "Embodied Probability Fields",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:neuroexperiential-architecture",
+      "title": "Neuroexperiential Architecture",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:compassionate-meta-logic",
+      "title": "Compassionate Meta-Logic",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:gap-moment-codex",
+      "title": "Gap Moment Codex",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:constraint-release-grief-loop",
+      "title": "Constraint-Release Grief Loop",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:infinite-game-vigilance-frame",
+      "title": "Infinite-Game Vigilance Frame",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:time-between-worlds-gap-minute",
+      "title": "Time-Between-Worlds Gap Minute",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:integration-architecture",
+      "title": "Integration Architecture (as Intellectual Identity)",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:effectuation-experimentation",
+      "title": "Effectuation-Style Experimentation",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:consilience",
+      "title": "Consilience",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:syntopical-synthesis",
+      "title": "Syntopical Synthesis",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:ideas-having-sex",
+      "title": "Ideas Having Sex (Conceptual Recombination)",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:multi-llm-knowledge-construction",
+      "title": "Multi-LLM Knowledge Construction",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:epistemic-layering",
+      "title": "Epistemic Layering",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:kundalini-springett-model",
+      "title": "Kundalini Awakening (Springett Model)",
+      "category": "new-concept",
+      "decision": "maybe",
+      "provenance_override": null,
+      "notes": "",
+      "route": "flag-for-discussion"
+    },
+    {
+      "id": "urn:srl:concept:time-wealth",
+      "title": "Time Wealth",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:gap-moment-detection-engine",
+      "title": "Gap Moment Detection Engine",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:interoceptive-flow-os",
+      "title": "Interoceptive Flow OS",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:neurotagging",
+      "title": "Neurotagging",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:somnistics-readiness-battery",
+      "title": "Somnistics Readiness Battery (SRB-60)",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:gap-moment-literacy",
+      "title": "Gap Moment Literacy",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:somnistics-certified-professional",
+      "title": "Somnistics Certified Professional (SCP)",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:micro-interoceptive-regulation",
+      "title": "Micro-Interoceptive Regulation",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:vertical-development",
+      "title": "Vertical Development Framework",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:state-shifting-mastery",
+      "title": "State-Shifting Mastery",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:coherence-field",
+      "title": "Coherence Field",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:cognitive-expansion-cycle",
+      "title": "Cognitive Expansion Cycle",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:springett-consciousness-stairway",
+      "title": "Springett Consciousness Stairway",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:springett-manifestation-framework",
+      "title": "Springett Manifestation Framework",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:5-minute-miracle",
+      "title": "5-Minute Miracle Practice",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:syntopical-reading-method",
+      "title": "Syntopical Reading Method",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:non-ergodic-risk",
+      "title": "Non-Ergodic Risk (Clinical Frame)",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:resonant-nonfiction",
+      "title": "Resonant Nonfiction (Writing Standard)",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:consilience-by-translation",
+      "title": "Consilience-by-Translation",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    },
+    {
+      "id": "urn:srl:concept:syntropic-positioning",
+      "title": "Syntropic Positioning",
+      "category": "new-concept",
+      "decision": "approve",
+      "provenance_override": null,
+      "notes": "",
+      "route": "vault-writer-queue"
+    }
+  ],
+  "summary": {
+    "total": 171,
+    "approved": 53,
+    "rejected": 1,
+    "maybe": 2,
+    "unreviewed": 115
+  }
+}

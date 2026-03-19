@@ -25,6 +25,7 @@ skos:related:
 - titration-to-effect
 - gap-moment-training
 - non-ergodic-risk
+- cognitive-development-arc
 status: draft
 title: Hormesis-Durability Model
 type: concept

@@ -20,6 +20,7 @@ skos:related:
 - relevance-realization
 - neuroepistemic-layer
 - somnistics
+- cognitive-development-arc
 status: draft
 title: Consilience by Translation
 type: concept
