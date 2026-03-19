@@ -36,6 +36,13 @@ They own the procurement relationship with the buyer Pausality needs to reach.
 | Grow Therapy | Enterprise mental health | **NEW (Mar 15)** — $150M Series D at $3B valuation (Mar 3, 2026). $1B annual revenue. 10M appointments. TCV + Goldman Sachs. Employer wellness expansion |
 | Unmind | Enterprise mental health | UK-based, growing US presence, NHS partnerships |
 
+## Tier 0: Strategic Partners (Continuous Monitoring)
+Active partnership relationships — monitor project activity, releases, and roadmap.
+
+| Company | Category | Why They Matter |
+|---------|----------|----------------|
+| Open Wearables / Momentum | Open-source wearable API | **NEW (Mar 19)** — MIT-licensed unified API for 300+ devices (Apple Health, Garmin, WHOOP, Polar, Suunto, Samsung). Founded by Jan Kamiński & Bartosz Michalak (Wrocław, Poland). Open algorithms for HRV, sleep, recovery, stress. Self-hosted, zero per-user fees. Active meeting with SRL team (Randy, Jason, Michael Thorn) on multi-platform Pausality. GitHub: the-momentum/open-wearables. Docs: docs.openwearables.io |
+
 ## Tier 4: Adjacent / Emerging (Quarterly Scan)
 Could become competitors, partners, or acquirers.
 
@@ -100,4 +107,5 @@ Companies that could acquire Pausality/SRL.
 - Add new entrants as discovered through scanning
 - **Removed (Mar 15):** Breathwrk (acquired by Peloton $2.2M), Oxa (acquired by Myant, consumer sunset)
 - **Added (Mar 15):** NEUROFIT (T1 — narrative competitor), Ohm Health (T2 — biofeedback hardware)
-- Last updated: 2026-03-15
+- **Added (Mar 19):** Open Wearables / Momentum (T0 — strategic partner, multi-platform wearable API)
+- Last updated: 2026-03-19

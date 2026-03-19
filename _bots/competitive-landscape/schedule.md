@@ -1,6 +1,31 @@
 # Competitive Landscape Bot — Schedule
 
-## Weekly Cadence
+## Daily Cadence: Partner & GitHub Monitoring
+
+**Run:** Every morning (or first session of day)
+**Estimated runtime:** 5 minutes
+**Trigger:** Vigil auto-runs at session start if Mac Mini cron is active, otherwise manual
+
+### Daily Checks
+
+1. **Open Wearables GitHub** — New releases, commits to main, new issues/PRs, algorithm changes
+   - Source: `https://github.com/the-momentum/open-wearables/releases` + `/commits/main`
+   - Alert if: new release, breaking API change, new device integration, HRV/stress algorithm update
+2. **Tier 1 competitor alerts** — Quick scan for funding announcements, product launches, or acquisitions
+   - Sources: Crunchbase alerts, Google News for company names
+   - Alert if: any Tier 1 company raises a round, ships a major update, or gets acquired
+3. **Market-moving news** — FDA clearances, Apple Health announcements, major partnership announcements
+   - Sources: HLTH Daily, Fitt Insider (if published), FDA 510(k) database
+   - Alert if: regulatory action or Big Tech health move directly affects SRL's positioning
+
+### Daily Output
+
+If signals detected: append to `outputs/daily-intel-YYYY-MM-DD.md` and flag in active-context.
+If no signals: no output, no noise.
+
+---
+
+## Weekly Cadence: Full Scan
 
 **Run day:** Every Sunday (or first available day)
 **Estimated runtime:** 30-45 minutes
