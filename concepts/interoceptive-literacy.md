@@ -36,6 +36,7 @@ skos:related:
 - maia2-pedagogical-mapping
 - clinician-durability
 - awareness-before-technique
+- awareness-as-neuroplastic-surface-area
 status: canonical
 title: Interoceptive Literacy
 trademarked: false

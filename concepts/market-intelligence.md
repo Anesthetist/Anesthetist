@@ -6,11 +6,15 @@ modified: '2026-03-15'
 prov:wasDerivedFrom:
 - urn:srl:evidence:chin-2025-joy-of-small-markets
 - urn:srl:observation:tam-keyword-intelligence-breathwork-demand
+- urn:srl:observation:immersion-neuroscience-competitor-analysis
 skos:narrower:
 - competitive-moat-latency
 - ip-six-pillar-moat
 - network-audit-credibility-capital-gap
 skos:related:
+- competitive-moat-latency
+- ip-six-pillar-moat
+- network-audit-credibility-capital-gap
 - fda-wellness-boundary
 - rd-blueprint-market-segmentation
 - wearable-sensor-limitations
@@ -26,6 +30,7 @@ skos:related:
 - high-burnout-verticals
 - commoncog-operating-principles
 - somnistics
+- immersion-neuroscience-competitor-analysis
 status: canonical
 subjects:
 - competitive-landscape

@@ -16,6 +16,7 @@ skos:broader:
 - somnistics
 skos:narrower:
 - haptic-biofeedback
+- interoceptive-simulator
 skos:related:
 - closed-loop-biofeedback
 - neuroadaptive-training-system
