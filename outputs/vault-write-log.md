@@ -77,3 +77,11 @@ Audit trail of all bot-initiated vault changes.
 | 2026-03-18 | CREATE observation | near-death-clinical-narrative | positive-psychology-extraction | Exemplar-story: "Am I going to die?" — foundational clinical moment. Origin story for the entire SRL project. |
 | 2026-03-18 | SKOS (14 links) | 3 concepts + 2 observations | positive-psychology-extraction | Wired skos:related for all 5 new notes to existing vault concepts |
 | 2026-03-18 | EVIDENCE (4 links) | 3 concepts | positive-psychology-extraction | prov:wasDerivedFrom links: awe-as-regulation ← Keltner + Fredrickson; curiosity ← Fredrickson; hormesis ← McEwen |
+| 2026-03-18 | CREATE concept | embodied-metacognition | embodied-metacognition-extraction | Keystone concept: monitoring cognition through somatic signals. Links contemplative, clinical, and product layers. |
+| 2026-03-18 | CREATE concept | nondual-clinical-awareness | embodied-metacognition-extraction | Randy's original synthesis: nondual awareness applied to anesthesia delivery. Vigilance without vigilance anxiety. |
+| 2026-03-18 | CREATE concept | contemplative-progressive-overload | embodied-metacognition-extraction | Exercise physiology principles (progressive overload, periodization) applied to awareness training. 21-day arc. |
+| 2026-03-18 | CREATE concept | cardiac-anchored-breathing | red-arrow-gap-extraction | Breathing synchronized to heartbeat, not external clock. Key differentiator from all other breathwork apps. |
+| 2026-03-18 | CREATE concept | layered-intervention-stack | red-arrow-gap-extraction | 8-layer slider system from beginner to extreme expert. Composable NeuroMinute architecture. |
+| 2026-03-18 | CREATE observation | waking-up-origin-moment | embodied-metacognition-extraction | Exemplar-story: Randy's "I am not my thoughts" epiphany via Waking Up app. Origin of awareness layer. |
+| 2026-03-18 | SKOS (30 links) | 5 concepts + 1 observation | embodied-metacognition + red-arrow-gap extractions | Wired broader/narrower/related for all 6 new notes + cross-links to existing vault concepts |
+| 2026-03-18 | EVIDENCE (6 links) | 5 concepts | embodied-metacognition + red-arrow-gap extractions | prov:wasDerivedFrom links to source ChatGPT transcripts |
