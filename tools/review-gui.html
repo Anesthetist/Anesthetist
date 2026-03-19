@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRL Review Queue</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --sage: #5FC89B;
+  --offwhite: #F5F5F0;
+  --sage-dim: #4aa87e;
+  --red: #E74C3C;
+  --amber: #F39C12;
+  --gray: #8E8E93;
+  --card-bg: #ffffff;
+  --border: #E0E0DB;
+  --text-secondary: #6B6B6B;
+  --blue: #3498DB;
+  --purple: #9B59B6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: var(--offwhite);
+  color: var(--navy);
+  letter-spacing: -0.025em;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: var(--navy);
+  color: var(--offwhite);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header h1 { font-weight: 400; font-size: 18px; margin-bottom: 4px; }
+.header .subtitle { font-size: 12px; color: var(--sage); font-weight: 300; }
+
+/* Queue selector */
+.queue-selector {
+  display: flex;
+  gap: 0;
+  background: var(--navy);
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  overflow-x: auto;
+}
+.queue-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray);
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.queue-btn:hover { color: var(--offwhite); }
+.queue-btn.active { color: var(--sage); border-bottom-color: var(--sage); }
+.queue-btn .qcount {
+  font-size: 11px; background: rgba(255,255,255,0.1);
+  padding: 1px 6px; border-radius: 10px; margin-left: 6px;
+}
+.queue-btn.active .qcount { background: rgba(95,200,155,0.2); }
+
+/* Tabs (sub-categories within a queue) */
+.tabs {
+  display: flex;
+  gap: 0;
+  background: #2d3048;
+  padding: 0 20px;
+  overflow-x: auto;
+}
+.tab {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--gray);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab:hover { color: var(--offwhite); }
+.tab.active { color: var(--sage); border-bottom-color: var(--sage); }
+.tab .count {
+  font-size: 10px; background: rgba(255,255,255,0.1);
+  padding: 1px 5px; border-radius: 8px; margin-left: 4px;
+}
+
+/* Filters */
+.filters {
+  padding: 10px 20px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  background: var(--card-bg);
+}
+.filter-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px; font-weight: 400;
+  padding: 3px 10px; border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--offwhite); color: var(--navy);
+  cursor: pointer; transition: all 0.2s;
+}
+.filter-btn:hover { border-color: var(--sage); }
+.filter-btn.active { background: var(--navy); color: var(--offwhite); border-color: var(--navy); }
+
+/* Cards */
+.cards { padding: 16px 20px; max-width: 800px; margin: 0 auto; }
+.card {
+  background: var(--card-bg); border-radius: 12px;
+  margin-bottom: 12px; border: 1px solid var(--border);
+  overflow: hidden; transition: all 0.2s;
+}
+.card.decided-approve, .card.decided-submit, .card.decided-promote { border-left: 4px solid var(--sage); }
+.card.decided-reject, .card.decided-demote { border-left: 4px solid var(--red); opacity: 0.6; }
+.card.decided-maybe, .card.decided-flag, .card.decided-hold { border-left: 4px solid var(--amber); }
+.card.decided-skip { border-left: 4px solid var(--gray); opacity: 0.7; }
+
+.card-header {
+  padding: 16px; cursor: pointer;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.card-title { font-weight: 500; font-size: 15px; flex: 1; }
+.card-meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+
+/* Badges */
+.badge {
+  font-size: 10px; font-weight: 500;
+  padding: 2px 8px; border-radius: 10px;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.badge-randy { background: var(--navy); color: var(--offwhite); }
+.badge-llm { background: #E8E8E8; color: #666; }
+.badge-established { background: var(--sage); color: var(--navy); }
+.badge-collaborative { background: #D4E6FF; color: #2C5282; }
+.badge-unclassified { background: #F0E6FF; color: #6B46C1; }
+.badge-high { background: #D4EDDA; color: #155724; }
+.badge-medium { background: #FFF3CD; color: #856404; }
+.badge-low { background: #F8D7DA; color: #721C24; }
+.badge-draft { background: #FFF3CD; color: #856404; }
+.badge-review { background: #D4E6FF; color: #2C5282; }
+.badge-canonical { background: #D4EDDA; color: #155724; }
+.badge-clinical { background: var(--purple); color: white; }
+.badge-decision {
+  font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500;
+}
+.badge-decision.approve, .badge-decision.submit, .badge-decision.promote { background: var(--sage); color: white; }
+.badge-decision.reject, .badge-decision.demote { background: var(--red); color: white; }
+.badge-decision.maybe, .badge-decision.flag, .badge-decision.hold { background: var(--amber); color: white; }
+.badge-decision.skip { background: var(--gray); color: white; }
+
+.card-body-preview {
+  font-size: 13px; color: var(--text-secondary);
+  line-height: 1.5; display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* Expanded */
+.card-detail { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); }
+.card.expanded .card-detail { display: block; }
+.card.expanded .card-body-preview { display: none; }
+
+.detail-section { margin-top: 12px; }
+.detail-label {
+  font-size: 11px; font-weight: 500; text-transform: uppercase;
+  color: var(--gray); margin-bottom: 4px; letter-spacing: 0.05em;
+}
+.detail-text { font-size: 13px; line-height: 1.6; color: var(--navy); }
+.detail-text.quote {
+  border-left: 3px solid var(--sage); padding-left: 12px;
+  font-style: italic; color: var(--text-secondary);
+}
+.detail-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+.tag {
+  font-size: 11px; padding: 2px 8px; border-radius: 8px;
+  background: var(--offwhite); color: var(--text-secondary); border: 1px solid var(--border);
+}
+
+/* Clinical interpretation input */
+.clinical-input-section {
+  margin-top: 12px; padding: 12px;
+  background: rgba(155, 89, 182, 0.05);
+  border: 1px solid rgba(155, 89, 182, 0.2);
+  border-radius: 8px;
+}
+.clinical-input-section .detail-label { color: var(--purple); }
+.clinical-textarea {
+  width: 100%; font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 300;
+  padding: 10px 12px; border: 1px solid var(--border);
+  border-radius: 8px; background: white; color: var(--navy);
+  resize: vertical; min-height: 80px; margin-top: 6px;
+}
+.clinical-textarea::placeholder { color: var(--gray); }
+.clinical-textarea:focus { outline: none; border-color: var(--purple); }
+
+/* Decision buttons */
+.decision-bar {
+  display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--border);
+}
+.decision-btn {
+  flex: 1; font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 500; padding: 10px;
+  border-radius: 8px; border: none; cursor: pointer; transition: all 0.2s;
+}
+.decision-btn:active { transform: scale(0.96); }
+.btn-approve, .btn-submit, .btn-promote { background: var(--sage); color: white; }
+.btn-approve:hover, .btn-submit:hover, .btn-promote:hover { background: var(--sage-dim); }
+.btn-reject, .btn-demote { background: var(--red); color: white; }
+.btn-reject:hover, .btn-demote:hover { background: #c0392b; }
+.btn-maybe, .btn-flag, .btn-hold { background: var(--amber); color: white; }
+.btn-maybe:hover, .btn-flag:hover, .btn-hold:hover { background: #e67e22; }
+.btn-skip, .btn-clear { background: var(--offwhite); color: var(--gray); border: 1px solid var(--border); }
+.btn-skip:hover, .btn-clear:hover { background: #e8e8e3; }
+
+/* Notes input */
+.notes-input {
+  width: 100%; font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 300;
+  padding: 8px 12px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--offwhite); color: var(--navy);
+  resize: vertical; min-height: 36px; margin-top: 8px;
+}
+.notes-input::placeholder { color: var(--gray); }
+.notes-input:focus { outline: none; border-color: var(--sage); }
+
+/* Provenance override */
+.provenance-override { display: flex; gap: 4px; margin-top: 8px; }
+.prov-btn {
+  font-family: 'Poppins', sans-serif; font-size: 10px;
+  padding: 2px 8px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--offwhite);
+  cursor: pointer; transition: all 0.15s;
+}
+.prov-btn:hover { border-color: var(--sage); }
+.prov-btn.active { background: var(--navy); color: var(--offwhite); border-color: var(--navy); }
+
+/* Bottom bar */
+.bottom-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--navy); color: var(--offwhite);
+  padding: 12px 20px; display: flex;
+  justify-content: space-between; align-items: center; z-index: 100;
+}
+.progress-text { font-size: 13px; font-weight: 300; }
+.progress-text strong { font-weight: 500; color: var(--sage); }
+.export-btn {
+  font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+  padding: 8px 20px; border-radius: 8px; border: none;
+  background: var(--sage); color: var(--navy); cursor: pointer; transition: all 0.2s;
+}
+.export-btn:hover { background: var(--sage-dim); color: white; }
+
+/* Drop zone */
+.drop-zone {
+  max-width: 500px; margin: 80px auto; padding: 60px 40px;
+  text-align: center; border: 2px dashed var(--border);
+  border-radius: 16px; background: var(--card-bg);
+}
+.drop-zone h2 { font-weight: 400; font-size: 20px; margin-bottom: 12px; }
+.drop-zone p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+.drop-zone.dragover { border-color: var(--sage); background: rgba(95,200,155,0.05); }
+.file-input-btn {
+  font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
+  padding: 12px 28px; border-radius: 8px; border: none;
+  background: var(--sage); color: var(--navy); cursor: pointer;
+}
+.or-text { display: block; margin: 16px 0 8px; font-size: 12px; color: var(--gray); }
+.run-script {
+  font-size: 12px; color: var(--text-secondary);
+  font-family: monospace; background: var(--offwhite);
+  padding: 8px 16px; border-radius: 8px; display: inline-block;
+}
+.empty-state { text-align: center; padding: 40px; color: var(--text-secondary); font-size: 14px; }
+.bottom-spacer { height: 70px; }
+.target-badge { font-size: 11px; padding: 2px 8px; border-radius: 8px; background: #EDF2F7; color: #4A5568; }
+
+@media (max-width: 600px) {
+  .cards { padding: 12px; }
+  .card-header { padding: 12px; }
+  .decision-bar { padding: 8px 12px; }
+  .filters { padding: 8px 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>SRL Review Queue</h1>
+  <div class="subtitle">Somnistics Research Labs — Vault Pipeline</div>
+</div>
+
+<div class="queue-selector" id="queueSelector"></div>
+<div class="tabs" id="tabs"></div>
+<div class="filters" id="filters"></div>
+
+<div id="app">
+  <div class="drop-zone" id="dropZone">
+    <h2>Load Review Data</h2>
+    <p>Drop review-data.json here or click to browse</p>
+    <button class="file-input-btn" onclick="document.getElementById('fileInput').click()">Choose File</button>
+    <input type="file" id="fileInput" accept=".json" style="display:none">
+    <span class="or-text">or generate it with</span>
+    <code class="run-script">python3 tools/generate-review-queue.py --all</code>
+  </div>
+</div>
+
+<div class="bottom-bar" id="bottomBar" style="display:none">
+  <div class="progress-text" id="progressText"></div>
+  <button class="export-btn" onclick="exportDecisions()">Export Decisions</button>
+</div>
+
+<script>
+const REVIEW_DATA = null;
+
+let data = null;
+let activeQueue = null;
+let activeTab = null;
+let activeFilters = { provenance: null, confidence: null, decision: null, status: null };
+let decisions = {};
+
+function loadSaved() {
+  try {
+    const saved = localStorage.getItem('srl-review-decisions-v2');
+    if (saved) decisions = JSON.parse(saved);
+  } catch (e) {}
+}
+function saveDecisions() {
+  localStorage.setItem('srl-review-decisions-v2', JSON.stringify(decisions));
+}
+
+loadSaved();
+if (REVIEW_DATA) { data = REVIEW_DATA; initApp(); }
+
+// File loading
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('dragover');
+  if (e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e => { if (e.target.files[0]) loadFile(e.target.files[0]); });
+
+fetch('review-data.json')
+  .then(r => { if (r.ok) return r.json(); throw new Error(); })
+  .then(d => { data = d; initApp(); })
+  .catch(() => {});
+
+function loadFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try { data = JSON.parse(e.target.result); initApp(); }
+    catch (err) { alert('Invalid JSON file'); }
+  };
+  reader.readAsText(file);
+}
+
+function initApp() {
+  document.getElementById('dropZone').style.display = 'none';
+  document.getElementById('bottomBar').style.display = 'flex';
+  if (data.queue_types && data.queue_types.length > 0) {
+    activeQueue = data.queue_types[0].key;
+    const qt = data.queue_types[0];
+    activeTab = qt.tabs && qt.tabs.length > 0 ? qt.tabs[0].key : null;
+  }
+  renderQueueSelector();
+  renderTabs();
+  renderFilters();
+  renderCards();
+  updateProgress();
+}
+
+function renderQueueSelector() {
+  const container = document.getElementById('queueSelector');
+  if (!data.queue_types || data.queue_types.length <= 1) {
+    container.style.display = data.queue_types && data.queue_types.length === 1 ? 'flex' : 'none';
+  }
+  container.innerHTML = data.queue_types.map(qt => {
+    const count = getQueueItemCount(qt.key);
+    return `<button class="queue-btn ${activeQueue === qt.key ? 'active' : ''}" onclick="switchQueue('${qt.key}')">
+      ${qt.label}<span class="qcount">${count}</span>
+    </button>`;
+  }).join('');
+}
+
+function getQueueItemCount(queueKey) {
+  const q = data.queues[queueKey];
+  if (Array.isArray(q)) return q.length;
+  if (typeof q === 'object') return Object.values(q).reduce((sum, arr) => sum + (Array.isArray(arr) ? arr.length : 0), 0);
+  return 0;
+}
+
+function switchQueue(key) {
+  activeQueue = key;
+  const qt = data.queue_types.find(q => q.key === key);
+  activeTab = qt.tabs && qt.tabs.length > 0 ? qt.tabs[0].key : null;
+  activeFilters = { provenance: null, confidence: null, decision: null, status: null };
+  renderQueueSelector();
+  renderTabs();
+  renderFilters();
+  renderCards();
+  updateProgress();
+}
+
+function renderTabs() {
+  const container = document.getElementById('tabs');
+  const qt = data.queue_types.find(q => q.key === activeQueue);
+  if (!qt || !qt.tabs || qt.tabs.length === 0) {
+    container.style.display = 'none';
+    return;
+  }
+  container.style.display = 'flex';
+  const queueData = data.queues[activeQueue];
+  container.innerHTML = qt.tabs.map(tab => {
+    const items = queueData[tab.key] || [];
+    return `<div class="tab ${activeTab === tab.key ? 'active' : ''}" onclick="switchTab('${tab.key}')">
+      ${tab.label}<span class="count">${items.length}</span>
+    </div>`;
+  }).join('');
+}
+
+function switchTab(key) {
+  activeTab = key;
+  renderTabs();
+  renderFilters();
+  renderCards();
+}
+
+function renderFilters() {
+  const container = document.getElementById('filters');
+  const qt = data.queue_types.find(q => q.key === activeQueue);
+  let html = '';
+
+  // Provenance filters for extraction concepts
+  if (activeQueue === 'extractions' && activeTab === 'concepts') {
+    ['randy-originated', 'llm-generated', 'established-science', 'collaborative'].forEach(p => {
+      html += `<button class="filter-btn ${activeFilters.provenance === p ? 'active' : ''}" onclick="toggleFilter('provenance','${p}')">${formatProvenance(p)}</button>`;
+    });
+    html += '<span style="width:1px;background:var(--border);margin:0 4px"></span>';
+    ['high', 'medium', 'low'].forEach(c => {
+      html += `<button class="filter-btn ${activeFilters.confidence === c ? 'active' : ''}" onclick="toggleFilter('confidence','${c}')">${c}</button>`;
+    });
+    html += '<span style="width:1px;background:var(--border);margin:0 4px"></span>';
+  }
+
+  // Status filters for clinical/promotion
+  if (activeQueue === 'clinical' || activeQueue === 'promotions') {
+    ['draft', 'review'].forEach(s => {
+      html += `<button class="filter-btn ${activeFilters.status === s ? 'active' : ''}" onclick="toggleFilter('status','${s}')">${s}</button>`;
+    });
+    html += '<span style="width:1px;background:var(--border);margin:0 4px"></span>';
+  }
+
+  // Decision filters (always)
+  const actions = qt ? qt.actions : [];
+  const decFilters = ['unreviewed', ...actions];
+  decFilters.forEach(d => {
+    html += `<button class="filter-btn ${activeFilters.decision === d ? 'active' : ''}" onclick="toggleFilter('decision','${d}')">${d}</button>`;
+  });
+
+  container.innerHTML = html;
+}
+
+function toggleFilter(type, value) {
+  activeFilters[type] = activeFilters[type] === value ? null : value;
+  renderFilters();
+  renderCards();
+}
+
+function getItems() {
+  const q = data.queues[activeQueue];
+  if (Array.isArray(q)) return q;
+  if (activeTab && q[activeTab]) return q[activeTab];
+  return [];
+}
+
+function getDecision(item) { return decisions[item.id] || {}; }
+
+function filterItems(items) {
+  return items.filter(item => {
+    const d = getDecision(item);
+    if (activeFilters.provenance && item.provenance !== activeFilters.provenance) return false;
+    if (activeFilters.confidence && item.confidence !== activeFilters.confidence) return false;
+    if (activeFilters.status && item.status !== activeFilters.status) return false;
+    if (activeFilters.decision === 'unreviewed' && d.decision) return false;
+    if (activeFilters.decision && activeFilters.decision !== 'unreviewed' && d.decision !== activeFilters.decision) return false;
+    return true;
+  });
+}
+
+function renderCards() {
+  const container = document.getElementById('app');
+  const items = filterItems(getItems());
+  if (items.length === 0) {
+    container.innerHTML = '<div class="empty-state">No items match current filters</div><div class="bottom-spacer"></div>';
+    return;
+  }
+  container.innerHTML = '<div class="cards">' + items.map((item, i) => renderCard(item, i)).join('') + '</div><div class="bottom-spacer"></div>';
+}
+
+function renderCard(item, index) {
+  const d = getDecision(item);
+  const decClass = d.decision ? `decided-${d.decision}` : '';
+  const qt = data.queue_types.find(q => q.key === activeQueue);
+  const isClinical = activeQueue === 'clinical';
+
+  let bodyPreview = item.preview || item.body || item.addition || item.relevance || '';
+  if (bodyPreview.length > 200) bodyPreview = bodyPreview.substring(0, 200) + '...';
+
+  // Build detail HTML
+  let detailHtml = '';
+
+  if (item.body) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">${isClinical ? 'Concept Body' : 'Description'}</div>
+      <div class="detail-text">${escHtml(item.body)}</div>
+    </div>`;
+  }
+  if (item.addition) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">Proposed Addition</div>
+      <div class="detail-text">${escHtml(item.addition)}</div>
+    </div>`;
+  }
+  if (item.randy_voice) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">Randy's Voice</div>
+      <div class="detail-text quote">${escHtml(item.randy_voice)}</div>
+    </div>`;
+  }
+  if (item.confidence_note) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">Confidence</div>
+      <div class="detail-text">${escHtml(item.confidence_note)}</div>
+    </div>`;
+  }
+  if (item.broader && item.broader.length) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">Broader</div>
+      <div class="detail-tags">${item.broader.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
+    </div>`;
+  }
+  if (item.related && item.related.length) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">Related</div>
+      <div class="detail-tags">${item.related.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
+    </div>`;
+  }
+  if (item.subjects && item.subjects.length) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">Subjects</div>
+      <div class="detail-tags">${item.subjects.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
+    </div>`;
+  }
+  if (item.relevance) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">Relevance</div>
+      <div class="detail-text">${escHtml(item.relevance)}</div>
+    </div>`;
+  }
+
+  // Source
+  if (item.source_file) {
+    detailHtml += `<div class="detail-section">
+      <div class="detail-label">Source</div>
+      <div class="detail-text">${escHtml(item.source_file)}${item.batch_source ? ' / ' + escHtml(item.batch_source) : ''}</div>
+    </div>`;
+  }
+
+  // Clinical interpretation input
+  if (isClinical) {
+    const savedInterp = d.clinical_interpretation || '';
+    detailHtml += `<div class="clinical-input-section">
+      <div class="detail-label">Your Clinical Interpretation</div>
+      <textarea class="clinical-textarea" placeholder="What does this mean for CRNA practice? How does this connect to your clinical experience?"
+        onchange="setClinicalInterpretation('${item.id}', this.value)">${escHtml(savedInterp)}</textarea>
+    </div>`;
+  }
+
+  // Provenance override (extraction concepts only)
+  if (activeQueue === 'extractions' && (activeTab === 'concepts' || !activeTab)) {
+    const currentProv = d.provenance_override || item.provenance;
+    if (item.provenance) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Provenance (click to override)</div>
+        <div class="provenance-override">
+          ${['randy-originated', 'llm-generated', 'established-science', 'collaborative'].map(p =>
+            `<button class="prov-btn ${currentProv === p ? 'active' : ''}" onclick="setProvenance('${item.id}','${p}')">${formatProvenance(p)}</button>`
+          ).join('')}
+        </div>
+      </div>`;
+    }
+  }
+
+  // General notes
+  if (!isClinical) {
+    detailHtml += `<div class="detail-section">
+      <textarea class="notes-input" placeholder="Add notes..." onchange="setNotes('${item.id}', this.value)">${escHtml(d.notes || '')}</textarea>
+    </div>`;
+  }
+
+  // Badges
+  let badges = '';
+  if (item.provenance) badges += `<span class="badge badge-${provClass(d.provenance_override || item.provenance)}">${formatProvenance(d.provenance_override || item.provenance)}</span>`;
+  if (item.confidence) badges += `<span class="badge badge-${item.confidence}">${item.confidence}</span>`;
+  if (item.status) badges += `<span class="badge badge-${item.status}">${item.status}</span>`;
+  if (item.target_concept) badges += `<span class="target-badge">${escHtml(item.target_concept)}</span>`;
+  if (isClinical) badges += `<span class="badge badge-clinical">clinical</span>`;
+  if (d.decision) badges += `<span class="badge-decision ${d.decision}">${d.decision}</span>`;
+
+  // Decision buttons
+  const actions = qt ? qt.actions : ['approve', 'reject'];
+  const btnHtml = actions.map(a => {
+    const label = a.charAt(0).toUpperCase() + a.slice(1);
+    return `<button class="decision-btn btn-${a}" onclick="decide('${item.id}','${a}',event)">${label}</button>`;
+  }).join('') + `<button class="decision-btn btn-clear" onclick="decide('${item.id}',null,event)">Clear</button>`;
+
+  return `<div class="card ${decClass}" id="card-${index}">
+    <div class="card-header" onclick="toggleCard(${index})">
+      <div class="card-top">
+        <div class="card-title">${escHtml(item.title || item.target_concept || 'Untitled')}</div>
+      </div>
+      <div class="card-meta">${badges}</div>
+      <div class="card-body-preview">${escHtml(bodyPreview)}</div>
+    </div>
+    <div class="card-detail">${detailHtml}</div>
+    <div class="decision-bar">${btnHtml}</div>
+  </div>`;
+}
+
+function toggleCard(index) {
+  document.getElementById(`card-${index}`).classList.toggle('expanded');
+}
+
+function decide(id, decision, event) {
+  event.stopPropagation();
+  if (!decisions[id]) decisions[id] = {};
+  decisions[id].decision = decision;
+  decisions[id].timestamp = new Date().toISOString();
+  saveDecisions();
+  renderCards();
+  updateProgress();
+}
+
+function setNotes(id, notes) {
+  if (!decisions[id]) decisions[id] = {};
+  decisions[id].notes = notes;
+  saveDecisions();
+}
+
+function setClinicalInterpretation(id, text) {
+  if (!decisions[id]) decisions[id] = {};
+  decisions[id].clinical_interpretation = text;
+  if (text.trim()) {
+    decisions[id].decision = 'submit';
+    decisions[id].timestamp = new Date().toISOString();
+  }
+  saveDecisions();
+  renderCards();
+  updateProgress();
+}
+
+function setProvenance(id, prov) {
+  if (!decisions[id]) decisions[id] = {};
+  decisions[id].provenance_override = prov;
+  saveDecisions();
+  renderCards();
+}
+
+function updateProgress() {
+  let allItems = [];
+  data.queue_types.forEach(qt => {
+    const q = data.queues[qt.key];
+    if (Array.isArray(q)) allItems = allItems.concat(q);
+    else if (typeof q === 'object') Object.values(q).forEach(arr => { if (Array.isArray(arr)) allItems = allItems.concat(arr); });
+  });
+
+  const total = allItems.length;
+  const reviewed = allItems.filter(i => decisions[i.id]?.decision).length;
+
+  // Count by action type
+  const counts = {};
+  allItems.forEach(i => {
+    const d = decisions[i.id]?.decision;
+    if (d) counts[d] = (counts[d] || 0) + 1;
+  });
+
+  let countHtml = Object.entries(counts).map(([action, count]) => {
+    const color = ['approve','submit','promote'].includes(action) ? 'var(--sage)' :
+                  ['reject','demote'].includes(action) ? 'var(--red)' :
+                  ['maybe','flag','hold'].includes(action) ? 'var(--amber)' : 'var(--gray)';
+    return `<span style="color:${color}">${count} ${action}</span>`;
+  }).join(' &nbsp; ');
+
+  document.getElementById('progressText').innerHTML =
+    `<strong>${reviewed}</strong> / ${total} reviewed &nbsp; ${countHtml}`;
+}
+
+function exportDecisions() {
+  let allItems = [];
+  data.queue_types.forEach(qt => {
+    const q = data.queues[qt.key];
+    if (Array.isArray(q)) allItems = allItems.concat(q);
+    else if (typeof q === 'object') Object.values(q).forEach(arr => { if (Array.isArray(arr)) allItems = allItems.concat(arr); });
+  });
+
+  const output = {
+    review_session: new Date().toISOString(),
+    reviewer: "Randy Graybeal",
+    decisions: allItems
+      .filter(i => decisions[i.id]?.decision)
+      .map(i => {
+        const d = decisions[i.id];
+        const entry = {
+          id: i.id,
+          slug: i.slug || i.id.split(':').pop(),
+          title: i.title || i.target_concept,
+          category: i.category,
+          queue: i.review_type || activeQueue,
+          decision: d.decision,
+          notes: d.notes || ""
+        };
+        if (d.clinical_interpretation) entry.clinical_interpretation = d.clinical_interpretation;
+        if (d.provenance_override) entry.provenance_override = d.provenance_override;
+        return entry;
+      }),
+    summary: {}
+  };
+
+  // Build summary
+  const counts = {};
+  output.decisions.forEach(d => { counts[d.decision] = (counts[d.decision] || 0) + 1; });
+  output.summary = { total: allItems.length, reviewed: output.decisions.length, ...counts, unreviewed: allItems.length - output.decisions.length };
+
+  const blob = new Blob([JSON.stringify(output, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `review-decisions-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function formatProvenance(p) {
+  return { 'randy-originated': 'Randy', 'llm-generated': 'AI', 'established-science': 'Established', 'collaborative': 'R+AI', 'unclassified': '?' }[p] || p;
+}
+function provClass(p) {
+  return { 'randy-originated': 'randy', 'llm-generated': 'llm', 'established-science': 'established', 'collaborative': 'collaborative', 'unclassified': 'unclassified' }[p] || 'unclassified';
+}
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+</script>
+</body>
+</html>
