@@ -138,13 +138,21 @@ PROMPT=$(build_mining_prompt "${NEXT_FILES[@]}")
 
 echo ""
 echo "Running Claude mining pipeline..."
-echo "$PROMPT" | claude \
+
+# Write prompt to temp file to avoid argument length limits
+PROMPT_FILE=$(mktemp)
+echo "$PROMPT" > "$PROMPT_FILE"
+
+claude \
   -p \
   --model "$MODEL" \
   --effort "$EFFORT" \
   --permission-mode auto \
   --append-system-prompt "You are Vigil, the SRL vault orchestrator. Read CLAUDE.md for full context." \
+  "$(cat "$PROMPT_FILE")" \
   2>&1 | tee "$VAULT_DIR/outputs/pipeline-logs/mine-$TIMESTAMP.log"
+
+rm -f "$PROMPT_FILE"
 
 # Commit results
 echo ""
