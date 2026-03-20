@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evidence Brief: Gap Moment Training — 21-Day Protocol | Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1D2E;
+  --bg-card: #242840;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --text: #F5F5F0;
+  --text-muted: #A0A3B5;
+  --red: #E74C5F;
+  --red-dim: #C0394A;
+  --amber: #F0A830;
+  --amber-dim: #D49220;
+  --green: #5FC89B;
+  --green-dim: rgba(95,200,155,0.12);
+  --red-bg: rgba(231,76,95,0.10);
+  --amber-bg: rgba(240,168,48,0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.65;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header */
+header {
+  padding: 56px 48px 40px;
+  border-bottom: 1px solid rgba(95,200,155,0.15);
+}
+header h1 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+header h1 span { color: var(--sage); }
+header .subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Section */
+section {
+  padding: 36px 48px;
+  border-bottom: 1px solid rgba(95,200,155,0.08);
+}
+section:last-of-type { border-bottom: none; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+.section-label.red { color: var(--red); }
+.section-label.amber { color: var(--amber); }
+.section-label.blue { color: #6CA6E8; }
+
+/* Hypothesis block */
+.hypothesis {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text);
+  padding: 24px 28px;
+  background: var(--bg-card);
+  border-left: 3px solid var(--sage);
+  border-radius: 6px;
+}
+
+/* Evidence cards grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .card-grid { grid-template-columns: 1fr; }
+  header, section { padding-left: 24px; padding-right: 24px; }
+  footer { padding-left: 24px; padding-right: 24px; }
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 20px 22px;
+  border-left: 3px solid var(--green);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card.red-border { border-left-color: var(--red); }
+.card.amber-border { border-left-color: var(--amber); }
+
+.card .phase {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sage);
+}
+.card.red-border .phase { color: var(--red); }
+
+.card .finding {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text);
+}
+.card .citation {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-top: auto;
+}
+.card .level {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: rgba(95,200,155,0.15);
+  color: var(--sage);
+}
+.card.red-border .level {
+  background: rgba(231,76,95,0.15);
+  color: var(--red);
+}
+
+/* Challenges — stacked */
+.challenge-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (max-width: 768px) {
+  .challenge-stack { grid-template-columns: 1fr; }
+}
+
+/* Amber box */
+.amber-box {
+  background: var(--amber-bg);
+  border: 1px solid rgba(240,168,48,0.25);
+  border-radius: 6px;
+  padding: 24px 28px;
+}
+.amber-box p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.amber-box p:last-child { margin-bottom: 0; }
+.amber-box strong { font-weight: 500; color: var(--amber); }
+
+/* Next steps */
+.steps-list {
+  list-style: none;
+  counter-reset: steps;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.steps-list li {
+  counter-increment: steps;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.steps-list li::before {
+  content: counter(steps);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(108,166,232,0.15);
+  color: #6CA6E8;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+.steps-list .step-title {
+  font-weight: 500;
+  color: var(--text);
+}
+.steps-list .step-detail {
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+  padding: 28px 48px 40px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  border-top: 1px solid rgba(95,200,155,0.1);
+}
+footer .logo {
+  color: var(--sage);
+  font-weight: 500;
+}
+
+/* Print styles */
+@media print {
+  body { background: white; color: #1A1D2E; max-width: 100%; }
+  header, section, footer { padding-left: 32px; padding-right: 32px; }
+  .card { border-color: #ccc; background: #f9f9f9; }
+  .card.red-border { border-color: #c0394a; }
+  .amber-box { background: #fff8e8; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Evidence Brief: <span>Gap Moment Training</span><sup style="font-size:14px;">TM</sup> — 21-Day Protocol</h1>
+  <p class="subtitle">Somnistics Research Labs | For Clinical Leadership Review</p>
+</header>
+
+<!-- SECTION 1: THE HYPOTHESIS -->
+<section>
+  <div class="section-label">The Hypothesis</div>
+  <div class="hypothesis">
+    One 60-second NeuroMinute<sup style="font-size:10px;">TM</sup> per day for 21 days, progressively increasing in complexity and delivered via the Pausality app, improves autonomic regulation (HRV, respiratory sinus arrhythmia), interoceptive awareness (MAIA-2 subscales), and stress resilience (state recovery speed under clinical load) in Certified Registered Nurse Anesthetists.
+  </div>
+</section>
+
+<!-- SECTION 2: EVIDENCE SUPPORTS -->
+<section>
+  <div class="section-label">Evidence Supports</div>
+  <div class="card-grid">
+
+    <!-- Phase 1 -->
+    <div class="card">
+      <div class="phase">Phase 1: Somatic Baseline (Days 1-7)</div>
+      <div class="finding">
+        5 minutes of daily cyclic sighing significantly improves mood and reduces physiological arousal versus mindfulness meditation. Structured breathing outperforms unstructured attention training. The respiratory vagal stimulation model identifies breath as the primary mechanism of contemplative benefit.
+      </div>
+      <div class="citation">
+        Balban et al. 2023, <em>Cell Reports Medicine</em> <span class="level">Level 1b RCT</span><br>
+        Gerritsen &amp; Band 2018, <em>Frontiers in Human Neuroscience</em> <span class="level">Level 2a</span>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="card">
+      <div class="phase">Phase 2: Cognitive Friction (Days 8-14)</div>
+      <div class="finding">
+        Resonance frequency breathing (~0.1 Hz) stimulates the baroreflex, producing large-amplitude HR oscillations that strengthen autonomic reflexes over sessions. Short-duration HRV biofeedback improves cognitive performance under laboratory-induced stress in a single session. Effects are mechanistic (reflex training), not merely state induction.
+      </div>
+      <div class="citation">
+        Lehrer &amp; Gevirtz 2014, <em>Frontiers in Psychology</em> <span class="level">Level 1a Review</span><br>
+        Prinsloo et al. 2011, <em>Applied Psychophysiology &amp; Biofeedback</em> <span class="level">Level 2b</span>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="card">
+      <div class="phase">Phase 3: Graded Exposure (Days 15-21)</div>
+      <div class="finding">
+        Eight weeks of progressive mindfulness training produces measurable increases in gray matter density in insula, hippocampus, and TPJ. The anterior insula integrates interoceptive signals into unified awareness — training interoception is training the neural substrate of clinical decision-making under pressure.
+      </div>
+      <div class="citation">
+        H&ouml;lzel et al. 2011, <em>Psychiatry Research: Neuroimaging</em> <span class="level">Level 2b</span><br>
+        Craig 2009, <em>Nature Reviews Neuroscience</em> <span class="level">Level 5 Theory</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 3: EVIDENCE CHALLENGES -->
+<section>
+  <div class="section-label red">Evidence Challenges</div>
+  <div class="challenge-stack">
+
+    <div class="card red-border">
+      <div class="phase">Dose Below Evidence Floor</div>
+      <div class="finding">
+        The strongest breathing RCT (Balban 2023) used a 5-minute daily dose. The strongest HRV biofeedback data is based on 10-20 minute sessions. A 60-second dose is below the floor of any published positive trial. The literature suggests rapid autonomic shifts are possible in brief windows (Prinsloo 2011), but no RCT has tested a 60-second standalone protocol.
+      </div>
+      <div class="citation"><span class="level">Gap</span> No published 60-second breathing RCT</div>
+    </div>
+
+    <div class="card red-border">
+      <div class="phase">21-Day vs. 8-Week Timeline</div>
+      <div class="finding">
+        Structural neuroplastic changes (H&ouml;lzel 2011) were measured after 8 weeks of MBSR. The HRV biofeedback literature typically reports cumulative benefits over 4-10 weeks. Twenty-one days may produce functional shifts (autonomic tone, interoceptive attention) without structural reorganization. The timeline is plausible for skill acquisition but unvalidated for durability.
+      </div>
+      <div class="citation"><span class="level">Gap</span> Functional vs. structural change boundary unclear at 21 days</div>
+    </div>
+
+    <div class="card red-border">
+      <div class="phase">Ecological Validity</div>
+      <div class="finding">
+        Laboratory stressors (Stroop tasks, mental arithmetic) do not replicate the cognitive-emotional demands of intraoperative anesthesia care — where the stakes are a patient's life and the stressors are unpredictable, concurrent, and sustained. Transfer from app-based practice to OR performance is assumed, not demonstrated.
+      </div>
+      <div class="citation"><span class="level">Gap</span> No transfer study from micro-training to clinical performance</div>
+    </div>
+
+    <div class="card red-border">
+      <div class="phase">No GMT-Specific RCT</div>
+      <div class="finding">
+        Gap Moment Training as a named, integrated protocol — combining breath pacing, multi-anchor interoceptive attention, progressive complexity, and biometric feedback within a 60-second format — has not been studied in any published randomized controlled trial. Each component has evidence. The integration does not.
+      </div>
+      <div class="citation"><span class="level">Level 5</span> Expert opinion / SRL protocol design</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 4: THE HONEST ASSESSMENT -->
+<section>
+  <div class="section-label amber">The Honest Assessment</div>
+  <div class="amber-box">
+    <p>
+      <strong>Component evidence is strong.</strong> Slow breathing improves autonomic regulation (Level 1a-1b). HRV biofeedback strengthens baroreflex function (Level 1a). Interoceptive training reshapes insula connectivity (Level 2b). Progressive skill acquisition compounds neuroplastic effects (Level 2a). Each ingredient in the GMT protocol has independent, replicated support.
+    </p>
+    <p>
+      <strong>Integration evidence is absent.</strong> No study has tested whether these components, combined into a 60-second progressive protocol delivered via a mobile app, produce the claimed outcomes in CRNAs. The GMT 21-day protocol is currently classified as Level 5 / SRL-P (proprietary protocol, expert-designed, empirically untested as a bundle).
+    </p>
+    <p>
+      <strong>The gap between "each ingredient works" and "this recipe works" is precisely where the planned VCU collaboration lives.</strong> 83% of anesthesiology trainees report a stressful event in any 30-day window (Putnam 2025). The clinical need is not in question. The protocol's efficacy as an integrated system is.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 5: WHAT WE'RE DOING ABOUT IT -->
+<section>
+  <div class="section-label blue">Three Things We Are Doing About It</div>
+  <ol class="steps-list">
+    <li>
+      <div>
+        <span class="step-title">MAIA-2-CRNA Validation Study (N=240)</span><br>
+        <span class="step-detail">CRNA-specific adaptation of the Multidimensional Assessment of Interoceptive Awareness. Keeps 8 core MAIA-2 subscales intact for literature comparability. Adds 5-10 items targeting interoceptive attention under clinical load. Produces a validated outcome instrument before the intervention trial begins.</span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <span class="step-title">Continuous State-Drift Monitoring (N=60)</span><br>
+        <span class="step-detail">Apple Watch-based longitudinal HRV tracking during clinical shifts. Establishes baseline autonomic variability patterns in CRNAs — the "before" picture. Maps gap moment frequency, state recovery time, and circadian autonomic rhythms without any intervention.</span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <span class="step-title">GMT 21-Day Pre/Post Pilot (N=60)</span><br>
+        <span class="step-detail">Randomized waitlist-controlled pilot. Primary outcomes: MAIA-2-CRNA delta, resting HRV change, and state recovery speed post-stressor. Secondary: ecological momentary assessment of perceived regulation capacity. This is the first direct test of the integrated GMT protocol.</span>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<footer>
+  <span class="logo">Vigil</span> | SRL Knowledge Graph | Generated 2026-03-20<br>
+  All claims graded per Oxford Centre for Evidence-Based Medicine (CEBM) levels of evidence. Cross-referenced against PubMed and SRL vault (87 evidence notes, 96 concept notes).<br>
+  <span style="color:rgba(160,163,181,0.6);">This brief describes research landscapes. It does not prescribe clinical behavior.</span>
+</footer>
+
+</body>
+</html>
