@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evidence Brief: SRNA Clinical Readiness Protocol | Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1D2E;
+  --bg-card: #242840;
+  --bg-card-alt: #2A2E4A;
+  --sage: #5FC89B;
+  --sage-dim: rgba(95,200,155,0.12);
+  --text: #F5F5F0;
+  --text-muted: #A0A3B5;
+  --text-dim: #7A7D90;
+  --green: #5FC89B;
+  --green-border: rgba(95,200,155,0.6);
+  --green-bg: rgba(95,200,155,0.08);
+  --sage-border: rgba(95,200,155,0.35);
+  --amber: #F0A830;
+  --amber-border: rgba(240,168,48,0.6);
+  --amber-bg: rgba(240,168,48,0.08);
+  --gray: #6B6E82;
+  --gray-border: rgba(107,110,130,0.5);
+  --gray-bg: rgba(107,110,130,0.08);
+  --red: #E74C5F;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.65;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header */
+header {
+  padding: 56px 48px 40px;
+  border-bottom: 1px solid rgba(95,200,155,0.15);
+}
+header h1 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+header h1 span { color: var(--sage); }
+header .subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+header .meta {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 300;
+}
+
+/* Section */
+section {
+  padding: 40px 48px;
+  border-bottom: 1px solid rgba(95,200,155,0.08);
+}
+section:last-of-type { border-bottom: none; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+.section-label.amber { color: var(--amber); }
+.section-label.neutral { color: var(--text-muted); }
+
+h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+h3 {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+p { margin-bottom: 12px; font-size: 14px; }
+p:last-child { margin-bottom: 0; }
+
+/* Persona Card */
+.persona-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 28px 32px;
+  border-left: 3px solid var(--sage);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.persona-card .label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.persona-card .value {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.persona-card .full-width {
+  grid-column: 1 / -1;
+}
+
+/* Intervention Block */
+.intervention-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.intervention-cell {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 20px 24px;
+  text-align: center;
+}
+.intervention-cell .big {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--sage);
+  margin-bottom: 4px;
+}
+.intervention-cell .desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.wave-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.wave {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 20px 24px;
+  border-top: 3px solid var(--sage);
+}
+.wave.w2 { border-top-color: var(--amber); }
+.wave.w3 { border-top-color: var(--red); }
+.wave .wave-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.wave.w1 .wave-label { color: var(--sage); }
+.wave.w2 .wave-label { color: var(--amber); }
+.wave.w3 .wave-label { color: var(--red); }
+.wave .wave-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.wave .wave-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Outcome Cards */
+.outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.outcome-card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 24px 28px;
+  border-left: 3px solid var(--gray-border);
+  position: relative;
+}
+.outcome-card.demonstrated { border-left-color: var(--green); }
+.outcome-card.probable { border-left-color: var(--sage-border); }
+.outcome-card.hypothesized { border-left-color: var(--amber); }
+.outcome-card.not-tested { border-left-color: var(--gray); }
+
+.outcome-card .outcome-number {
+  font-size: 10px;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.outcome-card .outcome-name {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.outcome-card .outcome-instrument {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+.badge.demonstrated { background: var(--green-bg); color: var(--green); border: 1px solid rgba(95,200,155,0.3); }
+.badge.probable { background: rgba(95,200,155,0.05); color: rgba(95,200,155,0.7); border: 1px solid rgba(95,200,155,0.2); }
+.badge.hypothesized { background: var(--amber-bg); color: var(--amber); border: 1px solid rgba(240,168,48,0.3); }
+.badge.not-tested { background: var(--gray-bg); color: var(--gray); border: 1px solid rgba(107,110,130,0.3); }
+
+.outcome-card .effect-size {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.outcome-card .citation {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.outcome-card .not-demonstrated {
+  font-size: 11px;
+  color: var(--text-dim);
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  line-height: 1.5;
+}
+.outcome-card .not-demonstrated strong {
+  color: var(--amber);
+  font-weight: 500;
+}
+
+/* Mechanism Chain */
+.mechanism-chain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: stretch;
+  margin: 8px 0;
+}
+.mech-step {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 16px 18px;
+  flex: 1;
+  min-width: 110px;
+  position: relative;
+  text-align: center;
+}
+.mech-step::after {
+  content: "\2192";
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--sage);
+  font-size: 18px;
+  z-index: 1;
+}
+.mech-step:last-child::after { content: ""; }
+.mech-step .mech-label {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.mech-step .mech-grade {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.mech-step .mech-grade.green { color: var(--green); }
+.mech-step .mech-grade.sage { color: rgba(95,200,155,0.6); }
+.mech-step .mech-grade.amber { color: var(--amber); }
+.mech-step .mech-grade.gray { color: var(--gray); }
+
+/* Two-column promise */
+.promise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.promise-col {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 24px 28px;
+}
+.promise-col.evidence { border-top: 3px solid var(--green); }
+.promise-col.hypothesis { border-top: 3px solid var(--amber); }
+.promise-col h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+.promise-col.evidence h3 { color: var(--green); }
+.promise-col.hypothesis h3 { color: var(--amber); }
+.promise-col ul {
+  list-style: none;
+  padding: 0;
+}
+.promise-col li {
+  font-size: 13px;
+  line-height: 1.55;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-muted);
+}
+.promise-col li:last-child { border-bottom: none; }
+
+/* Measurement stack */
+.measure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.measure-col {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 24px 28px;
+}
+.measure-col h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  color: var(--sage);
+}
+.measure-col.separate h3 { color: var(--text-muted); }
+.measure-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 13px;
+}
+.measure-item:last-child { border-bottom: none; }
+.measure-item .mi-name { color: var(--text); font-weight: 400; }
+.measure-item .mi-method { color: var(--text-dim); font-size: 11px; }
+
+/* Common Language */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.vocab-card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 20px 24px;
+}
+.vocab-card .term {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sage);
+  margin-bottom: 6px;
+}
+.vocab-card .definition {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.vocab-card .evidence-note {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Footer */
+footer {
+  padding: 32px 48px;
+  border-top: 1px solid rgba(95,200,155,0.1);
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+footer .generator { color: var(--sage); font-weight: 500; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  header, section, footer { padding-left: 24px; padding-right: 24px; }
+  .persona-card { grid-template-columns: 1fr; }
+  .intervention-grid { grid-template-columns: 1fr; }
+  .wave-timeline { grid-template-columns: 1fr; }
+  .outcome-grid { grid-template-columns: 1fr; }
+  .mechanism-chain { flex-direction: column; }
+  .mech-step::after { content: "\2193"; right: auto; bottom: -12px; top: auto; left: 50%; transform: translateX(-50%); }
+  .promise-grid { grid-template-columns: 1fr; }
+  .measure-grid { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+}
+
+/* Callout */
+.callout {
+  background: var(--bg-card);
+  border-left: 3px solid var(--sage);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.callout.amber { border-left-color: var(--amber); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>Evidence Brief: <span>SRNA Clinical Readiness Protocol</span></h1>
+  <div class="subtitle">Pausality &times; Apple Watch &times; 21 Days &mdash; What the Evidence Shows</div>
+  <div class="meta">Somnistics Research Labs &bull; March 2026 &bull; v1.0 &bull; Oxford CEBM graded</div>
+</header>
+
+<!-- SECTION 1: THE USER -->
+<section>
+  <div class="section-label">01 &mdash; The User</div>
+  <div class="persona-card">
+    <div>
+      <div class="label">Who</div>
+      <div class="value">Student Registered Nurse Anesthetist (SRNA), mid-career transition. 28, former ICU nurse, now in a doctoral anesthesia program. Smart, motivated, physiologically literate.</div>
+    </div>
+    <div>
+      <div class="label">Constraints</div>
+      <div class="value">Cannot work during the program. Financially stretched. Time is scarce&mdash;clinical rotations, didactics, simulation labs, and studying consume nearly all of it. No budget for additional wellness tools.</div>
+    </div>
+    <div>
+      <div class="label">Hardware</div>
+      <div class="value">Apple Watch (Series 9+), AirPods Pro 3, iPhone. Already owned. No additional cost.</div>
+    </div>
+    <div>
+      <div class="label">What They Need</div>
+      <div class="value">Emotional regulation under clinical pressure. Resilience that doesn't require 20-minute meditation sessions they don't have time for. A way to build the interoceptive infrastructure that medical education is actively suppressing.</div>
+    </div>
+    <div class="full-width">
+      <div class="label">The Problem Underneath the Problem</div>
+      <div class="value">Clinical training systematically suppresses interoception&mdash;the capacity to detect your own physiological state. Stoicism is rewarded. Fatigue signals are ignored. The "bladder of steel" is a badge of honor. This suppression reduces autonomic flexibility and is a biological contributor to burnout, state drift, and clinical error vulnerability. It is a training artifact, not a character flaw.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: THE INTERVENTION -->
+<section>
+  <div class="section-label">02 &mdash; The Intervention</div>
+  <h2>What They Do</h2>
+  <div class="intervention-grid">
+    <div class="intervention-cell">
+      <div class="big">60s</div>
+      <div class="desc">Per session &mdash; one NeuroMinute&trade;</div>
+    </div>
+    <div class="intervention-cell">
+      <div class="big">3&times;/day</div>
+      <div class="desc">Minimum dose &mdash; gap moments between cases, before sim, walking to the OR</div>
+    </div>
+    <div class="intervention-cell">
+      <div class="big">21 days</div>
+      <div class="desc">Progressive curriculum &mdash; three waves of increasing complexity</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Cardiac-anchored breathing</strong>&mdash;the core differentiator. Breath pacing is synchronized to the user's own heartbeat via Apple Watch, not an external timer. The body sets the rhythm. Each person's optimal resonant frequency varies (typically 4.5&ndash;6.5 breaths/minute) and shifts with autonomic state, fatigue, and circadian phase. The app adapts to the user, not the reverse.
+  </div>
+
+  <div class="wave-timeline">
+    <div class="wave w1">
+      <div class="wave-label">Days 1&ndash;7 &bull; Wave 1</div>
+      <div class="wave-title">Somatic Baseline</div>
+      <div class="wave-desc">Simple breath anchors, body scanning, heartbeat detection. Establishing autonomic home base&mdash;a trained reference state the nervous system can return to after disruption. Equal breathing as the known coordinate.</div>
+    </div>
+    <div class="wave w2">
+      <div class="wave-label">Days 8&ndash;14 &bull; Wave 2</div>
+      <div class="wave-title">Cognitive Friction</div>
+      <div class="wave-desc">Thought labeling, attention toggling, interrupt drills. Practicing departure from home base and return. Stacking sensory anchors (heartbeat + breath texture + ambient sound). Building state-drift detection.</div>
+    </div>
+    <div class="wave w3">
+      <div class="wave-label">Days 15&ndash;21 &bull; Wave 3</div>
+      <div class="wave-title">Graded Exposure</div>
+      <div class="wave-desc">Open awareness under mild physiological stressors (CO<sub>2</sub> buildup, extended exhale ratios). Less instruction, more raw awareness. Integration: the capacity to remain regulated when the signal gets noisy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: OUTCOME EVIDENCE MAP -->
+<section>
+  <div class="section-label">03 &mdash; Outcome Evidence Map</div>
+  <h2>16 Measurable Dimensions &mdash; Graded Honestly</h2>
+  <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 13px;">Each outcome is graded against the available literature for this specific protocol (60-second micro-interventions, cardiac-anchored breathing, 21-day duration, SRNA population). Where the evidence is strong, we say so. Where it is not, we say that too.</p>
+
+  <div class="outcome-grid">
+
+    <!-- 1. RMSSD -->
+    <div class="outcome-card demonstrated">
+      <div class="outcome-number">01</div>
+      <div class="outcome-name">HRV &mdash; RMSSD / HF-HRV</div>
+      <div class="outcome-instrument">Apple Watch optical PPG &rarr; RMSSD trend; validated against ECG for trend detection</div>
+      <span class="badge demonstrated">Demonstrated</span>
+      <div class="effect-size">Expected: 15&ndash;30% RMSSD increase over 21 days (d = 0.4&ndash;0.7). Resonant-frequency breathing produces measurable HRV shifts within a single session. Effect is cumulative with repeated practice.</div>
+      <div class="citation">Lehrer et al. 2014; Prinsloo et al. 2011; Zaccaro et al. 2018</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> Apple Watch optical PPG is less precise than chest-strap ECG. Absolute RMSSD values may differ; trend direction and magnitude remain detectable. Individual resonant frequency varies&mdash;cardiac anchoring addresses this.</div>
+    </div>
+
+    <!-- 2. MAIA-2 -->
+    <div class="outcome-card probable">
+      <div class="outcome-number">02</div>
+      <div class="outcome-name">Interoceptive Awareness &mdash; MAIA-2</div>
+      <div class="outcome-instrument">MAIA-2 (37-item, 8 subscales) &mdash; self-report at Day 0, Day 21</div>
+      <span class="badge probable">Probable</span>
+      <div class="effect-size">Expected: d = 0.2&ndash;0.4 across Noticing, Body Listening, and Trusting subscales. Published 8-week programs show d = 0.3&ndash;0.5; a 21-day protocol with 3&times;/day dosing may approach the lower bound through frequency compensation.</div>
+      <div class="citation">Mehling et al. 2012 (MAIA validation); 8-week mindfulness-based programs (multiple meta-analyses)</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> No published data on MAIA-2 response to 60-second micro-interventions specifically. The dosing hypothesis (3&times;/day &times; 21 days = 63 reps) is theoretically grounded but empirically untested. CRNA-specific norms do not yet exist.</div>
+    </div>
+
+    <!-- 3. Insular Cortex -->
+    <div class="outcome-card not-tested">
+      <div class="outcome-number">03</div>
+      <div class="outcome-name">Insular Cortex Density</div>
+      <div class="outcome-instrument">Structural MRI (voxel-based morphometry) &mdash; not measurable in-app</div>
+      <span class="badge not-tested">Not Expected at 21 Days</span>
+      <div class="effect-size">Published structural changes require 8+ weeks of sustained practice (30&ndash;45 min/day). H&ouml;lzel et al. (2011) showed gray matter density changes in the insula after 8-week MBSR. A 21-day micro-intervention protocol does not have the dosing to produce detectable structural change.</div>
+      <div class="citation">H&ouml;lzel et al. 2011; Lazar et al. 2005</div>
+      <div class="not-demonstrated"><strong>Honest answer:</strong> This is a long-game outcome. Structural neuroplasticity requires sustained practice beyond 21 days. The protocol may initiate functional changes in insular activation (testable via fMRI) that precede structural change, but that is a hypothesis, not a deliverable.</div>
+    </div>
+
+    <!-- 4. Parasympathetic under load -->
+    <div class="outcome-card demonstrated">
+      <div class="outcome-number">04</div>
+      <div class="outcome-name">Parasympathetic Dominance Under Cognitive Load</div>
+      <div class="outcome-instrument">HF-HRV during stress tasks; Apple Watch HRV + in-app cognitive challenge</div>
+      <span class="badge demonstrated">Demonstrated</span>
+      <div class="effect-size">HF-HRV increases of 10&ndash;20% during cognitive stress tasks in trained participants. The mechanism is well-established: slow rhythmic breathing stimulates the ventral vagal pathway (Porges, 2011), and this effect is trainable.</div>
+      <div class="citation">Khalsa et al. 2018; Porges 2011; Gerritsen & Band 2018</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> Demonstrated in lab settings with seated participants. Transfer to standing, high-stakes clinical environments (intubation, emergency) is plausible but not yet directly measured.</div>
+    </div>
+
+    <!-- 5. PSS -->
+    <div class="outcome-card probable">
+      <div class="outcome-number">05</div>
+      <div class="outcome-name">Perceived Stress &mdash; PSS-10</div>
+      <div class="outcome-instrument">Perceived Stress Scale (10-item) &mdash; pre/post questionnaire</div>
+      <span class="badge probable">Probable</span>
+      <div class="effect-size">Mindfulness meta-analyses show d = 0.5 for 8-week programs (Pascoe et al. 2017). A 21-day micro-intervention may yield d = 0.2&ndash;0.3. The SRNA population has high baseline stress, which may amplify or attenuate the effect.</div>
+      <div class="citation">Pascoe et al. 2017; Cohen et al. 1983 (PSS validation)</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> PSS is subjective. Demand characteristics (wanting the intervention to work) inflate self-report. Pairing with objective HRV data provides a partial control.</div>
+    </div>
+
+    <!-- 6. MBI -->
+    <div class="outcome-card probable">
+      <div class="outcome-number">06</div>
+      <div class="outcome-name">Burnout &mdash; MBI (Emotional Exhaustion)</div>
+      <div class="outcome-instrument">Maslach Burnout Inventory &mdash; pre/post questionnaire</div>
+      <span class="badge probable">Probable</span>
+      <div class="effect-size">d = 0.3&ndash;0.5 from comparable interventions. Patel et al. (2022) demonstrated 30% MBI reduction in CRNAs specifically using HRV biofeedback. The population match strengthens this prediction.</div>
+      <div class="citation">Patel et al. 2022; Horvath et al. 2021 (SRNA pandemic burnout baseline)</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> Patel's protocol was longer than 21 days. The question is whether the frequency (3&times;/day) compensates for the shorter duration. Burnout is also multifactorial&mdash;organizational factors (scheduling, workload) persist regardless of individual intervention.</div>
+    </div>
+
+    <!-- 7. Professional Fulfillment -->
+    <div class="outcome-card hypothesized">
+      <div class="outcome-number">07</div>
+      <div class="outcome-name">Professional Fulfillment</div>
+      <div class="outcome-instrument">Stanford Professional Fulfillment Index (PFI) &mdash; pre/post questionnaire</div>
+      <span class="badge hypothesized">Hypothesized</span>
+      <div class="effect-size">No direct studies linking micro-breathwork to PFI scores. The pathway is indirect: reduced emotional exhaustion &rarr; increased capacity for meaning-making &rarr; higher fulfillment. McDermott et al. (2026) found meaning/purpose interventions improve clinician wellbeing, but the mechanism differs.</div>
+      <div class="citation">Trockel et al. 2018 (PFI validation); McDermott et al. 2026</div>
+      <div class="not-demonstrated"><strong>Honest answer:</strong> Professional fulfillment is downstream of burnout reduction but is also shaped by mentorship, clinical competence, and institutional culture. A breathing intervention alone is unlikely to move this needle in 21 days.</div>
+    </div>
+
+    <!-- 8. Sleep Quality -->
+    <div class="outcome-card probable">
+      <div class="outcome-number">08</div>
+      <div class="outcome-name">Sleep Quality + Deep Sleep Architecture</div>
+      <div class="outcome-instrument">PSQI questionnaire + Apple Watch sleep staging (light/deep/REM)</div>
+      <span class="badge probable">Probable</span>
+      <div class="effect-size">Black et al. (2015) showed moderate PSQI improvement from mindfulness-based interventions. Evening breathing practice (extended exhale) prior to sleep has the strongest theoretical basis. Apple Watch sleep staging provides trend data.</div>
+      <div class="citation">Black et al. 2015; Walker 2009 (sleep and emotional brain)</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> Apple Watch sleep staging accuracy is improving but remains imperfect for deep sleep classification compared to polysomnography. PSQI self-report is the more reliable measure. SRNAs on rotating clinical schedules face structural sleep disruption that an individual intervention cannot fully address.</div>
+    </div>
+
+    <!-- 9. Flow State -->
+    <div class="outcome-card hypothesized">
+      <div class="outcome-number">09</div>
+      <div class="outcome-name">Flow State Frequency</div>
+      <div class="outcome-instrument">Flow State Scale (FSS-2) or Dispositional Flow Scale (DFS-2)</div>
+      <span class="badge hypothesized">Hypothesized</span>
+      <div class="effect-size">Longaretti et al. (2025) meta-analysis found mindfulness enhances flow, but the relationship is correlational, not causal. The mechanism is plausible: improved autonomic flexibility &rarr; reduced threat vigilance &rarr; easier absorption in task &rarr; flow. But 21 days is a short runway.</div>
+      <div class="citation">Longaretti et al. 2025; Bieri et al. 2025 (flow state in robotic surgery, EEG)</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> Flow requires challenge-skill balance and intrinsic motivation, not just autonomic regulation. SRNAs are novices in clinical environments&mdash;the challenge-skill ratio may be too skewed for flow to emerge reliably. This is a longer-term outcome.</div>
+    </div>
+
+    <!-- 10. Alcohol -->
+    <div class="outcome-card hypothesized">
+      <div class="outcome-number">10</div>
+      <div class="outcome-name">Alcohol Use &mdash; AUDIT</div>
+      <div class="outcome-instrument">AUDIT (10-item) or AUDIT-C (3-item) &mdash; pre/post questionnaire</div>
+      <span class="badge hypothesized">Hypothesized</span>
+      <div class="effect-size">Witkiewitz et al. (2014) found small effects from mindfulness on alcohol reduction. The hypothesized mechanism: improved stress regulation reduces self-medication. But alcohol use in SRNAs is shaped by social context, program culture, and coping patterns that extend beyond autonomic state.</div>
+      <div class="citation">Witkiewitz et al. 2014; Bowen et al. 2014 (MBRP)</div>
+      <div class="not-demonstrated"><strong>Honest answer:</strong> A 21-day breathing protocol is not an alcohol intervention. Any effect would be a downstream consequence of reduced stress, not a direct mechanism. Measuring it is worthwhile for longitudinal research; promising it would be irresponsible.</div>
+    </div>
+
+    <!-- 11. Substance Use Risk -->
+    <div class="outcome-card not-tested">
+      <div class="outcome-number">11</div>
+      <div class="outcome-name">Substance Use Risk Reduction</div>
+      <div class="outcome-instrument">DAST-10 or custom screening &mdash; pre/post questionnaire</div>
+      <span class="badge not-tested">Not Yet Tested</span>
+      <div class="effect-size">No direct studies linking breathwork or micro-interoceptive interventions to substance use risk in clinician populations. The indirect pathway (stress reduction &rarr; reduced self-medication need) is theoretically coherent but empirically unvalidated for this intervention format.</div>
+      <div class="citation">No direct citation available</div>
+      <div class="not-demonstrated"><strong>Honest answer:</strong> Anesthesia providers face elevated substance use risk due to occupational exposure and stress. This is a critically important outcome to measure longitudinally, but claiming a 21-day breathing protocol addresses it would be overreach. This belongs in the "we're studying it" column.</div>
+    </div>
+
+    <!-- 12. Clinical Error Rates -->
+    <div class="outcome-card hypothesized">
+      <div class="outcome-number">12</div>
+      <div class="outcome-name">Clinical Error Rates</div>
+      <div class="outcome-instrument">Simulation-based assessment; incident report frequency (observational)</div>
+      <span class="badge hypothesized">Hypothesized</span>
+      <div class="effect-size">The causal chain is well-articulated: state drift &rarr; perceptual narrowing &rarr; incomplete recovery between stressors &rarr; error vulnerability. Suresh et al. (2019) provided observational evidence. Bordini et al. (2025) linked cognitive errors to difficult airway management under load. But no RCT has tested breathwork &rarr; error reduction directly.</div>
+      <div class="citation">Suresh et al. 2019; Bordini et al. 2025; Marcucci et al. 2007</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> Clinical errors are rare events with complex causation. A 21-day individual intervention cannot control for system-level factors (staffing, equipment, communication). Simulation-based testing is the most feasible measurement approach.</div>
+    </div>
+
+    <!-- 13. Career Duration -->
+    <div class="outcome-card hypothesized">
+      <div class="outcome-number">13</div>
+      <div class="outcome-name">Career Duration / Retention / Intent to Leave</div>
+      <div class="outcome-instrument">Intent-to-leave questionnaire; longitudinal retention tracking</div>
+      <span class="badge hypothesized">Hypothesized</span>
+      <div class="effect-size">Indirect through burnout reduction. Wilbanks et al. (2025) linked safety culture and burnout to retention in anesthesia. Nosbisch et al. (2026) documented CRNA empowerment experiences. The economic case: $80K&ndash;$150K per CRNA turnover replacement. But intent-to-leave is shaped by compensation, geography, and life stage.</div>
+      <div class="citation">Wilbanks et al. 2025; Nosbisch et al. 2026</div>
+      <div class="not-demonstrated"><strong>Honest answer:</strong> Career duration is a years-long outcome. A 21-day protocol can establish habits and measurably reduce burnout markers, which are leading indicators of retention. But promising career-length impact from three weeks of practice would be overclaiming.</div>
+    </div>
+
+    <!-- 14. Team Co-regulation -->
+    <div class="outcome-card not-tested">
+      <div class="outcome-number">14</div>
+      <div class="outcome-name">Team Co-regulation / Physiological Synchrony</div>
+      <div class="outcome-instrument">Multi-person HRV synchrony; Team Physiological Compliance Index</div>
+      <span class="badge not-tested">Not Yet Tested</span>
+      <div class="effect-size">Emerging evidence: Powezka et al. (2022) measured HRV synchrony in surgical teams. Cacioppo (2020) and Kneebone (2015) explored interpersonal physiological coupling. The theory is compelling: a regulated clinician contributes to team-level autonomic coherence. But no study has tested whether individual micro-breathwork training transfers to team physiological synchrony.</div>
+      <div class="citation">Powezka et al. 2022; Kneebone 2015; Cacioppo 2020</div>
+      <div class="not-demonstrated"><strong>Honest answer:</strong> This is frontier science. The measurement tools exist (multi-device HRV synchrony). The hypothesis is grounded. But the causal pathway from individual practice &rarr; team co-regulation is untested. This is a research opportunity, not a deliverable.</div>
+    </div>
+
+    <!-- 15. Workplace Incivility -->
+    <div class="outcome-card hypothesized">
+      <div class="outcome-number">15</div>
+      <div class="outcome-name">Workplace Incivility Reduction</div>
+      <div class="outcome-instrument">Workplace Incivility Scale (WIS); self-report</div>
+      <span class="badge hypothesized">Hypothesized</span>
+      <div class="effect-size">Diefendorff et al. (2016) linked dispositional mindfulness to reduced incivility experiences. The mechanism: improved emotional regulation &rarr; less reactive communication &rarr; fewer incivility events (both perpetrated and perceived). Small to moderate expected effect.</div>
+      <div class="citation">Diefendorff et al. 2016; Popov et al. 2025 (team communication in simulation)</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> Incivility is bidirectional. Even if the SRNA becomes more regulated, they cannot control the behavior of attendings, surgeons, or other team members. This protocol addresses the user's reactivity, not the workplace culture.</div>
+    </div>
+
+    <!-- 16. Awe + Joy -->
+    <div class="outcome-card hypothesized">
+      <div class="outcome-number">16</div>
+      <div class="outcome-name">Awe + Joy Frequency</div>
+      <div class="outcome-instrument">AWE-S scale; PANAS (Positive subscale); daily micro-assessment in-app</div>
+      <span class="badge hypothesized">Hypothesized</span>
+      <div class="effect-size">Condon et al. (2013) found small to moderate effects of contemplative practice on positive emotion frequency. The mechanism: restored interoceptive sensitivity increases the bandwidth for positive hedonic signals (not just threat signals). When the nervous system isn't locked in survival mode, wonder becomes accessible again.</div>
+      <div class="citation">Condon et al. 2013; Stellar et al. 2017 (awe and autonomic response)</div>
+      <div class="not-demonstrated"><strong>Caveat:</strong> Positive affect is highly individual and context-dependent. An SRNA in a toxic clinical environment may not experience joy regardless of autonomic state. This is a quality-of-life outcome, not a clinical one, and it depends on the rest of their life, not just their breathing.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 4: MECHANISM CHAIN -->
+<section>
+  <div class="section-label">04 &mdash; The Mechanism Chain</div>
+  <h2>From Breath to Career &mdash; Each Link Graded</h2>
+  <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 13px;">The causal chain connecting a 60-second breathing practice to long-term clinical outcomes. Proximal links have strong evidence. Distal links become progressively more hypothetical. Intellectual honesty requires showing where the chain weakens.</p>
+
+  <div class="mechanism-chain">
+    <div class="mech-step">
+      <div class="mech-label">Cardiac-Anchored Breathing</div>
+      <div class="mech-grade green">Demonstrated</div>
+    </div>
+    <div class="mech-step">
+      <div class="mech-label">Vagal Activation</div>
+      <div class="mech-grade green">Demonstrated</div>
+    </div>
+    <div class="mech-step">
+      <div class="mech-label">HRV Improvement</div>
+      <div class="mech-grade green">Demonstrated</div>
+    </div>
+    <div class="mech-step">
+      <div class="mech-label">PFC Restoration</div>
+      <div class="mech-grade sage">Probable</div>
+    </div>
+    <div class="mech-step">
+      <div class="mech-label">Interoceptive Recovery</div>
+      <div class="mech-grade sage">Probable</div>
+    </div>
+    <div class="mech-step">
+      <div class="mech-label">State Regulation</div>
+      <div class="mech-grade sage">Probable</div>
+    </div>
+    <div class="mech-step">
+      <div class="mech-label">Clinical Performance</div>
+      <div class="mech-grade amber">Hypothesized</div>
+    </div>
+    <div class="mech-step">
+      <div class="mech-label">Durability</div>
+      <div class="mech-grade amber">Hypothesized</div>
+    </div>
+    <div class="mech-step" style="min-width:100px;">
+      <div class="mech-label">Career Outcomes</div>
+      <div class="mech-grade gray">Not Yet Tested</div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 20px;">
+    <strong>Reading this chain:</strong> The first three links (breath &rarr; vagal activation &rarr; HRV) are well-established physiology with replicated evidence. The middle links (PFC restoration, interoceptive recovery, state regulation) are supported by convergent evidence from multiple domains but have not been tested in this specific protocol format. The distal links (clinical performance, durability, career outcomes) are the hypotheses that this protocol is designed to test. They are grounded in mechanism, not yet in direct data.
+  </div>
+</section>
+
+<!-- SECTION 5: PROMISE vs. HYPOTHESIS -->
+<section>
+  <div class="section-label">05 &mdash; What We Can Say vs. What We're Testing</div>
+  <div class="promise-grid">
+    <div class="promise-col evidence">
+      <h3>The Evidence Says</h3>
+      <ul>
+        <li>Resonant-frequency breathing produces measurable HRV shifts within a single 60-second session</li>
+        <li>Repeated HRV biofeedback training (3+ weeks) increases resting RMSSD by 15&ndash;30% in healthy adults</li>
+        <li>Slow breathing directly stimulates the ventral vagal pathway and increases parasympathetic tone</li>
+        <li>HRV biofeedback reduces emotional exhaustion in CRNAs specifically (Patel 2022)</li>
+        <li>Mindfulness-based interventions reduce perceived stress with moderate effect sizes (d = 0.5)</li>
+        <li>Interoceptive awareness (MAIA-2) improves with structured body-awareness practice</li>
+        <li>Apple Watch optical PPG reliably detects HRV trends over days to weeks</li>
+        <li>Brief breathwork interventions are feasible in clinical workflows where long sessions are not</li>
+      </ul>
+    </div>
+    <div class="promise-col hypothesis">
+      <h3>We Hypothesize</h3>
+      <ul>
+        <li>That 60-second cardiac-anchored sessions, 3&times;/day, produce equivalent or greater autonomic training effects compared to single daily 15&ndash;20 minute sessions through frequency compensation</li>
+        <li>That cardiac anchoring (synced to heartbeat) is more effective than external-clock pacing for individual resonant frequency discovery</li>
+        <li>That progressive complexity across 21 days (somatic baseline &rarr; cognitive friction &rarr; graded exposure) accelerates interoceptive recovery versus static practice</li>
+        <li>That restored interoceptive sensitivity reduces state drift and its downstream clinical consequences</li>
+        <li>That individual autonomic training transfers to team-level physiological synchrony</li>
+        <li>That this protocol, if sustained beyond 21 days, contributes to measurable career durability</li>
+        <li>That the SRNA training period is an optimal intervention window&mdash;the interoceptive channel is being suppressed in real-time, and early restoration may prevent the chronic suppression pattern</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: MEASUREMENT STACK -->
+<section>
+  <div class="section-label">06 &mdash; Measurement Stack</div>
+  <h2>What We Can Measure in Real-Time vs. What Requires Separate Assessment</h2>
+
+  <div class="measure-grid">
+    <div class="measure-col">
+      <h3>Passive / Real-Time (Apple Watch + AirPods + App)</h3>
+      <div class="measure-item">
+        <span class="mi-name">RMSSD / HF-HRV trend</span>
+        <span class="mi-method">Optical PPG, continuous</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">Resting heart rate trend</span>
+        <span class="mi-method">Optical PPG, daily</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">Respiratory rate</span>
+        <span class="mi-method">Accelerometer + PPG derived</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">Session compliance</span>
+        <span class="mi-method">App engagement tracking</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">Pre/post session HRV delta</span>
+        <span class="mi-method">60-second window comparison</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">Sleep duration + staging</span>
+        <span class="mi-method">Watch sleep tracking (trend only)</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">Time to cardiac coherence</span>
+        <span class="mi-method">Session-level computation</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">5-word post-session reflection</span>
+        <span class="mi-method">In-app free text</span>
+      </div>
+    </div>
+    <div class="measure-col separate">
+      <h3>Active Assessment (Questionnaires, Day 0 + Day 21)</h3>
+      <div class="measure-item">
+        <span class="mi-name">MAIA-2 (interoceptive awareness)</span>
+        <span class="mi-method">37-item, ~8 min</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">PSS-10 (perceived stress)</span>
+        <span class="mi-method">10-item, ~3 min</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">MBI-EE (burnout)</span>
+        <span class="mi-method">9-item subscale, ~3 min</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">PSQI (sleep quality)</span>
+        <span class="mi-method">19-item, ~5 min</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">AUDIT-C (alcohol screening)</span>
+        <span class="mi-method">3-item, ~1 min</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">Flow State Scale (DFS-2)</span>
+        <span class="mi-method">9-item short form, ~3 min</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">Stanford PFI (fulfillment)</span>
+        <span class="mi-method">16-item, ~4 min</span>
+      </div>
+      <div class="measure-item">
+        <span class="mi-name">AWE-S + PANAS-positive</span>
+        <span class="mi-method">~5 min combined</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 20px;">
+    <strong>Total active assessment burden:</strong> ~32 minutes at Day 0 and Day 21. The rest is passive. For an SRNA with zero spare time, this matters. The app does the heavy lifting; the questionnaires are the bookends.
+  </div>
+</section>
+
+<!-- SECTION 7: COMMON LANGUAGE EFFECT -->
+<section>
+  <div class="section-label">07 &mdash; The Common Language Effect</div>
+  <h2>When the Team Shares a Physiological Vocabulary</h2>
+  <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 13px;">One of the least-studied but most clinically intuitive effects of interoceptive training: it gives clinicians language for what they are already experiencing. When a team shares that vocabulary, dynamics shift.</p>
+
+  <div class="vocab-grid">
+    <div class="vocab-card">
+      <div class="term">State Drift</div>
+      <div class="definition">The progressive, often undetected loss of autonomic regulation during clinical work. Attention narrows. Recovery between stressors becomes incomplete. Most errors trace back here&mdash;not to ignorance, but to an undetected slide from optimal to suboptimal state.</div>
+      <div class="evidence-note">When a team has the concept "state drift," a preceptor can say "I think you're drifting" instead of "pay attention." The intervention becomes physiological, not punitive.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="term">Autonomic Home Base</div>
+      <div class="definition">A trained baseline state you can reliably return to after disruption. Not "calm"&mdash;a known coordinate in your nervous system that you've mapped through practice. The destination that regulation techniques navigate toward.</div>
+      <div class="evidence-note">When an SRNA can articulate "I need 60 seconds to find my home base," it reframes the request from weakness to professional skill. The language changes the social permission structure.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="term">Co-Regulation</div>
+      <div class="definition">The phenomenon where one person's autonomic state influences another's. A regulated clinician literally contributes to the team's collective nervous system state. Measurable via HRV synchrony across multiple wearable devices.</div>
+      <div class="evidence-note">Powezka et al. (2022) measured physiological synchrony in surgical teams. The emerging evidence suggests that individual regulation is not just individual&mdash;it propagates.</div>
+    </div>
+    <div class="vocab-card">
+      <div class="term">Gap Moment</div>
+      <div class="definition">Short transitional windows in clinical workflow&mdash;between cases, walking to the OR, before induction&mdash;that can be repurposed as training reps instead of remaining dead time. Approximately 30&ndash;40 per CRNA shift.</div>
+      <div class="evidence-note">The vocabulary shift: from "downtime" to "training surface." When a team recognizes gap moments together, the culture shifts from "push through" to "prepare the instrument."</div>
+    </div>
+    <div class="vocab-card">
+      <div class="term">Interoceptive Suppression</div>
+      <div class="definition">The hypothesis that medical education systematically trains clinicians to ignore their own body signals. The hidden curriculum rewards stoicism and signal-ignoring, attenuating the capacity for autonomic self-regulation over time.</div>
+      <div class="evidence-note">Naming it changes it. When SRNAs learn that their training is actively suppressing a capacity they need, the motivation for recovery practice shifts from "wellness" to "professional development."</div>
+    </div>
+    <div class="vocab-card">
+      <div class="term">Minimum Effective Dose</div>
+      <div class="definition">60 seconds. Not because it's ideal, but because it's the smallest intervention unit that produces a measurable autonomic shift. Pharmacological thinking applied to contemplative practice. The question isn't "how much can you do?" but "what's the least that still works?"</div>
+      <div class="evidence-note">For an SRNA who cannot add one more thing to their schedule, this framing is the difference between engagement and abandonment. The dose is the differentiator.</div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 20px;">
+    <strong>The research gap:</strong> No published study has measured the effect of shared physiological vocabulary on team dynamics in clinical environments. The closest evidence comes from crew resource management (CRM) literature, which shows that shared mental models improve team performance. Physiological vocabulary is a specific, testable instance of shared mental models. This is an open research question with high clinical relevance.
+  </div>
+</section>
+
+<!-- EVIDENCE SUMMARY TABLE -->
+<section>
+  <div class="section-label neutral">Summary</div>
+  <h2>At a Glance</h2>
+  <div style="background: var(--bg-card); border-radius: 6px; padding: 24px 28px; font-size: 13px; line-height: 1.8;">
+    <div style="display: flex; gap: 32px; flex-wrap: wrap;">
+      <div>
+        <span class="badge demonstrated" style="margin-bottom: 0;">Demonstrated</span>
+        <div style="color: var(--text-muted); margin-top: 6px;">HRV/RMSSD improvement<br>Parasympathetic under load</div>
+      </div>
+      <div>
+        <span class="badge probable" style="margin-bottom: 0;">Probable</span>
+        <div style="color: var(--text-muted); margin-top: 6px;">MAIA-2 interoceptive awareness<br>Perceived stress (PSS)<br>Burnout (MBI-EE)<br>Sleep quality (PSQI)</div>
+      </div>
+      <div>
+        <span class="badge hypothesized" style="margin-bottom: 0;">Hypothesized</span>
+        <div style="color: var(--text-muted); margin-top: 6px;">Professional fulfillment<br>Flow state frequency<br>Alcohol use (AUDIT)<br>Clinical error rates<br>Career retention<br>Workplace incivility<br>Awe + joy frequency</div>
+      </div>
+      <div>
+        <span class="badge not-tested" style="margin-bottom: 0;">Not Yet Tested</span>
+        <div style="color: var(--text-muted); margin-top: 6px;">Insular cortex density<br>Substance use risk<br>Team co-regulation</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout amber" style="margin-top: 20px;">
+    <strong>The honest summary:</strong> Two outcomes are well-supported by existing evidence. Four more are probable based on convergent data from comparable interventions. Seven are grounded hypotheses awaiting direct testing. Three require either longer timeframes or measurement tools beyond this protocol's scope. This is a strong foundation for a pilot study, not a finished clinical claim.
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="generator">Generated by Vigil</span> &bull; Somnistics Research Labs<br>
+  BioMistral + PubMed cross-referenced &bull; All claims graded per Oxford CEBM Levels of Evidence<br>
+  Vault sources: gap-moment-training, neurominute, structured-interoception-training, contemplative-progressive-overload, cardiac-anchored-breathing, autonomic-home-base, state-drift, interoceptive-suppression-hypothesis, clinician-durability, maia-2-crna<br>
+  <span style="color: var(--text-dim);">March 2026 &bull; This document describes the evidence landscape. It does not prescribe clinical actions.</span>
+</footer>
+
+</body>
+</html>
