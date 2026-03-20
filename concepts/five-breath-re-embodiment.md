@@ -14,6 +14,8 @@ modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-provisional-patent-draft
 - urn:srl:chat:chatgpt-ai-neurophysiological-optimization-design
+- urn:srl:evidence:six-dijkstra-2019-1min-hrv-workers
+- urn:srl:evidence:you-laborde-2021-spb-dose-response-vagal
 skos:broader:
 - gap-moment-training
 skos:narrower: []
