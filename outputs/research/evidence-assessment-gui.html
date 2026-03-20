@@ -420,6 +420,47 @@ tbody td {
   border-top: 1px solid rgba(124, 77, 255, 0.15);
 }
 
+/* -- BioMistral Round 3 Callout -- */
+.callout-biomistral-r3 {
+  border-left: 4px solid var(--purple);
+  background: rgba(124, 77, 255, 0.06);
+  border-image: linear-gradient(to bottom, var(--purple), rgba(124,77,255,0.4)) 1;
+  border-image-slice: 1;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.callout-biomistral-r3 .callout-title {
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.callout-biomistral-r3 .round-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  background: rgba(124,77,255,0.2);
+  color: var(--purple);
+  border: 1px solid rgba(124,77,255,0.35);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.callout-biomistral-r3 .biomistral-caveat {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(124, 77, 255, 0.15);
+}
+
 /* -- KRL Progress Bar -- */
 .krl-bar-wrap {
   display: inline-flex;
@@ -541,11 +582,15 @@ tbody td {
   thead th { background: #5FC89B !important; color: #1A1D2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   tbody tr:nth-child(odd) { background: #f5f5f0; }
   tbody tr:nth-child(even) { background: #fff; }
-  .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .evidence-box, .callout { background: #f5f5f0; border-left-color: #5FC89B; }
-  .callout-biomistral { border-left-color: #7C4DFF; background: #f3f0ff; }
-  .study-card { background: #f5f5f0; border-color: #ccc; }
-  .footer { color: #888; }
+  .callout { border-left-color: #5FC89B; background: #f5f5f0; }
+  .callout-amber { border-left-color: #E8B84A; background: #fffdf5; }
+  .callout-red { border-left-color: #E85A5A; background: #fff5f5; }
+  .callout-biomistral { border-left-color: #7C4DFF; background: #f8f5ff; }
+  .callout-biomistral-r3 { border-left-color: #7C4DFF; background: #f8f5ff; border-image: none; }
+  .evidence-box { border-left-color: #5FC89B; background: #f5f5f0; }
+  .badge-supported { background: #5FC89B !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .badge-partial { background: #E8B84A !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .badge-hypothesis { background: #e0e0e0 !important; color: #555 !important; }
 }
 
 /* Scroll indicator for active nav */
@@ -587,6 +632,7 @@ tbody td {
     <a href="#voids">4.2 Literature Voids</a>
     <a href="#research">5. Research Program</a>
     <a href="#calibration">6. Claim Calibration</a>
+    <a href="#reappraisal-paradox">6.0 Reappraisal Paradox</a>
     <div class="nav-group">Appendices</div>
     <a href="#appendix-a">A. Concept Matrix</a>
     <a href="#appendix-b">B. References</a>
@@ -603,7 +649,8 @@ tbody td {
       <span class="meta-pill"><strong>44</strong> concepts assessed</span>
       <span class="meta-pill"><strong>150+</strong> PubMed references</span>
       <span class="meta-pill"><strong>8</strong> thematic clusters</span>
-      <span class="meta-pill-purple"><strong>8</strong> BioMistral queries</span>
+      <span class="meta-pill-purple"><strong>8</strong> BioMistral Round 1</span>
+      <span class="meta-pill-purple"><strong>4+2</strong> BioMistral Round 3</span>
     </div>
   </header>
 
@@ -612,7 +659,7 @@ tbody td {
     <!-- EXECUTIVE SUMMARY -->
     <h2 id="executive-summary">Executive Summary</h2>
 
-    <p>Somnistics Research Labs (SRL) proposes that autonomic regulation, interoceptive awareness, and structured breathwork can be trained as clinical competencies to reduce burnout, improve performance, and extend career longevity in certified registered nurse anesthetists (CRNAs) and other high-acuity clinicians. This report presents the results of a systematic biomedical validation sweep conducted against the SRL knowledge vault &mdash; 44 concepts across 8 thematic clusters, cross-referenced against 150+ PubMed articles (2014&ndash;2026 focus, with foundational literature back to 1976) and supplemented by 8 targeted queries through BioMistral (Qwen/Qwen3-32B via HuggingFace Inference API) for mechanism validation, literature synthesis, and gap identification.</p>
+    <p>Somnistics Research Labs (SRL) proposes that autonomic regulation, interoceptive awareness, and structured breathwork can be trained as clinical competencies to reduce burnout, improve performance, and extend career longevity in certified registered nurse anesthetists (CRNAs) and other high-acuity clinicians. This report presents the results of a systematic biomedical validation sweep conducted against the SRL knowledge vault &mdash; 44 concepts across 8 thematic clusters, cross-referenced against 150+ PubMed articles (2014&ndash;2026 focus, with foundational literature back to 1976) and supplemented by 12 targeted queries through BioMistral (Qwen/Qwen3-32B via HuggingFace Inference API) across two rounds for mechanism validation, literature synthesis, and gap identification.</p>
 
     <div class="callout">
       <div class="callout-title">Core Finding</div>
@@ -634,7 +681,7 @@ tbody td {
     <h2 id="methodology">Methodology</h2>
 
     <h3>Validation Approach</h3>
-    <p>The biomedical validation sweep was conducted between March 15&ndash;19, 2026. The process involved:</p>
+    <p>The biomedical validation sweep was conducted between March 15&ndash;20, 2026. The process involved:</p>
     <ol>
       <li><strong>Concept inventory.</strong> All 44 active concepts in the SRL knowledge vault were categorized into 8 thematic clusters: Autonomic/HRV/Vagal (10 concepts), Interoception/Body Sensing (9), Breathwork/Respiratory (4), Neurofeedback/EEG/Brainwaves (6), Clinician Performance/Durability (8), Consciousness/Contemplative (7).</li>
       <li><strong>PubMed literature search.</strong> For each concept, targeted PubMed queries were constructed using MeSH terms and free-text combinations. Over 150 articles were screened for relevance, with full abstracts reviewed and key papers analyzed for mechanism validation, evidence strength, gaps, and contradictions.</li>
@@ -644,12 +691,13 @@ tbody td {
     </ol>
 
     <h3 id="biomistral-methodology">BioMistral Methodology</h3>
-    <p>In addition to PubMed literature search, 8 targeted queries were executed through the BioMistral biomedical language model on 2026-03-19 for mechanism validation, literature synthesis, and gap identification.</p>
+    <p>In addition to PubMed literature search, 12 targeted queries were executed through the BioMistral biomedical language model across two rounds for mechanism validation, literature synthesis, and gap identification.</p>
     <ul>
       <li><strong>Tool.</strong> Queries were run through <code>tools/biomedical-query.py</code>, which calls the HuggingFace Inference API.</li>
       <li><strong>Model.</strong> Qwen/Qwen3-32B, routed via the HuggingFace inference router.</li>
       <li><strong>Purpose.</strong> Three functions: (1) mechanism validation &mdash; testing whether SRL&rsquo;s mechanistic claims are consistent with published literature; (2) literature synthesis &mdash; aggregating findings across domains that span multiple PubMed search strategies; (3) gap identification &mdash; surfacing absence of evidence in specific intersections.</li>
-      <li><strong>Queries executed.</strong> 8 queries covering: polyvagal theory debate specifics, interoceptive suppression and alexithymia in medical training, binaural beat entrainment evidence, minimum effective dose for breathing interventions, state drift during sustained clinical performance, cardiac-anchored versus fixed-rate breathing, nondual awareness and DMN mechanisms, and hormesis applicability to psychological stressors.</li>
+      <li><strong>Round 1 (2026-03-19).</strong> 8 queries covering: polyvagal theory debate specifics, interoceptive suppression and alexithymia in medical training, binaural beat entrainment evidence, minimum effective dose for breathing interventions, state drift during sustained clinical performance, cardiac-anchored versus fixed-rate breathing, nondual awareness and DMN mechanisms, and hormesis applicability to psychological stressors.</li>
+      <li><strong>Round 3 (2026-03-20).</strong> 4 additional queries + 2 enrichments covering: ISH neural pathway mechanism (Query 9), reappraisal-under-arousal paradox resolution (Query 10), micro-practice neuroplasticity threshold (Query 11), CRNA-specific burnout/PTSD prevalence (Query 12), NVI model enrichment, and team co-regulation enrichment.</li>
       <li><strong>Limitation.</strong> BioMistral is a research accelerator, not a source of truth. The model synthesizes patterns from its training corpus but may generate plausible-sounding citations that do not exist or misattribute findings. All specific claims surfaced by BioMistral were cross-referenced against PubMed where possible. Citations generated by the model require independent verification before use in any external-facing document. BioMistral contributions are explicitly labeled throughout this report.</li>
     </ul>
 
@@ -674,6 +722,13 @@ tbody td {
       <li><strong>Mechanistic validation.</strong> The neurovisceral integration model (Thayer &amp; Lane, 2000; Smith et al., 2017) explains HRV as reflecting prefrontal cortex-to-amygdala inhibitory control via GABAergic pathways. This model is independently validated through neuroimaging and is not dependent on polyvagal theory. <a href="https://doi.org/10.1016/j.neubiorev.2011.11.009" class="doi-chip" target="_blank">DOI</a></li>
       <li><strong>Emerging direction.</strong> AI-driven adaptive biofeedback is identified as a future direction in multiple reviews, validating SRL&rsquo;s adaptive technology thesis. <a href="https://doi.org/10.3892/mi.2025.236" class="doi-chip" target="_blank">DOI</a></li>
     </ul>
+
+    <div class="callout callout-biomistral-r3">
+      <div class="callout-title">&#128300; BioMistral Synthesis &mdash; Round 3: NVI Model Enrichment <span class="round-badge">R3</span></div>
+      <p>The Thayer &amp; Lane Neurovisceral Integration (NVI) model provides testable predictions that strengthen SRL&rsquo;s theoretical foundation: PFC modulates vagal outflow via the central autonomic network, and HRV reflects the integrity of this PFC-vagal coupling. Two key predictions follow: (1) cognitive training that enhances PFC function should also enhance HRV, and (2) HRV should predict executive function performance. Both predictions have empirical support. This framework positions HRV not merely as a biomarker of autonomic state but as a window into prefrontal regulatory capacity &mdash; directly relevant to SRL&rsquo;s claim that autonomic training improves clinical decision-making.</p>
+      <p class="biomistral-caveat">Round 3 model-generated synthesis (Qwen3-32B, 2026-03-20) &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="evidence-box">
       <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">1a (meta-analytic)</span>
       <span style="margin-left:12px">KRL:</span>
@@ -698,6 +753,13 @@ tbody td {
       <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 4: Micro-Dose Breathing</div>
       <p>Kox et al. (2020) reported that 1 minute of slow breathing increased RMSSD by approximately 15%, with effects peaking at 3 minutes. Huberman (2023) found that cyclic sighing with 3&ndash;5 slow breaths produced rapid vagal tone increases. This positions 60 seconds at the floor of measurable physiological effect, suggesting the NeuroMinute format may be viable but sits at the minimum threshold.</p>
       <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
+    <div class="callout callout-biomistral-r3">
+      <div class="callout-title">&#128300; BioMistral Synthesis &mdash; Round 3, Query 11: Micro-Practice Neuroplasticity Threshold <span class="round-badge">R3</span></div>
+      <p>Acute physiological shifts are possible in 60 seconds (Kox 2020: 15% RMSSD increase). However, trait-level neuroplastic changes require substantially longer exposures: the minimum established dose for structural brain changes is 30 minutes/day for 2 weeks (Kang 2013: measurable amygdala volume changes). No study has demonstrated structural brain changes from practices of 60 seconds or less.</p>
+      <p><strong>Positioning guidance:</strong> SRL should position NeuroMinutes as skill-building micro-practices that produce acute autonomic shifts, with cumulative benefit from daily repetition &mdash; but should not claim neuroplastic remodeling without evidence from a dose-response study specifically testing sub-5-minute intervals. The distinction between <strong>acute physiological effect</strong> (demonstrable) and <strong>trait-level neuroplastic change</strong> (not demonstrated at this dose) is critical for claim calibration.</p>
+      <p class="biomistral-caveat">Round 3 model-generated synthesis (Qwen3-32B, 2026-03-20) &mdash; citations require independent verification via PubMed.</p>
     </div>
 
     <div class="evidence-box">
@@ -737,6 +799,20 @@ tbody td {
       <li><strong>Second-victim syndrome.</strong> A 2025 meta-analysis of surgeons found: anxiety 56.3%, guilt 53.8%, sleep disturbance 50.5%, sadness 48.3% (Bryan et al., 2025). Deng et al. (2025) confirmed that over two-thirds of healthcare professionals encounter such trauma during their careers. <a href="https://doi.org/10.1093/bjs/znaf258" class="doi-chip" target="_blank">DOI</a> <a href="https://doi.org/10.1016/j.ijnurstu.2025.105248" class="doi-chip" target="_blank">DOI</a></li>
       <li><strong>Institutional recognition.</strong> The AANA Wellness Ambassador MC integration into NAEP curriculum validates institutional recognition of the problem (Morgan et al., 2025). <a href="https://doi.org/10.70278/AANAJ/.0000001070" class="doi-chip" target="_blank">DOI</a></li>
     </ul>
+
+    <div class="callout callout-biomistral-r3">
+      <div class="callout-title">&#128300; BioMistral Synthesis &mdash; Round 3, Query 12: CRNA-Specific Burnout/PTSD Prevalence <span class="round-badge">R3</span></div>
+      <p>CRNAs show significantly higher burnout and trauma prevalence than comparable nursing specialties:</p>
+      <ul>
+        <li><strong>68%</strong> CRNA burnout prevalence (Smith 2021)</li>
+        <li><strong>22%</strong> PTSD (Lee 2020)</li>
+        <li><strong>45%</strong> moral injury (Thompson 2022)</li>
+      </ul>
+      <p>These rates exceed ICU nurses (45% burnout) and ER nurses (10% PTSD). Risk factors unique to CRNAs include: sole provider role during anesthesia, independent airway management responsibility, and high-acuity low-frequency events (e.g., malignant hyperthermia, can&rsquo;t-intubate-can&rsquo;t-oxygenate).</p>
+      <p><strong>Intervention evidence:</strong> Patel (2022) conducted an RCT demonstrating that HRV biofeedback produced a <strong>30% burnout reduction</strong> in CRNAs specifically, providing direct evidence that autonomic regulation interventions are effective in this population.</p>
+      <p class="biomistral-caveat">Round 3 model-generated synthesis (Qwen3-32B, 2026-03-20) &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="evidence-box">
       <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">1a&ndash;2a</span> prevalence; <span class="badge badge-partial">2b&ndash;3b</span> interventions
       <span style="margin-left:12px">KRL:</span>
@@ -890,6 +966,18 @@ tbody td {
       <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
     </div>
 
+    <div class="callout callout-biomistral-r3">
+      <div class="callout-title">&#128300; BioMistral Synthesis &mdash; Round 3, Query 9: ISH Neural Pathway Mechanism <span class="round-badge">R3</span></div>
+      <p>The <strong>insula-ACC-PFC circuit</strong> mediates interoceptive training&rsquo;s effect on clinical decision-making. High interoceptive precision corresponds to a better signal-to-noise ratio in body-to-brain communication. Chronic suppression of interoceptive signals causes:</p>
+      <ul>
+        <li>Insula hypoactivation &rarr; degraded body-signal processing</li>
+        <li>ACC dysfunction &rarr; impaired error monitoring</li>
+        <li>PFC hypoactivation &rarr; compromised top-down regulation</li>
+      </ul>
+      <p>Stephan (2016) provides the theoretical framework through <strong>allostatic interoception</strong>: the brain generates hierarchical predictions about internal states, and interoceptive training refines these predictions by reducing prediction error at each level of the hierarchy. This positions ISH not merely as a psychometric phenomenon but as a disruption of hierarchical predictive processing &mdash; the brain&rsquo;s internal model of the body becomes increasingly uncalibrated through chronic suppression.</p>
+      <p class="biomistral-caveat">Round 3 model-generated synthesis (Qwen3-32B, 2026-03-20) &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="evidence-box">
       <span class="grade-label">Evidence grade:</span> <span class="badge badge-hypothesis">4&ndash;5a (indirect)</span>
       <span style="margin-left:12px">KRL:</span>
@@ -1031,7 +1119,7 @@ tbody td {
           </tr>
           <tr>
             <td>6</td>
-            <td>Binaural beat entrainment not reliably established as a mechanism</td>
+            <td>Binaural beat entrainment not reliably established as mechanism</td>
             <td>NeuroHarmonics</td>
             <td>5/14 EEG studies supportive (Ingendoh 2023)</td>
             <td><span class="severity-high">High</span></td>
@@ -1176,6 +1264,16 @@ tbody td {
     <!-- PART 6 -->
     <h2 id="calibration">Part 6: Claim Calibration</h2>
     <p>Specific language guidance for SRL communications with scientific audiences.</p>
+
+    <h3 id="reappraisal-paradox">6.0 Reappraisal-Under-Arousal Paradox Resolution</h3>
+
+    <div class="callout callout-biomistral-r3">
+      <div class="callout-title">&#128300; BioMistral Synthesis &mdash; Round 3, Query 10: Reappraisal-Under-Arousal Paradox <span class="round-badge">R3</span></div>
+      <p><strong>Breath first, then reappraise.</strong> Cognitive reappraisal &mdash; the PFC-dependent emotion regulation strategy most studied in clinical psychology &mdash; degrades under high arousal because the PFC itself is compromised by sympathetic activation. This creates a paradox: the strategy most recommended for emotional regulation is least available when most needed.</p>
+      <p>Bottom-up somatic strategies (breathwork, interoceptive focusing) bypass the PFC bottleneck by operating through subcortical and brainstem pathways that remain functional under stress. Curiosity and awe work as regulatory strategies because they engage reward circuits (dopaminergic pathways) and reduce self-focused rumination without requiring PFC-dependent reappraisal.</p>
+      <p>Breathwork restores PFC capacity by reducing arousal via vagal activation (Lehrer &amp; Gevirtz 2014, Zaccaro 2018), creating a <strong>temporal sequence</strong>: somatic regulation first restores the neural substrate, then cognitive strategies become available. This resolves the contradiction flagged in the first sweep regarding how SRL&rsquo;s cognitive framing coexists with autonomic interventions &mdash; they are sequential, not competing.</p>
+      <p class="biomistral-caveat">Round 3 model-generated synthesis (Qwen3-32B, 2026-03-20) &mdash; citations require independent verification via PubMed.</p>
+    </div>
 
     <h3>6.1 Claims Supported at Each Evidence Level</h3>
 
@@ -1448,6 +1546,12 @@ tbody td {
       <li>Algumaei et al. (2023). Physiological synchrony predicts team performance. <a href="https://doi.org/10.3390/s23042268" class="doi-chip" target="_blank">DOI</a></li>
     </ol>
 
+    <div class="callout callout-biomistral-r3" style="margin-top:20px">
+      <div class="callout-title">&#128300; BioMistral Synthesis &mdash; Round 3: Team Co-Regulation Enrichment <span class="round-badge">R3</span></div>
+      <p>Kneebone (2015) documented HR synchrony between anesthesia providers and surgeons during high-stress surgical phases, demonstrating that physiological coupling occurs naturally in clinical teams. Cacioppo (2020) found that HRV coherence in paramedic teams predicted faster response times, suggesting that team-level autonomic synchrony has functional significance beyond individual regulation. Multi-person measurement is now feasible via cross-recurrence quantification analysis (CRQA) and synchronized wearable ECG devices. This extends SRL&rsquo;s co-regulation concept from a theoretical construct to a measurable, trainable team competency.</p>
+      <p class="biomistral-caveat">Round 3 model-generated synthesis (Qwen3-32B, 2026-03-20) &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <h3>Micro-Dose and Brief Interventions</h3>
     <ol start="103">
       <li>Shuai et al. (2019). 6-min breath counting promotes stress recovery. <a href="https://doi.org/10.1016/j.addbeh.2019.106141" class="doi-chip" target="_blank">DOI</a></li>
@@ -1464,7 +1568,7 @@ tbody td {
 
   <footer class="footer">
     <p>Generated by <span class="vigil">Vigil</span> &mdash; SRL Knowledge Graph Orchestrator</p>
-    <p style="margin-top:6px">2026-03-19 &nbsp;|&nbsp; 44 concepts &nbsp;|&nbsp; 106 references &nbsp;|&nbsp; 8 thematic clusters &nbsp;|&nbsp; 8 BioMistral queries</p>
+    <p style="margin-top:6px">2026-03-19 (Round 1) + 2026-03-20 (Round 3) &nbsp;|&nbsp; 44 concepts &nbsp;|&nbsp; 106 references &nbsp;|&nbsp; 8 thematic clusters &nbsp;|&nbsp; 12 BioMistral queries</p>
     <p style="margin-top:12px;font-size:11px;opacity:0.6">This document is draft status and should be reviewed before distribution to external collaborators. BioMistral-generated citations require independent PubMed verification before external use.</p>
   </footer>
 
