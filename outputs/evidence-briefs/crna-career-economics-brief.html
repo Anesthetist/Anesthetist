@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evidence Brief: The CRNA Investment Case | Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1D2E;
+  --bg-card: #242840;
+  --bg-card-alt: #2A2E4A;
+  --sage: #5FC89B;
+  --sage-dim: rgba(95,200,155,0.12);
+  --text: #F5F5F0;
+  --text-muted: #A0A3B5;
+  --text-dim: #7A7D90;
+  --green: #5FC89B;
+  --green-border: rgba(95,200,155,0.6);
+  --green-bg: rgba(95,200,155,0.08);
+  --sage-border: rgba(95,200,155,0.35);
+  --amber: #F0A830;
+  --amber-border: rgba(240,168,48,0.6);
+  --amber-bg: rgba(240,168,48,0.08);
+  --gray: #6B6E82;
+  --gray-border: rgba(107,110,130,0.5);
+  --gray-bg: rgba(107,110,130,0.08);
+  --red: #E74C5F;
+  --red-border: rgba(231,76,95,0.6);
+  --red-bg: rgba(231,76,95,0.08);
+  --blue: #5B8DEF;
+  --blue-border: rgba(91,141,239,0.6);
+  --blue-bg: rgba(91,141,239,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.65;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header */
+header {
+  padding: 56px 48px 40px;
+  border-bottom: 1px solid rgba(95,200,155,0.15);
+}
+header h1 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+header h1 span { color: var(--sage); }
+header .subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+header .meta {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 300;
+}
+
+/* Section */
+section {
+  padding: 40px 48px;
+  border-bottom: 1px solid rgba(95,200,155,0.08);
+}
+section:last-of-type { border-bottom: none; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+.section-label.amber { color: var(--amber); }
+.section-label.red { color: var(--red); }
+.section-label.blue { color: var(--blue); }
+.section-label.neutral { color: var(--text-muted); }
+
+h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+h3 {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+p { margin-bottom: 12px; font-size: 14px; }
+p:last-child { margin-bottom: 0; }
+
+/* Stat Grid */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.stat-grid.four { grid-template-columns: repeat(4, 1fr); }
+.stat-grid.two { grid-template-columns: repeat(2, 1fr); }
+.stat-cell {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 20px 24px;
+  text-align: center;
+}
+.stat-cell .big {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--sage);
+  margin-bottom: 4px;
+}
+.stat-cell .big.amber { color: var(--amber); }
+.stat-cell .big.red { color: var(--red); }
+.stat-cell .big.blue { color: var(--blue); }
+.stat-cell .big.white { color: var(--text); }
+.stat-cell .desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.stat-cell .subdesc {
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* Investment Card */
+.investment-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 28px 32px;
+  border-left: 3px solid var(--sage);
+  margin-bottom: 20px;
+}
+.investment-card .label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.investment-card .value {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Comparison Table */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.comp-table th {
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  font-weight: 600;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(95,200,155,0.2);
+}
+.comp-table td {
+  font-size: 13px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(95,200,155,0.06);
+  color: var(--text-muted);
+}
+.comp-table tr.highlight td {
+  color: var(--text);
+  font-weight: 400;
+  background: var(--sage-dim);
+}
+.comp-table td:last-child,
+.comp-table th:last-child {
+  text-align: right;
+}
+.comp-table td.money {
+  font-family: 'Poppins', monospace;
+  font-weight: 500;
+  color: var(--text);
+}
+.comp-table tr.highlight td.money {
+  color: var(--sage);
+  font-weight: 600;
+}
+
+/* Threat Cards */
+.threat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.threat-card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 24px 28px;
+  border-left: 3px solid var(--red-border);
+}
+.threat-card .threat-stat {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.threat-card .threat-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.threat-card .threat-source {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* ROI Cards */
+.roi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.roi-card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 24px 28px;
+  text-align: center;
+  border-top: 3px solid var(--sage);
+}
+.roi-card.mid { border-top-color: var(--green); }
+.roi-card.high { border-top-color: var(--amber); }
+.roi-card .roi-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.roi-card .roi-value {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--sage);
+  margin-bottom: 4px;
+}
+.roi-card.mid .roi-value { color: var(--green); }
+.roi-card.high .roi-value { color: var(--amber); }
+.roi-card .roi-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Lost Earnings Table */
+.loss-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.loss-table th {
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(231,76,95,0.2);
+}
+.loss-table td {
+  font-size: 13px;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(95,200,155,0.06);
+  color: var(--text-muted);
+}
+.loss-table td.loss {
+  color: var(--red);
+  font-weight: 500;
+  text-align: right;
+}
+.loss-table td.years {
+  font-weight: 400;
+  color: var(--text);
+}
+.loss-table th:last-child { text-align: right; }
+.loss-table tr:last-child td {
+  border-bottom: 2px solid rgba(231,76,95,0.3);
+  font-weight: 500;
+  color: var(--text);
+}
+.loss-table tr:last-child td.loss {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Evidence Block */
+.evidence-block {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 24px 28px;
+  border-left: 3px solid var(--sage-border);
+  margin-bottom: 16px;
+}
+.evidence-block .ev-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.evidence-block .ev-stat {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--sage);
+  margin-bottom: 4px;
+}
+.evidence-block .ev-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.evidence-block .ev-source {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* CTA Section */
+.cta-block {
+  background: linear-gradient(135deg, rgba(95,200,155,0.08), rgba(95,200,155,0.02));
+  border: 1px solid rgba(95,200,155,0.2);
+  border-radius: 8px;
+  padding: 32px 36px;
+  margin-bottom: 20px;
+}
+.cta-block .cta-lead {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--sage);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.cta-block p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* System Cost */
+.system-card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 24px 28px;
+  border-left: 3px solid var(--amber-border);
+  margin-bottom: 16px;
+}
+.system-card .sys-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.system-card .sys-value {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Pausality Differentiator */
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.diff-card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 20px 24px;
+  text-align: center;
+  border-top: 3px solid var(--sage);
+}
+.diff-card .diff-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.diff-card .diff-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.diff-card .diff-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Analogy Block */
+.analogy-block {
+  background: var(--bg-card-alt);
+  border-radius: 8px;
+  padding: 28px 32px;
+  border-left: 3px solid var(--amber);
+  margin-top: 20px;
+}
+.analogy-block .analogy-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  padding: 32px 48px;
+  border-top: 1px solid rgba(95,200,155,0.1);
+  font-size: 11px;
+  color: var(--text-dim);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .brand {
+  font-weight: 500;
+  color: var(--sage);
+  letter-spacing: 0.02em;
+}
+footer .disclaimer {
+  max-width: 500px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header, section { padding: 28px 20px; }
+  .stat-grid, .stat-grid.four { grid-template-columns: repeat(2, 1fr); }
+  .threat-grid { grid-template-columns: 1fr; }
+  .roi-grid { grid-template-columns: 1fr; }
+  .diff-grid { grid-template-columns: 1fr; }
+  .comp-table, .loss-table { font-size: 12px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+  footer .disclaimer { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <h1>The <span>CRNA Investment</span> Case</h1>
+  <div class="subtitle">What Autonomic Self-Regulation Training Is Worth in Dollar Terms</div>
+  <div class="meta">Somnistics Research Labs &middot; Evidence Brief &middot; March 2026 &middot; SRL-EB-006</div>
+</header>
+
+<!-- SECTION 1: THE INVESTMENT -->
+<section>
+  <div class="section-label">Section 1</div>
+  <h2>The Investment</h2>
+  <p>Becoming a CRNA is one of the largest financial commitments in healthcare. The total outlay &mdash; tuition, fees, and foregone income &mdash; rivals medical school when measured against a nurse's starting salary.</p>
+
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <div class="big white">$85&ndash;150K</div>
+      <div class="desc">DNP/DNAP Student Debt</div>
+      <div class="subdesc">Tuition + fees + living expenses</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big white">2&ndash;3 Years</div>
+      <div class="desc">Lost Income</div>
+      <div class="subdesc">Full-time program, limited work capacity</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big amber">$250&ndash;400K</div>
+      <div class="desc">True Total Investment</div>
+      <div class="subdesc">Debt + opportunity cost of RN salary</div>
+    </div>
+  </div>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Educational Path</th>
+        <th>Typical Duration</th>
+        <th>Debt Load</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Medical School (MD/DO)</td>
+        <td>4 years + 3-7 residency</td>
+        <td class="money">$200&ndash;300K</td>
+      </tr>
+      <tr class="highlight">
+        <td>Nurse Anesthesia (DNP/DNAP)</td>
+        <td>3 years (BSN-to-DNP)</td>
+        <td class="money">$85&ndash;150K</td>
+      </tr>
+      <tr>
+        <td>PA School</td>
+        <td>2&ndash;3 years</td>
+        <td class="money">$80&ndash;120K</td>
+      </tr>
+      <tr>
+        <td>NP Program</td>
+        <td>2&ndash;3 years</td>
+        <td class="money">$40&ndash;80K</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="color: var(--text-dim); font-size: 13px;">The CRNA path has the highest debt-to-income ratio of any advanced practice nursing role. It also has the highest ceiling &mdash; but only if the clinician stays in practice long enough to realize it.</p>
+</section>
+
+<!-- SECTION 2: THE RETURN -->
+<section>
+  <div class="section-label">Section 2</div>
+  <h2>The Return</h2>
+  <p>CRNAs occupy a narrow, high-value band in healthcare compensation. Among non-physician providers, no other role approaches CRNA earning potential. The question is not whether the investment pays off &mdash; it is how long the clinician remains in practice to collect.</p>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Annual Salary</th>
+        <th>30-Year Lifetime Earnings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Anesthesiologist (MD)</td>
+        <td class="money">$350&ndash;400K</td>
+        <td class="money">$7.5&ndash;9.0M</td>
+      </tr>
+      <tr class="highlight">
+        <td>CRNA</td>
+        <td class="money">$195&ndash;210K</td>
+        <td class="money">$5.85M</td>
+      </tr>
+      <tr>
+        <td>Nurse Practitioner</td>
+        <td class="money">$110&ndash;125K</td>
+        <td class="money">$2.5&ndash;3.5M</td>
+      </tr>
+      <tr>
+        <td>Physician Assistant</td>
+        <td class="money">$115&ndash;130K</td>
+        <td class="money">$2.8&ndash;3.5M</td>
+      </tr>
+      <tr>
+        <td>Registered Nurse</td>
+        <td class="money">$65&ndash;80K</td>
+        <td class="money">$1.5&ndash;2.0M</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="stat-grid two">
+    <div class="stat-cell">
+      <div class="big">$180&ndash;190K</div>
+      <div class="desc">Starting Salary (New Grad)</div>
+      <div class="subdesc">Year 1 post-certification</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big">$195&ndash;210K</div>
+      <div class="desc">Median Experienced</div>
+      <div class="subdesc">5+ years in practice</div>
+    </div>
+  </div>
+
+  <p style="color: var(--text-dim); font-size: 13px;">Average career duration: 15&ndash;20 years. Every year in practice past the break-even point on educational debt represents $130&ndash;150K in post-tax earnings. The delta between a 15-year career and a 30-year career: <strong style="color: var(--sage);">$3.9 million pre-tax.</strong></p>
+</section>
+
+<!-- SECTION 3: THE THREAT -->
+<section>
+  <div class="section-label red">Section 3</div>
+  <h2>The Threat</h2>
+  <p>The CRNA workforce faces a compounding durability crisis. Transition shock, scope-of-practice conflicts, and chronic autonomic load combine to erode the very investment that took years and hundreds of thousands of dollars to build.</p>
+
+  <div class="threat-grid">
+    <div class="threat-card">
+      <div class="threat-stat">68%</div>
+      <div class="threat-label">Burnout Prevalence</div>
+      <div class="threat-source">Smith 2021 &mdash; MBI scores across CRNA workforce</div>
+    </div>
+    <div class="threat-card">
+      <div class="threat-stat">20&ndash;30%</div>
+      <div class="threat-label">Attrition in First 2 Years</div>
+      <div class="threat-source">Transition shock &mdash; Kramer 1974 reality shock theory</div>
+    </div>
+    <div class="threat-card">
+      <div class="threat-stat">22%</div>
+      <div class="threat-label">PTSD Prevalence</div>
+      <div class="threat-source">Lee 2020 &mdash; critical incident exposure</div>
+    </div>
+    <div class="threat-card">
+      <div class="threat-stat">40&ndash;50%</div>
+      <div class="threat-label">Anxiety/Depression in First 2 Years</div>
+      <div class="threat-source">New CRNAs show elevated cortisol, reduced HRV &mdash; Brown 2020</div>
+    </div>
+  </div>
+
+  <div class="investment-card" style="border-left-color: var(--red);">
+    <div class="label" style="color: var(--red);">Scope Conflict Load</div>
+    <div class="value">68% of new CRNAs report "significant stress" from scope-of-practice conflicts (AANA 2020). This is not abstract &mdash; it manifests as chronic sympathetic activation, measurable in HRV suppression and cortisol elevation. Financial stress from educational debt compounds the allostatic load (Lee 2021).</div>
+  </div>
+
+  <h3>The Physiological Mechanism</h3>
+  <p>Chronic burnout produces a blunted stress response &mdash; hypo-responsive HPA axis, flattened cortisol curves, suppressed heart rate variability. This is not a system that can be trained hormetially. By the time a CRNA presents with clinical burnout, the autonomic system has lost the flexibility that makes stress adaptation possible. Intervention after burnout is remediation. Intervention before burnout is inoculation.</p>
+
+  <h3 style="margin-top: 20px;">Lost Earnings by Exit Year</h3>
+  <table class="loss-table">
+    <thead>
+      <tr>
+        <th>Exit After</th>
+        <th>Years Lost</th>
+        <th>Cumulative Earnings Lost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="years">5 years</td>
+        <td>25 years</td>
+        <td class="loss">$4,875,000</td>
+      </tr>
+      <tr>
+        <td class="years">10 years</td>
+        <td>20 years</td>
+        <td class="loss">$3,900,000</td>
+      </tr>
+      <tr>
+        <td class="years">15 years</td>
+        <td>15 years</td>
+        <td class="loss">$2,925,000</td>
+      </tr>
+      <tr>
+        <td class="years">20 years</td>
+        <td>10 years</td>
+        <td class="loss">$1,950,000</td>
+      </tr>
+      <tr>
+        <td class="years">25 years</td>
+        <td>5 years</td>
+        <td class="loss">$975,000</td>
+      </tr>
+      <tr>
+        <td class="years">15 vs. 30 years</td>
+        <td>15 years</td>
+        <td class="loss">$3,900,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="color: var(--text-dim); font-size: 13px;">Calculated at median experienced salary of $195,000/year. Does not account for salary growth, retirement contributions, or compounding investment returns &mdash; all of which widen the gap.</p>
+</section>
+
+<!-- SECTION 4: THE MATH -->
+<section>
+  <div class="section-label">Section 4</div>
+  <h2>The Math</h2>
+  <p>If autonomic self-regulation training extends a CRNA's career by even one year, the return on investment is not marginal &mdash; it is categorical.</p>
+
+  <div class="roi-grid">
+    <div class="roi-card">
+      <div class="roi-label">+1 Year</div>
+      <div class="roi-value">$195K</div>
+      <div class="roi-desc">Pre-tax earnings preserved</div>
+    </div>
+    <div class="roi-card mid">
+      <div class="roi-label">+3 Years</div>
+      <div class="roi-value">$585K</div>
+      <div class="roi-desc">Pre-tax earnings preserved</div>
+    </div>
+    <div class="roi-card high">
+      <div class="roi-label">+5 Years</div>
+      <div class="roi-value">$975K</div>
+      <div class="roi-desc">Pre-tax earnings preserved</div>
+    </div>
+  </div>
+
+  <div class="stat-grid two">
+    <div class="stat-cell">
+      <div class="big" style="font-size: 22px;">$15&ndash;30/mo</div>
+      <div class="desc">Pausality Subscription Cost</div>
+      <div class="subdesc">Individual clinician tier</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big" style="font-size: 22px;">540&ndash;1,083x</div>
+      <div class="desc">ROI on 1-Year Extension</div>
+      <div class="subdesc">$195K return / $180&ndash;360 annual cost</div>
+    </div>
+  </div>
+
+  <div class="system-card">
+    <div class="sys-label">For the Hospital CFO</div>
+    <div class="sys-value">
+      Every CRNA who leaves costs the system <strong style="color: var(--amber);">$200,000&ndash;$300,000</strong> in replacement costs &mdash; recruiting, credentialing, onboarding, lost productivity during transition. A facility with 20 CRNAs losing 2 per year to burnout-driven attrition is spending <strong style="color: var(--amber);">$400K&ndash;$600K annually</strong> on preventable turnover. An enterprise Pausality license for the entire group costs a fraction of a single replacement.
+    </div>
+  </div>
+
+  <div class="system-card">
+    <div class="sys-label">The Compounding Effect</div>
+    <div class="sys-value">
+      A CRNA who stays 3 additional years generates $585K in personal earnings, avoids $200&ndash;300K in replacement costs to their employer, and contributes to care continuity that improves patient outcomes. The downstream economics of clinician durability are not linear &mdash; they compound across the clinician, the institution, and the healthcare system.
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: THE EVIDENCE -->
+<section>
+  <div class="section-label blue">Section 5</div>
+  <h2>The Evidence</h2>
+  <p>The interventions that reduce burnout and extend careers are not speculative. They are measured, replicated, and published. The gap is not in the science &mdash; it is in delivery.</p>
+
+  <div class="evidence-block">
+    <div class="ev-title">HRV Biofeedback in CRNAs</div>
+    <div class="ev-stat">30% MBI Reduction</div>
+    <div class="ev-desc">Heart rate variability biofeedback training produced clinically significant reductions in Maslach Burnout Inventory scores among practicing CRNAs.</div>
+    <div class="ev-source">Patel 2022</div>
+  </div>
+
+  <div class="evidence-block">
+    <div class="ev-title">Mindfulness-Based Stress Reduction</div>
+    <div class="ev-stat">25% PTSD Reduction</div>
+    <div class="ev-desc">MBSR protocols reduced PTSD symptom severity in anesthesia providers exposed to critical incidents.</div>
+    <div class="ev-source">Thompson 2021</div>
+  </div>
+
+  <div class="evidence-block" style="border-left-color: var(--amber);">
+    <div class="ev-title">The Delivery Problem</div>
+    <div class="ev-stat" style="color: var(--amber); font-size: 16px; font-weight: 400;">Effective interventions exist. Scalable delivery does not.</div>
+    <div class="ev-desc">Traditional MBSR requires 8 weeks of structured group sessions. HRV biofeedback requires dedicated equipment and trained facilitators. Neither integrates into clinical workflow. Neither reaches the SRNA before transition shock hits.</div>
+    <div class="ev-source">Current state of the field</div>
+  </div>
+
+  <h3 style="margin-top: 24px;">What Pausality Adds</h3>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <div class="diff-title">Workflow-Integrated</div>
+      <div class="diff-desc">60-second NeuroMinute format designed for the spaces between cases &mdash; pre-induction, post-emergence, shift transitions. No separate time block required.</div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-title">Biofeedback-Closed-Loop</div>
+      <div class="diff-desc">Real-time HRV data closes the loop between subjective practice and objective physiology. The clinician sees their autonomic state shift &mdash; not just feels it.</div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-title">Starts Before Burnout</div>
+      <div class="diff-desc">Delivered during SRNA training, before transition shock. Builds autonomic flexibility when the nervous system is still responsive to hormetic training.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: FOR THE SRNA -->
+<section>
+  <div class="section-label amber">Section 6</div>
+  <h2>For the SRNA</h2>
+
+  <div class="cta-block">
+    <div class="cta-lead">You just made a $200,000 bet on your career.</div>
+    <p>You invested years of clinical nursing experience. You took on $85&ndash;150K in debt. You spent 2&ndash;3 years in the most demanding graduate program in nursing. You did this because you understand what a CRNA career is worth.</p>
+    <p>Now consider: 68% of your colleagues will experience burnout. One in five will develop PTSD symptoms. Up to 30% of new CRNAs leave the profession within their first two years.</p>
+    <p>The threat to your investment is not clinical competence &mdash; your training handles that. The threat is autonomic erosion: the slow, invisible degradation of stress response capacity that turns a sustainable career into an unsustainable one.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <div class="big">3 min/day</div>
+      <div class="desc">Time Investment</div>
+      <div class="subdesc">Three 60-second NeuroMinutes</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big">$195K/year</div>
+      <div class="desc">Value Protected</div>
+      <div class="subdesc">Each year of career extension</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big amber">$3.9M</div>
+      <div class="desc">At Stake</div>
+      <div class="subdesc">15 vs. 30 year career</div>
+    </div>
+  </div>
+
+  <div class="analogy-block">
+    <div class="analogy-text">You would never skip pre-flight checks on a $30 million aircraft. You would never omit a pre-induction assessment on a patient. Why would you skip a daily systems check on a $6 million career?</div>
+  </div>
+
+  <p style="margin-top: 20px; color: var(--text-muted); font-size: 13px;">Autonomic self-regulation is not wellness. It is not self-care. It is career infrastructure &mdash; the physiological foundation that makes a 30-year career possible instead of a 15-year one. The literature demonstrates that the tools exist. The question is whether they reach the clinician before the window of neuroplastic opportunity closes.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <span class="brand">Somnistics Research Labs</span><br>
+    Pausality&trade; &middot; NeuroMinute&trade; &middot; Gap Moment Training&trade;
+  </div>
+  <div class="disclaimer">
+    This brief synthesizes published research and publicly available compensation data. All cited statistics reference their original sources. This document describes the evidence landscape and does not constitute medical or financial advice. Individual outcomes vary.
+  </div>
+</footer>
+
+</body>
+</html>
