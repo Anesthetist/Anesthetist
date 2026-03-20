@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitive Landscape — Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --sage: #5FC89B;
+  --offwhite: #F5F5F0;
+  --sage-dim: #4aa87e;
+  --card-bg: #ffffff;
+  --border: #E0E0DB;
+  --text: #22253A;
+  --text-secondary: #6B6B6B;
+  --red: #E74C3C;
+  --amber: #F39C12;
+  --blue: #3498DB;
+  --purple: #9B59B6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--offwhite); color: var(--text); letter-spacing: -0.025em; line-height: 1.7; }
+
+.hero { background: var(--navy); color: var(--offwhite); padding: 80px 40px 60px; text-align: center; }
+.hero h1 { font-weight: 600; font-size: 36px; margin-bottom: 12px; }
+.hero .subtitle { font-size: 18px; color: var(--sage); font-weight: 300; margin-bottom: 8px; }
+.hero .byline { font-size: 13px; color: #8E8E93; margin-top: 20px; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section h2 { font-weight: 500; font-size: 26px; margin-bottom: 24px; }
+.section h3 { font-weight: 500; font-size: 18px; margin-top: 32px; margin-bottom: 12px; }
+.section p { font-size: 15px; margin-bottom: 16px; }
+.lead { font-size: 17px; font-weight: 400; margin-bottom: 24px; }
+
+.callout { background: var(--card-bg); border-left: 4px solid var(--sage); padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0; font-size: 15px; }
+.callout.red { border-left-color: var(--red); }
+.callout.amber { border-left-color: var(--amber); }
+.callout.blue { border-left-color: var(--blue); }
+.callout strong { font-weight: 500; }
+
+/* Market sizing */
+.market-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+.market-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+.market-card .number { font-size: 32px; font-weight: 600; color: var(--sage); }
+.market-card .label { font-size: 12px; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em; margin-top: 4px; }
+.market-card .desc { font-size: 13px; margin-top: 8px; color: var(--text-secondary); }
+
+/* Competitor cards */
+.comp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin: 24px 0; }
+.comp-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; }
+.comp-card.highlight { border-color: var(--sage); border-width: 2px; }
+.comp-card .comp-name { font-weight: 500; font-size: 16px; margin-bottom: 2px; }
+.comp-card .comp-cat { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.comp-card .comp-funding { font-size: 13px; font-weight: 500; color: var(--sage-dim); margin-bottom: 8px; }
+.comp-card .comp-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+.comp-card .comp-gap { font-size: 12px; padding: 6px 10px; background: rgba(231,76,60,0.08); border-radius: 6px; color: var(--red); }
+.comp-card .comp-threat { position: absolute; top: 16px; right: 16px; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; }
+.threat-high { background: rgba(231,76,60,0.1); color: var(--red); }
+.threat-medium { background: rgba(243,156,18,0.1); color: var(--amber); }
+.threat-low { background: rgba(95,200,155,0.1); color: var(--sage-dim); }
+.threat-partner { background: rgba(52,152,219,0.1); color: var(--blue); }
+.threat-acquirer { background: rgba(155,89,182,0.1); color: var(--purple); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13px; }
+th { text-align: left; padding: 10px 14px; background: var(--navy); color: var(--offwhite); font-weight: 400; font-size: 12px; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+
+/* Positioning matrix */
+.matrix { position: relative; width: 100%; max-width: 700px; height: 500px; margin: 24px auto; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.matrix-label-x { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-secondary); }
+.matrix-label-y { position: absolute; left: 8px; top: 50%; transform: rotate(-90deg) translateX(-50%); transform-origin: left center; font-size: 12px; color: var(--text-secondary); }
+.matrix-line-x { position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed var(--border); }
+.matrix-line-y { position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px dashed var(--border); }
+.matrix-dot { position: absolute; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, -50%); }
+.matrix-dot-label { position: absolute; font-size: 10px; font-weight: 400; white-space: nowrap; transform: translate(-50%, 8px); }
+.matrix-quadrant { position: absolute; font-size: 10px; color: var(--text-secondary); font-weight: 400; opacity: 0.6; }
+
+/* Signal cards */
+.signals { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 24px 0; }
+.signal { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.signal .signal-type { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+.signal-funding { color: var(--sage-dim); }
+.signal-acquisition { color: var(--purple); }
+.signal-product { color: var(--blue); }
+.signal-threat { color: var(--red); }
+.signal .signal-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+.signal .signal-desc { font-size: 12px; color: var(--text-secondary); }
+
+/* Footer */
+.footer { background: var(--navy); color: #8E8E93; padding: 40px; text-align: center; font-size: 12px; }
+.footer a { color: var(--sage); text-decoration: none; }
+
+@media (max-width: 700px) {
+  .hero { padding: 40px 20px 30px; }
+  .hero h1 { font-size: 24px; }
+  .market-cards { grid-template-columns: 1fr; }
+  .comp-grid { grid-template-columns: 1fr; }
+  .matrix { height: 400px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="subtitle">Somnistics Research Labs</div>
+  <h1>Competitive Landscape</h1>
+  <p style="font-size:16px;font-weight:300;max-width:640px;margin:0 auto;color:#ccc">
+    35 companies across 8 tiers. Where SRL sits in the $18.5B<br>
+    digital stress management, biofeedback, and enterprise wellness market.
+  </p>
+  <div class="byline">Intelligence current as of March 20, 2026</div>
+</div>
+
+<div class="container">
+
+<!-- ═══════ MARKET SIZING ═══════ -->
+<div class="section">
+  <h2>Market Sizing</h2>
+
+  <div class="market-cards">
+    <div class="market-card">
+      <div class="number">$18.5B</div>
+      <div class="label">TAM</div>
+      <div class="desc">Global digital stress management, biofeedback, and enterprise mental wellness</div>
+    </div>
+    <div class="market-card">
+      <div class="number">$3.8B</div>
+      <div class="label">SAM</div>
+      <div class="desc">US enterprise stress management + digital ANS regulation for high-stress professionals</div>
+    </div>
+    <div class="market-card">
+      <div class="number">$27-142M</div>
+      <div class="label">SOM</div>
+      <div class="desc">CRNA beachhead ($32M) expanding to perioperative ($300M) and enterprise health systems ($620M)</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>Market Segment</th><th>2026 Size</th><th>CAGR</th><th>SRL Position</th></tr>
+    <tr><td>Digital Therapeutics</td><td>$10.4B</td><td>27.8%</td><td>Counter-positioned: intervention, not content</td></tr>
+    <tr><td>Mental Health / Wellness Apps</td><td>$8.6B</td><td>19.2%</td><td>Not a meditation app — state control as operational capability</td></tr>
+    <tr><td>Biofeedback Devices</td><td>$4.1B</td><td>10.1%</td><td>Software layer on existing hardware (Apple Watch)</td></tr>
+    <tr><td>Corporate Wellness</td><td>$72.7B</td><td>7.4%</td><td>Stress management segment ($10.2B) is SRL's lane</td></tr>
+    <tr><td>Wearable Medical Devices</td><td>$48.3B</td><td>15.6%</td><td>Intervention layer that wearables are missing</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ THE GAP ═══════ -->
+<div class="section">
+  <h2>The Gap in the Market</h2>
+
+  <p class="lead">Everyone detects stress. Nobody intervenes in real-time during the workflow.</p>
+
+  <table>
+    <tr><th>Category</th><th>What They Do</th><th>What They Don't Do</th></tr>
+    <tr><td><strong>Wellness Apps</strong><br>(Calm, Headspace)</td><td>10-20 min guided sessions. Before/after work. Content delivery.</td><td>No biofeedback. No real-time adaptation. No clinical workflow integration. Optimized for bedrooms, not ORs.</td></tr>
+    <tr><td><strong>Wearables</strong><br>(WHOOP, Oura, Apple Watch)</td><td>Detect stress, track HRV, measure recovery. Best-in-class sensing.</td><td>No intervention. Tell you you're stressed without helping you do anything about it.</td></tr>
+    <tr><td><strong>Enterprise Gatekeepers</strong><br>(Lyra, Spring Health)</td><td>Own procurement. One vendor, one contract. Therapy + EAP + coaching.</td><td>No in-shift tools. No physiological intervention. No real-time regulation.</td></tr>
+    <tr><td><strong>Breathwork Hardware</strong><br>(Moonbird, Climatic)</td><td>Dedicated breathing devices. Hardware-guided. HRV tracking.</td><td>Extra hardware to carry. Not workflow-integrated. Not adaptive to biometrics.</td></tr>
+    <tr><td style="background:rgba(95,200,155,0.08)"><strong>SRL / Pausality</strong></td><td style="background:rgba(95,200,155,0.08)">60-second closed-loop biofeedback via the wearable you already own. Real-time. Silent. In-shift. Adaptive.</td><td style="background:rgba(95,200,155,0.08)">Early stage. 10 subscribers. Build 508 in TestFlight. The science is ahead of the market proof.</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>SRL's moat is latency.</strong> Seconds-to-intervention and seconds-to-measurable-downshift in the real workflow (OR, ICU, trading desk) — not in a quiet bedroom. No competitor delivers intervention this fast in high-stakes environments.
+  </div>
+</div>
+
+<!-- ═══════ POSITIONING MATRIX ═══════ -->
+<div class="section">
+  <h2>Positioning Matrix</h2>
+  <p class="lead">Physiological Precision (y-axis) vs. Workflow Integration (x-axis)</p>
+
+  <div class="matrix">
+    <div class="matrix-line-x"></div>
+    <div class="matrix-line-y"></div>
+    <div class="matrix-label-x">Workflow Integration &rarr;</div>
+    <div class="matrix-label-y">Physiological Precision &rarr;</div>
+
+    <div class="matrix-quadrant" style="top:20px;right:20px">High Precision + High Integration<br><span style="color:var(--sage)">SRL's target zone</span></div>
+    <div class="matrix-quadrant" style="top:20px;left:60px">High Precision + Low Integration</div>
+    <div class="matrix-quadrant" style="bottom:30px;right:20px">Low Precision + High Integration</div>
+    <div class="matrix-quadrant" style="bottom:30px;left:60px">Low Precision + Low Integration</div>
+
+    <!-- Competitors plotted -->
+    <div class="matrix-dot" style="background:var(--sage);top:12%;right:12%;width:16px;height:16px;border:3px solid var(--navy)"></div>
+    <div class="matrix-dot-label" style="top:12%;right:6%">SRL</div>
+
+    <div class="matrix-dot" style="background:var(--blue);top:25%;left:30%"></div>
+    <div class="matrix-dot-label" style="top:25%;left:27%">WHOOP</div>
+
+    <div class="matrix-dot" style="background:var(--blue);top:22%;left:25%"></div>
+    <div class="matrix-dot-label" style="top:22%;left:20%">Oura</div>
+
+    <div class="matrix-dot" style="background:var(--amber);top:30%;left:40%"></div>
+    <div class="matrix-dot-label" style="top:30%;left:37%">HeartMath</div>
+
+    <div class="matrix-dot" style="background:var(--red);top:35%;left:55%"></div>
+    <div class="matrix-dot-label" style="top:35%;left:52%">Prana/Vayu</div>
+
+    <div class="matrix-dot" style="background:var(--amber);top:40%;left:25%"></div>
+    <div class="matrix-dot-label" style="top:40%;left:20%">Moonbird</div>
+
+    <div class="matrix-dot" style="background:var(--red);top:50%;left:45%"></div>
+    <div class="matrix-dot-label" style="top:50%;left:40%">NEUROFIT</div>
+
+    <div class="matrix-dot" style="background:var(--red);top:38%;left:35%"></div>
+    <div class="matrix-dot-label" style="top:38%;left:30%">Climatic</div>
+
+    <div class="matrix-dot" style="background:#8E8E93;top:70%;right:25%"></div>
+    <div class="matrix-dot-label" style="top:70%;right:20%">Calm</div>
+
+    <div class="matrix-dot" style="background:#8E8E93;top:75%;right:20%"></div>
+    <div class="matrix-dot-label" style="top:75%;right:15%">Headspace</div>
+
+    <div class="matrix-dot" style="background:#8E8E93;top:60%;left:30%"></div>
+    <div class="matrix-dot-label" style="top:60%;left:25%">Othership</div>
+
+    <div class="matrix-dot" style="background:var(--purple);top:65%;right:15%"></div>
+    <div class="matrix-dot-label" style="top:65%;right:10%">Lyra</div>
+
+    <div class="matrix-dot" style="background:var(--purple);top:68%;right:18%"></div>
+    <div class="matrix-dot-label" style="top:68%;right:10%">Spring</div>
+  </div>
+</div>
+
+<!-- ═══════ TIER 1: DIRECT ═══════ -->
+<div class="section">
+  <h2>Tier 1: Direct Competitors</h2>
+  <p>Compete for the same buyer, budget, or physiological outcome.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <span class="comp-threat threat-high">High Threat</span>
+      <div class="comp-name">Climatic</div>
+      <div class="comp-cat">Breathwork Hardware</div>
+      <div class="comp-funding">$10M seed (Jan 2026) &mdash; Lerer Hippeau</div>
+      <div class="comp-desc">Pioneering "daily lung health" category. L Max system launching Spring 2026. Mount Sinai clinical research: 50%+ mucus clearance improvement in vivo. CEO Eric Kau (ex-Seed Health COO, Chewy, Amazon). CCO Allie Melnick (ex-Harry's).</div>
+      <div class="comp-gap"><strong>Gap:</strong> Lung physiology (respiratory wellness), not ANS regulation. No biofeedback. No wearable integration. No clinical workflow focus. Different mechanism entirely.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-high">High Threat</span>
+      <div class="comp-name">NEUROFIT</div>
+      <div class="comp-cat">Nervous System App</div>
+      <div class="comp-funding">Bootstrapped / undisclosed</div>
+      <div class="comp-desc">100K+ users, 2,000+ health professionals. "Nervous System Trainer" positioning. Somatic exercises via phone camera HRV. 54% stress reduction in 1 week (self-reported). Founded by Andrew Hogue (ex-Snapchat engineer, personal CPTSD recovery story). 7M+ stress measurements.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Content library (exercises to follow), not closed-loop biofeedback. No wearable integration. No real-time adaptation. No clinical workflow design. Phone camera HRV is less accurate than wearable PPG.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-medium">Medium Threat</span>
+      <div class="comp-name">Prana Labs (Vayu)</div>
+      <div class="comp-cat">Breathwork + Wearable</div>
+      <div class="comp-funding">$150K (Nov 2025)</div>
+      <div class="comp-desc">AI-guided breathwork with Apple Watch + Wear OS haptic guidance. Real-time HRV biofeedback. Standalone watch apps. Founded by Deepali Raiththa & Dhruv Adhia (Vancouver). Closest product analog to Pausality.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Consumer wellness positioning. No clinical credibility (no CRNA founder, no CE accreditation). No enterprise pathway. $150K funding vs. SRL's clinical evidence base. No patent architecture.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-medium">Medium Threat</span>
+      <div class="comp-name">HeartMath</div>
+      <div class="comp-cat">HRV Biofeedback</div>
+      <div class="comp-funding">Private / undisclosed (30+ years)</div>
+      <div class="comp-desc">The OG. 30 years of HRV coherence research. Inner Balance Coherence Plus sensor. Enterprise programs for corporate wellness. Co-author on key HRV studies (McCraty on Six Dijkstra 2019 — SRL's own evidence base). HIPAA-compliant platform.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Hardware-dependent (requires proprietary sensor). Stagnated product innovation. No workflow integration. No AI adaptation. Consumer wellness positioning, not clinical performance. Legacy brand, not mobile-first.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-low">Low Threat</span>
+      <div class="comp-name">Moonbird</div>
+      <div class="comp-cat">Breathing Device</div>
+      <div class="comp-funding">Undisclosed (Belgian startup)</div>
+      <div class="comp-desc">Handheld breathing coach that physically expands/contracts to guide breathing. PPG sensor for real-time HRV biofeedback. Growing US social media presence 2026. Published clinical evidence (sleep quality, RRV effects). Available on Amazon.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Extra hardware to carry. Not workflow-integrated. Consumer wellness, not clinical. No AI adaptation. Screen-free is a feature but limits data richness.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-low">Low Threat</span>
+      <div class="comp-name">Othership</div>
+      <div class="comp-cat">Breathwork Community</div>
+      <div class="comp-funding">$19.9M total (Series A $8M, Vine Ventures)</div>
+      <div class="comp-desc">Social bathhouse experiences + breathwork app. 850-person Toronto events, 1,800+ outdoor sessions. Planning 20 North American locations in 5 years. 46 employees. NYC studio forthcoming.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Community/experience model, not clinical tool. No biofeedback. No wearable integration. No workflow integration. Physical locations = different business model entirely.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ TIER 2: PLATFORM ═══════ -->
+<div class="section">
+  <h2>Tier 2: Platform Competitors</h2>
+  <p>Compete for the wellness budget or the user's attention at the moment stress hits.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <span class="comp-threat threat-medium">Medium Threat</span>
+      <div class="comp-name">Calm</div>
+      <div class="comp-cat">Mental Wellness App</div>
+      <div class="comp-funding">$2B+ valuation</div>
+      <div class="comp-desc">3,500 enterprise orgs. 26M+ covered lives via Calm Health. HIPAA/HITRUST compliant. Partnered with Solera Health + Lyra Health for behavioral health network. LifeStance Health partnership for high-acuity referral. Clinically validated assessments (GAD-7, PHQ-9).</div>
+      <div class="comp-gap"><strong>Gap:</strong> Content delivery, not biofeedback. No real-time physiological intervention. 10-20 min sessions don't fit clinical workflows. Wellness positioning, not performance. Could be distribution partner.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-low">Low Threat</span>
+      <div class="comp-name">Headspace</div>
+      <div class="comp-cat">Mental Wellness App</div>
+      <div class="comp-funding">~$320M (compressed from $3B peak)</div>
+      <div class="comp-desc">4,000 enterprise orgs. 13% workforce layoffs Nov 2024. Oura integration. Compressed valuation = acquisition target. Strong brand but declining trajectory.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Same as Calm but weaker position. No biofeedback. Declining. Potential acquisition target for a wearable company that needs content.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-acquirer">Acquirer</span>
+      <div class="comp-name">WHOOP</div>
+      <div class="comp-cat">Wearable Platform</div>
+      <div class="comp-funding">$801M raised / $9.1B est. valuation / IPO track</div>
+      <div class="comp-desc">$400M raise Mar 2026. 600 new hires. Pre-IPO. Advanced Labs (blood testing via Quest, $199-599). FDA-cleared ECG. Blood Pressure Insights. Healthspan ("Pace of Aging"). Women's health panels. Expanding from athlete recovery to clinical health platform.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Detection only. Best-in-class sensing, zero intervention. Needs a protocol layer. SRL could be that layer &mdash; or an acquisition target.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-acquirer">Acquirer</span>
+      <div class="comp-name">Oura</div>
+      <div class="comp-cat">Wearable Platform</div>
+      <div class="comp-funding">$900M Series E / $11B valuation</div>
+      <div class="comp-desc">5.5M rings sold (3M in 2025 alone). $1.5B revenue forecast 2026. Ring 4 Ceramic. AI Advisor chatbot. Health Panels (blood testing, 50 biomarkers). Daytime stress monitoring (real-time HRV). Dexcom glucose integration. Healthcare partnership strategy.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Same as WHOOP &mdash; sensing without intervention. AI Advisor gives insights but no active protocol. Moving toward healthcare but needs clinical intervention content.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-low">Low Threat</span>
+      <div class="comp-name">Ultrahuman</div>
+      <div class="comp-cat">Wearable Platform</div>
+      <div class="comp-funding">Undisclosed (Ring AIR, acquired viO HealthTech)</div>
+      <div class="comp-desc">Aggressive on price vs. Oura. Ring AIR. CGM integration. Expanding sensor capabilities. Smaller but fast-growing.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Consumer hardware play. No intervention layer. Price competitor to Oura, not to SRL.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-low">Low Threat</span>
+      <div class="comp-name">Ohm Health</div>
+      <div class="comp-cat">Biofeedback Hardware</div>
+      <div class="comp-funding">$737K raised</div>
+      <div class="comp-desc">Biofeedback breathing lamp ($249). Visual pacing + HRV feedback via ambient light. Opening new funding round 2026.</div>
+      <div class="comp-gap"><strong>Gap:</strong> Home wellness device. Not portable. Not workflow-integrated. Nice hardware, wrong form factor for clinical use.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ TIER 3: GATEKEEPERS ═══════ -->
+<div class="section">
+  <h2>Tier 3: Enterprise Gatekeepers</h2>
+  <p>They own the procurement relationship. Not competitors &mdash; distribution partners or acquirers.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">Lyra Health</div>
+      <div class="comp-cat">Enterprise Mental Health</div>
+      <div class="comp-funding">$915M total / $4.6B valuation</div>
+      <div class="comp-desc">10M+ lives covered. Partnered with Carrum Health for specialty care integration (Jan 2026). Solera Health behavioral network partner alongside Calm. Therapy + EAP + coaching. 2026 Workforce Forecast: sharp rise in mental health leaves.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">Spring Health</div>
+      <div class="comp-cat">Enterprise Mental Health</div>
+      <div class="comp-funding">$366.5M total / $3.3B valuation</div>
+      <div class="comp-desc">Tiger Global backed. ML-based behavioral health matching. Digital exercises + EAP + coaching + therapy + medication management. Assessment-driven care pathways.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">Grow Therapy</div>
+      <div class="comp-cat">Enterprise Mental Health</div>
+      <div class="comp-funding">$150M Series D at $3B valuation (Mar 2026)</div>
+      <div class="comp-desc">$1B annual revenue. 10M appointments. TCV + Goldman Sachs. Employer wellness expansion. Fastest-growing in the category.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">Modern Health</div>
+      <div class="comp-cat">Enterprise Mental Health</div>
+      <div class="comp-funding">$192M / $1.17B valuation</div>
+      <div class="comp-desc">Acquired Anvil Health (AI). Multi-modal platform. Expanding from therapy to broader wellness.</div>
+    </div>
+  </div>
+
+  <div class="callout blue">
+    <strong>The play:</strong> SRL doesn't compete with gatekeepers &mdash; SRL fits inside their bundle. Pausality as a specialized intervention module within Lyra, Spring, or Grow's platform. One integration, instant access to millions of covered lives. The gatekeepers provide distribution; SRL provides the physiology.</div>
+</div>
+
+<!-- ═══════ TIER 0: STRATEGIC PARTNERS ═══════ -->
+<div class="section">
+  <h2>Strategic Partners</h2>
+
+  <div class="comp-grid">
+    <div class="comp-card highlight">
+      <span class="comp-threat threat-partner">Active Partner</span>
+      <div class="comp-name">Open Wearables / Momentum</div>
+      <div class="comp-cat">Open-Source Wearable API</div>
+      <div class="comp-funding">MIT Licensed / Momentum (Wrocław, Poland)</div>
+      <div class="comp-desc">Unified API for 300+ wearable devices. Apple Health, Garmin, WHOOP, Polar, Suunto, Samsung. Self-hosted or cloud. FHIR mapping for EHR integration. Real-time sync on Q2 2026 roadmap. Active partnership with SRL team (Jan Kamiński, Bartosz Michalak). SF hackathon planned.</div>
+    </div>
+
+    <div class="comp-card highlight">
+      <span class="comp-threat threat-partner">Active Partner</span>
+      <div class="comp-name">Pathwright / Christian Shockley</div>
+      <div class="comp-cat">Cohort-Based Learning Platform</div>
+      <div class="comp-funding">Established platform (~$99/mo base)</div>
+      <div class="comp-desc">Cohort-based CE delivery. Source Path + per-enterprise cohorts. Mezirow's transformative learning mapped to Pausality 21-session curriculum. Active pilots: Mayo Clinic, VCU CRNA program, AANA Wellness Committee.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CRNA PREP + CE MARKET ═══════ -->
+<div class="section">
+  <h2>CRNA Prep &amp; Continuing Education Market</h2>
+  <p class="lead">67,000+ CRNAs. 3,000 new students/year. 2,400 graduates/year. 100 CE credits per recertification cycle. Every one of them already paying for education &mdash; none of it includes nervous system mastery.</p>
+
+  <div class="callout">
+    <strong>The insight:</strong> CRNA prep companies own the trust, the payment relationship, and the study habits of every CRNA in training and practice. If SRL partners with one of them, nervous system regulation becomes a standard component of CRNA professional development &mdash; not an add-on wellness app, but part of the curriculum alongside pharmacology and physiology.
+  </div>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">APEX Anesthesia</div>
+      <div class="comp-cat">CRNA Board Review + CE</div>
+      <div class="comp-funding">Established / Private</div>
+      <div class="comp-desc">268 Class A CE credits. 88.5+ pharmacology/therapeutics credits. NBCRNA-recognized CPC Core Modules (23 credits). Board review bootcamp for NCE/SEE. Peer-reviewed by expert CRNA educators. TrueLearn SmartBank integration. The most comprehensive CRNA CE platform.</div>
+      <div class="comp-gap"><strong>Opportunity:</strong> Add a "Nervous System Mastery" module alongside their existing pharmacology, physiology, and clinical CE tracks. SRL provides the biofeedback content + Pausality app integration; APEX provides the audience + accreditation infrastructure.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">Valley Anesthesia</div>
+      <div class="comp-cat">SRNA Review + CE</div>
+      <div class="comp-funding">Established / Private</div>
+      <div class="comp-desc">Historic tradition of mentoring SRNA students for NCE prep. Recently launched Valley Engage &mdash; an AI tutor providing 24/7 anesthesia concept support. All-encompassing review product. Strong brand trust in the SRNA community.</div>
+      <div class="comp-gap"><strong>Opportunity:</strong> Valley Engage AI + Pausality biofeedback = an AI tutor that also trains your nervous system. Study session stress management built into exam prep. "Learn the science AND train your physiology."</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">Prodigy Anesthesia</div>
+      <div class="comp-cat">CRNA + SRNA Platform</div>
+      <div class="comp-funding">Established / Private</div>
+      <div class="comp-desc">All-in-one CE and study platform. Created by CRNAs for CRNAs. MasterClass CE modules, practice exams, games, study tools. $175/SRNA, $499/CRNA pricing. Modern platform design. ProdigyConnect for CPC Core Modules.</div>
+      <div class="comp-gap"><strong>Opportunity:</strong> Pausality as a premium add-on module within Prodigy's platform. "MasterClass for your nervous system" alongside their existing MasterClass CE modules. Natural bundle at the $499 price point.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">TrueLearn</div>
+      <div class="comp-cat">Anesthesia QBank</div>
+      <div class="comp-funding">Established / Private</div>
+      <div class="comp-desc">NCE/SEE SmartBank mapped to content outline. Performance dashboard with comparative analytics (national benchmarks). Thousands of practice questions. Used by both CRNA and MD anesthesiologists.</div>
+      <div class="comp-gap"><strong>Opportunity:</strong> Performance data integration &mdash; correlate study session stress (via Pausality HRV) with exam performance. "Your HRV during practice exams predicts your board readiness."</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">Core Concepts Anesthesia</div>
+      <div class="comp-cat">Board Prep</div>
+      <div class="comp-funding">Established / Private</div>
+      <div class="comp-desc">CRNA board preparation products. Review courses. Long-established in the CRNA prep market.</div>
+      <div class="comp-gap"><strong>Opportunity:</strong> Similar integration pathway as APEX &mdash; nervous system training as a CE track.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">CCE CRNA</div>
+      <div class="comp-cat">Continuing Education</div>
+      <div class="comp-funding">Established / Private</div>
+      <div class="comp-desc">Center for Continuing Education for CRNAs. All CEs accredited and pre-approved by AANA. Credit submission within 7 business days. "Elite continuing education for the practicing nurse anesthetist."</div>
+      <div class="comp-gap"><strong>Opportunity:</strong> White-label Pausality CE modules. SRL creates the content, CCE handles accreditation and delivery. Revenue share model.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-partner">Partner</span>
+      <div class="comp-name">Gifted Anesthesia</div>
+      <div class="comp-cat">Continuing Education</div>
+      <div class="comp-funding">Established / Private</div>
+      <div class="comp-desc">Class A prior-approved CEs by the AANA. Bundle options available. Focused on accessible CE delivery.</div>
+      <div class="comp-gap"><strong>Opportunity:</strong> Same CE partnership model. Add autonomic regulation modules to their catalog.</div>
+    </div>
+  </div>
+
+  <h3>Market Sizing: CRNA Prep &amp; CE</h3>
+
+  <table>
+    <tr><th>Metric</th><th>Value</th><th>Source</th></tr>
+    <tr><td>Active CRNAs in US</td><td>67,000+</td><td>AANA</td></tr>
+    <tr><td>New SRNA students/year</td><td>~3,000</td><td>AANA</td></tr>
+    <tr><td>Graduates/year</td><td>~2,400</td><td>AANA</td></tr>
+    <tr><td>Accredited programs</td><td>100+</td><td>COA</td></tr>
+    <tr><td>CE credits required/cycle</td><td>100</td><td>NBCRNA CPC</td></tr>
+    <tr><td>Avg CE spend/CRNA/year</td><td>$500-1,500 (est.)</td><td>Industry estimate</td></tr>
+    <tr><td>Estimated CE market</td><td>$33-100M/year</td><td>67K CRNAs x $500-1,500</td></tr>
+    <tr><td>Exam prep spend/student</td><td>$500-2,000</td><td>Course pricing</td></tr>
+    <tr><td>Estimated prep market</td><td>$7.5-15M/year</td><td>~5,400 students x $1,000-2,000 + retakers</td></tr>
+  </table>
+
+  <div class="callout amber">
+    <strong>The play:</strong> SRL doesn't build a prep company. SRL becomes the nervous system mastery module that every prep company wants to add. One partnership deal with APEX or Prodigy puts Pausality in front of thousands of CRNAs who are already in "learning mode" and already paying. The pitch to the prep company: "Your students learn the pharmacology. We teach them to regulate the nervous system that delivers it. Together, that's the complete CRNA."
+  </div>
+</div>
+
+<!-- ═══════ BIG TECH + EHR ═══════ -->
+<div class="section">
+  <h2>Big Tech Health Platforms & EHR</h2>
+  <p>Building the AI health layer. They all need clinical intervention protocols.</p>
+
+  <table>
+    <tr><th>Company</th><th>What They Launched</th><th>SRL Opportunity</th></tr>
+    <tr><td><strong>OpenAI Health</strong></td><td>Jan 2026. Apple Health integration. 230M weekly health queries.</td><td>Intervention protocol content for health AI responses</td></tr>
+    <tr><td><strong>Google Gemini Health</strong></td><td>24/7 health coach on Fitbit/iPhone. Personal Health LLM + Large Sensor Model.</td><td>Most advanced wearable AI — needs validated breathing protocols</td></tr>
+    <tr><td><strong>Microsoft Copilot Health</strong></td><td>Mar 12, 2026. Apple Health, Oura, Fitbit integration. 50K+ US EHRs via HealthEx.</td><td>EHR-connected health platform — FHIR pathway via Open Wearables</td></tr>
+    <tr><td><strong>Samsung Brain Health</strong></td><td>CES 2026. Galaxy Watch/Ring brain health. Stress/breathing monitoring.</td><td>Intervention layer for Galaxy ecosystem</td></tr>
+    <tr><td><strong>Epic Systems</strong></td><td>AI Charting, DAX Copilot. App Market (SilverCloud, NeuroFlow). ~38% US hospitals.</td><td>Pausality App Market integration = 2/3 US hospital distribution</td></tr>
+    <tr><td><strong>Oracle Health (Cerner)</strong></td><td>Clinical AI Agent. Device Validation Program (Feb 2026). 300+ orgs.</td><td>Validated device program — Open Wearables + Pausality as validated combo</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>The pattern:</strong> Every Big Tech health platform detects and reports. None intervene. They need clinical protocol content from domain experts. SRL's Five-Breath Re-Embodiment patent, NeuroMinute format, and closed-loop architecture are what they'd license or acquire.
+  </div>
+</div>
+
+<!-- ═══════ NEUROTECH ═══════ -->
+<div class="section">
+  <h2>Neurotech: The Sensing Frontier</h2>
+  <p>Building the next-generation sensing layer. They need intervention protocols.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <span class="comp-threat threat-acquirer">Future Acquirer</span>
+      <div class="comp-name">Merge Labs</div>
+      <div class="comp-cat">Brain-Computer Interface</div>
+      <div class="comp-funding">$250M seed at $850M valuation (OpenAI-backed)</div>
+      <div class="comp-desc">Sam Altman's BCI bet. Non-invasive brain-computer interface. If BCI goes mainstream, they'll need regulation protocols for the signals they detect.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-low">Low Threat</span>
+      <div class="comp-name">Neurable</div>
+      <div class="comp-cat">Brain-Sensing</div>
+      <div class="comp-funding">$65M raised</div>
+      <div class="comp-desc">Brain-sensing headphones. HyperX gaming partnership. Cognitive fatigue detection. Licensing to 5 OEMs 2026-2028. Sensing only — needs intervention layer.</div>
+    </div>
+
+    <div class="comp-card">
+      <span class="comp-threat threat-low">Low Threat</span>
+      <div class="comp-name">Elemind Technologies</div>
+      <div class="comp-cat">Neurostimulation</div>
+      <div class="comp-funding">$20M (Village Global: Bezos, Hoffman, Gates)</div>
+      <div class="comp-desc">AI neurostim wearable. FSA/HSA eligible. Sleep neurostimulation. Different mechanism (electrical stimulation vs. breath-based regulation).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ ACQUIRERS ═══════ -->
+<div class="section">
+  <h2>Strategic Acquirers</h2>
+  <p class="lead">Companies that could acquire SRL. Timeline: 12-48 months. Range: $5M-$150M+.</p>
+
+  <table>
+    <tr><th>Acquirer</th><th>Why SRL Fits</th><th>Signal</th></tr>
+    <tr><td><strong>Apple Health</strong></td><td>Project Mulberry retreat = buy-not-build. Needs intervention for Apple Watch health features.</td><td>Jeff Williams retired. Acquisition budget available.</td></tr>
+    <tr><td><strong>WHOOP</strong> ($9.1B)</td><td>Pre-IPO. Expanding from detection to intervention. Blood testing + ECG + BP = platform. Missing the regulation layer.</td><td>$400M raise + 600 hires = building acquisition capacity.</td></tr>
+    <tr><td><strong>Oura</strong> ($11B)</td><td>Healthcare partnership strategy. AI Advisor needs clinical protocols. Daytime stress monitoring needs intervention.</td><td>$900M raise. Moving from consumer to clinical.</td></tr>
+    <tr><td><strong>Google/Fitbit</strong></td><td>Gemini Health coach live. Needs validated breathing protocols for the health AI.</td><td>Most advanced health AI + sensor model. Gap: intervention content.</td></tr>
+    <tr><td><strong>ResMed</strong> ($30B)</td><td>Respiratory care + sleep. Adjacent to ANS regulation. Clinical credibility match.</td><td>Established in clinical respiratory. SRL extends their platform to active regulation.</td></tr>
+    <tr><td><strong>Samsung Health</strong></td><td>Galaxy Ring + Brain Health. Expanding health platform. Needs intervention protocols.</td><td>CES 2026 brain health announcement. Building the ecosystem.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ ACTIVE SIGNALS ═══════ -->
+<div class="section">
+  <h2>Active Market Signals (March 2026)</h2>
+
+  <div class="signals">
+    <div class="signal">
+      <div class="signal-type signal-funding">Funding</div>
+      <div class="signal-title">WHOOP $400M pre-IPO raise</div>
+      <div class="signal-desc">$9.1B est. valuation. 600 new hires. Building acquisition capacity. IPO within ~2 years.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-type signal-funding">Funding</div>
+      <div class="signal-title">Grow Therapy $150M Series D at $3B</div>
+      <div class="signal-desc">$1B revenue. 10M appointments. Enterprise gatekeeper consolidation accelerating.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-type signal-product">Product</div>
+      <div class="signal-title">Microsoft Copilot Health launches</div>
+      <div class="signal-desc">Mar 12, 2026. 50K+ EHRs via HealthEx. Apple Health, Oura, Fitbit integration. Harvard Health content.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-type signal-product">Product</div>
+      <div class="signal-title">Climatic L Max launching Spring 2026</div>
+      <div class="signal-desc">First consumer lung health product. Mount Sinai validated. Direct narrative competitor but different mechanism.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-type signal-acquisition">Acquisition</div>
+      <div class="signal-title">Sword Health acquires Kaia Health ($285M)</div>
+      <div class="signal-desc">Digital therapeutics M&A accelerating. Validated modalities being absorbed into platforms.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-type signal-threat">Narrative Shift</div>
+      <div class="signal-title">HIMSS 2026: Agentic AI = administrative, not clinical wellness</div>
+      <div class="signal-desc">Every HIMSS agent watches the chart. No agent watches the clinician. SRL's positioning gap confirmed.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-type signal-funding">Partnership</div>
+      <div class="signal-title">Calm + Lyra + Solera behavioral health network</div>
+      <div class="signal-desc">Enterprise gatekeepers bundling wellness apps. SRL needs to be inside these bundles.</div>
+    </div>
+    <div class="signal">
+      <div class="signal-type signal-product">Partnership</div>
+      <div class="signal-title">Open Wearables meeting with SRL team</div>
+      <div class="signal-desc">Multi-platform Pausality via unified API. FHIR mapping. Real-time sync Q2. SF hackathon next month.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ SRL DIFFERENTIATION ═══════ -->
+<div class="section">
+  <h2>SRL's Differentiation</h2>
+
+  <table>
+    <tr><th>Dimension</th><th>The Field</th><th>SRL</th></tr>
+    <tr><td><strong>When</strong></td><td>Before/after work</td><td>During work &mdash; in-shift mental hygiene</td></tr>
+    <tr><td><strong>How long</strong></td><td>10-20 minutes</td><td>60 seconds (NeuroMinute)</td></tr>
+    <tr><td><strong>Feedback</strong></td><td>None or delayed</td><td>Real-time closed-loop biofeedback</td></tr>
+    <tr><td><strong>Adaptation</strong></td><td>Static content</td><td>AI adapts to your physiology mid-protocol</td></tr>
+    <tr><td><strong>Who designed it</strong></td><td>Product managers, meditation teachers</td><td>28-year CRNA + head of design from Audible</td></tr>
+    <tr><td><strong>Evidence standard</strong></td><td>"Research-backed" (marketing)</td><td>PubMed-verified, AANA Category A CE credit</td></tr>
+    <tr><td><strong>Hardware</strong></td><td>Proprietary sensor OR no biometrics</td><td>The wearable you already own (via Open Wearables API)</td></tr>
+    <tr><td><strong>Knowledge system</strong></td><td>Pitch deck + product</td><td>146-concept knowledge graph with evidence chains (Dublin Core, SKOS, PROV-O)</td></tr>
+    <tr><td><strong>IP</strong></td><td>Brand + content</td><td>Provisional patent (Five-Breath Re-Embodiment) + 8 TM'd concepts + clinical methodology</td></tr>
+    <tr><td><strong>What it does</strong></td><td>Relaxation</td><td>State control as operational capability</td></tr>
+  </table>
+
+  <div class="callout red">
+    <strong>The honest gap:</strong> 10 subscribers. $39 MRR. Build 508 in TestFlight. $100K of $250K F&F SAFE secured. The science, the team, and the architecture are ahead of the traction. That's the preseed reality &mdash; and it's what the next round funds.
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>Somnistics Research Labs &mdash; Competitive Landscape Intelligence</p>
+  <p style="margin-top:8px">Sources: Crunchbase, PitchBook, Fitt Insider, HLTH, Becker's, SiliconAngle,<br>company websites, App Store, PubMed, SEC filings, press releases</p>
+  <p style="margin-top:16px;color:var(--sage)">&copy; 2026 Somnistics Research Labs &mdash; Confidential</p>
+</div>
+
+</body>
+</html>

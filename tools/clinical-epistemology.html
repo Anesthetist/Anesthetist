@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical Epistemology — Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --sage: #5FC89B;
+  --offwhite: #F5F5F0;
+  --sage-dim: #4aa87e;
+  --card-bg: #ffffff;
+  --border: #E0E0DB;
+  --text: #22253A;
+  --text-secondary: #6B6B6B;
+  --purple: #9B59B6;
+  --blue: #3498DB;
+  --amber: #F39C12;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: var(--offwhite);
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.7;
+}
+
+/* Hero */
+.hero {
+  background: var(--navy);
+  color: var(--offwhite);
+  padding: 80px 40px 60px;
+  text-align: center;
+}
+.hero h1 {
+  font-weight: 600;
+  font-size: 36px;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.hero .subtitle {
+  font-size: 18px;
+  color: var(--sage);
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.hero .byline {
+  font-size: 13px;
+  color: #8E8E93;
+  margin-top: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section */
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-child { border-bottom: none; }
+.section h2 {
+  font-weight: 500;
+  font-size: 26px;
+  margin-bottom: 24px;
+  color: var(--navy);
+}
+.section h3 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+.section p {
+  font-size: 15px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.section .lead {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+
+/* Callout */
+.callout {
+  background: var(--card-bg);
+  border-left: 4px solid var(--sage);
+  padding: 20px 24px;
+  border-radius: 0 8px 8px 0;
+  margin: 24px 0;
+  font-size: 15px;
+}
+.callout.purple { border-left-color: var(--purple); }
+.callout.blue { border-left-color: var(--blue); }
+.callout.amber { border-left-color: var(--amber); }
+.callout strong { font-weight: 500; }
+
+/* Quote */
+.quote {
+  border-left: 3px solid var(--sage);
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 15px;
+  background: rgba(95,200,155,0.04);
+  border-radius: 0 8px 8px 0;
+}
+.quote .attr {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--sage-dim);
+  margin-top: 8px;
+  display: block;
+}
+
+/* Layer diagram */
+.layers {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 24px 0;
+}
+.layer {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.layer .num {
+  font-weight: 600;
+  font-size: 12px;
+  width: 48px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+.layer .name { font-weight: 500; flex: 1; }
+.layer .desc { font-weight: 300; color: var(--text-secondary); margin-left: 12px; font-size: 13px; }
+.layer-0 { background: #E8F5E9; }
+.layer-05 { background: #FFF8E1; }
+.layer-1 { background: #E3F2FD; }
+.layer-2 { background: #F3E5F5; }
+.layer-3 { background: #FBE9E7; }
+
+/* Researcher grid */
+.researchers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.researcher {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.researcher .name {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.researcher .contribution {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.researcher .citation {
+  font-size: 11px;
+  color: var(--sage-dim);
+  font-style: italic;
+}
+
+/* Principle cards */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+.principle {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.principle .number {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--sage);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.principle h4 {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.principle p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ADPIE */
+.adpie {
+  display: flex;
+  gap: 4px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+.adpie-step {
+  flex: 1;
+  min-width: 140px;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+.adpie-step .letter {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.adpie-step .label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.adpie-step .desc {
+  font-size: 11px;
+  font-weight: 300;
+}
+.adpie-a { background: #E3F2FD; color: #1565C0; }
+.adpie-d { background: #FFF3E0; color: #E65100; }
+.adpie-p { background: #E8F5E9; color: #2E7D32; }
+.adpie-i { background: #F3E5F5; color: #6A1B9A; }
+.adpie-e { background: #FBE9E7; color: #BF360C; }
+
+/* Standards */
+.standards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.standard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.standard .abbr {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.standard .full {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.standard .role {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Comparison table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 14px;
+}
+th {
+  text-align: left;
+  padding: 12px 16px;
+  background: var(--navy);
+  color: var(--offwhite);
+  font-weight: 400;
+  font-size: 13px;
+}
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+
+/* Loop diagram */
+.loop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+.loop-step {
+  background: var(--navy);
+  color: var(--offwhite);
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.loop-arrow {
+  color: var(--sage);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* Footer */
+.footer {
+  background: var(--navy);
+  color: #8E8E93;
+  padding: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+.footer a { color: var(--sage); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .hero { padding: 40px 20px 30px; }
+  .hero h1 { font-size: 24px; }
+  .container { padding: 0 16px; }
+  .section { padding: 40px 0; }
+  .principles { grid-template-columns: 1fr; }
+  .researchers { grid-template-columns: 1fr; }
+  .standards { grid-template-columns: 1fr; }
+  .adpie { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<div class="hero">
+  <div class="subtitle">Somnistics Research Labs</div>
+  <h1>Clinical Epistemology</h1>
+  <p style="font-size:16px;font-weight:300;max-width:640px;margin:0 auto;color:#ccc">
+    Embodied consilience through structured provenance.<br>
+    A philosophy of knowing that treats the body as evidence,<br>
+    provenance as epistemology, and knowledge as care.
+  </p>
+  <div class="byline">Randy Graybeal, CRNA &mdash; Co-founder, Somnistics Research Labs</div>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════ THE QUESTION ═══════════════════════ -->
+<div class="section">
+  <h2>The Question</h2>
+  <p class="lead">Most knowledge systems ask: <em>what is true?</em></p>
+  <p class="lead">This system asks: <strong>what can I trace, what have I felt, and what am I responsible for claiming?</strong></p>
+
+  <p>Somnistics Research Labs is a clinical neuroscience company building autonomic regulation technology for high-stakes professionals. At its foundation is a living knowledge graph &mdash; a vault of 146 interconnected concepts, 80+ evidence notes, and 50+ clinical observations, organized by library science standards and governed by the nursing process.</p>
+
+  <p>This document describes the philosophy that structures that knowledge. Not the technology. Not the product. The <em>way of knowing</em> that makes both possible.</p>
+</div>
+
+<!-- ═══════════════════════ THREE COMMITMENTS ═══════════════════════ -->
+<div class="section">
+  <h2>Three Philosophical Commitments</h2>
+
+  <div class="principles">
+    <div class="principle">
+      <div class="number">1</div>
+      <h4>The Body Is Evidence</h4>
+      <p>What a CRNA senses after 28 years of clinical practice is a form of knowledge &mdash; not anecdote, not intuition dismissed. Embodied pattern recognition with its own evidentiary status, sitting right next to PubMed citations in the same graph.</p>
+    </div>
+    <div class="principle">
+      <div class="number">2</div>
+      <h4>Provenance Is the Epistemology</h4>
+      <p>Every claim carries a chain of custody. Knowledge without provenance is assertion. The origin of a claim determines how much weight it can bear. What Randy originated, what AI proposed, and what the literature established are tracked separately &mdash; because they carry different authority.</p>
+    </div>
+    <div class="principle">
+      <div class="number">3</div>
+      <h4>Knowledge Is Something You Take Care Of</h4>
+      <p>The nursing process (ADPIE) isn't a metaphor bolted onto the system. It IS the system's operating logic. A concept enters as a draft (assessment), gets validated (diagnosis), sequenced (planning), created (implementation), and reviewed (evaluation). Knowledge work and clinical work share the same structure of care.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ COMMITMENT 1: BODY AS EVIDENCE ═══════════════════════ -->
+<div class="section">
+  <h2>1. The Body Is Evidence</h2>
+
+  <p class="lead">The vault has an observations layer &mdash; Layer 0.5, sitting between raw evidence and abstracted concepts. This is philosophically radical.</p>
+
+  <p>It says: what a clinician senses in the operating room &mdash; the felt shift in a patient's autonomic tone before the monitors alarm, the somatic recognition that a case is about to change &mdash; is <em>a form of knowledge</em>. Not reducible to the peer-reviewed literature. Not dismissible as "just intuition." A distinct epistemic category with its own validity criteria.</p>
+
+  <h3>The Neuroscience of Embodied Knowing</h3>
+
+  <p>This commitment stands on decades of research demonstrating that the body is not merely the brain's vehicle &mdash; it is an instrument of cognition.</p>
+
+  <div class="researchers">
+    <div class="researcher">
+      <div class="name">A.D. (Bud) Craig</div>
+      <div class="contribution">The anterior insular cortex integrates homeostatic signals into subjective feelings &mdash; constructing a "global emotional moment" that underpins self-awareness. Feeling IS knowing.</div>
+      <div class="citation">Craig, A.D. (2009). How do you feel &mdash; now? The anterior insula and human awareness. Nature Reviews Neuroscience.</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Antonio Damasio</div>
+      <div class="contribution">The somatic marker hypothesis: bodily signals tag decision options with affective valence, enabling rapid evaluation under uncertainty. The body reasons before the mind deliberates.</div>
+      <div class="citation">Damasio, A.R. (1994). Descartes' Error: Emotion, Reason, and the Human Brain.</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Stephen Porges</div>
+      <div class="contribution">Polyvagal Theory and neuroception: the autonomic nervous system evaluates environmental safety pre-consciously via interoceptive signals. The body detects threat before awareness catches up.</div>
+      <div class="citation">Porges, S.W. (2004). Neuroception: A subconscious system for detecting threat and safety. Zero to Three.</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Sarah Garfinkel</div>
+      <div class="contribution">The interoceptive trichotomy: accuracy (objective), sensibility (self-reported), and awareness (metacognitive calibration). Three distinct dimensions of bodily knowing, each measurable.</div>
+      <div class="citation">Garfinkel, S.N., et al. (2015). Knowing your own heart. Biological Psychology.</div>
+    </div>
+    <div class="researcher">
+      <div name="name" class="name">Wolf Mehling</div>
+      <div class="contribution">The MAIA framework: eight subscales for measuring interoceptive awareness, bridging first-person phenomenology with empirical rigor.</div>
+      <div class="citation">Mehling, W.E., et al. (2012). Multidimensional Assessment of Interoceptive Awareness (MAIA). PLOS ONE.</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Michael Polanyi</div>
+      <div class="contribution">"We know more than we can tell." Tacit knowledge &mdash; the unarticulated expertise honed through practice &mdash; is not lesser knowledge. It is the foundation on which explicit knowledge rests.</div>
+      <div class="citation">Polanyi, M. (1958). Personal Knowledge: Towards a Post-Critical Philosophy.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>The architectural implication:</strong> The SRL vault gives embodied knowledge a legitimate address in the knowledge graph. Observations sit at Layer 0.5 &mdash; between evidence (Layer 0) and concepts (Layer 1). A clinician's felt sense of cardiac drift has structural parity with a PubMed meta-analysis. Both are knowledge. They carry different provenance, different authority, different validation criteria &mdash; but neither is dismissed.
+  </div>
+
+  <h3>What This Looks Like in Practice</h3>
+
+  <p>When a CRNA notices their heart rate drop during a silent 60-second Pausality session between cases &mdash; that's an observation. When a founder measures joules per heartbeat on a Peloton bike and recognizes it as a cardiac coupling efficiency index &mdash; that's an observation. When a 28-year veteran senses the OR team's collective autonomic state shift before a code &mdash; that's an observation.</p>
+
+  <p>These don't need a DOI to be real. They need a provenance chain, a clinical context, and the clinician's own judgment about what they mean.</p>
+</div>
+
+<!-- ═══════════════════════ COMMITMENT 2: PROVENANCE ═══════════════════════ -->
+<div class="section">
+  <h2>2. Provenance Is the Epistemology</h2>
+
+  <p class="lead">Every node in the knowledge graph knows where it came from, what it stands on, and who said it.</p>
+
+  <p>This is not metadata hygiene. It is a philosophical commitment: <strong>the origin of a claim determines how much weight it can bear.</strong></p>
+
+  <h3>Three Provenance Classes</h3>
+
+  <table>
+    <tr>
+      <th>Class</th>
+      <th>Source</th>
+      <th>Authority</th>
+      <th>Validation</th>
+    </tr>
+    <tr>
+      <td><strong>Randy-Originated</strong></td>
+      <td>28 years of clinical practice, embodied expertise, original concept synthesis</td>
+      <td>Clinical authority &mdash; the knowledge of a practitioner who has lived inside the domain</td>
+      <td>Clinical interpretation fields, peer review by domain experts, SRB-60 assessment</td>
+    </tr>
+    <tr>
+      <td><strong>Literature-Established</strong></td>
+      <td>Peer-reviewed studies, PubMed-verified, DOI-tracked</td>
+      <td>Scientific authority &mdash; replicated, falsifiable, consensus-tested</td>
+      <td>Citation verification, DOI validation, systematic review status</td>
+    </tr>
+    <tr>
+      <td><strong>AI-Synthesized</strong></td>
+      <td>LLM-generated frameworks, cross-domain synthesis, pattern proposals</td>
+      <td>Computational authority &mdash; useful for pattern detection, dangerous if unchecked</td>
+      <td>PubMed cross-reference, domain expert review, never sole basis for clinical claims</td>
+    </tr>
+  </table>
+
+  <div class="callout purple">
+    <strong>Why this matters:</strong> A concept Randy coined from clinical experience carries different authority than a concept an LLM synthesized from training data. Both can be valid. Neither should be anonymous. The vault tracks provenance so that every claim can be interrogated: <em>who said this, from what experience, and on what evidence?</em>
+  </div>
+
+  <h3>Standards That Enforce Provenance</h3>
+
+  <div class="standards">
+    <div class="standard">
+      <div class="abbr">Dublin Core</div>
+      <div class="full">Metadata Standard</div>
+      <div class="role">Creator, date, source, subject on every note. Who made this, when, from what.</div>
+    </div>
+    <div class="standard">
+      <div class="abbr">SKOS</div>
+      <div class="full">Simple Knowledge Organization</div>
+      <div class="role">Broader, narrower, related. How concepts connect to each other in the graph.</div>
+    </div>
+    <div class="standard">
+      <div class="abbr">PROV-O</div>
+      <div class="full">Provenance Ontology</div>
+      <div class="role">wasDerivedFrom, reviewedBy. The chain of custody from evidence to claim.</div>
+    </div>
+  </div>
+
+  <p>These aren't academic exercises. They're the infrastructure that makes the vault trustworthy. When an investor asks "what's your evidence for this claim?" or a clinician asks "where does this protocol come from?" &mdash; the vault can answer with a traceable chain from assertion back to source.</p>
+
+  <div class="quote">
+    The git history reads like a lab notebook because it IS one. Every commit tells the story of what was learned, extracted, validated, or wired. Six months from now, <code>git log --oneline</code> should explain exactly what happened and why.
+  </div>
+</div>
+
+<!-- ═══════════════════════ COMMITMENT 3: KNOWLEDGE AS CARE ═══════════════════════ -->
+<div class="section">
+  <h2>3. Knowledge Is Something You Take Care Of</h2>
+
+  <p class="lead">The nursing process &mdash; ADPIE &mdash; governs every operation in the vault. Not as metaphor. As method.</p>
+
+  <div class="adpie">
+    <div class="adpie-step adpie-a">
+      <div class="letter">A</div>
+      <div class="label">Assessment</div>
+      <div class="desc">Read extraction reports. Load schema. Check for existing duplicates. Gather the data before acting.</div>
+    </div>
+    <div class="adpie-step adpie-d">
+      <div class="letter">D</div>
+      <div class="label">Diagnosis</div>
+      <div class="desc">Validate candidates against quality gates. Identify conflicts, gaps, and schema violations.</div>
+    </div>
+    <div class="adpie-step adpie-p">
+      <div class="letter">P</div>
+      <div class="label">Planning</div>
+      <div class="desc">Sequence writes. Resolve dependencies. Concepts before relationships. Evidence before claims.</div>
+    </div>
+    <div class="adpie-step adpie-i">
+      <div class="letter">I</div>
+      <div class="label">Implementation</div>
+      <div class="desc">Create notes via MCP tools. Wire SKOS relationships. Add evidence links. Log every action.</div>
+    </div>
+    <div class="adpie-step adpie-e">
+      <div class="letter">E</div>
+      <div class="label">Evaluation</div>
+      <div class="desc">Verify schema compliance. Check audit trail. Promote through quality gates: draft &rarr; review &rarr; canonical.</div>
+    </div>
+  </div>
+
+  <p>This is a philosophical claim: <strong>knowledge work and clinical work share the same structure of care.</strong> You don't skip steps. You don't chart what you haven't assessed. You don't promote what you haven't evaluated. The same discipline that keeps patients safe keeps knowledge honest.</p>
+
+  <div class="callout amber">
+    <strong>The clinical_interpretation field:</strong> Every concept note has a field reserved for the clinician's own judgment. AI bots write "Pending review." Only Randy fills this field. This is the structural guarantee that embodied knowledge has the final word &mdash; not the algorithm, not the literature, but the practitioner who has lived inside the domain for 28 years.
+  </div>
+</div>
+
+<!-- ═══════════════════════ CONSILIENCE ═══════════════════════ -->
+<div class="section">
+  <h2>Consilience: The Integration IS the Insight</h2>
+
+  <p class="lead">E.O. Wilson defined consilience as the unity of knowledge &mdash; the convergence of evidence from independent domains toward a single explanatory framework.</p>
+
+  <p>The SRL vault is a consilience engine. It produces knowledge by forcing convergence across domains that rarely speak to each other:</p>
+
+  <table>
+    <tr>
+      <th>Domain</th>
+      <th>What It Contributes</th>
+      <th>Key Voices</th>
+    </tr>
+    <tr>
+      <td><strong>Anesthesiology</strong></td>
+      <td>28 years of autonomic regulation under clinical load. The operating room as laboratory.</td>
+      <td>Randy Graybeal (practice), Benner (expertise development)</td>
+    </tr>
+    <tr>
+      <td><strong>Contemplative Neuroscience</strong></td>
+      <td>How attention, breath, and awareness modulate the nervous system.</td>
+      <td>Davidson, Lutz, Khalsa, Mehling</td>
+    </tr>
+    <tr>
+      <td><strong>Autonomic Physiology</strong></td>
+      <td>The mechanisms: vagal tone, HRV, baroreflex, respiratory sinus arrhythmia.</td>
+      <td>Porges, Thayer & Lane, Lehrer, Vaschillo</td>
+    </tr>
+    <tr>
+      <td><strong>Nursing Theory</strong></td>
+      <td>ADPIE as epistemological framework. Care as a way of knowing.</td>
+      <td>The nursing profession's collective contribution</td>
+    </tr>
+    <tr>
+      <td><strong>Embodied Cognition</strong></td>
+      <td>How the body shapes thought, decision-making, and expertise.</td>
+      <td>Damasio, Craig, Polanyi, Garfinkel</td>
+    </tr>
+    <tr>
+      <td><strong>Information Science</strong></td>
+      <td>Dublin Core, SKOS, PROV-O. The standards that make integration rigorous.</td>
+      <td>Library science, W3C standards bodies</td>
+    </tr>
+    <tr>
+      <td><strong>AI &amp; Multi-LLM Synthesis</strong></td>
+      <td>Knowledge construction through directed AI collaboration. The human as curator.</td>
+      <td>The method itself: Claude, ChatGPT, Gemini, PubMed as cognitive amplifiers</td>
+    </tr>
+    <tr>
+      <td><strong>Ancient Pranayama</strong></td>
+      <td>Thousands of years of breath practice, now validated by modern physiology.</td>
+      <td>Iyengar, Patanjali, the yogic tradition</td>
+    </tr>
+  </table>
+
+  <div class="quote">
+    "The genius IS the integration." No single domain produces Somnistics. The insight lives in the connections &mdash; anesthesiology meeting contemplative neuroscience, nursing theory meeting AI, ancient pranayama meeting machine learning. The vault is the infrastructure that makes those connections traceable, testable, and buildable.
+    <span class="attr">&mdash; Randy Graybeal</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════ THE ARCHITECTURE ═══════════════════════ -->
+<div class="section">
+  <h2>The Vault Architecture</h2>
+
+  <p class="lead">Five epistemic layers, each with distinct validation criteria and authority.</p>
+
+  <div class="layers">
+    <div class="layer layer-0">
+      <div class="num">Layer 0</div>
+      <div class="name">Evidence</div>
+      <div class="desc">PubMed-verified studies, books, patents. DOI-tracked. The empirical foundation.</div>
+    </div>
+    <div class="layer layer-05">
+      <div class="num">Layer 0.5</div>
+      <div class="name">Observations</div>
+      <div class="desc">Embodied clinical knowledge. Pattern recognition. Craft knowledge. The body's data.</div>
+    </div>
+    <div class="layer layer-1">
+      <div class="num">Layer 1</div>
+      <div class="name">Concepts</div>
+      <div class="desc">SKOS-linked atomic ideas. One concept per note. Richly connected. 146 and growing.</div>
+    </div>
+    <div class="layer layer-2">
+      <div class="num">Layer 2</div>
+      <div class="name">Audiences</div>
+      <div class="desc">Who you're speaking to. Evidence depth + language register tailored per audience.</div>
+    </div>
+    <div class="layer layer-3">
+      <div class="num">Layer 3</div>
+      <div class="name">Outputs</div>
+      <div class="desc">Generated artifacts: NeuroMinutes, CE courses, decks, proposals, research packages.</div>
+    </div>
+  </div>
+
+  <p>Each layer builds on and transforms the one below it. Evidence becomes observations through clinical experience. Observations become concepts through synthesis. Concepts become outputs through audience translation. And every transformation preserves the provenance chain back to its source.</p>
+
+  <div class="callout blue">
+    <strong>Epistemic layering:</strong> This is what distinguishes a knowledge graph from a database. A database stores facts. A layered epistemic system transforms facts through progressive abstraction into actionable knowledge &mdash; while maintaining provenance chains back to the original evidence. Every output can answer: <em>"Show me the evidence chain that supports this claim."</em>
+  </div>
+</div>
+
+<!-- ═══════════════════════ THE CLOSED LOOP ═══════════════════════ -->
+<div class="section">
+  <h2>The Closed Loop: From Body to Vault to Body</h2>
+
+  <p class="lead">The system doesn't just store knowledge. It <em>produces</em> knowledge through a feedback loop between embodied practice and structured analysis.</p>
+
+  <div class="loop">
+    <div class="loop-step">Clinical Experience</div>
+    <div class="loop-arrow">&rarr;</div>
+    <div class="loop-step">Observation Captured</div>
+    <div class="loop-arrow">&rarr;</div>
+    <div class="loop-step">Evidence Cross-Referenced</div>
+    <div class="loop-arrow">&rarr;</div>
+    <div class="loop-step">Concept Synthesized</div>
+    <div class="loop-arrow">&rarr;</div>
+    <div class="loop-step">Protocol Designed</div>
+    <div class="loop-arrow">&rarr;</div>
+    <div class="loop-step">Clinician Practices</div>
+    <div class="loop-arrow">&rarr;</div>
+    <div class="loop-step">New Observation</div>
+  </div>
+
+  <p>The CRNA practices a 60-second breathing protocol silently between cases. Their heart rate drops measurably. That observation enters the vault. It gets cross-referenced against the dose-response literature (You & Laborde 2021: five minutes produces the same vagal activation as twenty). The concept of Five-Breath Re-Embodiment is strengthened. The protocol is refined. The clinician practices again with the refined protocol. The loop continues.</p>
+
+  <p>This is not theory about practice. It is <strong>practice that generates theory that improves practice.</strong></p>
+</div>
+
+<!-- ═══════════════════════ WHAT MAKES THIS RARE ═══════════════════════ -->
+<div class="section">
+  <h2>What Makes This Rare</h2>
+
+  <table>
+    <tr>
+      <th>Dimension</th>
+      <th>Typical Approach</th>
+      <th>SRL's Approach</th>
+    </tr>
+    <tr>
+      <td><strong>Knowledge source</strong></td>
+      <td>Literature only</td>
+      <td>Literature + embodied clinical knowledge + AI synthesis, each with tracked provenance</td>
+    </tr>
+    <tr>
+      <td><strong>Organization</strong></td>
+      <td>Folders, tags, or unstructured notes</td>
+      <td>Standards-based graph (Dublin Core, SKOS, PROV-O) with typed relationships</td>
+    </tr>
+    <tr>
+      <td><strong>Clinical judgment</strong></td>
+      <td>Implicit in the writing</td>
+      <td>Explicit field (clinical_interpretation) reserved for the practitioner alone</td>
+    </tr>
+    <tr>
+      <td><strong>AI role</strong></td>
+      <td>Tool (search, summarize)</td>
+      <td>Cognitive amplifier with tracked provenance &mdash; never the final word</td>
+    </tr>
+    <tr>
+      <td><strong>Quality process</strong></td>
+      <td>Peer review (external)</td>
+      <td>Nursing process (ADPIE) applied to every knowledge operation</td>
+    </tr>
+    <tr>
+      <td><strong>Validation</strong></td>
+      <td>Statistical significance</td>
+      <td>Evidence chains + embodied validation + clinical interpretation</td>
+    </tr>
+    <tr>
+      <td><strong>The founder's body</strong></td>
+      <td>Irrelevant to the knowledge system</td>
+      <td>The primary research instrument &mdash; 28 years of data from inside the domain</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════ THE SHOULDERS ═══════════════════════ -->
+<div class="section">
+  <h2>We Stand on the Shoulders of Giants</h2>
+
+  <p class="lead">Every concept in this vault traces back to researchers who spent decades building the science we now operationalize.</p>
+
+  <div class="researchers">
+    <div class="researcher">
+      <div class="name">Stephen Porges</div>
+      <div class="contribution">Polyvagal Theory. The autonomic hierarchy that explains why safety precedes healing.</div>
+      <div class="citation">The Polyvagal Theory (2011)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Paul Lehrer</div>
+      <div class="contribution">Resonant frequency breathing and HRV biofeedback. The mechanism that makes 60-second interventions possible.</div>
+      <div class="citation">Lehrer, Vaschillo & Vaschillo (2000)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Julian Thayer</div>
+      <div class="contribution">Neurovisceral integration model. The bridge between heart rate variability and prefrontal function.</div>
+      <div class="citation">Thayer & Lane (2000, 2009)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Antonio Damasio</div>
+      <div class="contribution">Somatic marker hypothesis. The body reasons before the mind decides.</div>
+      <div class="citation">Descartes' Error (1994)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">A.D. Craig</div>
+      <div class="contribution">Insular cortex model. How the brain constructs subjective feeling from interoceptive signals.</div>
+      <div class="citation">Craig (2002, 2009)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Sarah Garfinkel</div>
+      <div class="contribution">Interoceptive accuracy, sensibility, and awareness. Three dimensions of bodily knowing.</div>
+      <div class="citation">Garfinkel et al. (2015)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Wolf Mehling</div>
+      <div class="contribution">MAIA-2 framework. Making interoceptive awareness measurable and trainable.</div>
+      <div class="citation">Mehling et al. (2012, 2018)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">E.O. Wilson</div>
+      <div class="contribution">Consilience. The unity of knowledge across domains. The philosophical foundation for integration as method.</div>
+      <div class="citation">Consilience: The Unity of Knowledge (1998)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Michael Polanyi</div>
+      <div class="contribution">Tacit knowledge. "We know more than we can tell." The epistemological legitimacy of embodied expertise.</div>
+      <div class="citation">Personal Knowledge (1958)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Patricia Benner</div>
+      <div class="contribution">From Novice to Expert. How nursing expertise develops through practice, not just instruction.</div>
+      <div class="citation">Benner (1984)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">B.K.S. Iyengar</div>
+      <div class="contribution">Light on Pranayama. The thoracic cage as a trainable system. Ancient breathwork meeting modern physiology.</div>
+      <div class="citation">Light on Pranayama (1981)</div>
+    </div>
+    <div class="researcher">
+      <div class="name">Bessel van der Kolk</div>
+      <div class="contribution">The Body Keeps the Score. Trauma stored in the body. The case for somatic intervention.</div>
+      <div class="citation">The Body Keeps the Score (2014)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ THE SENTENCE ═══════════════════════ -->
+<div class="section" style="text-align:center;padding:80px 0">
+  <h2 style="font-size:22px;font-weight:400;max-width:640px;margin:0 auto;line-height:1.6">
+    Somnistics is not a meditation app with better science.<br><br>
+    It is a <span style="color:var(--sage)">clinical epistemology</span> &mdash;<br>
+    a system for knowing that treats the body as evidence,<br>
+    provenance as epistemology,<br>
+    and knowledge as something you take care of.<br><br>
+    <span style="font-size:16px;color:var(--text-secondary)">
+      The vault is the discipline's foundation.<br>
+      The product is what the discipline produces.<br>
+      The clinician's body is the research instrument.
+    </span>
+  </h2>
+</div>
+
+</div><!-- /container -->
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<div class="footer">
+  <p>Somnistics Research Labs &mdash; Clinical Epistemology Framework</p>
+  <p style="margin-top:8px">
+    Standing on the shoulders of Porges, Lehrer, Thayer, Damasio, Craig, Garfinkel,<br>
+    Mehling, Wilson, Polanyi, Benner, Iyengar, van der Kolk, and every researcher<br>
+    who proved the body keeps the score &mdash; and that the body can learn to change it.
+  </p>
+  <p style="margin-top:16px;color:var(--sage)">&copy; 2026 Somnistics Research Labs</p>
+</div>
+
+</body>
+</html>
