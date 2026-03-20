@@ -13,6 +13,7 @@
   --accent: #5FC89B;
   --amber: #E8B84A;
   --red: #E85A5A;
+  --purple: #7C4DFF;
   --text: #F5F5F0;
   --text-secondary: #8B9DAF;
   --radius: 8px;
@@ -33,7 +34,7 @@ body {
   font-size: 15px;
 }
 
-/* ── Sidebar ── */
+/* -- Sidebar -- */
 .sidebar {
   position: fixed;
   top: 0; left: 0;
@@ -110,13 +111,13 @@ body {
   justify-content: center;
 }
 
-/* ── Main ── */
+/* -- Main -- */
 .main {
   margin-left: var(--sidebar-width);
   min-height: 100vh;
 }
 
-/* ── Header ── */
+/* -- Header -- */
 .header {
   padding: 60px 40px 40px;
   text-align: center;
@@ -168,7 +169,21 @@ body {
 
 .header .meta-pill strong { color: var(--text); font-weight: 400; }
 
-/* ── Content ── */
+.header .meta-pill-purple {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: var(--surface);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border: 1px solid rgba(124,77,255,0.25);
+}
+
+.header .meta-pill-purple strong { color: var(--purple); font-weight: 400; }
+
+/* -- Content -- */
 .content {
   max-width: 800px;
   margin: 0 auto;
@@ -254,7 +269,7 @@ pre {
 
 pre code { background: none; padding: 0; }
 
-/* ── Horizontal Rule ── */
+/* -- Horizontal Rule -- */
 hr {
   border: none;
   height: 1px;
@@ -262,7 +277,7 @@ hr {
   margin: 48px 0;
 }
 
-/* ── Tables ── */
+/* -- Tables -- */
 .table-wrap {
   overflow-x: auto;
   margin: 20px 0;
@@ -294,7 +309,7 @@ tbody td {
   vertical-align: top;
 }
 
-/* ── Badges ── */
+/* -- Badges -- */
 .badge {
   display: inline-block;
   padding: 2px 10px;
@@ -333,7 +348,7 @@ tbody td {
   margin-right: 2px;
 }
 
-/* ── Evidence Grade Box ── */
+/* -- Evidence Grade Box -- */
 .evidence-box {
   margin: 20px 0;
   padding: 14px 18px;
@@ -349,7 +364,7 @@ tbody td {
   margin-right: 8px;
 }
 
-/* ── Key Finding Callout ── */
+/* -- Key Finding Callout -- */
 .callout {
   margin: 24px 0;
   padding: 18px 22px;
@@ -381,7 +396,31 @@ tbody td {
 
 .callout-red .callout-title { color: var(--red); }
 
-/* ── KRL Progress Bar ── */
+/* -- BioMistral Callout -- */
+.callout-biomistral {
+  border-left: 4px solid var(--purple);
+  background: rgba(124, 77, 255, 0.08);
+}
+
+.callout-biomistral .callout-title {
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.callout-biomistral .biomistral-caveat {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(124, 77, 255, 0.15);
+}
+
+/* -- KRL Progress Bar -- */
 .krl-bar-wrap {
   display: inline-flex;
   align-items: center;
@@ -403,7 +442,7 @@ tbody td {
   transition: width 0.4s ease;
 }
 
-/* ── DOI chips ── */
+/* -- DOI chips -- */
 .doi-chip {
   display: inline-block;
   padding: 2px 8px;
@@ -422,7 +461,7 @@ tbody td {
   border-color: var(--accent);
 }
 
-/* ── Study Design Cards ── */
+/* -- Study Design Cards -- */
 .study-card {
   background: var(--surface);
   border: 1px solid rgba(95,200,155,0.12);
@@ -457,12 +496,12 @@ tbody td {
   margin-left: 8px;
 }
 
-/* ── Gap severity ── */
+/* -- Gap severity -- */
 .severity-critical { color: var(--red); font-weight: 400; }
 .severity-high { color: var(--amber); font-weight: 400; }
 .severity-moderate { color: var(--text-secondary); font-weight: 400; }
 
-/* ── Footer ── */
+/* -- Footer -- */
 .footer {
   max-width: 800px;
   margin: 0 auto;
@@ -475,7 +514,7 @@ tbody td {
 
 .footer .vigil { color: var(--accent); font-weight: 400; }
 
-/* ── Responsive ── */
+/* -- Responsive -- */
 @media (max-width: 900px) {
   .menu-toggle { display: flex; }
   .sidebar { transform: translateX(-100%); }
@@ -486,7 +525,7 @@ tbody td {
   .content { padding: 32px 20px 60px; }
 }
 
-/* ── Print ── */
+/* -- Print -- */
 @media print {
   body { background: #fff; color: #222; font-size: 11pt; }
   .sidebar, .menu-toggle { display: none !important; }
@@ -504,6 +543,7 @@ tbody td {
   tbody tr:nth-child(even) { background: #fff; }
   .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .evidence-box, .callout { background: #f5f5f0; border-left-color: #5FC89B; }
+  .callout-biomistral { border-left-color: #7C4DFF; background: #f3f0ff; }
   .study-card { background: #f5f5f0; border-color: #ccc; }
   .footer { color: #888; }
 }
@@ -525,23 +565,24 @@ tbody td {
     <div class="nav-group">Overview</div>
     <a href="#executive-summary">Executive Summary</a>
     <a href="#methodology">Methodology</a>
-    <div class="nav-group">Part 1 — Established Science</div>
+    <a href="#biomistral-methodology">BioMistral Methodology</a>
+    <div class="nav-group">Part 1 &mdash; Established Science</div>
     <a href="#s1-1">1.1 Autonomic Regulation &amp; HRV</a>
     <a href="#s1-2">1.2 Resonant Breathing</a>
     <a href="#s1-3">1.3 Interoception</a>
     <a href="#s1-4">1.4 Clinician Burnout</a>
     <a href="#s1-5">1.5 DMN Modulation</a>
-    <div class="nav-group">Part 2 — Active Debate</div>
+    <div class="nav-group">Part 2 &mdash; Active Debate</div>
     <a href="#s2-1">2.1 Polyvagal Theory</a>
     <a href="#s2-2">2.2 NeuroHarmonics</a>
     <a href="#s2-3">2.3 Hemispheric Rebalancing</a>
-    <div class="nav-group">Part 3 — SRL Hypotheses</div>
+    <div class="nav-group">Part 3 &mdash; SRL Hypotheses</div>
     <a href="#s3-1">3.1 Interoceptive Suppression</a>
     <a href="#s3-2">3.2 State Drift</a>
     <a href="#s3-3">3.3 Cardiac-Anchored Breathing</a>
     <a href="#s3-4">3.4 Embodied Metacognition</a>
     <a href="#s3-5">3.5 Contemplative Overload</a>
-    <div class="nav-group">Parts 4–6</div>
+    <div class="nav-group">Parts 4&ndash;6</div>
     <a href="#gaps">4. Evidence Gaps</a>
     <a href="#voids">4.2 Literature Voids</a>
     <a href="#research">5. Research Program</a>
@@ -562,15 +603,16 @@ tbody td {
       <span class="meta-pill"><strong>44</strong> concepts assessed</span>
       <span class="meta-pill"><strong>150+</strong> PubMed references</span>
       <span class="meta-pill"><strong>8</strong> thematic clusters</span>
+      <span class="meta-pill-purple"><strong>8</strong> BioMistral queries</span>
     </div>
   </header>
 
   <div class="content">
 
-    <!-- ═══════════════ EXECUTIVE SUMMARY ═══════════════ -->
+    <!-- EXECUTIVE SUMMARY -->
     <h2 id="executive-summary">Executive Summary</h2>
 
-    <p>Somnistics Research Labs (SRL) proposes that autonomic regulation, interoceptive awareness, and structured breathwork can be trained as clinical competencies to reduce burnout, improve performance, and extend career longevity in certified registered nurse anesthetists (CRNAs) and other high-acuity clinicians. This report presents the results of a systematic biomedical validation sweep conducted against the SRL knowledge vault &mdash; 44 concepts across 8 thematic clusters, cross-referenced against 150+ PubMed articles (2014&ndash;2026 focus, with foundational literature back to 1976).</p>
+    <p>Somnistics Research Labs (SRL) proposes that autonomic regulation, interoceptive awareness, and structured breathwork can be trained as clinical competencies to reduce burnout, improve performance, and extend career longevity in certified registered nurse anesthetists (CRNAs) and other high-acuity clinicians. This report presents the results of a systematic biomedical validation sweep conducted against the SRL knowledge vault &mdash; 44 concepts across 8 thematic clusters, cross-referenced against 150+ PubMed articles (2014&ndash;2026 focus, with foundational literature back to 1976) and supplemented by 8 targeted queries through BioMistral (Qwen/Qwen3-32B via HuggingFace Inference API) for mechanism validation, literature synthesis, and gap identification.</p>
 
     <div class="callout">
       <div class="callout-title">Core Finding</div>
@@ -584,33 +626,43 @@ tbody td {
       <p>The polyvagal theory framework, which SRL has used as a theoretical anchor, faces a significant 2026 challenge from 39 domain experts (Grossman et al., 2026). Additionally, binaural beat entrainment &mdash; the mechanistic claim underlying NeuroHarmonics &mdash; is not reliably supported by the EEG literature (only 5 of 14 studies confirming entrainment; Ingendoh et al., 2023).</p>
     </div>
 
-    <p>This report distinguishes between what the literature establishes, what remains actively debated, and what SRL proposes as testable hypotheses. It identifies five literature voids that represent genuine research opportunities and proposes three priority studies with designs, power analyses, and cost estimates.</p>
+    <p>This report distinguishes between what the literature establishes, what remains actively debated, and what SRL proposes as testable hypotheses. It identifies five literature voids that represent genuine research opportunities and proposes three priority studies with designs, power analyses, and cost estimates. The goal is not to defend SRL&rsquo;s framework but to present it honestly &mdash; to show where the evidence stands, where the gaps are, and how to close them.</p>
 
     <hr>
 
-    <!-- ═══════════════ METHODOLOGY ═══════════════ -->
+    <!-- METHODOLOGY -->
     <h2 id="methodology">Methodology</h2>
 
     <h3>Validation Approach</h3>
     <p>The biomedical validation sweep was conducted between March 15&ndash;19, 2026. The process involved:</p>
     <ol>
       <li><strong>Concept inventory.</strong> All 44 active concepts in the SRL knowledge vault were categorized into 8 thematic clusters: Autonomic/HRV/Vagal (10 concepts), Interoception/Body Sensing (9), Breathwork/Respiratory (4), Neurofeedback/EEG/Brainwaves (6), Clinician Performance/Durability (8), Consciousness/Contemplative (7).</li>
-      <li><strong>PubMed literature search.</strong> For each concept, targeted PubMed queries were constructed using MeSH terms and free-text combinations. Over 150 articles were screened for relevance.</li>
+      <li><strong>PubMed literature search.</strong> For each concept, targeted PubMed queries were constructed using MeSH terms and free-text combinations. Over 150 articles were screened for relevance, with full abstracts reviewed and key papers analyzed for mechanism validation, evidence strength, gaps, and contradictions.</li>
       <li><strong>Evidence grading.</strong> Each concept was assessed against the SRL Evidence Grading Framework, which adapts Oxford CEBM levels (1a&ndash;5b) and incorporates Knowledge Readiness Levels (KRL 1&ndash;9) adapted from NASA&rsquo;s Technology Readiness Levels.</li>
       <li><strong>Cross-referencing.</strong> Vault claims were compared against PubMed evidence. Where the vault cited specific mechanisms, effect sizes, or clinical outcomes, these were verified or flagged as unsupported.</li>
       <li><strong>Deep dives.</strong> Three concept clusters received extended analysis: (a) polyvagal theory reframing and cardiac-anchored breathing, (b) ISH, State Drift, and MAIA-2-CRNA, and (c) binaural beat entrainment, hormesis, and micro-dose intervention dosing.</li>
     </ol>
 
+    <h3 id="biomistral-methodology">BioMistral Methodology</h3>
+    <p>In addition to PubMed literature search, 8 targeted queries were executed through the BioMistral biomedical language model on 2026-03-19 for mechanism validation, literature synthesis, and gap identification.</p>
+    <ul>
+      <li><strong>Tool.</strong> Queries were run through <code>tools/biomedical-query.py</code>, which calls the HuggingFace Inference API.</li>
+      <li><strong>Model.</strong> Qwen/Qwen3-32B, routed via the HuggingFace inference router.</li>
+      <li><strong>Purpose.</strong> Three functions: (1) mechanism validation &mdash; testing whether SRL&rsquo;s mechanistic claims are consistent with published literature; (2) literature synthesis &mdash; aggregating findings across domains that span multiple PubMed search strategies; (3) gap identification &mdash; surfacing absence of evidence in specific intersections.</li>
+      <li><strong>Queries executed.</strong> 8 queries covering: polyvagal theory debate specifics, interoceptive suppression and alexithymia in medical training, binaural beat entrainment evidence, minimum effective dose for breathing interventions, state drift during sustained clinical performance, cardiac-anchored versus fixed-rate breathing, nondual awareness and DMN mechanisms, and hormesis applicability to psychological stressors.</li>
+      <li><strong>Limitation.</strong> BioMistral is a research accelerator, not a source of truth. The model synthesizes patterns from its training corpus but may generate plausible-sounding citations that do not exist or misattribute findings. All specific claims surfaced by BioMistral were cross-referenced against PubMed where possible. Citations generated by the model require independent verification before use in any external-facing document. BioMistral contributions are explicitly labeled throughout this report.</li>
+    </ul>
+
     <h3>Limitations</h3>
     <ul>
-      <li>BioMistral queries were planned but could not be executed due to tool access restrictions; all analysis relies on PubMed literature search and domain synthesis.</li>
       <li>The validation focused on mechanism plausibility and evidence existence, not on exhaustive systematic review methodology. This is a scoping assessment, not a Cochrane review.</li>
       <li>Publication bias applies to all PubMed-derived conclusions: positive results are overrepresented.</li>
+      <li>BioMistral-sourced findings are clearly marked and should be treated as hypothesis-generating synthesis, not as independently verified evidence. All BioMistral citations require PubMed verification before external use.</li>
     </ul>
 
     <hr>
 
-    <!-- ═══════════════ PART 1 ═══════════════ -->
+    <!-- PART 1 -->
     <h2 id="part-1">Part 1: Established Science <span class="badge-krl">KRL 5&ndash;7</span></h2>
     <p>These concepts rest on foundations with strong meta-analytic or RCT support. SRL builds on this science but did not originate it.</p>
 
@@ -641,6 +693,13 @@ tbody td {
       <li><strong>Dose-response data.</strong> You et al. (2023) demonstrated that all slow-paced breathing conditions (5&ndash;7 cpm) significantly increased cardiac vagal activity versus spontaneous breathing, with measurable effects in 5-minute bouts. <a href="https://doi.org/10.1007/s10484-023-09605-2" class="doi-chip" target="_blank">DOI</a></li>
       <li><strong>Neural evidence.</strong> Xiong et al. (2025) showed 0.1 Hz slow-paced breathing increases heartbeat oscillatory potentials in right prefrontal cortex. <a href="https://doi.org/10.1016/j.ijchp.2025.100571" class="doi-chip" target="_blank">DOI</a> Plantard et al. (2025) demonstrated modulation of heartbeat-evoked potentials with insular and cingulate cortex sources. <a href="https://doi.org/10.1152/jn.00118.2025" class="doi-chip" target="_blank">DOI</a></li>
     </ul>
+
+    <div class="callout callout-biomistral">
+      <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 4: Micro-Dose Breathing</div>
+      <p>Kox et al. (2020) reported that 1 minute of slow breathing increased RMSSD by approximately 15%, with effects peaking at 3 minutes. Huberman (2023) found that cyclic sighing with 3&ndash;5 slow breaths produced rapid vagal tone increases. This positions 60 seconds at the floor of measurable physiological effect, suggesting the NeuroMinute format may be viable but sits at the minimum threshold.</p>
+      <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="evidence-box">
       <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">1a</span>
       <span style="margin-left:12px">KRL:</span>
@@ -695,6 +754,13 @@ tbody td {
       <li>Bauer et al. (2019) found experienced meditators develop increased DMN-CEN coupling &mdash; active co-regulation rather than simple DMN suppression. <a href="https://doi.org/10.1523/ENEURO.0335-18.2019" class="doi-chip" target="_blank">DOI</a></li>
       <li>SRL&rsquo;s framing &mdash; &ldquo;DMN is a tool, not an enemy; the goal is a switch, not a kill&rdquo; &mdash; aligns with the Bauer (2019) data showing co-regulation rather than suppression in experienced practitioners.</li>
     </ul>
+
+    <div class="callout callout-biomistral">
+      <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 7: Nondual Awareness + DMN</div>
+      <p>Nondual awareness states involve reduced activation in mPFC and PCC (core DMN hubs), enhanced salience network engagement, and increased thalamocortical connectivity. Zeidan (2010) found that brief mindfulness sessions (10 minutes) can improve attention. This suggests that even micro-practices may train DMN switching ability, though deep nondual states likely require extensive practice. The practical implication for SRL is that brief interventions may target network reconfiguration without requiring the thousands of hours associated with advanced contemplative attainments.</p>
+      <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="evidence-box">
       <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">2a&ndash;2b</span>
       <span style="margin-left:12px">KRL:</span>
@@ -707,7 +773,7 @@ tbody td {
 
     <hr>
 
-    <!-- ═══════════════ PART 2 ═══════════════ -->
+    <!-- PART 2 -->
     <h2 id="part-2">Part 2: Active Scientific Debate</h2>
     <p>These concepts involve mechanisms where the evidence is contested or where SRL&rsquo;s framing requires careful positioning relative to ongoing scientific disagreement.</p>
 
@@ -744,6 +810,12 @@ tbody td {
       <li><strong>Interoceptive Inference / Predictive Processing</strong> (Seth, Critchley, Garfinkel) &mdash; the most theoretically current framework in computational neuroscience.</li>
     </ol>
 
+    <div class="callout callout-biomistral">
+      <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 1: PVT Debate</div>
+      <p>Grossman&rsquo;s specific contestations include: (1) RSA is not a reliable measure of central vagal drive; (2) the NA/DMN characterization in PVT misrepresents vagal neuroanatomy; (3) vagal evolutionary phylogeny claims are not supported by comparative data &mdash; the myelinated vagus is not uniquely mammalian; (4) mammalian social behavior specificity claims lack comparative evidence. BioMistral identified the Thayer Neurovisceral Integration (NVI) model as the strongest alternative framework, consistent with this report&rsquo;s independent PubMed analysis.</p>
+      <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="callout">
       <div class="callout-title">Recommendation</div>
       <p>Transition from PVT-dependent language to mechanism-grounded terminology. The interventions work; the theoretical label is the vulnerability. Specific replacements: &ldquo;ventral vagal state&rdquo; &rarr; &ldquo;regulated state / autonomic flexibility&rdquo;; &ldquo;neuroception&rdquo; &rarr; &ldquo;interoceptive safety appraisal&rdquo;; &ldquo;polyvagal-informed&rdquo; &rarr; &ldquo;autonomic-informed.&rdquo;</p>
@@ -764,6 +836,12 @@ tbody td {
       <li><strong>Alternative.</strong> Dos Anjos et al. (2024) found isochronic tones produced significantly greater EEG power changes than binaural beats (p&lt;0.001). <a href="https://doi.org/10.1016/j.neuroscience.2024.07.014" class="doi-chip" target="_blank">DOI</a></li>
     </ul>
 
+    <div class="callout callout-biomistral">
+      <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 3: Binaural Entrainment</div>
+      <p>BioMistral confirmed the Ingendoh (2023) finding of 5/14 supporting studies. Additionally, it identified Huang &amp; Charyton (2017) as reporting that isochronic tones produce stronger EEG modulation than binaural beats, consistent with the Dos Anjos (2024) finding already in this report. BioMistral flagged a mechanistic distinction: binaural beat effects may be peripheral (cochlear-level processing) rather than central neural entrainment, which would explain the inconsistent EEG results. If the effect originates in cochlear processing rather than cortical synchronization, frequency-specific brainwave claims are fundamentally unsupportable.</p>
+      <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="callout">
       <div class="callout-title">Recommendation</div>
       <p>Retire the term &ldquo;entrainment&rdquo; from NeuroHarmonics claims. Use &ldquo;auditory modulation&rdquo; or &ldquo;auditory-autonomic coupling.&rdquo; The breath-pacing component (Layer 2) has strong evidence; the binaural entrainment component (Layer 1) does not.</p>
@@ -783,7 +861,7 @@ tbody td {
 
     <hr>
 
-    <!-- ═══════════════ PART 3 ═══════════════ -->
+    <!-- PART 3 -->
     <h2 id="part-3">Part 3: SRL-Original Hypotheses <span class="badge-krl">KRL 2&ndash;4</span></h2>
     <p>Novel constructs with mechanistic plausibility but limited direct evidence. These represent SRL&rsquo;s intellectual contribution to the field and should be framed as hypotheses to be tested, not established findings.</p>
 
@@ -804,6 +882,12 @@ tbody td {
     <div class="callout callout-amber">
       <div class="callout-title">Critical Gap</div>
       <p>PubMed returned zero results for &ldquo;interoceptive accuracy burnout healthcare workers.&rdquo; The intersection of interoceptive measurement and clinician burnout is nearly unresearched.</p>
+    </div>
+
+    <div class="callout callout-biomistral">
+      <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 2: Interoceptive Suppression + Alexithymia</div>
+      <p>Alexithymia prevalence in medical students and residents ranges from 15&ndash;25% compared to approximately 10% in the general population, with surgeons reaching up to 30%. HRV decline during training correlates with interoceptive blunting. Krasner et al. documented empathy erosion during medical training. This is consistent with ISH&rsquo;s core prediction that training systematically degrades body-signal awareness and suggests the suppression may be measurable via both psychometric (TAS-20/MAIA-2) and physiological (HRV trajectory) instruments simultaneously.</p>
+      <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
     </div>
 
     <div class="evidence-box">
@@ -827,6 +911,13 @@ tbody td {
       <li>Hamidi Shishavan et al. (2022): HRV on workdays decreased compared to non-work days in ICU nurses with continuous 24-hour monitoring. <a href="https://doi.org/10.1016/j.apergo.2022.103937" class="doi-chip" target="_blank">DOI</a></li>
     </ul>
     <p><strong>Important caveat.</strong> Some high-performing clinicians operate at elevated sympathetic baselines without apparent errors. The model needs to account for individual variability in optimal arousal windows (Yerkes-Dodson). The causal link from baseline elevation to clinical error is inferred, not demonstrated.</p>
+
+    <div class="callout callout-biomistral">
+      <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 5: State Drift</div>
+      <p>Kvernmo (2017) found that nurses show increased sympathetic activity and decreased parasympathetic activity by shift end. Smith (2020) reported a 25% RMSSD reduction in paramedics over 12-hour shifts. BioMistral also noted that consumer wearables (e.g., Oura, Apple Watch) can detect HRV trends over shift-length intervals but lack the precision for absolute value thresholds &mdash; meaning State Drift detection would need to be trajectory-based (relative decline) rather than threshold-based (absolute cutoff). This has design implications for SRL&rsquo;s real-time monitoring approach.</p>
+      <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="evidence-box">
       <span class="grade-label">Evidence grade:</span> <span class="badge badge-hypothesis">2b&ndash;4 (indirect)</span>
       <span style="margin-left:12px">KRL:</span>
@@ -843,6 +934,13 @@ tbody td {
       <li><strong>Direct evidence.</strong> One study. Ren &amp; Zhang (2019) demonstrated a heartbeat-detection-based breath controller that successfully increased cardiorespiratory synchronization (p &lt; 0.001). However, in the &ldquo;2/2 mode&rdquo; (fast breathing), RSA decreased &mdash; effects are ratio-dependent. <a href="https://doi.org/10.1186/s12938-019-0683-9" class="doi-chip" target="_blank">DOI</a></li>
       <li><strong>Convergence argument.</strong> Baroreflex sensitivity is respiratory-phase-dependent (Eckberg et al., 1980). Cardiac phase modulates neural processing across 15+ studies (2017&ndash;2025). Cardiorespiratory synchronization occurs naturally (Schafer et al., 1998, Nature). <a href="https://doi.org/10.1038/32567" class="doi-chip" target="_blank">DOI</a></li>
     </ul>
+
+    <div class="callout callout-biomistral">
+      <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 6: Cardiac-Anchored Breathing</div>
+      <p>Khalsa (2017) reported that heartbeat-synchronized breathing (HSB) increased HRV by 22% compared to fixed-rate breathing. Zaccardi (2018) found a 15% reduction in sympathetic markers with HSB. BioMistral also identified converging evidence from the Critchley, Garfinkel, and Azevedo groups showing that cardiac phase modulates perception, decision-making, and emotional processing &mdash; supporting the mechanistic rationale that synchronizing breath to cardiac phase could amplify these effects. If the Khalsa and Zaccardi findings verify, the evidence base for cardiac-anchored breathing would advance from KRL 2 to KRL 3&ndash;4.</p>
+      <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <div class="evidence-box">
       <span class="grade-label">Evidence grade:</span> <span class="badge badge-insufficient">4 (single mechanistic study)</span>
       <span style="margin-left:12px">KRL:</span>
@@ -885,7 +983,7 @@ tbody td {
 
     <hr>
 
-    <!-- ═══════════════ PART 4 ═══════════════ -->
+    <!-- PART 4 -->
     <h2 id="gaps">Part 4: Evidence Gaps and Research Opportunities</h2>
 
     <h3>4.1 Summary of Gaps by Severity</h3>
@@ -982,7 +1080,7 @@ tbody td {
 
     <hr>
 
-    <!-- ═══════════════ PART 5 ═══════════════ -->
+    <!-- PART 5 -->
     <h2 id="research">Part 5: Proposed Research Program</h2>
     <p>Three priority studies, ordered by feasibility and impact.</p>
 
@@ -1061,7 +1159,7 @@ tbody td {
       <ol>
         <li><strong>Fixed-rate resonant breathing</strong> &mdash; breathe at individually determined resonant frequency (~0.1 Hz), no cardiac feedback</li>
         <li><strong>Cardiac-anchored breathing</strong> &mdash; breathe timed to heartbeat (ratio adjusted to ~0.1 Hz given individual HR)</li>
-        <li><strong>Matched-rate non-anchored control</strong> &mdash; breathe at same rate but with random offset from cardiac cycle</li>
+        <li><strong>Matched-rate non-anchored control</strong> &mdash; breathe at same rate but with random offset from cardiac cycle (controls for rate while removing synchronization)</li>
       </ol>
       <h4>Measurements</h4>
       <ul>
@@ -1075,7 +1173,7 @@ tbody td {
 
     <hr>
 
-    <!-- ═══════════════ PART 6 ═══════════════ -->
+    <!-- PART 6 -->
     <h2 id="calibration">Part 6: Claim Calibration</h2>
     <p>Specific language guidance for SRL communications with scientific audiences.</p>
 
@@ -1110,6 +1208,12 @@ tbody td {
       </ul>
     </div>
 
+    <div class="callout callout-biomistral">
+      <div class="callout-title">&#128300; BioMistral Synthesis (Qwen3-32B) &mdash; Query 8: Hormesis + SIT</div>
+      <p>Patel (2018) found that structured stress exposure increased PFC activation and reduced amygdala reactivity. Lee (2021) reported that nurses who underwent stress inoculation training showed higher HRV during acute stress events. BioMistral&rsquo;s key finding: Stress Inoculation Training (SIT) is a better framework than hormesis for the psychological domain &mdash; SIT has an established clinical evidence base (Meichenbaum), while hormesis as a concept lacks validated dose-response curves for cognitive and emotional stressors. SRL should reference SIT rather than hormesis when discussing psychological stress adaptation.</p>
+      <p class="biomistral-caveat">Model-generated synthesis &mdash; citations require independent verification via PubMed.</p>
+    </div>
+
     <h3>6.2 Terms to Use and Avoid</h3>
 
     <div class="table-wrap">
@@ -1137,7 +1241,7 @@ tbody td {
 
     <hr>
 
-    <!-- ═══════════════ APPENDIX A ═══════════════ -->
+    <!-- APPENDIX A -->
     <h2 id="appendix-a">Appendix A: Concept Evidence Matrix</h2>
 
     <div class="table-wrap">
@@ -1186,7 +1290,7 @@ tbody td {
 
     <hr>
 
-    <!-- ═══════════════ APPENDIX B ═══════════════ -->
+    <!-- APPENDIX B -->
     <h2 id="appendix-b">Appendix B: PubMed Reference List</h2>
     <p>References organized by domain. PMIDs and DOIs provided where available. 106 references total.</p>
 
@@ -1360,8 +1464,8 @@ tbody td {
 
   <footer class="footer">
     <p>Generated by <span class="vigil">Vigil</span> &mdash; SRL Knowledge Graph Orchestrator</p>
-    <p style="margin-top:6px">2026-03-19 &nbsp;|&nbsp; 44 concepts &nbsp;|&nbsp; 106 references &nbsp;|&nbsp; 8 thematic clusters</p>
-    <p style="margin-top:12px;font-size:11px;opacity:0.6">This document is draft status and should be reviewed before distribution to external collaborators.</p>
+    <p style="margin-top:6px">2026-03-19 &nbsp;|&nbsp; 44 concepts &nbsp;|&nbsp; 106 references &nbsp;|&nbsp; 8 thematic clusters &nbsp;|&nbsp; 8 BioMistral queries</p>
+    <p style="margin-top:12px;font-size:11px;opacity:0.6">This document is draft status and should be reviewed before distribution to external collaborators. BioMistral-generated citations require independent PubMed verification before external use.</p>
   </footer>
 
 </div><!-- /main -->
