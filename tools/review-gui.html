@@ -330,7 +330,7 @@ const REVIEW_DATA = null;
 let data = null;
 let activeQueue = null;
 let activeTab = null;
-let activeFilters = { provenance: null, confidence: null, decision: null, status: null };
+let activeFilters = { provenance: null, confidence: null, decision: null, status: null, domain: null };
 let decisions = {};
 
 function loadSaved() {
@@ -459,6 +459,15 @@ function renderFilters() {
     html += '<span style="width:1px;background:var(--border);margin:0 4px"></span>';
   }
 
+  // Domain filters for clinical queue
+  if (activeQueue === 'clinical') {
+    const domains = [...new Set(getItems().map(i => i.domain).filter(Boolean))].sort();
+    domains.forEach(d => {
+      html += `<button class="filter-btn ${activeFilters.domain === d ? 'active' : ''}" onclick="toggleFilter('domain','${d}')">${d}</button>`;
+    });
+    html += '<span style="width:1px;background:var(--border);margin:0 4px"></span>';
+  }
+
   // Status filters for clinical/promotion
   if (activeQueue === 'clinical' || activeQueue === 'promotions') {
     ['draft', 'review'].forEach(s => {
@@ -498,6 +507,7 @@ function filterItems(items) {
     if (activeFilters.provenance && item.provenance !== activeFilters.provenance) return false;
     if (activeFilters.confidence && item.confidence !== activeFilters.confidence) return false;
     if (activeFilters.status && item.status !== activeFilters.status) return false;
+    if (activeFilters.domain && item.domain !== activeFilters.domain) return false;
     if (activeFilters.decision === 'unreviewed' && d.decision) return false;
     if (activeFilters.decision && activeFilters.decision !== 'unreviewed' && d.decision !== activeFilters.decision) return false;
     return true;
@@ -526,72 +536,130 @@ function renderCard(item, index) {
   // Build detail HTML
   let detailHtml = '';
 
-  if (item.body) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">${isClinical ? 'Concept Body' : 'Description'}</div>
-      <div class="detail-text">${escHtml(item.body)}</div>
-    </div>`;
-  }
-  if (item.addition) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">Proposed Addition</div>
-      <div class="detail-text">${escHtml(item.addition)}</div>
-    </div>`;
-  }
-  if (item.randy_voice) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">Randy's Voice</div>
-      <div class="detail-text quote">${escHtml(item.randy_voice)}</div>
-    </div>`;
-  }
-  if (item.confidence_note) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">Confidence</div>
-      <div class="detail-text">${escHtml(item.confidence_note)}</div>
-    </div>`;
-  }
-  if (item.broader && item.broader.length) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">Broader</div>
-      <div class="detail-tags">${item.broader.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
-    </div>`;
-  }
-  if (item.related && item.related.length) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">Related</div>
-      <div class="detail-tags">${item.related.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
-    </div>`;
-  }
-  if (item.subjects && item.subjects.length) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">Subjects</div>
-      <div class="detail-tags">${item.subjects.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
-    </div>`;
-  }
-  if (item.relevance) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">Relevance</div>
-      <div class="detail-text">${escHtml(item.relevance)}</div>
-    </div>`;
-  }
-
-  // Source
-  if (item.source_file) {
-    detailHtml += `<div class="detail-section">
-      <div class="detail-label">Source</div>
-      <div class="detail-text">${escHtml(item.source_file)}${item.batch_source ? ' / ' + escHtml(item.batch_source) : ''}</div>
-    </div>`;
-  }
-
-  // Clinical interpretation input
   if (isClinical) {
+    // ── Clinical story layout ──
+
+    // 1. The concept in plain language (core story)
+    if (item.core_story) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">The Concept</div>
+        <div class="detail-text" style="font-size:14px;line-height:1.7">${escHtml(item.core_story)}</div>
+      </div>`;
+    }
+
+    // 2. Why it matters (relevance to SRL/clinical)
+    if (item.relevance) {
+      detailHtml += `<div class="detail-section" style="background:rgba(95,200,155,0.06);padding:12px;border-radius:8px;margin-top:12px">
+        <div class="detail-label" style="color:var(--sage-dim)">Why This Matters Clinically</div>
+        <div class="detail-text">${escHtml(item.relevance)}</div>
+      </div>`;
+    }
+
+    // 3. Evidence backing (if any)
+    if (item.evidence && item.evidence.length) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Evidence Linked</div>
+        ${item.evidence.map(e => `<div class="detail-text" style="font-size:12px;margin-bottom:4px">
+          <strong>${escHtml(e.creator)}</strong> (${escHtml(e.date)}) — ${escHtml(e.title)}
+        </div>`).join('')}
+      </div>`;
+    }
+
+    // 4. Where it sits in the graph
+    if ((item.broader && item.broader.length) || (item.related && item.related.length)) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Connected To</div>
+        <div class="detail-tags">`;
+      if (item.broader && item.broader.length) {
+        detailHtml += item.broader.map(t => `<span class="tag" style="border-color:var(--sage)">${escHtml(t)}</span>`).join('');
+      }
+      if (item.related && item.related.length) {
+        detailHtml += item.related.map(t => `<span class="tag">${escHtml(t)}</span>`).join('');
+      }
+      detailHtml += `</div></div>`;
+    }
+
+    // 5. Full body (collapsed by default — toggle)
+    if (item.body && item.body.length > 300) {
+      const bodyId = `body-${index}`;
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label" style="cursor:pointer" onclick="document.getElementById('${bodyId}').style.display = document.getElementById('${bodyId}').style.display === 'none' ? 'block' : 'none'">Full Concept Note ▸</div>
+        <div id="${bodyId}" class="detail-text" style="display:none;font-size:12px;color:var(--text-secondary);white-space:pre-wrap;margin-top:8px">${escHtml(item.body)}</div>
+      </div>`;
+    }
+
+    // 6. THE ASK — clinical interpretation with domain-specific prompt
     const savedInterp = d.clinical_interpretation || '';
-    detailHtml += `<div class="clinical-input-section">
-      <div class="detail-label">Your Clinical Interpretation</div>
-      <textarea class="clinical-textarea" placeholder="What does this mean for CRNA practice? How does this connect to your clinical experience?"
-        onchange="setClinicalInterpretation('${item.id}', this.value)">${escHtml(savedInterp)}</textarea>
+    detailHtml += `<div class="clinical-input-section" style="margin-top:16px">
+      <div class="detail-label" style="color:var(--purple);font-size:12px">${escHtml(item.prompt || 'Your Clinical Interpretation')}</div>
+      <textarea class="clinical-textarea" placeholder="Your clinical perspective — from the OR, from 28 years, from your body..."
+        onchange="setClinicalInterpretation('${item.id}', this.value)"
+        oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'">${escHtml(savedInterp)}</textarea>
     </div>`;
+
+  } else {
+    // ── Standard (non-clinical) layout ──
+
+    if (item.body) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Description</div>
+        <div class="detail-text">${escHtml(item.body)}</div>
+      </div>`;
+    }
+    if (item.addition) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Proposed Addition</div>
+        <div class="detail-text">${escHtml(item.addition)}</div>
+      </div>`;
+    }
+    if (item.randy_voice) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Randy's Voice</div>
+        <div class="detail-text quote">${escHtml(item.randy_voice)}</div>
+      </div>`;
+    }
+    if (item.confidence_note) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Confidence</div>
+        <div class="detail-text">${escHtml(item.confidence_note)}</div>
+      </div>`;
+    }
+    if (item.broader && item.broader.length) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Broader</div>
+        <div class="detail-tags">${item.broader.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
+      </div>`;
+    }
+    if (item.related && item.related.length) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Related</div>
+        <div class="detail-tags">${item.related.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
+      </div>`;
+    }
+    if (item.subjects && item.subjects.length) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Subjects</div>
+        <div class="detail-tags">${item.subjects.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>
+      </div>`;
+    }
+    if (item.relevance) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Relevance</div>
+        <div class="detail-text">${escHtml(item.relevance)}</div>
+      </div>`;
+    }
+
+    // Source
+    if (item.source_file) {
+      detailHtml += `<div class="detail-section">
+        <div class="detail-label">Source</div>
+        <div class="detail-text">${escHtml(item.source_file)}${item.batch_source ? ' / ' + escHtml(item.batch_source) : ''}</div>
+      </div>`;
+    }
   }
+
+  // Notes for non-clinical queues
+  if (!isClinical) {
 
   // Provenance override (extraction concepts only)
   if (activeQueue === 'extractions' && (activeTab === 'concepts' || !activeTab)) {
@@ -621,7 +689,7 @@ function renderCard(item, index) {
   if (item.confidence) badges += `<span class="badge badge-${item.confidence}">${item.confidence}</span>`;
   if (item.status) badges += `<span class="badge badge-${item.status}">${item.status}</span>`;
   if (item.target_concept) badges += `<span class="target-badge">${escHtml(item.target_concept)}</span>`;
-  if (isClinical) badges += `<span class="badge badge-clinical">clinical</span>`;
+  if (isClinical && item.domain) badges += `<span class="badge badge-clinical">${item.domain}</span>`;
   if (d.decision) badges += `<span class="badge-decision ${d.decision}">${d.decision}</span>`;
 
   // Decision buttons

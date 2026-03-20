@@ -91,6 +91,96 @@ def parse_body(text: str) -> str:
 
 # ─── Clinical interpretation queue ───
 
+def classify_concept(subjects: list, broader: list, related: list, title: str) -> str:
+    """Classify a concept into a clinical domain for framing."""
+    all_tags = " ".join(subjects + broader + related + [title]).lower()
+    if any(k in all_tags for k in ["breathwork", "breathing", "respiratory", "vagal", "hrv", "cardiac", "resonant"]):
+        return "physiology"
+    if any(k in all_tags for k in ["interoception", "interoceptive", "anterocept", "somatic", "embodied"]):
+        return "interoception"
+    if any(k in all_tags for k in ["gap-moment", "neurominute", "state-transition", "state-shifting"]):
+        return "protocol"
+    if any(k in all_tags for k in ["crna", "clinician", "burnout", "second-victim", "clinical-performance", "resilience"]):
+        return "clinical-practice"
+    if any(k in all_tags for k in ["certification", "assessment", "curriculum", "training"]):
+        return "education"
+    if any(k in all_tags for k in ["patent", "system-architecture", "biofeedback", "sensor", "wearable", "technology"]):
+        return "technology"
+    if any(k in all_tags for k in ["entrepreneurship", "scaling", "investor", "market", "positioning"]):
+        return "business"
+    if any(k in all_tags for k in ["consciousness", "awareness", "meditation", "contemplative", "springett"]):
+        return "consciousness"
+    if any(k in all_tags for k in ["methodology", "knowledge", "consilience", "epistem", "synthesis"]):
+        return "methodology"
+    return "general"
+
+
+CLINICAL_PROMPTS = {
+    "physiology": "You've felt this mechanism in the OR. When does this show up in your body during a case? What does a CRNA need to know about this that a textbook won't teach them?",
+    "interoception": "You train this every shift. How does this concept map to what you actually sense during induction, emergence, or a critical event? What's the clinical moment where this matters most?",
+    "protocol": "You tested this silent in clinical. How does this protocol fit into real workflow gaps? What would you tell a CRNA colleague about when and how to use this?",
+    "clinical-practice": "This is your world. How have you seen this play out across 28 years? What's the story that makes this real for another CRNA?",
+    "education": "You're building this curriculum. How does this concept earn its place in a CE course? What competency does it develop that CRNAs don't currently train?",
+    "technology": "You're building the app. How does this technology serve the clinician — not as a feature, but as a clinical tool? What problem does it solve in the OR?",
+    "business": "How does this connect back to clinical credibility? If this concept disappeared, what would the company lose that matters to patients?",
+    "consciousness": "You've experienced this personally. How does this connect to clinical presence — the quality of attention that keeps patients safe?",
+    "methodology": "How does this way of thinking serve SRL's mission? What does it produce that matters for clinician wellbeing?",
+    "general": "What does this mean for CRNA practice? How does it connect to your 28 years of clinical experience?"
+}
+
+
+def extract_sections(body: str) -> dict:
+    """Pull out key sections from the body for structured display."""
+    sections = {}
+    current_heading = None
+    current_lines = []
+
+    for line in body.split('\n'):
+        if line.startswith('## '):
+            if current_heading:
+                sections[current_heading] = '\n'.join(current_lines).strip()
+            current_heading = line[3:].strip()
+            current_lines = []
+        elif current_heading:
+            current_lines.append(line)
+
+    if current_heading:
+        sections[current_heading] = '\n'.join(current_lines).strip()
+
+    return sections
+
+
+def get_evidence_context(slug: str) -> list:
+    """Find linked evidence notes for a concept."""
+    evidence = []
+    evidence_dir = VAULT_ROOT / "evidence"
+    if not evidence_dir.exists():
+        return evidence
+
+    # Check the concept's prov:wasDerivedFrom for evidence URNs
+    concept_file = CONCEPTS_DIR / f"{slug}.md"
+    if not concept_file.exists():
+        return evidence
+
+    text = concept_file.read_text()
+    fm = parse_yaml_frontmatter(text)
+    derived = fm.get("prov:wasDerivedFrom", [])
+
+    for urn in derived:
+        if "evidence" in str(urn):
+            ev_slug = str(urn).split(":")[-1]
+            ev_file = evidence_dir / f"{ev_slug}.md"
+            if ev_file.exists():
+                ev_fm = parse_yaml_frontmatter(ev_file.read_text())
+                evidence.append({
+                    "title": ev_fm.get("title", ev_slug),
+                    "creator": ev_fm.get("dc:creator", ""),
+                    "date": str(ev_fm.get("dc:date", "")),
+                })
+
+    return evidence
+
+
 def build_clinical_queue() -> list:
     """Find all concept notes with 'Pending review' clinical interpretation."""
     items = []
@@ -104,26 +194,47 @@ def build_clinical_queue() -> list:
 
         fm = parse_yaml_frontmatter(text)
         body = parse_body(text)
-
-        # Extract first paragraph as preview
-        body_lines = [l for l in body.split('\n') if l.strip() and not l.startswith('#')]
-        preview = body_lines[0] if body_lines else ""
-
         slug = md_file.stem
+        subjects = fm.get("dc:subject", [])
+        broader = fm.get("skos:broader", [])
+        related = fm.get("skos:related", [])
+        title = fm.get("title", slug)
+
+        # Classify and get domain-specific prompt
+        domain = classify_concept(subjects, broader, related, title)
+        prompt = CLINICAL_PROMPTS.get(domain, CLINICAL_PROMPTS["general"])
+
+        # Extract structured sections
+        sections = extract_sections(body)
+
+        # Get first paragraph as the core story
+        body_lines = [l for l in body.split('\n') if l.strip() and not l.startswith('#')]
+        core_story = ' '.join(body_lines[:3]) if body_lines else ""
+
+        # Get linked evidence
+        evidence = get_evidence_context(slug)
+
+        # Build the "clinical story" — what Randy needs to see
+        relevance = sections.get("Relevance to SRL", sections.get("Why It Matters", ""))
+
         items.append({
             "id": fm.get("id", f"urn:srl:concept:{slug}"),
             "slug": slug,
-            "title": fm.get("title", slug),
+            "title": title,
             "category": "clinical-interpretation",
             "review_type": "clinical",
+            "domain": domain,
             "status": fm.get("status", "draft"),
-            "subjects": fm.get("dc:subject", []),
-            "broader": fm.get("skos:broader", []),
-            "related": fm.get("skos:related", []),
-            "body": body[:2000],
-            "preview": preview[:300],
+            "subjects": subjects,
+            "broader": broader,
+            "related": related,
+            "body": body[:3000],
+            "core_story": core_story[:500],
+            "relevance": relevance[:500],
+            "evidence": evidence[:5],
+            "preview": core_story[:200],
             "source_file": str(md_file.relative_to(VAULT_ROOT)),
-            "prompt": "Add your clinical interpretation — what does this mean for CRNA practice?",
+            "prompt": prompt,
             "decision": None,
             "notes": ""
         })
