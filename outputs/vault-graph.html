@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRL Knowledge Graph</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #22253A;
+    color: #F5F5F0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 32px 16px;
+    background: linear-gradient(180deg, #22253A 0%, #22253Aee 70%, #22253A00 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+
+  #header > * { pointer-events: auto; }
+
+  .header-left h1 {
+    font-weight: 400;
+    font-size: 22px;
+    color: #F5F5F0;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  .header-left .subtitle {
+    font-weight: 300;
+    font-size: 13px;
+    color: #5FC89B;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #search-container {
+    position: relative;
+  }
+
+  #search {
+    background: rgba(95, 200, 155, 0.08);
+    border: 1px solid rgba(95, 200, 155, 0.2);
+    border-radius: 8px;
+    padding: 8px 14px 8px 36px;
+    color: #F5F5F0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: -0.025em;
+    width: 260px;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  #search:focus {
+    border-color: rgba(95, 200, 155, 0.5);
+    background: rgba(95, 200, 155, 0.12);
+  }
+
+  #search::placeholder { color: rgba(245, 245, 240, 0.3); }
+
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(95, 200, 155, 0.4);
+    font-size: 14px;
+  }
+
+  #stats-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 12px 32px;
+    background: linear-gradient(0deg, #22253A 0%, #22253Aee 70%, #22253A00 100%);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 12px;
+    font-weight: 300;
+    pointer-events: none;
+  }
+
+  .stat { display: flex; align-items: center; gap: 6px; }
+  .stat-value { font-weight: 400; color: #5FC89B; }
+  .stat-label { color: rgba(245, 245, 240, 0.5); }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: rgba(245, 245, 240, 0.5);
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .legend-line {
+    width: 20px;
+    height: 2px;
+  }
+
+  #graph-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  svg { width: 100%; height: 100%; }
+
+  /* Tooltip */
+  #tooltip {
+    position: fixed;
+    background: #2a2d44;
+    border: 1px solid rgba(95, 200, 155, 0.25);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 200;
+    max-width: 280px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+  }
+
+  #tooltip .tt-title {
+    font-weight: 400;
+    font-size: 14px;
+    color: #F5F5F0;
+    margin-bottom: 6px;
+  }
+
+  #tooltip .tt-status {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  #tooltip .tt-connections {
+    color: rgba(245, 245, 240, 0.5);
+    font-size: 11px;
+  }
+
+  /* Side Panel */
+  #side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100vh;
+    background: #1a1c2e;
+    border-left: 1px solid rgba(95, 200, 155, 0.15);
+    z-index: 150;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    padding: 28px;
+    box-shadow: -8px 0 32px rgba(0,0,0,0.3);
+  }
+
+  #side-panel.open { transform: translateX(0); }
+
+  #side-panel .panel-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: rgba(245, 245, 240, 0.4);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #side-panel .panel-close:hover { color: #5FC89B; }
+
+  .panel-title {
+    font-weight: 400;
+    font-size: 20px;
+    color: #F5F5F0;
+    margin-bottom: 4px;
+    padding-right: 32px;
+    line-height: 1.3;
+  }
+
+  .panel-slug {
+    font-size: 11px;
+    color: rgba(95, 200, 155, 0.6);
+    font-family: monospace;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+
+  .panel-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+
+  .panel-section {
+    margin-bottom: 20px;
+  }
+
+  .panel-section h3 {
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(245, 245, 240, 0.35);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(95, 200, 155, 0.08);
+  }
+
+  .panel-link {
+    display: block;
+    padding: 6px 10px;
+    margin: 3px 0;
+    background: rgba(95, 200, 155, 0.06);
+    border-radius: 6px;
+    color: #5FC89B;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    text-decoration: none;
+    font-weight: 300;
+  }
+
+  .panel-link:hover {
+    background: rgba(95, 200, 155, 0.14);
+    transform: translateX(3px);
+  }
+
+  .panel-empty {
+    color: rgba(245, 245, 240, 0.2);
+    font-size: 12px;
+    font-style: italic;
+    padding: 4px 0;
+  }
+
+  /* Node glow animation */
+  @keyframes pulse {
+    0%, 100% { filter: drop-shadow(0 0 4px rgba(95, 200, 155, 0.3)); }
+    50% { filter: drop-shadow(0 0 12px rgba(95, 200, 155, 0.6)); }
+  }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <div class="header-left">
+    <h1>SRL Knowledge Graph</h1>
+    <div class="subtitle">Somnistics Research Labs</div>
+  </div>
+  <div class="header-right">
+    <div id="search-container">
+      <span class="search-icon">&#x1F50D;</span>
+      <input type="text" id="search" placeholder="Search concepts..." autocomplete="off">
+    </div>
+  </div>
+</div>
+
+<div id="graph-container">
+  <svg id="graph"></svg>
+</div>
+
+<div id="tooltip"></div>
+
+<div id="side-panel">
+  <button class="panel-close" onclick="closePanel()">&times;</button>
+  <div id="panel-content"></div>
+</div>
+
+<div id="stats-bar">
+  <div class="stat">
+    <span class="stat-value" id="stat-nodes">0</span>
+    <span class="stat-label">concepts</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value" id="stat-edges">0</span>
+    <span class="stat-label">relationships</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value" id="stat-canonical">0</span>
+    <span class="stat-label">canonical</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value" id="stat-review">0</span>
+    <span class="stat-label">review</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value" id="stat-draft">0</span>
+    <span class="stat-label">draft</span>
+  </div>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#5FC89B"></div> canonical
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#E8B84A"></div> review
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#8B9DAF"></div> draft
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="background:rgba(95,200,155,0.6)"></div> broader/narrower
+    </div>
+    <div class="legend-item">
+      <div class="legend-line" style="background:rgba(95,200,155,0.3); border-top: 2px dashed rgba(95,200,155,0.3); height:0"></div> related
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================
+// GRAPH DATA — extracted from SRL vault
+// ============================================
+const graphData = {
+  nodes: [
+    // === CANONICAL ===
+    {id:"somnistics",title:"Somnistics",status:"canonical",broader:[],narrower:["gap-moment-training","neurominute","neurogating","anterocept","polyanchora","neuro-ouroboros","cognitive-variability-analysis","neurotagging"],related:["autonomic-regulation","state-transition","interoception","polyvagal-theory","kosha-architecture","relevance-realization"]},
+    {id:"interoception",title:"Interoception",status:"canonical",broader:[],narrower:["anterocept","multi-phase-interoceptive-coupling","diaphragmatic-literacy","interoceptive-literacy","diaphragmatic-blindness","interoceptive-accuracy","embodied-metacognition"],related:["vagal-tone","autonomic-regulation","kosha-architecture","relevance-realization","polyanchora","self-remembering","retrocausal-presentiment"]},
+    {id:"autonomic-regulation",title:"Autonomic Regulation",status:"canonical",broader:[],narrower:["vagal-tone","resonant-breathing-frequency"],related:["polyvagal-theory","interoception","somnistics","state-transition","gap-moment-training","retrocausal-presentiment"]},
+    {id:"gap-moment-training",title:"Gap Moment Training",status:"canonical",broader:["somnistics"],narrower:["neurominute","gap-moment-literacy","gap-moment-detection-engine","structured-interoception-training","time-between-worlds-gap-minute","gap-moment-codex","infinite-game-vigilance-frame","compassionate-meta-logic","constraint-release-grief-loop","neuroexperiential-architecture","embodied-probability-fields","five-breath-re-embodiment","in-shift-mental-hygiene","stress-inoculation-training"],related:["titration-to-effect","polyvagal-theory","vagal-tone","anterocept","state-transition","minimum-effective-dose","gap-moment-detection-engine","archetype-fluidity"]},
+    {id:"neurominute",title:"NeuroMinute",status:"canonical",broader:["gap-moment-training"],narrower:[],related:["minimum-effective-dose","resonant-breathing-frequency","anterocept","multi-phase-interoceptive-coupling","polyanchora","neuro-ouroboros","titration-to-effect","co-regulation","self-remembering","hemispheric-rebalancing"]},
+    {id:"neurogating",title:"Neurogating",status:"canonical",broader:["somnistics"],narrower:["readyscore"],related:["state-transition","gap-moment-training","cognitive-variability-analysis"]},
+    {id:"anterocept",title:"Anterocept",status:"canonical",broader:["interoception"],narrower:["diaphragmatic-literacy","exteroryx"],related:["polyanchora","multi-phase-interoceptive-coupling","neurominute","state-transition","kosha-architecture","retrocausal-presentiment","nonlocal-consciousness"]},
+    {id:"state-transition",title:"State Transition",status:"canonical",broader:[],narrower:[],related:["gap-moment-training","somnistics","autonomic-regulation","neurogating","polyvagal-theory","anterocept","nonlocal-consciousness","gamma-state-binding","self-remembering"]},
+    {id:"vagal-tone",title:"Vagal Tone",status:"canonical",broader:["autonomic-regulation"],narrower:[],related:["polyvagal-theory","resonant-breathing-frequency","interoception","neurominute","cognitive-variability-analysis"]},
+    {id:"resonant-breathing-frequency",title:"Resonant Breathing Frequency",status:"canonical",broader:["autonomic-regulation"],narrower:["cardiac-anchored-breathing"],related:["vagal-tone","neurominute","interoception","minimum-effective-dose","titration-to-effect"]},
+    {id:"polyvagal-theory",title:"Polyvagal Theory",status:"canonical",broader:[],narrower:["co-regulation"],related:["vagal-tone","autonomic-regulation","gap-moment-training","interoception","neurogating","state-transition","retrocausal-presentiment"]},
+    {id:"neuro-ouroboros",title:"Neuro-Ouroboros",status:"canonical",broader:["gap-moment-training"],narrower:["somnoaffinity","neuroharmonics"],related:["neurominute","anterocept","polyanchora","multi-phase-interoceptive-coupling","autonomic-regulation","state-transition","neurogating"]},
+    {id:"self-remembering",title:"Self-Remembering",status:"canonical",broader:["somnistics"],narrower:[],related:["relevance-realization","interoception","state-transition","gap-moment-training","kosha-architecture","anterocept"]},
+    {id:"hemispheric-rebalancing",title:"Hemispheric Rebalancing",status:"canonical",broader:[],narrower:["vitarka-vicara-integration"],related:["relevance-realization","cognitive-variability-analysis","state-transition","interoception","polyanchora","gamma-state-binding"]},
+    {id:"cognitive-variability-analysis",title:"Cognitive Variability Analysis",status:"canonical",broader:["somnistics"],narrower:[],related:["hemispheric-rebalancing","state-transition","autonomic-regulation","neurogating","vagal-tone"]},
+    {id:"multi-phase-interoceptive-coupling",title:"Multi-Phase Interoceptive Coupling",status:"canonical",broader:["interoception"],narrower:[],related:["anterocept","polyanchora","neurominute","autonomic-regulation","vagal-tone","neuroharmonics"]},
+    {id:"minimum-effective-dose",title:"Minimum Effective Dose",status:"canonical",broader:["titration-to-effect"],narrower:[],related:["neurominute","gap-moment-training","resonant-breathing-frequency"]},
+    {id:"titration-to-effect",title:"Titration to Effect",status:"canonical",broader:[],narrower:["minimum-effective-dose"],related:["gap-moment-training","neurominute","neurogating","neuro-ouroboros"]},
+    {id:"clinician-durability",title:"Clinician Durability",status:"canonical",broader:["somnistics"],narrower:["second-victim-phenomenon"],related:["gap-moment-training","vagal-tone","autonomic-regulation","bandwidth-saturation-micro-events","archetype-fluidity"]},
+    {id:"co-regulation",title:"Co-Regulation",status:"canonical",broader:["polyvagal-theory"],narrower:["phantom-limb-protocol"],related:["vagal-tone","gap-moment-training","state-transition","neuroharmonics","phantom-limb-protocol"]},
+    {id:"somnoaffinity",title:"SomnoAffinity",status:"canonical",broader:["neuro-ouroboros"],narrower:[],related:["neurominute","vagal-tone","self-remembering"]},
+    {id:"diaphragmatic-blindness",title:"Diaphragmatic Blindness",status:"canonical",broader:["interoception"],narrower:[],related:["anterocept","interoceptive-blindness-clinicians","resonant-breathing-frequency","awareness-before-technique"]},
+    {id:"neuroharmonics",title:"NeuroHarmonics",status:"canonical",broader:["neuro-ouroboros"],narrower:["alpha-theta-crossover"],related:["binaural-beats-vagal-coupling","neurominute","vagal-tone","neurogating","gamma-state-binding"]},
+    {id:"polyanchora",title:"Polyanchora",status:"canonical",broader:["anterocept"],narrower:[],related:["interoception","kosha-architecture","neurominute","multi-phase-interoceptive-coupling","neuro-ouroboros"]},
+    {id:"relevance-realization",title:"Relevance Realization",status:"canonical",broader:["somnistics"],narrower:[],related:["hemispheric-rebalancing","self-remembering","interoception","state-transition","cognitive-variability-analysis"]},
+    {id:"kosha-architecture",title:"Kosha Architecture",status:"canonical",broader:["somnistics"],narrower:[],related:["interoception","autonomic-regulation","polyanchora","anterocept","neuro-ouroboros","self-remembering"]},
+    {id:"interoceptive-literacy",title:"Interoceptive Literacy",status:"canonical",broader:["interoception"],narrower:["diaphragmatic-blindness","awareness-as-neuroplastic-surface-area"],related:["anterocept","maia2-pedagogical-mapping","clinician-durability","awareness-before-technique","awareness-as-neuroplastic-surface-area"]},
+    {id:"exteroryx",title:"ExterOryx",status:"canonical",broader:["anterocept"],narrower:[],related:["polyanchora","multi-phase-interoceptive-coupling","hemispheric-rebalancing","state-transition"]},
+    {id:"transmetachora",title:"TransMetachora",status:"canonical",broader:["somnistics"],narrower:[],related:["neuroharmonics","anterocept","co-regulation","kosha-architecture"]},
+    {id:"neural-transition-failure",title:"Neural Transition Failure",status:"canonical",broader:["state-transition"],narrower:[],related:["gap-moment-training","bandwidth-saturation-micro-events","error-archetypes-qrc","clinician-durability"]},
+    {id:"market-intelligence",title:"Market Intelligence",status:"canonical",broader:[],narrower:["competitive-moat-latency","ip-six-pillar-moat","network-audit-credibility-capital-gap"],related:["somnistics","autonomic-regulation","clinician-durability","commoncog-operating-principles"]},
+
+    // === REVIEW ===
+    {id:"trauma-informed-design",title:"Trauma-Informed Design",status:"review",broader:["somnistics"],narrower:[],related:["anterocept","neurominute","polyvagal-theory","co-regulation","somnistics-certification","diaphragmatic-blindness"]},
+    {id:"somnistics-certification",title:"Somnistics Certification",status:"review",broader:["somnistics"],narrower:["somnistics-readiness-battery"],related:["gap-moment-training","gmt-career-arc","clinician-durability","interoceptive-literacy","diaphragmatic-blindness","anterocept","neuro-ouroboros","co-regulation"]},
+    {id:"gmt-career-arc",title:"GMT Career Arc",status:"review",broader:["gap-moment-training"],narrower:[],related:["clinician-durability","neuro-ouroboros","neural-transition-failure","anterocept"]},
+    {id:"commoncog-operating-principles",title:"Commoncog Operating Principles",status:"review",broader:["somnistics"],narrower:[],related:["gap-moment-training","somnistics-certification","commoncog-operating-principles"]},
+    {id:"compliance-metadata-layer",title:"Compliance Metadata Layer",status:"review",broader:[],narrower:[],related:[]},
+    {id:"controlled-vocabulary-v1",title:"Controlled Vocabulary v1",status:"review",broader:[],narrower:[],related:[]},
+    {id:"evidence-grading-framework",title:"Evidence Grading Framework",status:"review",broader:[],narrower:[],related:[]},
+    {id:"faceted-classification-taxonomy",title:"Faceted Classification Taxonomy",status:"review",broader:[],narrower:[],related:[]},
+    {id:"vault-architecture-v2",title:"Vault Architecture v2",status:"review",broader:[],narrower:[],related:[]},
+    {id:"knowledge-gap-analysis-framework",title:"Knowledge Gap Analysis Framework",status:"review",broader:[],narrower:[],related:[]},
+
+    // === DRAFT ===
+    {id:"neurotagging",title:"Neurotagging",status:"draft",broader:["somnistics"],narrower:[],related:["cognitive-variability-analysis","neurominute"]},
+    {id:"gap-moment-literacy",title:"Gap Moment Literacy",status:"draft",broader:["gap-moment-training"],narrower:[],related:["interoceptive-literacy","state-transition","somnistics-readiness-battery"]},
+    {id:"gap-moment-detection-engine",title:"Gap Moment Detection Engine",status:"draft",broader:["gap-moment-training"],narrower:[],related:["neurominute","neurogating","minimum-effective-dose"]},
+    {id:"nonlocal-consciousness",title:"Nonlocal Consciousness",status:"draft",broader:[],narrower:["retrocausal-presentiment","gamma-state-binding"],related:["anterocept","state-transition","interoception","neurogating"]},
+    {id:"diaphragmatic-literacy",title:"Diaphragmatic Literacy",status:"draft",broader:["interoception"],narrower:[],related:["diaphragmatic-blindness","resonant-breathing-frequency","anterocept","gap-moment-training"]},
+    {id:"retrocausal-presentiment",title:"Retrocausal Presentiment",status:"draft",broader:["nonlocal-consciousness"],narrower:[],related:["anterocept","interoception","state-transition","autonomic-regulation","neurogating","polyvagal-theory"]},
+    {id:"gamma-state-binding",title:"Gamma-State Binding",status:"draft",broader:["nonlocal-consciousness"],narrower:[],related:["neuroharmonics","state-transition","anterocept","hemispheric-rebalancing"]},
+    {id:"career-longitudinal-gmt",title:"Career-Longitudinal GMT",status:"draft",broader:["gap-moment-training"],narrower:[],related:["clinician-durability","neurominute","neuro-ouroboros"]},
+    {id:"phantom-limb-protocol",title:"Phantom Limb Protocol",status:"draft",broader:["co-regulation"],narrower:[],related:["co-regulation","polyvagal-theory","neuroharmonics","gap-moment-training","state-transition"]},
+    {id:"archetype-fluidity",title:"Archetype Fluidity",status:"draft",broader:["somnistics"],narrower:[],related:["gap-moment-training","polyvagal-theory","co-regulation","clinician-durability","state-transition"]},
+    {id:"stairway-meta-awareness-protocol",title:"Stairway Meta-Awareness Protocol",status:"draft",broader:[],narrower:[],related:["kosha-architecture","self-remembering","gap-moment-training","interoception","co-regulation","time-between-worlds-gap-minute"]},
+    {id:"agentic-time-weaving",title:"Agentic Time Weaving",status:"draft",broader:[],narrower:[],related:["gap-moment-training","state-transition","self-remembering","neurogating","non-ergodic-risk"]},
+    {id:"time-between-worlds-gap-minute",title:"Time-Between-Worlds Gap Minute",status:"draft",broader:["gap-moment-training"],narrower:[],related:["neurominute","minimum-effective-dose","state-transition"]},
+    {id:"gap-moment-codex",title:"Gap Moment Codex",status:"draft",broader:["gap-moment-training"],narrower:[],related:["neurominute","minimum-effective-dose","kosha-architecture","stairway-meta-awareness-protocol","time-between-worlds-gap-minute"]},
+    {id:"non-ergodic-risk",title:"Non-Ergodic Risk",status:"draft",broader:[],narrower:[],related:["state-transition","neural-transition-failure","clinician-durability","gap-moment-training"]},
+    {id:"second-victim-phenomenon",title:"Second-Victim Phenomenon",status:"draft",broader:["clinician-durability"],narrower:[],related:["gap-moment-training","co-regulation","stress-inoculation-training"]},
+    {id:"metasomatic-entrepreneurship",title:"Metasomatic Entrepreneurship",status:"draft",broader:["somnistics"],narrower:["demand-biomarkers","neural-capital-operating-system","epistemic-product-market-fit"],related:["commoncog-operating-principles","interoceptive-literacy","epistemic-product-market-fit"]},
+    {id:"neuroadaptive-training-system",title:"Neuroadaptive Training System",status:"draft",broader:["somnistics"],narrower:["gap-moment-detection-engine","neurominute"],related:["anterocept","neurogating","clinician-durability","closed-loop-biofeedback"]},
+    {id:"interoceptive-flow-os",title:"Interoceptive Flow OS",status:"draft",broader:["somnistics"],narrower:[],related:["anterocept","gap-moment-training","neurominute","neurogating","closed-loop-biofeedback"]},
+    {id:"somnistics-certified-professional",title:"Somnistics Certified Professional",status:"draft",broader:["somnistics-certification"],narrower:[],related:["clinician-durability","somnistics-readiness-battery","gap-moment-training"]},
+    {id:"micro-interoceptive-regulation",title:"Micro-Interoceptive Regulation",status:"draft",broader:["somnistics"],narrower:[],related:["neurominute","gap-moment-training","anterocept","autonomic-regulation"]},
+    {id:"interoceptive-accuracy",title:"Interoceptive Accuracy",status:"draft",broader:["interoception"],narrower:[],related:["interoceptive-literacy","anterocept","somnistics-readiness-battery"]},
+    {id:"haptic-biofeedback",title:"Haptic Biofeedback",status:"draft",broader:["interoceptive-technology"],narrower:[],related:["exteroryx","closed-loop-biofeedback","multimodal-sensor-fusion"]},
+    {id:"stress-inoculation-training",title:"Stress Inoculation Training",status:"draft",broader:["gap-moment-training"],narrower:[],related:["clinician-durability","second-victim-phenomenon","autonomic-regulation"]},
+    {id:"multimodal-sensor-fusion",title:"Multimodal Sensor Fusion",status:"draft",broader:["closed-loop-biofeedback"],narrower:[],related:["neuroadaptive-training-system","haptic-biofeedback"]},
+    {id:"attention-as-gain-control",title:"Attention as Gain Control",status:"draft",broader:[],narrower:[],related:["interoception","neurogating","gap-moment-training","neurominute"]},
+    {id:"maia-2-crna",title:"MAIA-2-CRNA",status:"draft",broader:[],narrower:[],related:["interoception","interoceptive-literacy","somnistics-readiness-battery","clinician-durability"]},
+    {id:"embodied-clinical-intelligence",title:"Embodied Clinical Intelligence",status:"draft",broader:[],narrower:[],related:["interoceptive-literacy","clinician-durability","gap-moment-training","cognitive-variability-analysis"]},
+    {id:"tacit-knowledge-extraction",title:"Tacit Knowledge Extraction",status:"draft",broader:[],narrower:[],related:["consilience-by-translation","embodied-clinical-intelligence","neurominute","somnistics"]},
+    {id:"learning-under-load",title:"Learning Under Load",status:"draft",broader:[],narrower:[],related:["gap-moment-training","embodied-clinical-intelligence","clinician-durability","cognitive-variability-analysis"]},
+    {id:"adaptive-intervention-protocol",title:"Adaptive Intervention Protocol",status:"draft",broader:["closed-loop-biofeedback"],narrower:[],related:["five-breath-re-embodiment","gap-moment-detection-engine","neurominute"]},
+    {id:"demand-biomarkers",title:"Demand Biomarkers",status:"draft",broader:["metasomatic-entrepreneurship"],narrower:[],related:["epistemic-product-market-fit","commoncog-operating-principles"]},
+    {id:"neural-capital-operating-system",title:"Neural Capital Operating System",status:"draft",broader:["metasomatic-entrepreneurship"],narrower:[],related:["commoncog-operating-principles","epistemic-product-market-fit","demand-biomarkers"]},
+    {id:"epistemic-product-market-fit",title:"Epistemic Product-Market Fit",status:"draft",broader:["metasomatic-entrepreneurship"],narrower:[],related:["demand-biomarkers","commoncog-operating-principles"]},
+    {id:"embodied-probability-fields",title:"Embodied Probability Fields",status:"draft",broader:["gap-moment-training"],narrower:[],related:["anterocept","interoceptive-accuracy","non-ergodic-risk"]},
+    {id:"neuroexperiential-architecture",title:"Neuroexperiential Architecture",status:"draft",broader:["gap-moment-training"],narrower:[],related:["neurominute","anterocept","exteroryx"]},
+    {id:"compassionate-meta-logic",title:"Compassionate Meta-Logic",status:"draft",broader:["gap-moment-training"],narrower:[],related:["stairway-meta-awareness-protocol","co-regulation"]},
+    {id:"constraint-release-grief-loop",title:"Constraint-Release Grief Loop",status:"draft",broader:["gap-moment-training"],narrower:[],related:["stairway-meta-awareness-protocol","compassionate-meta-logic","state-transition"]},
+    {id:"infinite-game-vigilance-frame",title:"Infinite-Game Vigilance Frame",status:"draft",broader:["gap-moment-training"],narrower:[],related:["clinician-durability","constraint-release-grief-loop","stairway-meta-awareness-protocol"]},
+    {id:"integration-architecture",title:"Integration Architecture",status:"draft",broader:["somnistics"],narrower:[],related:["consilience","syntopical-synthesis","multi-llm-knowledge-construction"]},
+    {id:"consilience",title:"Consilience",status:"draft",broader:[],narrower:["consilience-by-translation","syntopical-synthesis","ideas-having-sex","multi-llm-knowledge-construction","epistemic-layering","syntopical-reading-method"],related:["syntopical-synthesis","integration-architecture","multi-llm-knowledge-construction"]},
+    {id:"syntopical-synthesis",title:"Syntopical Synthesis",status:"draft",broader:["consilience"],narrower:[],related:["syntopical-reading-method","multi-llm-knowledge-construction","epistemic-layering"]},
+    {id:"ideas-having-sex",title:"Ideas Having Sex",status:"draft",broader:["consilience"],narrower:[],related:["syntopical-synthesis","integration-architecture"]},
+    {id:"multi-llm-knowledge-construction",title:"Multi-LLM Knowledge Construction",status:"draft",broader:["consilience"],narrower:[],related:["syntopical-synthesis","epistemic-layering","integration-architecture"]},
+    {id:"epistemic-layering",title:"Epistemic Layering",status:"draft",broader:["consilience"],narrower:[],related:["multi-llm-knowledge-construction","syntopical-synthesis"]},
+    {id:"springett-consciousness-stairway",title:"Springett Consciousness Stairway",status:"draft",broader:[],narrower:[],related:["stairway-meta-awareness-protocol","springett-manifestation-framework","vertical-development"]},
+    {id:"springett-manifestation-framework",title:"Springett Manifestation Framework",status:"draft",broader:[],narrower:[],related:["springett-consciousness-stairway","stairway-meta-awareness-protocol"]},
+    {id:"5-minute-miracle",title:"5-Minute Miracle Practice",status:"draft",broader:[],narrower:[],related:["springett-consciousness-stairway","neurominute","gap-moment-training"]},
+    {id:"vertical-development",title:"Vertical Development Framework",status:"draft",broader:[],narrower:[],related:["springett-consciousness-stairway","state-shifting-mastery","cognitive-expansion-cycle"]},
+    {id:"state-shifting-mastery",title:"State-Shifting Mastery",status:"draft",broader:["somnistics"],narrower:[],related:["gap-moment-training","vertical-development","somnistics-certified-professional"]},
+    {id:"coherence-field",title:"Coherence Field",status:"draft",broader:["somnistics"],narrower:[],related:["co-regulation","state-shifting-mastery","infinite-game-vigilance-frame"]},
+    {id:"cognitive-expansion-cycle",title:"Cognitive Expansion Cycle",status:"draft",broader:[],narrower:[],related:["springett-consciousness-stairway","vertical-development","integration-architecture"]},
+    {id:"syntopical-reading-method",title:"Syntopical Reading Method",status:"draft",broader:["consilience"],narrower:[],related:["syntopical-synthesis","multi-llm-knowledge-construction"]},
+    {id:"resonant-nonfiction",title:"Resonant Nonfiction",status:"draft",broader:[],narrower:[],related:["integration-architecture","consilience"]},
+    {id:"syntropic-positioning",title:"Syntropic Positioning",status:"draft",broader:["somnistics"],narrower:[],related:["integration-architecture","consilience"]},
+    {id:"effectuation-experimentation",title:"Effectuation Experimentation",status:"draft",broader:[],narrower:["demand-sprints"],related:["commoncog-operating-principles","epistemic-product-market-fit","demand-biomarkers"]},
+    {id:"time-wealth",title:"Time Wealth",status:"draft",broader:[],narrower:[],related:["infinite-game-vigilance-frame","clinician-durability"]},
+    {id:"phased-localization-strategy",title:"Phased Localization Strategy",status:"draft",broader:[],narrower:[],related:["app-store-optimization","minimum-effective-dose"]},
+    {id:"app-store-optimization",title:"App Store Optimization",status:"draft",broader:[],narrower:[],related:["phased-localization-strategy"]},
+    {id:"demand-sprints",title:"Demand Sprints",status:"draft",broader:["effectuation-experimentation"],narrower:[],related:["demand-biomarkers","epistemic-product-market-fit","commoncog-operating-principles"]},
+    {id:"consilience-by-translation",title:"Consilience by Translation",status:"draft",broader:[],narrower:[],related:["relevance-realization","neuroepistemic-layer","somnistics","cognitive-development-arc"]},
+    {id:"somnistics-readiness-battery",title:"Somnistics Readiness Battery",status:"draft",broader:["somnistics-certification"],narrower:[],related:["gap-moment-training","neurominute","interoceptive-literacy","clinician-durability","gap-moment-literacy","diaphragmatic-literacy"]},
+    {id:"closed-loop-biofeedback",title:"Closed-Loop Biofeedback",status:"draft",broader:["somnistics"],narrower:["multimodal-sensor-fusion","adaptive-intervention-protocol"],related:["five-breath-re-embodiment","neuroadaptive-training-system","gap-moment-detection-engine","interoceptive-simulator","neural-sovereignty"]},
+    {id:"interoceptive-technology",title:"Interoceptive Technology",status:"draft",broader:["somnistics"],narrower:["haptic-biofeedback","interoceptive-simulator"],related:["closed-loop-biofeedback","neuroadaptive-training-system"]},
+    {id:"embodied-metacognition",title:"Embodied Metacognition",status:"draft",broader:["interoception"],narrower:["stairway-meta-awareness-protocol","gap-moment-training","nondual-clinical-awareness","contemplative-progressive-overload"],related:["self-remembering","attention-as-gain-control","interoceptive-literacy","embodied-clinical-intelligence","anterocept","cognitive-development-arc"]},
+    {id:"autonomic-home-base",title:"Autonomic Home Base",status:"draft",broader:[],narrower:[],related:["state-transition","gap-moment-training","resonant-breathing-frequency","embodied-metacognition","autonomic-regulation","state-transition-intelligence"]},
+    {id:"awe-as-regulation",title:"Awe as Regulation",status:"draft",broader:[],narrower:[],related:["autonomic-regulation","vagal-tone","gap-moment-training","clinician-durability","curiosity-as-clinical-stance"]},
+    {id:"benner-expertise-spiral",title:"Benner Expertise Spiral",status:"draft",broader:[],narrower:[],related:["clinician-durability","somnistics-certification","embodied-clinical-intelligence","tacit-knowledge-extraction","learning-under-load","cognitive-development-arc"]},
+    {id:"interoceptive-suppression-hypothesis",title:"Interoceptive Suppression Hypothesis",status:"draft",broader:[],narrower:[],related:["interoception","interoceptive-literacy","clinician-durability","diaphragmatic-blindness","embodied-metacognition","maia-2-crna","structured-interoception-training","state-drift"]},
+    {id:"interoceptive-simulator",title:"Interoceptive Simulator",status:"draft",broader:["interoceptive-technology"],narrower:[],related:["interoception","interoceptive-accuracy","closed-loop-biofeedback","structured-interoception-training","multi-phase-interoceptive-coupling"]},
+    {id:"state-drift",title:"State Drift",status:"draft",broader:[],narrower:[],related:["state-transition","neural-transition-failure","gap-moment-training","clinician-durability","embodied-metacognition","autonomic-regulation","autonomic-home-base","interoceptive-suppression-hypothesis"]},
+    {id:"neuro-respiratory-cardiac-coherence",title:"Neuro-Respiratory Cardiac Coherence",status:"draft",broader:["somnistics"],narrower:[],related:["neuroharmonics","resonant-breathing-frequency","cardiac-anchored-breathing","gamma-state-binding","vagal-tone","neurominute"]},
+    {id:"attentional-sovereignty",title:"Attentional Sovereignty",status:"draft",broader:[],narrower:[],related:["gap-moment-training","interoceptive-literacy","clinician-durability","state-transition","wanton-hamlet-agency-polarity"]},
+    {id:"cardiac-anchored-breathing",title:"Cardiac-Anchored Breathing",status:"draft",broader:["resonant-breathing-frequency"],narrower:[],related:["neurominute","anterocept","interoceptive-literacy","gap-moment-detection-engine"]},
+    {id:"interpersonal-physiological-synchrony",title:"Interpersonal Physiological Synchrony",status:"draft",broader:[],narrower:[],related:["co-regulation","autonomic-regulation","polyvagal-theory","gap-moment-training"]},
+    {id:"awe-index",title:"Awe Index",status:"draft",broader:[],narrower:[],related:["autonomic-diary","attentional-sovereignty","wanton-hamlet-agency-polarity","autonomic-regulation","gap-moment-training","vagal-tone"]},
+    {id:"hormesis-durability-model",title:"Hormesis-Durability Model",status:"draft",broader:[],narrower:[],related:["clinician-durability","minimum-effective-dose","titration-to-effect","gap-moment-training","non-ergodic-risk","cognitive-development-arc"]},
+    {id:"contemplative-progressive-overload",title:"Contemplative Progressive Overload",status:"draft",broader:["embodied-metacognition"],narrower:[],related:["neurominute","hormesis-durability-model","minimum-effective-dose","titration-to-effect","learning-under-load"]},
+    {id:"language-of-the-nurse",title:"Language of the Nurse",status:"draft",broader:[],narrower:[],related:["somnistics","neurominute","co-regulation","neurominutes-meta-glasses"]},
+    {id:"in-shift-mental-hygiene",title:"In-Shift Mental Hygiene",status:"draft",broader:["gap-moment-training"],narrower:[],related:["neurominute","clinician-durability","second-victim-phenomenon"]},
+    {id:"vitarka-vicara-integration",title:"Vitarka-Vicara Integration",status:"draft",broader:["hemispheric-rebalancing"],narrower:[],related:["neuroharmonics","gamma-state-binding","embodied-metacognition","nondual-clinical-awareness","self-remembering"]},
+    {id:"neural-sovereignty",title:"Neural Sovereignty",status:"draft",broader:["somnistics"],narrower:[],related:["multiplatform-hardware-integration","neuroadaptive-training-system","closed-loop-biofeedback","interoceptive-technology"]},
+    {id:"dmn-voluntary-control",title:"DMN Voluntary Control",status:"draft",broader:["nondual-clinical-awareness"],narrower:[],related:["attention-as-gain-control","state-transition-intelligence","embodied-metacognition","neurogating"]},
+    {id:"nondual-clinical-awareness",title:"Nondual Clinical Awareness",status:"draft",broader:["embodied-metacognition"],narrower:["dmn-voluntary-control"],related:["self-remembering","attention-as-gain-control","clinician-durability","gap-moment-training"]},
+    {id:"alpha-theta-crossover",title:"Alpha-Theta Crossover",status:"draft",broader:["neuroharmonics"],narrower:[],related:["gamma-state-binding","vitarka-vicara-integration","contemplative-progressive-overload"]},
+    {id:"adversity-visualization",title:"Adversity Visualization",status:"draft",broader:[],narrower:[],related:["gap-moment-training","contemplative-progressive-overload","learning-under-load","non-ergodic-risk","clinician-durability","embodied-metacognition"]},
+    {id:"wanton-hamlet-agency-polarity",title:"Wanton-Hamlet Agency Polarity",status:"draft",broader:[],narrower:[],related:["gap-moment-training","attentional-sovereignty","state-transition","autonomic-regulation","autonomic-diary"]},
+    {id:"cognitive-development-arc",title:"Cognitive Development Arc",status:"draft",broader:["agency-consciousness-integration"],narrower:[],related:["benner-expertise-spiral","embodied-metacognition","consilience-by-translation","secure-attachment-to-reality","state-transition-intelligence","hormesis-durability-model"]},
+    {id:"neurohike",title:"NeuroHike",status:"draft",broader:[],narrower:[],related:["neurominute","gap-moment-training","resonant-breathing-frequency","embodied-metacognition","structured-interoception-training"]},
+    {id:"structured-interoception-training",title:"Structured Interoception Training",status:"draft",broader:["gap-moment-training"],narrower:[],related:["interoceptive-literacy","resonant-breathing-frequency","contemplative-progressive-overload","neurominute","learning-under-load","hormesis-durability-model"]},
+    {id:"layered-intervention-stack",title:"Layered Intervention Stack",status:"draft",broader:[],narrower:[],related:["neurominute","gap-moment-codex","titration-to-effect","minimum-effective-dose","anterocept"]},
+    {id:"agency-consciousness-integration",title:"Agency-Consciousness Integration",status:"draft",broader:[],narrower:["cognitive-development-arc"],related:["self-remembering","clinician-durability","gmt-career-arc"]},
+    {id:"secure-attachment-to-reality",title:"Secure Attachment to Reality",status:"draft",broader:[],narrower:[],related:["relevance-realization","self-remembering","interoceptive-literacy","agency-consciousness-integration","cognitive-development-arc"]},
+    {id:"five-breath-re-embodiment",title:"Five-Breath Re-Embodiment",status:"draft",broader:["gap-moment-training"],narrower:[],related:["neurominute","neuro-ouroboros","resonant-breathing-frequency","closed-loop-biofeedback"]},
+    {id:"state-transition-intelligence",title:"State Transition Intelligence",status:"draft",broader:[],narrower:[],related:["state-transition","gap-moment-training","neurogating","clinician-durability","autonomic-regulation","cognitive-development-arc"]},
+    {id:"curiosity-as-clinical-stance",title:"Curiosity as Clinical Stance",status:"draft",broader:[],narrower:[],related:["interoceptive-literacy","clinician-durability","gap-moment-training","anterocept"]},
+    {id:"crna-shift-architect",title:"CRNA Shift Architect",status:"draft",broader:[],narrower:[],related:["gap-moment-training","autonomic-regulation","demand-biomarkers","minimum-effective-dose","agent-quartet-framework"]},
+    {id:"agent-quartet-framework",title:"Agent Quartet Framework",status:"draft",broader:[],narrower:[],related:["crna-shift-architect","tacit-knowledge-extraction","market-intelligence","multi-llm-knowledge-construction"]},
+    {id:"multiplatform-hardware-integration",title:"Multiplatform Hardware Integration",status:"draft",broader:[],narrower:[],related:[]},
+    {id:"neurominutes-meta-glasses",title:"NeuroMinutes for Meta Glasses",status:"draft",broader:[],narrower:[],related:["neurominute","vagal-tone","haptic-biofeedback","language-of-the-nurse","resonant-breathing-frequency"]},
+    {id:"autonomic-diary",title:"Autonomic Diary",status:"draft",broader:[],narrower:[],related:["gap-moment-training","attentional-sovereignty","interoceptive-literacy","wanton-hamlet-agency-polarity","awe-index"]},
+    {id:"awareness-as-neuroplastic-surface-area",title:"Awareness as Neuroplastic Surface Area",status:"draft",broader:["interoceptive-literacy"],narrower:[],related:["structured-interoception-training","five-breath-re-embodiment","interoceptive-accuracy","contemplative-progressive-overload","multi-phase-interoceptive-coupling"]},
+    {id:"transformative-learning-mezirow",title:"Transformative Learning (Mezirow)",status:"draft",broader:[],narrower:[],related:["gap-moment-training","interoceptive-literacy","somnistics","clinician-durability","benner-expertise-spiral"]},
+    {id:"neuroepistemic-layer",title:"NeuroEpistemic Layer",status:"draft",broader:[],narrower:[],related:[]},
+    {id:"finesse-vs-force",title:"Finesse vs. Force",status:"draft",broader:[],narrower:[],related:[]},
+  ],
+  edges: []
+};
+
+// ============================================
+// Build edges from node relationship data
+// ============================================
+const nodeMap = {};
+graphData.nodes.forEach(n => { nodeMap[n.id] = n; });
+
+const edgeSet = new Set();
+function addEdge(source, target, type) {
+  if (!nodeMap[source] || !nodeMap[target]) return;
+  if (source === target) return;
+  const key = [source, target].sort().join('|') + '|' + type;
+  if (edgeSet.has(key)) return;
+  edgeSet.add(key);
+  graphData.edges.push({ source, target, type });
+}
+
+graphData.nodes.forEach(n => {
+  (n.broader || []).forEach(t => addEdge(n.id, t, 'hierarchical'));
+  (n.narrower || []).forEach(t => addEdge(n.id, t, 'hierarchical'));
+  (n.related || []).forEach(t => addEdge(n.id, t, 'related'));
+});
+
+// Count connections
+const connCount = {};
+graphData.edges.forEach(e => {
+  const s = typeof e.source === 'string' ? e.source : e.source.id;
+  const t = typeof e.target === 'string' ? e.target : e.target.id;
+  connCount[s] = (connCount[s] || 0) + 1;
+  connCount[t] = (connCount[t] || 0) + 1;
+});
+graphData.nodes.forEach(n => { n.connections = connCount[n.id] || 0; });
+
+// Update stats
+const statusCounts = { canonical: 0, review: 0, draft: 0 };
+graphData.nodes.forEach(n => { statusCounts[n.status] = (statusCounts[n.status] || 0) + 1; });
+document.getElementById('stat-nodes').textContent = graphData.nodes.length;
+document.getElementById('stat-edges').textContent = graphData.edges.length;
+document.getElementById('stat-canonical').textContent = statusCounts.canonical;
+document.getElementById('stat-review').textContent = statusCounts.review;
+document.getElementById('stat-draft').textContent = statusCounts.draft;
+
+// ============================================
+// D3 Force-Directed Graph
+// ============================================
+const width = window.innerWidth;
+const height = window.innerHeight;
+
+const statusColor = {
+  canonical: '#5FC89B',
+  review: '#E8B84A',
+  draft: '#8B9DAF'
+};
+
+const svg = d3.select('#graph')
+  .attr('viewBox', [0, 0, width, height]);
+
+// Defs for glow effect
+const defs = svg.append('defs');
+const glowFilter = defs.append('filter').attr('id', 'glow');
+glowFilter.append('feGaussianBlur').attr('stdDeviation', '3').attr('result', 'coloredBlur');
+const feMerge = glowFilter.append('feMerge');
+feMerge.append('feMergeNode').attr('in', 'coloredBlur');
+feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+// Size scale
+const sizeScale = d3.scaleSqrt()
+  .domain([0, d3.max(graphData.nodes, d => d.connections)])
+  .range([4, 28]);
+
+const simulation = d3.forceSimulation(graphData.nodes)
+  .force('link', d3.forceLink(graphData.edges).id(d => d.id).distance(d => {
+    return d.type === 'hierarchical' ? 80 : 120;
+  }).strength(d => d.type === 'hierarchical' ? 0.4 : 0.15))
+  .force('charge', d3.forceManyBody().strength(d => -Math.max(80, d.connections * 12)))
+  .force('center', d3.forceCenter(width / 2, height / 2))
+  .force('collision', d3.forceCollide().radius(d => sizeScale(d.connections) + 8))
+  .force('x', d3.forceX(width / 2).strength(0.03))
+  .force('y', d3.forceY(height / 2).strength(0.03));
+
+const g = svg.append('g');
+
+// Zoom
+const zoom = d3.zoom()
+  .scaleExtent([0.15, 5])
+  .on('zoom', (event) => {
+    g.attr('transform', event.transform);
+  });
+
+svg.call(zoom);
+
+// Initial zoom to fit
+svg.call(zoom.transform, d3.zoomIdentity.translate(width * 0.05, height * 0.05).scale(0.9));
+
+// Links
+const link = g.append('g')
+  .selectAll('line')
+  .data(graphData.edges)
+  .join('line')
+  .attr('stroke', d => d.type === 'hierarchical' ? 'rgba(95, 200, 155, 0.45)' : 'rgba(95, 200, 155, 0.15)')
+  .attr('stroke-width', d => d.type === 'hierarchical' ? 1.5 : 0.8)
+  .attr('stroke-dasharray', d => d.type === 'related' ? '4,4' : 'none');
+
+// Nodes
+const node = g.append('g')
+  .selectAll('g')
+  .data(graphData.nodes)
+  .join('g')
+  .attr('cursor', 'pointer')
+  .call(d3.drag()
+    .on('start', dragstarted)
+    .on('drag', dragged)
+    .on('end', dragended));
+
+// Node circles
+node.append('circle')
+  .attr('r', d => sizeScale(d.connections))
+  .attr('fill', d => statusColor[d.status] || '#8B9DAF')
+  .attr('fill-opacity', 0.85)
+  .attr('stroke', d => statusColor[d.status] || '#8B9DAF')
+  .attr('stroke-width', 1.5)
+  .attr('stroke-opacity', 0.4)
+  .style('filter', d => d.connections > 8 ? 'url(#glow)' : 'none');
+
+// Labels for nodes with enough connections
+node.filter(d => d.connections >= 4 || d.status === 'canonical')
+  .append('text')
+  .text(d => d.title.length > 22 ? d.title.slice(0, 20) + '...' : d.title)
+  .attr('x', d => sizeScale(d.connections) + 5)
+  .attr('y', 4)
+  .attr('fill', '#F5F5F0')
+  .attr('fill-opacity', 0.7)
+  .attr('font-size', d => d.connections > 10 ? '11px' : '9px')
+  .attr('font-family', 'Poppins, sans-serif')
+  .attr('font-weight', d => d.connections > 10 ? '400' : '300')
+  .attr('letter-spacing', '-0.025em')
+  .style('pointer-events', 'none');
+
+// Tooltip
+const tooltip = d3.select('#tooltip');
+
+node.on('mouseover', function(event, d) {
+  const statusColors = { canonical: '#5FC89B', review: '#E8B84A', draft: '#8B9DAF' };
+  const statusBg = { canonical: 'rgba(95,200,155,0.15)', review: 'rgba(232,184,74,0.15)', draft: 'rgba(139,157,175,0.15)' };
+
+  tooltip.html(`
+    <div class="tt-title">${d.title}</div>
+    <span class="tt-status" style="background:${statusBg[d.status]};color:${statusColors[d.status]}">${d.status}</span>
+    <div class="tt-connections">${d.connections} connection${d.connections !== 1 ? 's' : ''}</div>
+  `)
+    .style('left', (event.clientX + 16) + 'px')
+    .style('top', (event.clientY - 10) + 'px')
+    .style('opacity', 1);
+
+  // Highlight connected
+  const connected = new Set();
+  graphData.edges.forEach(e => {
+    const s = typeof e.source === 'string' ? e.source : e.source.id;
+    const t = typeof e.target === 'string' ? e.target : e.target.id;
+    if (s === d.id) connected.add(t);
+    if (t === d.id) connected.add(s);
+  });
+
+  node.select('circle')
+    .attr('fill-opacity', n => n.id === d.id || connected.has(n.id) ? 1 : 0.12)
+    .attr('stroke-opacity', n => n.id === d.id || connected.has(n.id) ? 0.8 : 0.05);
+
+  node.selectAll('text')
+    .attr('fill-opacity', n => n.id === d.id || connected.has(n.id) ? 1 : 0.08);
+
+  link
+    .attr('stroke-opacity', e => {
+      const s = typeof e.source === 'string' ? e.source : e.source.id;
+      const t = typeof e.target === 'string' ? e.target : e.target.id;
+      return s === d.id || t === d.id ? 1 : 0.03;
+    })
+    .attr('stroke-width', e => {
+      const s = typeof e.source === 'string' ? e.source : e.source.id;
+      const t = typeof e.target === 'string' ? e.target : e.target.id;
+      if (s === d.id || t === d.id) return e.type === 'hierarchical' ? 2.5 : 1.5;
+      return e.type === 'hierarchical' ? 1.5 : 0.8;
+    });
+
+  d3.select(this).select('circle')
+    .transition().duration(200)
+    .attr('r', sizeScale(d.connections) * 1.3);
+})
+.on('mousemove', function(event) {
+  tooltip
+    .style('left', (event.clientX + 16) + 'px')
+    .style('top', (event.clientY - 10) + 'px');
+})
+.on('mouseout', function(event, d) {
+  tooltip.style('opacity', 0);
+
+  node.select('circle')
+    .attr('fill-opacity', 0.85)
+    .attr('stroke-opacity', 0.4);
+
+  node.selectAll('text')
+    .attr('fill-opacity', 0.7);
+
+  link
+    .attr('stroke-opacity', 1)
+    .attr('stroke', e => e.type === 'hierarchical' ? 'rgba(95, 200, 155, 0.45)' : 'rgba(95, 200, 155, 0.15)')
+    .attr('stroke-width', e => e.type === 'hierarchical' ? 1.5 : 0.8);
+
+  d3.select(this).select('circle')
+    .transition().duration(200)
+    .attr('r', sizeScale(d.connections));
+})
+.on('click', function(event, d) {
+  event.stopPropagation();
+  openPanel(d);
+});
+
+// Click on background to close panel
+svg.on('click', () => closePanel());
+
+// Simulation tick
+simulation.on('tick', () => {
+  link
+    .attr('x1', d => d.source.x)
+    .attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x)
+    .attr('y2', d => d.target.y);
+
+  node.attr('transform', d => `translate(${d.x},${d.y})`);
+});
+
+// Drag
+function dragstarted(event) {
+  if (!event.active) simulation.alphaTarget(0.3).restart();
+  event.subject.fx = event.subject.x;
+  event.subject.fy = event.subject.y;
+}
+
+function dragged(event) {
+  event.subject.fx = event.x;
+  event.subject.fy = event.y;
+}
+
+function dragended(event) {
+  if (!event.active) simulation.alphaTarget(0);
+  event.subject.fx = null;
+  event.subject.fy = null;
+}
+
+// ============================================
+// Side Panel
+// ============================================
+function openPanel(d) {
+  const panel = document.getElementById('side-panel');
+  const content = document.getElementById('panel-content');
+
+  const statusColors = { canonical: '#5FC89B', review: '#E8B84A', draft: '#8B9DAF' };
+  const statusBg = { canonical: 'rgba(95,200,155,0.15)', review: 'rgba(232,184,74,0.15)', draft: 'rgba(139,157,175,0.15)' };
+
+  // Get connections
+  const broader = [], narrower = [], related = [];
+  graphData.edges.forEach(e => {
+    const s = typeof e.source === 'string' ? e.source : e.source.id;
+    const t = typeof e.target === 'string' ? e.target : e.target.id;
+    if (e.type === 'hierarchical') {
+      if ((d.broader || []).includes(t) || (d.broader || []).includes(s)) {
+        if (s === d.id && nodeMap[t]) broader.push(nodeMap[t]);
+        if (t === d.id && nodeMap[s]) broader.push(nodeMap[s]);
+      }
+      if ((d.narrower || []).includes(t) || (d.narrower || []).includes(s)) {
+        if (s === d.id && nodeMap[t]) narrower.push(nodeMap[t]);
+        if (t === d.id && nodeMap[s]) narrower.push(nodeMap[s]);
+      }
+    }
+  });
+
+  // Rebuild from raw data
+  const broaderNodes = (d.broader || []).filter(id => nodeMap[id]).map(id => nodeMap[id]);
+  const narrowerNodes = (d.narrower || []).filter(id => nodeMap[id]).map(id => nodeMap[id]);
+  const relatedNodes = (d.related || []).filter(id => nodeMap[id]).map(id => nodeMap[id]);
+
+  function renderLinks(nodes) {
+    if (!nodes.length) return '<div class="panel-empty">None</div>';
+    return nodes.map(n =>
+      `<a class="panel-link" onclick="navigateTo('${n.id}')">${n.title} <span style="opacity:0.4;font-size:10px">${n.status}</span></a>`
+    ).join('');
+  }
+
+  content.innerHTML = `
+    <div class="panel-title">${d.title}</div>
+    <div class="panel-slug">${d.id}</div>
+    <div class="panel-badge" style="background:${statusBg[d.status]};color:${statusColors[d.status]}">${d.status}</div>
+
+    <div class="panel-section">
+      <h3>Broader (parent concepts)</h3>
+      ${renderLinks(broaderNodes)}
+    </div>
+
+    <div class="panel-section">
+      <h3>Narrower (child concepts)</h3>
+      ${renderLinks(narrowerNodes)}
+    </div>
+
+    <div class="panel-section">
+      <h3>Related</h3>
+      ${renderLinks(relatedNodes)}
+    </div>
+
+    <div class="panel-section">
+      <h3>Statistics</h3>
+      <div style="font-size:12px;color:rgba(245,245,240,0.5);line-height:1.8">
+        Total connections: <span style="color:#5FC89B;font-weight:400">${d.connections}</span><br>
+        Broader: <span style="color:#F5F5F0">${broaderNodes.length}</span> &nbsp;
+        Narrower: <span style="color:#F5F5F0">${narrowerNodes.length}</span> &nbsp;
+        Related: <span style="color:#F5F5F0">${relatedNodes.length}</span>
+      </div>
+    </div>
+  `;
+
+  panel.classList.add('open');
+}
+
+function closePanel() {
+  document.getElementById('side-panel').classList.remove('open');
+}
+
+function navigateTo(id) {
+  const n = nodeMap[id];
+  if (!n) return;
+
+  // Center on node
+  const transform = d3.zoomTransform(svg.node());
+  const targetX = width / 2 - n.x * transform.k;
+  const targetY = height / 2 - n.y * transform.k;
+
+  svg.transition().duration(750)
+    .call(zoom.transform, d3.zoomIdentity.translate(targetX, targetY).scale(transform.k));
+
+  // Open panel for the new node
+  setTimeout(() => openPanel(n), 200);
+
+  // Pulse effect
+  node.filter(d => d.id === id)
+    .select('circle')
+    .transition().duration(300)
+    .attr('r', sizeScale(n.connections) * 1.8)
+    .attr('fill-opacity', 1)
+    .transition().duration(500)
+    .attr('r', sizeScale(n.connections))
+    .attr('fill-opacity', 0.85);
+}
+
+// ============================================
+// Search
+// ============================================
+const searchInput = document.getElementById('search');
+searchInput.addEventListener('input', function() {
+  const query = this.value.toLowerCase().trim();
+
+  if (!query) {
+    node.select('circle')
+      .attr('fill-opacity', 0.85)
+      .attr('stroke-opacity', 0.4);
+    node.selectAll('text')
+      .attr('fill-opacity', 0.7);
+    link.attr('stroke-opacity', 1);
+    return;
+  }
+
+  const matches = new Set();
+  graphData.nodes.forEach(n => {
+    if (n.title.toLowerCase().includes(query) || n.id.toLowerCase().includes(query)) {
+      matches.add(n.id);
+    }
+  });
+
+  node.select('circle')
+    .attr('fill-opacity', n => matches.has(n.id) ? 1 : 0.08)
+    .attr('stroke-opacity', n => matches.has(n.id) ? 1 : 0.02)
+    .attr('stroke-width', n => matches.has(n.id) ? 3 : 1.5);
+
+  node.selectAll('text')
+    .attr('fill-opacity', n => matches.has(n.id) ? 1 : 0.05);
+
+  link.attr('stroke-opacity', 0.03);
+
+  // If only one match, center on it
+  if (matches.size === 1) {
+    const id = [...matches][0];
+    const n = nodeMap[id];
+    if (n && n.x && n.y) {
+      const transform = d3.zoomTransform(svg.node());
+      svg.transition().duration(600)
+        .call(zoom.transform, d3.zoomIdentity.translate(width/2 - n.x * 1.2, height/2 - n.y * 1.2).scale(1.2));
+    }
+  }
+});
+
+// Keyboard shortcut
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && document.activeElement !== searchInput) {
+    e.preventDefault();
+    searchInput.focus();
+  }
+  if (e.key === 'Escape') {
+    searchInput.value = '';
+    searchInput.dispatchEvent(new Event('input'));
+    searchInput.blur();
+    closePanel();
+  }
+});
+
+// Warm up simulation
+simulation.alpha(1).restart();
+setTimeout(() => simulation.alphaTarget(0), 5000);
+</script>
+
+</body>
+</html>

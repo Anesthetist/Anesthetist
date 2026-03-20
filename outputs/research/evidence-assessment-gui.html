@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRL Evidence Assessment — March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1D2E;
+  --surface: #22253A;
+  --surface-alt: #1E2133;
+  --accent: #5FC89B;
+  --amber: #E8B84A;
+  --red: #E85A5A;
+  --text: #F5F5F0;
+  --text-secondary: #8B9DAF;
+  --radius: 8px;
+  --sidebar-width: 260px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--surface);
+  border-right: 1px solid rgba(95,200,155,0.12);
+  overflow-y: auto;
+  z-index: 100;
+  padding: 28px 0 40px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-brand {
+  padding: 0 24px 20px;
+  border-bottom: 1px solid rgba(95,200,155,0.1);
+  margin-bottom: 16px;
+}
+
+.sidebar-brand .logo {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sidebar-brand .sub {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.sidebar nav { padding: 0 12px; }
+
+.sidebar nav a {
+  display: block;
+  padding: 7px 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 400;
+  border-radius: 6px;
+  transition: all 0.2s;
+  margin-bottom: 1px;
+}
+
+.sidebar nav a:hover { color: var(--text); background: rgba(95,200,155,0.06); }
+.sidebar nav a.active { color: var(--accent); background: rgba(95,200,155,0.1); }
+
+.sidebar nav .nav-group {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 12px 5px;
+  opacity: 0.6;
+}
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 16px; left: 16px;
+  z-index: 200;
+  width: 40px; height: 40px;
+  background: var(--surface);
+  border: 1px solid rgba(95,200,155,0.2);
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Main ── */
+.main {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.header {
+  padding: 60px 40px 40px;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--accent), transparent) 1;
+}
+
+.header .org {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 2em;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.header .subtitle {
+  font-size: 1.1em;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+.header .meta-pills {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.header .meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: var(--surface);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border: 1px solid rgba(95,200,155,0.12);
+}
+
+.header .meta-pill strong { color: var(--text); font-weight: 400; }
+
+/* ── Content ── */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+
+.content h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+  color: var(--accent);
+  margin: 56px 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(95,200,155,0.15);
+}
+
+.content h2:first-child { margin-top: 0; }
+
+.content h3 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: var(--text);
+  margin: 36px 0 14px;
+}
+
+.content h4 {
+  font-size: 1.05em;
+  font-weight: 400;
+  color: var(--accent);
+  margin: 28px 0 10px;
+  opacity: 0.85;
+}
+
+.content p { margin-bottom: 16px; }
+
+.content ul, .content ol {
+  margin: 0 0 16px 20px;
+}
+
+.content li { margin-bottom: 8px; }
+
+.content strong { font-weight: 400; color: var(--accent); }
+
+.content em { font-style: italic; color: var(--text-secondary); }
+
+.content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(95,200,155,0.3);
+  transition: border-color 0.2s;
+}
+
+.content a:hover { border-color: var(--accent); }
+
+/* Blockquote */
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 12px 20px;
+  margin: 20px 0;
+  background: rgba(95,200,155,0.04);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Code */
+code {
+  background: var(--bg);
+  color: var(--accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+pre {
+  background: var(--bg);
+  border: 1px solid rgba(95,200,155,0.1);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+pre code { background: none; padding: 0; }
+
+/* ── Horizontal Rule ── */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(95,200,155,0.25), transparent);
+  margin: 48px 0;
+}
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: var(--radius);
+  border: 1px solid rgba(95,200,155,0.15);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+thead th {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 500;
+  text-align: left;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(odd) { background: var(--surface); }
+tbody tr:nth-child(even) { background: var(--surface-alt); }
+
+tbody td {
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(95,200,155,0.06);
+  vertical-align: top;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.badge-supported { background: var(--accent); color: var(--bg); }
+.badge-partial { background: var(--amber); color: var(--bg); }
+.badge-insufficient { background: var(--text-secondary); color: var(--bg); }
+.badge-contradicted { background: var(--red); color: #fff; }
+.badge-hypothesis { background: rgba(139,157,175,0.25); color: var(--text-secondary); border: 1px solid rgba(139,157,175,0.3); }
+.badge-speculative { background: rgba(232,90,90,0.15); color: var(--red); border: 1px solid rgba(232,90,90,0.2); }
+
+.badge-krl {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  background: rgba(95,200,155,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(95,200,155,0.25);
+}
+
+.badge-evidence {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  background: rgba(95,200,155,0.1);
+  color: var(--accent);
+  margin-right: 2px;
+}
+
+/* ── Evidence Grade Box ── */
+.evidence-box {
+  margin: 20px 0;
+  padding: 14px 18px;
+  background: rgba(95,200,155,0.05);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 14px;
+}
+
+.evidence-box .grade-label {
+  font-weight: 400;
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+/* ── Key Finding Callout ── */
+.callout {
+  margin: 24px 0;
+  padding: 18px 22px;
+  background: rgba(95,200,155,0.05);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.callout-title {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.callout-amber {
+  border-left-color: var(--amber);
+  background: rgba(232,184,74,0.04);
+}
+
+.callout-amber .callout-title { color: var(--amber); }
+
+.callout-red {
+  border-left-color: var(--red);
+  background: rgba(232,90,90,0.04);
+}
+
+.callout-red .callout-title { color: var(--red); }
+
+/* ── KRL Progress Bar ── */
+.krl-bar-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.krl-bar {
+  width: 60px;
+  height: 6px;
+  background: rgba(95,200,155,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.krl-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* ── DOI chips ── */
+.doi-chip {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(95,200,155,0.08);
+  border: 1px solid rgba(95,200,155,0.15);
+  border-radius: 12px;
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s;
+  margin: 1px 0;
+}
+
+.doi-chip:hover {
+  background: rgba(95,200,155,0.18);
+  border-color: var(--accent);
+}
+
+/* ── Study Design Cards ── */
+.study-card {
+  background: var(--surface);
+  border: 1px solid rgba(95,200,155,0.12);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.study-card h4 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.study-card .cost {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(232,184,74,0.12);
+  color: var(--amber);
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.study-card .timeline-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(95,200,155,0.1);
+  color: var(--accent);
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+/* ── Gap severity ── */
+.severity-critical { color: var(--red); font-weight: 400; }
+.severity-high { color: var(--amber); font-weight: 400; }
+.severity-moderate { color: var(--text-secondary); font-weight: 400; }
+
+/* ── Footer ── */
+.footer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  border-top: 1px solid rgba(95,200,155,0.1);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.footer .vigil { color: var(--accent); font-weight: 400; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .menu-toggle { display: flex; }
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); box-shadow: 4px 0 24px rgba(0,0,0,0.5); }
+  .main { margin-left: 0; }
+  .header { padding: 48px 24px 32px; }
+  .header h1 { font-size: 1.5em; }
+  .content { padding: 32px 20px 60px; }
+}
+
+/* ── Print ── */
+@media print {
+  body { background: #fff; color: #222; font-size: 11pt; }
+  .sidebar, .menu-toggle { display: none !important; }
+  .main { margin-left: 0; }
+  .header { border-image: none; border-bottom: 2px solid #5FC89B; }
+  .header h1 { color: #22253A; }
+  .header .org, .header .subtitle { color: #555; }
+  .content h2 { color: #22253A; border-bottom-color: #5FC89B; }
+  .content h3 { color: #22253A; }
+  .content strong { color: #22253A; }
+  .content a { color: #22253A; }
+  blockquote { border-left-color: #5FC89B; background: #f5f5f0; color: #555; }
+  thead th { background: #5FC89B !important; color: #1A1D2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  tbody tr:nth-child(odd) { background: #f5f5f0; }
+  tbody tr:nth-child(even) { background: #fff; }
+  .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .evidence-box, .callout { background: #f5f5f0; border-left-color: #5FC89B; }
+  .study-card { background: #f5f5f0; border-color: #ccc; }
+  .footer { color: #888; }
+}
+
+/* Scroll indicator for active nav */
+.sidebar nav a { position: relative; }
+</style>
+</head>
+<body>
+
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle navigation">&#9776;</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div class="logo">Somnistics Research Labs</div>
+    <div class="sub">Evidence Assessment</div>
+  </div>
+  <nav id="nav">
+    <div class="nav-group">Overview</div>
+    <a href="#executive-summary">Executive Summary</a>
+    <a href="#methodology">Methodology</a>
+    <div class="nav-group">Part 1 — Established Science</div>
+    <a href="#s1-1">1.1 Autonomic Regulation &amp; HRV</a>
+    <a href="#s1-2">1.2 Resonant Breathing</a>
+    <a href="#s1-3">1.3 Interoception</a>
+    <a href="#s1-4">1.4 Clinician Burnout</a>
+    <a href="#s1-5">1.5 DMN Modulation</a>
+    <div class="nav-group">Part 2 — Active Debate</div>
+    <a href="#s2-1">2.1 Polyvagal Theory</a>
+    <a href="#s2-2">2.2 NeuroHarmonics</a>
+    <a href="#s2-3">2.3 Hemispheric Rebalancing</a>
+    <div class="nav-group">Part 3 — SRL Hypotheses</div>
+    <a href="#s3-1">3.1 Interoceptive Suppression</a>
+    <a href="#s3-2">3.2 State Drift</a>
+    <a href="#s3-3">3.3 Cardiac-Anchored Breathing</a>
+    <a href="#s3-4">3.4 Embodied Metacognition</a>
+    <a href="#s3-5">3.5 Contemplative Overload</a>
+    <div class="nav-group">Parts 4–6</div>
+    <a href="#gaps">4. Evidence Gaps</a>
+    <a href="#voids">4.2 Literature Voids</a>
+    <a href="#research">5. Research Program</a>
+    <a href="#calibration">6. Claim Calibration</a>
+    <div class="nav-group">Appendices</div>
+    <a href="#appendix-a">A. Concept Matrix</a>
+    <a href="#appendix-b">B. References</a>
+  </nav>
+</aside>
+
+<div class="main">
+  <header class="header">
+    <div class="org">Somnistics Research Labs</div>
+    <h1>SRL Evidence Assessment</h1>
+    <div class="subtitle">Biomedical Validation of Core Constructs</div>
+    <div class="meta-pills">
+      <span class="meta-pill"><strong>March 2026</strong></span>
+      <span class="meta-pill"><strong>44</strong> concepts assessed</span>
+      <span class="meta-pill"><strong>150+</strong> PubMed references</span>
+      <span class="meta-pill"><strong>8</strong> thematic clusters</span>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <!-- ═══════════════ EXECUTIVE SUMMARY ═══════════════ -->
+    <h2 id="executive-summary">Executive Summary</h2>
+
+    <p>Somnistics Research Labs (SRL) proposes that autonomic regulation, interoceptive awareness, and structured breathwork can be trained as clinical competencies to reduce burnout, improve performance, and extend career longevity in certified registered nurse anesthetists (CRNAs) and other high-acuity clinicians. This report presents the results of a systematic biomedical validation sweep conducted against the SRL knowledge vault &mdash; 44 concepts across 8 thematic clusters, cross-referenced against 150+ PubMed articles (2014&ndash;2026 focus, with foundational literature back to 1976).</p>
+
+    <div class="callout">
+      <div class="callout-title">Core Finding</div>
+      <p>The core physiological science underlying SRL&rsquo;s approach is <strong>strong</strong>. Slow breathing at resonant frequency (~0.1 Hz) improves HRV via baroreflex resonance, with meta-analytic support from 223 studies (Laborde et al., 2022). HRV biofeedback demonstrates medium effect sizes for depression and autonomic outcomes (Vann-Adibe et al., 2025). Interoception is a mature and expanding neuroscience field with validated instruments (MAIA-2), robust neuroimaging evidence, and growing clinical applications including a $4M NIH initiative.</p>
+    </div>
+
+    <p>Where SRL&rsquo;s position becomes more nuanced is at the interface of established science and novel application. Several SRL-original constructs &mdash; the Interoceptive Suppression Hypothesis (ISH), State Drift, Cardiac-Anchored Breathing, Contemplative Progressive Overload &mdash; represent scientifically plausible hypotheses built on solid mechanistic foundations but currently lacking direct empirical validation.</p>
+
+    <div class="callout callout-amber">
+      <div class="callout-title">Critical Reframing Needed</div>
+      <p>The polyvagal theory framework, which SRL has used as a theoretical anchor, faces a significant 2026 challenge from 39 domain experts (Grossman et al., 2026). Additionally, binaural beat entrainment &mdash; the mechanistic claim underlying NeuroHarmonics &mdash; is not reliably supported by the EEG literature (only 5 of 14 studies confirming entrainment; Ingendoh et al., 2023).</p>
+    </div>
+
+    <p>This report distinguishes between what the literature establishes, what remains actively debated, and what SRL proposes as testable hypotheses. It identifies five literature voids that represent genuine research opportunities and proposes three priority studies with designs, power analyses, and cost estimates.</p>
+
+    <hr>
+
+    <!-- ═══════════════ METHODOLOGY ═══════════════ -->
+    <h2 id="methodology">Methodology</h2>
+
+    <h3>Validation Approach</h3>
+    <p>The biomedical validation sweep was conducted between March 15&ndash;19, 2026. The process involved:</p>
+    <ol>
+      <li><strong>Concept inventory.</strong> All 44 active concepts in the SRL knowledge vault were categorized into 8 thematic clusters: Autonomic/HRV/Vagal (10 concepts), Interoception/Body Sensing (9), Breathwork/Respiratory (4), Neurofeedback/EEG/Brainwaves (6), Clinician Performance/Durability (8), Consciousness/Contemplative (7).</li>
+      <li><strong>PubMed literature search.</strong> For each concept, targeted PubMed queries were constructed using MeSH terms and free-text combinations. Over 150 articles were screened for relevance.</li>
+      <li><strong>Evidence grading.</strong> Each concept was assessed against the SRL Evidence Grading Framework, which adapts Oxford CEBM levels (1a&ndash;5b) and incorporates Knowledge Readiness Levels (KRL 1&ndash;9) adapted from NASA&rsquo;s Technology Readiness Levels.</li>
+      <li><strong>Cross-referencing.</strong> Vault claims were compared against PubMed evidence. Where the vault cited specific mechanisms, effect sizes, or clinical outcomes, these were verified or flagged as unsupported.</li>
+      <li><strong>Deep dives.</strong> Three concept clusters received extended analysis: (a) polyvagal theory reframing and cardiac-anchored breathing, (b) ISH, State Drift, and MAIA-2-CRNA, and (c) binaural beat entrainment, hormesis, and micro-dose intervention dosing.</li>
+    </ol>
+
+    <h3>Limitations</h3>
+    <ul>
+      <li>BioMistral queries were planned but could not be executed due to tool access restrictions; all analysis relies on PubMed literature search and domain synthesis.</li>
+      <li>The validation focused on mechanism plausibility and evidence existence, not on exhaustive systematic review methodology. This is a scoping assessment, not a Cochrane review.</li>
+      <li>Publication bias applies to all PubMed-derived conclusions: positive results are overrepresented.</li>
+    </ul>
+
+    <hr>
+
+    <!-- ═══════════════ PART 1 ═══════════════ -->
+    <h2 id="part-1">Part 1: Established Science <span class="badge-krl">KRL 5&ndash;7</span></h2>
+    <p>These concepts rest on foundations with strong meta-analytic or RCT support. SRL builds on this science but did not originate it.</p>
+
+    <!-- 1.1 -->
+    <h3 id="s1-1">1.1 Autonomic Regulation and HRV as Biomarker</h3>
+    <p>The capacity to shift flexibly between sympathetic and parasympathetic states &mdash; and the measurement of this capacity via HRV &mdash; is supported by converging evidence at the highest quality levels.</p>
+    <ul>
+      <li><strong>Meta-analytic support.</strong> Galin et al. (2026) conducted a meta-analysis of 56 longitudinal studies confirming HRV (RMSSD, SDNN, HF, LF, VLF) as a prospective predictor of depressive symptoms with small but significant negative correlations. <a href="https://doi.org/10.1016/j.jad.2026.121388" class="doi-chip" target="_blank">DOI</a> Vann-Adibe et al. (2025) found medium effect sizes for remote HRV biofeedback on both depression improvement (g&nbsp;=&nbsp;-0.41) and HRV increase (g&nbsp;=&nbsp;0.443). <a href="https://doi.org/10.1007/s10484-025-09750-w" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Mechanistic validation.</strong> The neurovisceral integration model (Thayer &amp; Lane, 2000; Smith et al., 2017) explains HRV as reflecting prefrontal cortex-to-amygdala inhibitory control via GABAergic pathways. This model is independently validated through neuroimaging and is not dependent on polyvagal theory. <a href="https://doi.org/10.1016/j.neubiorev.2011.11.009" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Emerging direction.</strong> AI-driven adaptive biofeedback is identified as a future direction in multiple reviews, validating SRL&rsquo;s adaptive technology thesis. <a href="https://doi.org/10.3892/mi.2025.236" class="doi-chip" target="_blank">DOI</a></li>
+    </ul>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">1a (meta-analytic)</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:67%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">6</span>
+      </span>
+      <span style="margin-left:12px;font-size:13px;color:var(--text-secondary)">SRL&rsquo;s application to CRNA populations is at KRL 4&ndash;5.</span>
+    </div>
+
+    <!-- 1.2 -->
+    <h3 id="s1-2">1.2 Resonant Breathing Frequency and Baroreflex Resonance</h3>
+    <p>The mechanism by which slow diaphragmatic breathing at ~0.1 Hz produces baroreflex resonance and maximizes HRV amplitude is among the best-validated constructs in the vault.</p>
+    <ul>
+      <li><strong>Definitive meta-analysis.</strong> Laborde et al. (2022) reviewed 223 studies and confirmed that voluntary slow breathing increases vagally-mediated HRV during practice, immediately after a single session, and after multi-session interventions. <a href="https://doi.org/10.1016/j.neubiorev.2022.104711" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Mechanistic review.</strong> Sevoz-Couche &amp; Laborde (2022) confirmed that breathing at resonant frequency increases cardiac oscillations via temporal coherence of respiratory, blood pressure, and cardiac phases. <a href="https://doi.org/10.1016/j.neubiorev.2022.104576" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Dose-response data.</strong> You et al. (2023) demonstrated that all slow-paced breathing conditions (5&ndash;7 cpm) significantly increased cardiac vagal activity versus spontaneous breathing, with measurable effects in 5-minute bouts. <a href="https://doi.org/10.1007/s10484-023-09605-2" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Neural evidence.</strong> Xiong et al. (2025) showed 0.1 Hz slow-paced breathing increases heartbeat oscillatory potentials in right prefrontal cortex. <a href="https://doi.org/10.1016/j.ijchp.2025.100571" class="doi-chip" target="_blank">DOI</a> Plantard et al. (2025) demonstrated modulation of heartbeat-evoked potentials with insular and cingulate cortex sources. <a href="https://doi.org/10.1152/jn.00118.2025" class="doi-chip" target="_blank">DOI</a></li>
+    </ul>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">1a</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:56%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">5</span>
+      </span>
+      <span style="margin-left:12px;font-size:13px;color:var(--text-secondary)">Minimum effective dose below 5 minutes is not established.</span>
+    </div>
+
+    <!-- 1.3 -->
+    <h3 id="s1-3">1.3 Interoception and the Garfinkel Trichotomy</h3>
+    <p>Interoception &mdash; the sense of the body&rsquo;s internal physiological state &mdash; is a mature neuroscience field with validated measurement tools and expanding clinical applications.</p>
+    <ul>
+      <li><strong>Neural architecture.</strong> The posterior insula processes raw sensory input; the anterior insula performs complex integration; the ACC handles error monitoring. Confirmed by Nikolova et al. (2025) using quantitative brain imaging in over 200 participants. <a href="https://doi.org/10.1523/JNEUROSCI.0787-24.2025" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Three-dimensional model.</strong> Garfinkel et al. (2015) established that interoceptive accuracy, sensibility, and metacognitive awareness are dissociable dimensions. Extended to autism (2016) and respiratory interoception (2017). <a href="https://doi.org/10.1016/j.biopsycho.2014.11.004" class="doi-chip" target="_blank">DOI</a> <a href="https://doi.org/10.1098/rstb.2016.0014" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Instrument validation.</strong> MAIA-2 is the strongest validated body awareness patient-reported outcome measure, per a 2025 COSMIN systematic review (Bravo et al., 2025). Validated across 17+ populations and languages. <a href="https://doi.org/10.3390/healthcare13243270" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Measurement debate.</strong> The Schandry heartbeat counting task is increasingly contested. Harrison et al. (2021) developed the Filter Detection Task as a more rigorous alternative. Caparco et al. (2025) demonstrated that inconsistent cardiac phase labeling introduces significant replication problems. <a href="https://doi.org/10.1016/j.biopsycho.2021.108185" class="doi-chip" target="_blank">DOI</a> <a href="https://doi.org/10.1016/j.biopsycho.2025.109078" class="doi-chip" target="_blank">DOI</a></li>
+    </ul>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">1b&ndash;2a</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:67%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">6</span>
+      </span>
+      <span style="margin-left:12px;font-size:13px;color:var(--text-secondary)">No CRNA-specific interoception data exists.</span>
+    </div>
+
+    <!-- 1.4 -->
+    <h3 id="s1-4">1.4 Clinician Burnout and the Second-Victim Phenomenon</h3>
+    <p>The prevalence and consequences of clinician burnout are extensively documented.</p>
+    <ul>
+      <li><strong>Prevalence data.</strong> ICU staff PTSD prevalence at 16.8%, anxiety at 22.8% in the second year of COVID-19 (Roger et al., 2024). In French anesthesia teams, 83% experienced incivility, with nurse anesthetists showing higher emotional exhaustion than anesthesiologists (Raft et al., 2025). <a href="https://doi.org/10.1186/s12991-023-00488-5" class="doi-chip" target="_blank">DOI</a> <a href="https://doi.org/10.1016/j.jclinane.2025.111983" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Second-victim syndrome.</strong> A 2025 meta-analysis of surgeons found: anxiety 56.3%, guilt 53.8%, sleep disturbance 50.5%, sadness 48.3% (Bryan et al., 2025). Deng et al. (2025) confirmed that over two-thirds of healthcare professionals encounter such trauma during their careers. <a href="https://doi.org/10.1093/bjs/znaf258" class="doi-chip" target="_blank">DOI</a> <a href="https://doi.org/10.1016/j.ijnurstu.2025.105248" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Institutional recognition.</strong> The AANA Wellness Ambassador MC integration into NAEP curriculum validates institutional recognition of the problem (Morgan et al., 2025). <a href="https://doi.org/10.70278/AANAJ/.0000001070" class="doi-chip" target="_blank">DOI</a></li>
+    </ul>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">1a&ndash;2a</span> prevalence; <span class="badge badge-partial">2b&ndash;3b</span> interventions
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:50%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">4&ndash;5</span>
+      </span>
+    </div>
+
+    <!-- 1.5 -->
+    <h3 id="s1-5">1.5 Default Mode Network Modulation</h3>
+    <p>The ability to modulate DMN activity through contemplative practice is well-established in neuroimaging.</p>
+    <ul>
+      <li>Sezer et al. (2022) synthesized resting-state fMRI studies showing mindfulness relates to functional connectivity changes in DMN, frontoparietal, and salience networks. <a href="https://doi.org/10.1016/j.neubiorev.2022.104583" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Bauer et al. (2019) found experienced meditators develop increased DMN-CEN coupling &mdash; active co-regulation rather than simple DMN suppression. <a href="https://doi.org/10.1523/ENEURO.0335-18.2019" class="doi-chip" target="_blank">DOI</a></li>
+      <li>SRL&rsquo;s framing &mdash; &ldquo;DMN is a tool, not an enemy; the goal is a switch, not a kill&rdquo; &mdash; aligns with the Bauer (2019) data showing co-regulation rather than suppression in experienced practitioners.</li>
+    </ul>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-supported">2a&ndash;2b</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:56%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">5</span>
+      </span>
+      <span style="margin-left:12px;font-size:13px;color:var(--text-secondary)">General: KRL 5 | CRNA-specific: KRL 2</span>
+    </div>
+
+    <hr>
+
+    <!-- ═══════════════ PART 2 ═══════════════ -->
+    <h2 id="part-2">Part 2: Active Scientific Debate</h2>
+    <p>These concepts involve mechanisms where the evidence is contested or where SRL&rsquo;s framing requires careful positioning relative to ongoing scientific disagreement.</p>
+
+    <!-- 2.1 -->
+    <h3 id="s2-1">2.1 Polyvagal Theory: The Grossman-Porges Exchange</h3>
+
+    <div class="callout callout-red">
+      <div class="callout-title">Most Consequential Finding</div>
+      <p>The SRL vault has used polyvagal theory (PVT) as a foundational theoretical framework. A 2026 publication challenges this directly. Grossman et al. (2026), with 38 co-authors &mdash; acknowledged experts in vagal neurophysiology and vertebrate evolution &mdash; contest five specific PVT claims.</p>
+    </div>
+
+    <p><strong>The critique.</strong> &ldquo;Why The Polyvagal Theory Is Untenable&rdquo; &mdash; five contested claims: (1) RSA is not a direct measure of central vagal drive; (2) PVT mischaracterizes Nucleus Ambiguus vs. Dorsal Motor Nucleus neuroanatomy; (3) PVT&rsquo;s evolutionary claims about vagal phylogeny are unsupported; (4) mammalian social behavior specificity claims are incorrect; (5) several PVT claims had been identified as mischaracterizations nearly two decades earlier. <a href="https://doi.org/10.36131/cnfioritieditore20260110" class="doi-chip" target="_blank">DOI</a></p>
+
+    <p><strong>The response.</strong> Porges (2026) responded that the critique engages a &ldquo;reconstructed proxy&rdquo; of PVT through &ldquo;persistent category errors.&rdquo; <a href="https://doi.org/10.36131/cnfioritieditore20260111" class="doi-chip" target="_blank">DOI</a></p>
+
+    <p><strong>Assessment for SRL.</strong> The critique comes from 39 domain experts in the actual physiology; the defense is procedural rather than substantive. However, the clinical interventions PVT has been used to justify are independently supported by non-PVT frameworks:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Intervention</th><th>Non-PVT Mechanism</th><th>Evidence Quality</th></tr></thead>
+        <tbody>
+          <tr><td>Slow breathing (~0.1 Hz)</td><td>Baroreflex resonance (Lehrer/Vaschillo)</td><td><span class="badge badge-supported">Strong &mdash; RCTs, meta-analyses</span></td></tr>
+          <tr><td>HRV biofeedback</td><td>Neurovisceral integration (Thayer &amp; Lane)</td><td><span class="badge badge-supported">Strong &mdash; neuroimaging + meta-analysis</span></td></tr>
+          <tr><td>Co-regulation</td><td>Attachment theory, physiological synchrony</td><td><span class="badge badge-partial">Moderate &mdash; converging evidence</span></td></tr>
+          <tr><td>Body awareness training</td><td>Interoceptive inference (Seth, Critchley)</td><td><span class="badge badge-supported">Strong &mdash; growing empirical base</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Three alternative frameworks explain SRL&rsquo;s intervention mechanisms without PVT&rsquo;s phylogenetic claims:</p>
+    <ol>
+      <li><strong>Neurovisceral Integration Model</strong> (Thayer &amp; Lane, 2000; Smith et al., 2017) &mdash; HRV reflects prefrontal-amygdala inhibitory control. Khalsa is a co-author on both the NVI update and the Grossman critique, meaning this framework is accepted by both sides.</li>
+      <li><strong>Resonance Frequency / Baroreflex Model</strong> (Lehrer &amp; Vaschillo, 2002) &mdash; a biomechanical/oscillatory phenomenon not dependent on any evolutionary theory.</li>
+      <li><strong>Interoceptive Inference / Predictive Processing</strong> (Seth, Critchley, Garfinkel) &mdash; the most theoretically current framework in computational neuroscience.</li>
+    </ol>
+
+    <div class="callout">
+      <div class="callout-title">Recommendation</div>
+      <p>Transition from PVT-dependent language to mechanism-grounded terminology. The interventions work; the theoretical label is the vulnerability. Specific replacements: &ldquo;ventral vagal state&rdquo; &rarr; &ldquo;regulated state / autonomic flexibility&rdquo;; &ldquo;neuroception&rdquo; &rarr; &ldquo;interoceptive safety appraisal&rdquo;; &ldquo;polyvagal-informed&rdquo; &rarr; &ldquo;autonomic-informed.&rdquo;</p>
+    </div>
+
+    <!-- 2.2 -->
+    <h3 id="s2-2">2.2 NeuroHarmonics and Binaural Beat Entrainment</h3>
+
+    <div class="callout callout-red">
+      <div class="callout-title">Mechanism Not Supported</div>
+      <p>SRL&rsquo;s NeuroHarmonics concept implies that binaural beats can reliably entrain brainwaves at target frequencies. The evidence does not support this specific mechanism.</p>
+    </div>
+
+    <ul>
+      <li><strong>Systematic review evidence.</strong> Ingendoh et al. (2023) reviewed 14 EEG studies specifically testing brainwave entrainment from binaural beats. Only 5 of 14 supported the entrainment hypothesis. <a href="https://doi.org/10.1371/journal.pone.0286023" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>What IS confirmed.</strong> Binaural beats produce interhemispheric alpha-band coherence &mdash; but Solca et al. (2015) explicitly stated this &ldquo;seems to reflect binaural integration rather than entrainment.&rdquo; <a href="https://doi.org/10.1016/j.heares.2015.09.011" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Clinical effects exist but through different mechanisms.</strong> A meta-analysis of 15 RCTs (n=1047) found binaural beats significantly reduced perioperative anxiety (SMD = -1.38, p&lt;0.0001), though heterogeneity was substantial (I&sup2; = 91.6%). <a href="https://doi.org/10.1016/j.ctim.2025.103299" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Alternative.</strong> Dos Anjos et al. (2024) found isochronic tones produced significantly greater EEG power changes than binaural beats (p&lt;0.001). <a href="https://doi.org/10.1016/j.neuroscience.2024.07.014" class="doi-chip" target="_blank">DOI</a></li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-title">Recommendation</div>
+      <p>Retire the term &ldquo;entrainment&rdquo; from NeuroHarmonics claims. Use &ldquo;auditory modulation&rdquo; or &ldquo;auditory-autonomic coupling.&rdquo; The breath-pacing component (Layer 2) has strong evidence; the binaural entrainment component (Layer 1) does not.</p>
+    </div>
+
+    <!-- 2.3 -->
+    <h3 id="s2-3">2.3 Hemispheric Rebalancing</h3>
+    <p>The McGilchrist framework (left-hemisphere analytical focus versus right-hemisphere broad awareness) is a useful heuristic but neuroscience has largely moved beyond strict lateralization models.</p>
+    <ul>
+      <li>Yordanova et al. (2020) did find lateralized connectivity patterns during meditation &mdash; left-hemispheric theta networks and right-hemispheric alpha networks. However, both hemispheres contribute to most cognitive functions. <a href="https://doi.org/10.1038/s41598-020-64324-6" class="doi-chip" target="_blank">DOI</a></li>
+      <li>No published evidence demonstrates that SRL practices specifically &ldquo;rebalance&rdquo; hemispheric activity.</li>
+    </ul>
+    <div class="callout">
+      <div class="callout-title">Recommendation</div>
+      <p>Reframe from &ldquo;hemispheric rebalancing&rdquo; to &ldquo;attentional mode shifting&rdquo; or &ldquo;network reconfiguration&rdquo; &mdash; terms consistent with current network neuroscience while preserving the clinical insight.</p>
+    </div>
+
+    <hr>
+
+    <!-- ═══════════════ PART 3 ═══════════════ -->
+    <h2 id="part-3">Part 3: SRL-Original Hypotheses <span class="badge-krl">KRL 2&ndash;4</span></h2>
+    <p>Novel constructs with mechanistic plausibility but limited direct evidence. These represent SRL&rsquo;s intellectual contribution to the field and should be framed as hypotheses to be tested, not established findings.</p>
+
+    <!-- 3.1 -->
+    <h3 id="s3-1">3.1 Interoceptive Suppression Hypothesis (ISH)</h3>
+    <p><strong>The hypothesis.</strong> Professional clinical training systematically suppresses interoceptive awareness through a &ldquo;hidden curriculum&rdquo; of emotional detachment, creating a population with intact physiological signaling but degraded subjective awareness &mdash; a discrepancy that drives burnout, compassion fatigue, and clinical error.</p>
+    <h4>Supporting evidence (indirect)</h4>
+    <ul>
+      <li>De Berardis et al. (2023): 14.8% of 1,445 Italian healthcare workers met criteria for alexithymia, with significantly higher emotional exhaustion and depersonalization. <a href="https://doi.org/10.3390/brainsci13111550" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Riethof et al. (2020): alexithymia correlated with burnout (r = 0.41) and emotional exhaustion (r = 0.37) in 114 female healthcare professionals. <a href="https://doi.org/10.1177/0300060519887633" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Aldaz et al. (2019): alexithymia was a stronger predictor of burnout than emotional intelligence in 159 nursing assistants. <a href="https://doi.org/10.1111/jan.14153" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Crivelli et al. (2025): discrepancies between physiological activation and subjective stress perception in neurosurgeons &mdash; precisely the pattern ISH predicts. <a href="https://doi.org/10.3389/fpsyg.2025.1568430" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Six PubMed results for &ldquo;hidden curriculum emotional suppression medical education&rdquo; confirm this is a recognized but understudied phenomenon.</li>
+    </ul>
+    <h4>Counter-evidence</h4>
+    <p>Handford et al. (2013) found that clinical practice preserved empathic accuracy against age-related decline, suggesting clinical exposure may enhance rather than suppress certain forms of perceptual sensitivity. ISH may need to distinguish between expertise-based clinical pattern recognition and personal body-signal awareness. <a href="https://doi.org/10.1371/journal.pone.0065159" class="doi-chip" target="_blank">DOI</a></p>
+
+    <div class="callout callout-amber">
+      <div class="callout-title">Critical Gap</div>
+      <p>PubMed returned zero results for &ldquo;interoceptive accuracy burnout healthcare workers.&rdquo; The intersection of interoceptive measurement and clinician burnout is nearly unresearched.</p>
+    </div>
+
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-hypothesis">4&ndash;5a (indirect)</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:22%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">2</span>
+      </span>
+      <span style="margin-left:12px;font-size:13px;color:var(--text-secondary)">High face validity; zero direct empirical tests. Potentially publishable as a landmark paper.</span>
+    </div>
+
+    <!-- 3.2 -->
+    <h3 id="s3-2">3.2 State Drift</h3>
+    <p><strong>The hypothesis.</strong> Autonomic regulation progressively degrades during sustained clinical performance, creating a measurable trajectory of HRV decline that can be detected and intervened upon. The five-step mechanism: arousal spike, incomplete recovery, baseline elevation, perceptual narrowing, error vulnerability.</p>
+    <h4>Supporting evidence</h4>
+    <ul>
+      <li>Li et al. (2022): monitored 17 nurses with ECG during work and found work shifts had significant effects on LF%, LnHF, and RMSSD. <a href="https://doi.org/10.3389/fpubh.2021.810577" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Zhan et al. (2024): night shifts significantly altered HRV in 35 female nurses, with greater parasympathetic suppression post-shift. <a href="https://doi.org/10.1186/s12912-024-02563-y" class="doi-chip" target="_blank">DOI</a></li>
+      <li>McGarry et al. (2023), U.S. Naval Research Lab: cardiac vagal tone changes dynamically over the course of a vigilance task in a non-monotonic, individual-dependent pattern. <a href="https://doi.org/10.3389/fnrgo.2023.1244658" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Hamidi Shishavan et al. (2022): HRV on workdays decreased compared to non-work days in ICU nurses with continuous 24-hour monitoring. <a href="https://doi.org/10.1016/j.apergo.2022.103937" class="doi-chip" target="_blank">DOI</a></li>
+    </ul>
+    <p><strong>Important caveat.</strong> Some high-performing clinicians operate at elevated sympathetic baselines without apparent errors. The model needs to account for individual variability in optimal arousal windows (Yerkes-Dodson). The causal link from baseline elevation to clinical error is inferred, not demonstrated.</p>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-hypothesis">2b&ndash;4 (indirect)</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:22%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">2</span>
+      </span>
+    </div>
+
+    <!-- 3.3 -->
+    <h3 id="s3-3">3.3 Cardiac-Anchored Breathing</h3>
+    <p><strong>The hypothesis.</strong> Synchronizing breathing to one&rsquo;s own heartbeat rather than an external clock produces greater improvements in baroreflex sensitivity and HRV than standard fixed-rate pacing.</p>
+    <ul>
+      <li><strong>Direct evidence.</strong> One study. Ren &amp; Zhang (2019) demonstrated a heartbeat-detection-based breath controller that successfully increased cardiorespiratory synchronization (p &lt; 0.001). However, in the &ldquo;2/2 mode&rdquo; (fast breathing), RSA decreased &mdash; effects are ratio-dependent. <a href="https://doi.org/10.1186/s12938-019-0683-9" class="doi-chip" target="_blank">DOI</a></li>
+      <li><strong>Convergence argument.</strong> Baroreflex sensitivity is respiratory-phase-dependent (Eckberg et al., 1980). Cardiac phase modulates neural processing across 15+ studies (2017&ndash;2025). Cardiorespiratory synchronization occurs naturally (Schafer et al., 1998, Nature). <a href="https://doi.org/10.1038/32567" class="doi-chip" target="_blank">DOI</a></li>
+    </ul>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-insufficient">4 (single mechanistic study)</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:22%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">2</span>
+      </span>
+      <span style="margin-left:12px;font-size:13px;color:var(--text-secondary)">High biological plausibility; very low direct evidence.</span>
+    </div>
+
+    <!-- 3.4 -->
+    <h3 id="s3-4">3.4 Embodied Metacognition</h3>
+    <p><strong>The hypothesis.</strong> Monitoring cognition through somatic signals constitutes a distinct metacognitive process, distinguishable from standard (abstract) metacognition.</p>
+    <ul>
+      <li>Nikolova et al. (2025) demonstrated that respiratory metacognition has specific microstructural correlates in midline prefrontal cortex, distinct from interoceptive sensitivity patterns in insula. <a href="https://doi.org/10.1523/JNEUROSCI.0787-24.2025" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Chemis et al. (2025) found breathing-related interoceptive metacognitive bias correlated with amygdala-insula connectivity. <a href="https://doi.org/10.3758/s13415-025-01328-7" class="doi-chip" target="_blank">DOI</a></li>
+    </ul>
+    <p>The construct requires differentiation from the Damasio somatic marker hypothesis, which is the closest established framework.</p>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-speculative">5a&ndash;5b (theoretical + emerging)</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:22%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">2</span>
+      </span>
+    </div>
+
+    <!-- 3.5 -->
+    <h3 id="s3-5">3.5 Contemplative Progressive Overload</h3>
+    <p><strong>The hypothesis.</strong> Exercise physiology principles (progressive overload, periodization) can be applied to contemplative training, systematically increasing challenge across five levers: frequency, complexity, stressors, compression, and integration.</p>
+    <p>This is the most conceptually novel construct in the vault. No published literature applies exercise periodization principles to contemplative training. Many contemplative traditions explicitly reject the &ldquo;effort and intensity&rdquo; approach. The assumption that awareness responds to overload like muscle tissue requires validation &mdash; neural adaptation follows different rules than muscle hypertrophy.</p>
+    <div class="evidence-box">
+      <span class="grade-label">Evidence grade:</span> <span class="badge badge-speculative">5b (theoretical)</span>
+      <span style="margin-left:12px">KRL:</span>
+      <span class="krl-bar-wrap">
+        <span class="krl-bar"><span class="krl-bar-fill" style="width:15%"></span></span>
+        <span style="font-size:12px;color:var(--accent)">1&ndash;2</span>
+      </span>
+    </div>
+
+    <hr>
+
+    <!-- ═══════════════ PART 4 ═══════════════ -->
+    <h2 id="gaps">Part 4: Evidence Gaps and Research Opportunities</h2>
+
+    <h3>4.1 Summary of Gaps by Severity</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Gap Description</th><th>Affected Concepts</th><th>Closest Evidence</th><th>Severity</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>No MAIA-2 data from any CRNA or anesthesia provider population</td>
+            <td>ISH, MAIA-2-CRNA, interoceptive literacy, diaphragmatic blindness</td>
+            <td>MAIA-2 validated in 17+ populations; zero healthcare-profession-specific adaptations</td>
+            <td><span class="severity-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>No published correlation between interoceptive accuracy and burnout in clinicians</td>
+            <td>ISH, clinician durability</td>
+            <td>Alexithymia-burnout correlation r=0.37&ndash;0.41; interoception-burnout: 4 PubMed results total</td>
+            <td><span class="severity-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>No RCT comparing cardiac-anchored vs. fixed-rate breathing</td>
+            <td>Cardiac-anchored breathing, NRCC</td>
+            <td>1 mechanistic study (Ren &amp; Zhang 2019); convergent cardiac-phase literature</td>
+            <td><span class="severity-high">High</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>No continuous within-shift HRV trajectory data correlated with clinical errors</td>
+            <td>State drift, clinician durability</td>
+            <td>Li 2022, Zhan 2024, McGarry 2023 (shift-level HRV changes documented)</td>
+            <td><span class="severity-high">High</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>No published evidence for 60-second therapeutic dose of breathing interventions</td>
+            <td>NeuroMinute, Five-Breath Re-Embodiment</td>
+            <td>5-minute minimum tested (Balban 2023, You 2023); 1-min deep breathing test is diagnostic only</td>
+            <td><span class="severity-high">High</span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Binaural beat entrainment not reliably established as a mechanism</td>
+            <td>NeuroHarmonics</td>
+            <td>5/14 EEG studies supportive (Ingendoh 2023)</td>
+            <td><span class="severity-high">High</span></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>PVT theoretical framework under expert challenge</td>
+            <td>All concepts referencing polyvagal theory</td>
+            <td>Non-PVT frameworks explain same interventions</td>
+            <td><span class="severity-high">High</span></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>No longitudinal tracking of interoceptive awareness across clinical training</td>
+            <td>ISH, interoceptive literacy</td>
+            <td>Hidden curriculum literature (6 PubMed results)</td>
+            <td><span class="severity-moderate">Moderate</span></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>90-second amygdala deactivation timeline weakly sourced</td>
+            <td>State transition, NeuroMinute</td>
+            <td>Widely cited in popular neuroscience; lacks clear primary source</td>
+            <td><span class="severity-moderate">Moderate</span></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Micro-dose breathing may impair performance in naive users under stress</td>
+            <td>NeuroMinute, SIT</td>
+            <td>Goldberg et al. (2021): brief breath awareness produced worse working memory under stress in meditation-naive sample</td>
+            <td><span class="severity-moderate">Moderate</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4.2 -->
+    <h3 id="voids">4.2 Five Literature Voids SRL Can Fill</h3>
+    <ol>
+      <li><strong>Interoceptive awareness in anesthesia providers.</strong> PubMed returns zero results for &ldquo;MAIA interoceptive awareness clinician nurse&rdquo; and zero for &ldquo;interoceptive awareness assessment anesthesia provider.&rdquo; The first MAIA-2 administration to a CRNA cohort would generate a publishable paper regardless of the finding.</li>
+      <li><strong>Interoceptive-burnout mechanistic link.</strong> Zero PubMed results for &ldquo;interoceptive accuracy burnout healthcare workers.&rdquo; The alexithymia-burnout connection is established (r = 0.37&ndash;0.41); the interoception-specific pathway has not been tested.</li>
+      <li><strong>Intra-shift autonomic trajectory monitoring.</strong> No study has named and operationalized the within-shift degradation trajectory or correlated it with performance markers. &ldquo;State Drift&rdquo; could become a named construct in the literature.</li>
+      <li><strong>Cardiac-phase-locked breathing intervention.</strong> No published study compares cardiac-anchored breathing to fixed-rate resonance breathing in a controlled design. The convergent evidence from 15+ cardiac-phase perception studies provides strong mechanistic rationale.</li>
+      <li><strong>Sub-5-minute breathing dose-response.</strong> The literature jumps from 1-minute deep breathing as a diagnostic marker to 5-minute breathwork as the shortest tested therapeutic dose. What happens between 1 and 5 minutes is unmapped.</li>
+    </ol>
+
+    <hr>
+
+    <!-- ═══════════════ PART 5 ═══════════════ -->
+    <h2 id="research">Part 5: Proposed Research Program</h2>
+    <p>Three priority studies, ordered by feasibility and impact.</p>
+
+    <!-- Study 1 -->
+    <div class="study-card" id="study-1">
+      <h4>Study 1: MAIA-2-CRNA Validation and ISH Cross-Sectional Test</h4>
+      <p style="margin-bottom:12px">
+        <span class="cost">$40&ndash;60K</span>
+        <span class="timeline-pill">12&ndash;18 months</span>
+      </p>
+      <p><strong>Rationale.</strong> This study simultaneously validates a CRNA-specific interoceptive instrument and tests the Interoceptive Suppression Hypothesis. It is the enabling study for the entire research program.</p>
+      <p><strong>Design.</strong> Cross-sectional, three-group comparison. Total N = 240 (80 CRNAs, 80 pre-CRNA nursing students, 80 non-clinical controls matched for age, education, stress level).</p>
+      <h4>Measures</h4>
+      <ol>
+        <li>MAIA-2 (or MAIA-2-CRNA with supplementary items) &mdash; 8 dimensions of interoceptive awareness</li>
+        <li>Heartbeat Detection Task (Schandry, 1981) &mdash; objective interoceptive accuracy</li>
+        <li>TAS-20 (alexithymia) &mdash; convergent validity</li>
+        <li>Resting HRV (RMSSD, SDNN, LF/HF) &mdash; autonomic baseline</li>
+        <li>Physiological stress response during standardized stress task</li>
+        <li>Subjective stress rating during same task &mdash; the ISH discrepancy measure</li>
+        <li>MBI (burnout) &mdash; dependent variable</li>
+        <li>PSS-10 (perceived stress)</li>
+        <li>Professional training exposure &mdash; years of clinical experience, specialty, shift type</li>
+      </ol>
+      <h4>Primary Hypotheses</h4>
+      <ul>
+        <li>H1: CRNAs will show lower MAIA-2 scores (expected d = 0.4&ndash;0.6)</li>
+        <li>H2: CRNAs will show larger physiological-subjective discrepancy scores (expected d = 0.5&ndash;0.7)</li>
+        <li>H3: Physiological-subjective discrepancy will correlate with burnout severity (expected r = 0.3&ndash;0.4)</li>
+        <li>H4: Years of clinical training will predict lower interoceptive awareness scores</li>
+      </ul>
+      <p><strong>Power analysis.</strong> For d = 0.5, alpha = 0.05, power = 0.80: n = 64 per group. With 80 per group: sufficient for medium effects and multivariate models.</p>
+      <p><strong>Publication targets.</strong> <em>Journal of Psychosomatic Research</em>, <em>Academic Medicine</em>, <em>Psychophysiology</em>.</p>
+    </div>
+
+    <!-- Study 2 -->
+    <div class="study-card" id="study-2">
+      <h4>Study 2: State Drift Continuous Monitoring in CRNAs</h4>
+      <p style="margin-bottom:12px">
+        <span class="cost">$60&ndash;90K</span>
+        <span class="timeline-pill">12&ndash;18 months</span>
+      </p>
+      <p><strong>Rationale.</strong> Names and operationalizes intra-shift autonomic degradation with real-time monitoring. Builds on Li (2022), Zhan (2024), and McGarry (2023) findings.</p>
+      <p><strong>Design.</strong> Within-subjects repeated measures. N = 60 CRNAs wearing continuous HRV monitors across 3 consecutive shifts.</p>
+      <h4>Measures</h4>
+      <ol>
+        <li>Continuous HRV (ECG chest strap) &mdash; RMSSD, SDNN, LF/HF in 5-minute epochs</li>
+        <li>Pre-shift 5-minute seated HRV baseline</li>
+        <li>Hourly subjective ratings &mdash; fatigue, stress, clinical confidence (VAS)</li>
+        <li>Psychomotor Vigilance Task (PVT) at shift-start, mid-shift, shift-end</li>
+        <li>Shift characteristics &mdash; case complexity, critical events, break frequency</li>
+        <li>Post-shift recovery via Oura Ring nocturnal HRV</li>
+        <li>Morning RMSSD on post-shift days versus off days</li>
+      </ol>
+      <h4>Primary Hypotheses</h4>
+      <ul>
+        <li>H1: RMSSD will decrease across the shift (expected slope: -2 to -5 ms/hour)</li>
+        <li>H2: LF/HF ratio will increase across the shift</li>
+        <li>H3: HRV drift magnitude will correlate with end-of-shift cognitive performance decline</li>
+        <li>H4: Nocturnal RMSSD on post-shift nights will be lower than off-day nights</li>
+        <li>H5: Critical events during shift will accelerate HRV drift</li>
+      </ul>
+      <p><strong>Publication targets.</strong> <em>AANA Journal</em>, <em>Applied Ergonomics</em>, <em>Frontiers in Neuroergonomics</em>.</p>
+    </div>
+
+    <!-- Study 3 -->
+    <div class="study-card" id="study-3">
+      <h4>Study 3: Cardiac-Anchored vs. Fixed-Rate Breathing Crossover Trial</h4>
+      <p style="margin-bottom:12px">
+        <span class="cost">$50&ndash;80K</span>
+        <span class="timeline-pill">12&ndash;15 months</span>
+      </p>
+      <p><strong>Rationale.</strong> SRL&rsquo;s strongest competitive differentiator. If cardiac-anchored breathing produces greater BRS improvements than fixed-rate pacing, it validates the core product thesis.</p>
+      <p><strong>Design.</strong> Within-subjects crossover, counterbalanced, three conditions. N = 40&ndash;60, healthy adults, stratified by age (25&ndash;45, 46&ndash;65).</p>
+      <h4>Conditions (3 sessions, randomized order, &ge;48h washout)</h4>
+      <ol>
+        <li><strong>Fixed-rate resonant breathing</strong> &mdash; breathe at individually determined resonant frequency (~0.1 Hz), no cardiac feedback</li>
+        <li><strong>Cardiac-anchored breathing</strong> &mdash; breathe timed to heartbeat (ratio adjusted to ~0.1 Hz given individual HR)</li>
+        <li><strong>Matched-rate non-anchored control</strong> &mdash; breathe at same rate but with random offset from cardiac cycle</li>
+      </ol>
+      <h4>Measurements</h4>
+      <ul>
+        <li><strong>Primary:</strong> Baroreflex sensitivity (sequence method + transfer function), RMSSD, HF-HRV</li>
+        <li><strong>Secondary:</strong> Heartbeat evoked potential (HEP) amplitude, cardiorespiratory phase synchronization index, blood pressure variability</li>
+        <li><strong>Tertiary:</strong> MAIA-2, subjective ease/engagement ratings</li>
+        <li><strong>Protocol:</strong> 10-min baseline, 20-min breathing, 10-min recovery per condition</li>
+      </ul>
+      <p><strong>Publication targets.</strong> <em>Applied Psychophysiology and Biofeedback</em>, <em>Psychophysiology</em>, <em>Frontiers in Neuroscience</em>.</p>
+    </div>
+
+    <hr>
+
+    <!-- ═══════════════ PART 6 ═══════════════ -->
+    <h2 id="calibration">Part 6: Claim Calibration</h2>
+    <p>Specific language guidance for SRL communications with scientific audiences.</p>
+
+    <h3>6.1 Claims Supported at Each Evidence Level</h3>
+
+    <div class="callout">
+      <div class="callout-title">Can state with confidence (Evidence grade 1a&ndash;2a, KRL 5+)</div>
+      <ul>
+        <li>&ldquo;Slow breathing at approximately 0.1 Hz improves heart rate variability through baroreflex resonance, with meta-analytic support.&rdquo;</li>
+        <li>&ldquo;HRV biofeedback demonstrates medium effect sizes for depression and autonomic outcomes.&rdquo;</li>
+        <li>&ldquo;Interoception is a trainable capacity with validated measurement tools and growing clinical applications.&rdquo;</li>
+        <li>&ldquo;Clinician burnout is a documented crisis with measurable physiological correlates.&rdquo;</li>
+      </ul>
+    </div>
+
+    <div class="callout callout-amber">
+      <div class="callout-title">Can state with qualification (Evidence grade 2b&ndash;4, KRL 3&ndash;4)</div>
+      <ul>
+        <li>&ldquo;The literature suggests that autonomic regulation training may reduce clinician burnout, though controlled trials specific to this intervention-population combination are needed.&rdquo;</li>
+        <li>&ldquo;Physiological synchrony between team members during cooperative clinical tasks has been demonstrated (Wespi et al., 2025), supporting the concept of co-regulation in clinical environments.&rdquo;</li>
+        <li>&ldquo;DMN modulation through contemplative practice is well-documented in meditation research; its application to clinical performance requires further study.&rdquo;</li>
+      </ul>
+    </div>
+
+    <div class="callout callout-red">
+      <div class="callout-title">Should not claim without further evidence</div>
+      <ul>
+        <li>&ldquo;Binaural beats entrain brainwaves at target frequencies.&rdquo; (Majority of EEG studies fail to confirm entrainment.)</li>
+        <li>&ldquo;Sixty seconds rewires your nervous system.&rdquo; (No therapeutic study has tested this dose; minimum tested therapeutic dose is 5 minutes.)</li>
+        <li>&ldquo;Polyvagal theory explains why SRL&rsquo;s approach works.&rdquo; (Theoretical framework under active expert challenge.)</li>
+        <li>&ldquo;Hormesis applies to all forms of stress training.&rdquo; (Moral injury may not be hormetic at any dose.)</li>
+      </ul>
+    </div>
+
+    <h3>6.2 Terms to Use and Avoid</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Avoid</th><th>Use Instead</th><th>Rationale</th></tr></thead>
+        <tbody>
+          <tr><td>Ventral vagal state</td><td>Autonomic flexibility / regulated state</td><td>PVT-specific; contested</td></tr>
+          <tr><td>Dorsal vagal shutdown</td><td>Autonomic withdrawal / metabolic conservation</td><td>PVT-specific; oversimplifies neuroanatomy</td></tr>
+          <tr><td>Neuroception</td><td>Interoceptive safety appraisal</td><td>Porges&rsquo; coined term; deeply embedded in PVT</td></tr>
+          <tr><td>Brainwave entrainment</td><td>Auditory modulation / auditory-autonomic coupling</td><td>Entrainment not reliably demonstrated</td></tr>
+          <tr><td>Micro-dose autonomic regulation</td><td>Brief structured breathing practice</td><td>&ldquo;Micro-dose&rdquo; implies pharmacological analogy; 60s dose is unvalidated</td></tr>
+          <tr><td>Research proves</td><td>The literature suggests; evidence indicates</td><td>No single study &ldquo;proves&rdquo; anything</td></tr>
+          <tr><td>Clinically validated (for SRL protocols)</td><td>Informed by clinical research; built on validated mechanisms</td><td>SRL&rsquo;s specific protocols are not yet clinically validated</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>6.3 FDA Wellness Boundary Considerations</h3>
+    <p>SRL operates in the general wellness space. Claims supported only by SRL-P or SRL-O evidence should remain framed as &ldquo;general wellness&rdquo; or &ldquo;training and education.&rdquo;</p>
+    <ul>
+      <li><strong>Disease treatment claims</strong> (e.g., &ldquo;treats burnout,&rdquo; &ldquo;prevents PTSD&rdquo;) &mdash; should not be made without Level 1&ndash;3 evidence and regulatory review.</li>
+      <li><strong>Diagnostic claims</strong> (e.g., &ldquo;detects state drift&rdquo;) &mdash; monitoring tools that detect physiological patterns are permissible as general wellness; claims about detecting clinical conditions require regulatory pathway.</li>
+      <li><strong>Performance claims</strong> (e.g., &ldquo;reduces clinical errors&rdquo;) &mdash; supportable with appropriate evidence but currently lack direct RCT evidence for SRL&rsquo;s specific interventions.</li>
+    </ul>
+
+    <hr>
+
+    <!-- ═══════════════ APPENDIX A ═══════════════ -->
+    <h2 id="appendix-a">Appendix A: Concept Evidence Matrix</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Concept</th><th>KRL</th><th>Grade</th><th>Status</th><th>Key Evidence</th><th>Key Gap</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Autonomic regulation</td><td><span class="badge-krl">6</span></td><td><span class="badge-evidence">1a</span></td><td><span class="badge badge-supported">Supported</span></td><td>Galin 2026 meta-analysis; Thayer NVI model</td><td>CRNA-specific outcome data</td></tr>
+          <tr><td>Vagal tone</td><td><span class="badge-krl">6</span></td><td><span class="badge-evidence">1a&ndash;1b</span></td><td><span class="badge badge-supported">Supported</span></td><td>Laborde 2022; Shaffer &amp; Ginsberg 2017</td><td>RSA measurement caveat per Grossman</td></tr>
+          <tr><td>Resonant breathing frequency</td><td><span class="badge-krl">5</span></td><td><span class="badge-evidence">1a</span></td><td><span class="badge badge-supported">Supported</span></td><td>Laborde 2022 (223 studies); Sevoz-Couche 2022</td><td>Minimum effective dose below 5 min</td></tr>
+          <tr><td>Polyvagal theory</td><td><span class="badge-krl">5*</span></td><td><span class="badge-evidence">2b</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Porges 2025, 2026; Grossman 2026</td><td>Reframe to NVI/baroreflex</td></tr>
+          <tr><td>Interoception</td><td><span class="badge-krl">6</span></td><td><span class="badge-evidence">1b&ndash;2a</span></td><td><span class="badge badge-supported">Supported</span></td><td>Garfinkel 2015; Nikolova 2025; NIH initiative</td><td>No CRNA-specific data</td></tr>
+          <tr><td>Interoceptive accuracy</td><td><span class="badge-krl">6</span></td><td><span class="badge-evidence">1b</span></td><td><span class="badge badge-supported">Supported</span></td><td>Garfinkel 2015; Harrison 2021</td><td>Schandry task validity debate</td></tr>
+          <tr><td>MAIA-2 (base instrument)</td><td><span class="badge-krl">6</span></td><td><span class="badge-evidence">1b</span></td><td><span class="badge badge-supported">Supported</span></td><td>37 PubMed validation studies; Bravo 2025</td><td>No healthcare-profession adaptation</td></tr>
+          <tr><td>Clinician durability</td><td><span class="badge-krl">5</span></td><td><span class="badge-evidence">2a&ndash;2b</span></td><td><span class="badge badge-supported">Supported</span></td><td>Roger 2024; Raft 2025; McEwen allostatic load</td><td>Autonomic recovery kinetics unmeasured</td></tr>
+          <tr><td>Second-victim phenomenon</td><td><span class="badge-krl">5</span></td><td><span class="badge-evidence">2a</span></td><td><span class="badge badge-supported">Supported</span></td><td>Bryan 2025; Deng 2025</td><td>CRNA-specific data sparse</td></tr>
+          <tr><td>Stress inoculation training</td><td><span class="badge-krl">5</span></td><td><span class="badge-evidence">1b</span></td><td><span class="badge badge-supported">Supported</span></td><td>Sterling 2019 RCT; Meichenbaum 1985</td><td>No RCTs for HCW population</td></tr>
+          <tr><td>DMN voluntary control</td><td><span class="badge-krl">5</span></td><td><span class="badge-evidence">2a&ndash;2b</span></td><td><span class="badge badge-supported">Supported</span></td><td>Sezer 2022; Bauer 2019</td><td>CRNA-specific application</td></tr>
+          <tr><td>Co-regulation</td><td><span class="badge-krl">4</span></td><td><span class="badge-evidence">2b&ndash;4</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Wespi 2025 (n=214 medical teams)</td><td>Team breath intervention unvalidated</td></tr>
+          <tr><td>Alpha-theta crossover</td><td><span class="badge-krl">4</span></td><td><span class="badge-evidence">2b</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Established neurofeedback literature</td><td>Consumer EEG validation needed</td></tr>
+          <tr><td>State transition</td><td><span class="badge-krl">4</span></td><td><span class="badge-evidence">4&ndash;5a</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Neuroimaging; clinical observation</td><td>90-second claim weakly sourced</td></tr>
+          <tr><td>Interoceptive literacy</td><td><span class="badge-krl">3</span></td><td><span class="badge-evidence">5a</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>MAIA-2 subscales validated individually</td><td>Term not in published literature</td></tr>
+          <tr><td>Gamma-state binding</td><td><span class="badge-krl">3</span></td><td><span class="badge-evidence">2b</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Ferrarelli 2013; Lee 2025</td><td>Practice-type dependent; overclaiming risk</td></tr>
+          <tr><td>Hemispheric rebalancing</td><td><span class="badge-krl">3</span></td><td><span class="badge-evidence">5b</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Yordanova 2020 lateralized patterns</td><td>Not a neuroscience term; reframe needed</td></tr>
+          <tr><td>Awe as regulation</td><td><span class="badge-krl">3</span></td><td><span class="badge-evidence">4</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Shiota 2011; Stellar 2015</td><td>Deployability as clinical tool undemonstrated</td></tr>
+          <tr><td>Curiosity as clinical stance</td><td><span class="badge-krl">3</span></td><td><span class="badge-evidence">4</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Wang 2024; Burr 2021</td><td>No curiosity-specific training studies</td></tr>
+          <tr><td>Hormesis-durability model</td><td><span class="badge-krl">3</span></td><td><span class="badge-evidence">2b</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Ricon-Becker 2021; Holton 2026</td><td>Psychological hormesis minimally validated</td></tr>
+          <tr><td>NeuroHarmonics</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">C+</span></td><td><span class="badge badge-insufficient">Weakly supported</span></td><td>Ingendoh 2023: 5/14 studies supportive</td><td>Entrainment mechanism not reliable</td></tr>
+          <tr><td>ISH</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">4&ndash;5a</span></td><td><span class="badge badge-hypothesis">Hypothesis &mdash; untested</span></td><td>De Berardis 2023; Crivelli 2025</td><td>Zero direct empirical tests</td></tr>
+          <tr><td>State drift</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">4</span></td><td><span class="badge badge-hypothesis">Hypothesis &mdash; untested</span></td><td>Li 2022; McGarry 2023</td><td>No named construct in literature</td></tr>
+          <tr><td>Cardiac-anchored breathing</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">4</span></td><td><span class="badge badge-insufficient">Insufficient evidence</span></td><td>Ren &amp; Zhang 2019</td><td>No head-to-head comparison</td></tr>
+          <tr><td>MAIA-2-CRNA</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">N/A</span></td><td><span class="badge badge-insufficient">Instrument not yet developed</span></td><td>MAIA-2 base validated; COSMIN available</td><td>Complete greenfield</td></tr>
+          <tr><td>Embodied metacognition</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">5a&ndash;5b</span></td><td><span class="badge badge-hypothesis">Hypothesis &mdash; untested</span></td><td>Nikolova 2025; Chemis 2025</td><td>Needs differentiation from somatic marker</td></tr>
+          <tr><td>Contemplative progressive overload</td><td><span class="badge-krl">1&ndash;2</span></td><td><span class="badge-evidence">5b</span></td><td><span class="badge badge-hypothesis">Hypothesis &mdash; untested</span></td><td>None directly</td><td>Contradicts dominant contemplative frameworks</td></tr>
+          <tr><td>Nondual clinical awareness</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">4&ndash;5b</span></td><td><span class="badge badge-speculative">Speculative</span></td><td>Cooper 2022 TRoM; Josipovic 2019</td><td>Requires thousands of practice hours</td></tr>
+          <tr><td>NeuroMinute (60s dose)</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">4</span></td><td><span class="badge badge-insufficient">Insufficient evidence</span></td><td>1-min deep breathing test (diagnostic); Balban 2023 (5 min)</td><td>No therapeutic validation below 5 min</td></tr>
+          <tr><td>Five-Breath Re-Embodiment</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">5a</span></td><td><span class="badge badge-insufficient">Insufficient evidence</span></td><td>Resonant breathing components validated</td><td>Specific 5-breath sequence unvalidated</td></tr>
+          <tr><td>Diaphragmatic blindness</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">5a</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Garfinkel 2017 respiratory interoception</td><td>No published studies on construct</td></tr>
+          <tr><td>Autonomic home base</td><td><span class="badge-krl">2</span></td><td><span class="badge-evidence">5b</span></td><td><span class="badge badge-partial">Partially supported</span></td><td>Meditation trait literature</td><td>Novel SRL concept</td></tr>
+          <tr><td>Vitarka-vicara integration</td><td><span class="badge-krl">1&ndash;2</span></td><td><span class="badge-evidence">5b</span></td><td><span class="badge badge-speculative">Speculative</span></td><td>Yordanova 2020 lateralized patterns</td><td>No empirical validation of synthesis</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-top:8px">* PVT: Strong real-world validation for interventions; theoretical framework under active expert challenge.</p>
+
+    <hr>
+
+    <!-- ═══════════════ APPENDIX B ═══════════════ -->
+    <h2 id="appendix-b">Appendix B: PubMed Reference List</h2>
+    <p>References organized by domain. PMIDs and DOIs provided where available. 106 references total.</p>
+
+    <h3>Autonomic Regulation and HRV</h3>
+    <ol>
+      <li>Galin et al. (2026). HRV as prospective predictor of depressive symptoms; meta-analysis of 56 studies. <a href="https://doi.org/10.1016/j.jad.2026.121388" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Vann-Adibe et al. (2025). Remote HRV-B meta-analysis; medium effect sizes. <a href="https://doi.org/10.1007/s10484-025-09750-w" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Gitler et al. (2025). HRV-B and SSP review for cardiovascular and autonomic regulation. <a href="https://doi.org/10.3892/mi.2025.236" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Thayer &amp; Lane (2000). Neurovisceral integration model. <a href="https://doi.org/10.1016/s0165-0427(00)00338-4" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Thayer &amp; Lane (2009). Heart-brain connection elaboration. <a href="https://doi.org/10.1016/j.neubiorev.2008.08.004" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Thayer et al. (2012). HRV + neuroimaging meta-analysis. <a href="https://doi.org/10.1016/j.neubiorev.2011.11.009" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Smith, Thayer, Khalsa &amp; Lane (2017). Hierarchical NVI with predictive coding. <a href="https://doi.org/10.1016/j.neubiorev.2017.02.003" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Shaffer, McCraty &amp; Zerr (2014). Integrative HRV review. <a href="https://doi.org/10.3389/fpsyg.2014.01040" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Jennings et al. (2015). NVI limits. <a href="https://doi.org/10.1111/psyp.12319" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Polyvagal Theory Debate</h3>
+    <ol start="10">
+      <li>Grossman et al. (2026). &ldquo;Why The Polyvagal Theory Is Untenable.&rdquo; <a href="https://doi.org/10.36131/cnfioritieditore20260110" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Porges (2026). &ldquo;When A Critique Becomes Untenable.&rdquo; <a href="https://doi.org/10.36131/cnfioritieditore20260111" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Porges (2025). PVT current status, clinical applications. <a href="https://doi.org/10.36131/cnfioritieditore20250301" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Porges (2025). PVT journey from observation to clinical insight. <a href="https://doi.org/10.3389/fnbeh.2025.1659083" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Resonant Breathing and Baroreflex</h3>
+    <ol start="14">
+      <li>Laborde et al. (2022). Meta-analysis of VSB and HRV, 223 studies. <a href="https://doi.org/10.1016/j.neubiorev.2022.104711" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Sevoz-Couche &amp; Laborde (2022). Resonant frequency mechanism review. <a href="https://doi.org/10.1016/j.neubiorev.2022.104576" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Shaffer &amp; Meehan (2020). Resonance frequency assessment guide. <a href="https://doi.org/10.3389/fnins.2020.570400" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Vaschillo, Lehrer et al. (2002). Baroreflex resonance. <a href="https://doi.org/10.1023/a:1014587304314" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Lehrer et al. (2020). Phase relationships in resonance breathing. <a href="https://doi.org/10.1007/s10484-020-09459-y" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Lehrer (2022). HRV biofeedback research review. <a href="https://doi.org/10.1007/s10484-022-09535-5" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Sakakibara et al. (2020). LF-peak paced breathing enhances BRS. <a href="https://doi.org/10.1007/s10484-019-09453-z" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Giorgi &amp; Tedeschi (2025). Slow breathing + HRV review. <a href="https://doi.org/10.1007/s13760-025-02789-w" class="doi-chip" target="_blank">DOI</a></li>
+      <li>You et al. (2023). SPB dose-response across frequencies. <a href="https://doi.org/10.1007/s10484-023-09605-2" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Xiong et al. (2025). 0.1 Hz SPB + heartbeat oscillatory potential. <a href="https://doi.org/10.1016/j.ijchp.2025.100571" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Plantard et al. (2025). HEP changes with blood pressure and slow-paced breathing. <a href="https://doi.org/10.1152/jn.00118.2025" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Balban et al. (2023). Brief structured respiration practices enhance mood. <a href="https://doi.org/10.1016/j.xcrm.2022.100895" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Pingali &amp; Hunter (2022). Slow breathing and BP regulation. <a href="https://doi.org/10.1016/j.autneu.2022.103050" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Interoception</h3>
+    <ol start="27">
+      <li>Garfinkel et al. (2015). Interoceptive trichotomy. <a href="https://doi.org/10.1016/j.biopsycho.2014.11.004" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Garfinkel et al. (2017). Cardiac vs respiratory interoception. <a href="https://doi.org/10.1098/rstb.2016.0014" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Harrison et al. (2021). Filter Detection Task for respiratory interoception. <a href="https://doi.org/10.1016/j.biopsycho.2021.108185" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Nikolova et al. (2025). Brain microstructure of respiratory interoception. <a href="https://doi.org/10.1523/JNEUROSCI.0787-24.2025" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Chemis et al. (2025). Breathing interoception, amygdala-insula connectivity. <a href="https://doi.org/10.3758/s13415-025-01328-7" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Bravo et al. (2025). COSMIN review: MAIA-2 best body awareness PROM. <a href="https://doi.org/10.3390/healthcare13243270" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Mehling et al. (2012). Original MAIA development. <a href="https://doi.org/10.1371/journal.pone.0048230" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Fiskum et al. (2023). Norwegian MAIA-2 validation. <a href="https://doi.org/10.1186/s12888-023-04946-y" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Teng et al. (2022). Chinese MAIA-2 validation. <a href="https://doi.org/10.3389/fpsyt.2022.970982" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Scheffers et al. (2024). Dutch MAIA-2 validation. <a href="https://doi.org/10.1186/s40359-024-01553-8" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Lavretsky et al. (2026). Interoceptive regulation in brain health. <a href="https://doi.org/10.1038/s41386-026-02332-2" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Matus et al. (2026). MAIA-2 moderates hypoglycemia awareness. <a href="https://doi.org/10.2337/dc25-2242" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Salvato et al. (2021). MAIA Trusting predicts clinical decision-making. <a href="https://doi.org/10.1371/journal.pone.0256806" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Caparco et al. (2025). Phase confusion / HEARTS framework. <a href="https://doi.org/10.1016/j.biopsycho.2025.109078" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>ISH and Clinician Interoception</h3>
+    <ol start="41">
+      <li>De Berardis et al. (2023). Alexithymia 14.8% in 1445 HCWs. <a href="https://doi.org/10.3390/brainsci13111550" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Riethof et al. (2020). Alexithymia-burnout r=0.41. <a href="https://doi.org/10.1177/0300060519887633" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Aldaz et al. (2019). Alexithymia &gt; EI for burnout prediction. <a href="https://doi.org/10.1111/jan.14153" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Crivelli et al. (2025). Neurophenomenological stress in neurosurgeons. <a href="https://doi.org/10.3389/fpsyg.2025.1568430" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Mensinger et al. (2024). HRVB restores interoception in HCWs. <a href="https://doi.org/10.1007/s10484-024-09621-w" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Mensinger (2025). MAIA-2 subscales as HRV biofeedback mediators. <a href="https://doi.org/10.1016/j.eatbeh.2025.102060" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Dale et al. (2025). Somatic intervention for healthcare worker distress. <a href="https://doi.org/10.3390/healthcare13243236" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Zhou et al. (2025). MBSR for nurse burnout: interoceptive mechanism. <a href="https://doi.org/10.5498/wjp.v15.i9.107630" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Handford et al. (2013). Clinical practice and empathy. <a href="https://doi.org/10.1371/journal.pone.0065159" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Shanafelt &amp; Habermann (2002). Medical resident emotional well-being. <a href="https://doi.org/10.1001/jama.288.15.1846" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>State Drift and Shift-Level HRV</h3>
+    <ol start="51">
+      <li>Li et al. (2022). Intra-shift HRV changes in nurses. <a href="https://doi.org/10.3389/fpubh.2021.810577" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Zhan et al. (2024). Night shift autonomic effects. <a href="https://doi.org/10.1186/s12912-024-02563-y" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Hamidi Shishavan et al. (2022). 24hr wearable monitoring ICU nurses. <a href="https://doi.org/10.1016/j.apergo.2022.103937" class="doi-chip" target="_blank">DOI</a></li>
+      <li>McGarry et al. (2023). Vagal tone + vigilance decrement. <a href="https://doi.org/10.3389/fnrgo.2023.1244658" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Tsakmaki et al. (2026). HRV predicts cognitive fatigue via LSTM. <a href="https://doi.org/10.1007/978-3-032-03402-1_43" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Chen et al. (2025). Circadian disruption + sympathovagal imbalance. <a href="https://doi.org/10.1016/j.ijcard.2025.133463" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Cardiac-Anchored Breathing and Cardiac Phase Effects</h3>
+    <ol start="57">
+      <li>Ren &amp; Zhang (2019). Heartbeat-synchronized breathing. <a href="https://doi.org/10.1186/s12938-019-0683-9" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Schafer et al. (1998). Heartbeat synchronized with ventilation (Nature). <a href="https://doi.org/10.1038/32567" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Eckberg, Kifle &amp; Roberts (1980). Respiratory phase + baroreflex. <a href="https://doi.org/10.1113/jphysiol.1980.sp013338" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Hellman &amp; Stacy (1976). RSA variation with age. <a href="https://doi.org/10.1152/jappl.1976.41.5.734" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Azevedo et al. (2022). Cardiac phase biases trustworthiness. <a href="https://doi.org/10.1177/09567976221131519" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Arslanova et al. (2023). Time perception + cardiac phase. <a href="https://doi.org/10.1016/j.cub.2023.02.034" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Veillette et al. (2024). Visual dominance + cardiac afferents. <a href="https://doi.org/10.7554/eLife.95599" class="doi-chip" target="_blank">DOI</a></li>
+      <li>von Mohr et al. (2023). Social interoception + cardiac phase. <a href="https://doi.org/10.1016/j.cognition.2023.105502" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Zaccaro et al. (2022). Brain-heart interactions across respiratory cycle. <a href="https://doi.org/10.1016/j.neuroimage.2022.119548" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Zaccaro et al. (2026). Respiratory-phase modulation of HEP. <a href="https://doi.org/10.1016/j.neuroimage.2026.121711" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Hamill (2023). ICP pulsatility + neural network synchronization. <a href="https://doi.org/10.31083/j.jin2206143" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Engelen et al. (2025). Visceral rhythms modulate motor excitability. <a href="https://doi.org/10.1371/journal.pbio.3003478" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Clinician Burnout and Second-Victim</h3>
+    <ol start="69">
+      <li>Roger et al. (2024). ICU staff PTSD/anxiety prevalence. <a href="https://doi.org/10.1186/s12991-023-00488-5" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Raft et al. (2025). Incivility in anesthesia teams. <a href="https://doi.org/10.1016/j.jclinane.2025.111983" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Bryan et al. (2025). Second-victim syndrome in surgeons meta-analysis. <a href="https://doi.org/10.1093/bjs/znaf258" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Deng et al. (2025). Second-victim qualitative synthesis. <a href="https://doi.org/10.1016/j.ijnurstu.2025.105248" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Morgan et al. (2025). AANA Wellness Ambassador integration. <a href="https://doi.org/10.70278/AANAJ/.0000001070" class="doi-chip" target="_blank">DOI</a></li>
+      <li>von K&auml;nel et al. (2023). Reduced epinephrine response in burned-out physicians. <a href="https://doi.org/10.1016/j.biopsycho.2023.108687" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Woolley et al. (2025). Reduced IL-6 reactivity in burned-out physicians. <a href="https://doi.org/10.1007/s00702-025-02945-9" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Langelaan et al. (2007). Burnout and allostatic load. <a href="https://doi.org/10.1007/BF03002995" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Binaural Beats and Auditory Modulation</h3>
+    <ol start="77">
+      <li>Ingendoh et al. (2023). Binaural beats entrainment systematic review: 5/14 supportive. <a href="https://doi.org/10.1371/journal.pone.0286023" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Xiong et al. (2025). BB perioperative anxiety meta-analysis (15 RCTs). <a href="https://doi.org/10.1016/j.ctim.2025.103299" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Solca et al. (2015). BB interhemispheric coherence (not entrainment). <a href="https://doi.org/10.1016/j.heares.2015.09.011" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Dos Anjos et al. (2024). Isochronic tones &gt; binaural beats for EEG modulation. <a href="https://doi.org/10.1016/j.neuroscience.2024.07.014" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Kim et al. (2024). 18 Hz BB increased beta power; 40 Hz did not produce gamma. <a href="https://doi.org/10.1093/cercor/bhad459" class="doi-chip" target="_blank">DOI</a></li>
+      <li>McConnell et al. (2014). Theta BB post-exercise parasympathetic activation. <a href="https://doi.org/10.3389/fpsyg.2014.01248" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Yang et al. (2025). No frequency-specific difference for anxiety reduction. <a href="https://doi.org/10.1186/s12906-025-04922-x" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Scala et al. (2025). 6 Hz BB entrains cortex but minimal ANS changes. <a href="https://doi.org/10.14814/phy2.70271" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Shamsi et al. (2024). BB and pain perception systematic review. <a href="https://doi.org/10.1186/s12906-024-04339-y" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Melnichuk et al. (2025). Parametric BB investigation. <a href="https://doi.org/10.1038/s41598-025-88517-z" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Hormesis and Stress Inoculation</h3>
+    <ol start="87">
+      <li>Holton et al. (2026). Antifragility scoping review: 18 human studies. <a href="https://doi.org/10.1177/00332941261416041" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Ricon-Becker et al. (2021). Post-stress glucose hormetic training in rats. <a href="https://doi.org/10.1080/10253890.2021.1931677" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Sterling et al. (2019). StressModex: SIT + exercise for whiplash RCT. <a href="https://doi.org/10.1136/bjsports-2018-100139" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Neurofeedback and EEG</h3>
+    <ol start="90">
+      <li>Ferrarelli et al. (2013). Gamma during NREM sleep in meditators. <a href="https://doi.org/10.1371/journal.pone.0073417" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Lee et al. (2025). Chan meditation gamma EEG. <a href="https://doi.org/10.3390/bs15091213" class="doi-chip" target="_blank">DOI</a></li>
+      <li>DeLosAngeles et al. (2016). Graded meditation: deeper absorption decreased beta/gamma. <a href="https://doi.org/10.1016/j.ijpsycho.2016.09.020" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Bauer et al. (2019). DMN-CEN reconfiguration in meditators. <a href="https://doi.org/10.1523/ENEURO.0335-18.2019" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Sezer et al. (2022). DMN functional connectivity and mindfulness. <a href="https://doi.org/10.1016/j.neubiorev.2022.104583" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Yordanova et al. (2020). Lateralized meditation EEG patterns. <a href="https://doi.org/10.1038/s41598-020-64324-6" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Cooper et al. (2022). TRoM: nondual awareness neural model. <a href="https://doi.org/10.1093/nc/niac013" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Wearable Validation</h3>
+    <ol start="97">
+      <li>Kinnunen et al. (2020). Oura Ring vs. ECG: r=0.996 HR, r=0.980 HRV. <a href="https://doi.org/10.1088/1361-6579/ab840a" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Cao et al. (2022). Oura Ring RMSSD accuracy. <a href="https://doi.org/10.2196/27487" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Sarhaddi et al. (2022). Samsung watch: good sleep HRV, poor awake. <a href="https://doi.org/10.1371/journal.pone.0268361" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Siswishanto et al. (2026). Wearable SDNN and inflammation. <a href="https://doi.org/10.3390/diagnostics16040538" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Physiological Synchrony and Co-Regulation</h3>
+    <ol start="101">
+      <li>Wespi et al. (2025). Physiological synchrony in medical teams (n=214). <a href="https://doi.org/10.1186/s41077-025-00335-5" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Algumaei et al. (2023). Physiological synchrony predicts team performance. <a href="https://doi.org/10.3390/s23042268" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Micro-Dose and Brief Interventions</h3>
+    <ol start="103">
+      <li>Shuai et al. (2019). 6-min breath counting promotes stress recovery. <a href="https://doi.org/10.1016/j.addbeh.2019.106141" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Goldberg et al. (2021). Brief breath awareness impairs working memory under stress. <a href="https://doi.org/10.1080/02699931.2021.1878113" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+    <h3>Contemplative Neuroscience</h3>
+    <ol start="105">
+      <li>Tal et al. (2025). Active Inference framework for meditation. <a href="https://doi.org/10.1016/j.neubiorev.2025.106539" class="doi-chip" target="_blank">DOI</a></li>
+      <li>Stapleton et al. (2020). 3-day meditation workshop: 11% gamma increase. <a href="https://doi.org/10.1016/j.ibror.2020.10.006" class="doi-chip" target="_blank">DOI</a></li>
+    </ol>
+
+  </div><!-- /content -->
+
+  <footer class="footer">
+    <p>Generated by <span class="vigil">Vigil</span> &mdash; SRL Knowledge Graph Orchestrator</p>
+    <p style="margin-top:6px">2026-03-19 &nbsp;|&nbsp; 44 concepts &nbsp;|&nbsp; 106 references &nbsp;|&nbsp; 8 thematic clusters</p>
+    <p style="margin-top:12px;font-size:11px;opacity:0.6">This document is draft status and should be reviewed before distribution to external collaborators.</p>
+  </footer>
+
+</div><!-- /main -->
+
+<script>
+// Intersection Observer for active nav highlighting
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('#nav a');
+  const sections = [];
+
+  navLinks.forEach(link => {
+    const id = link.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) sections.push({ id, el, link });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const match = sections.find(s => s.el === entry.target);
+        if (match) match.link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s.el));
+
+  // Close sidebar on mobile when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        document.querySelector('.sidebar').classList.remove('open');
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
