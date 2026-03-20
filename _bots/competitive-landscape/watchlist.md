@@ -43,6 +43,19 @@ Active partnership relationships — monitor project activity, releases, and roa
 |---------|----------|----------------|
 | Open Wearables / Momentum | Open-source wearable API | **NEW (Mar 19)** — MIT-licensed unified API for 300+ devices (Apple Health, Garmin, WHOOP, Polar, Suunto, Samsung). Founded by Jan Kamiński & Bartosz Michalak (Wrocław, Poland). Open algorithms for HRV, sleep, recovery, stress. Self-hosted, zero per-user fees. Active meeting with SRL team (Randy, Jason, Michael Thorn) on multi-platform Pausality. GitHub: the-momentum/open-wearables. Docs: docs.openwearables.io |
 
+## Tier 1b: CRNA Prep & CE Market (Monthly Monitoring)
+They own the CRNA trust relationship and payment channel. Partners, not competitors.
+
+| Company | Category | Why They Matter |
+|---------|----------|----------------|
+| APEX Anesthesia | Board review + CE | **NEW (Mar 20)** — 268 Class A credits, CPC Core Modules, NBCRNA-recognized, TrueLearn integration. Most comprehensive CRNA CE platform |
+| Valley Anesthesia | SRNA review + CE | **NEW (Mar 20)** — Valley Engage AI tutor. Historic SRNA mentoring brand |
+| Prodigy Anesthesia | CRNA/SRNA platform | **NEW (Mar 20)** — All-in-one CE + study. MasterClass modules. $175 SRNA / $499 CRNA |
+| TrueLearn | Anesthesia QBank | **NEW (Mar 20)** — NCE/SEE SmartBank. Performance analytics. Used by CRNAs + MDs |
+| Core Concepts | Board prep | **NEW (Mar 20)** — Long-established board prep |
+| CCE CRNA | Continuing education | **NEW (Mar 20)** — AANA pre-approved CEs. Credit submission |
+| Gifted Anesthesia | Continuing education | **NEW (Mar 20)** — Class A AANA-approved CEs. Bundle options |
+
 ## Tier 4: Adjacent / Emerging (Quarterly Scan)
 Could become competitors, partners, or acquirers.
 
