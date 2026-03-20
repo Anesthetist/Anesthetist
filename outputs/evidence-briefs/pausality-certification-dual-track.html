@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pausality Certification Program | Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1D2E;
+  --bg-card: #242840;
+  --bg-card-alt: #2A2E4A;
+  --sage: #5FC89B;
+  --sage-dim: rgba(95,200,155,0.12);
+  --sage-border: rgba(95,200,155,0.35);
+  --text: #F5F5F0;
+  --text-muted: #A0A3B5;
+  --text-dim: #7A7D90;
+  --green: #5FC89B;
+  --green-border: rgba(95,200,155,0.6);
+  --green-bg: rgba(95,200,155,0.08);
+  --blue: #5B8DEF;
+  --blue-border: rgba(91,141,239,0.6);
+  --blue-bg: rgba(91,141,239,0.08);
+  --blue-dim: rgba(91,141,239,0.12);
+  --red: #E8664A;
+  --red-border: rgba(232,102,74,0.6);
+  --red-bg: rgba(232,102,74,0.08);
+  --red-dim: rgba(232,102,74,0.12);
+  --amber: #F0A830;
+  --amber-border: rgba(240,168,48,0.6);
+  --amber-bg: rgba(240,168,48,0.08);
+  --gray: #6B6E82;
+  --gray-border: rgba(107,110,130,0.5);
+  --gray-bg: rgba(107,110,130,0.08);
+  --gold: #D4A843;
+  --gold-border: rgba(212,168,67,0.6);
+  --gold-bg: rgba(212,168,67,0.08);
+  --platinum: #C0C0D0;
+  --platinum-border: rgba(192,192,208,0.6);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.65;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header */
+header {
+  padding: 64px 48px 48px;
+  border-bottom: 1px solid rgba(95,200,155,0.15);
+  text-align: center;
+}
+header .brand {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+header h1 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+header h1 span.tm { font-size: 20px; vertical-align: super; color: var(--sage); }
+header .subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+header .tracks {
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+header .tracks .crna { color: var(--blue); }
+header .tracks .driver { color: var(--red); }
+header .meta {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 300;
+}
+
+/* Section */
+section {
+  padding: 48px 48px;
+  border-bottom: 1px solid rgba(95,200,155,0.08);
+}
+section:last-of-type { border-bottom: none; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 20px;
+}
+.section-title {
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+p { margin-bottom: 16px; font-size: 14px; }
+p.lead { font-size: 16px; color: var(--text); font-weight: 300; }
+p.quote {
+  border-left: 3px solid var(--sage);
+  padding-left: 20px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 24px 0;
+  font-size: 15px;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(95,200,155,0.12);
+  border-radius: 10px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+.card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.card h4 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.card ul { padding-left: 20px; margin-bottom: 12px; }
+.card li { font-size: 13px; margin-bottom: 6px; color: var(--text-muted); }
+.card li strong { color: var(--text); font-weight: 400; }
+
+/* Two-column layout */
+.dual-track {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.track-crna {
+  background: var(--bg-card);
+  border: 1px solid var(--blue-border);
+  border-radius: 10px;
+  padding: 28px;
+}
+.track-driver {
+  background: var(--bg-card);
+  border: 1px solid var(--red-border);
+  border-radius: 10px;
+  padding: 28px;
+}
+.track-crna .track-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.track-driver .track-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.track-crna h3, .track-crna h4 { color: var(--blue); }
+.track-driver h3, .track-driver h4 { color: var(--red); }
+.track-crna ul, .track-driver ul { padding-left: 20px; margin-bottom: 12px; }
+.track-crna li, .track-driver li { font-size: 13px; margin-bottom: 6px; color: var(--text-muted); }
+.track-crna li strong, .track-driver li strong { color: var(--text); font-weight: 400; }
+.track-crna p, .track-driver p { font-size: 13px; color: var(--text-muted); }
+
+/* Shared mechanism center card */
+.shared-card {
+  background: var(--bg-card);
+  border: 1px solid var(--sage-border);
+  border-radius: 10px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+.shared-card .shared-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+.shared-card h3 { color: var(--sage); font-size: 16px; font-weight: 500; margin-bottom: 12px; }
+.shared-card ul { padding-left: 20px; margin-bottom: 12px; }
+.shared-card li { font-size: 13px; margin-bottom: 6px; color: var(--text-muted); }
+.shared-card li strong { color: var(--text); font-weight: 400; }
+.shared-card p { font-size: 13px; color: var(--text-muted); }
+
+/* Tier cards */
+.tier-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.tier {
+  background: var(--bg-card);
+  border-radius: 10px;
+  padding: 28px;
+  position: relative;
+}
+.tier-foundation { border: 1px solid var(--green-border); }
+.tier-practitioner { border: 1px solid var(--amber-border); }
+.tier-advanced { border: 1px solid var(--gold-border); }
+.tier-master { border: 1px solid var(--platinum-border); }
+.tier .tier-number {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.tier-foundation .tier-number { color: var(--green); }
+.tier-practitioner .tier-number { color: var(--amber); }
+.tier-advanced .tier-number { color: var(--gold); }
+.tier-master .tier-number { color: var(--platinum); }
+.tier h3 { font-size: 16px; font-weight: 500; margin-bottom: 14px; }
+.tier h4 { font-size: 12px; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; margin-top: 14px; }
+.tier ul { padding-left: 18px; }
+.tier li { font-size: 13px; margin-bottom: 5px; color: var(--text-muted); }
+.tier li strong { color: var(--text); font-weight: 400; }
+.tier .hours {
+  display: inline-block;
+  background: rgba(95,200,155,0.1);
+  border: 1px solid rgba(95,200,155,0.25);
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--sage);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(95,200,155,0.2);
+}
+td {
+  padding: 10px 16px;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(95,200,155,0.05);
+}
+td strong { color: var(--text); font-weight: 400; }
+tr:last-child td { border-bottom: none; }
+
+/* Comparison table */
+.comparison-table { background: var(--bg-card); border-radius: 10px; overflow: hidden; margin: 20px 0; }
+.comparison-table th.crna { color: var(--blue); }
+.comparison-table th.driver { color: var(--red); }
+.comparison-table th.shared { color: var(--sage); }
+
+/* Metric badge */
+.metric {
+  display: inline-block;
+  background: var(--bg-card-alt);
+  border: 1px solid rgba(95,200,155,0.15);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 12px;
+  color: var(--sage);
+  font-weight: 400;
+  margin: 2px 4px 2px 0;
+}
+.metric.blue { border-color: var(--blue-border); color: var(--blue); }
+.metric.red { border-color: var(--red-border); color: var(--red); }
+
+/* Three-column layout */
+.tri-track {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  padding: 40px 48px;
+  border-top: 1px solid rgba(95,200,155,0.15);
+  text-align: center;
+}
+footer .brand-mark {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+footer .legal {
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section { padding: 32px 24px; }
+  header { padding: 40px 24px 32px; }
+  header h1 { font-size: 24px; }
+  .dual-track, .tier-grid, .tri-track { grid-template-columns: 1fr; }
+}
+
+/* Connector line */
+.mechanism-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+.mechanism-flow .node {
+  background: var(--bg-card);
+  border: 1px solid var(--sage-border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--sage);
+}
+.mechanism-flow .arrow {
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+/* Highlight box */
+.highlight {
+  background: var(--sage-dim);
+  border: 1px solid var(--sage-border);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+.highlight p { color: var(--text); font-size: 14px; margin-bottom: 8px; }
+.highlight p:last-child { margin-bottom: 0; }
+.highlight.blue-highlight { background: var(--blue-dim); border-color: var(--blue-border); }
+.highlight.red-highlight { background: var(--red-dim); border-color: var(--red-border); }
+
+/* Vault concept tag */
+.vault-tag {
+  display: inline-block;
+  background: rgba(95,200,155,0.08);
+  border: 1px solid rgba(95,200,155,0.2);
+  border-radius: 4px;
+  padding: 1px 8px;
+  font-size: 11px;
+  color: var(--sage);
+  font-weight: 400;
+  margin: 1px 2px;
+}
+</style>
+</head>
+<body>
+
+<!-- ================================================================ -->
+<!-- HEADER                                                           -->
+<!-- ================================================================ -->
+<header>
+  <div class="brand">Somnistics Research Labs</div>
+  <h1>Pausality<span class="tm">&trade;</span> Certification Program</h1>
+  <div class="subtitle">Autonomic Self-Regulation for High-Consequence Performance</div>
+  <div class="tracks"><span class="crna">CRNA Track</span> &nbsp;&times;&nbsp; <span class="driver">Motorsport Track</span></div>
+  <div class="meta">Specification v1.0 &nbsp;|&nbsp; March 2026 &nbsp;|&nbsp; Somnistics Research Labs &nbsp;|&nbsp; Confidential</div>
+</header>
+
+<!-- ================================================================ -->
+<!-- SECTION 1: THE SHARED MECHANISM                                  -->
+<!-- ================================================================ -->
+<section>
+  <div class="section-label">Section 1</div>
+  <div class="section-title">The Shared Mechanism: Why These Two Populations</div>
+
+  <p class="lead">A CRNA managing a hemodynamically unstable patient and a race car driver navigating a high-speed corner in traffic share the same physiological challenge: sustained autonomic load with catastrophic consequences for dysregulation. The mechanism is identical. The stressor profile is different. The intervention is the same.</p>
+
+  <div class="shared-card">
+    <div class="shared-label">Shared Autonomic Architecture</div>
+    <h3>Seven Parallel Mechanisms</h3>
+    <table>
+      <tr>
+        <th style="width:30%">Mechanism</th>
+        <th class="crna" style="width:35%">CRNA Expression</th>
+        <th class="driver" style="width:35%">Driver Expression</th>
+      </tr>
+      <tr>
+        <td><strong>Extended high-autonomic-load performance</strong></td>
+        <td>8-12 hour shifts, sole provider responsibility, continuous vigilance</td>
+        <td>2-4 hour race stints, sustained G-forces, heat load, speed-induced arousal</td>
+      </tr>
+      <tr>
+        <td><strong>Split-second catastrophic-consequence decisions</strong></td>
+        <td>Airway management, hemodynamic instability, anesthetic depth judgment</td>
+        <td>Braking points, overtaking decisions, wet-weather line selection, incident avoidance</td>
+      </tr>
+      <tr>
+        <td><strong>State drift</strong><br><span class="vault-tag">state-drift</span></td>
+        <td>Progressive narrowing across cases; elevated baseline after critical incidents; "autopilot" during routine cases</td>
+        <td>Progressive heat/dehydration-driven cognitive narrowing; adrenaline-masked fatigue; "tunnel vision" in late-race stints</td>
+      </tr>
+      <tr>
+        <td><strong>Naturally occurring gap moments</strong><br><span class="vault-tag">gap-moment-training</span></td>
+        <td>Pre-induction pause, between cases, post-critical incident, shift transitions</td>
+        <td>Pre-race grid, pit stops, caution/safety car laps, between sessions, post-incident cooldown</td>
+      </tr>
+      <tr>
+        <td><strong>Autonomic home base return</strong><br><span class="vault-tag">autonomic-home-base</span></td>
+        <td>Recovery after airway crisis, emotional reset after patient death, re-engagement after shift break</td>
+        <td>Recovery after spin/incident, pit stop reset, overnight recovery between race days</td>
+      </tr>
+      <tr>
+        <td><strong>Embodied metacognition</strong><br><span class="vault-tag">embodied-metacognition</span></td>
+        <td>Reading own body signals while monitoring patient physiology; detecting shoulder tension as early warning of state drift</td>
+        <td>Reading body signals while driving at limit; detecting grip tension, breathing pattern changes, narrowing peripheral vision</td>
+      </tr>
+      <tr>
+        <td><strong>Adversity visualization</strong><br><span class="vault-tag">adversity-visualization</span></td>
+        <td>Pre-case planning: "what if the airway fails?"; embodied rehearsal of emergency protocols</td>
+        <td>Pre-race briefing: "what if it rains at Turn 7?"; embodied rehearsal of incident recovery</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="dual-track">
+    <div class="track-crna">
+      <div class="track-label">CRNA Context</div>
+      <h3>The Clinical Pressure Profile</h3>
+      <ul>
+        <li><strong>Sole provider model</strong> &mdash; no one else is managing that airway</li>
+        <li><strong>30-40 gap moments per shift</strong> &mdash; between cases, walking to OR, post-intubation, emergence</li>
+        <li><strong>83% report stressful events</strong> within 30 days (Putnam 2025)</li>
+        <li><strong>Interoceptive suppression</strong> &mdash; medical training teaches you to ignore your own body</li>
+        <li><strong>$195K median salary</strong> &mdash; career extension has measurable economic value</li>
+        <li><strong>Moral injury accumulation</strong> &mdash; errors compound into burnout via the error-injury-burnout pipeline</li>
+      </ul>
+    </div>
+    <div class="track-driver">
+      <div class="track-label">Motorsport Context</div>
+      <h3>The Performance Pressure Profile</h3>
+      <ul>
+        <li><strong>Sustained G-force load</strong> &mdash; 2-5G lateral/braking forces for hours</li>
+        <li><strong>15-25 gap moments per race weekend</strong> &mdash; pit stops, caution laps, session breaks, grid formation</li>
+        <li><strong>Core temp 39-40&deg;C</strong> &mdash; heat and dehydration degrade cognition progressively</li>
+        <li><strong>Speed-induced sympathetic arousal</strong> &mdash; 200+ mph activates fight-or-flight continuously</li>
+        <li><strong>Career longevity = competitive edge</strong> &mdash; sustained peak performance across decades</li>
+        <li><strong>Team co-regulation via radio</strong> &mdash; pit crew/engineer communication as real-time co-regulation channel</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mechanism-flow">
+    <div class="node">Stressor Load</div>
+    <div class="arrow">&rarr;</div>
+    <div class="node">Sympathetic Activation</div>
+    <div class="arrow">&rarr;</div>
+    <div class="node">Incomplete Recovery</div>
+    <div class="arrow">&rarr;</div>
+    <div class="node">State Drift</div>
+    <div class="arrow">&rarr;</div>
+    <div class="node">Error Vulnerability</div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>The intervention point is identical:</strong> Gap Moment Training&trade; repurposes naturally occurring transitions as autonomic regulation reps. The same 60-second NeuroMinute&trade; protocol &mdash; cardiac-anchored breathing, interoceptive attention, embodied metacognition &mdash; interrupts state drift in both the OR and the cockpit.</p>
+    <p>What differs is the <em>stressor profile</em>, the <em>gap moment topology</em>, and the <em>assessment metrics</em>. The underlying neuroscience is the same organism doing the same thing: returning to autonomic home base under pressure.</p>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 2: CERTIFICATION TIERS                                   -->
+<!-- ================================================================ -->
+<section>
+  <div class="section-label">Section 2</div>
+  <div class="section-title">Certification Architecture: Four Tiers</div>
+
+  <p class="lead">Each tier builds on the last. Foundation establishes the physiological infrastructure. Practitioner integrates it into workflow. Advanced extends to team and adversity contexts. Master creates the capacity to teach and contribute to the evidence base. Both tracks share the same tier structure; population-specific adaptations are detailed in Sections 3 and 4.</p>
+
+  <!-- TIER 1: FOUNDATION -->
+  <div class="tier-grid">
+    <div class="tier tier-foundation">
+      <div class="tier-number">Tier 1</div>
+      <h3>Foundation</h3>
+      <div class="hours">20 contact hours + 30-day practice log</div>
+      <h4>Core Competencies</h4>
+      <ul>
+        <li><strong>Autonomic literacy</strong> &mdash; understand the ANS hierarchy, polyvagal framework, sympathetic/parasympathetic interplay</li>
+        <li><strong>Breath protocol fluency</strong> &mdash; demonstrate 4 core protocols: Box (5/5/5/5), Anesthetist's (10/0/10/0), Rapid Reg (3/3/3/3), Parasympathetic (4/7/8)</li>
+        <li><strong>Autonomic home base establishment</strong> &mdash; map personal baseline via equal breathing; demonstrate return-to-center after induced stress</li>
+        <li><strong>Interoceptive baseline</strong> &mdash; complete MAIA-2 (or MAIA-2-CRNA / MAIA-2-Motorsport adaptation) with pre/post comparison</li>
+        <li><strong>Gap moment identification</strong> &mdash; map 10+ gap moments in personal workflow/performance environment</li>
+      </ul>
+      <h4>Assessment</h4>
+      <ul>
+        <li>30-item knowledge exam (80% pass threshold)</li>
+        <li>Diaphragmatic engagement test: nasal inhale &ge; 8 seconds</li>
+        <li>MAIA-2 completion with improvement in &ge; 4 subscales</li>
+        <li>30-day practice log: minimum 3 gap moment practices per day</li>
+        <li>BOLT score baseline established</li>
+      </ul>
+      <h4>NeuroMinute Curriculum</h4>
+      <ul>
+        <li>21-session Neuro-Ouroboros curriculum (Waves 1-3)</li>
+        <li>Layered Intervention Stack: Layers 1-3 (voice-guided breath, awareness guidance, personal affirmation)</li>
+        <li>Focus: somatic baseline, breath anchoring, body scanning</li>
+      </ul>
+      <h4>Hardware</h4>
+      <ul>
+        <li>Apple Watch (HRV monitoring, haptic cues)</li>
+        <li>AirPods (audio guidance, binaural beats)</li>
+        <li>Pausality app (session tracking, biometric logging)</li>
+      </ul>
+      <h4>Recertification</h4>
+      <ul>
+        <li>Annual renewal</li>
+        <li>30-day practice log + MAIA-2 re-administration showing maintained or improved scores</li>
+      </ul>
+    </div>
+
+    <!-- TIER 2: PRACTITIONER -->
+    <div class="tier tier-practitioner">
+      <div class="tier-number">Tier 2</div>
+      <h3>Practitioner</h3>
+      <div class="hours">40 contact hours + 90-day practice log</div>
+      <h4>Prerequisite</h4>
+      <ul>
+        <li>Foundation certification held for &ge; 6 months</li>
+      </ul>
+      <h4>Core Competencies</h4>
+      <ul>
+        <li><strong>GMT workflow integration</strong> &mdash; demonstrate gap moment practice embedded in live performance context (OR / track)</li>
+        <li><strong>Biofeedback-guided practice</strong> &mdash; use cardiac-anchored breathing with real-time HRV feedback to find personal resonant frequency</li>
+        <li><strong>Progressive overload</strong> &mdash; complete contemplative progressive overload protocol across 3 waves of increasing difficulty</li>
+        <li><strong>State drift detection</strong> &mdash; identify own state drift episodes using biometric and interoceptive signals</li>
+        <li><strong>Protocol selection under pressure</strong> &mdash; choose correct NeuroMinute for detected state in &lt; 10 seconds</li>
+      </ul>
+      <h4>Assessment</h4>
+      <ul>
+        <li>HRV recovery test: return to within 10% of baseline RMSSD within 90 seconds after induced stress</li>
+        <li>5 clinical/performance scenario assessments (90% accuracy)</li>
+        <li>SRB-60: Silver tier across all 5 competency domains</li>
+        <li>Peer teaching demonstration: teach 3 colleagues a gap moment drill</li>
+        <li>90-day continuous practice log with biometric data</li>
+      </ul>
+      <h4>NeuroMinute Curriculum</h4>
+      <ul>
+        <li>Advanced NeuroMinute library: all 5 prototype drills (Stability Snap, Time Horizon Arc, Error Reversal Loop, Radiant Exhale, Coherent Return)</li>
+        <li>Layered Intervention Stack: Layers 1-6 (adds binaural beats, interoceptive guidance, exteroceptive guidance)</li>
+        <li>Cardiac-anchored breathing as primary modality</li>
+        <li>Introduction to Neuro-Respiratory Cardiac Coherence (NRCC) protocol</li>
+      </ul>
+      <h4>Hardware</h4>
+      <ul>
+        <li>All Foundation hardware plus:</li>
+        <li>Polar H10 chest strap (clinical-grade HRV)</li>
+        <li>Elite HRV or equivalent app for resonant frequency identification</li>
+      </ul>
+      <h4>Recertification</h4>
+      <ul>
+        <li>Annual renewal</li>
+        <li>60-day practice log + HRV recovery re-test + 2 scenario assessments</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tier-grid">
+    <!-- TIER 3: ADVANCED -->
+    <div class="tier tier-advanced">
+      <div class="tier-number">Tier 3</div>
+      <h3>Advanced</h3>
+      <div class="hours">60 contact hours + 180-day practice log</div>
+      <h4>Prerequisite</h4>
+      <ul>
+        <li>Practitioner certification held for &ge; 12 months</li>
+      </ul>
+      <h4>Core Competencies</h4>
+      <ul>
+        <li><strong>Team co-regulation</strong> &mdash; demonstrate capacity to regulate team autonomic state through breath, voice tone, and presence</li>
+        <li><strong>Adversity visualization mastery</strong> &mdash; complete 7-step failure visualization protocol with embodied interoceptive components</li>
+        <li><strong>Real-time state drift detection and correction</strong> &mdash; detect and correct drift within a single performance window using only interoceptive signals</li>
+        <li><strong>Structured Interoception Training (SIT)</strong> &mdash; proficiency across all 3 modes: Interoceptive Attention, Breath-Paced Autonomic, Graded Interoceptive Exposure</li>
+        <li><strong>Learning under load</strong> &mdash; demonstrate the 4-phase learning loop (pre-plan, in-cue, post-harvest, spaced retrieval) integrated with GMT practice</li>
+        <li><strong>Non-dual awareness under stress</strong> &mdash; maintain observer perspective during high-arousal scenarios (Wave 3 of contemplative progressive overload)</li>
+      </ul>
+      <h4>Assessment</h4>
+      <ul>
+        <li>SRB-60: Gold tier across all 5 competency domains</li>
+        <li>MAIA-2 scores in top quartile across all 8 subscales</li>
+        <li>HRV recovery &lt; 60 seconds post-stressor</li>
+        <li>Team co-regulation demonstration (observed session with team)</li>
+        <li>Adversity visualization portfolio: 10 scenario rehearsals with biometric documentation</li>
+        <li>State drift detection accuracy: identify &ge; 80% of induced drift episodes in simulation</li>
+      </ul>
+      <h4>NeuroMinute Curriculum</h4>
+      <ul>
+        <li>Full Layered Intervention Stack: Layers 1-8 (dual-channel attention, multi-anchor interoception)</li>
+        <li>Full NRCC protocol (HRV coherence + binaural entrainment + cardiac anchoring)</li>
+        <li>Graded interoceptive exposure: CO2 tolerance drills, air hunger protocols</li>
+        <li>Team-synchronized breathing protocols (Coherent Return drill adapted for team)</li>
+      </ul>
+      <h4>Hardware</h4>
+      <ul>
+        <li>All Practitioner hardware plus:</li>
+        <li>Capnography access (CO2 tolerance measurement)</li>
+        <li>Team-sync module in Pausality app</li>
+      </ul>
+      <h4>Recertification</h4>
+      <ul>
+        <li>Annual renewal</li>
+        <li>90-day practice log + SRB-60 re-assessment + team co-regulation demonstration</li>
+      </ul>
+    </div>
+
+    <!-- TIER 4: MASTER -->
+    <div class="tier tier-master">
+      <div class="tier-number">Tier 4</div>
+      <h3>Master</h3>
+      <div class="hours">100+ contact hours + ongoing practice</div>
+      <h4>Prerequisite</h4>
+      <ul>
+        <li>Advanced certification held for &ge; 18 months</li>
+        <li>Demonstrated teaching capability</li>
+      </ul>
+      <h4>Core Competencies</h4>
+      <ul>
+        <li><strong>Teaching capability</strong> &mdash; deliver the full Foundation and Practitioner curriculum to cohorts</li>
+        <li><strong>Mentoring</strong> &mdash; guide individuals through the certification journey with personalized protocol adaptation</li>
+        <li><strong>Evidence contribution</strong> &mdash; participate in data collection, case study development, or research design</li>
+        <li><strong>Protocol innovation</strong> &mdash; design population-specific NeuroMinute variations based on context analysis</li>
+        <li><strong>Cross-population translation</strong> &mdash; understand and communicate the shared mechanism across domains (clinical, motorsport, military, first responder)</li>
+      </ul>
+      <h4>Assessment</h4>
+      <ul>
+        <li>SRB-60: Platinum tier across all 5 competency domains</li>
+        <li>Teach the Foundation curriculum to &ge; 2 cohorts with documented learner outcomes</li>
+        <li>Publish or present 1 case study, practice report, or research contribution</li>
+        <li>Mentor &ge; 3 individuals through Foundation certification</li>
+        <li>Peer review by SRL faculty panel</li>
+        <li>Annual contribution to the Pausality evidence base (data submission, protocol refinement, or published work)</li>
+      </ul>
+      <h4>NeuroMinute Curriculum</h4>
+      <ul>
+        <li>Full curriculum mastery + ability to design custom NeuroMinute sequences</li>
+        <li>Polyanchora mastery: multi-anchor attentional scaffolding design</li>
+        <li>Curriculum design skills: sequencing, progressive overload architecture, assessment alignment</li>
+      </ul>
+      <h4>Hardware</h4>
+      <ul>
+        <li>All Advanced hardware plus:</li>
+        <li>Instructor dashboard in Pausality app (cohort monitoring, outcome tracking)</li>
+        <li>Access to anonymized population data for research</li>
+      </ul>
+      <h4>Recertification</h4>
+      <ul>
+        <li>Biennial renewal</li>
+        <li>Continued teaching activity + evidence contribution + SRB-60 re-assessment</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SRB-60 Summary -->
+  <div class="shared-card">
+    <div class="shared-label">Assessment Core</div>
+    <h3>Somnistics Readiness Battery (SRB-60)</h3>
+    <p>The SRB-60 is the standardized, proctorable assessment across all tiers. Five competency domains, each tested within 60-second events matching the NeuroMinute design space:</p>
+    <table>
+      <tr>
+        <th>Domain</th>
+        <th>What It Tests</th>
+        <th>Tier Thresholds</th>
+      </tr>
+      <tr>
+        <td><strong>1. Gap Moment Literacy</strong></td>
+        <td>Detecting transitions, classifying autonomic state (hyper/hypo/tunnel/dyspnea/ready)</td>
+        <td><span class="metric">Bronze: detect</span> <span class="metric">Gold: classify in &lt;5s</span></td>
+      </tr>
+      <tr>
+        <td><strong>2. Micro-Interoceptive Skill</strong></td>
+        <td>Rapid sensing, labeling, and calibration of internal signals under time pressure</td>
+        <td><span class="metric">Bronze: label 3 signals</span> <span class="metric">Gold: 6+ signals</span></td>
+      </tr>
+      <tr>
+        <td><strong>3. Protocol Selection &amp; Fidelity</strong></td>
+        <td>Choosing the right NeuroMinute for detected state; executing with high adherence</td>
+        <td><span class="metric">Bronze: correct protocol</span> <span class="metric">Gold: &lt;10s selection</span></td>
+      </tr>
+      <tr>
+        <td><strong>4. Measured State Delta</strong></td>
+        <td>Producing measurable physiological change within the 60-second window</td>
+        <td><span class="metric">Bronze: detectable shift</span> <span class="metric">Platinum: &gt;15ms RMSSD</span></td>
+      </tr>
+      <tr>
+        <td><strong>5. Return-to-Task Readiness</strong></td>
+        <td>Restoring executive function without sedation or dissociation</td>
+        <td><span class="metric">Bronze: self-report</span> <span class="metric">Gold: biometric confirmed</span></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 3: CRNA TRACK                                            -->
+<!-- ================================================================ -->
+<section>
+  <div class="section-label">Section 3</div>
+  <div class="section-title">CRNA Track: Clinical Autonomic Mastery</div>
+
+  <p class="lead">The CRNA track embeds Pausality certification within the existing continuing education infrastructure (AANA Category A credits) and connects to Somnistics as a middle-range nursing theory. This is not wellness programming bolted onto a clinical career. This is professional practice &mdash; prehabilitative mental hygiene as a standard of care.</p>
+
+  <div class="highlight blue-highlight">
+    <p><strong>The nursing process (ADPIE) maps directly to the Pausality loop:</strong> Assessment (interoceptive scan) &rarr; Diagnosis (state classification) &rarr; Planning (protocol selection) &rarr; Implementation (NeuroMinute execution) &rarr; Evaluation (biometric confirmation of state change).</p>
+  </div>
+
+  <div class="card">
+    <h3>Gap Moment Topology: CRNA Shift</h3>
+    <table>
+      <tr>
+        <th>Gap Moment</th>
+        <th>Frequency</th>
+        <th>Duration</th>
+        <th>Recommended Drill</th>
+      </tr>
+      <tr>
+        <td><strong>Pre-induction pause</strong></td>
+        <td>Every case</td>
+        <td>30-90 sec</td>
+        <td>Stability Snap (4-2-6 grounding)</td>
+      </tr>
+      <tr>
+        <td><strong>Between cases</strong></td>
+        <td>4-8x per shift</td>
+        <td>2-5 min</td>
+        <td>Error Reversal Loop or Radiant Exhale</td>
+      </tr>
+      <tr>
+        <td><strong>Post-critical incident</strong></td>
+        <td>Variable</td>
+        <td>60 sec minimum</td>
+        <td>Coherent Return (team-aligned)</td>
+      </tr>
+      <tr>
+        <td><strong>Shift transitions</strong></td>
+        <td>1-2x per day</td>
+        <td>3-5 min</td>
+        <td>Full NRCC protocol</td>
+      </tr>
+      <tr>
+        <td><strong>Walking to OR</strong></td>
+        <td>4-8x per shift</td>
+        <td>30-60 sec</td>
+        <td>Adversity visualization (pre-case)</td>
+      </tr>
+      <tr>
+        <td><strong>Post-emergence / extubation</strong></td>
+        <td>Every case</td>
+        <td>30-60 sec</td>
+        <td>Time Horizon Arc (perspective reset)</td>
+      </tr>
+      <tr>
+        <td><strong>Commute (pre/post shift)</strong></td>
+        <td>2x per day</td>
+        <td>10-30 min</td>
+        <td>Humming/resonant breathing (extended practice)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>CRNA-Specific Stressor Mapping</h3>
+    <table>
+      <tr>
+        <th>Stressor</th>
+        <th>Autonomic Signature</th>
+        <th>State Drift Pattern</th>
+        <th>Intervention Target</th>
+      </tr>
+      <tr>
+        <td><strong>Difficult airway</strong></td>
+        <td>Acute sympathetic spike, tunnel vision, time compression</td>
+        <td>Hyperarousal &rarr; cognitive narrowing</td>
+        <td>Rapid Reg (3/3/3/3) post-event</td>
+      </tr>
+      <tr>
+        <td><strong>Hemodynamic instability</strong></td>
+        <td>Sustained moderate sympathetic activation, vigilance fatigue</td>
+        <td>Gradual baseline elevation</td>
+        <td>Cardiac-anchored breathing during stable phases</td>
+      </tr>
+      <tr>
+        <td><strong>Sole provider pressure</strong></td>
+        <td>Chronic low-grade sympathetic tone, hypervigilance</td>
+        <td>Slow drift, interoceptive suppression</td>
+        <td>Radiant Exhale between cases</td>
+      </tr>
+      <tr>
+        <td><strong>Patient death / adverse outcome</strong></td>
+        <td>Acute dorsal vagal (freeze), followed by sympathetic rebound</td>
+        <td>Dissociation &rarr; rumination loop</td>
+        <td>Coherent Return + team co-regulation</td>
+      </tr>
+      <tr>
+        <td><strong>Back-to-back cases (no break)</strong></td>
+        <td>Cumulative sympathetic loading, allostatic ratchet</td>
+        <td>Incomplete recovery cycles compound</td>
+        <td>Micro gap moments: 30-sec interoceptive scans</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Metrics &amp; Outcomes</h3>
+    <div class="dual-track">
+      <div style="background: transparent; border: none; padding: 0;">
+        <h4 style="color: var(--blue); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Biometric Measures</h4>
+        <ul>
+          <li><strong>RMSSD during cases</strong> &mdash; real-time vagal tone indicator via Apple Watch / Polar H10</li>
+          <li><strong>HRV recovery time</strong> &mdash; seconds to return to baseline after stressor</li>
+          <li><strong>State drift episodes per shift</strong> &mdash; app-detected periods of sustained baseline elevation</li>
+          <li><strong>BOLT score</strong> &mdash; CO2 tolerance as respiratory fitness indicator</li>
+          <li><strong>Resting HR trend</strong> &mdash; longitudinal cardiovascular health</li>
+        </ul>
+      </div>
+      <div style="background: transparent; border: none; padding: 0;">
+        <h4 style="color: var(--blue); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Outcome Measures</h4>
+        <ul>
+          <li><strong>MAIA-2-CRNA</strong> &mdash; 8-subscale interoceptive awareness + CRNA-specific extension module</li>
+          <li><strong>PSS-10</strong> &mdash; perceived stress (validated, widely used)</li>
+          <li><strong>MBI (Maslach Burnout Inventory)</strong> &mdash; burnout dimensions</li>
+          <li><strong>Clinical error rates</strong> &mdash; near-misses, medication errors (institutional data)</li>
+          <li><strong>Retention / career longevity</strong> &mdash; time in practice, intent to leave</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>CE Credit Integration</h3>
+    <p>The CRNA track is designed for AANA Category A continuing education credit approval:</p>
+    <table>
+      <tr>
+        <th>Tier</th>
+        <th>CE Hours</th>
+        <th>Category</th>
+        <th>CE Credit Type</th>
+      </tr>
+      <tr>
+        <td><strong>Foundation</strong></td>
+        <td>20 hours</td>
+        <td>Patient Safety / Wellness</td>
+        <td>AANA Category A (pending approval)</td>
+      </tr>
+      <tr>
+        <td><strong>Practitioner</strong></td>
+        <td>40 hours</td>
+        <td>Patient Safety / Clinical Performance</td>
+        <td>AANA Category A (pending approval)</td>
+      </tr>
+      <tr>
+        <td><strong>Advanced</strong></td>
+        <td>60 hours</td>
+        <td>Leadership / Team Performance</td>
+        <td>AANA Category A (pending approval)</td>
+      </tr>
+      <tr>
+        <td><strong>Master</strong></td>
+        <td>Ongoing</td>
+        <td>Education / Research</td>
+        <td>AANA Category A + academic credit pathway</td>
+      </tr>
+    </table>
+    <p style="margin-top: 12px; font-size: 13px; color: var(--text-dim);">CRNAs need 100 CE credits per 4-year recertification cycle (CPC). The Pausality certification contributes directly to this requirement while building durable clinical capability &mdash; CE with actual physiological outcomes, not just seat time.</p>
+  </div>
+
+  <div class="card">
+    <h3>Connection to Nursing Theory</h3>
+    <p>Somnistics functions as a middle-range nursing theory connecting autonomic regulation science to clinical practice. The Pausality certification operationalizes this theory:</p>
+    <ul>
+      <li><strong>Theoretical foundation:</strong> Polyvagal theory + interoception science + allostatic load model</li>
+      <li><strong>Core constructs:</strong> State drift, gap moments, autonomic home base, embodied metacognition, clinician durability</li>
+      <li><strong>Practice applications:</strong> Gap Moment Training&trade;, NeuroMinutes&trade;, Structured Interoception Training</li>
+      <li><strong>Measurable outcomes:</strong> MAIA-2-CRNA scores, HRV metrics, burnout indices, error rates, career longevity</li>
+      <li><strong>ADPIE integration:</strong> Every gap moment practice follows the nursing process (Assess &rarr; Diagnose &rarr; Plan &rarr; Implement &rarr; Evaluate)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 4: MOTORSPORT TRACK                                      -->
+<!-- ================================================================ -->
+<section>
+  <div class="section-label">Section 4</div>
+  <div class="section-title">Motorsport Track: Performance Autonomic Mastery</div>
+
+  <p class="lead">The motorsport track adapts the same underlying science for a population where autonomic regulation is the difference between tenths of a second on lap time, consistent race-long performance, and career longevity in a domain where the body is the primary instrument. The driver who can regulate under 5G braking while making strategic decisions has the same skill set as the CRNA managing an airway crisis &mdash; embodied metacognition under load.</p>
+
+  <div class="highlight red-highlight">
+    <p><strong>The performance loop maps identically:</strong> Detect state (interoceptive scan of grip tension, breathing pattern, visual field width) &rarr; Classify (arousal level, drift status) &rarr; Select protocol (which breath pattern for this moment) &rarr; Execute (NeuroMinute or micro-intervention) &rarr; Confirm (lap time consistency, reaction time, felt state).</p>
+  </div>
+
+  <div class="card">
+    <h3>Gap Moment Topology: Race Weekend</h3>
+    <table>
+      <tr>
+        <th>Gap Moment</th>
+        <th>Frequency</th>
+        <th>Duration</th>
+        <th>Recommended Drill</th>
+      </tr>
+      <tr>
+        <td><strong>Pre-race grid formation</strong></td>
+        <td>1x per race</td>
+        <td>3-5 min</td>
+        <td>Full adversity visualization (7-step protocol) + Stability Snap</td>
+      </tr>
+      <tr>
+        <td><strong>Pit stops</strong></td>
+        <td>1-3x per race</td>
+        <td>5-30 sec</td>
+        <td>Rapid Reg (3/3/3/3) &mdash; fastest autonomic reset</td>
+      </tr>
+      <tr>
+        <td><strong>Caution / safety car laps</strong></td>
+        <td>Variable</td>
+        <td>2-10 min</td>
+        <td>Cardiac-anchored breathing + state assessment</td>
+      </tr>
+      <tr>
+        <td><strong>Between sessions</strong> (practice, qualifying, race)</td>
+        <td>3-5x per weekend</td>
+        <td>30-120 min</td>
+        <td>Full NRCC protocol + adversity visualization for next session</td>
+      </tr>
+      <tr>
+        <td><strong>Post-incident / post-spin</strong></td>
+        <td>Variable</td>
+        <td>30-60 sec</td>
+        <td>Error Reversal Loop (curiosity-based breath, restore executive function)</td>
+      </tr>
+      <tr>
+        <td><strong>Formation lap</strong></td>
+        <td>1x per race</td>
+        <td>90-180 sec</td>
+        <td>Radiant Exhale + embodied visualization of opening laps</td>
+      </tr>
+      <tr>
+        <td><strong>Cool-down lap</strong></td>
+        <td>1x per race</td>
+        <td>2-3 min</td>
+        <td>Time Horizon Arc (shift from urgency to recovery mindset)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Motorsport-Specific Stressor Mapping</h3>
+    <table>
+      <tr>
+        <th>Stressor</th>
+        <th>Autonomic Signature</th>
+        <th>State Drift Pattern</th>
+        <th>Intervention Target</th>
+      </tr>
+      <tr>
+        <td><strong>Sustained G-forces</strong></td>
+        <td>Chronic sympathetic activation, blood pooling, muscular fatigue</td>
+        <td>Progressive physical exhaustion masking cognitive drift</td>
+        <td>Cardiac-anchored breathing during straights</td>
+      </tr>
+      <tr>
+        <td><strong>Heat / dehydration</strong></td>
+        <td>Elevated core temp, reduced HRV, impaired thermoregulation</td>
+        <td>Slow cognitive degradation invisible to the driver</td>
+        <td>Pre-hydration + interoceptive temperature monitoring</td>
+      </tr>
+      <tr>
+        <td><strong>Speed-induced arousal</strong></td>
+        <td>Continuous fight-or-flight at 200+ mph, adrenaline habituation</td>
+        <td>Arousal ceiling &rarr; numbness to internal signals</td>
+        <td>Graded interoceptive exposure (train awareness under arousal)</td>
+      </tr>
+      <tr>
+        <td><strong>Competitor pressure</strong></td>
+        <td>Acute sympathetic spikes during wheel-to-wheel racing</td>
+        <td>Over-driving, aggression, tunnel vision on rival</td>
+        <td>Time Horizon Arc (urgency &rarr; strategy shift)</td>
+      </tr>
+      <tr>
+        <td><strong>Incident / spin recovery</strong></td>
+        <td>Massive sympathetic spike + freeze response, then rebound</td>
+        <td>Post-incident hypervigilance or dissociation</td>
+        <td>Error Reversal Loop + radio co-regulation with engineer</td>
+      </tr>
+      <tr>
+        <td><strong>Late-race fatigue</strong></td>
+        <td>Cumulative allostatic load, depleted HRV reserve</td>
+        <td>Lap time degradation, increased variability, error vulnerability</td>
+        <td>Micro gap moments during straights: 3-breath interoceptive scans</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Metrics &amp; Outcomes</h3>
+    <div class="dual-track">
+      <div style="background: transparent; border: none; padding: 0;">
+        <h4 style="color: var(--red); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Biometric Measures</h4>
+        <ul>
+          <li><strong>RMSSD during sessions</strong> &mdash; real-time vagal tone via chest strap (integrated with driver biometric systems)</li>
+          <li><strong>HRV trend across race stints</strong> &mdash; degradation curve reveals state drift onset</li>
+          <li><strong>Core body temperature</strong> &mdash; thermal load tracking</li>
+          <li><strong>Reaction time variability</strong> &mdash; consistency as autonomic regulation proxy</li>
+          <li><strong>Respiration rate / pattern</strong> &mdash; breath holding detection, hyperventilation alerts</li>
+        </ul>
+      </div>
+      <div style="background: transparent; border: none; padding: 0;">
+        <h4 style="color: var(--red); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Performance Measures</h4>
+        <ul>
+          <li><strong>Lap time consistency</strong> &mdash; standard deviation across stint (lower = better regulated)</li>
+          <li><strong>Sector time degradation</strong> &mdash; which corners degrade first reveals cognitive vs. physical drift</li>
+          <li><strong>Driver-reported flow state</strong> &mdash; session-level self-assessment correlated with biometrics</li>
+          <li><strong>Incident rate per 1000 laps</strong> &mdash; longitudinal safety metric</li>
+          <li><strong>Qualifying vs. race performance gap</strong> &mdash; narrowing indicates sustained peak-state regulation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Team Co-Regulation: The Pit Crew &amp; Race Engineer</h3>
+    <p>Motorsport is a team sport disguised as an individual one. The driver's autonomic state is co-regulated through continuous radio communication with their race engineer, and through the pit crew's precision and energy during stops.</p>
+    <ul>
+      <li><strong>Race engineer as co-regulator:</strong> Voice tone, pacing, and content of radio communication directly modulate driver autonomic state. A calm engineer voice during a crisis = external vagal input. Training race engineers in co-regulation communication is Advanced tier content.</li>
+      <li><strong>Pit crew synchronization:</strong> A fast, smooth pit stop resets the driver's autonomic state. A botched stop creates a sympathetic spike that persists for multiple laps. The pit stop is a team gap moment.</li>
+      <li><strong>Post-race debrief as Learning Under Load:</strong> The 4-phase loop (pre-session plan, in-session cues, post-session harvest, spaced retrieval) maps directly to the motorsport debrief cycle.</li>
+      <li><strong>Coherent Return drill adapted for team:</strong> Post-incident team breathing exercise via radio &mdash; engineer guides the driver through 3 synchronized breaths before the restart.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Connection to Motorsport Performance Science</h3>
+    <p>Pausality certification extends the existing motorsport performance science stack:</p>
+    <ul>
+      <li><strong>Physical conditioning:</strong> Neck, core, and cardiovascular training are standard. Pausality adds the autonomic conditioning layer &mdash; the ability to maintain cognitive performance when physical systems are under load.</li>
+      <li><strong>Sim training:</strong> Simulators train procedural skill. Pausality adds interoceptive awareness during simulation &mdash; training the driver to notice their body signals while performing, not just afterward.</li>
+      <li><strong>Sports psychology:</strong> Traditional mental performance coaching is cognitive. Pausality is physiological &mdash; it trains the nervous system directly through breath, biofeedback, and embodied rehearsal.</li>
+      <li><strong>Data engineering:</strong> Motorsport generates massive telemetry. Pausality adds the driver's physiological telemetry to the existing data stack &mdash; HRV mapped to track position, lap time, and sector performance.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 5: ASSESSMENT FRAMEWORK                                  -->
+<!-- ================================================================ -->
+<section>
+  <div class="section-label">Section 5</div>
+  <div class="section-title">Assessment Framework</div>
+
+  <p class="lead">Assessment is physiological, not just cognitive. The Pausality certification measures what your nervous system can <em>do</em>, not just what you <em>know</em>. Every assessment event mirrors the NeuroMinute format: 60 seconds, biometrically tracked, context-embedded.</p>
+
+  <div class="tri-track">
+    <div class="shared-card" style="margin-bottom: 0;">
+      <div class="shared-label">Shared Instruments</div>
+      <h3>Both Tracks</h3>
+      <ul>
+        <li><strong>MAIA-2</strong> (core 37-item, 8-subscale) &mdash; interoceptive awareness baseline and progress</li>
+        <li><strong>SRB-60</strong> (5 domains) &mdash; operational competency battery</li>
+        <li><strong>HRV recovery test</strong> &mdash; induced stress &rarr; timed recovery to RMSSD baseline</li>
+        <li><strong>Diaphragmatic engagement</strong> &mdash; nasal inhale duration (mechanical breathing competency)</li>
+        <li><strong>BOLT score</strong> &mdash; CO2 tolerance / respiratory fitness</li>
+        <li><strong>Practice log analysis</strong> &mdash; consistency, frequency, biometric trends</li>
+      </ul>
+    </div>
+    <div class="track-crna" style="margin-bottom: 0;">
+      <div class="track-label">CRNA-Specific</div>
+      <ul>
+        <li><strong>MAIA-2-CRNA extension</strong> &mdash; CRNA-specific items ("during a case," "while monitoring a patient")</li>
+        <li><strong>IAUL-CRNA</strong> &mdash; Interoceptive Attention Under Load module (5-10 items)</li>
+        <li><strong>PSS-10</strong> &mdash; perceived stress scale</li>
+        <li><strong>MBI</strong> &mdash; Maslach Burnout Inventory (3 subscales)</li>
+        <li><strong>Clinical scenario battery</strong> &mdash; 5 CRNA-specific scenarios (airway crisis, hemodynamic instability, code, sole provider, team conflict)</li>
+        <li><strong>Error log review</strong> &mdash; personal near-miss tracking as learning artifact</li>
+      </ul>
+    </div>
+    <div class="track-driver" style="margin-bottom: 0;">
+      <div class="track-label">Motorsport-Specific</div>
+      <ul>
+        <li><strong>MAIA-2-Motorsport adaptation</strong> &mdash; driver-specific items ("under G-load," "during high-speed corner entry")</li>
+        <li><strong>Reaction time variability test</strong> &mdash; pre/post session consistency as regulation proxy</li>
+        <li><strong>Flow state self-report</strong> &mdash; session-level assessment correlated with biometric data</li>
+        <li><strong>Lap time consistency index</strong> &mdash; SD of lap times across stint (lower = better regulated)</li>
+        <li><strong>Performance scenario battery</strong> &mdash; 5 motorsport scenarios (wet-weather start, incident recovery, late-race strategy, pit stop error, teammate conflict)</li>
+        <li><strong>Telemetry-biometric correlation</strong> &mdash; overlay HRV data on track map to identify regulation gaps</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 20px;">
+    <h3>What the Technology Measures</h3>
+    <table>
+      <tr>
+        <th>Hardware</th>
+        <th>Signal</th>
+        <th>What It Tells Us</th>
+        <th>Tier Required</th>
+      </tr>
+      <tr>
+        <td><strong>Apple Watch</strong></td>
+        <td>Heart rate, HRV (RMSSD), movement</td>
+        <td>Real-time autonomic state, state drift detection, gap moment identification</td>
+        <td>Foundation+</td>
+      </tr>
+      <tr>
+        <td><strong>AirPods</strong></td>
+        <td>Audio delivery channel</td>
+        <td>NeuroMinute guidance, binaural beats, co-regulation audio cues</td>
+        <td>Foundation+</td>
+      </tr>
+      <tr>
+        <td><strong>Polar H10</strong></td>
+        <td>Clinical-grade ECG, RMSSD, RR intervals</td>
+        <td>Precise HRV for resonant frequency identification, cardiac-anchored breathing calibration</td>
+        <td>Practitioner+</td>
+      </tr>
+      <tr>
+        <td><strong>Capnography</strong></td>
+        <td>End-tidal CO2</td>
+        <td>Respiratory pattern analysis, CO2 tolerance assessment, hyperventilation detection</td>
+        <td>Advanced+</td>
+      </tr>
+      <tr>
+        <td><strong>Pausality App</strong></td>
+        <td>Session logs, biometric trends, practice consistency</td>
+        <td>Longitudinal progress tracking, curriculum progression, certification evidence</td>
+        <td>Foundation+</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="dual-track" style="margin-top: 20px;">
+    <div class="card" style="margin-bottom: 0;">
+      <h3>The Presidential Fitness Test Analogy</h3>
+      <table>
+        <tr>
+          <th>Presidential Fitness</th>
+          <th>Pausality Certification</th>
+        </tr>
+        <tr>
+          <td>Pull-ups</td>
+          <td><strong>Diaphragmatic engagement</strong> &mdash; nasal inhale &ge; 8 sec</td>
+        </tr>
+        <tr>
+          <td>Sit-and-reach</td>
+          <td><strong>MAIA-2 subscale scores</strong> &mdash; interoceptive flexibility</td>
+        </tr>
+        <tr>
+          <td>Mile run</td>
+          <td><strong>HRV recovery time</strong> &mdash; autonomic endurance</td>
+        </tr>
+        <tr>
+          <td>Shuttle run</td>
+          <td><strong>Scenario response accuracy</strong> &mdash; performance under pressure</td>
+        </tr>
+        <tr>
+          <td>The certificate</td>
+          <td><strong>Pausality Certified (PC)</strong> &mdash; you met the standard</td>
+        </tr>
+      </table>
+    </div>
+    <div class="card" style="margin-bottom: 0;">
+      <h3>Assessment Cadence by Tier</h3>
+      <table>
+        <tr>
+          <th>Tier</th>
+          <th>Initial</th>
+          <th>Recertification</th>
+        </tr>
+        <tr>
+          <td><strong>Foundation</strong></td>
+          <td>Knowledge exam + SRB-60 Bronze + 30-day log</td>
+          <td>Annual: 30-day log + MAIA-2</td>
+        </tr>
+        <tr>
+          <td><strong>Practitioner</strong></td>
+          <td>SRB-60 Silver + HRV recovery + scenarios + 90-day log</td>
+          <td>Annual: 60-day log + HRV re-test</td>
+        </tr>
+        <tr>
+          <td><strong>Advanced</strong></td>
+          <td>SRB-60 Gold + team demo + adversity portfolio + 180-day log</td>
+          <td>Annual: 90-day log + SRB-60 + team demo</td>
+        </tr>
+        <tr>
+          <td><strong>Master</strong></td>
+          <td>SRB-60 Platinum + teaching + publication + mentoring + peer review</td>
+          <td>Biennial: teaching + evidence contribution + SRB-60</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 6: RESEARCH OPPORTUNITY                                  -->
+<!-- ================================================================ -->
+<section>
+  <div class="section-label">Section 6</div>
+  <div class="section-title">The Research Opportunity: Cross-Population Comparison</div>
+
+  <p class="lead">Two populations, same intervention, different stressor profiles. This is a natural experiment that no other certification program in the world can run. The dual-track structure creates the most compelling evidence base possible for autonomic self-regulation training.</p>
+
+  <div class="shared-card">
+    <div class="shared-label">Study Design: Natural Comparison Group</div>
+    <h3>Same Intervention, Different Stressors</h3>
+    <table>
+      <tr>
+        <th>Variable</th>
+        <th class="crna">CRNA Population</th>
+        <th class="driver">Driver Population</th>
+      </tr>
+      <tr>
+        <td><strong>Intervention</strong></td>
+        <td colspan="2" style="text-align: center; color: var(--sage);">Identical: Gap Moment Training&trade; + NeuroMinute&trade; curriculum + biofeedback</td>
+      </tr>
+      <tr>
+        <td><strong>Primary stressor type</strong></td>
+        <td>Cognitive-emotional (responsibility for another human, moral stakes)</td>
+        <td>Physical-cognitive (G-force, heat, speed, physical endurance)</td>
+      </tr>
+      <tr>
+        <td><strong>Stressor duration</strong></td>
+        <td>8-12 hour shifts</td>
+        <td>1-4 hour sessions</td>
+      </tr>
+      <tr>
+        <td><strong>Recovery environment</strong></td>
+        <td>Hospital (continuing exposure)</td>
+        <td>Paddock/hotel (environmental separation)</td>
+      </tr>
+      <tr>
+        <td><strong>Team structure</strong></td>
+        <td>OR team (hierarchical, variable composition)</td>
+        <td>Racing team (flat, consistent composition)</td>
+      </tr>
+      <tr>
+        <td><strong>Performance measurement</strong></td>
+        <td>Error rates, patient outcomes (indirect, delayed)</td>
+        <td>Lap times, reaction times (direct, immediate)</td>
+      </tr>
+      <tr>
+        <td><strong>Career arc</strong></td>
+        <td>30-40 year careers, progressive allostatic load</td>
+        <td>10-20 year careers, acute physical demands</td>
+      </tr>
+      <tr>
+        <td><strong>Baseline interoceptive awareness</strong></td>
+        <td>Typically suppressed (medical education effect)</td>
+        <td>Variable (some body awareness from physical training)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Research Questions the Dual-Track Uniquely Answers</h3>
+    <ul>
+      <li><strong>Does the same breath-based autonomic intervention work across fundamentally different stressor profiles?</strong> If RMSSD improvements are comparable in both populations, the mechanism is domain-independent &mdash; strengthening the case for every other high-stakes population (military, first responders, surgeons, pilots).</li>
+      <li><strong>Does stressor type affect the rate of interoceptive skill acquisition?</strong> CRNAs have suppressed interoception from medical training; drivers may have preserved or enhanced body awareness from physical training. Does the starting point change the learning curve?</li>
+      <li><strong>Is state drift detection trainable across domains?</strong> If both populations show improved state drift detection, the concept of "autonomic drift" becomes a generalizable performance science construct, not just a clinical safety concept.</li>
+      <li><strong>Does team co-regulation transfer across team structures?</strong> OR teams vs. pit crews &mdash; different structures, same co-regulation mechanism. This tests whether the intervention generalizes beyond dyadic interaction.</li>
+      <li><strong>What is the dose-response curve for NeuroMinute practice?</strong> With continuous biometric data from both populations, the study reveals the minimum effective dose for autonomic adaptation &mdash; critical for product development and scaling.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Publication &amp; Evidence Strategy</h3>
+    <ul>
+      <li><strong>Phase 1 (Year 1):</strong> Single-population pilot studies &mdash; CRNA cohort (n=30) and motorsport cohort (n=15). Pre/post MAIA-2, HRV metrics, domain-specific performance measures. Target: AANA Journal (CRNA), Journal of Sports Sciences (motorsport).</li>
+      <li><strong>Phase 2 (Year 2):</strong> Cross-population comparison &mdash; matched intervention, different stressor profiles. Target: Psychophysiology, Applied Psychophysiology &amp; Biofeedback.</li>
+      <li><strong>Phase 3 (Year 3):</strong> Longitudinal outcomes &mdash; 12-month follow-up on both populations. Burnout indices (CRNA), career performance metrics (motorsport), HRV trends. Target: high-impact journal positioning Pausality as a domain-independent autonomic training framework.</li>
+      <li><strong>Ongoing:</strong> MAIA-2-CRNA validation study &mdash; establishing psychometric properties of the CRNA extension module. MAIA-2-Motorsport adaptation &mdash; developing and validating the driver-specific instrument.</li>
+    </ul>
+  </div>
+
+  <div class="highlight">
+    <p><strong>The strategic insight:</strong> Every certified practitioner in both tracks is simultaneously a research participant (with consent). The Pausality app generates continuous biometric data tied to practice sessions, creating the largest dataset on brief autonomic interventions in high-stakes populations that has ever existed. This is how you build a clinical LLM moat (Red Arrow #4): proprietary physiological data at scale.</p>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 7: ECONOMICS                                             -->
+<!-- ================================================================ -->
+<section>
+  <div class="section-label">Section 7</div>
+  <div class="section-title">Economics: What Certification Is Worth</div>
+
+  <p class="lead">Certification value is measured differently in each population, but the ROI logic is the same: small investment in autonomic training produces outsized returns in career longevity, error reduction, and sustained peak performance.</p>
+
+  <div class="dual-track">
+    <div class="track-crna">
+      <div class="track-label">CRNA Track Economics</div>
+      <h3>Career Extension Value</h3>
+      <p><strong>Median CRNA salary: $195,000/year.</strong> Each additional year of practice &mdash; not lost to burnout, not degraded by allostatic load, not ended by a career-damaging error &mdash; represents nearly $200K in preserved earning potential.</p>
+
+      <h4 style="margin-top: 16px;">Individual ROI</h4>
+      <table>
+        <tr><td><strong>Foundation certification cost</strong></td><td>$100 (bundled with CE course)</td></tr>
+        <tr><td><strong>Annual renewal</strong></td><td>$50</td></tr>
+        <tr><td><strong>1 year of extended career</strong></td><td>$195,000</td></tr>
+        <tr><td><strong>ROI per year of extension</strong></td><td>1,950x</td></tr>
+      </table>
+
+      <h4 style="margin-top: 16px;">Institutional ROI</h4>
+      <table>
+        <tr><td><strong>CRNA turnover replacement cost</strong></td><td>$80K-$150K per person</td></tr>
+        <tr><td><strong>Pilot program cost (15 CRNAs)</strong></td><td>$15,000</td></tr>
+        <tr><td><strong>Retained CRNAs needed to break even</strong></td><td>1</td></tr>
+        <tr><td><strong>Clinical error reduction value</strong></td><td>Incalculable (patient safety)</td></tr>
+      </table>
+
+      <h4 style="margin-top: 16px;">Market Size</h4>
+      <table>
+        <tr><td><strong>Total US CRNAs</strong></td><td>~60,000</td></tr>
+        <tr><td><strong>Target Foundation penetration (Yr 3)</strong></td><td>5,000 (8.3%)</td></tr>
+        <tr><td><strong>Practitioner conversion (25%)</strong></td><td>1,250</td></tr>
+        <tr><td><strong>Advanced/Master conversion (10%)</strong></td><td>125</td></tr>
+      </table>
+    </div>
+
+    <div class="track-driver">
+      <div class="track-label">Motorsport Track Economics</div>
+      <h3>Performance Edge Value</h3>
+      <p><strong>Performance gains compound.</strong> A tenth of a second per lap across a 60-lap race is 6 seconds. That is multiple positions on the grid. That is the difference between a podium and a mid-pack finish. That is the difference between keeping a seat and losing it.</p>
+
+      <h4 style="margin-top: 16px;">Individual ROI</h4>
+      <table>
+        <tr><td><strong>Foundation certification cost</strong></td><td>$500</td></tr>
+        <tr><td><strong>Practitioner certification cost</strong></td><td>$2,000</td></tr>
+        <tr><td><strong>Value of 0.1s/lap improvement</strong></td><td>Positions, sponsorship, career</td></tr>
+        <tr><td><strong>Reaction time improvement value</strong></td><td>Incident avoidance, starts</td></tr>
+      </table>
+
+      <h4 style="margin-top: 16px;">Team ROI</h4>
+      <table>
+        <tr><td><strong>Driver salary (pro level)</strong></td><td>$500K-$30M/year</td></tr>
+        <tr><td><strong>Season investment per car</strong></td><td>$2M-$200M depending on series</td></tr>
+        <tr><td><strong>Pausality certification cost per driver</strong></td><td>$2,000-$5,000</td></tr>
+        <tr><td><strong>Break-even</strong></td><td>One avoided incident, one improved result</td></tr>
+      </table>
+
+      <h4 style="margin-top: 16px;">Market Size</h4>
+      <table>
+        <tr><td><strong>Professional drivers (global)</strong></td><td>~3,000-5,000</td></tr>
+        <tr><td><strong>Semi-pro / development drivers</strong></td><td>~15,000-25,000</td></tr>
+        <tr><td><strong>Serious amateur / track day</strong></td><td>~100,000+</td></tr>
+        <tr><td><strong>Target Foundation penetration (Yr 3)</strong></td><td>500 pro + 2,000 development</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="shared-card">
+    <div class="shared-label">Revenue Model: Combined</div>
+    <h3>Certification Revenue at Scale (Year 3-5 Target)</h3>
+    <table>
+      <tr>
+        <th>Tier</th>
+        <th class="crna">CRNA Track</th>
+        <th class="driver">Motorsport Track</th>
+        <th class="shared">Combined</th>
+      </tr>
+      <tr>
+        <td><strong>Foundation</strong></td>
+        <td>5,000 &times; $100 = $500K</td>
+        <td>2,500 &times; $500 = $1.25M</td>
+        <td><strong>$1.75M</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Practitioner</strong></td>
+        <td>1,250 &times; $250 = $312K</td>
+        <td>625 &times; $2,000 = $1.25M</td>
+        <td><strong>$1.56M</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Advanced</strong></td>
+        <td>125 &times; $500 = $62K</td>
+        <td>125 &times; $3,000 = $375K</td>
+        <td><strong>$437K</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Master</strong></td>
+        <td>25 &times; $2,500 = $62K</td>
+        <td>25 &times; $5,000 = $125K</td>
+        <td><strong>$187K</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Annual Renewals</strong></td>
+        <td>~$250K</td>
+        <td>~$400K</td>
+        <td><strong>$650K</strong></td>
+      </tr>
+      <tr style="border-top: 2px solid var(--sage-border);">
+        <td><strong>Total ARR</strong></td>
+        <td style="color: var(--blue);"><strong>$1.19M</strong></td>
+        <td style="color: var(--red);"><strong>$3.40M</strong></td>
+        <td style="color: var(--sage); font-size: 16px;"><strong>$4.59M ARR</strong></td>
+      </tr>
+    </table>
+    <p style="margin-top: 16px; font-size: 13px; color: var(--text-dim);">The CRNA track provides clinical credibility and the evidence base. The motorsport track provides premium pricing and brand cachet. Together, they create a certification with both scientific depth and market reach. This is Red Arrow #5: Platform + Certification &rarr; Multi-Stream Revenue.</p>
+  </div>
+
+  <div class="card">
+    <h3>Expansion Populations (Year 4+)</h3>
+    <p>The dual-track evidence base proves the mechanism is domain-independent. Future certification tracks use the same curriculum architecture:</p>
+    <table>
+      <tr>
+        <th>Population</th>
+        <th>Shared Mechanism</th>
+        <th>Gap Moment Topology</th>
+        <th>Est. Market</th>
+      </tr>
+      <tr>
+        <td><strong>Military / Special Operations</strong></td>
+        <td>Sustained high-arousal with lethal consequences; team co-regulation critical</td>
+        <td>Pre-mission, inter-phase, post-contact, debrief</td>
+        <td>50,000+</td>
+      </tr>
+      <tr>
+        <td><strong>Emergency Medicine</strong></td>
+        <td>Unpredictable stressor timing; rapid state transitions; moral injury risk</td>
+        <td>Between patients, post-code, shift transitions</td>
+        <td>150,000+</td>
+      </tr>
+      <tr>
+        <td><strong>Airline Pilots</strong></td>
+        <td>Sustained vigilance with catastrophic consequence; cockpit co-regulation</td>
+        <td>Pre-flight, cruise, approach, post-flight</td>
+        <td>100,000+</td>
+      </tr>
+      <tr>
+        <td><strong>First Responders</strong></td>
+        <td>Acute sympathetic load; PTSD vulnerability; team dependence</td>
+        <td>En route, on scene, post-scene, station recovery</td>
+        <td>1,000,000+</td>
+      </tr>
+      <tr>
+        <td><strong>Surgeons</strong></td>
+        <td>Extended fine-motor performance under pressure; cognitive load</td>
+        <td>Pre-incision, between procedures, post-complication</td>
+        <td>130,000+</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- FOOTER                                                           -->
+<!-- ================================================================ -->
+<footer>
+  <div class="brand-mark">Pausality&trade; &nbsp;|&nbsp; Somnistics Research Labs</div>
+  <div class="legal">
+    Pausality&trade;, Gap Moment Training&trade;, NeuroMinute&trade;, Anterocept&trade;, Neurogating&trade;, and Polyanchora&trade; are trademarks of Somnistics Research Labs.<br>
+    MAIA-2 is a validated instrument developed by Wolf Mehling, UCSF. The MAIA-2-CRNA extension module is an SRL adaptation pending validation.<br>
+    This document is a product specification and does not constitute medical advice, clinical recommendations, or prescriptive health guidance.<br>
+    The research described herein represents planned studies; results are prospective, not claimed.<br><br>
+    Specification v1.0 &nbsp;|&nbsp; March 2026 &nbsp;|&nbsp; Confidential
+  </div>
+</footer>
+
+</body>
+</html>
