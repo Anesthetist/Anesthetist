@@ -477,4 +477,4 @@ These papers should become evidence notes:
 
 ---
 
-*Validation sweep complete. BioMistral tool unavailable (Bash permission denied); all analysis based on PubMed literature and domain expertise. Randy's clinical interpretation needed on all draft concepts before promotion.*
+*Validation sweep complete. Initial BioMistral queries were blocked by subagent permissions; subsequently executed directly for binaural entrainment evidence and micro-dose breathing dose-response — results integrated into the main evidence assessment (`outputs/research/biomedical-evidence-assessment-2026-03.md`). All BioMistral-sourced citations require independent PubMed verification. Randy's clinical interpretation needed on all draft concepts before promotion.*

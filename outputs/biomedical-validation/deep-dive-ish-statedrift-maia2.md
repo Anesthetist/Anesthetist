@@ -2,7 +2,7 @@
 
 **Date:** 2026-03-19
 **Analyst:** Vigil (orchestrator)
-**Sources:** PubMed systematic searches (12 queries, ~150 articles screened), BioMistral queries (9 questions — blocked by permissions; synthesized from PubMed evidence directly)
+**Sources:** PubMed systematic searches (12 queries, ~150 articles screened). BioMistral queries (Qwen/Qwen3-32B) subsequently executed for ISH/alexithymia prevalence, state drift HRV deterioration, and MAIA-2 adaptation methodology — results integrated into the main evidence assessment (`outputs/research/biomedical-evidence-assessment-2026-03.md`). All BioMistral-sourced citations require independent PubMed verification.
 **Status:** draft
 
 ---
