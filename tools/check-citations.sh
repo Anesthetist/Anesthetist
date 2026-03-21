@@ -68,22 +68,22 @@ for f in "$EVIDENCE_DIR"/*.md; do
     # Strip trailing punctuation that may have been captured
     doi="${doi%%.}"
     doi="${doi%%,}"
-    status=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 15 "https://doi.org/$doi" 2>/dev/null || echo "000")
-    if [[ "$status" == "200" || "$status" == "301" || "$status" == "302" || "$status" == "303" ]]; then
+    http_code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 15 "https://doi.org/$doi" 2>/dev/null || echo "000")
+    if [[ "$http_code" == "200" || "$http_code" == "301" || "$http_code" == "302" || "$http_code" == "303" ]]; then
       echo "| $slug | \`$doi\` | Valid | [DOI](https://doi.org/$doi) |" >> "$TMPROWS"
       VALID=$((VALID + 1))
     else
-      echo "| $slug | \`$doi\` | **Broken** ($status) | [try](https://doi.org/$doi) |" >> "$TMPROWS"
+      echo "| $slug | \`$doi\` | **Broken** ($http_code) | [try](https://doi.org/$doi) |" >> "$TMPROWS"
       BROKEN=$((BROKEN + 1))
     fi
     sleep "$DELAY"
   elif [[ -n "$pmid" ]]; then
-    status=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 15 "https://pubmed.ncbi.nlm.nih.gov/$pmid/" 2>/dev/null || echo "000")
-    if [[ "$status" == "200" ]]; then
+    http_code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 15 "https://pubmed.ncbi.nlm.nih.gov/$pmid/" 2>/dev/null || echo "000")
+    if [[ "$http_code" == "200" ]]; then
       echo "| $slug | PMID:$pmid | Valid | [PubMed](https://pubmed.ncbi.nlm.nih.gov/$pmid/) |" >> "$TMPROWS"
       VALID=$((VALID + 1))
     else
-      echo "| $slug | PMID:$pmid | **Broken** ($status) | [try](https://pubmed.ncbi.nlm.nih.gov/$pmid/) |" >> "$TMPROWS"
+      echo "| $slug | PMID:$pmid | **Broken** ($http_code) | [try](https://pubmed.ncbi.nlm.nih.gov/$pmid/) |" >> "$TMPROWS"
       BROKEN=$((BROKEN + 1))
     fi
     sleep "$DELAY"
