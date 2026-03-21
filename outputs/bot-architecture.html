@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRL Bot Architecture — Pausality Intelligence Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #1A1D2E;
+    --bg-card: #222538;
+    --bg-card-hover: #2A2E45;
+    --sage: #5FC89B;
+    --sage-dim: rgba(95, 200, 155, 0.15);
+    --sage-glow: rgba(95, 200, 155, 0.4);
+    --off-white: #F5F5F0;
+    --text-secondary: #9A9DB5;
+    --text-tertiary: #6B6E85;
+    --border: rgba(95, 200, 155, 0.12);
+    --navy-accent: #22253A;
+    --amber: #F0C674;
+    --coral: #E88E7A;
+    --blue: #7AA2F7;
+    --purple: #BB9AF7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    background: var(--bg-deep);
+    color: var(--off-white);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 48px 24px 16px;
+  }
+  .header .brand {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--off-white);
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Main Layout */
+  .architecture {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    position: relative;
+  }
+
+  /* Section labels */
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 12px;
+    padding-left: 4px;
+  }
+
+  /* Flow arrow between sections */
+  .flow-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+  }
+  .flow-connector .arrow {
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(to bottom, var(--sage-dim), var(--sage));
+    position: relative;
+    animation: pulseArrow 2s ease-in-out infinite;
+  }
+  .flow-connector .arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: -4px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid var(--sage);
+  }
+
+  @keyframes pulseArrow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* Sources Layer */
+  .sources-layer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .source-chip {
+    background: var(--sage-dim);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--sage);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .source-chip .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+    animation: sourcePulse 3s ease-in-out infinite;
+  }
+  .source-chip:nth-child(2) .dot { animation-delay: 0.5s; }
+  .source-chip:nth-child(3) .dot { animation-delay: 1s; }
+  .source-chip:nth-child(4) .dot { animation-delay: 1.5s; }
+
+  @keyframes sourcePulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* Pipeline Section */
+  .pipeline-section {
+    margin-bottom: 8px;
+  }
+
+  .pipeline-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Bot Card */
+  .bot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .bot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--sage);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .bot-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--sage-dim);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .bot-card:hover::before { opacity: 1; }
+
+  .bot-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .bot-icon {
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sage-dim);
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .bot-info { flex: 1; min-width: 0; }
+  .bot-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--off-white);
+    margin-bottom: 2px;
+  }
+  .bot-role {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+  .bot-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .adpie-badge {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .adpie-assessment { background: rgba(122, 162, 247, 0.15); color: var(--blue); }
+  .adpie-diagnosis { background: rgba(187, 154, 247, 0.15); color: var(--purple); }
+  .adpie-planning { background: rgba(240, 198, 116, 0.15); color: var(--amber); }
+  .adpie-implementation { background: rgba(95, 200, 155, 0.15); color: var(--sage); }
+  .adpie-evaluation { background: rgba(232, 142, 122, 0.15); color: var(--coral); }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .status-active { background: var(--sage); box-shadow: 0 0 8px var(--sage-glow); animation: statusGlow 2s ease-in-out infinite; }
+  .status-scheduled { background: var(--amber); }
+  .status-on-demand { background: var(--blue); }
+
+  @keyframes statusGlow {
+    0%, 100% { box-shadow: 0 0 4px var(--sage-glow); }
+    50% { box-shadow: 0 0 12px var(--sage-glow); }
+  }
+
+  /* Expanded card content */
+  .bot-expanded {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  .bot-card.active .bot-expanded {
+    max-height: 500px;
+    padding-top: 16px;
+  }
+  .bot-description {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding-left: 56px;
+  }
+  .bot-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-left: 56px;
+  }
+  .detail-block h4 {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 6px;
+  }
+  .detail-block ul {
+    list-style: none;
+    padding: 0;
+  }
+  .detail-block li {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .detail-block li::before {
+    content: '>';
+    color: var(--sage);
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  /* Orchestrator Card */
+  .orchestrator-section {
+    margin: 24px 0 8px;
+  }
+  .orchestrator-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(95, 200, 155, 0.06) 100%);
+    border: 2px solid var(--sage-dim);
+    border-radius: 16px;
+    padding: 24px 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .orchestrator-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--sage), transparent, var(--sage)) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: borderGlow 4s ease-in-out infinite;
+  }
+  @keyframes borderGlow {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+  }
+  .orchestrator-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(95, 200, 155, 0.12);
+  }
+  .orchestrator-card:hover::after { opacity: 1; }
+
+  .orch-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .orch-icon {
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--sage-dim), rgba(95, 200, 155, 0.25));
+    border-radius: 14px;
+    border: 1px solid var(--sage-dim);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .orch-icon::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 18px;
+    border: 1px solid var(--sage-dim);
+    animation: orchPulse 3s ease-in-out infinite;
+  }
+  @keyframes orchPulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.08); opacity: 0.6; }
+  }
+  .orch-info { flex: 1; }
+  .orch-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--sage);
+    margin-bottom: 2px;
+  }
+  .orch-title {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .orch-badges {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .orch-expanded {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .orchestrator-card.active .orch-expanded {
+    max-height: 400px;
+    padding-top: 20px;
+  }
+  .orch-description {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding-left: 76px;
+    margin-bottom: 12px;
+  }
+  .orch-capabilities {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding-left: 76px;
+  }
+  .capability-item {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .capability-item::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+
+  /* Support Bots Row */
+  .support-section {
+    margin-bottom: 8px;
+  }
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  /* Vault Destination */
+  .vault-section {
+    margin: 8px 0;
+  }
+  .vault-card {
+    background: linear-gradient(135deg, rgba(95, 200, 155, 0.08), rgba(95, 200, 155, 0.02));
+    border: 1px solid var(--sage-dim);
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .vault-card:hover {
+    border-color: var(--sage-glow);
+    box-shadow: 0 4px 24px rgba(95, 200, 155, 0.08);
+  }
+  .vault-icon {
+    font-size: 28px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sage-dim);
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .vault-info { flex: 1; }
+  .vault-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--sage);
+    margin-bottom: 2px;
+  }
+  .vault-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .vault-layers {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .vault-layer {
+    text-align: center;
+    padding: 6px 12px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .vault-layer .count {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--off-white);
+    display: block;
+  }
+  .vault-layer .label {
+    font-size: 9px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Tools Layer */
+  .tools-section {
+    margin-top: 8px;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 6px;
+  }
+  .tool-chip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  .tool-chip:hover {
+    border-color: var(--sage-dim);
+    background: var(--bg-card-hover);
+  }
+  .tool-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+  .tool-name {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    margin-top: 32px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--sage);
+    display: block;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 11px;
+    color: var(--text-tertiary);
+  }
+  .footer span { color: var(--sage); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .support-grid { grid-template-columns: 1fr; }
+    .orch-capabilities { grid-template-columns: 1fr; }
+    .bot-details-grid { grid-template-columns: 1fr; }
+    .vault-card { flex-direction: column; text-align: center; }
+    .vault-layers { flex-wrap: wrap; justify-content: center; }
+    .stats-bar { gap: 24px; }
+    .bot-description, .orch-description, .orch-capabilities, .bot-details-grid { padding-left: 0; }
+  }
+
+  /* Pipeline step numbering */
+  .pipeline-step {
+    position: relative;
+  }
+  .step-number {
+    position: absolute;
+    left: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--sage-dim);
+    border: 1px solid var(--sage);
+    color: var(--sage);
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Tooltip on hover */
+  .bot-card .hover-hint {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .bot-card:hover .hover-hint { opacity: 1; }
+  .bot-card.active .hover-hint { opacity: 0; }
+
+  /* Connection lines animation */
+  .connection-trace {
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--sage), transparent);
+    animation: traceDown 3s linear infinite;
+    opacity: 0.15;
+  }
+  @keyframes traceDown {
+    0% { top: -20%; }
+    100% { top: 120%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">Somnistics Research Labs</div>
+  <h1>Pausality Intelligence Platform</h1>
+  <div class="subtitle">A standards-based knowledge graph powered by 8 specialized AI bots, orchestrated by Vigil, producing investor-grade clinical research infrastructure.</div>
+</div>
+
+<div class="architecture">
+
+  <!-- Sources Layer -->
+  <div class="section-label">Data Sources</div>
+  <div class="sources-layer">
+    <div class="source-chip"><div class="dot"></div>ChatGPT Exports (861 files)</div>
+    <div class="source-chip"><div class="dot"></div>PubMed / BioMistral</div>
+    <div class="source-chip"><div class="dot"></div>Google Drive</div>
+    <div class="source-chip"><div class="dot"></div>Manual Research</div>
+  </div>
+
+  <div class="flow-connector"><div class="arrow"></div></div>
+
+  <!-- Core Pipeline -->
+  <div class="pipeline-section">
+    <div class="section-label">Core Pipeline</div>
+    <div class="pipeline-grid">
+
+      <!-- Transcript Triage -->
+      <div class="bot-card" onclick="toggleCard(this)" data-bot="triage">
+        <div class="bot-card-header">
+          <div class="bot-icon">🔍</div>
+          <div class="bot-info">
+            <div class="bot-name">Transcript Triage</div>
+            <div class="bot-role">Chief Archivist — Scans, classifies, and prioritizes 861 source files into a scored extraction queue</div>
+          </div>
+          <div class="bot-meta">
+            <span class="adpie-badge adpie-assessment">Assessment</span>
+            <div class="status-dot status-active" title="Active"></div>
+          </div>
+        </div>
+        <span class="hover-hint">click to expand</span>
+        <div class="bot-expanded">
+          <div class="bot-description">
+            A research librarian with deep expertise in clinical neuroscience, startup strategy, and knowledge management. Scans documents at speed, classifies with precision, and never wastes a word. Favors documents containing Randy's original thinking over ChatGPT-generated summaries. A 5-message conversation where Randy articulates a novel clinical insight is worth more than a 100-message session of generic AI coaching.
+          </div>
+          <div class="bot-details-grid">
+            <div class="detail-block">
+              <h4>Core Skills</h4>
+              <ul>
+                <li>Rapid document classification</li>
+                <li>Priority scoring by knowledge yield</li>
+                <li>Topic taxonomy assignment</li>
+                <li>Batch queue optimization</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>ADPIE Cycle</h4>
+              <ul>
+                <li>Read file metadata and type indicators</li>
+                <li>Classify type, estimate yield</li>
+                <li>Assign priority tier and batch placement</li>
+                <li>Check for misclassification patterns</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-connector"><div class="arrow"></div></div>
+
+      <!-- Knowledge Miner -->
+      <div class="bot-card" onclick="toggleCard(this)" data-bot="miner">
+        <div class="bot-card-header">
+          <div class="bot-icon">⛏️</div>
+          <div class="bot-info">
+            <div class="bot-name">Knowledge Miner</div>
+            <div class="bot-role">Senior Research Analyst — Extracts Randy's original clinical thinking from conversational transcripts</div>
+          </div>
+          <div class="bot-meta">
+            <span class="adpie-badge adpie-diagnosis">Diagnosis</span>
+            <div class="status-dot status-active" title="Active"></div>
+          </div>
+        </div>
+        <span class="hover-hint">click to expand</span>
+        <div class="bot-expanded">
+          <div class="bot-description">
+            Randy's clinical research partner specializing in extracting structured knowledge from conversational transcripts. Understands the vault's SKOS/Dublin Core/PROV-O standards, the full concept inventory, and the difference between Randy's original clinical insights and generic AI-generated content. Always prioritizes Randy's words over ChatGPT's elaborations. When Randy says something in 2 sentences and ChatGPT expands it to 10 paragraphs, the 2 sentences are the knowledge.
+          </div>
+          <div class="bot-details-grid">
+            <div class="detail-block">
+              <h4>Extraction Outputs</h4>
+              <ul>
+                <li>New concepts with SKOS frontmatter</li>
+                <li>Enrichments to existing concepts</li>
+                <li>New evidence notes for cited studies</li>
+                <li>Clinical observations and craft knowledge</li>
+                <li>SKOS relationship discoveries</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Quality Gates</h4>
+              <ul>
+                <li>URN format: urn:srl:{type}:{slug}</li>
+                <li>At least one dc:subject tag</li>
+                <li>prov:wasDerivedFrom source link</li>
+                <li>Randy's voice, not ChatGPT noise</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-connector"><div class="arrow"></div></div>
+
+      <!-- Vault Writer -->
+      <div class="bot-card" onclick="toggleCard(this)" data-bot="writer">
+        <div class="bot-card-header">
+          <div class="bot-icon">✍️</div>
+          <div class="bot-info">
+            <div class="bot-name">Vault Writer</div>
+            <div class="bot-role">Chief Librarian — Final quality gate between extraction candidates and the live knowledge graph</div>
+          </div>
+          <div class="bot-meta">
+            <span class="adpie-badge adpie-implementation">Implementation</span>
+            <div class="status-dot status-active" title="Active"></div>
+          </div>
+        </div>
+        <span class="hover-hint">click to expand</span>
+        <div class="bot-expanded">
+          <div class="bot-description">
+            The vault's data steward, obsessive about schema compliance, link integrity, and duplicate prevention. Nothing enters the vault without passing standards. When in doubt, doesn't write — flags for review instead. A missing note is better than a wrong one. Uses MCP tools exclusively for all vault operations: create_note, update_note, add_evidence_link, add_skos_relation.
+          </div>
+          <div class="bot-details-grid">
+            <div class="detail-block">
+              <h4>Write Operations</h4>
+              <ul>
+                <li>Schema validation against note-types.yaml</li>
+                <li>Duplicate search before every create</li>
+                <li>SKOS relationship wiring</li>
+                <li>Evidence link attachment</li>
+                <li>Full audit trail logging</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Quality Bar</h4>
+              <ul>
+                <li>Zero schema violations</li>
+                <li>Zero duplicates in vault</li>
+                <li>Complete provenance chains</li>
+                <li>Bot notes enter as draft only</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-connector"><div class="arrow"></div></div>
+
+      <!-- Citation Resolver -->
+      <div class="bot-card" onclick="toggleCard(this)" data-bot="citation">
+        <div class="bot-card-header">
+          <div class="bot-icon">🔗</div>
+          <div class="bot-info">
+            <div class="bot-name">Citation Resolver</div>
+            <div class="bot-role">Reference Librarian — Resolves incomplete citations to verified DOIs, PubMed IDs, and accurate metadata</div>
+          </div>
+          <div class="bot-meta">
+            <span class="adpie-badge adpie-evaluation">Evaluation</span>
+            <div class="status-dot status-on-demand" title="On-demand"></div>
+          </div>
+        </div>
+        <span class="hover-hint">click to expand</span>
+        <div class="bot-expanded">
+          <div class="bot-description">
+            A research librarian specializing in biomedical and neuroscience literature. Takes incomplete citations (author + year, partial title, vague description) and resolves them to verified, complete references. Every incomplete citation is a puzzle to solve. Accuracy over speed — a verified "not found" is better than a fabricated citation. Never trusts ChatGPT's citation of a study without independent verification.
+          </div>
+          <div class="bot-details-grid">
+            <div class="detail-block">
+              <h4>Resolution Pipeline</h4>
+              <ul>
+                <li>Search PubMed, CrossRef, Google Scholar</li>
+                <li>Verify attributed findings match study</li>
+                <li>Return complete bibliographic metadata</li>
+                <li>Flag hallucinated citations</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Success Criteria</h4>
+              <ul>
+                <li>90%+ resolution rate</li>
+                <li>Zero fabricated references</li>
+                <li>Complete DOI/PMID metadata</li>
+                <li>Discrepancy flagging</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-connector"><div class="arrow"></div></div>
+
+      <!-- Review Accelerator -->
+      <div class="bot-card" onclick="toggleCard(this)" data-bot="review">
+        <div class="bot-card-header">
+          <div class="bot-icon">⚡</div>
+          <div class="bot-info">
+            <div class="bot-name">Review Accelerator</div>
+            <div class="bot-role">Executive Assistant — Pre-processes Randy's review queue, resolving what it can, pre-drafting the rest</div>
+          </div>
+          <div class="bot-meta">
+            <span class="adpie-badge adpie-evaluation">Evaluation</span>
+            <div class="status-dot status-active" title="Active"></div>
+          </div>
+        </div>
+        <span class="hover-hint">click to expand</span>
+        <div class="bot-expanded">
+          <div class="bot-description">
+            Sits between the extraction pipeline and Randy. Resolves everything it can autonomously, pre-drafts everything else so Randy's review takes seconds instead of minutes, and learns from Randy's decisions to handle more autonomously over time. Maximizes Randy's leverage — every minute of his clinical judgment is precious.
+          </div>
+          <div class="bot-details-grid">
+            <div class="detail-block">
+              <h4>Four-Tier System</h4>
+              <ul>
+                <li>Tier 1: Auto-resolve (no Randy needed)</li>
+                <li>Tier 2: Auto-resolve with audit trail</li>
+                <li>Tier 3: Pre-drafted for quick yes/no</li>
+                <li>Tier 4: Escalate (requires full attention)</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Learning Mechanism</h4>
+              <ul>
+                <li>Pattern capture from Randy's decisions</li>
+                <li>Tier promotion after 3+ consistent approvals</li>
+                <li>Full automation after 10+ consistent decisions</li>
+                <li>Safety valve: Randy can demote any pattern</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="flow-connector"><div class="arrow"></div></div>
+
+  <!-- Vault Destination -->
+  <div class="vault-section">
+    <div class="section-label">Knowledge Graph Destination</div>
+    <div class="vault-card" onclick="this.classList.toggle('active')">
+      <div class="vault-icon">🏛️</div>
+      <div class="vault-info">
+        <div class="vault-name">SRL Knowledge Vault</div>
+        <div class="vault-desc">Standards-based Obsidian vault — Dublin Core metadata, SKOS relationships, PROV-O provenance chains</div>
+      </div>
+      <div class="vault-layers">
+        <div class="vault-layer"><span class="count">L0</span><span class="label">Evidence</span></div>
+        <div class="vault-layer"><span class="count">L0.5</span><span class="label">Observations</span></div>
+        <div class="vault-layer"><span class="count">L1</span><span class="label">Concepts</span></div>
+        <div class="vault-layer"><span class="count">L2</span><span class="label">Audiences</span></div>
+        <div class="vault-layer"><span class="count">L3</span><span class="label">Outputs</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Orchestrator -->
+  <div class="orchestrator-section">
+    <div class="section-label">Orchestration Layer</div>
+    <div class="orchestrator-card" onclick="toggleOrch(this)">
+      <div class="orch-header">
+        <div class="orch-icon">👁️</div>
+        <div class="orch-info">
+          <div class="orch-name">Vigil</div>
+          <div class="orch-title">Orchestrator — Named for the watchfulness that defines CRNA practice</div>
+        </div>
+        <div class="orch-badges">
+          <span class="adpie-badge adpie-assessment">A</span>
+          <span class="adpie-badge adpie-diagnosis">D</span>
+          <span class="adpie-badge adpie-planning">P</span>
+          <span class="adpie-badge adpie-implementation">I</span>
+          <span class="adpie-badge adpie-evaluation">E</span>
+          <div class="status-dot status-active" title="Always Active" style="margin-left: 8px;"></div>
+        </div>
+      </div>
+      <div class="orch-expanded">
+        <div class="orch-description">
+          Routes work to specialized bots, coordinates multi-bot workflows, and synthesizes vault content to answer Randy's questions. Understands intent, invokes bot protocols by reading their soul.md and run-protocol.md, and tracks progress across the entire pipeline. Coordinates the nursing process (ADPIE) across every phase of the system.
+        </div>
+        <div class="orch-capabilities">
+          <div class="capability-item">Intent routing</div>
+          <div class="capability-item">Bot protocol invocation</div>
+          <div class="capability-item">Multi-bot coordination</div>
+          <div class="capability-item">Vault synthesis</div>
+          <div class="capability-item">Progress tracking</div>
+          <div class="capability-item">Pipeline orchestration</div>
+          <div class="capability-item">Cross-bot feedback</div>
+          <div class="capability-item">Quality oversight</div>
+          <div class="capability-item">Session state management</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Support Bots -->
+  <div class="support-section" style="margin-top: 16px;">
+    <div class="section-label">Autonomous Support Bots</div>
+    <div class="support-grid">
+
+      <!-- Extraction Coordinator -->
+      <div class="bot-card" onclick="toggleCard(this)" data-bot="coordinator">
+        <div class="bot-card-header">
+          <div class="bot-icon">🏭</div>
+          <div class="bot-info">
+            <div class="bot-name">Extraction Coordinator</div>
+            <div class="bot-role">Pipeline project manager — queue, state, throughput</div>
+          </div>
+          <div class="bot-meta">
+            <span class="adpie-badge adpie-planning">Planning</span>
+            <div class="status-dot status-active" title="Active"></div>
+          </div>
+        </div>
+        <span class="hover-hint">click to expand</span>
+        <div class="bot-expanded">
+          <div class="bot-description">
+            The project manager for the ChatGPT migration pipeline. Manages the queue, invokes bots in the right order, tracks progress, and ensures nothing falls through the cracks. Systematic, state-aware, resumable — picks up where it left off. Throughput matters, but quality comes first.
+          </div>
+          <div class="bot-details-grid">
+            <div class="detail-block">
+              <h4>Responsibilities</h4>
+              <ul>
+                <li>Queue management (861 files)</li>
+                <li>Batch sequencing</li>
+                <li>Progress tracking</li>
+                <li>Bot invocation order</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>State Management</h4>
+              <ul>
+                <li>Resumable from any point</li>
+                <li>progress.md tracking</li>
+                <li>Duplicate processing prevention</li>
+                <li>System retrospectives</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competitive Landscape -->
+      <div class="bot-card" onclick="toggleCard(this)" data-bot="competitive">
+        <div class="bot-card-header">
+          <div class="bot-icon">📡</div>
+          <div class="bot-info">
+            <div class="bot-name">Competitive Landscape</div>
+            <div class="bot-role">Market intelligence — weekly competitive scans</div>
+          </div>
+          <div class="bot-meta">
+            <span class="adpie-badge adpie-assessment">Assessment</span>
+            <div class="status-dot status-scheduled" title="Weekly Sundays"></div>
+          </div>
+        </div>
+        <span class="hover-hint">click to expand</span>
+        <div class="bot-expanded">
+          <div class="bot-description">
+            Operates with the rigor of a Wall Street analyst at a Seattle-based VC firm specializing in wellness, health-tech, and digital therapeutics. Skeptical by default — every company is overvalued until proven otherwise, every claim is marketing until evidence says otherwise. Ensures Randy walks into any investor meeting knowing more about the landscape than anyone else in the room.
+          </div>
+          <div class="bot-details-grid">
+            <div class="detail-block">
+              <h4>Intelligence Domains</h4>
+              <ul>
+                <li>Competitor tracking (funding, team, product)</li>
+                <li>M&A and deal flow</li>
+                <li>Market narrative analysis</li>
+                <li>White space identification</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>Sources</h4>
+              <ul>
+                <li>X / social signals</li>
+                <li>SEC filings / Crunchbase</li>
+                <li>App store movements</li>
+                <li>Newsletter intelligence</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marketing Intelligence -->
+      <div class="bot-card" onclick="toggleCard(this)" data-bot="marketing">
+        <div class="bot-card-header">
+          <div class="bot-icon">📊</div>
+          <div class="bot-info">
+            <div class="bot-name">Marketing Intelligence</div>
+            <div class="bot-role">Demand signal detection — resonance timing</div>
+          </div>
+          <div class="bot-meta">
+            <span class="adpie-badge adpie-assessment">Assessment</span>
+            <div class="status-dot status-on-demand" title="On-demand"></div>
+          </div>
+        </div>
+        <span class="hover-hint">click to expand</span>
+        <div class="bot-expanded">
+          <div class="bot-description">
+            Reads the world's stress like a clinician reads a patient's vitals. Monitors macro signals, search trends, social sentiment, and cultural moments to identify when demand for nervous system regulation is peaking — then surfaces those windows so SRL can meet people at the moment of need. Ad spend should breathe like a nervous system: inhale when demand spikes, exhale when signals are calm.
+          </div>
+          <div class="bot-details-grid">
+            <div class="detail-block">
+              <h4>Signal Monitoring</h4>
+              <ul>
+                <li>Macro stress events (VIX, geopolitical)</li>
+                <li>Search demand trends</li>
+                <li>Social sentiment analysis</li>
+                <li>Content performance tracking</li>
+              </ul>
+            </div>
+            <div class="detail-block">
+              <h4>The Breathing Budget</h4>
+              <ul>
+                <li>Inhale: increase spend on demand spikes</li>
+                <li>Exhale: decrease in calm periods</li>
+                <li>Hold: baseline during neutral</li>
+                <li>Never apnea: always some presence</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tools Layer -->
+  <div class="tools-section">
+    <div class="section-label">Infrastructure &amp; Tools Layer</div>
+    <div class="tools-grid">
+      <div class="tool-chip"><div class="tool-dot"></div><span class="tool-name">MCP Server (14 vault tools)</span></div>
+      <div class="tool-chip"><div class="tool-dot"></div><span class="tool-name">PubMed MCP</span></div>
+      <div class="tool-chip"><div class="tool-dot"></div><span class="tool-name">BioMistral LLM</span></div>
+      <div class="tool-chip"><div class="tool-dot"></div><span class="tool-name">Obsidian CLI</span></div>
+      <div class="tool-chip"><div class="tool-dot"></div><span class="tool-name">mine-next-batch.sh</span></div>
+      <div class="tool-chip"><div class="tool-dot"></div><span class="tool-name">check-citations.sh</span></div>
+      <div class="tool-chip"><div class="tool-dot"></div><span class="tool-name">evidence-brief.sh</span></div>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-value">1</span>
+      <span class="stat-label">Orchestrator</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">8</span>
+      <span class="stat-label">Specialized Bots</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">7</span>
+      <span class="stat-label">Infrastructure Tools</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">5</span>
+      <span class="stat-label">Vault Layers</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">3</span>
+      <span class="stat-label">Standards (DC/SKOS/PROV-O)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">861</span>
+      <span class="stat-label">Source Files</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <span>Pausality</span> Intelligence Platform &mdash; Somnistics Research Labs &mdash; 2026
+</div>
+
+<script>
+function toggleCard(el) {
+  const wasActive = el.classList.contains('active');
+  // Close all cards
+  document.querySelectorAll('.bot-card.active').forEach(c => c.classList.remove('active'));
+  // Toggle clicked card
+  if (!wasActive) el.classList.add('active');
+}
+
+function toggleOrch(el) {
+  el.classList.toggle('active');
+}
+
+// Add subtle entrance animations
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.bot-card, .orchestrator-card, .vault-card, .source-chip, .tool-chip');
+  cards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(12px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    setTimeout(() => {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, 80 + i * 40);
+  });
+
+  // Re-enable normal transitions after entrance
+  setTimeout(() => {
+    document.querySelectorAll('.bot-card').forEach(c => {
+      c.style.transition = 'all 0.3s ease';
+    });
+  }, 2000);
+});
+</script>
+
+</body>
+</html>
