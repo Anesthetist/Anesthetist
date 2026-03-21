@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resilience Training Landscape: A Comprehensive Survey | Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A1D2E;
+  --bg-card: #242840;
+  --bg-card-alt: #2A2F4A;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --sage-bg: rgba(95,200,155,0.08);
+  --text: #F5F5F0;
+  --text-muted: #A0A3B5;
+  --text-dim: #7A7D90;
+  --red: #E74C5F;
+  --red-bg: rgba(231,76,95,0.10);
+  --amber: #F0A830;
+  --amber-bg: rgba(240,168,48,0.10);
+  --blue: #6CA6E8;
+  --blue-bg: rgba(108,166,232,0.10);
+  --border: rgba(95,200,155,0.12);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.65;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header */
+header {
+  padding: 56px 48px 40px;
+  border-bottom: 1px solid var(--border);
+}
+header h1 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+header h1 span { color: var(--sage); }
+header .subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+header .summary {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+/* Section */
+section {
+  padding: 36px 48px;
+  border-bottom: 1px solid rgba(95,200,155,0.08);
+}
+section:last-of-type { border-bottom: none; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+.section-label.red { color: var(--red); }
+.section-label.amber { color: var(--amber); }
+.section-label.blue { color: var(--blue); }
+
+h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+h3 {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+p.highlight {
+  color: var(--text);
+  font-weight: 400;
+}
+
+/* Program cards */
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.program-card {
+  background: var(--bg-card);
+  border-radius: 10px;
+  padding: 24px 28px;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+.program-card:hover {
+  border-color: rgba(95,200,155,0.25);
+}
+.program-card .domain {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sage);
+  margin-bottom: 6px;
+}
+.program-card h4 {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.program-card .detail {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+.program-card .detail strong {
+  color: var(--text);
+  font-weight: 400;
+}
+.gap-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--red);
+  background: var(--red-bg);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* Gap analysis */
+.gap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+.gap-card {
+  background: var(--red-bg);
+  border: 1px solid rgba(231,76,95,0.15);
+  border-radius: 10px;
+  padding: 24px 28px;
+}
+.gap-card h4 {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.gap-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* SRL positioning */
+.srl-card {
+  background: var(--sage-bg);
+  border: 1px solid rgba(95,200,155,0.2);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+}
+.srl-card h4 {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+.srl-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+.srl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Comparison table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 13px;
+}
+.comparison-table th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sage);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.comparison-table td {
+  padding: 12px 16px;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(95,200,155,0.05);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.comparison-table tr:nth-child(even) td {
+  background: rgba(36,40,64,0.4);
+}
+.comparison-table td:first-child {
+  color: var(--text);
+  font-weight: 400;
+  white-space: nowrap;
+}
+.check { color: var(--sage); }
+.cross { color: var(--red); opacity: 0.7; }
+.partial { color: var(--amber); }
+
+/* Footer */
+footer {
+  padding: 32px 48px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  header, section, footer { padding-left: 24px; padding-right: 24px; }
+  .program-grid, .gap-grid, .srl-grid { grid-template-columns: 1fr; }
+  .comparison-table { font-size: 12px; }
+  .comparison-table td, .comparison-table th { padding: 10px 10px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Resilience Training <span>Landscape</span></h1>
+  <div class="subtitle">A comprehensive survey of every major resilience training methodology used by world-class organizations &mdash; and the structural gap they all share</div>
+  <p class="summary">
+    This document surveys resilience training programs across military, aerospace, law enforcement, aviation, surgery, elite athletics, first response, and healthcare. Each program is assessed for approach, evidence, and limitations. The shared gap &mdash; cognitive-first, session-based, open-loop, and not dose-optimized &mdash; defines the research opportunity.
+  </p>
+</header>
+
+<!-- MILITARY -->
+<section>
+  <div class="section-label">Military &amp; Defense</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="domain">U.S. Army</div>
+      <h4>Comprehensive Soldier Fitness (CSF) / Master Resilience Training (MRT)</h4>
+      <p class="detail"><strong>Approach:</strong> Cognitive reframing, emotional regulation, and growth mindset through Seligman's PERMA model, delivered via unit-level resilience trainers.</p>
+      <p class="detail"><strong>Evidence:</strong> Modest improvements in self-reported resilience and reduced PTSD symptom reporting; effect sizes are small and durability beyond training windows is inconsistent (Lester et al., 2011).</p>
+      <span class="gap-tag">Cognitive-only &bull; Session-based &bull; No biofeedback</span>
+    </div>
+    <div class="program-card">
+      <div class="domain">U.S. Navy / Special Operations</div>
+      <h4>BUD/S Mental Toughness &amp; SERE Psychological Resistance</h4>
+      <p class="detail"><strong>Approach:</strong> Extreme stress exposure for selection and psychological hardening. SERE trains resistance to interrogation and captivity stress through simulated scenarios.</p>
+      <p class="detail"><strong>Evidence:</strong> Strong selection validity &mdash; these programs identify individuals with existing stress tolerance. Evidence for building resilience through pure exposure is mixed; high attrition rates suggest selection over training.</p>
+      <span class="gap-tag">Selection over training &bull; No dose optimization &bull; No interoceptive component</span>
+    </div>
+  </div>
+</section>
+
+<!-- AEROSPACE -->
+<section>
+  <div class="section-label">Aerospace</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="domain">NASA</div>
+      <h4>Astronaut Psychological Training &amp; Long-Duration Mission Resilience</h4>
+      <p class="detail"><strong>Approach:</strong> Conflict resolution, team cohesion protocols, behavioral health monitoring, and crew compatibility screening for missions lasting months to years.</p>
+      <p class="detail"><strong>Evidence:</strong> Decades of operational validation through successful long-duration missions. Psychological support systems are integrated into mission architecture.</p>
+      <span class="gap-tag">Interpersonal/cognitive focus &bull; No autonomic regulation training &bull; No biofeedback loop</span>
+    </div>
+  </div>
+</section>
+
+<!-- LAW ENFORCEMENT -->
+<section>
+  <div class="section-label">Law Enforcement</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="domain">FBI / Secret Service</div>
+      <h4>Stress Inoculation Training (SIT) &amp; Simulated Threat Exposure</h4>
+      <p class="detail"><strong>Approach:</strong> Graded exposure to simulated threat scenarios &mdash; active shooter, hostage negotiation, protective detail under attack &mdash; based on Meichenbaum's SIT framework.</p>
+      <p class="detail"><strong>Evidence:</strong> Well-established evidence base for anxiety disorders and operational stress (Meichenbaum, 1985). Transfer to real-world performance is supported by operational after-action data.</p>
+      <span class="gap-tag">Session-based (dedicated simulation) &bull; No physiological dosing &bull; Not workflow-integrated</span>
+    </div>
+  </div>
+</section>
+
+<!-- AVIATION -->
+<section>
+  <div class="section-label">Aviation</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="domain">Commercial &amp; Military Aviation</div>
+      <h4>Crew Resource Management (CRM) &amp; Line-Oriented Flight Training (LOFT)</h4>
+      <p class="detail"><strong>Approach:</strong> Systematic human factors training &mdash; structured communication, decision-making frameworks, and full-mission simulation. The gold standard for team performance under pressure.</p>
+      <p class="detail"><strong>Evidence:</strong> Four decades of operational evidence. CRM adoption correlates with reduced accident rates across commercial aviation. LOFT provides realistic scenario training with debrief.</p>
+      <span class="gap-tag">Cognitive/behavioral layer only &bull; No autonomic state monitoring &bull; Cannot detect state drift</span>
+    </div>
+  </div>
+</section>
+
+<!-- SURGICAL / MEDICAL -->
+<section>
+  <div class="section-label">Surgical &amp; Medical</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="domain">OR Teams</div>
+      <h4>Crisis Resource Management &amp; Simulation-Based Training</h4>
+      <p class="detail"><strong>Approach:</strong> Healthcare adaptation of aviation CRM. High-fidelity simulation scenarios with structured debrief. Focus on team communication, role clarity, and decision-making under time pressure.</p>
+      <p class="detail"><strong>Evidence:</strong> Simulation-based training improves team communication and reduces certain error categories. Widely adopted in residency and anesthesia training.</p>
+      <span class="gap-tag">Does not address autonomic substrate &bull; No clinician state monitoring during simulation</span>
+    </div>
+    <div class="program-card">
+      <div class="domain">AHRQ / DoD</div>
+      <h4>TeamSTEPPS</h4>
+      <p class="detail"><strong>Approach:</strong> Evidence-based teamwork system with structured communication tools (SBAR, CUS, call-outs), mutual support, situation monitoring, and leadership protocols.</p>
+      <p class="detail"><strong>Evidence:</strong> Demonstrated improvements in team performance metrics, communication quality, and safety culture scores across hundreds of implementation sites.</p>
+      <span class="gap-tag">Behavioral protocol &bull; No physiological dimension &bull; Clinician in state drift executes protocol with degraded cognition</span>
+    </div>
+  </div>
+</section>
+
+<!-- ELITE ATHLETICS -->
+<section>
+  <div class="section-label">Elite Athletics</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="domain">USOC / Olympic Programs</div>
+      <h4>Mental Performance Services</h4>
+      <p class="detail"><strong>Approach:</strong> Sport psychologists teach visualization, arousal regulation, attentional focus, and pre-performance routines. Individualized mental skills programs for Olympic athletes.</p>
+      <p class="detail"><strong>Evidence:</strong> Decades of applied sport psychology research support visualization and arousal management for competition performance. Individual case evidence is strong; controlled trials are challenging in elite populations.</p>
+      <span class="gap-tag">Session-based &bull; Dedicated training time required &bull; Not integrated into competition workflow</span>
+    </div>
+    <div class="program-card">
+      <div class="domain">Formula 1</div>
+      <h4>Driver Cardiovascular &amp; Cognitive Conditioning</h4>
+      <p class="detail"><strong>Approach:</strong> Cardiovascular conditioning specifically targeting cognitive performance under sustained G-forces, heat stress, and multi-hour concentration demands. The most physiologically oriented program in elite sport.</p>
+      <p class="detail"><strong>Evidence:</strong> Proprietary team data. F1 drivers demonstrate exceptional cardiovascular fitness relative to cognitive performance demands. Published physiological data confirm extreme physical demands.</p>
+      <span class="gap-tag">Closest to autonomic training &bull; Still session-based &bull; Not transferable to clinical workflow</span>
+    </div>
+  </div>
+</section>
+
+<!-- FIRST RESPONDERS -->
+<section>
+  <div class="section-label">First Responders</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="domain">Fire / EMS / Law Enforcement</div>
+      <h4>Critical Incident Stress Management (CISM)</h4>
+      <p class="detail"><strong>Approach:</strong> Structured post-incident debriefing following the Mitchell model. Group and individual psychological first aid after traumatic exposures.</p>
+      <p class="detail"><strong>Evidence:</strong> Mixed. Some studies suggest CISM does not reduce PTSD incidence and may interfere with natural recovery processes (Rose et al., 2002). Widely implemented despite debated efficacy.</p>
+      <span class="gap-tag">Reactive (post-event) &bull; Cognitive-verbal only &bull; No physiological measurement</span>
+    </div>
+    <div class="program-card">
+      <div class="domain">Veterans / Military Families</div>
+      <h4>PsychArmor Institute</h4>
+      <p class="detail"><strong>Approach:</strong> Online education and resilience training modules for military-connected populations and the organizations that serve them.</p>
+      <p class="detail"><strong>Evidence:</strong> Broad reach through digital delivery. Evidence base is primarily adoption and satisfaction metrics rather than controlled outcome studies.</p>
+      <span class="gap-tag">Didactic &bull; No biofeedback &bull; No dose optimization</span>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTHCARE-SPECIFIC -->
+<section>
+  <div class="section-label">Healthcare-Specific Programs</div>
+  <div class="program-grid">
+    <div class="program-card">
+      <div class="domain">Johns Hopkins</div>
+      <h4>RISE (Resilience in Stressful Events)</h4>
+      <p class="detail"><strong>Approach:</strong> Peer support program for second victims of medical error. Trained peer responders provide emotional support within 24 hours of adverse events.</p>
+      <p class="detail"><strong>Evidence:</strong> Improved emotional processing, reduced isolation, and faster recovery in clinicians who experienced adverse events (Edrees et al., 2016).</p>
+      <span class="gap-tag">Reactive &bull; Post-event only &bull; Does not address autonomic antecedents of error</span>
+    </div>
+    <div class="program-card">
+      <div class="domain">National Child Traumatic Stress Network</div>
+      <h4>Stress First Aid</h4>
+      <p class="detail"><strong>Approach:</strong> Continuum-of-care model for recognizing and responding to stress in self and others. Provides a framework for early identification and peer support.</p>
+      <p class="detail"><strong>Evidence:</strong> Strong face validity and growing adoption. Framework-level evidence rather than controlled outcome trials.</p>
+      <span class="gap-tag">Assessment framework &bull; No physiological measurement &bull; Cognitive identification only</span>
+    </div>
+    <div class="program-card">
+      <div class="domain">University of Rochester</div>
+      <h4>Mindful Practice (Epstein)</h4>
+      <p class="detail"><strong>Approach:</strong> Reflective practice and mindful clinical engagement based on MBSR principles. Combines didactic content with contemplative practice and reflective writing.</p>
+      <p class="detail"><strong>Evidence:</strong> Among the best evidence for sustained clinician wellbeing improvements. Multiple studies showing reduced burnout and improved empathy (Krasner et al., 2009).</p>
+      <span class="gap-tag">Requires 8+ weeks &bull; Not workflow-integrated &bull; Not biofeedback-guided</span>
+    </div>
+    <div class="program-card">
+      <div class="domain">Various Hospital Systems</div>
+      <h4>HeartMath Resilience Programs</h4>
+      <p class="detail"><strong>Approach:</strong> HRV coherence biofeedback with brief breathing protocols. Teaches "coherence" techniques using proprietary emWave/Inner Balance devices.</p>
+      <p class="detail"><strong>Evidence:</strong> Demonstrated HRV improvements and self-reported stress reduction (McCraty & Zayas, 2014). Adopted by multiple hospital systems for clinician wellness.</p>
+      <span class="gap-tag">Proprietary coherence metric debated &bull; Not dose-optimized &bull; No interoceptive assessment (MAIA-2)</span>
+    </div>
+  </div>
+</section>
+
+<!-- THE SHARED GAP -->
+<section>
+  <div class="section-label red">The Shared Gap</div>
+  <h2>Four structural limitations shared by every existing program</h2>
+  <p>Despite decades of development and billions in investment, every resilience training methodology surveyed above shares the same four structural limitations. These are not implementation failures &mdash; they are architectural constraints of the approaches themselves.</p>
+
+  <div class="gap-grid">
+    <div class="gap-card">
+      <h4>1. Cognitive-First</h4>
+      <p>Every program teaches clinicians to <em>think</em> about stress differently &mdash; reframe, reappraise, debrief. But cognitive reappraisal is a prefrontal cortex function, and the PFC degrades under acute sympathetic activation. The strategy most recommended for regulation is least available when most needed. The literature suggests a temporal sequence: somatic regulation first restores PFC capacity, then cognitive strategies become available (Lehrer &amp; Gevirtz, 2014; Zaccaro et al., 2018).</p>
+    </div>
+    <div class="gap-card">
+      <h4>2. Session-Based</h4>
+      <p>Every program requires dedicated time away from clinical workflow &mdash; workshops, simulations, retreats, 8-week courses. For a CRNA managing a full OR schedule, this time often doesn't exist. Meanwhile, 30&ndash;40 naturally occurring transition moments per shift (between cases, walking to the OR, after critical incidents) represent an untapped training surface that requires zero additional scheduling.</p>
+    </div>
+    <div class="gap-card">
+      <h4>3. Open-Loop (No Biofeedback)</h4>
+      <p>No program uses real-time physiological measurement to guide the intervention. A clinician performing a breathing exercise has no objective feedback on whether their HRV is recovering or their RMSSD is rebounding. The HRV biofeedback literature demonstrates that closed-loop feedback produces superior autonomic outcomes compared to open-loop practice (Laborde et al., 2022 &mdash; meta-analysis of 223 studies).</p>
+    </div>
+    <div class="gap-card">
+      <h4>4. Not Dose-Optimized</h4>
+      <p>No program applies the pharmacological principle of minimum effective dose to behavioral intervention. What is the shortest intervention that produces a measurable autonomic shift? The literature jumps from 1-minute diagnostic breathing tests to 5-minute therapeutic protocols. The range between 1 and 5 minutes is unmapped territory &mdash; and it is precisely the window that fits within clinical workflow transitions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE COMPARISON TABLE -->
+<section>
+  <div class="section-label amber">Dimensional Comparison</div>
+  <h2>How programs compare across the four gap dimensions</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Program</th>
+        <th>Autonomic (vs. Cognitive)</th>
+        <th>Workflow-Integrated</th>
+        <th>Biofeedback Closed-Loop</th>
+        <th>Dose-Optimized</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CSF / MRT (Army)</td>
+        <td><span class="cross">&#10005;</span> Cognitive</td>
+        <td><span class="cross">&#10005;</span> Session</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>BUD/S / SERE</td>
+        <td><span class="partial">&#9679;</span> Exposure</td>
+        <td><span class="cross">&#10005;</span> Session</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>NASA Psych Training</td>
+        <td><span class="cross">&#10005;</span> Cognitive</td>
+        <td><span class="partial">&#9679;</span> Partial</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>FBI / SS (SIT)</td>
+        <td><span class="partial">&#9679;</span> Exposure</td>
+        <td><span class="cross">&#10005;</span> Session</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>Aviation CRM / LOFT</td>
+        <td><span class="cross">&#10005;</span> Behavioral</td>
+        <td><span class="partial">&#9679;</span> Simulation</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>Crisis Resource Mgmt</td>
+        <td><span class="cross">&#10005;</span> Behavioral</td>
+        <td><span class="partial">&#9679;</span> Simulation</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>TeamSTEPPS</td>
+        <td><span class="cross">&#10005;</span> Behavioral</td>
+        <td><span class="partial">&#9679;</span> Partial</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>USOC Mental Performance</td>
+        <td><span class="partial">&#9679;</span> Partial</td>
+        <td><span class="cross">&#10005;</span> Session</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>F1 Conditioning</td>
+        <td><span class="partial">&#9679;</span> Cardiovascular</td>
+        <td><span class="cross">&#10005;</span> Session</td>
+        <td><span class="partial">&#9679;</span> Partial</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>CISM</td>
+        <td><span class="cross">&#10005;</span> Cognitive</td>
+        <td><span class="cross">&#10005;</span> Post-event</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>RISE (Johns Hopkins)</td>
+        <td><span class="cross">&#10005;</span> Peer support</td>
+        <td><span class="cross">&#10005;</span> Post-event</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>Stress First Aid</td>
+        <td><span class="cross">&#10005;</span> Framework</td>
+        <td><span class="partial">&#9679;</span> Partial</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>Mindful Practice (Rochester)</td>
+        <td><span class="partial">&#9679;</span> Partial</td>
+        <td><span class="cross">&#10005;</span> 8-week course</td>
+        <td><span class="cross">&#10005;</span> No</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr>
+        <td>HeartMath</td>
+        <td><span class="check">&#10003;</span> HRV coherence</td>
+        <td><span class="partial">&#9679;</span> Partial</td>
+        <td><span class="check">&#10003;</span> Yes</td>
+        <td><span class="cross">&#10005;</span> No</td>
+      </tr>
+      <tr style="background: var(--sage-bg);">
+        <td style="color: var(--sage); font-weight: 500;">Somnistics (SRL)</td>
+        <td><span class="check">&#10003;</span> Autonomic-first</td>
+        <td><span class="check">&#10003;</span> Workflow-native</td>
+        <td><span class="check">&#10003;</span> HRV closed-loop</td>
+        <td><span class="check">&#10003;</span> 60-second MED</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- WHERE SRL SITS -->
+<section>
+  <div class="section-label">Where Somnistics Sits</div>
+  <h2>Addressing all four gaps simultaneously</h2>
+  <p>The Somnistics approach is designed to occupy the intersection that no existing program addresses: autonomic-first, workflow-integrated, biofeedback-closed-loop, and dose-optimized. The following describes how each gap is addressed. All claims are distinguished by evidence level &mdash; the underlying physiological science is well-established; the specific application to CRNA populations requires the proposed research program.</p>
+
+  <div class="srl-grid">
+    <div class="srl-card">
+      <h4>Autonomic-First, Not Cognitive-First</h4>
+      <p>Structured Interoception Training (SIT) operates through three modalities: interoceptive attention training (restoring body signal detection), breath-paced autonomic training at resonant frequency (~0.1 Hz, supported by meta-analysis of 223 studies), and graded interoceptive exposure. The approach targets the autonomic substrate directly, restoring PFC capacity as a downstream effect rather than demanding PFC function during dysregulation.</p>
+    </div>
+    <div class="srl-card">
+      <h4>Workflow-Integrated, Not Session-Based</h4>
+      <p>Gap Moment Training repurposes the 30&ndash;40 naturally occurring transition moments in a clinical shift &mdash; between cases, walking to the OR, after critical incidents &mdash; as the primary training surface. Zero additional scheduling required. Training happens inside the workflow, not removed from it.</p>
+    </div>
+    <div class="srl-card">
+      <h4>Biofeedback Closed-Loop</h4>
+      <p>Real-time HRV monitoring via commercially validated wearables (Oura Ring, Polar H10) provides objective physiological feedback during each intervention. Entry criteria (HRV drop &gt;10ms, respiration spike) and exit confirmation (HRV rebound) create a closed loop. The clinician knows whether the intervention is working &mdash; not through subjective impression, but through measured autonomic response.</p>
+    </div>
+    <div class="srl-card">
+      <h4>Dose-Optimized: 60-Second Minimum Effective Dose</h4>
+      <p>Each intervention is delivered in a 60-second window &mdash; one NeuroMinute. This applies the pharmacological principle of minimum effective dose to behavioral intervention. The specific 60-second therapeutic dose is hypothesized based on diagnostic literature (1-minute deep breathing test) and requires validation through the proposed research program. If confirmed, it represents the first dose-response data for sub-5-minute autonomic interventions.</p>
+    </div>
+  </div>
+
+  <div class="srl-card" style="margin-top: 16px;">
+    <h4>The Interoceptive Suppression Hypothesis</h4>
+    <p>Underlying the Somnistics approach is a novel hypothesis: that medical education systematically suppresses interoceptive awareness through its hidden curriculum of stoicism and self-neglect, and that this suppression constitutes a primary biological mechanism of clinician burnout. ISH reframes the intervention target from "build more resilience" to "restore the sensory channel that training shut down." Zero PubMed results exist for this specific intersection. The proposed research program tests this hypothesis directly.</p>
+  </div>
+
+  <div class="srl-card" style="margin-top: 16px;">
+    <h4>Formal Theoretical Foundation</h4>
+    <p>Somnistics has been formalized as a middle-range nursing theory with 12 theoretical propositions, 13 falsifiable hypotheses, and explicit relationships to Benner (Novice-to-Expert), Roy (Adaptation Model), Watson (Theory of Human Caring), and Nightingale. The theory is designed to be refined by evidence, not defended against it. It specifies its own falsification criteria.</p>
+  </div>
+</section>
+
+<!-- PROPOSED RESEARCH -->
+<section>
+  <div class="section-label blue">Proposed Research Program</div>
+  <h2>Three studies to test the theory</h2>
+  <div class="program-grid">
+    <div class="program-card" style="border-color: rgba(108,166,232,0.25);">
+      <div class="domain" style="color: var(--blue);">Study 1 &mdash; Gateway</div>
+      <h4>MAIA-2-CRNA Validation + ISH Cross-Sectional Test</h4>
+      <p class="detail"><strong>N = 240</strong> (80 CRNAs, 80 pre-CRNA students, 80 matched controls)</p>
+      <p class="detail">Validates a CRNA-specific interoceptive awareness instrument and tests the ISH prediction that clinical training attenuates interoceptive capacity in a dose-dependent manner.</p>
+      <p class="detail"><strong>Measures:</strong> MAIA-2, heartbeat detection task, TAS-20, resting HRV, stress-task physiological-subjective discrepancy, MBI</p>
+      <p class="detail"><strong>Cost:</strong> $40&ndash;60K &nbsp;&bull;&nbsp; <strong>Timeline:</strong> 12&ndash;18 months</p>
+    </div>
+    <div class="program-card" style="border-color: rgba(108,166,232,0.25);">
+      <div class="domain" style="color: var(--blue);">Study 2 &mdash; Mechanism</div>
+      <h4>State Drift Continuous Monitoring</h4>
+      <p class="detail"><strong>N = 60</strong> CRNAs, within-subjects, 3 consecutive shifts</p>
+      <p class="detail">Names and operationalizes intra-shift autonomic degradation with continuous HRV monitoring, concurrent cognitive performance testing, and post-shift recovery measurement.</p>
+      <p class="detail"><strong>Measures:</strong> Continuous RMSSD/SDNN (Polar H10), PVT, hourly subjective ratings, nocturnal HRV (Oura Ring)</p>
+      <p class="detail"><strong>Cost:</strong> $60&ndash;90K &nbsp;&bull;&nbsp; <strong>Timeline:</strong> 12&ndash;18 months</p>
+    </div>
+    <div class="program-card" style="border-color: rgba(108,166,232,0.25); grid-column: 1 / -1;">
+      <div class="domain" style="color: var(--blue);">Study 3 &mdash; Intervention</div>
+      <h4>Gap Moment Training 21-Day Pre/Post Pilot</h4>
+      <p class="detail"><strong>N = 60</strong> (30 intervention, 30 waitlist control)</p>
+      <p class="detail">21-day pilot of Structured Interoception Training: five daily 60-second sessions delivered through naturally occurring workflow transitions. Generates effect size estimates for the definitive RCT.</p>
+      <p class="detail"><strong>Measures:</strong> MAIA-2 (pre/post), RMSSD, MBI, professional engagement (UWES)</p>
+      <p class="detail"><strong>Timeline:</strong> 12 months</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Somnistics Research Labs</strong> &mdash; March 2026<br>
+  This document accompanies the SRL Evidence Assessment (Biomedical Validation of Core Constructs, March 2026) and the Somnistics Middle-Range Nursing Theory paper. All claims are distinguished by evidence level: established (meta-analytic or systematic review support), emerging (consistent findings from multiple studies), or hypothesized (theoretically grounded but requiring primary investigation). The landscape survey is descriptive, not exhaustive &mdash; additional programs exist within each domain. Evidence characterizations reflect the published literature as of March 2026.<br><br>
+  Contact: Randy Graybeal, DNAP, CRNA &mdash; Somnistics Research Labs
+</footer>
+
+</body>
+</html>
