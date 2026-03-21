@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pausality — Motorsport</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1A1D2E;
+    color: #F5F5F0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3vw 5vw;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #5FC89B;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .headline {
+    font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(95, 200, 155, 0.12);
+    border-radius: 12px;
+    padding: 1.8rem;
+  }
+
+  .card-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #5FC89B;
+    margin-bottom: 0.9rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(245, 245, 240, 0.85);
+  }
+
+  .explore {
+    margin-bottom: 3rem;
+  }
+
+  .explore h3 {
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #F5F5F0;
+  }
+
+  .explore ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .explore li {
+    font-size: 0.9rem;
+    color: rgba(245, 245, 240, 0.7);
+    padding: 0.4rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .explore li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5FC89B;
+  }
+
+  footer {
+    font-size: 0.75rem;
+    color: rgba(245, 245, 240, 0.35);
+    letter-spacing: 0.05em;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 6vw; }
+    .cards { grid-template-columns: 1fr; }
+    .headline { margin-bottom: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div>
+    <div class="logo">pausality</div>
+    <h1 class="headline">Train your nervous system like you train your car.</h1>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-label">The Problem</div>
+        <p>State drift — your nervous system degrades over a session without you feeling it. Lap times get inconsistent. Reaction time slows. You don't notice until it costs you.</p>
+      </div>
+      <div class="card">
+        <div class="card-label">The Tool</div>
+        <p>60-second breathing protocols synced to your heartbeat via Apple Watch. 3x a day. 21 days. Your pit stop for your nervous system.</p>
+      </div>
+      <div class="card">
+        <div class="card-label">The Edge</div>
+        <p>Drivers with higher heart rate variability show more consistent lap times and faster recovery after incidents. Train that.</p>
+      </div>
+    </div>
+
+    <div class="explore">
+      <h3>What we'd want to explore</h3>
+      <ul>
+        <li>Wear the Watch during a session — see your autonomic data</li>
+        <li>Try the 21-day protocol before your next race weekend</li>
+        <li>Compare your lap time consistency before and after</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>pausality.health &nbsp;&middot;&nbsp; Randy Graybeal, CRNA &nbsp;&middot;&nbsp; Jason Fields</footer>
+
+</body>
+</html>
