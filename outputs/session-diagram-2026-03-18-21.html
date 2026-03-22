@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session Diagram — March 18-21, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Michroma&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<style>
+:root { --navy: #22253A; --sage: #5FC89B; --white: #F5F5F0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: var(--navy); color: var(--white); min-height: 100vh; }
+.hero { background: linear-gradient(135deg, #1A1C2E 0%, var(--navy) 50%, #2a3a4a 100%); padding: 40px; text-align: center; border-bottom: 2px solid var(--sage); }
+.hero h1 { font-family: 'Michroma', sans-serif; font-size: 20px; letter-spacing: 0.05em; margin-bottom: 8px; }
+.hero .sub { font-size: 14px; font-weight: 300; color: var(--sage); }
+.hero .date { font-size: 11px; color: rgba(245,245,240,0.5); margin-top: 4px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; overflow-x: auto; }
+.mermaid { background: transparent !important; }
+.mermaid svg { max-width: 100%; }
+/* Override mermaid colors for dark theme */
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>SESSION DIAGRAM</h1>
+  <div class="sub">March 18–21, 2026 — 30-Hour Marathon</div>
+  <div class="date">54 → 146 concepts | 60+ files mined | 40+ commits | Intelligence → Action</div>
+</div>
+<div class="container">
+<pre class="mermaid">
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#22253A', 'primaryTextColor': '#F5F5F0', 'primaryBorderColor': '#5FC89B', 'lineColor': '#5FC89B', 'secondaryColor': '#2a3a4a', 'tertiaryColor': '#1A1D2E', 'fontSize': '12px' }}}%%
+
+flowchart TD
+    subgraph INIT["SESSION START — March 18"]
+        A["Overnight Update\n6 untracked files"] --> B["Commit Vault Architecture v2\n6 infrastructure specs"]
+        B --> C["Obsidian CLI installed\nv1.12.4 + Tool Routing Table"]
+    end
+
+    subgraph MINING["CHATGPT MINING — 11 Waves"]
+        C --> W1["Wave 1-2: Springett + Book Stacks\n17 files"]
+        W1 --> W3["Wave 3-4: Personality + Meta-Learning\n11 files"]
+        W3 --> W5["Wave 5: Positive Psychology\n8 files"]
+        W5 --> GAP["💡 TF-IDF Gap Analysis\n'Data knows more than memory'"]
+        GAP --> W6["Wave 6-7: Metacognition + Red Arrow\n8 files"]
+        W6 --> W8["Wave 8-9: Protocols + EEG\n13 files"]
+        W8 --> W10["Wave 10-11: Influences + Cognitive Arc\n8 files"]
+    end
+
+    subgraph WRITES["VAULT WRITES"]
+        W1 --> VW["90+ concepts created"]
+        W3 --> VW
+        W5 --> VW
+        W6 --> VW
+        W8 --> VW
+        W10 --> VW
+        VW --> VAULT[("VAULT\n146 Concepts\n238 Evidence\n205 Observations")]
+    end
+
+    subgraph INFRA["INFRASTRUCTURE"]
+        C --> FIX["MCP update_note fixed"]
+        GAP --> PIPE["Automated Pipeline\nmine-next-batch.sh"]
+        PIPE --> TEST_PIPE["✅ First autonomous run\n21 files created"]
+        VAULT --> CITE["Citation Health Monitor\nBaseline: 45%"]
+        VAULT --> EBTOOL["Evidence Brief Generator\nevidence-brief.sh"]
+    end
+
+    subgraph BIOMED["BIOMEDICAL VALIDATION — 3 Layers"]
+        VAULT --> L1["Layer 1: Surface Sweep\n44 concepts × 8 clusters"]
+        L1 --> L2["Layer 2: Deep Dives\nPVT + ISH + Cardiac + Binaural"]
+        L2 --> L3["Layer 3: BioMistral Direct\n12 queries"]
+        L3 --> KEY["KEY FINDINGS:\nPVT → reframe to NVI\nISH → zero competitors\nBinaural → 5/14 studies\n60s dose → at evidence floor\nBreath first, then reappraise"]
+    end
+
+    subgraph OUTPUTS["DELIVERABLES"]
+        KEY --> REPORT["Evidence Assessment\n621 lines, 106 PubMed refs"]
+        VAULT --> THEORY["Nursing Theory\n13 falsifiable hypotheses"]
+        VAULT --> GRAPH["Vault Graph GUI\n146 nodes, D3.js"]
+        REPORT --> GUI["Assessment Reader GUI"]
+
+        REPORT --> EB1["GMT Evidence Brief"]
+        REPORT --> EB2["SRNA User Journey\n16 outcomes"]
+        REPORT --> EB3["Career Economics\n$3.9M at stake"]
+        REPORT --> EB4["Certification Dual-Track\nCRNA × Motorsport"]
+        REPORT --> EB5["Certification Skills\n7 ranked"]
+        REPORT --> EB6["Resilience Landscape\n14 programs"]
+        REPORT --> EB7["Missimo One-Pager\n3 cards"]
+        REPORT --> EMAIL["Honeycutt Email\n3 study designs"]
+    end
+
+    subgraph COMPETITIVE["COMPETITIVE INTELLIGENCE"]
+        VAULT --> C1["Jhourney — $4K jhana retreats"]
+        VAULT --> C2["EightOS — fractal breathing"]
+        VAULT --> C3["40 Years of Zen — $16K"]
+        VAULT --> C4["Amen Clinics — 200K SPECT"]
+    end
+
+    subgraph NEURO["NEUROTAGGING"]
+        VAULT --> NT["10 evidence links mapped\n7 data standards\n3 bridge frameworks"]
+        NT --> NTGAP["THE GAP:\nIntervention ↔ Target ↔ Outcome\nNobody has built it"]
+    end
+
+    subgraph SOCIAL["SOCIAL + MEDIA"]
+        EB3 --> FB["Facebook Post\n28K CRNAs\n'$6M asset, no maintenance'"]
+        OUTPUTS --> NEWS["The Pausality Times\nVol. 1, Issue 1"]
+    end
+
+    subgraph ACTION["⚡ THE CUT"]
+        NEWS --> FEEDBACK["'You're building a map.\nYou need a weapon.'"]
+        FEEDBACK --> T1["Truth: Intelligence\nwithout action = inert"]
+        T1 --> THE_TEST["THE 14-DAY TEST\n10 CRNAs\nDaily protocol\nHRV change\nPeer invitation"]
+        THE_TEST --> DO1["This week:\n1. Get 10 names\n2. Cert as infrastructure\n3. Drop the post"]
+        DO1 --> TILT["TILT:\nMap → Weapon"]
+    end
+
+    style INIT fill:#22253A,color:#F5F5F0,stroke:#5FC89B
+    style MINING fill:#1A1D2E,color:#F5F5F0,stroke:#5FC89B
+    style WRITES fill:#2a3a4a,color:#F5F5F0,stroke:#5FC89B
+    style INFRA fill:#22253A,color:#F5F5F0,stroke:#5FC89B
+    style BIOMED fill:#1A1D2E,color:#F5F5F0,stroke:#5FC89B
+    style OUTPUTS fill:#22253A,color:#F5F5F0,stroke:#5FC89B
+    style COMPETITIVE fill:#1A1D2E,color:#F5F5F0,stroke:#5FC89B
+    style NEURO fill:#22253A,color:#F5F5F0,stroke:#5FC89B
+    style SOCIAL fill:#1A1D2E,color:#F5F5F0,stroke:#5FC89B
+    style ACTION fill:#5FC89B,color:#22253A,stroke:#E8B84A,stroke-width:3px
+    style VAULT fill:#5FC89B,color:#22253A,stroke:#5FC89B,stroke-width:3px
+    style TILT fill:#E8B84A,color:#22253A,stroke:#E8B84A,stroke-width:3px
+    style THE_TEST fill:#E85A5A,color:#F5F5F0,stroke:#E85A5A,stroke-width:3px
+    style FEEDBACK fill:#E85A5A,color:#F5F5F0
+</pre>
+</div>
+<script>mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });</script>
+</body>
+</html>
