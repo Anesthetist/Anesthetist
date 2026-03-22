@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massimo — 6-Week Training Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --dark-navy: #1A1C2E;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --sage-glow: rgba(95, 200, 155, 0.12);
+  --sage-strong: rgba(95, 200, 155, 0.25);
+  --white: #FFFFFF;
+  --offwhite: #F7F8FA;
+  --text: #22253A;
+  --text-mid: #4A4D5C;
+  --text-light: #6B6F7E;
+  --border: #E0E0DB;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--white); color: var(--text); letter-spacing: -0.025em; }
+
+.hero {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 50%, #2a3a4a 100%);
+  color: var(--white);
+  padding: 50px 40px 40px;
+}
+.hero-content { max-width: 900px; margin: 0 auto; }
+.hero .brand { font-family: 'Michroma', sans-serif; font-size: 11px; color: var(--sage); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
+.hero h1 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 26px; line-height: 1.35; margin-bottom: 8px; }
+.hero .tagline { font-size: 15px; font-weight: 300; color: var(--sage); margin-bottom: 16px; }
+.hero p { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 650px; line-height: 1.7; }
+.hero .meta { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 16px; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+.section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section h2 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 17px; letter-spacing: 0.03em; margin-bottom: 6px; color: var(--navy); }
+.section .section-sub { font-size: 13px; color: var(--sage-dim); font-weight: 400; margin-bottom: 20px; }
+.section p { font-size: 14px; line-height: 1.75; margin-bottom: 12px; color: var(--text-mid); }
+
+/* Principle bar */
+.principle-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.principle {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.principle .val { font-family: 'Michroma', sans-serif; font-size: 22px; color: var(--sage); margin-bottom: 4px; }
+.principle .label { font-size: 11px; color: rgba(255,255,255,0.6); }
+
+/* Week cards */
+.week-card {
+  background: var(--offwhite);
+  border-radius: 14px;
+  padding: 28px;
+  margin: 16px 0;
+  position: relative;
+  border-left: 4px solid var(--sage);
+}
+.week-card .week-badge {
+  font-family: 'Michroma', sans-serif;
+  font-size: 10px;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.week-card h3 { font-weight: 500; font-size: 16px; margin-bottom: 4px; }
+.week-card .focus { font-size: 12px; color: var(--sage-dim); font-weight: 400; margin-bottom: 14px; }
+.week-card .content { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.week-card .col h4 { font-weight: 500; font-size: 12px; color: var(--navy); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+.week-card ul { list-style: none; padding: 0; }
+.week-card li { font-size: 13px; color: var(--text-mid); padding: 4px 0; padding-left: 16px; position: relative; line-height: 1.55; }
+.week-card li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+.week-card .coached {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  font-size: 12px;
+  color: var(--text-light);
+}
+.week-card .coached strong { font-weight: 500; color: var(--navy); }
+
+/* Protocol table */
+.protocol-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+.protocol-table th { text-align: left; padding: 10px 14px; background: var(--navy); color: var(--white); font-weight: 400; font-size: 11px; font-family: 'Michroma', sans-serif; letter-spacing: 0.03em; }
+.protocol-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-mid); vertical-align: top; }
+.protocol-table tr:last-child td { border-bottom: none; }
+
+/* Daily schedule */
+.daily-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0; }
+.daily-slot {
+  background: var(--navy);
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+  color: var(--white);
+}
+.daily-slot .time { font-family: 'Michroma', sans-serif; font-size: 10px; color: var(--sage); margin-bottom: 6px; letter-spacing: 0.05em; }
+.daily-slot .what { font-size: 12px; font-weight: 400; margin-bottom: 4px; }
+.daily-slot .how { font-size: 10px; color: rgba(255,255,255,0.5); }
+
+/* Race day */
+.race-protocol {
+  background: linear-gradient(135deg, var(--dark-navy), var(--navy));
+  border-radius: 14px;
+  padding: 32px;
+  color: var(--white);
+  margin: 20px 0;
+}
+.race-protocol h3 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 15px; margin-bottom: 4px; }
+.race-protocol .sub { font-size: 12px; color: var(--sage); margin-bottom: 20px; }
+.race-phase { margin-bottom: 20px; }
+.race-phase:last-child { margin-bottom: 0; }
+.race-phase h4 { font-weight: 500; font-size: 14px; margin-bottom: 6px; color: var(--sage); }
+.race-phase p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 4px; }
+.race-phase .protocol-detail { font-size: 12px; color: rgba(255,255,255,0.45); }
+
+/* Callout */
+.callout {
+  background: var(--sage-glow);
+  border-left: 3px solid var(--sage);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.footer {
+  background: var(--dark-navy);
+  color: rgba(255,255,255,0.4);
+  padding: 24px;
+  text-align: center;
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+  .hero { padding: 30px 20px; }
+  .principle-bar { grid-template-columns: 1fr; }
+  .week-card .content { grid-template-columns: 1fr; }
+  .daily-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="brand">Somnistics Research Labs</div>
+    <h1>6-Week Training Plan</h1>
+    <div class="tagline">Autonomic Regulation for Elite Motorsport</div>
+    <p>A progressive program built around your personal resonant frequency, tracked through real-time body data on Apple Watch, and designed to give your nervous system a faster return-to-ready between stints, between sessions, between race weekends.</p>
+    <div class="meta">Prepared for Massimo &mdash; Randy Graybeal, CRNA &amp; Jason Fields &mdash; March 2026 &mdash; Confidential</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══════ CORE PRINCIPLES ═══════ -->
+<div class="section">
+  <h2>Core Principles</h2>
+  <div class="section-sub">The science behind the program design</div>
+
+  <div class="principle-bar">
+    <div class="principle">
+      <div class="val">5 &times; 60s</div>
+      <div class="label">Five one-minute sessions daily</div>
+    </div>
+    <div class="principle">
+      <div class="val">MED</div>
+      <div class="label">Minimum effective dose</div>
+    </div>
+    <div class="principle">
+      <div class="val">RF</div>
+      <div class="label">Your resonant frequency</div>
+    </div>
+  </div>
+
+  <p>The research is clear: frequency and brevity beat duration for autonomic adaptation. Five 60-second sessions distributed across the day produce measurably better autonomic changes than a single 30-minute block (You & Laborde et al., 2021). One-minute paced breathing produces measurable HRV changes (Six Dijkstra, McCraty et al., 2019, N=877).</p>
+
+  <p>Every protocol is built around your personal resonant breathing frequency &mdash; discovered during your assessment. This isn't a generic 4-7-8 pattern. It's the exact rate where your cardiorespiratory system synchronizes and produces maximum HRV amplitude (Lehrer, Vaschillo & Vaschillo, 2000).</p>
+
+  <div class="callout">
+    <strong>The approach:</strong> We're not teaching you to relax. We're training your nervous system to regulate the adrenaline you already have &mdash; channeling it into precision instead of burning it as physiological waste. Not less intensity. Better-managed intensity.
+  </div>
+</div>
+
+<!-- ═══════ DAILY SCHEDULE ═══════ -->
+<div class="section">
+  <h2>Your Daily Schedule</h2>
+  <div class="section-sub">5 sessions &times; 1 minute = 5 minutes total commitment</div>
+
+  <div class="daily-grid">
+    <div class="daily-slot">
+      <div class="time">Wake-up</div>
+      <div class="what">Morning Baseline</div>
+      <div class="how">Resonant frequency + HRV capture</div>
+    </div>
+    <div class="daily-slot">
+      <div class="time">Mid-morning</div>
+      <div class="what">Activation Check</div>
+      <div class="how">State awareness + calibration</div>
+    </div>
+    <div class="daily-slot">
+      <div class="time">Post-workout</div>
+      <div class="what">Recovery Protocol</div>
+      <div class="how">Extended exhale for autonomic reset</div>
+    </div>
+    <div class="daily-slot">
+      <div class="time">Afternoon</div>
+      <div class="what">Rapid Reg</div>
+      <div class="how">Acute stress window practice</div>
+    </div>
+    <div class="daily-slot">
+      <div class="time">Pre-sleep</div>
+      <div class="what">Deep Recovery</div>
+      <div class="how">Vagal activation for sleep quality</div>
+    </div>
+  </div>
+
+  <p>These windows flex to your schedule. The key is distribution across the day, not rigid timing. On race weekends, sessions 2-4 shift to pre-race, between-stint, and post-session windows.</p>
+</div>
+
+<!-- ═══════ WEEK BY WEEK ═══════ -->
+<div class="section">
+  <h2>Week-by-Week Program</h2>
+  <div class="section-sub">Three progressive phases &mdash; each building on measured results from the last</div>
+
+  <!-- PHASE 1 -->
+  <div style="font-family:'Michroma',sans-serif;font-size:11px;color:var(--sage);letter-spacing:0.1em;text-transform:uppercase;margin-top:24px;margin-bottom:8px">Phase 1 &mdash; Foundation</div>
+
+  <div class="week-card">
+    <div class="week-badge">Week 1</div>
+    <h3>Resonant Frequency Discovery</h3>
+    <div class="focus">Establish baseline rhythms &mdash; learn to see your body data</div>
+    <div class="content">
+      <div class="col">
+        <h4>Daily Practice</h4>
+        <ul>
+          <li>Resonant frequency breathing at your personal rate (discovered at assessment)</li>
+          <li>Morning HRV baseline capture on Apple Watch</li>
+          <li>Simple body awareness check: "Where am I on the activation scale right now?"</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Learning Objectives</h4>
+        <ul>
+          <li>Establish the daily 5-session routine</li>
+          <li>Feel the difference between resonant and non-resonant breathing</li>
+          <li>Begin reading your own HRV trends</li>
+          <li>First BOLT score tracked</li>
+        </ul>
+      </div>
+    </div>
+    <div class="coached"><strong>Coached session (virtual, 30 min):</strong> Review first week of HRV data. Confirm resonant frequency feels right. Troubleshoot any app/watch issues. Adjust timing windows to your schedule.</div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-badge">Week 2</div>
+    <h3>Baseline Stabilization</h3>
+    <div class="focus">Lock in the habit &mdash; first data trend appears</div>
+    <div class="content">
+      <div class="col">
+        <h4>Daily Practice</h4>
+        <ul>
+          <li>Box breathing (5/5/5/5) for autonomic calibration &mdash; training your system to hold a steady state</li>
+          <li>Pre-sleep extended exhale protocol for recovery</li>
+          <li>Continue morning HRV tracking</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Learning Objectives</h4>
+        <ul>
+          <li>Experience the difference between box breathing and resonant frequency breathing</li>
+          <li>Notice the effect of pre-sleep breathing on sleep quality and morning HRV</li>
+          <li>Watch for first HRV trend inflection</li>
+          <li>Weekly BOLT score comparison</li>
+        </ul>
+      </div>
+    </div>
+    <div class="coached"><strong>Coached session (virtual, 30 min):</strong> First data review &mdash; HRV trend, morning HR trend, sleep quality. Review box breathing technique. Introduce body scan awareness during breathing. Adjust if needed.</div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div style="font-family:'Michroma',sans-serif;font-size:11px;color:var(--sage);letter-spacing:0.1em;text-transform:uppercase;margin-top:32px;margin-bottom:8px">Phase 2 &mdash; Awareness Under Load</div>
+
+  <div class="week-card">
+    <div class="week-badge">Week 3</div>
+    <h3>Load Introduction</h3>
+    <div class="focus">Move from rest to regulation under physical stress</div>
+    <div class="content">
+      <div class="col">
+        <h4>Daily Practice</h4>
+        <ul>
+          <li>Extended exhale protocols (4/7/8) for deep recovery response</li>
+          <li>Post-workout breathing: one NeuroMinute immediately after training</li>
+          <li>Heart rate recovery awareness: notice how long it takes to return to normal after exertion</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Learning Objectives</h4>
+        <ul>
+          <li>Experience breathing as a recovery accelerator, not just a calming tool</li>
+          <li>Begin to notice the difference between "calm" and "recovered"</li>
+          <li>Build the post-exertion NeuroMinute habit (transfers directly to post-stint)</li>
+          <li>Interoceptive attention during physical training</li>
+        </ul>
+      </div>
+    </div>
+    <div class="coached"><strong>Coached session (virtual, 30 min):</strong> Data review at 3-week mark. Introduce simulated pre-race state &mdash; visualization of race start while monitoring body response. Practice regulating while activated, not just while resting.</div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-badge">Week 4</div>
+    <h3>Acute Stress Protocols</h3>
+    <div class="focus">Regulation on demand &mdash; short, sharp, effective</div>
+    <div class="content">
+      <div class="col">
+        <h4>Daily Practice</h4>
+        <ul>
+          <li>Rapid Reg (3/3/3/3) &mdash; a fast-acting protocol for acute stress windows (10 seconds per cycle, 6 cycles per minute)</li>
+          <li>Continue extended exhale for recovery sessions</li>
+          <li>Introduce Anterocept&trade; awareness continuum: from breath &rarr; heartbeat &rarr; grip &rarr; peripheral vision</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Learning Objectives</h4>
+        <ul>
+          <li>Have a tool that works in 10-second windows (pit stops, red flags, safety car periods)</li>
+          <li>Practice maintaining sensory awareness while breathing</li>
+          <li>Midpoint: compare BOLT, HRV, subjective readiness to Week 0</li>
+          <li>Adjust all protocols based on 4 weeks of personal data</li>
+        </ul>
+      </div>
+    </div>
+    <div class="coached"><strong>Coached session (virtual, 30 min):</strong> MIDPOINT DATA REVIEW. Full analysis: HRV trend, resting HR trend, BOLT progression, sleep quality, subjective readiness. Adjust protocols based on what the data shows. This is the turning point &mdash; we customize from here.</div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div style="font-family:'Michroma',sans-serif;font-size:11px;color:var(--sage);letter-spacing:0.1em;text-transform:uppercase;margin-top:32px;margin-bottom:8px">Phase 3 &mdash; Race-Day Mastery</div>
+
+  <div class="week-card">
+    <div class="week-badge">Week 5</div>
+    <h3>Race-Day Protocol Design</h3>
+    <div class="focus">Build the custom race-weekend sequence</div>
+    <div class="content">
+      <div class="col">
+        <h4>Daily Practice</h4>
+        <ul>
+          <li>Anesthetist's Breath (10/0/10/0) &mdash; deep vagal reset for post-race recovery</li>
+          <li>Practice the full race-day sequence: pre-race activation &rarr; between-stint regulation &rarr; post-session recovery</li>
+          <li>Polyanchora&trade; multi-anchor training: breath + heartbeat + grip + peripheral vision simultaneously</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Learning Objectives</h4>
+        <ul>
+          <li>Experience the Anesthetist's Breath &mdash; the deepest vagal activation in the protocol stack</li>
+          <li>Design your personal pre-race activation protocol (priming WITHOUT overdrive)</li>
+          <li>Practice in-cockpit micro-regulation (eyes open, hands on wheel simulation)</li>
+          <li>Build the race-weekend protocol card</li>
+        </ul>
+      </div>
+    </div>
+    <div class="coached"><strong>Coached session (in-person or virtual, 45 min):</strong> Design the race-day protocol together. Walk through every transition: hotel &rarr; paddock &rarr; briefing &rarr; suit up &rarr; car &rarr; formation lap &rarr; race &rarr; cool-down &rarr; debrief. Assign a NeuroMinute to each transition point.</div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-badge">Week 6</div>
+    <h3>Final Assessment + Deployment</h3>
+    <div class="focus">Measure everything again &mdash; see what changed</div>
+    <div class="content">
+      <div class="col">
+        <h4>Final Week Practice</h4>
+        <ul>
+          <li>Full race-day protocol rehearsal</li>
+          <li>Continue daily 5-session routine</li>
+          <li>Pre-assessment: same conditions as Week 0 (sleep, caffeine, timing)</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Final Assessment (In-Person, 2 hrs)</h4>
+        <ul>
+          <li>Full re-assessment: HRV, HR, BP, BOLT, EEG, MAIA-2, cardiac efficiency, grip strength, physical markers</li>
+          <li>Compare every metric to baseline</li>
+          <li>Recovery curve re-test: stress test + time-to-baseline</li>
+          <li>Comprehensive before/after data report delivered</li>
+        </ul>
+      </div>
+    </div>
+    <div class="coached"><strong>Final coached session (in-person, 60 min):</strong> Walk through the data report together. Deliver the race-day protocol card (laminated, cockpit-ready). Discuss ongoing maintenance: what to keep doing, what to adjust, next-phase options.</div>
+  </div>
+</div>
+
+<!-- ═══════ BREATHING PROTOCOLS ═══════ -->
+<div class="section">
+  <h2>Protocol Reference</h2>
+  <div class="section-sub">The breathing patterns you'll learn, in order of introduction</div>
+
+  <table class="protocol-table">
+    <tr><th>Protocol</th><th>Pattern</th><th>When</th><th>What It Does</th></tr>
+    <tr>
+      <td><strong>Resonant Frequency</strong></td>
+      <td>Inhale/exhale at your personal rate (4.5-6.5 bpm)</td>
+      <td>Morning baseline, primary daily practice</td>
+      <td>Maximizes HRV amplitude. Entrains cardiorespiratory system. The foundation everything else builds on.</td>
+    </tr>
+    <tr>
+      <td><strong>Box Breathing</strong></td>
+      <td>5s inhale / 5s hold / 5s exhale / 5s hold</td>
+      <td>Calibration, steady-state regulation</td>
+      <td>Equal phases train the nervous system to hold a stable state. Used by military and first responders. Good for pre-event steadying.</td>
+    </tr>
+    <tr>
+      <td><strong>Extended Exhale</strong></td>
+      <td>4s inhale / 7s hold / 8s exhale</td>
+      <td>Post-workout, post-stint recovery</td>
+      <td>Long exhale activates vagal brake. Shifts from sympathetic to parasympathetic. The recovery accelerator.</td>
+    </tr>
+    <tr>
+      <td><strong>Rapid Reg</strong></td>
+      <td>3s inhale / 3s hold / 3s exhale / 3s hold</td>
+      <td>Acute stress windows (pit stop, red flag)</td>
+      <td>Fast-acting. 6 cycles per minute. Works in 10-second bursts. Your in-cockpit tool.</td>
+    </tr>
+    <tr>
+      <td><strong>Anesthetist's Breath</strong></td>
+      <td>10s inhale / 0 hold / 10s exhale / 0 hold</td>
+      <td>Deep post-race recovery</td>
+      <td>Maximum vagal activation. 3 breaths per minute. The deepest reset in the stack. Named for the people who manage nervous systems for a living.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══════ RACE DAY PROTOCOL ═══════ -->
+<div class="section">
+  <h2>Race-Day Protocol</h2>
+  <div class="section-sub">Designed in Week 5 &mdash; personalized to your race schedule and cockpit constraints</div>
+
+  <div class="race-protocol">
+    <h3>Race Weekend Sequence</h3>
+    <div class="sub">Every transition is a training surface</div>
+
+    <div class="race-phase">
+      <h4>Night Before &mdash; Pre-Sleep Recovery</h4>
+      <p>Anesthetist's Breath (10/0/10/0) &times; 5 breaths. Deep vagal activation to maximize sleep quality. Not a sleep aid &mdash; giving your nervous system the best possible conditions to repair overnight.</p>
+      <div class="protocol-detail">With Apple Watch tracking. Compare sleep HRV to training baseline.</div>
+    </div>
+
+    <div class="race-phase">
+      <h4>Morning &mdash; Baseline Check</h4>
+      <p>Resonant frequency breathing &times; 1 minute. Morning HRV reading. This is your pit board for the day &mdash; tells you where your nervous system is starting from.</p>
+      <div class="protocol-detail">If morning HRV is significantly below trend, the day's protocols adjust: more recovery breathing, less activation.</div>
+    </div>
+
+    <div class="race-phase">
+      <h4>Pre-Race (T-30 min) &mdash; Activation Priming</h4>
+      <p>Box breathing (5/5/5/5) &times; 5 breaths, then natural breathing with Anterocept&trade; focus: breath &rarr; heartbeat &rarr; hands &rarr; peripheral vision. Priming the nervous system for high-load performance WITHOUT tipping into overdrive.</p>
+      <div class="protocol-detail">The goal is not calm. The goal is controlled elevation &mdash; sympathetic activation channeled through structured awareness.</div>
+    </div>
+
+    <div class="race-phase">
+      <h4>In-Cockpit (Formation Lap / Safety Car / Red Flag)</h4>
+      <p>Rapid Reg (3/3/3/3) &times; 3-5 breaths. Eyes open, hands on wheel. Works in 10-second windows. Prevents sympathetic escalation during waiting periods without dropping alertness.</p>
+      <div class="protocol-detail">This is the protocol you can use without anyone knowing you're doing it.</div>
+    </div>
+
+    <div class="race-phase">
+      <h4>Between Sessions / Stints</h4>
+      <p>Extended exhale (4/7/8) &times; 5 breaths. Active recovery. The faster you return to autonomic baseline between stints, the more reserve you have for the next one. This is the competitive edge.</p>
+      <div class="protocol-detail">Track HRV recovery time between sessions across race weekends. The trend should improve.</div>
+    </div>
+
+    <div class="race-phase">
+      <h4>Post-Race &mdash; Deep Recovery</h4>
+      <p>Anesthetist's Breath (10/0/10/0) &times; 5 breaths. Full vagal reset. Then resonant frequency breathing &times; 1 minute. Your nervous system just ran at redline &mdash; bring it back to baseline deliberately, not just by waiting for it to happen on its own.</p>
+      <div class="protocol-detail">This is where "hours to feel normal" becomes "minutes to feel returned." The single biggest quality-of-life improvement in the program.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ WHAT'S INCLUDED ═══════ -->
+<div class="section">
+  <h2>What's Included</h2>
+  <div class="section-sub">Everything in the 6-week engagement</div>
+
+  <table class="protocol-table">
+    <tr><th>Component</th><th>Details</th></tr>
+    <tr><td><strong>Pausality App</strong> (6 months)</td><td>Full access to progressive breathing curriculum with real-time Apple Watch heart rate visualization. Your body data, live, on your wrist.</td></tr>
+    <tr><td><strong>In-Person Assessment</strong> (2)</td><td>Week 0 baseline + Week 6 re-assessment. Full autonomic portrait: HRV, HR, BP, BOLT, EEG, MAIA-2, cardiac efficiency, physical markers, recovery curve. ~2 hours each.</td></tr>
+    <tr><td><strong>Coached Sessions</strong> (8)</td><td>Weekly 30-minute sessions (virtual or in-person). Protocol adjustment, data review, technique refinement. Week 5 session is 45 min for race-day protocol design.</td></tr>
+    <tr><td><strong>Personal Resonant Frequency</strong></td><td>Your individualized optimal breathing rate, discovered during assessment and used as the foundation for all protocols.</td></tr>
+    <tr><td><strong>Race-Day Protocol Card</strong></td><td>Custom pre-race, in-cockpit, between-stint, and post-race autonomic regulation sequences. Designed in Week 5, refined through practice.</td></tr>
+    <tr><td><strong>EEG Sessions</strong> (2)</td><td>Baseline + post-program brain activity assessment. Alpha/theta ratio, frontal asymmetry, cognitive load response.</td></tr>
+    <tr><td><strong>MAIA-2 Assessment</strong> (2)</td><td>Pre/post interoceptive awareness measurement across 8 dimensions. Identifies improvements in body awareness.</td></tr>
+    <tr><td><strong>Weekly Data Dashboard</strong></td><td>HRV trend, resting HR, BOLT progression, sleep quality, recovery metrics &mdash; updated weekly with interpretation.</td></tr>
+    <tr><td><strong>Comprehensive Data Report</strong></td><td>Before/after analysis of all 12 metrics with physiological interpretation. The proof document.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ OUTCOMES ═══════ -->
+<div class="section">
+  <h2>What We Expect to See</h2>
+  <div class="section-sub">Based on published research in autonomic regulation and breathing practices</div>
+
+  <table class="protocol-table">
+    <tr><th>Metric</th><th>Direction</th><th>Why It Matters for Racing</th></tr>
+    <tr><td><strong>Resting HRV (RMSSD)</strong></td><td>Upward trend expected*</td><td>Higher autonomic adaptability = more reserve under load</td></tr>
+    <tr><td><strong>Resting heart rate</strong></td><td>Downward trend expected*</td><td>Lower resting HR = higher ceiling before maxing out in the car</td></tr>
+    <tr><td><strong>Time-to-recovery</strong></td><td>Faster return to baseline*</td><td>Faster recovery between stints = more consistency across a race weekend</td></tr>
+    <tr><td><strong>BOLT score</strong></td><td>Improvement expected*</td><td>Higher CO2 tolerance = better handling of metabolic stress</td></tr>
+    <tr><td><strong>Blood pressure</strong></td><td>Favorable trend*</td><td>Better baroreflex = smoother adaptation to position and G-load changes</td></tr>
+    <tr><td><strong>EEG alpha/theta</strong></td><td>Improved coherence*</td><td>Less theta intrusion under load = sustained focus deeper into sessions</td></tr>
+    <tr><td><strong>MAIA-2 scores</strong></td><td>Improvement in Self-Regulation + Body Listening*</td><td>Better real-time reading of your own body = earlier detection of state drift</td></tr>
+    <tr><td><strong>Pre-race comfort (VAS)</strong></td><td>Improved readiness*</td><td>Feeling ready, not amped. Controlled activation, not overdrive.</td></tr>
+    <tr><td><strong>Post-race recovery</strong></td><td>Faster*</td><td>"Hours to normal" becomes measurably shorter</td></tr>
+    <tr><td colspan="3" style="font-size:11px;color:var(--text-light);font-style:italic;border:none;padding-top:12px">*Individual results vary. Targets are directional based on published breathing and wellness research. This program is not a medical treatment and does not diagnose, treat, cure, or prevent any disease.</td></tr>
+  </table>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>&copy; 2026 Somnistics Research Labs, Inc. &mdash; Pausality&trade; is a trademark of Somnistics, Inc.</p>
+  <p style="margin-top:4px">Confidential &mdash; Prepared exclusively for Massimo</p>
+  <p style="margin-top:10px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6">
+    Pausality is a wellness and performance breathing application. It is not a medical device, does not provide biofeedback therapy, and is not intended to diagnose, treat, cure, or prevent any disease or medical condition. Heart rate and HRV data displayed in the app are for wellness and informational purposes only. Consult your physician before beginning any new wellness program.
+  </p>
+</div>
+
+</body>
+</html>

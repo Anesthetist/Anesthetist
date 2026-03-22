@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massimo — Performance Assessment Intake Protocol</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --dark-navy: #1A1C2E;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --sage-glow: rgba(95, 200, 155, 0.12);
+  --sage-glow-strong: rgba(95, 200, 155, 0.25);
+  --white: #FFFFFF;
+  --offwhite: #F7F8FA;
+  --text: #22253A;
+  --text-mid: #4A4D5C;
+  --text-light: #6B6F7E;
+  --border: #E0E0DB;
+  --red-light: rgba(220, 80, 80, 0.08);
+  --red-border: rgba(220, 80, 80, 0.3);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--white); color: var(--text); letter-spacing: -0.025em; }
+
+.hero {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 50%, #2a3a4a 100%);
+  color: var(--white);
+  padding: 50px 40px 40px;
+  position: relative;
+}
+.hero-content { max-width: 900px; margin: 0 auto; }
+.hero .brand { font-family: 'Michroma', sans-serif; font-size: 11px; color: var(--sage); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
+.hero h1 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 24px; line-height: 1.35; margin-bottom: 8px; }
+.hero .tagline { font-size: 15px; font-weight: 300; color: var(--sage); margin-bottom: 12px; }
+.hero .meta { font-size: 11px; color: rgba(255,255,255,0.45); }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+/* Sections */
+.section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section h2 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 16px; letter-spacing: 0.03em; margin-bottom: 6px; color: var(--navy); }
+.section .section-sub { font-size: 13px; color: var(--sage-dim); font-weight: 400; margin-bottom: 20px; }
+.section h3 { font-weight: 500; font-size: 15px; margin-top: 28px; margin-bottom: 10px; color: var(--navy); }
+.section p { font-size: 14px; line-height: 1.75; margin-bottom: 12px; color: var(--text-mid); }
+
+/* Intake blocks */
+.intake-block {
+  background: var(--offwhite);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 16px 0;
+}
+.intake-block h4 {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.intake-block .purpose {
+  font-size: 12px;
+  color: var(--sage-dim);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.intake-block .questions {
+  list-style: none;
+  padding: 0;
+}
+.intake-block .questions li {
+  font-size: 13px;
+  color: var(--text-mid);
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  line-height: 1.6;
+}
+.intake-block .questions li:last-child { border-bottom: none; }
+.intake-block .questions li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--sage);
+  background: transparent;
+}
+.intake-block .questions li.filled::before {
+  background: var(--sage);
+}
+
+/* Assessment protocol cards */
+.assess-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 20px 0; }
+.assess-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+.assess-card .num { font-family: 'Michroma', sans-serif; font-size: 10px; color: var(--sage); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.assess-card h4 { font-weight: 500; font-size: 14px; margin-bottom: 4px; }
+.assess-card .time { font-size: 11px; color: var(--sage-dim); font-weight: 500; margin-bottom: 8px; }
+.assess-card p { font-size: 12px; color: var(--text-light); margin-bottom: 6px; line-height: 1.6; }
+.assess-card .equipment { font-size: 11px; color: var(--text-light); font-style: italic; }
+
+/* Safety callout */
+.safety {
+  background: var(--red-light);
+  border-left: 3px solid var(--red-border);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* Callout */
+.callout {
+  background: var(--sage-glow);
+  border-left: 3px solid var(--sage);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* Timeline */
+.flow-steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.flow-step .step-num { font-family: 'Michroma', sans-serif; font-size: 10px; color: var(--sage); }
+.flow-step::after { content: '\2192'; color: var(--sage); margin-left: 4px; }
+.flow-step:last-child::after { content: ''; }
+
+.footer {
+  background: var(--dark-navy);
+  color: rgba(255,255,255,0.4);
+  padding: 24px;
+  text-align: center;
+  font-size: 11px;
+}
+
+@media print {
+  .hero { padding: 30px; }
+  .section { padding: 24px 0; }
+  .assess-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 30px 20px; }
+  .container { padding: 0 16px; }
+  .assess-grid { grid-template-columns: 1fr; }
+  .flow-steps { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="brand">Somnistics Research Labs</div>
+    <h1>Performance Assessment<br>Intake Protocol</h1>
+    <div class="tagline">Massimo &mdash; Ferrari Driver</div>
+    <div class="meta">Prepared by Randy Graybeal, CRNA &mdash; Confidential &mdash; March 2026</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══════ SESSION FLOW ═══════ -->
+<div class="section">
+  <h2>Assessment Session Flow</h2>
+  <div class="section-sub">2-hour in-person session &mdash; everything measured before anything changes</div>
+
+  <div class="flow-steps">
+    <div class="flow-step"><span class="step-num">01</span> Intake Interview</div>
+    <div class="flow-step"><span class="step-num">02</span> Resting Vitals (BP, HR, SpO2)</div>
+    <div class="flow-step"><span class="step-num">03</span> HRV Baseline</div>
+    <div class="flow-step"><span class="step-num">04</span> BOLT + Nasal Exhale</div>
+    <div class="flow-step"><span class="step-num">05</span> MAIA-2 Survey</div>
+    <div class="flow-step"><span class="step-num">06</span> EEG Baseline</div>
+    <div class="flow-step"><span class="step-num">07</span> Resonant Frequency</div>
+    <div class="flow-step"><span class="step-num">08</span> Squat-Sit HR Stress Test</div>
+    <div class="flow-step"><span class="step-num">09</span> Physical Markers</div>
+    <div class="flow-step"><span class="step-num">10</span> SRB-60 (5 Domains)</div>
+    <div class="flow-step"><span class="step-num">11</span> Protocol Design + App Setup</div>
+  </div>
+
+  <div class="callout">
+    <strong>The principle:</strong> Full autonomic portrait first. We need to see the entire landscape &mdash; resting state, stress response, recovery capacity, body awareness, brain activity &mdash; before designing anything. No guessing. No generic protocols.
+  </div>
+</div>
+
+<!-- ═══════ PART 1: INTERVIEW ═══════ -->
+<div class="section">
+  <h2>Part 1: Intake Interview</h2>
+  <div class="section-sub">30 minutes &mdash; conversational, not clinical &mdash; understanding the whole person</div>
+
+  <div class="intake-block">
+    <h4>Racing Profile</h4>
+    <div class="purpose">Understanding the demands on your nervous system</div>
+    <ul class="questions">
+      <li>What series do you race in? How many race weekends per season?</li>
+      <li>Walk me through a typical race weekend &mdash; travel, practice sessions, qualifying, race day. When do you feel sharpest? When does it start to degrade?</li>
+      <li>How long is a typical stint? What are the G-forces like in the car you're driving?</li>
+      <li>What does your team setup look like &mdash; performance coach, physio, engineer, data analyst?</li>
+      <li>How do you currently prepare mentally and physically before getting in the car?</li>
+      <li>After a race or long session, how long until you feel "normal" again? Hours? Next day?</li>
+      <li>Have you ever noticed your lap times getting less consistent later in a session? When does it typically happen?</li>
+      <li>Any incidents where you felt your reaction time or judgment was off &mdash; and you could feel it happening in the moment?</li>
+    </ul>
+  </div>
+
+  <div class="intake-block">
+    <h4>Physical Profile</h4>
+    <div class="purpose">Baseline fitness, sleep, recovery patterns</div>
+    <ul class="questions">
+      <li>Age, height, weight?</li>
+      <li>What does your current fitness routine look like? (Strength, cardio, flexibility, frequency)</li>
+      <li>How's your sleep? Average hours, quality, any issues falling or staying asleep?</li>
+      <li>How do you sleep the night before a race compared to a normal night?</li>
+      <li>Do you track sleep with any wearable? (Apple Watch, Whoop, Oura, etc.)</li>
+      <li>Any current injuries, chronic pain, or physical limitations?</li>
+      <li>Caffeine intake &mdash; how much, when, does it change on race weekends?</li>
+      <li>Alcohol use? Nicotine? Supplements?</li>
+    </ul>
+  </div>
+
+  <div class="intake-block">
+    <h4>Health Screening</h4>
+    <div class="purpose">Safety first &mdash; ruling out contraindications</div>
+    <ul class="questions">
+      <li>Any known heart conditions, arrhythmias, or cardiac history?</li>
+      <li>Any history of seizures, concussions, or traumatic brain injury?</li>
+      <li>Current medications? (Prescription or OTC)</li>
+      <li>Any history of panic attacks or anxiety disorder?</li>
+      <li>Any respiratory conditions &mdash; asthma, exercise-induced bronchospasm?</li>
+      <li>Blood pressure &mdash; have you been told it's high, low, or normal?</li>
+      <li>Family cardiac history? (Sudden cardiac events, arrhythmias)</li>
+    </ul>
+  </div>
+
+  <div class="safety">
+    <strong>Safety gate:</strong> If cardiac history, seizure history, or significant respiratory conditions are present, modify assessment protocol accordingly. EEG photic stimulation contraindicated in seizure history. Extended breath holds contraindicated in cardiac arrhythmia. Randy assesses and adjusts in real time.
+  </div>
+
+  <div class="intake-block">
+    <h4>Autonomic Experience</h4>
+    <div class="purpose">What has he tried, what's worked, what hasn't</div>
+    <ul class="questions">
+      <li>Have you ever done any kind of breathwork, meditation, or mindfulness training?</li>
+      <li>Have you worked with a sports psychologist? What was the approach?</li>
+      <li>Do you use visualization or mental rehearsal before races?</li>
+      <li>Have you ever tried biofeedback or neurofeedback?</li>
+      <li>What do you currently do to "come down" after a high-intensity session?</li>
+      <li>On a scale of 1-10, how aware are you of your body's signals during a race &mdash; heart rate, breathing, muscle tension, grip pressure?</li>
+      <li>Have you ever intentionally used breathing to change how you feel in the car?</li>
+    </ul>
+  </div>
+
+  <div class="intake-block">
+    <h4>Goals &amp; Expectations</h4>
+    <div class="purpose">What does success look like in his language</div>
+    <ul class="questions">
+      <li>In your own words, what are you hoping to get out of this?</li>
+      <li>If this program worked perfectly, what would be different in 6 weeks?</li>
+      <li>Is there a specific race or event you're targeting?</li>
+      <li>Are you looking for something you do every day, or something specific to race weekends?</li>
+      <li>How much time per day are you willing to invest? (We'll need about 5 minutes.)</li>
+      <li>Do you have an Apple Watch? Which model?</li>
+      <li>How data-driven are you &mdash; do you want to see all the numbers, or just know it's working?</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════ PART 2: ASSESSMENTS ═══════ -->
+<div class="section">
+  <h2>Part 2: Physiological Assessment</h2>
+  <div class="section-sub">90 minutes &mdash; 11 measurement stations + SRB-60 baseline &mdash; full autonomic portrait</div>
+
+  <div class="assess-grid">
+    <div class="assess-card">
+      <div class="num">Station 01</div>
+      <h4>Resting Vitals</h4>
+      <div class="time">10 min</div>
+      <p>5-minute seated rest, then measure: resting heart rate, blood pressure (seated), blood pressure (standing &mdash; orthostatic response), respiratory rate, SpO2.</p>
+      <p>Standing BP tests baroreflex sensitivity &mdash; how well his nervous system handles position changes. Orthostatic drop > 20mmHg systolic is a flag.</p>
+      <div class="equipment">BP cuff, pulse oximeter, timer</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 02</div>
+      <h4>HRV Baseline</h4>
+      <div class="time">10 min</div>
+      <p>5-minute supine HRV recording. Chest strap for accuracy. Capture RMSSD (primary), SDNN, HF power, LF/HF ratio. Apple Watch parallel recording for device calibration.</p>
+      <p>This is the single most important number. RMSSD reflects vagal tone &mdash; the nervous system's recovery capacity.</p>
+      <div class="equipment">Polar H10 chest strap, Apple Watch, HRV app (Elite HRV or Kubios)</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 03</div>
+      <h4>BOLT Score</h4>
+      <div class="time">5 min</div>
+      <p>Body Oxygen Level Test &mdash; normal exhale, then time to first involuntary breathing impulse. Tests CO2 tolerance, which correlates with autonomic flexibility and recovery capacity.</p>
+      <p>Elite athletes: 30-40s. Below 20s = significant room for improvement. Above 40s = strong CO2 tolerance baseline.</p>
+      <div class="equipment">Timer, seated position</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 04</div>
+      <h4>MAIA-2 Survey</h4>
+      <div class="time">10 min</div>
+      <p>37-item validated questionnaire measuring 8 dimensions of interoceptive awareness: Noticing, Not-Distracting, Not-Worrying, Attention Regulation, Emotional Awareness, Self-Regulation, Body Listening, Trusting.</p>
+      <p>Identifies which channels of body awareness are strong vs. underdeveloped. Guides where to focus training.</p>
+      <div class="equipment">iPad with MAIA-2 form</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 05</div>
+      <h4>EEG Baseline</h4>
+      <div class="time">15 min</div>
+      <p>3 conditions: eyes closed (2 min), eyes open (2 min), simulated cognitive load &mdash; countdown task or reaction time challenge (3 min). Capture alpha power, theta power, alpha/theta ratio, frontal asymmetry.</p>
+      <p>Alpha dominance at rest = good baseline. Theta intrusion under load = cognitive fatigue signature. Frontal asymmetry reveals approach vs. withdrawal tendency.</p>
+      <div class="equipment">Muse 2 or Emotiv Insight, laptop with signal processing</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 06</div>
+      <h4>Resonant Frequency Discovery</h4>
+      <div class="time">15 min</div>
+      <p>Guided breathing at 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0 breaths/min &mdash; 2 minutes each. Chest strap captures HRV amplitude at each rate. The rate that produces the highest HRV oscillation is his personal resonant frequency.</p>
+      <p>This number is individual. One driver might resonate at 5.0 bpm, another at 6.5. Getting it wrong means suboptimal training for 6 weeks.</p>
+      <div class="equipment">Polar H10, HRV app with pacing, Pausality app for guided pacing</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 07</div>
+      <h4>HR Response to Max Stress (Squat-Sit)</h4>
+      <div class="time">10 min</div>
+      <p>Deep squat-to-standing repeated to drive heart rate to near-max. Monitor HR in real time via chest strap. Capture: peak HR achieved, time-to-peak, and then the recovery curve &mdash; how fast HR returns to within 10% of resting baseline.</p>
+      <p>This is the single most race-relevant physical test. Simulates the rapid hemodynamic shifts of getting in and out of the car, G-load transitions, and acute physical stress. Recovery speed = return-to-ready speed between stints.</p>
+      <div class="equipment">Polar H10 chest strap, Apple Watch, timer, open floor space</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 08</div>
+      <h4>Longest Nasal Exhale Expiration</h4>
+      <div class="time">5 min</div>
+      <p>Full nasal inhale, then timed maximal nasal exhale &mdash; slow, controlled, as long as possible. Measures total lung capacity utilization, diaphragmatic control, and the ability to sustain a controlled, extended exhale through the nose.</p>
+      <p>Directly predicts capacity for extended exhale protocols (4/7/8) and Anesthetist's Breath (10/0/10/0). A driver who can only sustain a 6-second nasal exhale needs a different starting protocol than one who can sustain 15+. Also reveals mouth-breathing patterns and nasal obstruction.</p>
+      <div class="equipment">Timer, seated position, nose clear</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 09</div>
+      <h4>Cardiac Efficiency</h4>
+      <div class="time">10 min</div>
+      <p>Joules per heartbeat at standardized athletic load. Erg test at fixed wattage &mdash; divide power output by heart rate. Higher = more efficient cardiac output. Tracks improvement over the program.</p>
+      <div class="equipment">Concept2 erg or Peloton with power meter, chest strap</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 10</div>
+      <h4>Physical Markers</h4>
+      <div class="time">10 min</div>
+      <p>Pull-up capacity (grip + upper body endurance &mdash; relevant to G-load tolerance). Grip strength (dynamometer, both hands). Basic postural assessment &mdash; cervical/thoracic position under simulated steering load.</p>
+      <p>Grip strength correlates with cardiovascular health and predicts autonomic reserve. Not just fitness &mdash; it's a biomarker.</p>
+      <div class="equipment">Pull-up bar, grip dynamometer, posture assessment tools</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">Station 11</div>
+      <h4>Subjective State Battery</h4>
+      <div class="time">5 min</div>
+      <p>Visual Analog Scales (0-10): Current readiness, current comfort level, typical pre-race anxiety, typical post-race recovery difficulty, sleep quality (last 7 days), energy level.</p>
+      <p>The numbers matter, but how he <em>feels</em> about his nervous system matters more. This is the baseline for "did it work?"</p>
+      <div class="equipment">iPad with VAS forms</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ PART 2B: SRB-60 BASELINE ═══════ -->
+<div class="section">
+  <h2>Part 2B: SRB-60 Baseline Assessment</h2>
+  <div class="section-sub">The Somnistics Readiness Battery &mdash; 5 competency domains, each tested within a 60-second window</div>
+
+  <p>The SRB-60 is the standardized assessment battery for autonomic regulation competency. Originally designed for clinical certification, it maps directly to motorsport performance: Can your nervous system do what you need it to do, when you need it, in sixty seconds?</p>
+
+  <div class="callout">
+    <strong>Why at intake:</strong> We run the SRB-60 at Week 0 to establish a baseline across all five domains. At Week 6, we run it again. The delta tells us not just whether your metrics improved, but whether your <em>skill</em> improved &mdash; can you regulate on demand, under pressure, and return to full performance immediately?
+  </div>
+
+  <div class="assess-grid">
+    <div class="assess-card">
+      <div class="num">SRB Domain 1</div>
+      <h4>Gap Moment Literacy</h4>
+      <div class="time">60-second event</div>
+      <p><strong>What it tests:</strong> Can you detect that a transition is happening and classify your autonomic state?</p>
+      <p><strong>Format:</strong> Simulated scenarios with embedded transition points. Massimo identifies: "A state shift is occurring now." Then classifies: hyperarousal / hypoarousal / cognitive tunnel / task-ready.</p>
+      <p><strong>Scoring:</strong> Detection accuracy &times; Classification accuracy &times; Speed of recognition.</p>
+      <p><strong>What it catches:</strong> The driver who is sympathetically overdrive and doesn't know it &mdash; running hot but reading "I'm fine." High confidence, low accuracy.</p>
+      <div class="equipment">iPad with scenario prompts, Polar H10 for ground-truth state verification</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">SRB Domain 2</div>
+      <h4>Micro-Interoceptive Skill</h4>
+      <div class="time">60-second event</div>
+      <p><strong>What it tests:</strong> Can you rapidly sense, label, and calibrate internal body signals?</p>
+      <p><strong>Format:</strong> Timed interoceptive tasks &mdash; heartbeat detection (count beats without pulse), breath-rate estimation, body tension mapping &mdash; under increasing cognitive load.</p>
+      <p><strong>Scoring:</strong> Accuracy of interoceptive report vs. measured reality (wearable ground truth). At rest AND under simulated load.</p>
+      <p><strong>What it catches:</strong> The driver whose body awareness collapses under stress &mdash; accurate in the paddock, blind in the cockpit. Exactly when it matters most.</p>
+      <div class="equipment">Polar H10 (ground truth), timer, cognitive load task (dual-task paradigm)</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">SRB Domain 3</div>
+      <h4>Protocol Selection &amp; Fidelity</h4>
+      <div class="time">60-second event</div>
+      <p><strong>What it tests:</strong> Given a detected state, can you choose the right breathing protocol and execute it correctly?</p>
+      <p><strong>Format:</strong> Randy names a state (e.g., "You're hyperaroused, 5 minutes before getting in the car"). Massimo selects a protocol and executes it. Breath ratios, pacing, attentional focus scored.</p>
+      <p><strong>Scoring:</strong> Selection appropriateness &times; Execution fidelity. Box breathing isn't the answer to every state. Protocol selection IS applied judgment.</p>
+      <p><strong>At intake:</strong> This will likely score low &mdash; he hasn't learned the protocols yet. That's the point. The Week 6 delta is the measure of learning.</p>
+      <div class="equipment">Protocol reference card (for Week 0, open-book; for Week 6, from memory)</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">SRB Domain 4</div>
+      <h4>Measured State Delta</h4>
+      <div class="time">60-second event</div>
+      <p><strong>What it tests:</strong> Did the protocol actually move the body? Did the nervous system respond?</p>
+      <p><strong>Format:</strong> Pre/post biometric comparison across the 60-second window. HRV shift, heart rate change, respiratory rate change.</p>
+      <p><strong>Scoring:</strong> Magnitude of state delta in the intended direction. Selecting an activating protocol and producing a measurable HR increase scores. Producing no change = the protocol didn't land.</p>
+      <p><strong>What it catches:</strong> Going through the motions &mdash; perfect breathing form, zero physiological change. Ritual without regulation.</p>
+      <div class="equipment">Polar H10 (continuous), Apple Watch, HRV software with 60-second window analysis</div>
+    </div>
+
+    <div class="assess-card">
+      <div class="num">SRB Domain 5</div>
+      <h4>Return-to-Task Readiness</h4>
+      <div class="time">60-second event</div>
+      <p><strong>What it tests:</strong> After regulating, can you immediately perform at full cognitive capacity?</p>
+      <p><strong>Format:</strong> Immediately following the protocol, Massimo performs a timed reaction task or decision-making scenario. Speed and accuracy compared to his pre-protocol baseline.</p>
+      <p><strong>Scoring:</strong> Task performance post-protocol vs. baseline. The protocol should restore or improve performance, not impair it. If the driver is drowsy or spaced out after the breathing exercise, Domain 5 fails.</p>
+      <p><strong>What it catches:</strong> The critical one. Regulation without sedation. A breathing protocol that produces calm but impairs reaction time is the wrong tool for motorsport. You need to be sharper after, not sleepier.</p>
+      <div class="equipment">iPad with reaction time test, timer, Polar H10</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>SRB-60 Performance Tiers:</strong><br>
+    <strong>Bronze</strong> &mdash; Basic competency across all 5 domains (typical Week 0 target)<br>
+    <strong>Silver</strong> &mdash; Consistent measurable state deltas + rapid protocol selection<br>
+    <strong>Gold</strong> &mdash; Advanced skill under high-fidelity simulation<br>
+    <strong>Platinum</strong> &mdash; Expert performance (instructor-level)
+  </div>
+</div>
+
+<!-- ═══════ PART 3: PROTOCOL DESIGN ═══════ -->
+<div class="section">
+  <h2>Part 3: Protocol Design &amp; App Setup</h2>
+  <div class="section-sub">15 minutes &mdash; close the session with a clear plan</div>
+
+  <div class="intake-block">
+    <h4>Immediate Deliverables at End of Session</h4>
+    <div class="purpose">Massimo leaves with something in hand, not just data taken from him</div>
+    <ul class="questions">
+      <li class="filled">His personal resonant breathing frequency (exact number)</li>
+      <li class="filled">Pausality app installed and configured on Apple Watch</li>
+      <li class="filled">First NeuroMinute completed together &mdash; he's felt what it does</li>
+      <li class="filled">Week 1 daily schedule: which 5 one-minute windows to use</li>
+      <li class="filled">Morning HRV tracking protocol explained and first reading taken</li>
+      <li class="filled">Next coached session scheduled (within 5-7 days)</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <strong>The close:</strong> "You now have your resonant frequency &mdash; that's your number, personal to your nervous system. Over the next 6 weeks, we're going to train your nervous system to use that frequency on demand. Five minutes a day. Every metric we just measured, we measure again at Week 6. You'll see exactly what changed."
+  </div>
+</div>
+
+<!-- ═══════ EQUIPMENT CHECKLIST ═══════ -->
+<div class="section">
+  <h2>Equipment Checklist</h2>
+  <div class="section-sub">Everything Randy brings to the assessment session</div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin:16px 0">
+    <tr style="background:var(--navy);color:var(--white)">
+      <th style="padding:10px 14px;text-align:left;font-family:'Michroma',sans-serif;font-size:11px;letter-spacing:0.03em">Item</th>
+      <th style="padding:10px 14px;text-align:left;font-family:'Michroma',sans-serif;font-size:11px;letter-spacing:0.03em">Used For</th>
+      <th style="padding:10px 14px;text-align:left;font-family:'Michroma',sans-serif;font-size:11px;letter-spacing:0.03em">Backup</th>
+    </tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Polar H10 chest strap</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">HRV baseline, resonant freq, stress test</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Garmin HRM-Pro</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Apple Watch (spare)</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">App demo, parallel HRV recording</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">&mdash;</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Blood pressure cuff (auto)</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Seated + standing BP, orthostatic test</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Manual BP cuff + stethoscope</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Pulse oximeter</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">SpO2 + resting respiratory rate</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">&mdash;</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Muse 2 / Emotiv Insight</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">EEG baseline + cognitive load test</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">&mdash;</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Grip dynamometer</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Grip strength (both hands)</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">&mdash;</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">iPad</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">MAIA-2, VAS scales, data capture</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Paper forms</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Laptop + HRV software</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Kubios/Elite HRV, EEG signal processing</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">&mdash;</td></tr>
+    <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Concept2 erg / Peloton access</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Stress test, cardiac efficiency</td><td style="padding:10px 14px;border-bottom:1px solid var(--border)">Standardized step test</td></tr>
+    <tr><td style="padding:10px 14px">iPhone with Pausality (TestFlight)</td><td style="padding:10px 14px">App install + first session walkthrough</td><td style="padding:10px 14px">&mdash;</td></tr>
+  </table>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>&copy; 2026 Somnistics Research Labs, Inc. &mdash; Confidential</p>
+  <p style="margin-top:4px">Prepared exclusively for Massimo's Performance Edge engagement</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arsenal — What We Bring to the Table</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --dark-navy: #1A1C2E;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --sage-glow: rgba(95, 200, 155, 0.12);
+  --white: #FFFFFF;
+  --offwhite: #F7F8FA;
+  --text: #22253A;
+  --text-mid: #4A4D5C;
+  --text-light: #6B6F7E;
+  --border: #E0E0DB;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--dark-navy); color: #F5F5F0; letter-spacing: -0.025em; }
+
+/* Hero */
+.hero {
+  padding: 60px 40px 50px;
+  text-align: center;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(95,200,155,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero .brand { font-family: 'Michroma', sans-serif; font-size: 11px; color: var(--sage); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 28px; line-height: 1.35; margin-bottom: 12px; }
+.hero .sub { font-size: 16px; color: rgba(245,245,240,0.65); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* Category headers */
+.cat-header {
+  padding: 50px 0 20px;
+}
+.cat-header .cat-label { font-family: 'Michroma', sans-serif; font-size: 10px; color: var(--sage); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px; }
+.cat-header h2 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 20px; margin-bottom: 8px; color: #F5F5F0; }
+.cat-header p { font-size: 14px; color: rgba(245,245,240,0.55); line-height: 1.7; }
+
+/* Tool cards */
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.tool-card {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(95,200,155,0.1);
+  border-radius: 14px;
+  padding: 28px;
+  transition: border-color 0.2s;
+}
+.tool-card:hover { border-color: rgba(95,200,155,0.3); }
+.tool-card .icon { font-size: 28px; margin-bottom: 14px; }
+.tool-card h3 { font-weight: 500; font-size: 16px; margin-bottom: 4px; color: #F5F5F0; }
+.tool-card .badge {
+  display: inline-block;
+  font-size: 9px;
+  font-family: 'Michroma', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: rgba(95,200,155,0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.tool-card p { font-size: 13px; color: rgba(245,245,240,0.65); line-height: 1.65; margin-bottom: 10px; }
+.tool-card .detail { font-size: 12px; color: rgba(245,245,240,0.4); line-height: 1.6; }
+
+/* Feature highlight */
+.highlight-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 30px 0;
+}
+.highlight {
+  background: linear-gradient(135deg, rgba(95,200,155,0.08) 0%, rgba(95,200,155,0.02) 100%);
+  border: 1px solid rgba(95,200,155,0.15);
+  border-radius: 14px;
+  padding: 28px;
+}
+.highlight h3 { font-weight: 500; font-size: 15px; color: var(--sage); margin-bottom: 8px; }
+.highlight p { font-size: 13px; color: rgba(245,245,240,0.7); line-height: 1.65; }
+
+/* Data callout */
+.data-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 30px 0;
+}
+.data-item {
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+.data-item .num { font-family: 'Michroma', sans-serif; font-size: 20px; color: var(--sage); margin-bottom: 4px; }
+.data-item .label { font-size: 11px; color: rgba(245,245,240,0.5); }
+
+/* Bottom CTA */
+.bottom-section {
+  text-align: center;
+  padding: 60px 0 50px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 40px;
+}
+.bottom-section h2 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 20px; margin-bottom: 12px; }
+.bottom-section p { font-size: 14px; color: rgba(245,245,240,0.55); max-width: 500px; margin: 0 auto 24px; line-height: 1.7; }
+.bottom-section .btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--sage);
+  color: var(--navy);
+  border-radius: 8px;
+  font-family: 'Michroma', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 10px;
+  color: rgba(245,245,240,0.25);
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+@media (max-width: 700px) {
+  .hero { padding: 40px 20px; }
+  .hero h1 { font-size: 22px; }
+  .tool-grid { grid-template-columns: 1fr; }
+  .highlight-row { grid-template-columns: 1fr; }
+  .data-strip { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero">
+  <div class="brand">Somnistics Research Labs &times; Massimo</div>
+  <h1>The Arsenal</h1>
+  <p class="sub">Every tool, every measurement, every technology we bring to your performance program. Not a wellness app &mdash; a precision engineering platform for your nervous system.</p>
+</div>
+
+<div class="container">
+
+<!-- ═══════ KEY NUMBERS ═══════ -->
+<div class="data-strip">
+  <div class="data-item">
+    <div class="num">12</div>
+    <div class="label">Metrics measured</div>
+  </div>
+  <div class="data-item">
+    <div class="num">60s</div>
+    <div class="label">Per session</div>
+  </div>
+  <div class="data-item">
+    <div class="num">5x</div>
+    <div class="label">Daily sessions</div>
+  </div>
+  <div class="data-item">
+    <div class="num">6</div>
+    <div class="label">Week program</div>
+  </div>
+  <div class="data-item">
+    <div class="num">508</div>
+    <div class="label">App builds shipped</div>
+  </div>
+</div>
+
+<!-- ═══════ WHAT WE MEASURE ═══════ -->
+<div class="cat-header">
+  <div class="cat-label">Measurement</div>
+  <h2>What We Measure</h2>
+  <p>Full autonomic portrait. Not a single number &mdash; a complete map of how your nervous system performs at rest, under load, and during recovery.</p>
+</div>
+
+<div class="tool-grid">
+  <div class="tool-card">
+    <div class="icon">&hearts;</div>
+    <h3>Heart Rate Variability (HRV)</h3>
+    <div class="badge">Primary biomarker</div>
+    <p>RMSSD &mdash; the millisecond-level variation between heartbeats. The single best indicator of your nervous system's capacity to shift between activation and recovery. Higher = more adaptable.</p>
+    <div class="detail">Measured via Polar H10 chest strap + Apple Watch. Daily morning readings track your trend over the program.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&varr;</div>
+    <h3>Blood Pressure + Orthostatic Response</h3>
+    <div class="badge">Baroreflex</div>
+    <p>Seated and standing blood pressure. The drop between positions tests your baroreflex &mdash; how fast your nervous system compensates for position changes. Relevant every time you go from standing to cockpit to standing.</p>
+    <div class="detail">Auto BP cuff. 3 readings each position. Orthostatic response measured as systolic delta.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&theta;</div>
+    <h3>EEG Brain Activity</h3>
+    <div class="badge">Neural patterns</div>
+    <p>Alpha/theta ratio at rest and under cognitive load. Alpha dominance = focused calm. Theta intrusion under pressure = your brain signaling fatigue before you feel it. Frontal asymmetry reveals approach vs. withdrawal tendency.</p>
+    <div class="detail">Consumer-grade EEG (Muse 2 / Emotiv). 3 conditions: eyes closed, eyes open, simulated race load. Pre and post program.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&sung;</div>
+    <h3>BOLT Score (CO2 Tolerance)</h3>
+    <div class="badge">Respiratory</div>
+    <p>Body Oxygen Level Test. Normal exhale, then time to first involuntary breathing impulse. Tests your CO2 tolerance &mdash; a key marker of autonomic flexibility and how your body handles the buildup of metabolic stress.</p>
+    <div class="detail">Simple timed test. Elite athletes: 30-40s. Below 20s = significant room for gains. Weekly tracking.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&olarr;</div>
+    <h3>Recovery Curve</h3>
+    <div class="badge">Performance metric</div>
+    <p>How fast your heart rate and HRV return to baseline after a standardized stress test. This is the number that translates directly to racing: faster autonomic recovery = faster return-to-ready between stints.</p>
+    <div class="detail">Erg test at 80% max HR for 3 minutes, then measure time-to-baseline. Pre and post program comparison.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&dharr;</div>
+    <h3>Cardiac Efficiency</h3>
+    <div class="badge">Output per beat</div>
+    <p>Joules per heartbeat at standardized athletic load. More efficient = lower heart rate at the same output = more autonomic headroom in the car. Your nervous system burning less fuel for the same performance.</p>
+    <div class="detail">Concept2 erg at fixed wattage. Power output / heart rate = efficiency index.</div>
+  </div>
+</div>
+
+<!-- ═══════ BODY AWARENESS ═══════ -->
+<div class="cat-header">
+  <div class="cat-label">Awareness</div>
+  <h2>What We Assess</h2>
+  <p>Metrics tell one story. How well you read your own body under pressure tells another. Both matter.</p>
+</div>
+
+<div class="tool-grid">
+  <div class="tool-card">
+    <div class="icon">&equiv;</div>
+    <h3>MAIA-2 Interoceptive Assessment</h3>
+    <div class="badge">Validated instrument</div>
+    <p>37-item assessment measuring 8 dimensions of body awareness: Noticing, Not-Distracting, Not-Worrying, Attention Regulation, Emotional Awareness, Self-Regulation, Body Listening, Trusting. Published, peer-reviewed, used in clinical research worldwide.</p>
+    <div class="detail">Identifies your strong channels and blind spots. A driver with high Noticing but low Self-Regulation feels the adrenaline but can't do anything about it. We target the gap.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&target;</div>
+    <h3>Resonant Frequency Discovery</h3>
+    <div class="badge">Personalized</div>
+    <p>Your nervous system has an optimal breathing rate &mdash; the frequency where cardiorespiratory oscillations synchronize and HRV amplitude peaks. Typically 4.5-6.5 breaths per minute, but it's individual. We find yours.</p>
+    <div class="detail">Guided breathing at 7 different rates with real-time HRV monitoring. The rate with the highest oscillation amplitude is your personal frequency. Every protocol is built around this number.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&compfn;</div>
+    <h3>Physical Markers</h3>
+    <div class="badge">Functional</div>
+    <p>Grip strength (both hands) &mdash; a biomarker that correlates with cardiovascular health and autonomic reserve, and directly relevant to steering load. Pull-up capacity for G-tolerance. Postural assessment under simulated steering load.</p>
+    <div class="detail">Grip dynamometer, pull-up bar, postural observation. These aren't fitness tests &mdash; they're functional markers of how your body handles race-day loads.</div>
+  </div>
+</div>
+
+<!-- ═══════ THE TECHNOLOGY ═══════ -->
+<div class="cat-header">
+  <div class="cat-label">Technology</div>
+  <h2>What You'll Use</h2>
+  <p>The daily tools. On your wrist, in your ears, integrated into the moments between sessions.</p>
+</div>
+
+<div class="highlight-row">
+  <div class="highlight">
+    <h3>Pausality App</h3>
+    <p>Built from the ground up by our team. 508 builds and counting. Real-time Apple Watch heart rate visualization during every breathing session. You see your heart rate respond to your breath &mdash; live, on your wrist. 21-session progressive curriculum. Privacy-first: your data stays on your device.</p>
+  </div>
+  <div class="highlight">
+    <h3>Apple Watch Integration</h3>
+    <p>Not a phone app with a watch companion. The Watch IS the experience. Heart rate data streams in real time during every session. Post-session metrics captured automatically. Morning HRV readings become your daily check-in. The data lives where you wear it.</p>
+  </div>
+</div>
+
+<div class="tool-grid">
+  <div class="tool-card">
+    <div class="icon">&cir;</div>
+    <h3>Cardiac-Anchored Breathing</h3>
+    <div class="badge">SRL original</div>
+    <p>Most breathing apps pace you to a clock. Pausality paces you to your heartbeat. Your breathing rhythm adapts to your body's rhythm &mdash; not the other way around. This is the fundamental difference: you're training with your nervous system, not against an arbitrary timer.</p>
+    <div class="detail">Requires real-time cardiac data from Apple Watch. The shift from clock-paced to heart-paced breathing is what makes the training stick.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&bowtie;</div>
+    <h3>NeuroMinute&trade; Sessions</h3>
+    <div class="badge">60-second unit</div>
+    <p>Every session is 60 seconds. Scripted, tracked, measurable. Not "take a few deep breaths" &mdash; structured micro-interventions with a specific breathing pattern, interoceptive focus, and biometric capture. One minute, five times a day.</p>
+    <div class="detail">Each NeuroMinute has 4 phases: Acknowledge felt sense &rarr; Shift to observer perspective &rarr; Differentiate signals &rarr; Presence without fixing. Measurable HRV change within each 60-second window.</div>
+  </div>
+
+  <div class="tool-card">
+    <div class="icon">&Proportion;</div>
+    <h3>Progressive Protocol Stack</h3>
+    <div class="badge">Adaptive</div>
+    <p>Your 6-week program isn't static. It progresses through three phases: Foundation (finding your baseline and resonant frequency), Awareness (sensing under load, simulated stress), Mastery (race-day integration with custom protocols). Each phase builds on measured results from the last.</p>
+    <div class="detail">Box breathing (5/5/5/5) &rarr; Extended exhale (4/7/8) &rarr; Rapid Reg (3/3/3/3) &rarr; Anesthetist's Breath (10/0/10/0). Progressive complexity matched to your adaptation.</div>
+  </div>
+</div>
+
+<!-- ═══════ YOUR COACHING TEAM ═══════ -->
+<div class="cat-header">
+  <div class="cat-label">Coaching</div>
+  <h2>Who's Behind It</h2>
+  <p>Not a wellness coach. Not a yoga teacher. A nurse anesthetist who has spent 28 years managing nervous systems under the highest loads in medicine &mdash; and an ex-Audible design lead who built the technology.</p>
+</div>
+
+<div class="highlight-row">
+  <div class="highlight">
+    <h3>Randy Graybeal, CRNA</h3>
+    <p>28 years as a Certified Registered Nurse Anesthetist. Thousands of cases managing autonomic nervous systems in real time &mdash; adjusting drug dosages, ventilation parameters, and hemodynamic targets second by second. The same principles that keep patients stable in the operating room are the principles that give a driver an autonomic edge. Randy reads physiology like you read telemetry.</p>
+  </div>
+  <div class="highlight">
+    <h3>Jason Fields</h3>
+    <p>Former Head of Design at Audible (Amazon). Built digital experiences for millions at Huffington Post and MSNBC. Taught himself to code to build the product he designed. Jason created every screen in Pausality &mdash; the real-time heart rate visualization, the breathing guidance, the session tracking. 508 builds because he doesn't ship until it's right.</p>
+  </div>
+</div>
+
+<!-- ═══════ WHAT MAKES THIS DIFFERENT ═══════ -->
+<div class="cat-header">
+  <div class="cat-label">Differentiator</div>
+  <h2>What Makes This Different</h2>
+  <p>The market is full of breathing apps and mindfulness tools. Here's what separates this.</p>
+</div>
+
+<div class="tool-grid">
+  <div class="tool-card">
+    <h3>Clinical Precision, Not Wellness Vibes</h3>
+    <p>Built by someone who manages nervous systems for a living. Every protocol is grounded in peer-reviewed evidence &mdash; Lehrer's resonant frequency work, Thayer's neurovisceral integration model, Garfinkel's interoception research. Not invented on a retreat.</p>
+  </div>
+  <div class="tool-card">
+    <h3>Measured, Not Felt</h3>
+    <p>Every claim is tested against your own data. We measure 12 biomarkers at Week 0 and again at Week 6. If it didn't move the numbers, it didn't work. No subjective hand-waving. Your nervous system either adapted or it didn't.</p>
+  </div>
+  <div class="tool-card">
+    <h3>Minimum Effective Dose</h3>
+    <p>5 minutes a day, not 30. The research shows that frequency and brief duration beat long sessions for autonomic adaptation. Five 60-second sessions distributed across the day produce better results than one 30-minute block. Fits between sessions, between stints, between anything.</p>
+  </div>
+</div>
+
+<!-- ═══════ CTA ═══════ -->
+<div class="bottom-section">
+  <h2>Start With the Assessment</h2>
+  <p>Two hours. Every metric measured. Your personal resonant frequency discovered. Walk out with the app on your wrist and your Week 1 protocol in hand.</p>
+  <a href="mailto:randy@somnistics.com" class="btn">Schedule Your Session</a>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>&copy; 2026 Somnistics Research Labs, Inc. &mdash; Pausality&trade; is a trademark of Somnistics, Inc.</p>
+  <p style="margin-top:4px">Confidential &mdash; Prepared exclusively for Massimo</p>
+  <p style="margin-top:10px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6">
+    Pausality is a wellness and performance breathing application. It is not a medical device, does not provide biofeedback therapy, and is not intended to diagnose, treat, cure, or prevent any disease or medical condition. Heart rate and HRV data displayed in the app are for wellness and informational purposes only. Consult your physician before beginning any new wellness program. Individual results vary.
+  </p>
+</div>
+
+</body>
+</html>
