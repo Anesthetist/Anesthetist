@@ -8,6 +8,8 @@ dc:subject:
 - agentic-systems
 id: urn:srl:concept:agent-quartet-framework
 modified: '2026-03-19'
+prov:wasDerivedFrom:
+- urn:srl:evidence:agentic-ai-next-intelligence-explosion-2026
 skos:related:
 - crna-shift-architect
 - tacit-knowledge-extraction

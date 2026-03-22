@@ -44,6 +44,7 @@ skos:related:
 - polyvagal-theory
 - kosha-architecture
 - relevance-realization
+- pausality-product-profile
 status: canonical
 title: Somnistics
 trademarked: false

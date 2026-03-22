@@ -7,6 +7,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:chin-2025-joy-of-small-markets
 - urn:srl:observation:tam-keyword-intelligence-breathwork-demand
 - urn:srl:observation:immersion-neuroscience-competitor-analysis
+- urn:srl:evidence:wiener-founders-fundraising-macro-tracking-2026
 skos:narrower:
 - competitive-moat-latency
 - ip-six-pillar-moat

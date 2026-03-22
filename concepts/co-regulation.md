@@ -22,6 +22,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:frontiers-2026-maternal-touch-interoception-development
 - urn:srl:evidence:frontiers-2026-interoception-maternal-affective-touch
 - urn:srl:evidence:powezka-2022-hrv-synchrony-surgical-teamwork
+- urn:srl:evidence:agentic-ai-next-intelligence-explosion-2026
 skos:broader:
 - polyvagal-theory
 skos:narrower: []

@@ -13,6 +13,13 @@ id: urn:srl:concept:neurotagging
 modified: '2026-03-15'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-multi-phase-interoceptiv-analysis
+- urn:srl:evidence:bids-brain-imaging-data-structure
+- urn:srl:evidence:nwb-neurodata-without-borders
+- urn:srl:evidence:cdisc-clinical-data-interchange
+- urn:srl:evidence:fhir-health-interoperability
+- urn:srl:evidence:ieee-1752-open-mobile-health
+- urn:srl:evidence:open-mhealth-schema-library
+- urn:srl:evidence:dht-metadata-framework-2022
 skos:broader:
 - somnistics
 skos:narrower: []

@@ -13,6 +13,7 @@ modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:evidence:wilson-1998-consilience
 - urn:srl:chat:chatgpt-knowledge-graph-synthesis
+- urn:srl:evidence:agentic-ai-next-intelligence-explosion-2026
 skos:broader: []
 skos:narrower:
 - consilience-by-translation

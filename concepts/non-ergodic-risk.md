@@ -14,6 +14,7 @@ id: urn:srl:concept:non-ergodic-risk
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-syntopical-reading-strategy
+- urn:srl:evidence:wiener-founders-fundraising-macro-tracking-2026
 skos:broader: []
 skos:narrower: []
 skos:related:

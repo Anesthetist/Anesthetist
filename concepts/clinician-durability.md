@@ -69,6 +69,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:milleville-2025-crna-decision-making
 - crna-resilience-toolkit-series-v1
 - urn:srl:evidence:arena-strive-2024-app-coaching-clinician-burnout
+- urn:srl:evidence:wiener-founders-fundraising-macro-tracking-2026
 skos:broader:
 - somnistics
 skos:narrower: []
