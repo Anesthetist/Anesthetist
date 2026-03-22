@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Knowledge System — Simple View</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root { --navy: #22253A; --sage: #5FC89B; --white: #FFFFFF; --gray: #F7F8FA; --text: #4A4D5C; --text-light: #6B6F7E; --amber: #f59e0b; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; color: var(--text); background: var(--white); letter-spacing: -0.025em; }
+
+.hero { background: linear-gradient(135deg, #1A1C2E, var(--navy), #2a3a4a); color: white; padding: 80px 24px 60px; text-align: center; }
+.hero h1 { font-family: 'Michroma', sans-serif; font-size: 20px; letter-spacing: 0.03em; margin-bottom: 8px; }
+.hero p { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.7); }
+
+.container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+section { padding: 60px 0; border-bottom: 1px solid #E8E9ED; }
+section:last-of-type { border-bottom: none; }
+h2 { font-size: 24px; font-weight: 400; margin-bottom: 24px; }
+h3 { font-size: 16px; font-weight: 500; margin-bottom: 12px; }
+p { font-size: 15px; line-height: 1.7; margin-bottom: 16px; color: var(--text-light); }
+p strong { color: var(--text); font-weight: 500; }
+
+.big-number { font-family: 'Michroma', sans-serif; font-size: 48px; color: var(--sage); }
+.big-label { font-size: 14px; color: var(--text-light); margin-top: 4px; }
+
+.flow { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; padding: 32px 0; }
+.flow-step { background: var(--gray); border-radius: 12px; padding: 20px 24px; text-align: center; min-width: 140px; }
+.flow-step .number { font-family: 'Michroma', sans-serif; font-size: 24px; color: var(--sage); }
+.flow-step .label { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+.flow-arrow { font-size: 20px; color: var(--sage); }
+
+.simple-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+.simple-card { background: var(--gray); border-radius: 12px; padding: 24px; }
+.simple-card h3 { margin-bottom: 8px; }
+.simple-card p { margin-bottom: 0; font-size: 14px; }
+
+.action-list { list-style: none; margin: 16px 0; }
+.action-list li { padding: 16px 20px; background: var(--gray); border-radius: 10px; margin-bottom: 8px; font-size: 15px; display: flex; align-items: flex-start; gap: 12px; }
+.action-list li .num { font-family: 'Michroma', sans-serif; font-size: 14px; color: var(--sage); flex-shrink: 0; margin-top: 2px; }
+
+.callout { background: rgba(95,200,155,0.08); border-left: 3px solid var(--sage); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 24px 0; }
+.callout p { margin-bottom: 0; color: var(--text); }
+
+.footer { text-align: center; padding: 40px 24px; font-size: 12px; color: var(--text-light); }
+
+@media (max-width: 600px) {
+  .simple-grid { grid-template-columns: 1fr; }
+  .flow { flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>YOUR KNOWLEDGE SYSTEM</h1>
+  <p>What you built, what it does, and what to do next</p>
+</div>
+
+<div class="container">
+
+<section>
+  <h2>What you have</h2>
+  <p>You talked to AI for 861 conversations over three years. We extracted your thinking into a structured system. Here's what's in it:</p>
+
+  <div class="flow">
+    <div class="flow-step">
+      <div class="number">273</div>
+      <div class="label">Studies & Books</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="number">230</div>
+      <div class="label">Your Observations</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="number">152</div>
+      <div class="label">Concepts</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="number">14</div>
+      <div class="label">Finished Outputs</div>
+    </div>
+  </div>
+
+  <p>Studies and books support your observations. Observations build into concepts. Concepts produce outputs — evidence briefs, certification specs, the book, investor materials. <strong>Everything traces back to evidence.</strong></p>
+</section>
+
+<section>
+  <h2>What makes it different from notes in a folder</h2>
+
+  <div class="simple-grid">
+    <div class="simple-card">
+      <h3>Everything is linked</h3>
+      <p>407 connections between concepts. When you update one idea, you can see what it touches. The system knows what's related to what.</p>
+    </div>
+    <div class="simple-card">
+      <h3>Every claim has a source</h3>
+      <p>273 evidence notes with DOIs and PubMed IDs. When someone asks "where's your evidence?", the answer is a query, not a research project.</p>
+    </div>
+    <div class="simple-card">
+      <h3>It grows while you sleep</h3>
+      <p>An automated pipeline mines your remaining 800 ChatGPT conversations at 3-5 files per night. Citations are checked monthly.</p>
+    </div>
+    <div class="simple-card">
+      <h3>One source, infinite outputs</h3>
+      <p>The same evidence produces a 3-card intro for a race car driver AND a 106-reference assessment for a researcher. Different lens, same truth.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What it does for you</h2>
+
+  <ul class="action-list">
+    <li><span class="num">01</span> <div><strong>Answers evidence questions instantly.</strong> "What supports Gap Moment Training?" → the system returns graded evidence, not a reading list. One command generates a branded brief.</div></li>
+    <li><span class="num">02</span> <div><strong>Produces audience-calibrated content.</strong> Surgeon? Three sentences, no jargon. Researcher? 106 citations with DOIs. Investor? Landscape + gap + positioning. SRNA? 16 outcomes mapped. Same vault, different output.</div></li>
+    <li><span class="num">03</span> <div><strong>Validates your science honestly.</strong> 44 concepts stress-tested against current literature. You know what's supported, what's hypothesized, and what pushes back. That honesty IS your credibility.</div></li>
+    <li><span class="num">04</span> <div><strong>Writes the book.</strong> Chapter 1 is drafted. Every claim traces to a vault concept, which traces to an evidence note, which traces to a PubMed reference. The appendix writes itself.</div></li>
+    <li><span class="num">05</span> <div><strong>Structures the certification.</strong> 7 skills ranked by evidence. Each skill has a test. Each test has a constraint. Each constraint traces to a study that explains why the test exists.</div></li>
+  </ul>
+</section>
+
+<section>
+  <h2>The 9 bots that run it</h2>
+  <p>You don't need to remember how any of this works. Vigil orchestrates everything. The bots do the work:</p>
+
+  <ul class="action-list">
+    <li><span class="num">⛏️</span> <div><strong>Knowledge Miner</strong> — reads your ChatGPT transcripts and extracts what YOU said (not what ChatGPT elaborated)</div></li>
+    <li><span class="num">✍️</span> <div><strong>Vault Writer</strong> — creates structured notes with proper metadata and links</div></li>
+    <li><span class="num">🔗</span> <div><strong>Citation Resolver</strong> — verifies every DOI and PubMed ID actually works</div></li>
+    <li><span class="num">🔍</span> <div><strong>Transcript Triage</strong> — categorizes and prioritizes the 800 remaining files</div></li>
+    <li><span class="num">⚡</span> <div><strong>Review Accelerator</strong> — prepares your review queue so decisions take seconds</div></li>
+    <li><span class="num">🏭</span> <div><strong>Extraction Coordinator</strong> — tracks pipeline progress</div></li>
+    <li><span class="num">📡</span> <div><strong>Competitive Landscape</strong> — weekly Sunday scans of the market</div></li>
+    <li><span class="num">📊</span> <div><strong>Marketing Intelligence</strong> — demand signal detection</div></li>
+    <li><span class="num">🧠</span> <div><strong>Cognitive Ethnographer</strong> — studies how you think, not what you said</div></li>
+  </ul>
+</section>
+
+<section>
+  <h2>The three numbers that matter</h2>
+
+  <div class="flow">
+    <div class="flow-step">
+      <div class="number">31</div>
+      <div class="label">Proven concepts<br>(canonical)</div>
+    </div>
+    <div class="flow-step">
+      <div class="number">114</div>
+      <div class="label">Being vetted<br>(in review)</div>
+    </div>
+    <div class="flow-step">
+      <div class="number">504</div>
+      <div class="label">Raw material<br>(drafts)</div>
+    </div>
+  </div>
+
+  <p>31 ideas are load-bearing — they've been validated and can be cited. 114 are actively being checked. 504 are the frontier — your raw thinking waiting to crystallize. The system moves ideas from right to left as evidence accumulates.</p>
+</section>
+
+<section>
+  <h2>What to do this week</h2>
+
+  <div class="callout">
+    <p><strong>The system is built. The map is detailed. Now it needs to produce one measurable result in the real world.</strong></p>
+  </div>
+
+  <ul class="action-list">
+    <li><span class="num">01</span> <div><strong>Get 10 CRNAs.</strong> Post the Facebook recruitment. "The monitor reads 142. Not the patient's. Yours." 10 spots. DM me.</div></li>
+    <li><span class="num">02</span> <div><strong>Measure HRR.</strong> Heart rate recovery — how fast does it drop after stress? Baseline on Day 1. Check at Day 7 and Day 21. That's the number.</div></li>
+    <li><span class="num">03</span> <div><strong>Each invites one.</strong> 10 becomes 20. That's propagation. That's the test.</div></li>
+  </ul>
+
+  <p style="margin-top: 24px; font-size: 14px;">Everything in the system — the 152 concepts, the 273 evidence notes, the nursing theory, the certification, the book — compounds <em>after</em> those three things happen.</p>
+</section>
+
+</div>
+
+<div class="footer">
+  Vigil — SRL Knowledge Graph Orchestrator — March 22, 2026
+</div>
+
+</body>
+</html>
