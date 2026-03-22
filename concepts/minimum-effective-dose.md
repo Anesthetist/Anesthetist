@@ -29,6 +29,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:kor-2025-hybrid-mindfulness-hrv-caregivers-rct
 - urn:srl:evidence:springer-2025-remote-hrvb-mental-health-meta-analysis
 - urn:srl:evidence:luton-2023-enhanced-stress-resilience-training
+- urn:srl:evidence:ericsson-1993-deliberate-practice
 skos:broader:
 - titration-to-effect
 skos:narrower: []

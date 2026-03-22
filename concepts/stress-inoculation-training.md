@@ -13,6 +13,7 @@ id: urn:srl:concept:stress-inoculation-training
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-interoception-crna-resilience
+- urn:srl:evidence:staal-2004-stress-cognition-performance
 skos:broader:
 - gap-moment-training
 skos:narrower: []

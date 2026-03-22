@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expertise Research Reference Library | Somnistics Research Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-navy: #22253A;
+    --soft-sage: #5FC89B;
+    --off-white: #F5F5F0;
+    --card-bg: #ffffff;
+    --border-light: #e2e2dd;
+    --text-primary: #22253A;
+    --text-secondary: #4a4d5e;
+    --text-muted: #7a7d8e;
+    --sage-10: rgba(95, 200, 155, 0.10);
+    --sage-20: rgba(95, 200, 155, 0.20);
+    --navy-90: rgba(34, 37, 58, 0.90);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    background: var(--off-white);
+    line-height: 1.6;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--deep-navy);
+    color: var(--off-white);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(95, 200, 155, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(95, 200, 155, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero h1 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--soft-sage);
+    max-width: 700px;
+    margin: 0 auto 32px;
+    position: relative;
+  }
+
+  .hero .meta-line {
+    font-size: 0.85rem;
+    color: rgba(245, 245, 240, 0.5);
+    position: relative;
+  }
+
+  /* ── Navigation ── */
+  .domain-nav {
+    background: var(--deep-navy);
+    padding: 0 40px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(95, 200, 155, 0.15);
+  }
+
+  .domain-nav a {
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(245, 245, 240, 0.6);
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid rgba(245, 245, 240, 0.15);
+    border-radius: 4px;
+    transition: all 0.25s ease;
+  }
+
+  .domain-nav a:hover {
+    color: var(--soft-sage);
+    border-color: var(--soft-sage);
+    background: rgba(95, 200, 155, 0.08);
+  }
+
+  /* ── Main Content ── */
+  .content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── Domain Sections ── */
+  .domain-section {
+    margin-bottom: 56px;
+  }
+
+  .domain-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--soft-sage);
+  }
+
+  .domain-header h2 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--deep-navy);
+  }
+
+  .domain-count {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--soft-sage);
+    background: var(--sage-10);
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  .domain-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 800px;
+    padding-top: 12px;
+  }
+
+  /* ── Cards ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ref-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 24px 28px;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .ref-card:hover {
+    border-color: var(--soft-sage);
+    box-shadow: 0 4px 20px rgba(34, 37, 58, 0.06);
+    transform: translateY(-1px);
+  }
+
+  .ref-card .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 16px;
+  }
+
+  .ref-card .author-year {
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--soft-sage);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .ref-card .dc-type {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: rgba(34, 37, 58, 0.05);
+    padding: 2px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .ref-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .ref-card .authors-full {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .ref-card .contribution {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+
+  .ref-card .srl-relevance {
+    font-size: 0.82rem;
+    color: var(--deep-navy);
+    background: var(--sage-10);
+    padding: 10px 14px;
+    border-radius: 6px;
+    border-left: 3px solid var(--soft-sage);
+    line-height: 1.5;
+  }
+
+  .ref-card .srl-relevance strong {
+    font-weight: 500;
+  }
+
+  .ref-card .identifier {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  .concept-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .concept-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--deep-navy);
+    background: var(--sage-20);
+    padding: 3px 10px;
+    border-radius: 10px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── Synthesis Section ── */
+  .synthesis-section {
+    background: var(--deep-navy);
+    color: var(--off-white);
+    border-radius: 12px;
+    padding: 40px 36px;
+    margin-top: 56px;
+  }
+
+  .synthesis-section h2 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--soft-sage);
+    margin-bottom: 24px;
+  }
+
+  .synthesis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .synthesis-card {
+    background: rgba(245, 245, 240, 0.05);
+    border: 1px solid rgba(95, 200, 155, 0.15);
+    border-radius: 8px;
+    padding: 20px 22px;
+  }
+
+  .synthesis-card h3 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--soft-sage);
+    margin-bottom: 10px;
+  }
+
+  .synthesis-card p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(245, 245, 240, 0.8);
+    line-height: 1.55;
+  }
+
+  .synthesis-card .concept-link {
+    color: var(--soft-sage);
+    font-weight: 400;
+  }
+
+  .arrow-connector {
+    font-size: 0.75rem;
+    color: var(--soft-sage);
+    text-align: center;
+    padding: 8px 0;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    text-align: center;
+    padding: 40px 24px 24px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .page-footer .srl-mark {
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--soft-sage);
+    margin-bottom: 6px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero { padding: 48px 20px 40px; }
+    .hero h1 { font-size: 1.6rem; }
+    .domain-nav { padding: 0 16px 16px; gap: 8px; }
+    .domain-nav a { font-size: 0.6rem; padding: 6px 12px; }
+    .content { padding: 24px 16px 48px; }
+    .ref-card { padding: 18px 20px; }
+    .ref-card .card-top { flex-direction: column; gap: 4px; }
+    .synthesis-section { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════ HERO ════════════════════════════════════════════ -->
+<header class="hero">
+  <h1>Expertise Research<br>Reference Library</h1>
+  <p class="subtitle">Foundational literature across cognitive, motor, emotional, and performance expertise — mapped to SRL concepts and the science of clinician durability.</p>
+  <p class="meta-line">Somnistics Research Labs &nbsp;|&nbsp; 15 References &nbsp;|&nbsp; 4 Domains &nbsp;|&nbsp; March 2026</p>
+</header>
+
+<!-- ════════════════════════════════════════ NAVIGATION ═════════════════════════════════════════ -->
+<nav class="domain-nav">
+  <a href="#cognitive">Cognitive Expertise</a>
+  <a href="#motor">Motor Expertise</a>
+  <a href="#emotional">Emotional &amp; Regulatory</a>
+  <a href="#pressure">Performance Under Pressure</a>
+  <a href="#synthesis">SRL Synthesis Map</a>
+</nav>
+
+<main class="content">
+
+<!-- ══════════════════════════════════ COGNITIVE EXPERTISE ══════════════════════════════════════ -->
+<section class="domain-section" id="cognitive">
+  <div class="domain-header">
+    <h2>Cognitive Expertise</h2>
+    <span class="domain-count">5 references</span>
+  </div>
+  <p class="domain-desc">How experts think, decide, learn, and create knowledge. The cognitive foundations of clinical mastery — from deliberate practice to distributed cognition.</p>
+
+  <div class="card-grid">
+
+    <!-- Ericsson 1993 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Ericsson, Krampe &amp; Tesch-R&ouml;mer &bull; 1993</span>
+        <span class="dc-type">Journal Article</span>
+      </div>
+      <h3>The Role of Deliberate Practice in the Acquisition of Expert Performance</h3>
+      <p class="authors-full">Psychological Review, 100(3), 363&ndash;406</p>
+      <p class="contribution">Established that expert performance is not a function of innate talent but of accumulated hours of structured, effortful practice with feedback. Introduced the deliberate practice framework and the 10,000-hour approximation for elite performance.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Maps directly to the Benner Expertise Spiral — both describe progression through stages requiring qualitatively different engagement. Validates that expertise development can be designed and accelerated through structured interventions, which is the premise of Gap Moment Training&trade; and NeuroMinute&trade; protocols. Also informs the minimum effective dose principle: not all practice hours are equal.</div>
+      <p class="identifier">DOI: 10.1037/0033-295X.100.3.363</p>
+      <div class="concept-tags">
+        <span class="concept-tag">benner-expertise-spiral</span>
+        <span class="concept-tag">minimum-effective-dose</span>
+        <span class="concept-tag">gap-moment-training</span>
+      </div>
+    </article>
+
+    <!-- Klein 1998 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Gary Klein &bull; 1998</span>
+        <span class="dc-type">Book</span>
+      </div>
+      <h3>Sources of Power: How People Make Decisions</h3>
+      <p class="authors-full">MIT Press</p>
+      <p class="contribution">Introduced Recognition-Primed Decision Making (RPD) — experts do not compare options but recognize situations as familiar patterns and act on the first viable option generated through experience. Demonstrated that expertise resides in perceptual skills rather than superior reasoning.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> RPD is the cognitive mechanism underlying Embodied Clinical Intelligence. When a CRNA &ldquo;just knows&rdquo; something is wrong before the monitors alarm, they are executing recognition-primed decision making. This is precisely what Anterocept&trade; captures: pre-conscious pattern recognition generating clinical intuition before explicit awareness.</div>
+      <p class="identifier">ISBN: 978-0262611466</p>
+      <div class="concept-tags">
+        <span class="concept-tag">embodied-clinical-intelligence</span>
+        <span class="concept-tag">anterocept</span>
+        <span class="concept-tag">interoceptive-literacy</span>
+        <span class="concept-tag">attention-as-gain-control</span>
+      </div>
+    </article>
+
+    <!-- Sch&ouml;n 1983 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Donald Sch&ouml;n &bull; 1983</span>
+        <span class="dc-type">Book</span>
+      </div>
+      <h3>The Reflective Practitioner: How Professionals Think in Action</h3>
+      <p class="authors-full">Basic Books</p>
+      <p class="contribution">Challenged the &ldquo;technical rationality&rdquo; model by distinguishing knowing-in-action (tacit knowledge embedded in performance) from reflection-in-action (thinking about what you are doing while doing it). Introduced the concept of a &ldquo;reflective conversation with the situation.&rdquo;</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Foundational for understanding why tacit knowledge extraction is both essential and difficult. Reflection-in-action maps to the Embodied Metacognition that SRL cultivates — monitoring your own physiological and cognitive state while performing clinical tasks. Gap Moment Training&trade; is a technology for developing reflection-in-action capacity.</div>
+      <p class="identifier">ISBN: 978-0465068784</p>
+      <div class="concept-tags">
+        <span class="concept-tag">tacit-knowledge-extraction</span>
+        <span class="concept-tag">embodied-metacognition</span>
+        <span class="concept-tag">gap-moment-training</span>
+      </div>
+    </article>
+
+    <!-- Nonaka & Takeuchi 1995 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Nonaka &amp; Takeuchi &bull; 1995</span>
+        <span class="dc-type">Book</span>
+      </div>
+      <h3>The Knowledge-Creating Company</h3>
+      <p class="authors-full">Oxford University Press</p>
+      <p class="contribution">Proposed the SECI model of organizational knowledge creation: Socialization (tacit&rarr;tacit), Externalization (tacit&rarr;explicit), Combination (explicit&rarr;explicit), and Internalization (explicit&rarr;tacit). Described how organizations systematically create new knowledge through these conversion cycles.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> The vault is an externalization engine — converting Randy&rsquo;s 20+ years of tacit clinical knowledge into explicit, codifiable, teachable forms. Every NeuroMinute&trade; is an internalization vehicle. The concept of <em>ba</em> (enabling context for knowledge creation) maps to the shared space the Pausality app creates for embodied knowledge development.</div>
+      <p class="identifier">ISBN: 978-0195092691</p>
+      <div class="concept-tags">
+        <span class="concept-tag">tacit-knowledge-extraction</span>
+        <span class="concept-tag">neurominute</span>
+      </div>
+    </article>
+
+    <!-- Hutchins 1995 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Edwin Hutchins &bull; 1995</span>
+        <span class="dc-type">Book</span>
+      </div>
+      <h3>Cognition in the Wild</h3>
+      <p class="authors-full">MIT Press</p>
+      <p class="contribution">Developed the theory of distributed cognition by studying Navy ship navigation — cognitive processes are distributed across people, tools, artifacts, and the environment. Expert performance in complex systems emerges from coordination, not from any single individual&rsquo;s knowledge.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> The OR is a distributed cognitive system. The CRNA&rsquo;s expertise is distributed across monitors, alarms, the surgical team, and the patient. This reframes SRL training: building the capacity to function as a high-performing node in a distributed cognitive system. Co-Regulation captures the interpersonal dimension — the CRNA&rsquo;s physiological state influences the entire team&rsquo;s functioning.</div>
+      <p class="identifier">ISBN: 978-0262581462</p>
+      <div class="concept-tags">
+        <span class="concept-tag">co-regulation</span>
+        <span class="concept-tag">embodied-clinical-intelligence</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ MOTOR EXPERTISE ═════════════════════════════════════════ -->
+<section class="domain-section" id="motor">
+  <div class="domain-header">
+    <h2>Motor Expertise</h2>
+    <span class="domain-count">2 references</span>
+  </div>
+  <p class="domain-desc">The neuroscience of skilled movement — from three-stage learning to the degrees of freedom problem. The body&rsquo;s intelligence in action.</p>
+
+  <div class="card-grid">
+
+    <!-- Fitts & Posner 1967 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Fitts &amp; Posner &bull; 1967</span>
+        <span class="dc-type">Book</span>
+      </div>
+      <h3>Human Performance</h3>
+      <p class="authors-full">Brooks/Cole</p>
+      <p class="contribution">Established the three-stage model of motor learning: cognitive (effortful, attention-demanding), associative (refining, linking sub-movements), and autonomous (automatic, minimal attention). Demonstrated that attentional demands decrease systematically with practice, freeing cognitive resources.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Explains why expert CRNAs can intubate while monitoring hemodynamics and communicating with the surgeon — procedural motor skills at the autonomous stage free attentional resources for higher-order clinical judgment. This is the physiological basis of Attention as Gain Control. Each NeuroMinute&trade; targets a specific regulatory skill to move it from cognitive to autonomous stage.</div>
+      <p class="identifier">ISBN: 978-0818501906</p>
+      <div class="concept-tags">
+        <span class="concept-tag">attention-as-gain-control</span>
+        <span class="concept-tag">neurominute</span>
+        <span class="concept-tag">benner-expertise-spiral</span>
+      </div>
+    </article>
+
+    <!-- Bernstein 1967 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Nikolai Bernstein &bull; 1967</span>
+        <span class="dc-type">Book</span>
+      </div>
+      <h3>The Co-ordination and Regulation of Movements</h3>
+      <p class="authors-full">Pergamon Press</p>
+      <p class="contribution">Posed the degrees of freedom problem and introduced the concept of synergies (coordinative structures). Described the freezing/freeing progression: novices constrain joints to reduce complexity; experts release degrees of freedom to exploit full biomechanical possibilities. Coined &ldquo;repetition without repetition&rdquo; — expert performance is never identical across trials.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> &ldquo;Repetition without repetition&rdquo; is the motor-level parallel to autonomic regulation: regulation is about producing adaptive responses to variable conditions, not executing fixed routines. The freezing/freeing progression maps to the Benner Expertise Spiral — novices freeze (rigid protocols), experts free (flexible, situation-adapted regulatory responses).</div>
+      <p class="identifier">ISBN: 978-0080114699</p>
+      <div class="concept-tags">
+        <span class="concept-tag">benner-expertise-spiral</span>
+        <span class="concept-tag">structured-interoception-training</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════ EMOTIONAL / REGULATORY ═══════════════════════════════════════ -->
+<section class="domain-section" id="emotional">
+  <div class="domain-header">
+    <h2>Emotional &amp; Regulatory Expertise</h2>
+    <span class="domain-count">4 references</span>
+  </div>
+  <p class="domain-desc">The science of how emotions are generated, regulated, and developed — from process models to constructed emotion theory. The evidence base for why interoceptive training transforms clinical performance.</p>
+
+  <div class="card-grid">
+
+    <!-- Gross 1998 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">James Gross &bull; 1998</span>
+        <span class="dc-type">Journal Article</span>
+      </div>
+      <h3>The Emerging Field of Emotion Regulation: An Integrative Review</h3>
+      <p class="authors-full">Review of General Psychology, 2(3), 271&ndash;299</p>
+      <p class="contribution">Established the process model of emotion regulation with five strategy families along a temporal continuum: situation selection, situation modification, attentional deployment, cognitive change (reappraisal), and response modulation (suppression). Demonstrated that antecedent-focused strategies are generally more effective than response-focused strategies.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Gap Moment Training&trade; targets attentional deployment (redirecting attention to interoceptive signals) and cognitive change (reframing the meaning of arousal). Anterocept&trade; — catching the emotion before it fully develops — is the ultimate antecedent-focused intervention. Explains why simple suppression fails for clinician burnout: it does not reduce experience, only increases physiological load.</div>
+      <p class="identifier">DOI: 10.1037/1089-2680.2.3.271</p>
+      <div class="concept-tags">
+        <span class="concept-tag">anterocept</span>
+        <span class="concept-tag">gap-moment-training</span>
+        <span class="concept-tag">neurogating</span>
+      </div>
+    </article>
+
+    <!-- Barrett 2017 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Lisa Feldman Barrett &bull; 2017</span>
+        <span class="dc-type">Book</span>
+      </div>
+      <h3>How Emotions Are Made: The Secret Life of the Brain</h3>
+      <p class="authors-full">Houghton Mifflin Harcourt</p>
+      <p class="contribution">Presented the theory of constructed emotion: emotions are not hardwired reactions but active constructions built from interoception (body signals), prior experience, and context. Introduced emotional granularity — people with more fine-grained emotional categories have better regulation and mental health. The brain is fundamentally a prediction organ managing the body&rsquo;s energy budget (allostasis).</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Arguably the most important theoretical foundation for SRL&rsquo;s approach. If emotions are constructions built on interoceptive signals, then improving interoceptive accuracy and granularity — exactly what SRL trains — directly improves emotional construction and regulation. Interoceptive Literacy is the substrate on which all emotional intelligence is built. The Autonomic Diary is an emotional granularity training tool.</div>
+      <p class="identifier">ISBN: 978-0544133310</p>
+      <div class="concept-tags">
+        <span class="concept-tag">interoceptive-literacy</span>
+        <span class="concept-tag">anterocept</span>
+        <span class="concept-tag">autonomic-diary</span>
+        <span class="concept-tag">interoception</span>
+      </div>
+    </article>
+
+    <!-- Ochsner & Gross 2005 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Ochsner &amp; Gross &bull; 2005</span>
+        <span class="dc-type">Journal Article</span>
+      </div>
+      <h3>The Cognitive Control of Emotion</h3>
+      <p class="authors-full">Trends in Cognitive Sciences, 9(5), 242&ndash;249</p>
+      <p class="contribution">First comprehensive review of the neural bases of cognitive emotion regulation. Mapped the prefrontal-amygdala circuitry enabling top-down regulation of emotional responses. Demonstrated that cognitive reappraisal engages lateral and medial PFC to modulate amygdala activity, and that this capacity improves with practice.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Provides the neural evidence for why SRL training works at the brain level. The PFC-amygdala circuit is the same circuit that Neurogating&trade; targets. The finding that reappraisal skill improves with practice validates the minimum effective dose approach: brief, repeated practice builds neural infrastructure for emotion regulation under pressure.</div>
+      <p class="identifier">DOI: 10.1016/j.tics.2005.03.010</p>
+      <div class="concept-tags">
+        <span class="concept-tag">neurogating</span>
+        <span class="concept-tag">minimum-effective-dose</span>
+      </div>
+    </article>
+
+    <!-- Lane & Schwartz 1987 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Lane &amp; Schwartz &bull; 1987</span>
+        <span class="dc-type">Journal Article</span>
+      </div>
+      <h3>Levels of Emotional Awareness: A Cognitive-Developmental Theory</h3>
+      <p class="authors-full">American Journal of Psychiatry, 144(2), 133&ndash;143</p>
+      <p class="contribution">Proposed a five-level developmental model of emotional awareness (sensorimotor reflexive through formal operational), analogous to Piaget&rsquo;s cognitive stages. Demonstrated that emotional awareness is a cognitive-developmental achievement that can be trained, and that deficits underlie alexithymia and psychosomatic disorders. Created the LEAS assessment instrument.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Provides the developmental map for what SRL trains. Many clinicians operate at Level 1-2 regarding their own stress responses. Structured Interoception Training develops Level 1-2 awareness (noticing bodily sensations), while Embodied Metacognition and Gap Moment Training&trade; develop Level 4-5 capacities. The LEAS could serve as a validated outcome measure for SRL interventions.</div>
+      <p class="identifier">DOI: 10.1176/ajp.144.2.133</p>
+      <div class="concept-tags">
+        <span class="concept-tag">interoceptive-literacy</span>
+        <span class="concept-tag">structured-interoception-training</span>
+        <span class="concept-tag">embodied-metacognition</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ PERFORMANCE UNDER PRESSURE ══════════════════════════════════════ -->
+<section class="domain-section" id="pressure">
+  <div class="domain-header">
+    <h2>Performance Under Pressure</h2>
+    <span class="domain-count">4 references</span>
+  </div>
+  <p class="domain-desc">The science of choking, vigilance, stress, and mental toughness — why performance degrades when it matters most, and the evidence that it can be trained.</p>
+
+  <div class="card-grid">
+
+    <!-- Beilock 2010 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Sian Beilock &bull; 2010</span>
+        <span class="dc-type">Book</span>
+      </div>
+      <h3>Choke: What the Secrets of the Brain Reveal About Getting It Right When You Have To</h3>
+      <p class="authors-full">Free Press</p>
+      <p class="contribution">Identified two mechanisms of choking under pressure: explicit monitoring (self-focus disrupts automated skills — &ldquo;paralysis by analysis&rdquo;) and working memory depletion (anxiety consumes cognitive resources). Demonstrated the expertise paradox — automaticity that makes experts excellent under normal conditions makes them vulnerable to self-focus choking.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Explains exactly the failure mode SRL training prevents. Clinical emergencies create conditions for both forms of choking. Learning Under Load is explicitly designed as inoculation training. Gap Moment Training&trade; provides the metacognitive tool to catch the self-focus spiral before it disrupts automaticity.</div>
+      <p class="identifier">ISBN: 978-1416596189</p>
+      <div class="concept-tags">
+        <span class="concept-tag">learning-under-load</span>
+        <span class="concept-tag">gap-moment-training</span>
+        <span class="concept-tag">attention-as-gain-control</span>
+      </div>
+    </article>
+
+    <!-- Hancock & Warm 1989 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Hancock &amp; Warm &bull; 1989</span>
+        <span class="dc-type">Journal Article</span>
+      </div>
+      <h3>A Dynamic Model of Stress and Sustained Attention</h3>
+      <p class="authors-full">Human Factors, 31(5), 519&ndash;537</p>
+      <p class="contribution">Proposed the extended-U (dynamic adaptability) model of stress and sustained attention. Demonstrated that vigilance decrement is a robust neurocognitive phenomenon — the boundaries of the adaptability zone narrow with time on task, and attentional resources are finite and non-renewable within a session.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Foundational for understanding why CRNAs — whose job requires vigilance — experience performance degradation over long cases and shift hours. Rather than demanding unsustainable vigilance, SRL builds regulatory micro-practices (NeuroMinute&trade;, Five-Breath Re-Embodiment) that restore attentional resources during natural workflow gaps. Validates Attention as Gain Control: dynamically modulate attention rather than maintain maximum output.</div>
+      <p class="identifier">DOI: 10.1518/001872089X12541</p>
+      <div class="concept-tags">
+        <span class="concept-tag">attention-as-gain-control</span>
+        <span class="concept-tag">neurominute</span>
+        <span class="concept-tag">five-breath-re-embodiment</span>
+        <span class="concept-tag">clinician-durability</span>
+      </div>
+    </article>
+
+    <!-- Staal 2004 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Mark Staal &bull; 2004</span>
+        <span class="dc-type">Technical Report</span>
+      </div>
+      <h3>Stress, Cognition, and Human Performance: A Literature Review and Conceptual Framework</h3>
+      <p class="authors-full">NASA Ames Research Center (NASA/TM-2004-212824)</p>
+      <p class="contribution">Comprehensive synthesis of military and aerospace research on how stress affects cognition. Covers attentional narrowing (Easterbrook&rsquo;s cue-utilization theory), working memory degradation, cognitive tunneling, and decision-making biases under stress. Identified training, perceived control, and physiological fitness as key protective factors.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> The cognitive effects of acute stress — attentional narrowing, working memory degradation, cognitive tunneling — are the failure modes that lead to anesthetic adverse events. The protective factors Staal identifies (training, perceived control, physiological fitness) are exactly what SRL builds. Cognitive tunneling connects to Attention as Gain Control: expert CRNAs maintain broad situational awareness because they have trained the regulatory capacity to prevent stress-driven narrowing.</div>
+      <p class="identifier">NASA/TM-2004-212824</p>
+      <div class="concept-tags">
+        <span class="concept-tag">stress-inoculation-training</span>
+        <span class="concept-tag">learning-under-load</span>
+        <span class="concept-tag">attention-as-gain-control</span>
+      </div>
+    </article>
+
+    <!-- Gucciardi 2015 -->
+    <article class="ref-card">
+      <div class="card-top">
+        <span class="author-year">Gucciardi, Gordon &amp; Dimmock &bull; 2015</span>
+        <span class="dc-type">Journal Article</span>
+      </div>
+      <h3>The Concept of Mental Toughness: Tests of Dimensionality, Nomological Network, and Traitness</h3>
+      <p class="authors-full">Journal of Sport and Exercise Psychology, 37(1), 71&ndash;83</p>
+      <p class="contribution">Reconceptualized mental toughness as a trainable, state-like capacity rather than a fixed personality trait. Shifted focus from personality attributes to observable behaviors and deployable resources — what mentally tough performers do, not what they are. Distinguished mental toughness from resilience, hardiness, grit, and self-efficacy.</p>
+      <div class="srl-relevance"><strong>SRL Relevance:</strong> Validates SRL&rsquo;s entire premise: the psychological resources needed for clinical performance under pressure can be systematically developed. The distinction between mental toughness (consistent performance during adversity) and resilience (recovery after adversity) matters for positioning. Clinician Durability is closer to mental toughness — maintaining clinical performance across a career, reframing the value proposition from &ldquo;wellness&rdquo; to &ldquo;durability.&rdquo;</div>
+      <p class="identifier">DOI: 10.1123/jsep.2014-0263</p>
+      <div class="concept-tags">
+        <span class="concept-tag">clinician-durability</span>
+        <span class="concept-tag">stress-inoculation-training</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ SYNTHESIS MAP ════════════════════════════════════════════ -->
+<section class="synthesis-section" id="synthesis">
+  <h2>How Each Domain Connects to SRL</h2>
+
+  <div class="synthesis-grid">
+
+    <div class="synthesis-card">
+      <h3>Cognitive Expertise &rarr; Clinical Knowledge Architecture</h3>
+      <p>Ericsson&rsquo;s deliberate practice, Klein&rsquo;s RPD, and Sch&ouml;n&rsquo;s reflection-in-action converge on a single insight: expert clinical judgment is <em>trainable pattern recognition</em>, not mystical intuition. SRL&rsquo;s vault (Nonaka&rsquo;s externalization engine) + app (internalization vehicle) + team design (Hutchins&rsquo; distributed cognition) create the full knowledge creation cycle for clinical expertise development. Key concepts: <span class="concept-link">Embodied Clinical Intelligence</span>, <span class="concept-link">Benner Expertise Spiral</span>, <span class="concept-link">Tacit Knowledge Extraction</span>.</p>
+    </div>
+
+    <div class="synthesis-card">
+      <h3>Motor Expertise &rarr; Skill Automaticity</h3>
+      <p>Fitts-Posner&rsquo;s three stages and Bernstein&rsquo;s freezing/freeing progression explain why procedural automaticity is the prerequisite for higher-order clinical awareness. SRL training moves regulatory skills (breathing, body scanning, state transitions) from cognitive to autonomous stage — so they remain available under load without consuming the attentional resources needed for clinical reasoning. Key concepts: <span class="concept-link">Attention as Gain Control</span>, <span class="concept-link">NeuroMinute</span>, <span class="concept-link">Structured Interoception Training</span>.</p>
+    </div>
+
+    <div class="synthesis-card">
+      <h3>Emotional/Regulatory &rarr; Interoceptive Foundation</h3>
+      <p>Barrett&rsquo;s constructed emotion theory + Gross&rsquo;s process model + Lane&rsquo;s developmental levels + Ochsner&rsquo;s neural circuitry converge: emotions are predictions built on interoceptive signals, and the capacity to regulate them is a developmental achievement trainable through structured practice. SRL trains the entire stack — from raw interoceptive accuracy (Level 1) through meta-emotional awareness (Level 5) to automatic reappraisal. Key concepts: <span class="concept-link">Interoceptive Literacy</span>, <span class="concept-link">Anterocept</span>, <span class="concept-link">Neurogating</span>.</p>
+    </div>
+
+    <div class="synthesis-card">
+      <h3>Performance Under Pressure &rarr; Durability Engineering</h3>
+      <p>Beilock&rsquo;s choking mechanisms + Hancock&rsquo;s vigilance decrement + Staal&rsquo;s stress-cognition synthesis + Gucciardi&rsquo;s trainable mental toughness converge on the SRL value proposition: the cognitive failures that cause clinical errors under pressure are <em>predictable and preventable</em> through structured training. Not wellness. Not resilience. Durability — consistent performance across a career of high-stakes, high-load work. Key concepts: <span class="concept-link">Learning Under Load</span>, <span class="concept-link">Clinician Durability</span>, <span class="concept-link">Gap Moment Training</span>.</p>
+    </div>
+
+  </div>
+
+  <div class="arrow-connector" style="margin-top: 28px; font-size: 0.82rem; text-align: center; color: rgba(245,245,240,0.5);">
+    Cognitive Expertise + Motor Expertise + Emotional Regulation + Performance Under Pressure<br>
+    <span style="color: var(--soft-sage); font-size: 1.2rem;">&darr;</span><br>
+    <span style="color: var(--soft-sage); font-family: 'Michroma', sans-serif; font-size: 0.75rem; letter-spacing: 0.08em;">CLINICIAN DURABILITY: THE INTEGRATED SCIENCE OF EXPERT PERFORMANCE ACROSS A CAREER</span>
+  </div>
+</section>
+
+</main>
+
+<footer class="page-footer">
+  <p class="srl-mark">SOMNISTICS RESEARCH LABS</p>
+  <p>Expertise Research Reference Library &nbsp;&bull;&nbsp; 15 foundational references across 4 domains &nbsp;&bull;&nbsp; March 2026</p>
+  <p style="margin-top: 6px;">Generated from the SRL Knowledge Vault &nbsp;&bull;&nbsp; All evidence notes available with full provenance chains</p>
+</footer>
+
+</body>
+</html>

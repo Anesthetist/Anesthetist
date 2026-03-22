@@ -16,6 +16,8 @@ id: urn:srl:concept:tacit-knowledge-extraction
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-cross-reference-cedric-chin
+- urn:srl:evidence:schon-1983-reflective-practitioner
+- urn:srl:evidence:nonaka-takeuchi-1995-knowledge-creating
 skos:broader: []
 skos:narrower: []
 skos:related:

@@ -38,6 +38,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:treves-2024-mindful-brain-neural-correlates
 - urn:srl:evidence:van-der-kolk-2014-body-keeps-score
 - urn:srl:evidence:journal-nonlocality-placebo-retrocausality
+- urn:srl:evidence:gross-1998-emotion-regulation-process
+- urn:srl:evidence:klein-1998-recognition-primed-decision
 skos:broader:
 - interoception
 skos:narrower:

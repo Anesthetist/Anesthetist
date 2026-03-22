@@ -27,6 +27,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:jansson-2026-nurse-anesthetist-professional-learning
 - urn:srl:evidence:frontiers-2026-interoception-maternal-affective-touch
 - urn:srl:evidence:milleville-2025-crna-decision-making
+- urn:srl:evidence:barrett-2017-how-emotions-are-made
+- urn:srl:evidence:lane-schwartz-1987-levels-emotional-awareness
 skos:broader:
 - interoception
 skos:narrower:

@@ -13,6 +13,8 @@ id: urn:srl:concept:benner-expertise-spiral
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-clinical-wisdom-as-asset
+- urn:srl:evidence:ericsson-1993-deliberate-practice
+- urn:srl:evidence:bernstein-1967-coordination-regulation
 skos:broader: []
 skos:narrower: []
 skos:related:

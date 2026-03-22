@@ -15,6 +15,7 @@ id: urn:srl:concept:embodied-clinical-intelligence
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-embodied-knowledge-ontology
+- urn:srl:evidence:klein-1998-recognition-primed-decision
 skos:broader: []
 skos:narrower: []
 skos:related:

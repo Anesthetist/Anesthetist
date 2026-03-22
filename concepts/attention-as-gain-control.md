@@ -14,6 +14,8 @@ id: urn:srl:concept:attention-as-gain-control
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-somnistics-and-attention-mechanisms
+- urn:srl:evidence:fitts-posner-1967-human-performance
+- urn:srl:evidence:hancock-warm-1989-dynamic-model-stress
 skos:broader: []
 skos:narrower: []
 skos:related:

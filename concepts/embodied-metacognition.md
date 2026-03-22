@@ -22,6 +22,7 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-non-dual-awareness-for-anesthesia
 - urn:srl:chat:chatgpt-insight-meditation-guidance
 - urn:srl:evidence:barrett-2017-epic-model
+- urn:srl:evidence:schon-1983-reflective-practitioner
 skos:broader:
 - interoception
 skos:narrower:

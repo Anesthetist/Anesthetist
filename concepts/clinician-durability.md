@@ -70,6 +70,7 @@ prov:wasDerivedFrom:
 - crna-resilience-toolkit-series-v1
 - urn:srl:evidence:arena-strive-2024-app-coaching-clinician-burnout
 - urn:srl:evidence:wiener-founders-fundraising-macro-tracking-2026
+- urn:srl:evidence:gucciardi-2015-mental-toughness
 skos:broader:
 - somnistics
 skos:narrower: []

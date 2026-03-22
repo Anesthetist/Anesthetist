@@ -14,6 +14,8 @@ id: urn:srl:concept:learning-under-load
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-improving-thinking-with-models
+- urn:srl:evidence:beilock-2010-choke
+- urn:srl:evidence:staal-2004-stress-cognition-performance
 skos:broader: []
 skos:narrower: []
 skos:related:

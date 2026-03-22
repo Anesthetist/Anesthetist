@@ -55,6 +55,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:voity-2025-or-distractions-cognitive-load
 - urn:srl:evidence:milleville-2025-crna-decision-making
 - urn:srl:evidence:arena-strive-2024-app-coaching-clinician-burnout
+- urn:srl:evidence:beilock-2010-choke
 skos:broader:
 - somnistics
 skos:narrower:
