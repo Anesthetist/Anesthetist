@@ -6,6 +6,13 @@
       "env": {
         "VAULT_ROOT": "/Users/somnisticshq/Documents/Somnistics/Library-Graph"
       }
+    },
+    "monday": {
+      "command": "npx",
+      "args": ["-y", "@mondaydotcomorg/monday-api-mcp@latest"],
+      "env": {
+        "MONDAY_TOKEN": "${MONDAY_TOKEN}"
+      }
     }
   }
 }
