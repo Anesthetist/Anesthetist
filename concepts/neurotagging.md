@@ -20,12 +20,17 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ieee-1752-open-mobile-health
 - urn:srl:evidence:open-mhealth-schema-library
 - urn:srl:evidence:dht-metadata-framework-2022
+- urn:srl:evidence:grawe-2007-neuropsychotherapy
+- urn:srl:evidence:barrett-2017-epic-model
+- urn:srl:evidence:stephan-2016-computational-psychiatry
 skos:broader:
 - somnistics
 skos:narrower: []
 skos:related:
 - cognitive-variability-analysis
 - neurominute
+- embodied-metacognition
+- structured-interoception-training
 status: draft
 title: Neurotagging
 type: concept

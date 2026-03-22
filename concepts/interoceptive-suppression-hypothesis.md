@@ -16,6 +16,7 @@ id: urn:srl:concept:interoceptive-suppression-hypothesis
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-crna-expertise-and-challenges
+- urn:srl:evidence:stephan-2016-computational-psychiatry
 skos:broader: []
 skos:narrower: []
 skos:related:
