@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUSC Innovation Fund Proposal — Pausality</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Michroma&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --dark-navy: #1A1C2E;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --sage-glow: rgba(95, 200, 155, 0.15);
+  --white: #FFFFFF;
+  --offwhite: #F7F8FA;
+  --text: #22253A;
+  --text-mid: #4A4D5C;
+  --text-light: #6B6F7E;
+  --border: #E0E0DB;
+  --musc-maroon: #73000a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--white); color: var(--text); letter-spacing: -0.025em; }
+
+.hero {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 50%, #2a3a4a 100%);
+  color: var(--white);
+  padding: 60px 40px 50px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(95,200,155,0.08) 0%, transparent 70%);
+}
+.hero-content { position: relative; max-width: 900px; margin: 0 auto; }
+.hero .logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+.hero .logo-img { height: 32px; }
+.hero .wordmark { height: 20px; opacity: 0.9; }
+.hero h1 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 24px; line-height: 1.3; margin-bottom: 8px; letter-spacing: 0.02em; }
+.hero .tagline { font-size: 16px; font-weight: 300; color: var(--sage); margin-bottom: 16px; }
+.hero .meta { font-size: 12px; color: rgba(255,255,255,0.5); }
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 50px 0; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section h2 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 18px; letter-spacing: 0.03em; margin-bottom: 20px; }
+.section h3 { font-weight: 500; font-size: 16px; margin-top: 28px; margin-bottom: 10px; }
+.section p { font-size: 14px; line-height: 1.8; margin-bottom: 14px; color: var(--text-mid); }
+.lead { font-size: 16px; font-weight: 400; color: var(--text); margin-bottom: 20px; }
+.callout { background: var(--sage-glow); border-left: 3px solid var(--sage); padding: 18px 22px; border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; color: var(--text); }
+.callout strong { font-weight: 500; }
+.callout.musc { border-left-color: var(--musc-maroon); background: rgba(115,0,10,0.04); }
+
+/* Stats row */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+.stat { background: var(--navy); color: var(--white); border-radius: 10px; padding: 18px; text-align: center; }
+.stat .value { font-family: 'Michroma', sans-serif; font-size: 18px; color: var(--sage); margin-bottom: 4px; }
+.stat .label { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.7); }
+
+/* Phase cards */
+.phases { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
+.phase { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+.phase-num { font-family: 'Michroma', sans-serif; font-size: 11px; color: var(--sage); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+.phase h4 { font-weight: 500; font-size: 15px; margin-bottom: 6px; }
+.phase .duration { font-size: 12px; color: var(--sage-dim); font-weight: 500; margin-bottom: 8px; }
+.phase p { font-size: 13px; color: var(--text-light); margin-bottom: 0; }
+.phase ul { font-size: 13px; color: var(--text-light); margin-left: 16px; margin-top: 6px; }
+.phase li { margin-bottom: 4px; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+th { text-align: left; padding: 10px 14px; background: var(--navy); color: var(--white); font-weight: 400; font-size: 12px; font-family: 'Michroma', sans-serif; letter-spacing: 0.03em; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-mid); }
+tr:last-child td { border-bottom: none; }
+
+/* Team grid */
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+.team-card { background: var(--offwhite); border-radius: 12px; padding: 24px; }
+.team-card h4 { font-weight: 500; font-size: 15px; margin-bottom: 2px; }
+.team-card .role { font-size: 12px; color: var(--sage-dim); font-weight: 500; margin-bottom: 10px; }
+.team-card p { font-size: 13px; color: var(--text-light); }
+
+.cta { background: var(--navy); border-radius: 16px; padding: 40px; text-align: center; margin: 40px 0; color: var(--white); }
+.cta h2 { color: var(--white); margin-bottom: 12px; }
+.cta p { color: rgba(255,255,255,0.7); font-size: 15px; }
+.cta .btn { display: inline-block; margin-top: 20px; padding: 14px 32px; background: var(--sage); color: var(--navy); border-radius: 8px; font-family: 'Michroma', sans-serif; font-size: 12px; letter-spacing: 0.05em; text-decoration: none; text-transform: uppercase; }
+
+.footer { background: var(--dark-navy); color: rgba(255,255,255,0.4); padding: 30px; text-align: center; font-size: 11px; }
+
+@media (max-width: 700px) {
+  .hero { padding: 40px 20px 30px; }
+  .hero h1 { font-size: 20px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .phases { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="logo-row">
+      <img src="https://pausality.health/images/pausality-logo.png" alt="Pausality" class="logo-img">
+      <img src="https://pausality.health/images/pausality-wordmark.png" alt="Pausality" class="wordmark">
+    </div>
+    <h1>In-Shift Wellness for Surgical<br>and Trauma Teams</h1>
+    <div class="tagline">A proposal for the South Carolina Health Innovation Fund</div>
+    <p style="font-size:14px;color:rgba(255,255,255,0.8);max-width:640px">
+      A 12-week pilot program bringing one-minute breathing practices with real-time
+      heart rate tracking to MUSC's surgical residents and trauma team staff &mdash;
+      measuring the impact on recovery, readiness, and wellbeing.
+    </p>
+    <div class="meta">
+      Prepared for Dr. Christian Streck, Dr. Cassandra Salgado &amp; Matt Pardieck<br>
+      By Randy Graybeal, CRNA &amp; Jason Fields &mdash; Somnistics Research Labs
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══════ THE OPPORTUNITY ═══════ -->
+<div class="section">
+  <h2>The Opportunity</h2>
+
+  <p class="lead">MUSC has the infrastructure, the mandate, and the people. What's missing is the tool.</p>
+
+  <div class="callout musc">
+    <strong>MUSC is already doing this work.</strong> Dr. Salgado holds the institution's first-ever Vice Chair for Wellness position. Dr. Streck leads a Level I Trauma Center where biannual burnout surveys and active wellness monitoring are standard. The Surgery Department runs wellness events and tracks resident stress. The institutional commitment exists. What's missing is a scalable, measurable, workflow-integrated wellness tool that works during the shift &mdash; not before it, not after it.
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="value">62%</div>
+      <div class="label">CRNA burnout<br>prevalence</div>
+    </div>
+    <div class="stat">
+      <div class="value">$56K</div>
+      <div class="label">Per-nurse<br>turnover cost</div>
+    </div>
+    <div class="stat">
+      <div class="value">$9B</div>
+      <div class="label">Annual industry<br>burnout cost</div>
+    </div>
+    <div class="stat">
+      <div class="value">64.5%</div>
+      <div class="label">Cite lack of time<br>as primary barrier</div>
+    </div>
+  </div>
+
+  <p>The primary barrier clinicians report isn't willingness &mdash; it's time. 64.5% say they don't have time for stress management during the workday. Traditional wellness programs ask clinicians to meditate before or after shifts. But the autonomic load happens <em>during</em> the shift. The gap between cases. The handoff. The thirty seconds before the next critical moment.</p>
+
+  <p>Pausality is designed for exactly those moments: one-minute breathing practices with real-time heart rate tracking via the wearable devices clinicians already own.</p>
+</div>
+
+<!-- ═══════ WHAT WE PROPOSE ═══════ -->
+<div class="section">
+  <h2>What We Propose</h2>
+
+  <p class="lead">A 12-week pilot with MUSC's surgical residents and trauma team, measuring the impact of one-minute breathing practices on wellness, recovery, and team readiness.</p>
+
+  <h3>Pilot Structure</h3>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-num">Phase 1 — Weeks 1-2</div>
+      <h4>Baseline &amp; Enrollment</h4>
+      <div class="duration">Setup + assessment</div>
+      <ul>
+        <li>Enroll 20-40 surgical residents and trauma team members</li>
+        <li>Baseline wellness surveys (validated instruments: MAIA-2, perceived stress scale)</li>
+        <li>Baseline heart rate variability trends via personal wearables</li>
+        <li>Install Pausality app, pair Apple Watch or AirPods Pro</li>
+        <li>Brief orientation session with Randy and Jason</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-num">Phase 2 — Weeks 3-10</div>
+      <h4>Active Practice Period</h4>
+      <div class="duration">8 weeks, 5x daily, 1 minute each</div>
+      <ul>
+        <li>Progressive 21-session breathing curriculum via Pausality</li>
+        <li>Participants practice 1-minute sessions during natural workflow gaps (between cases, during turnover, before/after rounds)</li>
+        <li>Real-time heart rate tracking during each session</li>
+        <li>Weekly anonymized engagement and adherence data shared with MUSC wellness leadership</li>
+        <li>Bi-weekly check-ins with Randy for protocol guidance</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-num">Phase 3 — Weeks 11-12</div>
+      <h4>Assessment &amp; Report</h4>
+      <div class="duration">Post-program measurement + analysis</div>
+      <ul>
+        <li>Repeat baseline wellness surveys (MAIA-2, perceived stress scale)</li>
+        <li>Compare HRV trends: pre-program vs. post-program</li>
+        <li>Adherence analysis: who practiced, how often, when in the shift</li>
+        <li>Qualitative feedback: what worked, what didn't, workflow fit</li>
+        <li>Final report delivered to Dr. Streck, Dr. Salgado, and MUSC wellness leadership</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ WHAT WE MEASURE ═══════ -->
+<div class="section">
+  <h2>What We Measure</h2>
+
+  <p class="lead">Every metric is tracked, anonymized, and reported. No claims &mdash; just data.</p>
+
+  <table>
+    <tr><th>Metric</th><th>Instrument</th><th>When</th><th>What It Tells Us</th></tr>
+    <tr><td><strong>Heart rate trends</strong></td><td>Apple Watch / AirPods Pro via Pausality</td><td>Every session</td><td>How the body responds during one-minute practices over time</td></tr>
+    <tr><td><strong>HRV trends</strong></td><td>Apple Watch daily readings</td><td>Longitudinal</td><td>Nervous system flexibility trends across the pilot period</td></tr>
+    <tr><td><strong>Perceived stress</strong></td><td>PSS-10 (validated survey)</td><td>Pre/post</td><td>Self-reported stress levels before and after the program</td></tr>
+    <tr><td><strong>Body awareness</strong></td><td>MAIA-2 (8-subscale validated survey)</td><td>Pre/post</td><td>Interoceptive awareness changes across body listening, self-regulation, attention regulation</td></tr>
+    <tr><td><strong>Adherence</strong></td><td>Pausality app analytics</td><td>Continuous</td><td>How many practiced, how often, at what times during the shift</td></tr>
+    <tr><td><strong>Workflow fit</strong></td><td>Qualitative survey</td><td>Post</td><td>Did the 1-minute format fit into surgical workflows? When? Where?</td></tr>
+    <tr><td><strong>Satisfaction</strong></td><td>Net Promoter Score</td><td>Post</td><td>Would participants recommend this to colleagues?</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>Note:</strong> This pilot is designed as a wellness program evaluation, not a clinical trial. We measure trends and experiences. We do not make efficacy claims. If the data supports it, we would welcome the opportunity to design a formal study with MUSC's research infrastructure.
+  </div>
+</div>
+
+<!-- ═══════ WHY MUSC ═══════ -->
+<div class="section">
+  <h2>Why MUSC</h2>
+
+  <table>
+    <tr><th>MUSC Has</th><th>Pausality Adds</th></tr>
+    <tr><td><strong>Vice Chair for Wellness</strong> &mdash; Dr. Salgado's institutional mandate to improve faculty/trainee wellbeing</td><td>A measurable, scalable wellness tool that generates data for Dr. Salgado's reporting</td></tr>
+    <tr><td><strong>Level I Trauma Center</strong> &mdash; Dr. Streck's team faces the highest autonomic loads in medicine</td><td>A 60-second format that fits between trauma cases without leaving the unit</td></tr>
+    <tr><td><strong>Biannual burnout surveys</strong> &mdash; existing measurement infrastructure</td><td>Continuous wellness data that supplements survey snapshots with longitudinal HRV trends</td></tr>
+    <tr><td><strong>Resident wellness monitoring</strong> &mdash; faculty actively watch for burnout in trainees</td><td>An early-signal tool: HRV trends may surface stress patterns before survey scores change</td></tr>
+    <tr><td><strong>SCHIF Innovation Fund</strong> &mdash; $10M for health innovation companies committed to growing in SC</td><td>A company willing to establish SC operations and build the partnership into a flagship case study</td></tr>
+    <tr><td><strong>Academic research infrastructure</strong> &mdash; IRB, outcomes research, publication pathway</td><td>A product built on PubMed-verified research, ready for formal study design if pilot data warrants</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ ALIGNMENT WITH SCHIF ═══════ -->
+<div class="section">
+  <h2>Alignment with SCHIF Criteria</h2>
+
+  <p class="lead">The South Carolina Health Innovation Fund prioritizes high-impact health innovation companies committed to growing and operating in South Carolina.</p>
+
+  <table>
+    <tr><th>SCHIF Priority</th><th>SRL Alignment</th></tr>
+    <tr><td>High-impact health innovation</td><td>Only product addressing in-shift autonomic wellness for clinicians with real-time body data tracking. $18.5B addressable market.</td></tr>
+    <tr><td>Committed to growing in SC</td><td>MUSC pilot would be SRL's flagship enterprise deployment. Willing to establish SC operations as part of the partnership.</td></tr>
+    <tr><td>Creating higher-wage STEM jobs</td><td>Product development, data science, and clinical research roles would be created in SC as the partnership scales.</td></tr>
+    <tr><td>Bridge research to commercial viability</td><td>Pausality operationalizes 30+ years of published HRV and breathing research (Porges, Lehrer, Thayer) into a commercial product. MUSC pilot = the bridge.</td></tr>
+    <tr><td>Strengthen SC's health innovation landscape</td><td>MUSC becomes the first academic medical center to pilot in-shift wellness technology with continuous body data tracking for surgical teams.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ WHAT'S INCLUDED ═══════ -->
+<div class="section">
+  <h2>What's Included</h2>
+
+  <table>
+    <tr><th>Component</th><th>Details</th></tr>
+    <tr><td><strong>Pausality App</strong> (12 months for all pilot participants)</td><td>Full access to 21-session progressive breathing curriculum with real-time Apple Watch and AirPods Pro heart rate tracking</td></tr>
+    <tr><td><strong>Onboarding Session</strong></td><td>In-person orientation for pilot participants with Randy and Jason</td></tr>
+    <tr><td><strong>Coaching Support</strong> (bi-weekly)</td><td>Virtual check-ins with Randy for protocol guidance and participant questions</td></tr>
+    <tr><td><strong>Wellness Dashboard</strong></td><td>Anonymized, aggregate engagement and HRV trend reporting for MUSC wellness leadership</td></tr>
+    <tr><td><strong>Pre/Post Surveys</strong></td><td>PSS-10 + MAIA-2 administered and analyzed</td></tr>
+    <tr><td><strong>Final Report</strong></td><td>Comprehensive pilot outcomes report for Dr. Streck, Dr. Salgado, and MUSC leadership</td></tr>
+    <tr><td><strong>Publication Support</strong></td><td>If data warrants, SRL will collaborate with MUSC faculty on a peer-reviewed publication describing the pilot outcomes</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ THE RESEARCH BASE ═══════ -->
+<div class="section">
+  <h2>The Research Foundation</h2>
+
+  <p>Pausality is built on peer-reviewed research from scientists who spent decades demonstrating that breathing practices support nervous system flexibility and wellness:</p>
+
+  <table>
+    <tr><th>Finding</th><th>Citation</th></tr>
+    <tr><td>1-minute paced breathing produces measurable HRV changes in workers</td><td>Six Dijkstra, McCraty et al. (2019), N=877, <em>Applied Psychophysiology and Biofeedback</em></td></tr>
+    <tr><td>5 minutes of slow breathing produces similar recovery response as 20 minutes</td><td>You & Laborde et al. (2021), N=59, <em>Int J Environ Res Public Health</em></td></tr>
+    <tr><td>Resonant frequency breathing supports nervous system balance</td><td>Lehrer, Vaschillo & Vaschillo (2000), <em>Applied Psychophysiology and Biofeedback</em></td></tr>
+    <tr><td>Body awareness correlates with better performance under pressure</td><td>Garfinkel et al. (2015), <em>Biological Psychology</em></td></tr>
+    <tr><td>Breathing practices support nervous system flexibility</td><td>Thayer & Lane (2009), <em>Neuroscience & Biobehavioral Reviews</em></td></tr>
+    <tr><td>62% CRNA burnout prevalence; lack of time is primary barrier</td><td>AANA Wellness Committee data; multiple surveys</td></tr>
+  </table>
+
+  <p style="font-size:12px;color:var(--text-light);font-style:italic">These citations describe published research findings. They are provided for educational context and do not constitute claims about the Pausality product. Individual experiences with the app may vary.</p>
+</div>
+
+<!-- ═══════ YOUR TEAM ═══════ -->
+<div class="section">
+  <h2>Your Team</h2>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <h4>Randy Graybeal, CRNA</h4>
+      <div class="role">Co-Founder &mdash; Wellness Science &amp; Coaching</div>
+      <p>28 years as a Certified Registered Nurse Anesthetist. Understands surgical and trauma team workflows from the inside. Designed Pausality's breathing curriculum based on published breathing and HRV research. Will lead onboarding and coaching for the MUSC pilot.</p>
+    </div>
+    <div class="team-card">
+      <h4>Jason Fields</h4>
+      <div class="role">Co-Founder &mdash; Product &amp; Experience Design</div>
+      <p>Former Head of Design at Audible. Built the Pausality app from the ground up (build 508 in TestFlight). Understands privacy compliance, wellness data visualization, and designing for high-pressure environments. Will lead technical integration and dashboard setup.</p>
+    </div>
+  </div>
+
+  <h3>MUSC Champions</h3>
+
+  <table>
+    <tr><th>Name</th><th>Role</th><th>Contribution to Pilot</th></tr>
+    <tr><td><strong>Dr. Christian Streck, MD</strong></td><td>Chief of Pediatric Surgery, Pediatric Trauma Medical Director, General Surgery Residency Program Director</td><td>Clinical champion. Access to surgical residents and trauma team. Understands the autonomic demands of trauma surgery firsthand.</td></tr>
+    <tr><td><strong>Dr. Cassandra Salgado, MD, MS</strong></td><td>Inaugural Vice Chair for Wellness, Senior Associate Dean for Faculty Affairs, Development &amp; Wellness</td><td>Institutional wellness mandate. Reporting infrastructure. Connection to broader MUSC wellness strategy.</td></tr>
+    <tr><td><strong>Matt Pardieck</strong></td><td>Connector</td><td>Warm introduction and relationship bridge between SRL and MUSC leadership.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ THE ASK ═══════ -->
+<div class="section">
+  <h2>The Ask</h2>
+
+  <p class="lead">We are seeking support through the South Carolina Health Innovation Fund to launch and sustain the MUSC pilot.</p>
+
+  <table>
+    <tr><th>Use of Funds</th><th>Purpose</th></tr>
+    <tr><td><strong>Pilot operations</strong></td><td>App access, survey administration, data analysis, coaching sessions, onboarding</td></tr>
+    <tr><td><strong>Dashboard development</strong></td><td>MUSC-specific anonymized wellness dashboard for leadership reporting</td></tr>
+    <tr><td><strong>SC operations</strong></td><td>Establish local presence for ongoing MUSC partnership support</td></tr>
+    <tr><td><strong>Publication support</strong></td><td>Data analysis and manuscript preparation if outcomes warrant peer-reviewed publication</td></tr>
+    <tr><td><strong>Product development</strong></td><td>Multi-device support (via Open Wearables API), enterprise features, FHIR mapping for EHR integration</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>What MUSC gets:</strong> A free 12-week pilot for 20-40 surgical residents and trauma team members. Measurable wellness data for Dr. Salgado's reporting. A first-of-its-kind in-shift wellness program for Dr. Streck's team. Publication opportunity. And a potential flagship partnership if the data supports scaling.
+  </div>
+</div>
+
+<!-- ═══════ TIMELINE ═══════ -->
+<div class="section">
+  <h2>Proposed Timeline</h2>
+
+  <table>
+    <tr><th>Milestone</th><th>Target</th></tr>
+    <tr><td>Initial meeting with Dr. Streck, Dr. Salgado, Matt Pardieck</td><td>Q2 2026</td></tr>
+    <tr><td>Pilot design finalization and MUSC approvals</td><td>Q2-Q3 2026</td></tr>
+    <tr><td>Enrollment and baseline assessment (Phase 1)</td><td>Q3 2026</td></tr>
+    <tr><td>Active practice period (Phase 2)</td><td>Q3-Q4 2026</td></tr>
+    <tr><td>Post-assessment and report (Phase 3)</td><td>Q4 2026</td></tr>
+    <tr><td>Publication and scale decision</td><td>Q1 2027</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ CTA ═══════ -->
+<div class="cta">
+  <h2>Let's Build Something Together</h2>
+  <p>MUSC has the institution, the mandate, and the team.<br>Pausality has the tool, the science, and the design.<br>Together: the first in-shift wellness program with continuous body data for surgical teams.</p>
+  <a href="mailto:randy@somnistics.com" class="btn">Schedule a Conversation</a>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>&copy; 2026 Somnistics Research Labs, Inc. &mdash; Pausality&trade; is a trademark of Somnistics, Inc.</p>
+  <p style="margin-top:4px">Confidential &mdash; Prepared for MUSC Innovation Fund consideration</p>
+  <p style="margin-top:12px;font-size:10px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6">
+    Pausality is a wellness application, not a medical device. It is not intended to diagnose, treat, cure, or prevent any disease or medical condition. Heart rate and HRV data displayed in the app are for wellness and informational purposes only. This proposal describes a wellness program evaluation, not a clinical trial. Consult your healthcare provider before beginning any new wellness program. Individual results may vary. The research cited describes published findings in peer-reviewed journals; these citations are provided for educational context and do not constitute claims about the Pausality product.
+  </p>
+</div>
+
+</body>
+</html>

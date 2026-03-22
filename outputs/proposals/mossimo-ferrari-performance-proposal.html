@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Performance Edge Program — Pausality x Mossimo</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Michroma&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --dark-navy: #1A1C2E;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --sage-glow: rgba(95, 200, 155, 0.15);
+  --sage-glow-strong: rgba(95, 200, 155, 0.3);
+  --white: #FFFFFF;
+  --offwhite: #F7F8FA;
+  --text: #22253A;
+  --text-mid: #4A4D5C;
+  --text-light: #6B6F7E;
+  --border: #E0E0DB;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--white); color: var(--text); letter-spacing: -0.025em; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 50%, #2a3a4a 100%);
+  color: var(--white);
+  padding: 60px 40px 50px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(95,200,155,0.08) 0%, transparent 70%);
+}
+.hero-content { position: relative; max-width: 900px; margin: 0 auto; }
+.hero .logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.hero .logo-img { height: 32px; }
+.hero .wordmark { height: 20px; opacity: 0.9; }
+.hero h1 {
+  font-family: 'Michroma', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.hero .tagline {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+.hero .meta {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+/* Sections */
+.section { padding: 50px 0; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section h2 {
+  font-family: 'Michroma', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+  color: var(--navy);
+}
+.section h3 {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+.section p { font-size: 14px; line-height: 1.8; margin-bottom: 14px; color: var(--text-mid); }
+.lead { font-size: 16px; font-weight: 400; color: var(--text); margin-bottom: 20px; }
+
+/* Callout */
+.callout {
+  background: var(--sage-glow);
+  border-left: 3px solid var(--sage);
+  padding: 18px 22px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+.callout strong { font-weight: 500; }
+
+/* Phase cards */
+.phases { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
+.phase {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+}
+.phase-num {
+  font-family: 'Michroma', sans-serif;
+  font-size: 11px;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.phase h4 { font-weight: 500; font-size: 15px; margin-bottom: 6px; }
+.phase .duration { font-size: 12px; color: var(--sage-dim); font-weight: 500; margin-bottom: 8px; }
+.phase p { font-size: 13px; color: var(--text-light); margin-bottom: 0; }
+.phase ul { font-size: 13px; color: var(--text-light); margin-left: 16px; margin-top: 6px; }
+.phase li { margin-bottom: 4px; }
+
+/* Metrics */
+.metrics { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 20px 0; }
+.metric {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+.metric .value { font-family: 'Michroma', sans-serif; font-size: 14px; color: var(--sage); margin-bottom: 4px; }
+.metric .label { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.7); }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+th { text-align: left; padding: 10px 14px; background: var(--navy); color: var(--white); font-weight: 400; font-size: 12px; font-family: 'Michroma', sans-serif; letter-spacing: 0.03em; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-mid); }
+tr:last-child td { border-bottom: none; }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 30px; margin: 24px 0; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--sage-glow-strong); }
+.timeline-item { position: relative; margin-bottom: 24px; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--sage);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--sage);
+}
+.timeline-item .week {
+  font-family: 'Michroma', sans-serif;
+  font-size: 10px;
+  color: var(--sage);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.timeline-item h4 { font-weight: 500; font-size: 14px; margin-bottom: 4px; }
+.timeline-item p { font-size: 13px; color: var(--text-light); margin: 0; }
+
+/* CTA */
+.cta {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  margin: 40px 0;
+  color: var(--white);
+}
+.cta h2 { color: var(--white); margin-bottom: 12px; }
+.cta p { color: rgba(255,255,255,0.7); font-size: 15px; }
+.cta .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 32px;
+  background: var(--sage);
+  color: var(--navy);
+  border-radius: 8px;
+  font-family: 'Michroma', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+  background: var(--dark-navy);
+  color: rgba(255,255,255,0.4);
+  padding: 30px;
+  text-align: center;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 40px 20px 30px; }
+  .hero h1 { font-size: 22px; }
+  .container { padding: 0 16px; }
+  .phases { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="logo-row">
+      <img src="https://pausality.health/images/pausality-logo.png" alt="Pausality" class="logo-img">
+      <img src="https://pausality.health/images/pausality-wordmark.png" alt="Pausality" class="wordmark">
+    </div>
+    <h1>Performance Edge Program</h1>
+    <div class="tagline">Autonomic Regulation for Elite Motorsport</div>
+    <p style="font-size:14px;color:rgba(255,255,255,0.8);max-width:600px">
+      A personalized 6-week breathing and body-awareness training program designed for Mossimo &mdash;
+      Ferrari driver seeking the performance edge between sympathetic overdrive and
+      precision calm under 200mph load.
+    </p>
+    <div class="meta">Prepared by Randy Graybeal, CRNA &amp; Jason Fields &mdash; Somnistics Research Labs &mdash; Confidential</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══════ THE PROBLEM ═══════ -->
+<div class="section">
+  <h2>The Challenge</h2>
+
+  <p class="lead">Mossimo is sympathetically charged before races and has difficulty recovering after them. He's amped up, running hot, and looking to feel more comfortable &mdash; not less intense, but more controlled.</p>
+
+  <p>Elite motorsport demands a paradox: maximum alertness with minimum physiological waste. A driver who is sympathetically overdrive burns through autonomic reserves before the final stint. The heart rate is elevated. The grip tightens. The peripheral vision narrows. Reaction time degrades not from fatigue, but from autonomic inefficiency &mdash; the nervous system spending energy on threat response instead of channeling it into precision.</p>
+
+  <p>The edge isn't more adrenaline. It's better regulation of the adrenaline you already have.</p>
+
+  <div class="callout">
+    <strong>The goal:</strong> Improve Mossimo's autonomic baseline (resting HRV, resting HR, blood pressure) and decrease the time-to-recovery after high-load events. Not calming him down &mdash; giving his nervous system a faster return-to-ready between stints, between sessions, between race weekends.
+  </div>
+</div>
+
+<!-- ═══════ WHAT WE MEASURE ═══════ -->
+<div class="section">
+  <h2>Assessment Protocol</h2>
+
+  <p class="lead">Before anything changes, we measure everything. Two hours, in person, full autonomic portrait.</p>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="value">Resting HRV</div>
+      <div class="label">RMSSD baseline &mdash; Apple Watch + chest strap</div>
+    </div>
+    <div class="metric">
+      <div class="value">Resting HR</div>
+      <div class="label">Morning resting heart rate trend</div>
+    </div>
+    <div class="metric">
+      <div class="value">Blood Pressure</div>
+      <div class="label">Seated + standing (orthostatic response)</div>
+    </div>
+    <div class="metric">
+      <div class="value">HRV Recovery</div>
+      <div class="label">Time-to-baseline after standardized stress test</div>
+    </div>
+    <div class="metric">
+      <div class="value">Respiratory Rate</div>
+      <div class="label">Resting + under cognitive load</div>
+    </div>
+    <div class="metric">
+      <div class="value">Resonant Frequency</div>
+      <div class="label">Personal optimal breathing rate (typically 4.5-6.5 bpm)</div>
+    </div>
+    <div class="metric">
+      <div class="value">Physical Markers</div>
+      <div class="label">Pull-up capacity, grip strength, postural assessment</div>
+    </div>
+    <div class="metric">
+      <div class="value">EEG Baseline</div>
+      <div class="label">Alpha/theta ratio at rest + under simulated race load</div>
+    </div>
+    <div class="metric">
+      <div class="value">MAIA-2 Survey</div>
+      <div class="label">8-subscale interoceptive awareness assessment</div>
+    </div>
+    <div class="metric">
+      <div class="value">BOLT Score</div>
+      <div class="label">Body Oxygen Level Test &mdash; CO2 tolerance baseline</div>
+    </div>
+    <div class="metric">
+      <div class="value">Cardiac Efficiency</div>
+      <div class="label">Joules per heartbeat under athletic load (Peloton/erg test)</div>
+    </div>
+    <div class="metric">
+      <div class="value">Subjective State</div>
+      <div class="label">Readiness, comfort, pre-race anxiety (0-10 VAS)</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Our approach:</strong> "I'd love to sit with him for a couple of hours and really get a sense of where he's at. Take measurements, take his blood pressure, look at his pull-ups, look at all these metrics, EEG, and some other things &mdash; then put him through the program and coach him through it and see how he does." &mdash; Randy Graybeal, CRNA
+  </div>
+</div>
+
+<!-- ═══════ THE PROGRAM ═══════ -->
+<div class="section">
+  <h2>6-Week Program</h2>
+
+  <p class="lead">One-minute practices, five times daily, across three progressive phases. Every session tracked via real-time Apple Watch body data.</p>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-num">Phase 1 &mdash; Weeks 1-2</div>
+      <h4>Foundation: Finding Your Baseline</h4>
+      <div class="duration">5 sessions/day &times; 1 minute = 5 minutes total</div>
+      <ul>
+        <li>Discover personal resonant breathing frequency</li>
+        <li>Establish morning HRV baseline routine</li>
+        <li>Box breathing (5/5/5/5) for autonomic calibration</li>
+        <li>Pre-sleep recovery breathing protocol</li>
+        <li>Daily BOLT score tracking</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-num">Phase 2 &mdash; Weeks 3-4</div>
+      <h4>Awareness: Sensing Under Load</h4>
+      <div class="duration">5 sessions/day + 2 coached sessions/week</div>
+      <ul>
+        <li>Extended exhale protocols (4/7/8) for deep recovery response</li>
+        <li>Rapid Reg (3/3/3/3) for acute stress windows</li>
+        <li>Heart rate recovery drills after physical exertion</li>
+        <li>Simulated race-day autonomic training</li>
+        <li>Interoceptive attention during athletic training</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <div class="phase-num">Phase 3 &mdash; Weeks 5-6</div>
+      <h4>Mastery: Race-Day Integration</h4>
+      <div class="duration">5 sessions/day + race-day protocol design</div>
+      <ul>
+        <li>Pre-race activation protocol (sympathetic priming WITHOUT overdrive)</li>
+        <li>In-cockpit micro-regulation between sessions</li>
+        <li>Post-race recovery acceleration</li>
+        <li>Anesthetist's Breath (10/0/10/0) for deep vagal reset</li>
+        <li>Personal Gap Moment protocol for race weekends</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ WHAT WE TRACK ═══════ -->
+<div class="section">
+  <h2>Outcomes We Measure</h2>
+
+  <table>
+    <tr><th>Metric</th><th>Baseline (Week 0)</th><th>Target (Week 6)</th><th>How We Measure</th></tr>
+    <tr><td><strong>Resting HRV (RMSSD)</strong></td><td>Measured at intake</td><td>Upward trend expected*</td><td>Apple Watch daily morning reading</td></tr>
+    <tr><td><strong>Time-to-recovery</strong></td><td>Minutes post-exertion to baseline HR</td><td>Faster return to baseline expected*</td><td>Standardized fitness test pre/post program</td></tr>
+    <tr><td><strong>Resting heart rate</strong></td><td>Measured at intake</td><td>Downward trend expected*</td><td>7-day morning average trend</td></tr>
+    <tr><td><strong>Blood pressure</strong></td><td>Measured at intake</td><td>Track for favorable trend*</td><td>Weekly seated measurement</td></tr>
+    <tr><td><strong>BOLT score</strong></td><td>Measured at intake</td><td>Improvement expected*</td><td>Weekly CO2 tolerance test</td></tr>
+    <tr><td><strong>Pre-race comfort (VAS)</strong></td><td>Self-reported 0-10</td><td>Improved comfort and readiness*</td><td>Pre-race self-report</td></tr>
+    <tr><td><strong>Post-race recovery</strong></td><td>Hours to feel "normal"</td><td>Faster recovery expected*</td><td>Self-report + HRV recovery curve</td></tr>
+    <tr><td><strong>Cardiac efficiency</strong></td><td>Joules/beat at threshold</td><td>Track for improvement*</td><td>Peloton/erg test at standardized load</td></tr>
+    <tr><td><strong>EEG alpha/theta</strong></td><td>Ratio at baseline</td><td>Improved coherence patterns expected*</td><td>Pre/post EEG session</td></tr>
+    <tr><td><strong>MAIA-2 score</strong></td><td>8-subscale baseline</td><td>Improvement in body listening + self-regulation*</td><td>Pre/post survey</td></tr>
+    <tr><td colspan="4" style="font-size:11px;color:var(--text-light);font-style:italic;border:none;padding-top:8px">*Individual results vary. Targets are directional based on published breathing and wellness research. This program is not a medical treatment and does not diagnose, treat, cure, or prevent any disease.</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ WEEKLY TIMELINE ═══════ -->
+<div class="section">
+  <h2>Week-by-Week</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="week">Week 0</div>
+      <h4>In-Person Assessment</h4>
+      <p>2-hour session with Randy. Full autonomic portrait: HRV, HR, BP, BOLT, EEG, MAIA-2, physical markers. Personalize the program based on findings. Set up Apple Watch tracking. Install Pausality.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Week 1</div>
+      <h4>Resonant Frequency Discovery</h4>
+      <p>Find your personal optimal breathing rate. Establish the daily 5x1-minute routine. Morning HRV tracking begins. First coached session (virtual or in-person).</p>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Week 2</div>
+      <h4>Baseline Stabilization</h4>
+      <p>Box breathing mastery. Pre-sleep protocol. Monitor HRV trend for first inflection. Second coached session. First data review.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Week 3</div>
+      <h4>Load Introduction</h4>
+      <p>Extended exhale protocols. Heart rate recovery drills after workouts. Simulated pre-race state induction + regulation practice. Coached session.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Week 4</div>
+      <h4>Acute Stress Protocols</h4>
+      <p>Rapid Reg (3/3/3/3) for acute windows. Midpoint data review with Randy. Adjust protocols based on 4 weeks of HRV data. Coached session.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Week 5</div>
+      <h4>Race-Day Protocol Design</h4>
+      <p>Design personalized pre-race, in-session, and post-race protocols. Anesthetist's Breath for deep recovery. Coached session. Practice race-day sequence.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="week">Week 6</div>
+      <h4>Final Assessment + Race-Day Deployment</h4>
+      <p>Full re-assessment: HRV, HR, BP, BOLT, EEG, MAIA-2, physical markers. Compare all metrics to baseline. Deliver race-day protocol card. Final coached session. Ongoing support options.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ WHAT'S INCLUDED ═══════ -->
+<div class="section">
+  <h2>What's Included</h2>
+
+  <table>
+    <tr><th>Component</th><th>Details</th></tr>
+    <tr><td><strong>Pausality App</strong> (6 months)</td><td>Full access to 21-session progressive breathing curriculum with real-time Apple Watch heart rate and body data tracking</td></tr>
+    <tr><td><strong>In-Person Assessment</strong> (2)</td><td>Week 0 baseline + Week 6 re-assessment with Randy Graybeal, CRNA</td></tr>
+    <tr><td><strong>Coached Sessions</strong> (8)</td><td>Weekly 30-minute sessions (virtual or in-person) for protocol adjustment and feedback</td></tr>
+    <tr><td><strong>Wellness Dashboard</strong></td><td>Personalized HRV, HR, recovery trend dashboard updated weekly</td></tr>
+    <tr><td><strong>Race-Day Protocol</strong></td><td>Custom pre-race, in-cockpit, and post-race autonomic regulation protocols</td></tr>
+    <tr><td><strong>EEG Sessions</strong> (2)</td><td>Baseline + post-program neurofeedback assessment</td></tr>
+    <tr><td><strong>MAIA-2 Assessment</strong> (2)</td><td>Pre/post interoceptive awareness measurement</td></tr>
+    <tr><td><strong>Data Report</strong></td><td>Comprehensive before/after analysis of all metrics with physiological interpretation</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ THE SCIENCE ═══════ -->
+<div class="section">
+  <h2>The Science</h2>
+
+  <p>This program is built on peer-reviewed evidence from researchers who spent decades proving that autonomic regulation is trainable:</p>
+
+  <table>
+    <tr><th>Finding</th><th>Citation</th><th>Relevance</th></tr>
+    <tr><td>1-minute paced breathing produces measurable HRV changes</td><td>Six Dijkstra, McCraty et al. (2019), N=877</td><td>Supports the 60-second practice window</td></tr>
+    <tr><td>5 minutes of slow breathing produces similar recovery response as 20</td><td>You & Laborde et al. (2021), N=59</td><td>Dose-response supports brief practices</td></tr>
+    <tr><td>Resonant frequency breathing supports nervous system balance</td><td>Lehrer, Vaschillo & Vaschillo (2000)</td><td>Resonant frequency breathing mechanism</td></tr>
+    <tr><td>Body awareness correlates with better performance under pressure</td><td>Garfinkel et al. (2015)</td><td>Body awareness = performance advantage</td></tr>
+    <tr><td>Breathing practices support nervous system flexibility</td><td>Thayer & Lane (2009)</td><td>Neurovisceral integration model</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ YOUR TEAM ═══════ -->
+<div class="section">
+  <h2>Your Team</h2>
+
+  <p class="lead">Two founders who've spent their careers at the intersection of human performance and technology.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0">
+    <div style="background:var(--offwhite);border-radius:12px;padding:24px">
+      <h3 style="margin-top:0">Randy Graybeal, CRNA</h3>
+      <p style="font-size:13px;color:var(--sage-dim);font-weight:500;margin-bottom:10px">Co-Founder &mdash; Clinical Science &amp; Coaching</p>
+      <p>28 years as a Certified Registered Nurse Anesthetist &mdash; managing autonomic nervous systems under the highest clinical loads in medicine. Every case is an exercise in reading physiology in real-time, adjusting interventions on the fly, and maintaining stability under extreme conditions across thousands of cases.</p>
+      <p>Randy built Pausality because the tools he uses to manage patients' nervous systems didn't exist for managing his own. The same principles that keep patients alive in the OR &mdash; vagal tone, HRV coherence, baroreflex sensitivity, respiratory sinus arrhythmia &mdash; are the principles that give elite performers an autonomic edge.</p>
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:0">The difference between a CRNA and a wellness coach: a CRNA reads physiology in real-time. Every minute. For decades. Randy is your performance coach for this program &mdash; he'll conduct your assessments, design your protocols, and coach you through every phase.</p>
+    </div>
+    <div style="background:var(--offwhite);border-radius:12px;padding:24px">
+      <h3 style="margin-top:0">Jason Fields</h3>
+      <p style="font-size:13px;color:var(--sage-dim);font-weight:500;margin-bottom:10px">Co-Founder &mdash; Product &amp; Experience Design</p>
+      <p>Former Head of Design at Audible, where he shaped the audio experience for millions of users under Amazon's scale. Previously at Huffington Post and MSNBC, building digital experiences for some of the largest media audiences in the world.</p>
+      <p>Jason designed and built the Pausality app &mdash; now on build 508 in TestFlight &mdash; from the ground up. He understands privacy compliance, wellness data visualization, and how to make complex body data feel intuitive on a 44mm watch face. He taught himself to code to build the product he envisioned.</p>
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:0">Jason designed the real-time experience you'll use every day &mdash; the heart rate visualization, the breathing guidance, the session tracking. Every screen in Pausality is built for clarity under pressure, because that's when you'll need it most.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Why this team:</strong> Randy brings the science &mdash; 28 years of understanding nervous systems in real-time, the expertise to design your breathing protocols, and the knowledge to interpret your wellness data. Jason brings the product &mdash; world-class design experience from Audible and major media platforms, the technical skill to build a privacy-compliant wellness app, and the taste to make sophisticated tools feel effortless. Together, they built a breathing app that shows you your body responding in real-time on the device you already wear.
+  </div>
+</div>
+
+<!-- ═══════ CTA ═══════ -->
+<div class="cta">
+  <h2>Ready to Find Your Edge?</h2>
+  <p>6 weeks. 5 minutes a day. Every metric measured. Your nervous system, optimized.</p>
+  <a href="mailto:randy@somnistics.com" class="btn">Schedule Your Assessment</a>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>&copy; 2026 Somnistics Research Labs, Inc. &mdash; Pausality&trade; is a trademark of Somnistics, Inc.</p>
+  <p style="margin-top:4px">Confidential &mdash; Prepared exclusively for Mossimo</p>
+  <p style="margin-top:12px;font-size:10px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6">
+    Pausality is a wellness and performance breathing application. It is not a medical device, does not provide biofeedback therapy, and is not intended to diagnose, treat, cure, or prevent any disease or medical condition. Heart rate and HRV data displayed in the app are for wellness and informational purposes only. Consult your physician before beginning any new wellness program. Individual results vary. The research cited describes published findings in peer-reviewed journals; these citations are provided for educational context and do not constitute claims about the Pausality product.
+  </p>
+</div>
+
+</body>
+</html>
