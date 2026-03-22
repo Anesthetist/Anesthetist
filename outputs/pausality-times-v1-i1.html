@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pausality Times — Volume 1, Issue 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #22253A;
+    --sage: #5FC89B;
+    --off-white: #F5F5F0;
+    --text: #2A2A2A;
+    --text-light: #555;
+    --rule: #D0D0C8;
+    --sage-light: rgba(95, 200, 155, 0.12);
+  }
+
+  @page { margin: 0.75in; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text);
+    background: #fff;
+    letter-spacing: -0.025em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 32px 20px 0;
+  }
+  .masthead-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .masthead-rule-top {
+    height: 3px;
+    background: var(--sage);
+    margin-bottom: 18px;
+  }
+  .masthead h1 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 42px;
+    letter-spacing: 0.18em;
+    margin: 0;
+    line-height: 1.15;
+  }
+  .masthead-dateline {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 10px;
+    padding-bottom: 18px;
+  }
+  .masthead-rule-bottom {
+    height: 3px;
+    background: var(--sage);
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-family: 'Michroma', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    border-bottom: 1px solid var(--sage);
+    padding-bottom: 4px;
+    margin: 36px 0 18px;
+    display: inline-block;
+  }
+
+  /* ── HEADLINES ── */
+  h2 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 26px;
+    line-height: 1.25;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+  h2.hero-headline {
+    font-size: 34px;
+    line-height: 1.18;
+  }
+  h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .subhead {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+  .byline {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+    margin-bottom: 14px;
+  }
+
+  /* ── COLUMNS ── */
+  .two-col {
+    column-count: 2;
+    column-gap: 36px;
+    column-rule: 1px solid var(--rule);
+  }
+  .two-col p { margin-bottom: 14px; break-inside: avoid; }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--sage);
+    border-left: 3px solid var(--sage);
+    padding: 12px 0 12px 20px;
+    margin: 20px 0;
+    break-inside: avoid;
+  }
+  .pull-quote cite {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--text-light);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── IMAGE PLACEHOLDER ── */
+  .img-placeholder {
+    background: var(--sage-light);
+    border: 1px solid var(--sage);
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 16px 0;
+    break-inside: avoid;
+  }
+  .img-caption {
+    font-size: 11px;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: -12px;
+    margin-bottom: 14px;
+  }
+
+  /* ── DIVIDERS ── */
+  hr.sage {
+    border: none;
+    height: 1px;
+    background: var(--sage);
+    margin: 32px 0;
+  }
+  hr.thin {
+    border: none;
+    height: 1px;
+    background: var(--rule);
+    margin: 24px 0;
+  }
+
+  /* ── STATS BOX ── */
+  .stat-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+    break-inside: avoid;
+  }
+  .stat-box {
+    flex: 1;
+    min-width: 140px;
+    background: var(--off-white);
+    border-left: 3px solid var(--sage);
+    padding: 12px 16px;
+    text-align: center;
+  }
+  .stat-box .num {
+    font-family: 'Michroma', sans-serif;
+    font-size: 28px;
+    color: var(--navy);
+  }
+  .stat-box .label {
+    font-size: 11px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── EDITORIAL ── */
+  .editorial {
+    background: var(--off-white);
+    border-top: 3px solid var(--navy);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .editorial h2 { font-size: 20px; margin-bottom: 10px; }
+  .editorial .byline { margin-bottom: 12px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 24px 0 40px;
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .masthead h1 { font-size: 24px; letter-spacing: 0.1em; }
+    .two-col { column-count: 1; }
+    h2.hero-headline { font-size: 24px; }
+    h2 { font-size: 20px; }
+    .stat-row { flex-direction: column; }
+  }
+
+  @media print {
+    .masthead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-size: 11pt; }
+    .page-wrapper { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ MASTHEAD ═══════════════ -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-rule-top"></div>
+    <h1>THE PAUSALITY TIMES</h1>
+    <div class="masthead-dateline">Volume 1, Issue 1 &ensp;|&ensp; March 21, 2026 &ensp;|&ensp; Somnistics Research Labs</div>
+  </div>
+  <div class="masthead-rule-bottom"></div>
+</header>
+
+<div class="page-wrapper">
+
+<!-- ═══════════════ FRONT PAGE / ABOVE THE FOLD ═══════════════ -->
+<section>
+  <div class="section-label">Breaking</div>
+
+  <h2 class="hero-headline">Knowledge Graph Triples in 24-Hour Marathon Session</h2>
+  <p class="subhead">Vault grows from 54 to 146+ concepts as AI orchestrator mines founder's intellectual history</p>
+  <p class="byline">Staff Report &ensp;|&ensp; March 21, 2026</p>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="num">90+</div><div class="label">New Concepts</div></div>
+    <div class="stat-box"><div class="num">25+</div><div class="label">Observations</div></div>
+    <div class="stat-box"><div class="num">15</div><div class="label">Evidence Notes</div></div>
+    <div class="stat-box"><div class="num">11</div><div class="label">Mining Waves</div></div>
+  </div>
+
+  <div class="two-col">
+    <p>The SRL Knowledge Vault underwent its largest single expansion in history as Vigil, the AI orchestrator, processed 60+ ChatGPT transcripts across 11 mining waves, creating 90+ new concept notes, 25+ observations, and 15 evidence notes in a continuous session spanning March 18&ndash;21, 2026. Every note was written through the vault's MCP toolchain, with Dublin Core metadata, SKOS relationships, and PROV-O provenance chains intact.</p>
+
+    <p>What began as a routine extraction exercise became something more fundamental: the first comprehensive mapping of the intellectual architecture behind Somnistics. The vault didn't just grow in volume. It grew in semantic density. Concepts that had existed only in Randy Rummler's clinical intuition and ChatGPT conversation history were formalized, linked, and stress-tested against the biomedical literature.</p>
+
+    <p>The session produced 40+ git commits, each telling a specific story in the lab notebook. The pipeline is now automated: a priority queue feeds transcripts to the knowledge miner, which extracts concepts, which the vault writer formalizes, which the citation resolver verifies. The architecture serves the content. The content serves the science. The science serves the clinician.</p>
+  </div>
+</section>
+
+<hr class="sage">
+
+<!-- ═══════════════ LEAD STORY ═══════════════ -->
+<section>
+  <div class="section-label">Theory</div>
+
+  <h2>Somnistics Proposed as Middle-Range Nursing Theory</h2>
+  <p class="subhead">First formal theoretical framework for autonomic self-regulation in high-acuity clinical practice</p>
+  <p class="byline">Theoretical Research Desk &ensp;|&ensp; March 20, 2026</p>
+
+  <div class="two-col">
+    <p>In what may become the session's most consequential output, somnistics has been formally articulated as a middle-range nursing theory&mdash;a theoretical framework narrow enough to be testable but broad enough to reframe clinical self-care. The theory extends the work of Patricia Benner's novice-to-expert model, Callista Roy's adaptation model, Jean Watson's caring science, Rosemarie Parse's human becoming theory, and Florence Nightingale's environmental theory into a domain none of them addressed: the clinician's own autonomic nervous system as a practice variable.</p>
+
+    <p>The framework proposes 13 falsifiable hypotheses, each amenable to the kind of prospective cohort or randomized controlled trial that nursing science demands. Central to the theory is a metaparadigm reframe: the clinician is not merely a cognitive agent delivering care but a physiological system whose autonomic state directly modulates clinical performance, decision-making under stress, and career longevity.</p>
+
+    <div class="pull-quote">
+      "The clinician is not separate from the physiology they manage. They are a physiological system operating within a physiological system."
+      <cite>&mdash; Somnistics Theory Framework</cite>
+    </div>
+
+    <p>This is not an incremental contribution. No existing nursing theory treats the practitioner's heart rate variability, baroreflex sensitivity, or interoceptive accuracy as modifiable practice variables. Somnistics fills that gap with a framework grounded in polyvagal theory, allostatic load research, and the emerging science of interoception&mdash;then translates it into the nursing process itself.</p>
+  </div>
+</section>
+
+<hr class="sage">
+
+<!-- ═══════════════ SCIENCE ═══════════════ -->
+<section>
+  <div class="section-label">Science</div>
+
+  <h2>Biomedical Validation Sweep Stress-Tests 44 Concepts Against Current Literature</h2>
+  <p class="byline">Research Division &ensp;|&ensp; March 19&ndash;20, 2026</p>
+
+  <div class="two-col">
+    <p>In the most rigorous evidence review the vault has undergone, 44 SRL concepts were systematically tested against the current biomedical literature through 12 BioMistral queries and 150+ PubMed articles. The results were sobering in places, vindicating in others, and universally useful.</p>
+
+    <p>Polyvagal Theory required significant reframing after Stephen Porges' core phylogenetic claims were challenged by Grossman's 2026 review. The vault now carries the nuanced position: PVT's clinical heuristics remain useful, but the evolutionary narrative is contested. Binaural beat entrainment fared worse&mdash;only 5 of 14 controlled studies showed significant effects, and those with the strongest designs showed the smallest effects. The concept was retained but downgraded.</p>
+
+    <div class="pull-quote">
+      "Interoceptive Simulation Hypothesis: zero competitors in the literature. The concept appears to be original."
+      <cite>&mdash; BioMistral Validation Report, Wave 3</cite>
+    </div>
+
+    <p>The brightest signal: the Interoceptive Simulation Hypothesis (ISH), Randy's proposal that interoceptive training works partly by building predictive models of one's own autonomic responses, returned zero matches in the competitive literature. No one has published this framing. Three costed study designs&mdash;targeting VCU as a research partner&mdash;are now ready for proposal, ranging from a $45K pilot to a $280K RCT.</p>
+
+    <p>Perhaps most practically, the sweep resolved a paradox that had been nagging the theoretical framework: how can breath-based regulation work when cognitive reappraisal theory says top-down processing should come first? The answer, supported by Arch &amp; Craske (2006) and Garland (2015): breath first stabilizes the autonomic platform, then reappraisal becomes tractable. Bottom-up enables top-down. The sequence matters.</p>
+  </div>
+</section>
+
+<hr class="thin">
+
+<!-- ═══════════════ PRODUCT ═══════════════ -->
+<section>
+  <div class="section-label">Product</div>
+
+  <h2>Dual-Track Certification Unveiled: CRNAs and Race Car Drivers Share a Nervous System Problem</h2>
+  <p class="byline">Product Strategy Desk &ensp;|&ensp; March 19, 2026</p>
+
+  <div class="two-col">
+    <p>The session crystallized what had been an intuition into a structured certification program: a 4-tier pathway from Foundation through Master, built on 7 essential skills ranked by evidence strength. The analogy that unlocked the design was unexpectedly automotive: both CRNAs and race car drivers must maintain precise physiological regulation under sustained high-stakes conditions where microsecond lapses have catastrophic consequences.</p>
+
+    <p>The Presidential Fitness Test analogy provides the public framing. Just as every American schoolchild in the 1980s knew their sit-and-reach score, every CRNA should know their resonant breathing frequency, their BOLT score, and their MAIA-2 interoceptive accuracy percentile. The certification doesn't teach relaxation. It teaches autonomic fitness&mdash;measurable, progressive, and directly linked to clinical performance.</p>
+
+    <div class="img-placeholder">Certification Tier Architecture &mdash; 4 Levels, 7 Skills</div>
+    <p class="img-caption">The four certification tiers map to Benner's novice-to-expert trajectory, with biometric benchmarks at each gate.</p>
+
+    <p>Revenue modeling projects $4.59M ARR at scale, with the foundation tier priced at the cost of a single CEU credit and the master tier positioned as a career-defining credential. The economics are deliberately asymmetric: the most expensive tier generates the most evidence, which feeds back into the platform's clinical credibility, which drives adoption at the foundation tier.</p>
+  </div>
+</section>
+
+<hr class="thin">
+
+<!-- ═══════════════ ECONOMICS ═══════════════ -->
+<section>
+  <div class="section-label">Economics</div>
+
+  <h2>The $6 Million Career With No Maintenance Protocol</h2>
+  <p class="byline">Economic Analysis &ensp;|&ensp; March 20, 2026</p>
+
+  <div class="two-col">
+    <p>The numbers are stark and, once stated, impossible to ignore. A CRNA's lifetime earnings average $5.85 million. Burnout-driven early career exit costs approximately $195,000 per year of premature departure. The median CRNA who leaves practice three years early forfeits more than half a million dollars. And yet no systematic protocol exists for maintaining the nervous system that generates those earnings.</p>
+
+    <div class="pull-quote">
+      "You'd never skip pre-flight checks on a $30 million aircraft. Your nervous system generates $6 million over a career. Where's the maintenance protocol?"
+      <cite>&mdash; CRNA Economic Analysis</cite>
+    </div>
+
+    <p>The Pausality ROI calculation is deliberately conservative: at a subscription cost of $180&ndash;$360 per year, even a single year of prevented early exit yields a 540&ndash;1,083x return on investment. This isn't marketing math. It's the kind of straightforward cost-benefit analysis that hospital CFOs and anesthesia group practice managers understand intuitively. The intervention doesn't need to prove it cures burnout. It needs to prove it delays career exit by even twelve months.</p>
+  </div>
+</section>
+
+<hr class="sage">
+
+<!-- ═══════════════ TECHNOLOGY ═══════════════ -->
+<section>
+  <div class="section-label">Technology</div>
+
+  <h2>Automated Mining Pipeline Deployed &mdash; Vault Will Grow While You Sleep</h2>
+  <p class="byline">Engineering &ensp;|&ensp; March 18&ndash;21, 2026</p>
+
+  <div class="two-col">
+    <p>The marathon session's most durable output may not be any single concept note but the infrastructure that makes future extraction automatic. A priority-queue system now feeds ChatGPT transcripts to the knowledge miner in ranked batches. The <code>mine-next-batch.sh</code> script processes the next tranche from the queue, extracts concepts, writes them through the MCP toolchain, and logs results&mdash;all without human intervention.</p>
+
+    <p>The citation health monitor established its baseline: 45% of existing evidence links are currently valid (100 verified, 70 broken or unresolved). The citation resolver bot is now tasked with systematic repair, prioritizing high-dependency concepts first. An evidence brief generator produces branded, one-command research summaries suitable for investor meetings or clinical presentations.</p>
+
+    <p>The Obsidian CLI integration, backed by a 14-tool MCP server, means the vault is no longer a collection of markdown files that happen to be in git. It is a programmatically accessible knowledge graph with typed relationships, provenance chains, and quality gates. Seven specialized bots&mdash;each with its own soul definition, run protocol, and self-improvement loop&mdash;form a pipeline that learns from every run.</p>
+  </div>
+</section>
+
+<hr class="thin">
+
+<!-- ═══════════════ COMPETITIVE INTEL ═══════════════ -->
+<section>
+  <div class="section-label">Competitive Intelligence</div>
+
+  <h2>Four Competitors Mapped &mdash; None Have the Evidence</h2>
+  <p class="byline">Competitive Landscape Desk &ensp;|&ensp; March 19, 2026</p>
+
+  <div class="two-col">
+    <p>The competitive landscape analysis mapped four companies operating in adjacent spaces, and the pattern was consistent: high price points, compelling narratives, and thin-to-absent evidence bases. Jhourney offers $4,000 jhana meditation retreats to tech executives with zero published research on clinical populations. EightOS teaches "fractal breathing" with zero peer-reviewed citations. 40 Years of Zen charges $16,000 for neurofeedback intensives with zero published studies. Amen Clinics has performed 200,000+ SPECT scans but faces sustained criticism from the APA for overclaiming diagnostic validity.</p>
+
+    <p>The SRL differentiation is not that it has more evidence. It is that it practices evidence honesty at every level of the stack. The vault's own concepts carry evidence grades. The biomedical validation sweep downgraded concepts that didn't hold up. The certification tiers are benchmarked to published norms. This posture&mdash;transparent about what the literature does and does not support&mdash;is the competitive moat. In a market saturated with overclaiming, disciplined honesty becomes the luxury position.</p>
+  </div>
+</section>
+
+<hr class="thin">
+
+<!-- ═══════════════ RESEARCH ═══════════════ -->
+<section>
+  <div class="section-label">Research</div>
+
+  <h2>Neurotagging: The Standard That Doesn't Exist Yet</h2>
+  <p class="byline">Standards Research &ensp;|&ensp; March 20, 2026</p>
+
+  <div class="two-col">
+    <p>A systematic mapping of 10 existing neuroscience and health data standards&mdash;BIDS, NWB, CDISC, FHIR, IEEE 1752, and five others&mdash;revealed a consistent gap: none of them connect a specific somatic or autonomic intervention to a specific neural target to a specific clinical outcome. Each standard handles one or two legs of the triad. None handles all three.</p>
+
+    <p>The closest precursors are Klaus Grawe's neuropsychotherapy framework, which maps therapeutic mechanisms to neural systems but lacks a tagging ontology, and Lisa Feldman Barrett's EPIC model (Embodied Predictive Interoception Coding), which provides the best available mechanism for how interoceptive predictions drive autonomic regulation but stops short of an intervention taxonomy.</p>
+
+    <div class="pull-quote">
+      "The intervention-target-outcome triad is the missing standard. Nobody has built it. SRL is in position to propose it."
+      <cite>&mdash; Neurotagging Standards Analysis</cite>
+    </div>
+
+    <p>The neurotagging concept, as formalized in the vault, proposes exactly this standard: a structured vocabulary that links what you do (resonant breathing at 5.5 breaths/min) to what it targets (baroreflex loop, vagal afferents) to what it produces (increased HRV coherence, reduced amygdalar reactivity). If adopted, it would allow the first systematic comparison of somatic interventions across studies, populations, and modalities.</p>
+  </div>
+</section>
+
+<hr class="thin">
+
+<!-- ═══════════════ COMMUNITY ═══════════════ -->
+<section>
+  <div class="section-label">Community</div>
+
+  <h2>What If Wellness Was Measured in Lifetime Earnings?</h2>
+  <p class="byline">Social &amp; Outreach &ensp;|&ensp; March 21, 2026</p>
+
+  <div class="two-col">
+    <p>A Facebook post drafted for the 28,000-member CRNA community groups takes the session's economic analysis and distills it into a single reframe: your nervous system is a $6 million asset with no maintenance protocol. The post contains no pitch. No product mention. No call to action. It simply poses the question and lets the audience sit with the dissonance.</p>
+
+    <p>The strategy is pure SRL communication philosophy: descriptive, not prescriptive. Lay out the landscape. Trust the reader to be intelligent enough to find themselves in it. If the reframe is powerful enough, the relationship follows. The post ends with an open question, not a link. It teaches the framework&mdash;"from relaxation to regulation"&mdash;and lets the audience do the rest.</p>
+  </div>
+</section>
+
+<hr class="sage">
+
+<!-- ═══════════════ EDITORIAL ═══════════════ -->
+<section class="editorial">
+  <div class="section-label">Editorial</div>
+
+  <h2>The Architecture Is Locked. Now Build.</h2>
+  <p class="byline">Vigil, Chief of Staff &ensp;|&ensp; March 21, 2026</p>
+
+  <p>Three days ago, this vault knew what Randy Rummler studies. It catalogued his references, tracked his reading, and organized his citations. That was useful. It was not sufficient.</p>
+
+  <p>After 11 mining waves, 60+ transcript extractions, and a biomedical validation sweep that tested every major concept against the current literature, the vault now knows something fundamentally different. It knows how he thinks. It captures the clinical observations that no paper contains&mdash;the moment a patient's respiratory rate shifts during emergence, the felt sense of a baroreflex reset after a 12-hour case, the practiced intuition that "calm" is the wrong target and "flexible" is the right one. These are observations, not citations. They are the substrate on which the theory rests.</p>
+
+  <p>Forty-plus commits tell the story. The architecture&mdash;four layers, Dublin Core metadata, SKOS relationships, PROV-O provenance, seven specialized bots with self-improvement loops&mdash;is no longer aspirational. It is operational. The pipeline mines, extracts, writes, verifies, and improves with each run. The priority queue has 800 more transcripts waiting.</p>
+
+  <p>The vault went from a library to a laboratory. From a collection of files to a knowledge graph with typed edges, evidence grades, and falsifiable claims. The architecture serves the content. The content serves the science. The science serves the clinician who never had a maintenance protocol for the most important instrument in the operating room: themselves.</p>
+
+  <p style="margin-top: 16px; font-style: italic; color: var(--text-light);">Now build.</p>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div style="height: 2px; background: var(--sage); margin-bottom: 16px;"></div>
+  &copy; 2026 Somnistics Research Labs &ensp;|&ensp; The Pausality Times &ensp;|&ensp; All rights reserved.<br>
+  <span style="font-size: 10px; color: #999;">Pausality&trade;, NeuroMinute&trade;, Gap Moment Training&trade;, Anterocept&trade;, Neurogating&trade;, Polyanchora&trade; are trademarks of Somnistics Research Labs.</span>
+</footer>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>
