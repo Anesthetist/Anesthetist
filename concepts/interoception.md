@@ -43,6 +43,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:kvamme-2026-aphantasia-interoception-mental-health
 - urn:srl:evidence:ma-2026-insulo-frontal-stress-cognitive-rigidity
 - urn:srl:evidence:frontiers-2026-interoception-maternal-affective-touch
+- urn:srl:evidence:gibson-1979-ecological-perception
 skos:broader: []
 skos:narrower:
 - anterocept

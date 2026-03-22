@@ -14,6 +14,7 @@ modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-provisional-patent-draft
 - urn:srl:chat:chatgpt-cognitive-emotional-state-interface
+- urn:srl:evidence:lehrer-2020-hrv-biofeedback-limitations
 skos:broader:
 - somnistics
 skos:narrower:

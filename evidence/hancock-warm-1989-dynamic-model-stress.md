@@ -45,6 +45,10 @@ Hancock and Warm (1989) proposed an **extended-U model** (also called the dynami
 - Model later extended by Hancock (2017) to include physiological stress markers
 - Critiqued for not fully specifying the resource depletion mechanism — later work (Thomson et al., 2015) proposed mind-wandering as the proximal cause
 
+## Design Constraint
+
+**If the system does not account for vigilance decrement over time, early-shift protocols are irrelevant to late-shift performance.**
+
 ## SRL Relevance
 
 This is the foundational framework for understanding why CRNAs — whose job literally requires vigilance — experience performance degradation over long cases and across shift hours. The vigilance decrement is not a character flaw; it is a neurocognitive inevitability. SRL's approach reframes the problem: rather than demanding unsustainable vigilance, build **regulatory micro-practices** ([[neurominute]], [[five-breath-re-embodiment]]) that restore attentional resources during the natural gaps in clinical workflow.

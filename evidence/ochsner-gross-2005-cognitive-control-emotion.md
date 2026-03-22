@@ -45,6 +45,10 @@ Ochsner and Gross (2005) provided the first comprehensive review of the neural b
 - Limited ecological validity of laboratory emotion regulation tasks (viewing pictures is not managing a clinical crisis)
 - Extended by subsequent work on automatic reappraisal (Mauss et al., 2007) and the role of interoception in regulation (Critchley & Garfinkel, 2017)
 
+## Design Constraint
+
+**If PFC capacity is degraded (fatigue, arousal, state drift), top-down regulation is unavailable. The system must detect this and switch to bottom-up.**
+
 ## SRL Relevance
 
 This paper provides the neural evidence for why SRL's training approach works at the brain level. The PFC-amygdala circuit that Ochsner and Gross describe is the same circuit that [[neurogating]] targets — the capacity to modulate emotional reactivity through cognitive and interoceptive means. The finding that reappraisal skill improves with practice validates the [[minimum-effective-dose]] approach: brief, repeated practice of regulatory strategies builds the neural infrastructure for emotion regulation under pressure.

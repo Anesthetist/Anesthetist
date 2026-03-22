@@ -39,6 +39,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:nakamura-2025-respiration-rr-interval-attention
 - urn:srl:evidence:queirolo-2026-hypnosis-stress-performance
 - urn:srl:evidence:longaretti-2025-mindfulness-flow-meta-analysis
+- urn:srl:evidence:sweller-1988-cognitive-load-theory
+- urn:srl:evidence:kalyuga-2003-expertise-reversal
 skos:broader:
 - gap-moment-training
 skos:narrower: []

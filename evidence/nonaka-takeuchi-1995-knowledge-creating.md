@@ -48,6 +48,10 @@ Nonaka and Takeuchi (1995) proposed the **SECI model** of organizational knowled
 - Grounded in Japanese philosophical traditions (distinction between explicit and tacit knowledge draws on Polanyi but extends through Japanese epistemology)
 - Critiqued for cultural specificity, difficulty of operationalization, and treating tacit/explicit as binary rather than spectrum
 
+## Design Constraint
+
+**If tacit knowledge cannot be externalized through the system (conversation, tagging, structured output), it remains trapped and undistributable.**
+
 ## SRL Relevance
 
 The SECI model maps directly to what SRL is building: a systematic **externalization engine** for clinical expertise. The vault itself is an externalization technology — converting Randy's tacit clinical knowledge (20+ years of CRNA pattern recognition) into explicit, codifiable, teachable forms. The [[tacit-knowledge-extraction]] pipeline, the [[knowledge-miner]] bot, and the entire vault architecture are SECI in action.

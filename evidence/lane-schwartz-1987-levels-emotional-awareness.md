@@ -50,6 +50,10 @@ Lane and Schwartz (1987) proposed a **five-level developmental model of emotiona
 - Connects to emotional granularity (Barrett) and interoceptive accuracy literatures
 - Later extended by Lane (2008) to include neural correlates and therapeutic implications
 
+## Design Constraint
+
+**If the user cannot name what they feel with granularity, they cannot regulate it. Emotional labeling is prerequisite, not optional.**
+
 ## SRL Relevance
 
 Lane and Schwartz provide the developmental map for what SRL is training. The progression from Level 1 (raw bodily sensation) to Level 5 (nuanced meta-emotional awareness) mirrors the trajectory of [[interoceptive-literacy]] development. Many clinicians operate at Level 1-2 regarding their own stress responses — experiencing burnout as headaches, insomnia, or irritability without recognizing the underlying emotional architecture.

@@ -15,6 +15,7 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-clinical-wisdom-as-asset
 - urn:srl:evidence:ericsson-1993-deliberate-practice
 - urn:srl:evidence:bernstein-1967-coordination-regulation
+- urn:srl:evidence:kalyuga-2003-expertise-reversal
 skos:broader: []
 skos:narrower: []
 skos:related:

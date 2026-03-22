@@ -47,6 +47,10 @@ Sian Beilock (2010) synthesized two decades of research on **choking under press
 - Some debate about generalizability from sports/academic tasks to clinical settings
 - Connects to Yerkes-Dodson, attentional control theory (Eysenck), and processing efficiency theory
 
+## Design Constraint
+
+**If the system increases self-monitoring during high-pressure moments, it will induce choking. Under pressure, direct attention outward, not inward.**
+
 ## SRL Relevance
 
 Beilock's work explains exactly the failure mode that SRL's training prevents. Clinical emergencies create the conditions for both forms of choking: self-focus (over-attending to procedural steps that should be automatic) and working memory depletion (anxiety consuming cognitive resources needed for clinical reasoning). [[learning-under-load]] is explicitly designed as inoculation training — building regulatory skills under simulated pressure so they remain available during actual crises.

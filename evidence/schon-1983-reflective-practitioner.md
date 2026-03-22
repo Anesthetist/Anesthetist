@@ -43,6 +43,10 @@ Donald Schön (1983) challenged the dominant "technical rationality" model of pr
 - Deeply influential in nursing education, medical education, and teacher education
 - Connects to Polanyi's tacit knowledge, Dewey's experiential learning
 
+## Design Constraint
+
+**If the system does not prompt reflection after practice (post-session review), it trains action without learning.**
+
 ## SRL Relevance
 
 Schön's framework is foundational to understanding why [[tacit-knowledge-extraction]] is both essential and difficult. The knowing-in-action that experienced CRNAs possess is precisely what SRL aims to make trainable through structured interoceptive protocols. Reflection-in-action maps directly to the [[embodied-metacognition]] that SRL cultivates — the ability to monitor your own physiological and cognitive state while performing clinical tasks.

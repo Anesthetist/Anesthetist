@@ -44,6 +44,10 @@ Lisa Feldman Barrett (2017) presents the **theory of constructed emotion**, argu
 - Controversial — the classical view (basic emotions) remains defended by Ekman, Panksepp, and others
 - Strong convergence with predictive processing frameworks (Clark, Friston)
 
+## Design Constraint
+
+**If interoceptive signal is not part of the feedback loop, emotional change is prediction-unstable and will not persist.**
+
 ## SRL Relevance
 
 Barrett's framework is arguably the most important theoretical foundation for SRL's entire approach. If emotions are constructions built on interoceptive signals, then improving interoceptive accuracy and granularity — exactly what SRL trains — directly improves emotional construction and regulation. [[interoceptive-literacy]] is not a soft skill; it is the substrate on which all emotional intelligence is built.

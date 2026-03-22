@@ -16,6 +16,7 @@ modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-embodied-knowledge-ontology
 - urn:srl:evidence:klein-1998-recognition-primed-decision
+- urn:srl:evidence:gibson-1979-ecological-perception
 skos:broader: []
 skos:narrower: []
 skos:related:

@@ -43,6 +43,10 @@ Gary Klein's (1998) foundational work on **Recognition-Primed Decision Making (R
 - Validated across multiple domains: firefighting, military, nursing, aviation
 - Complemented by Kahneman's dual-process theory (System 1/System 2) — RPD maps to expert System 1
 
+## Design Constraint
+
+**If a user must compare options during a Gap Moment, the system has failed. Output must be single-action, pattern-matched, not analytical.**
+
 ## SRL Relevance
 
 RPD is the cognitive mechanism underlying [[embodied-clinical-intelligence]]. When a CRNA "just knows" something is wrong before the monitors alarm, they are executing recognition-primed decision making — matching the current physiological gestalt against thousands of stored patterns from prior cases. This is precisely what [[anterocept]] captures: the pre-conscious pattern recognition that generates a clinical intuition before it reaches explicit awareness.

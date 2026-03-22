@@ -46,6 +46,10 @@ Fitts and Posner (1967) established the canonical **three-stage model of motor l
 - Three-stage model simplified — Gentile (1972) later added a two-stage model emphasizing the distinction between getting the idea of the movement and fixation/diversification
 - Remains the most widely taught framework in physical therapy, sports science, and clinical skill training
 
+## Design Constraint
+
+**If a motor skill has not reached autonomous stage, the cognitive load it consumes reduces capacity for situation awareness. Test for automaticity before advancing.**
+
 ## SRL Relevance
 
 The Fitts-Posner model explains why experienced CRNAs can perform intubations while simultaneously monitoring hemodynamics and communicating with the surgeon — their procedural motor skills have reached the autonomous stage, freeing attentional resources for higher-order clinical judgment. This is the physiological basis of [[attention-as-gain-control]]: automaticity in lower-level skills creates bandwidth for the perceptual sensitivity that defines expert performance.

@@ -46,6 +46,10 @@ Staal (2004) produced a comprehensive NASA technical report synthesizing the mil
 - Framework integrates transactional stress theory (Lazarus), resource theory (Kahneman), and biological stress response (Selye, McEwen)
 - Highly cited in military human factors; less cited in clinical literature despite obvious relevance
 
+## Design Constraint
+
+**If stress effects are modeled as linear, the system will miss the inverted-U. Moderate stress enhances; excessive stress degrades. Titrate.**
+
 ## SRL Relevance
 
 Staal's synthesis provides the evidence base for why CRNAs need structured regulation training — the cognitive effects of acute stress (attentional narrowing, working memory degradation, cognitive tunneling) are exactly the failure modes that lead to anesthetic adverse events. The protective factors he identifies — training, perceived control, physiological fitness — are exactly what SRL builds.

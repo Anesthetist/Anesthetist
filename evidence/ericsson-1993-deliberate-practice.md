@@ -45,6 +45,10 @@ Ericsson, Krampe, and Tesch-Römer (1993) introduced the **deliberate practice**
 - Later critiques (Macnamara et al., 2014) found deliberate practice explains only ~26% of variance in games, ~21% in music — significant but not the whole story
 - The framework has been refined but not refuted: deliberate practice is necessary but not sufficient
 
+## Design Constraint
+
+**If a protocol cannot be practiced with feedback and measurable improvement, it is not deliberate practice and must not exist in the curriculum.**
+
 ## SRL Relevance
 
 This is foundational for understanding how CRNAs develop clinical expertise over a career arc. The deliberate practice framework maps directly to the [[benner-expertise-spiral]] — both describe progression through stages that require qualitatively different kinds of engagement. For SRL, the key insight is that expertise development can be *designed* and *accelerated* through structured training interventions, which is exactly what Gap Moment Training™ and NeuroMinute™ protocols attempt to do in compressed timeframes.

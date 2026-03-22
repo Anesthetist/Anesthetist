@@ -16,6 +16,7 @@ id: urn:srl:concept:layered-intervention-stack
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-vagalbeats-cognitive-flow-training
+- urn:srl:evidence:sweller-1988-cognitive-load-theory
 skos:broader: []
 skos:narrower: []
 skos:related:

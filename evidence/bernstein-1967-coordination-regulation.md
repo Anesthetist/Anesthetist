@@ -44,6 +44,10 @@ Nikolai Bernstein (1967) posed the **degrees of freedom problem** — the fundam
 - Deeply influential but primarily theoretical — empirical validation came through later dynamical systems work
 - Rehabilitated by Turvey, Kelso, and others in the ecological psychology tradition
 
+## Design Constraint
+
+**If a protocol requires more degrees of freedom than the user can control, freeze the extras. Progressive unfreezing IS the curriculum progression.**
+
 ## SRL Relevance
 
 Bernstein's "repetition without repetition" is the motor-level parallel to what SRL teaches at the autonomic level: regulation is not about executing a fixed routine but about developing the capacity to produce adaptive responses to variable conditions. A CRNA does not perform the same anesthetic twice — each case requires a novel coordination of the same fundamental skills, just as each movement is a novel coordination of the same degrees of freedom.

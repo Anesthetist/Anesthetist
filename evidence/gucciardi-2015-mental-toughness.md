@@ -47,6 +47,10 @@ Gucciardi, Gordon, and Dimmock (2015) addressed the conceptual and measurement c
 - Contributes to resolving the "jangle fallacy" in the mental toughness/resilience/hardiness literature
 - Later work (Gucciardi et al., 2021) extended to workplace and clinical populations
 
+## Design Constraint
+
+**If mental toughness is treated as a trait (you have it or you don't), training is pointless. It must be operationalized as trainable behaviors.**
+
 ## SRL Relevance
 
 Gucciardi's reconceptualization of mental toughness as a trainable, state-like capacity rather than a fixed trait validates SRL's entire premise: that the psychological resources needed for clinical performance under pressure can be systematically developed. The behavioral focus aligns with SRL's emphasis on observable regulatory skills rather than personality assessment.

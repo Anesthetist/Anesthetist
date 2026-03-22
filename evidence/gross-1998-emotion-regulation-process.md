@@ -48,6 +48,10 @@ James Gross (1998) established the **process model of emotion regulation**, whic
 - Extended model (Gross, 2015) added valuation systems and a three-stage regulation cycle (identification, selection, implementation)
 - Does not fully account for automatic/implicit emotion regulation or embodied/somatic regulation strategies
 
+## Design Constraint
+
+**If the system teaches only cognitive reappraisal, it will fail under high arousal. Must include bottom-up (somatic) regulation as the first-line strategy.**
+
 ## SRL Relevance
 
 Gross's process model provides the scientific scaffolding for understanding *where* SRL interventions operate in the emotion generation timeline. Gap Moment Training™ targets primarily **attentional deployment** (redirecting attention to interoceptive signals) and **cognitive change** (reframing the meaning of physiological arousal). The key SRL insight that Gross's model supports: antecedent-focused strategies are more effective, and [[anterocept]] — catching the emotion before it fully develops — is the ultimate antecedent-focused intervention.

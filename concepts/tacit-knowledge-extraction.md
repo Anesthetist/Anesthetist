@@ -18,6 +18,7 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-cross-reference-cedric-chin
 - urn:srl:evidence:schon-1983-reflective-practitioner
 - urn:srl:evidence:nonaka-takeuchi-1995-knowledge-creating
+- urn:srl:evidence:reber-1989-implicit-learning
 skos:broader: []
 skos:narrower: []
 skos:related:

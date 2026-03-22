@@ -43,6 +43,10 @@ Edwin Hutchins (1995) studied navigation aboard a U.S. Navy ship to develop the 
 - Extended to cockpit studies (Hutchins & Klausen, 1996) — directly relevant to clinical team performance
 - Foundational text in cognitive science, human-computer interaction, and CSCW (Computer-Supported Cooperative Work)
 
+## Design Constraint
+
+**If the system requires all intelligence to reside in the user's head, it has failed to distribute cognition across tools, team, and environment.**
+
 ## SRL Relevance
 
 The OR/anesthesia environment is a distributed cognitive system par excellence. The CRNA's expertise is not solely individual — it is distributed across monitors, alarms, the surgical team's verbal communication, the physical layout of the room, and the patient's physiology. [[embodied-clinical-intelligence]] in practice is always distributed cognition.
