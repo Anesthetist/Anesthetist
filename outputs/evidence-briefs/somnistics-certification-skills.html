@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 7 Essential Skills for Somnistics Certification | Somnistics Research Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --dark-navy: #1A1C2E;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --sage-glow: rgba(95, 200, 155, 0.15);
+  --sage-border: rgba(95, 200, 155, 0.35);
+  --white: #FFFFFF;
+  --offwhite: #F7F8FA;
+  --text: #22253A;
+  --text-mid: #4A4D5C;
+  --text-light: #6B6F7E;
+  --border: #E0E0DB;
+  --green: #2E8B57;
+  --green-bg: rgba(46,139,87,0.08);
+  --green-border: rgba(46,139,87,0.4);
+  --amber: #D4920A;
+  --amber-bg: rgba(212,146,10,0.08);
+  --amber-border: rgba(212,146,10,0.4);
+  --gray: #7A7D90;
+  --gray-bg: rgba(122,125,144,0.08);
+  --gray-border: rgba(122,125,144,0.4);
+  --red: #C0392B;
+  --red-bg: rgba(192,57,43,0.06);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--white); color: var(--text); letter-spacing: -0.025em; line-height: 1.7; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 50%, #2a3a4a 100%);
+  color: var(--white);
+  padding: 64px 40px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(95,200,155,0.08) 0%, transparent 70%);
+}
+.hero-content { position: relative; max-width: 900px; margin: 0 auto; }
+.hero h1 {
+  font-family: 'Michroma', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.35;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.hero .tagline {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--sage);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.hero .meta {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+.hero .lead-text {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.82);
+  margin-top: 20px;
+  line-height: 1.75;
+  max-width: 780px;
+}
+
+/* Container */
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+/* Section */
+.section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section h2 {
+  font-family: 'Michroma', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+.section h3 {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+.section p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  color: var(--text-mid);
+}
+.section p:last-child { margin-bottom: 0; }
+.lead { font-size: 15px; font-weight: 400; color: var(--text); margin-bottom: 20px; }
+
+/* Summary Table */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 13px;
+}
+.summary-table th {
+  text-align: left;
+  padding: 12px 14px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 400;
+  font-size: 11px;
+  font-family: 'Michroma', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.summary-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--text-mid);
+}
+.summary-table tr:last-child td { border-bottom: none; }
+.summary-table .rank {
+  font-family: 'Michroma', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--navy);
+  text-align: center;
+  width: 40px;
+}
+.summary-table .skill-name {
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Evidence Badges */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge.meta-analytic {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid var(--green-border);
+}
+.badge.rct {
+  background: var(--sage-glow);
+  color: var(--sage-dim);
+  border: 1px solid var(--sage-border);
+}
+.badge.observational {
+  background: var(--amber-bg);
+  color: var(--amber);
+  border: 1px solid var(--amber-border);
+}
+.badge.hypothesis {
+  background: var(--gray-bg);
+  color: var(--gray);
+  border: 1px solid var(--gray-border);
+}
+
+/* Skill Cards */
+.skill-card {
+  background: var(--offwhite);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+.skill-card .card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.skill-card .rank-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Michroma', sans-serif;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+.skill-card .card-title-area {
+  flex: 1;
+}
+.skill-card .card-title {
+  font-family: 'Michroma', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+  color: var(--navy);
+}
+.skill-card .card-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+.skill-card .card-badge {
+  margin-left: 16px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+.skill-detail {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+}
+.skill-detail .detail-label {
+  font-family: 'Michroma', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage-dim);
+  margin-bottom: 6px;
+}
+.skill-detail .detail-text {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+.skill-detail .detail-text strong {
+  font-weight: 500;
+  color: var(--text);
+}
+.skill-detail.full {
+  grid-column: 1 / -1;
+}
+.skill-detail.earnings {
+  border-left: 3px solid var(--sage);
+}
+
+/* Why block */
+.why-block {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--navy);
+  margin-top: 16px;
+}
+.why-block .detail-label {
+  font-family: 'Michroma', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.why-block .detail-text {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+.why-block .citation {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Analogy Section */
+.analogy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.analogy-col {
+  padding: 14px 18px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.analogy-col:nth-child(odd) {
+  background: var(--navy);
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+}
+.analogy-col:nth-child(even) {
+  background: var(--offwhite);
+  color: var(--text-mid);
+}
+.analogy-header {
+  font-family: 'Michroma', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 18px !important;
+  font-weight: 400;
+}
+.analogy-header:nth-child(odd) {
+  color: var(--sage) !important;
+}
+.analogy-header:nth-child(even) {
+  color: var(--navy) !important;
+  background: var(--offwhite);
+}
+
+/* Stats Row */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.stat {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+}
+.stat .value {
+  font-family: 'Michroma', sans-serif;
+  font-size: 18px;
+  color: var(--sage);
+  margin-bottom: 4px;
+}
+.stat .label {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+
+/* Worth Section */
+.worth-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.worth-card {
+  background: var(--offwhite);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--sage);
+}
+.worth-card.mid { border-top-color: var(--amber); }
+.worth-card.high { border-top-color: var(--red); }
+.worth-card .worth-label {
+  font-family: 'Michroma', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.worth-card .worth-value {
+  font-family: 'Michroma', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--sage);
+  margin-bottom: 4px;
+}
+.worth-card.mid .worth-value { color: var(--amber); }
+.worth-card.high .worth-value { color: var(--red); }
+.worth-card .worth-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Loss Table */
+.loss-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+.loss-table th {
+  text-align: left;
+  padding: 10px 14px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 400;
+  font-size: 11px;
+  font-family: 'Michroma', sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.loss-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-mid);
+}
+.loss-table td.loss {
+  color: var(--red);
+  font-weight: 500;
+  text-align: right;
+}
+.loss-table td.gain {
+  color: var(--green);
+  font-weight: 500;
+  text-align: right;
+}
+.loss-table th:last-child { text-align: right; }
+.loss-table tr:last-child td {
+  border-bottom: 2px solid rgba(192,57,43,0.3);
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Callout */
+.callout {
+  background: var(--sage-glow);
+  border-left: 3px solid var(--sage);
+  padding: 20px 24px;
+  border-radius: 0 10px 10px 0;
+  margin: 24px 0;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+}
+.callout strong { font-weight: 500; }
+.callout.warning {
+  border-left-color: var(--amber);
+  background: var(--amber-bg);
+}
+.callout.critical {
+  border-left-color: var(--red);
+  background: var(--red-bg);
+}
+
+/* Quote Block */
+.quote-block {
+  background: var(--offwhite);
+  border-left: 3px solid var(--navy);
+  padding: 20px 24px;
+  border-radius: 0 10px 10px 0;
+  margin: 24px 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.7;
+}
+.quote-block .attribution {
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: normal;
+  margin-top: 8px;
+}
+
+/* Footer */
+.footer {
+  background: var(--dark-navy);
+  color: rgba(255,255,255,0.4);
+  padding: 32px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.footer .brand {
+  font-family: 'Michroma', sans-serif;
+  font-size: 11px;
+  color: var(--sage);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.footer .trademarks {
+  font-size: 10px;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px 0 8px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .hero { padding: 40px 20px 30px; }
+  .hero h1 { font-size: 20px; }
+  .container { padding: 0 16px; }
+  .skill-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .worth-grid { grid-template-columns: 1fr; }
+  .analogy-grid { grid-template-columns: 1fr; }
+  .analogy-col:nth-child(odd) { border-bottom: none; }
+  .skill-card .card-header { flex-direction: column; }
+  .skill-card .card-badge { margin-left: 0; margin-top: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>The 7 Essential Skills for<br>Somnistics Certification</h1>
+    <div class="tagline">Ranked by evidence-based impact on resilience, regulation, well-being, and lifetime earnings</div>
+    <div class="meta">Somnistics Research Labs &middot; Evidence Brief &middot; March 2026 &middot; SRL-EB-009</div>
+    <p class="lead-text">What if we treated nervous system competency the way we treat clinical competency &mdash; with measurable benchmarks, standardized assessments, and a credential that means something? These are the seven skills a Somnistics-certified clinician can <em>demonstrate</em>, not just describe. Each one is ranked by the strength of its evidence base and its downstream impact on the thing that matters most: a long, sustainable, high-performing career.</p>
+  </div>
+</div>
+
+<!-- SUMMARY TABLE -->
+<div class="container">
+  <div class="section">
+    <h2>Skills at a Glance</h2>
+    <p class="lead">Seven capabilities. Measurable. Trainable. Each one connected to a specific physiological mechanism, a specific assessment, and a specific career outcome.</p>
+
+    <div class="legend">
+      <div class="legend-item"><span class="badge meta-analytic">Meta-Analytic</span> Systematic review / meta-analysis</div>
+      <div class="legend-item"><span class="badge rct">RCT</span> Randomized controlled trial</div>
+      <div class="legend-item"><span class="badge observational">Observational</span> Observational / cohort study</div>
+      <div class="legend-item"><span class="badge hypothesis">Hypothesis</span> Mechanistic / emerging</div>
+    </div>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th style="width:40px">Rank</th>
+          <th>Skill</th>
+          <th>Core Mechanism</th>
+          <th style="text-align:center">Evidence</th>
+          <th style="text-align:right">Training Dose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank">1</td>
+          <td class="skill-name">Resonant Frequency Breathing</td>
+          <td>Direct HRV improvement (d=0.6&ndash;0.7)</td>
+          <td style="text-align:center"><span class="badge meta-analytic">Meta-Analytic</span></td>
+          <td style="text-align:right">10&ndash;15 min/day &times; 4 wks</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td class="skill-name">Diaphragmatic Engagement</td>
+          <td>Gateway skill &mdash; prerequisite for all others</td>
+          <td style="text-align:center"><span class="badge observational">Observational</span></td>
+          <td style="text-align:right">Daily, 2 wks to measurable gain</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td class="skill-name">Interoceptive Accuracy</td>
+          <td>Restores suppressed body signal detection</td>
+          <td style="text-align:center"><span class="badge rct">RCT</span></td>
+          <td style="text-align:right">Daily body-scan &times; 4 wks</td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td class="skill-name">State Transition Detection</td>
+          <td>Real-time autonomic state recognition</td>
+          <td style="text-align:center"><span class="badge observational">Observational</span></td>
+          <td style="text-align:right">21-day curriculum</td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="skill-name">Autonomic Home Base Recovery</td>
+          <td>Trained baseline return after disruption</td>
+          <td style="text-align:center"><span class="badge rct">RCT</span></td>
+          <td style="text-align:right">Established Week 1, refined ongoing</td>
+        </tr>
+        <tr>
+          <td class="rank">6</td>
+          <td class="skill-name">Adversity Visualization</td>
+          <td>Embodied pre-rehearsal of failure scenarios</td>
+          <td style="text-align:center"><span class="badge observational">Observational</span></td>
+          <td style="text-align:right">2&ndash;3 min daily, pre-shift</td>
+        </tr>
+        <tr>
+          <td class="rank">7</td>
+          <td class="skill-name">Co-Regulation Awareness</td>
+          <td>Physiological synchrony with team</td>
+          <td style="text-align:center"><span class="badge hypothesis">Hypothesis</span></td>
+          <td style="text-align:right">Introduced Week 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SKILL 1 -->
+  <div class="section" id="skill-1">
+    <div class="skill-card">
+      <div class="card-header">
+        <div style="display:flex; align-items:flex-start;">
+          <div class="rank-circle">1</div>
+          <div class="card-title-area">
+            <div class="card-title">Resonant Frequency Breathing</div>
+            <div class="card-subtitle">Find and train your personal resonant breathing frequency (~4.5&ndash;7 breaths/min)</div>
+          </div>
+        </div>
+        <div class="card-badge"><span class="badge meta-analytic">Meta-Analytic</span></div>
+      </div>
+
+      <div class="why-block">
+        <div class="detail-label">Why It Ranks #1</div>
+        <div class="detail-text">Resonant breathing directly improves heart rate variability with effect sizes of d=0.6&ndash;0.7 &mdash; the single best non-invasive marker of autonomic health. This is not a relaxation technique. It is a physiological training protocol that recalibrates baroreflex sensitivity and vagal tone. The evidence base is the strongest of any skill on this list: Laborde et al. (2022) synthesized 223 studies demonstrating HRV-biofeedback efficacy across clinical and performance populations.</div>
+        <div class="citation">Laborde et al. 2022 (223 studies); Lehrer 2000 (resonance frequency biofeedback)</div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-detail">
+          <div class="detail-label">Demonstrate</div>
+          <div class="detail-text">Achieve measurable <strong>RMSSD increase</strong> during a 2-minute resonant breathing test at the clinician's identified resonant frequency.</div>
+        </div>
+        <div class="skill-detail">
+          <div class="detail-label">Train</div>
+          <div class="detail-text"><strong>10&ndash;15 min/day for 4 weeks</strong> for durable autonomic change. Acute state shifts achievable in 60 seconds via NeuroMinute&trade; format.</div>
+        </div>
+        <div class="skill-detail full earnings">
+          <div class="detail-label">Earnings Impact</div>
+          <div class="detail-text">HRV biofeedback produced a <strong>30% reduction in Maslach Burnout Inventory scores</strong> among practicing CRNAs (Patel 2022). Lower burnout directly translates to longer careers. At $195K/year, each additional year of practice represents nearly $200,000 in preserved earnings. The cost of the training: minutes per day.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 2 -->
+  <div class="section" id="skill-2">
+    <div class="skill-card">
+      <div class="card-header">
+        <div style="display:flex; align-items:flex-start;">
+          <div class="rank-circle">2</div>
+          <div class="card-title-area">
+            <div class="card-title">Diaphragmatic Engagement</div>
+            <div class="card-subtitle">Voluntarily recruit the diaphragm instead of accessory muscles</div>
+          </div>
+        </div>
+        <div class="card-badge"><span class="badge observational">Observational</span></div>
+      </div>
+
+      <div class="why-block">
+        <div class="detail-label">Why It Ranks #2</div>
+        <div class="detail-text">In SRL field assessments, <strong>28 out of 30 anesthesia professionals</strong> could not engage their diaphragm on first assessment. These clinicians manage ventilators with precision &mdash; and cannot feel their own breath. This is diaphragmatic blindness: the most common interoceptive deficit and the gateway barrier to every other skill on this list. Nothing else works if you cannot breathe with your diaphragm. Correcting this deficit is the prerequisite for resonant breathing, HRV training, and all downstream autonomic regulation.</div>
+        <div class="citation">SRL field data (n=30); Kerr 2013 (somatosensory alpha modulation); Critchley 2017 (interoception-emotion coupling)</div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-detail">
+          <div class="detail-label">Demonstrate</div>
+          <div class="detail-text">Maximum nasal inhale duration <strong>&ge;8 seconds</strong> with confirmed diaphragmatic recruitment. Baseline with accessory muscles only: 4&ndash;5 seconds. The gap is measurable, visible, and correctable.</div>
+        </div>
+        <div class="skill-detail">
+          <div class="detail-label">Train</div>
+          <div class="detail-text"><strong>Daily practice, measurable improvement within 2 weeks.</strong> Haptic feedback (hand on belly) confirms diaphragmatic vs. thoracic recruitment. Week 1 of the certification curriculum.</div>
+        </div>
+        <div class="skill-detail full earnings">
+          <div class="detail-label">Earnings Impact</div>
+          <div class="detail-text">Restores the breathing pattern that medical training suppressed. Diaphragmatic blindness is the hidden curriculum's most measurable physiological artifact &mdash; and <strong>the first domino</strong> in the cascade from interoceptive suppression to burnout to early career exit.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 3 -->
+  <div class="section" id="skill-3">
+    <div class="skill-card">
+      <div class="card-header">
+        <div style="display:flex; align-items:flex-start;">
+          <div class="rank-circle">3</div>
+          <div class="card-title-area">
+            <div class="card-title">Interoceptive Accuracy</div>
+            <div class="card-subtitle">Detect and accurately interpret internal body signals &mdash; heartbeat, breath, tension, temperature</div>
+          </div>
+        </div>
+        <div class="card-badge"><span class="badge rct">RCT</span></div>
+      </div>
+
+      <div class="why-block">
+        <div class="detail-label">Why It Ranks #3</div>
+        <div class="detail-text">The Interoceptive Suppression Hypothesis holds that medical training systematically degrades the clinician's ability to read their own body signals. The MAIA-2 (Mehling 2012) provides a validated 8-subscale instrument to measure this degradation &mdash; and its reversal. Restoring interoceptive accuracy is the biological mechanism for preventing burnout: clinicians who can detect early signals of autonomic dysregulation can intervene before performance degrades. This is embodied metacognition &mdash; the capacity to monitor cognition through somatic signals rather than abstract thought.</div>
+        <div class="citation">Mehling 2012 (MAIA validation); Barrett 2017 (EPIC model); Critchley &amp; Garfinkel 2017</div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-detail">
+          <div class="detail-label">Demonstrate</div>
+          <div class="detail-text"><strong>MAIA-2 improvement in &ge;4 of 8 subscales</strong> (pre/post). Heartbeat detection accuracy above chance. Not perfect scores &mdash; baseline competency showing the clinician can notice, attend to, and regulate through body signals.</div>
+        </div>
+        <div class="skill-detail">
+          <div class="detail-label">Train</div>
+          <div class="detail-text"><strong>4 weeks of daily body-scan + signal tracking.</strong> Mode 1 of Structured Interoception Training (SIT): interoceptive attention exercises that rebuild the sensory channel medical education suppressed.</div>
+        </div>
+        <div class="skill-detail full earnings">
+          <div class="detail-label">Earnings Impact</div>
+          <div class="detail-text">Higher interoceptive accuracy = <strong>earlier detection of state drift</strong> = fewer clinical errors = longer career. The clinician who notices their shoulders rising before they consciously register anxiety has a structural advantage that compounds across every shift, every year, every decade.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 4 -->
+  <div class="section" id="skill-4">
+    <div class="skill-card">
+      <div class="card-header">
+        <div style="display:flex; align-items:flex-start;">
+          <div class="rank-circle">4</div>
+          <div class="card-title-area">
+            <div class="card-title">State Transition Detection</div>
+            <div class="card-subtitle">Recognize when your autonomic state has shifted &mdash; in real time, during clinical work</div>
+          </div>
+        </div>
+        <div class="card-badge"><span class="badge observational">Observational</span></div>
+      </div>
+
+      <div class="why-block">
+        <div class="detail-label">Why It Ranks #4</div>
+        <div class="detail-text">State drift is the progressive, often undetected loss of autonomic regulation during clinical work. Attention narrows, time perception compresses, vocal tone sharpens, and recovery between arousal spikes becomes incomplete. State drift is the <strong>proximal cause of most clinical errors</strong> &mdash; not ignorance, not incompetence, but the undetected slide from optimal to suboptimal autonomic state during performance. You cannot correct what you cannot detect.</div>
+        <div class="citation">SRL clinical observation (Graybeal, 28 years); Putnam 2025 (83% stress prevalence); Error Archetypes QRC</div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-detail">
+          <div class="detail-label">Demonstrate</div>
+          <div class="detail-text">Correctly identify autonomic state in <strong>4 of 5 clinical scenarios</strong>. Recognize own state shift within 30 seconds of a stressor. Classify: hyperarousal, hypoarousal, cognitive tunnel, dyspnea loop, or ready.</div>
+        </div>
+        <div class="skill-detail">
+          <div class="detail-label">Train</div>
+          <div class="detail-text"><strong>Embedded in the 21-day curriculum, tested at completion.</strong> Domain 1 of the Somnistics Readiness Battery (SRB-60): Gap Moment Literacy &mdash; detecting transitions and classifying autonomic state.</div>
+        </div>
+        <div class="skill-detail full earnings">
+          <div class="detail-label">Earnings Impact</div>
+          <div class="detail-text">&ldquo;Most events aren't caused by ignorance. They're caused by state drift.&rdquo; Each undetected state drift episode carries error risk. Each error carries career risk. <strong>The clinician who can name their state in real time has a fundamentally different risk profile</strong> than the one who cannot.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5 -->
+  <div class="section" id="skill-5">
+    <div class="skill-card">
+      <div class="card-header">
+        <div style="display:flex; align-items:flex-start;">
+          <div class="rank-circle">5</div>
+          <div class="card-title-area">
+            <div class="card-title">Autonomic Home Base Recovery</div>
+            <div class="card-subtitle">Return to your trained baseline autonomic state after disruption &mdash; reliably, within 90 seconds</div>
+          </div>
+        </div>
+        <div class="card-badge"><span class="badge rct">RCT</span></div>
+      </div>
+
+      <div class="why-block">
+        <div class="detail-label">Why It Ranks #5</div>
+        <div class="detail-text">The autonomic home base is not &ldquo;calm.&rdquo; It is a <strong>trained, navigable coordinate</strong> in your nervous system's state space &mdash; built through practice, not innate. The home base has four operational components: recognition (you know what it feels like), navigation (you can get back to it), sustaining (you can maintain it under pressure), and switching (you can deliberately enter and exit). Without a home base, regulation is reactive rather than trained. The destination makes navigation possible.</div>
+        <div class="citation">Lehrer 2000 (resonance frequency training); SRL curriculum architecture (equal breathing as home base)</div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-detail">
+          <div class="detail-label">Demonstrate</div>
+          <div class="detail-text"><strong>HRV recovery test:</strong> return to within 10% of baseline RMSSD within 90 seconds after induced stressor (cognitive challenge or cold pressor). Measured, not self-reported.</div>
+        </div>
+        <div class="skill-detail">
+          <div class="detail-label">Train</div>
+          <div class="detail-text"><strong>Established during Week 1, refined throughout the 21-day curriculum.</strong> Equal breathing becomes home base &mdash; the pattern you return to between more intense practices. You need to know what &ldquo;balanced&rdquo; feels like to navigate to it quickly.</div>
+        </div>
+        <div class="skill-detail full earnings">
+          <div class="detail-label">Earnings Impact</div>
+          <div class="detail-text">Faster recovery = less cumulative allostatic load = more career years. McEwan (2007) demonstrated that allostatic load produces structural brain changes that are <strong>initially reversible but become permanent</strong>. Every incomplete recovery cycle shifts the baseline. Every shift compounds. The home base interrupts this cascade.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 6 -->
+  <div class="section" id="skill-6">
+    <div class="skill-card">
+      <div class="card-header">
+        <div style="display:flex; align-items:flex-start;">
+          <div class="rank-circle">6</div>
+          <div class="card-title-area">
+            <div class="card-title">Adversity Visualization</div>
+            <div class="card-subtitle">Pre-rehearse failure scenarios with embodied autonomic response, not just cognitive planning</div>
+          </div>
+        </div>
+        <div class="card-badge"><span class="badge observational">Observational</span></div>
+      </div>
+
+      <div class="why-block">
+        <div class="detail-label">Why It Ranks #6</div>
+        <div class="detail-text">The body that has already rehearsed a crisis does not go into fight-or-flight when the crisis arrives. Modeled on the Blue Angels pre-flight protocol: pilots physically move through maneuvers in their bodies while still on the ground. This is not visualization in the motivational sense. It is <strong>motor imagery that engages premotor cortex, supplementary motor area, and cerebellum</strong>. The seven-step failure visualization protocol includes not just cognitive planning but autonomic pre-rehearsal &mdash; the weight of the laryngoscope, the resistance of the syringe plunger, the rhythm of ventilation. This is the active ingredient in PTSD prehabilitation.</div>
+        <div class="citation">Blue Angels protocol (embodied visualization); Shalev 2012 (early PTSD prevention); SRL clinical practice (28 years)</div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-detail">
+          <div class="detail-label">Demonstrate</div>
+          <div class="detail-text">Complete a pre-case visualization protocol and show <strong>reduced HR/HRV reactivity</strong> to subsequent stressor vs. unvisualized scenario. The autonomic system demonstrates it has &ldquo;been there before.&rdquo;</div>
+        </div>
+        <div class="skill-detail">
+          <div class="detail-label">Train</div>
+          <div class="detail-text"><strong>Daily, 2&ndash;3 minutes, incorporated into pre-shift routine.</strong> The seven-step failure visualization protocol: visualize the case, introduce a failure, identify first signals, map pathophysiology, branch options, commit, rehearse every step of the response.</div>
+        </div>
+        <div class="skill-detail full earnings">
+          <div class="detail-label">Earnings Impact</div>
+          <div class="detail-text">Fewer errors, faster recovery from adverse events, <strong>reduced PTSD risk</strong>. There is no prehabilitative framework for PTSD prevention in widespread clinical use. Each traumatic encoding that converts a stressor into a wound rather than a training rep increases the probability of early career exit. Adversity visualization intervenes upstream.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 7 -->
+  <div class="section" id="skill-7">
+    <div class="skill-card">
+      <div class="card-header">
+        <div style="display:flex; align-items:flex-start;">
+          <div class="rank-circle">7</div>
+          <div class="card-title-area">
+            <div class="card-title">Co-Regulation Awareness</div>
+            <div class="card-subtitle">Recognize and participate in physiological synchrony with team members</div>
+          </div>
+        </div>
+        <div class="card-badge"><span class="badge hypothesis">Hypothesis</span></div>
+      </div>
+
+      <div class="why-block">
+        <div class="detail-label">Why It Ranks #7</div>
+        <div class="detail-text">The OR team's collective autonomic state affects patient outcomes. A dysregulated provider dysregulates the team. Co-regulation awareness extends the Somnistics framework from individual practice to collective performance: shared breathing, attentional alignment, and collective state awareness. This is the most emergent skill on the list &mdash; the mechanistic evidence is strong (Porges 2011, polyvagal theory), but the direct application to surgical team performance remains hypothesis-level. It is included because a certified practitioner who can regulate only themselves has done half the work.</div>
+        <div class="citation">Porges 2011 (polyvagal theory / social engagement system); Wilbanks 2025 (safety culture and burnout)</div>
+      </div>
+
+      <div class="skill-grid">
+        <div class="skill-detail">
+          <div class="detail-label">Demonstrate</div>
+          <div class="detail-text"><strong>Teach one Gap Moment Training&trade; drill to a colleague.</strong> Demonstrate a shared breathing protocol with a partner. The skill is transmissible, not just personal &mdash; proving the shared language works.</div>
+        </div>
+        <div class="skill-detail">
+          <div class="detail-label">Train</div>
+          <div class="detail-text"><strong>Introduced in Week 3</strong> of the certification curriculum. Builds on the foundation of Skills 1&ndash;6: you cannot co-regulate what you cannot self-regulate.</div>
+        </div>
+        <div class="skill-detail full earnings">
+          <div class="detail-label">Earnings Impact</div>
+          <div class="detail-text">Better team dynamics = less workplace incivility = less burnout = longer career. <strong>A dysregulated team is a turnover factory.</strong> A certified practitioner who stabilizes their OR environment creates a multiplier effect that extends careers across the entire team, not just their own.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRESIDENTIAL FITNESS TEST ANALOGY -->
+  <div class="section">
+    <h2>The Presidential Fitness Test Analogy</h2>
+    <p class="lead">Every American kid knew the presidential fitness test. It created measurable benchmarks, shared language, a credential, and normalization. The Somnistics Certification does the same thing for nervous system competency.</p>
+
+    <div class="analogy-grid">
+      <div class="analogy-col analogy-header">Presidential Fitness</div>
+      <div class="analogy-col analogy-header">Somnistics Certification</div>
+
+      <div class="analogy-col">Pull-ups</div>
+      <div class="analogy-col">Maximum nasal inhale duration (diaphragmatic engagement)</div>
+
+      <div class="analogy-col">Sit-and-reach</div>
+      <div class="analogy-col">MAIA-2 subscale scores (interoceptive flexibility)</div>
+
+      <div class="analogy-col">Mile run</div>
+      <div class="analogy-col">HRV recovery time after stressor (autonomic endurance)</div>
+
+      <div class="analogy-col">Shuttle run</div>
+      <div class="analogy-col">Clinical scenario response accuracy (performance under pressure)</div>
+
+      <div class="analogy-col">The certificate</div>
+      <div class="analogy-col">Somnistics Certified Practitioner (SCP)</div>
+    </div>
+
+    <div class="callout">
+      <strong>The key insight:</strong> The presidential fitness test did not ask &ldquo;Do you exercise?&rdquo; It asked &ldquo;Can you do this?&rdquo; The Somnistics Certification does not ask &ldquo;Do you practice self-care?&rdquo; It asks: <strong>&ldquo;Can you demonstrate nervous system competency under measurement?&rdquo;</strong>
+    </div>
+
+    <p>This is the difference between wellness and professional practice. Wellness is optional, subjective, and unmeasured. Professional practice is required, objective, and assessed. Somnistics Certification makes autonomic self-regulation a professional skill &mdash; not a lifestyle choice.</p>
+  </div>
+
+  <!-- WHAT THIS IS WORTH -->
+  <div class="section">
+    <h2>What This Is Worth</h2>
+    <p class="lead">The economics of clinician durability are not abstract. They are a multiplication problem: annual salary &times; years in practice. Every variable that extends career duration multiplies lifetime earnings by $195,000 per year.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="value">$195K</div>
+        <div class="label">Median CRNA<br>Annual Salary</div>
+      </div>
+      <div class="stat">
+        <div class="value">68%</div>
+        <div class="label">Burnout<br>Prevalence</div>
+      </div>
+      <div class="stat">
+        <div class="value">22%</div>
+        <div class="label">PTSD<br>Prevalence</div>
+      </div>
+      <div class="stat">
+        <div class="value">$3.9M</div>
+        <div class="label">15 vs. 30 Year<br>Career Delta</div>
+      </div>
+    </div>
+
+    <h3>Career Extension Math</h3>
+    <div class="worth-grid">
+      <div class="worth-card">
+        <div class="worth-label">+1 Year of Practice</div>
+        <div class="worth-value">$195K</div>
+        <div class="worth-desc">Pre-tax earnings preserved</div>
+      </div>
+      <div class="worth-card mid">
+        <div class="worth-label">+3 Years of Practice</div>
+        <div class="worth-value">$585K</div>
+        <div class="worth-desc">Pre-tax earnings preserved</div>
+      </div>
+      <div class="worth-card high">
+        <div class="worth-label">+5 Years of Practice</div>
+        <div class="worth-value">$975K</div>
+        <div class="worth-desc">Pre-tax earnings preserved</div>
+      </div>
+    </div>
+
+    <h3>The Cost of NOT Training These Skills</h3>
+    <table class="loss-table">
+      <thead>
+        <tr>
+          <th>Untrained Skill</th>
+          <th>Downstream Risk</th>
+          <th style="text-align:right">Estimated Career Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Resonant Breathing</td>
+          <td>Unmanaged HRV decline, accelerated burnout</td>
+          <td class="loss">$195K&ndash;$585K</td>
+        </tr>
+        <tr>
+          <td>Diaphragmatic Engagement</td>
+          <td>All downstream skills fail &mdash; no foundation</td>
+          <td class="loss">Total cascade risk</td>
+        </tr>
+        <tr>
+          <td>Interoceptive Accuracy</td>
+          <td>Undetected state drift, error accumulation</td>
+          <td class="loss">$195K&ndash;$975K</td>
+        </tr>
+        <tr>
+          <td>State Transition Detection</td>
+          <td>Clinical errors from unrecognized autonomic state</td>
+          <td class="loss">Career-ending event risk</td>
+        </tr>
+        <tr>
+          <td>Home Base Recovery</td>
+          <td>Cumulative allostatic load, irreversible brain changes</td>
+          <td class="loss">$390K&ndash;$975K</td>
+        </tr>
+        <tr>
+          <td>Adversity Visualization</td>
+          <td>PTSD from unrehearesed critical incidents</td>
+          <td class="loss">$195K&ndash;$3.9M</td>
+        </tr>
+        <tr>
+          <td>Co-Regulation</td>
+          <td>Team dysregulation, workplace incivility, turnover</td>
+          <td class="loss">$200K&ndash;$300K per departure</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout warning">
+      <strong>For the hospital CFO:</strong> Every CRNA who leaves costs the system $200,000&ndash;$300,000 in replacement costs &mdash; recruiting, credentialing, onboarding, lost productivity during transition. A facility with 20 CRNAs losing 2 per year to burnout-driven attrition is spending $400K&ndash;$600K annually on preventable turnover. Training these seven skills costs a fraction of a single replacement.
+    </div>
+
+    <div class="callout critical">
+      <strong>The compounding problem:</strong> Allostatic load produces structural brain changes that are initially reversible but become permanent (McEwan 2007). Burnout prevalence reaches 68% (Smith 2021). PTSD prevalence reaches 22% (Lee 2020). 83% of anesthesiology residents report a stressful event within 30 days (Putnam 2025). <strong>The window for prehabilitative intervention is early and finite.</strong> These skills must be trained before the damage accumulates &mdash; not after.
+    </div>
+  </div>
+
+  <!-- THE STANDARD -->
+  <div class="section">
+    <h2>The Standard That Does Not Yet Exist</h2>
+    <p class="lead">Hand hygiene. ACLS. Presidential fitness. Every domain that matters has a competency standard. Autonomic self-regulation &mdash; the physiological foundation of clinical performance &mdash; does not. Somnistics Certification fills that gap.</p>
+
+    <div class="quote-block">
+      You would never skip pre-flight checks on a $30 million aircraft. You would never omit a pre-induction assessment on a patient. Why would you skip a daily systems check on a $6 million career?
+    </div>
+
+    <p>These seven skills are not wellness. They are not self-care. They are not optional resilience programs that clinicians attend once and forget. They are <strong>measurable, trainable, assessable capabilities</strong> that form the physiological infrastructure of a sustainable clinical career. The literature demonstrates that the mechanisms exist. The interventions exist. The measurement tools exist. What does not yet exist is the standard that integrates them into professional practice.</p>
+
+    <p>That is what Somnistics Certification creates: the first professional standard for autonomic competency in healthcare.</p>
+
+    <div class="stats" style="margin-top: 28px;">
+      <div class="stat">
+        <div class="value">7</div>
+        <div class="label">Essential Skills<br>Measurable</div>
+      </div>
+      <div class="stat">
+        <div class="value">21</div>
+        <div class="label">Day Curriculum<br>CE-Accredited</div>
+      </div>
+      <div class="stat">
+        <div class="value">60s</div>
+        <div class="label">NeuroMinute&trade;<br>Training Format</div>
+      </div>
+      <div class="stat">
+        <div class="value">SCP</div>
+        <div class="label">Credential<br>Earned</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="brand">SOMNISTICS CERTIFICATION</div>
+  <div class="trademarks">Pausality&trade; &middot; NeuroMinute&trade; &middot; Gap Moment Training&trade; &middot; Anterocept&trade;</div>
+  <div>Prehabilitative Mental Hygiene Standard &middot; Somnistics Research Labs &middot; March 2026</div>
+  <div style="margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    This brief synthesizes published research and SRL field data. All cited statistics reference their original sources. This document describes the evidence landscape and does not constitute medical or financial advice. Individual outcomes vary.
+  </div>
+</div>
+
+</body>
+</html>
