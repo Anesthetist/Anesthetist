@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EEG Brain Mapping — What We're Measuring and Why</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #22253A;
+  --dark-navy: #1A1C2E;
+  --sage: #5FC89B;
+  --sage-dim: #4aa87e;
+  --sage-glow: rgba(95, 200, 155, 0.12);
+  --white: #FFFFFF;
+  --offwhite: #F7F8FA;
+  --text: #22253A;
+  --text-mid: #4A4D5C;
+  --text-light: #6B6F7E;
+  --border: #E0E0DB;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--white); color: var(--text); letter-spacing: -0.025em; max-width: 800px; margin: 0 auto; }
+
+/* Header band */
+.header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 32px 40px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.header-left .brand { font-family: 'Michroma', sans-serif; font-size: 9px; color: var(--sage); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
+.header-left h1 { font-family: 'Michroma', sans-serif; font-weight: 400; font-size: 20px; line-height: 1.3; }
+.header-right { text-align: right; font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+.body-content { padding: 28px 40px 20px; }
+
+/* Intro */
+.intro { font-size: 14px; line-height: 1.75; color: var(--text-mid); margin-bottom: 24px; }
+.intro strong { font-weight: 500; color: var(--text); }
+
+/* Two column layout */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+
+/* Section headers */
+.sh { font-family: 'Michroma', sans-serif; font-size: 10px; color: var(--sage); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+
+/* Sensor diagram */
+.sensor-map {
+  background: var(--offwhite);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.sensor-map svg { max-width: 200px; margin: 0 auto 12px; display: block; }
+.sensor-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; text-align: left; font-size: 11px; color: var(--text-mid); }
+.sensor-legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--sage); margin-right: 6px; vertical-align: middle; }
+
+/* Metric cards */
+.metric-stack { display: flex; flex-direction: column; gap: 10px; }
+.mc {
+  background: var(--offwhite);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.mc h4 { font-weight: 500; font-size: 13px; margin-bottom: 2px; }
+.mc p { font-size: 11px; color: var(--text-light); line-height: 1.55; margin: 0; }
+
+/* Bottom sections */
+.bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 20px; }
+
+/* What you see */
+.state-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+.state-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--text-mid);
+}
+.state-badge {
+  font-family: 'Michroma', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: var(--white);
+  min-width: 48px;
+  text-align: center;
+}
+.state-badge.high { background: var(--sage-dim); }
+.state-badge.mid { background: #6B8FBF; }
+.state-badge.low { background: #BF8F6B; }
+.state-badge.deep { background: #8B7BBF; }
+
+/* Callout */
+.callout {
+  background: var(--sage-glow);
+  border-left: 3px solid var(--sage);
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.callout strong { font-weight: 500; }
+
+/* Timeline */
+.timeline-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.tl-step {
+  flex: 1;
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--white);
+  text-align: center;
+}
+.tl-step .tl-num { font-family: 'Michroma', sans-serif; font-size: 9px; color: var(--sage); margin-bottom: 4px; }
+.tl-step .tl-label { font-size: 11px; font-weight: 400; }
+.tl-step .tl-time { font-size: 9px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 16px 40px;
+  font-size: 9px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+@media print {
+  body { max-width: 100%; }
+  .header { padding: 20px 30px; }
+  .body-content { padding: 20px 30px; }
+}
+@media (max-width: 600px) {
+  .header { flex-direction: column; align-items: flex-start; padding: 24px; }
+  .body-content { padding: 20px; }
+  .two-col, .bottom-grid { grid-template-columns: 1fr; }
+  .timeline-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand">Somnistics Research Labs</div>
+    <h1>EEG Brain Mapping</h1>
+  </div>
+  <div class="header-right">
+    Prepared for Massimo<br>
+    Performance Edge Program
+  </div>
+</div>
+
+<div class="body-content">
+
+  <p class="intro">During your assessment, we place a lightweight headband on your forehead and behind your ears. <strong>Four sensors read your brain's electrical activity in real time</strong> &mdash; the same technology used in clinical neuroscience research, scaled to a device the size of a pair of sunglasses. No gel, no wires, no discomfort. The reading takes about 7 minutes across three conditions.</p>
+
+  <div class="two-col">
+
+    <!-- Left: sensor map -->
+    <div>
+      <div class="sh">Where the Sensors Sit</div>
+      <div class="sensor-map">
+        <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+          <!-- Head outline -->
+          <ellipse cx="100" cy="110" rx="72" ry="85" fill="none" stroke="#22253A" stroke-width="1.5" opacity="0.2"/>
+          <!-- Nose -->
+          <path d="M100 25 L95 35 L105 35 Z" fill="none" stroke="#22253A" stroke-width="1" opacity="0.15"/>
+          <!-- Ears -->
+          <ellipse cx="28" cy="115" rx="6" ry="14" fill="none" stroke="#22253A" stroke-width="1" opacity="0.15"/>
+          <ellipse cx="172" cy="115" rx="6" ry="14" fill="none" stroke="#22253A" stroke-width="1" opacity="0.15"/>
+          <!-- Sensor positions -->
+          <!-- TP9 - left ear -->
+          <circle cx="38" cy="115" r="8" fill="#5FC89B" opacity="0.85"/>
+          <text x="38" y="118" text-anchor="middle" font-size="7" font-weight="600" fill="#22253A">TP9</text>
+          <!-- AF7 - left forehead -->
+          <circle cx="72" cy="52" r="8" fill="#5FC89B" opacity="0.85"/>
+          <text x="72" y="55" text-anchor="middle" font-size="7" font-weight="600" fill="#22253A">AF7</text>
+          <!-- AF8 - right forehead -->
+          <circle cx="128" cy="52" r="8" fill="#5FC89B" opacity="0.85"/>
+          <text x="128" y="55" text-anchor="middle" font-size="7" font-weight="600" fill="#22253A">AF8</text>
+          <!-- TP10 - right ear -->
+          <circle cx="162" cy="115" r="8" fill="#5FC89B" opacity="0.85"/>
+          <text x="162" y="118" text-anchor="middle" font-size="7" font-weight="600" fill="#22253A">TP10</text>
+          <!-- Center reference -->
+          <circle cx="100" cy="48" r="3" fill="#22253A" opacity="0.15"/>
+          <!-- Label: front -->
+          <text x="100" y="18" text-anchor="middle" font-size="8" fill="#6B6F7E" font-style="italic">front</text>
+          <text x="100" y="210" text-anchor="middle" font-size="8" fill="#6B6F7E" font-style="italic">back</text>
+        </svg>
+        <div class="sensor-legend">
+          <div><span class="dot"></span>AF7 &mdash; Left forehead</div>
+          <div><span class="dot"></span>AF8 &mdash; Right forehead</div>
+          <div><span class="dot"></span>TP9 &mdash; Left ear</div>
+          <div><span class="dot"></span>TP10 &mdash; Right ear</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: what we measure -->
+    <div>
+      <div class="sh">What We Measure</div>
+      <div class="metric-stack">
+        <div class="mc">
+          <h4>Alpha / Theta Ratio</h4>
+          <p>The balance between focused calm (alpha waves, 8&ndash;13 Hz) and early fatigue or drift (theta waves, 4&ndash;8 Hz). High ratio = sharp and regulated. Low ratio = your brain is signaling fatigue before you feel it.</p>
+        </div>
+        <div class="mc">
+          <h4>Frontal Alpha Asymmetry</h4>
+          <p>Compares left vs. right forehead activity. Left-dominant alpha = approach motivation, engagement. Right-dominant = withdrawal, avoidance. Tells us your default motivational stance before a race.</p>
+        </div>
+        <div class="mc">
+          <h4>Band Power Spectrum</h4>
+          <p>Full breakdown across five frequency bands: Delta (deep recovery), Theta (drowsiness/creativity), Alpha (calm focus), Beta (active thinking), Gamma (peak processing). Your brain's energy budget.</p>
+        </div>
+        <div class="mc">
+          <h4>Cognitive Load Response</h4>
+          <p>How your brain waves change under pressure. We compare resting state to a simulated cognitive challenge. If theta spikes under load, your brain fatigues faster than it should &mdash; and that's trainable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What the numbers mean -->
+  <div class="sh">What Your Alpha/Theta Ratio Tells Us</div>
+  <div class="state-bar" style="margin-bottom: 24px;">
+    <div class="state-row"><span class="state-badge high">&gt; 1.5</span> <strong>Focused calm.</strong> Alpha dominant. Nervous system regulated, ready for precision work. The target state for race-day.</div>
+    <div class="state-row"><span class="state-badge mid">1.0 &ndash; 1.5</span> <strong>Alert.</strong> Balanced alpha and theta. Normal waking state. Functional but not optimized.</div>
+    <div class="state-row"><span class="state-badge low">0.6 &ndash; 1.0</span> <strong>Theta rising.</strong> Early cognitive fatigue. Lap times start getting inconsistent here &mdash; before you feel tired.</div>
+    <div class="state-row"><span class="state-badge deep">&lt; 0.6</span> <strong>Theta dominant.</strong> Deep fatigue, drowsiness, or inward focus. In a race car, this is the danger zone.</div>
+  </div>
+
+  <div class="callout">
+    <strong>The insight for racing:</strong> Theta intrusion under load is the invisible performance thief. Your lap times degrade, your reaction time slows, your peripheral vision narrows &mdash; and you don't notice because it happens below conscious awareness. The EEG makes it visible. Once it's visible, it's trainable.
+  </div>
+
+  <!-- How the session works -->
+  <div class="sh">How the EEG Session Works</div>
+  <div class="timeline-row">
+    <div class="tl-step">
+      <div class="tl-num">01</div>
+      <div class="tl-label">Eyes Closed</div>
+      <div class="tl-time">2 min</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-num">02</div>
+      <div class="tl-label">Eyes Open</div>
+      <div class="tl-time">2 min</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-num">03</div>
+      <div class="tl-label">Cognitive Load</div>
+      <div class="tl-time">3 min</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-num">04</div>
+      <div class="tl-label">Analysis</div>
+      <div class="tl-time">instant</div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div>
+      <div class="sh">The Device</div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.65">
+        <strong style="font-weight:500">Muse 2</strong> &mdash; research-validated consumer EEG headband. 4 channels, 256 samples/second. Used in over 200 peer-reviewed studies. Weighs 36 grams. Sits comfortably on the forehead with sensors behind each ear. No gel, no preparation, no discomfort. Data processed through BrainFlow (open-source, used by universities and research labs worldwide) and MNE-Python (the gold standard for EEG analysis in neuroscience).
+      </p>
+    </div>
+    <div>
+      <div class="sh">What You Get</div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.65">
+        <strong style="font-weight:500">Full brain activity report</strong> &mdash; your band power spectrum across all four channels, alpha/theta ratio at rest and under load, frontal asymmetry score with interpretation, and a comparison to published normative ranges. At Week 6, we run it again and overlay the results. You see exactly what changed in your brain activity after 6 weeks of training.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  &copy; 2026 Somnistics Research Labs, Inc. &mdash; Pausality&trade; is a trademark of Somnistics, Inc. &mdash; Confidential<br>
+  EEG assessment is for wellness and informational purposes only. It is not a medical diagnostic tool and does not diagnose, treat, cure, or prevent any disease or condition. Brain activity data is interpreted in the context of published neuroscience research and does not constitute a medical evaluation.
+</div>
+
+</body>
+</html>
