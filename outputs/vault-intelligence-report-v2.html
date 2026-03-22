@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Social / OG -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vault Intelligence Report | Leading Edge Vol. 2">
+<meta property="og:description" content="5-day marathon session: 57 commits, 152 concepts, 12 BioMistral queries, 9 evidence briefs. What changed, what survived, and what to do next.">
+<meta property="og:site_name" content="Somnistics Research Labs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vault Intelligence Report | Leading Edge Vol. 2">
+<meta name="twitter:description" content="5-day marathon session: 57 commits, 152 concepts, 12 BioMistral queries, 9 evidence briefs. What changed, what survived, and what to do next.">
+
+<title>SRL Vault Intelligence Report | Leading Edge Members — Vol. 2</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #22253A;
+    --navy-deep: #181A28;
+    --navy-mid: #1D1F30;
+    --sage: #5FC89B;
+    --clearwater: #3A61AD;
+    --ocean: #1479B6;
+    --light-sage: #96F0BE;
+    --cream: #F0F0EA;
+    --body-text: #B0B3C4;
+    --caption: #6B6F82;
+    --card: #272A3E;
+    --card-raised: #2E3148;
+    --card-border: rgba(95,200,155,0.07);
+    --border-subtle: rgba(255,255,255,0.04);
+    --border-sage: rgba(95,200,155,0.12);
+    --warm-red: #E85D4A;
+    --glow: rgba(95,200,155,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--navy-deep);
+    color: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.25;
+  }
+
+  /* ══════ Gradient top bar ══════ */
+  .topbar {
+    height: 3px;
+    background: linear-gradient(90deg, #3A61AD 0%, #1479B6 25%, #5FC89B 60%, #96F0BE 100%);
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  /* ══════ Sticky nav ══════ */
+  .nav {
+    background: rgba(24,26,40,0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 14px 0;
+    position: sticky; top: 3px; z-index: 99;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo svg { height: 22px; width: auto; opacity: 0.85; }
+  .nav-vol {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--sage);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ══════ Hero ══════ */
+  .hero {
+    background: var(--navy);
+    padding: 72px 32px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--sage) 50%, transparent 100%);
+    opacity: 0.15;
+  }
+  .hero-ekg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.03;
+    pointer-events: none;
+  }
+  .hero-ekg svg { width: 100%; height: 100%; }
+  .hero-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    position: relative; z-index: 1;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(95,200,155,0.08);
+    border: 1px solid rgba(95,200,155,0.18);
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--sage);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-title {
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 4px;
+  }
+  .hero-title em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--light-sage) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--body-text);
+    margin-top: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.025em;
+    max-width: 520px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--caption);
+  }
+  .hero-meta-item span { color: var(--sage); font-weight: 400; }
+
+  /* ══════ Stats strip ══════ */
+  .stats-strip {
+    background: var(--card);
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .stats-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .stat { text-align: left; }
+  .stat-num {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--sage);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--caption);
+    margin-top: 3px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ══════ Main content ══════ */
+  .main {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 44px 32px 72px;
+  }
+
+  /* Intro paragraph */
+  .intro {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--body-text);
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border-sage);
+  }
+
+  /* ══════ Jump nav ══════ */
+  .jump-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .jump-tag {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--body-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .jump-tag:hover {
+    background: var(--sage);
+    border-color: var(--sage);
+    color: var(--navy);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(95,200,155,0.2);
+  }
+
+  /* ══════ Priority callout ══════ */
+  .priority {
+    background: var(--card);
+    border: 1px solid var(--border-sage);
+    border-left: 3px solid var(--sage);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 36px;
+    position: relative;
+  }
+  .priority-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+  .priority-body {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.55;
+    letter-spacing: -0.025em;
+  }
+
+  /* ══════ Section cards ══════ */
+  .section {
+    background: var(--card);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .section:hover {
+    border-color: var(--border-sage);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  }
+  .section-header {
+    padding: 20px 28px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .section-badge {
+    width: 36px; height: 36px;
+    background: rgba(95,200,155,0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--sage);
+  }
+  .section-num {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+  .section-title {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--cream);
+    margin-top: 1px;
+  }
+  .section-body { padding: 4px 28px 20px; }
+
+  /* ══════ Source items ══════ */
+  .source {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .source:last-child { border-bottom: none; padding-bottom: 0; }
+  .source-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .source-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--cream);
+    border-bottom: 1px solid rgba(95,200,155,0.3);
+    padding-bottom: 1px;
+  }
+  .source a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(95,200,155,0.3);
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .source a:hover {
+    color: var(--sage);
+    border-color: var(--sage);
+  }
+  .source-date {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--caption);
+    white-space: nowrap;
+  }
+  .source-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--body-text);
+    margin-top: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  /* ══════ Risk tag ══════ */
+  .risk-tag {
+    display: inline-block;
+    background: rgba(232,93,74,0.12);
+    border: 1px solid rgba(232,93,74,0.25);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--warm-red);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-left: 8px;
+  }
+
+  /* ══════ Validated tag ══════ */
+  .valid-tag {
+    display: inline-block;
+    background: rgba(95,200,155,0.1);
+    border: 1px solid rgba(95,200,155,0.25);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--sage);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-left: 8px;
+  }
+
+  /* ══════ Action Stack ══════ */
+  .actions {
+    background: var(--card);
+    border: 1px solid var(--border-sage);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-top: 36px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .actions-ekg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.025;
+    pointer-events: none;
+  }
+  .actions-ekg svg { width: 100%; height: 100%; }
+  .actions-title {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 22px;
+    position: relative; z-index: 1;
+  }
+  .horizon {
+    position: relative; z-index: 1;
+    margin-bottom: 18px;
+    padding-left: 16px;
+    border-left: 2px solid rgba(95,200,155,0.25);
+  }
+  .horizon:last-child { margin-bottom: 0; }
+  .horizon-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--sage);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .horizon-body {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.65;
+    letter-spacing: -0.02em;
+  }
+
+  /* ══════ Closing ══════ */
+  .closing {
+    background: var(--card);
+    border: 1px solid var(--border-sage);
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .closing-line {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.7;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .closing-line:last-child { margin-bottom: 0; }
+  .closing-line strong {
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--light-sage) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ══════ Footer ══════ */
+  .footer {
+    padding-top: 28px;
+    border-top: 1px solid var(--border-sage);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-left {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--caption);
+    line-height: 1.8;
+  }
+  .footer-left a {
+    color: var(--sage);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .footer-left a:hover { border-color: var(--sage); }
+  .footer-right { opacity: 0.4; }
+  .footer-right svg { height: 28px; width: auto; }
+
+  /* ══════ Mobile ══════ */
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 36px; }
+    .hero-title { font-size: 32px; }
+    .stats-strip { padding: 18px 20px; }
+    .stats-inner { gap: 12px; }
+    .stat-num { font-size: 24px; }
+    .main { padding: 28px 20px 56px; }
+    .section-header { padding: 18px 20px 12px; }
+    .section-body { padding: 4px 20px 18px; }
+    .actions { padding: 24px 20px; }
+    .priority { padding: 20px; }
+    .nav-inner { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<!-- Sticky nav -->
+<div class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <svg viewBox="0 0 201.91 47.97" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <linearGradient id="nav-grad" x1="5.12" y1="39.03" x2="38.33" y2="5.81" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#3a61ad"/>
+            <stop offset=".18" stop-color="#1479b6"/>
+            <stop offset=".52" stop-color="#58c09d"/>
+            <stop offset=".6" stop-color="#5fc89b"/>
+            <stop offset="1" stop-color="#96f0be"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#nav-grad)" d="M23.99.01h0C10.76,0,0,10.76,0,23.99s10.76,23.99,23.99,23.99v-6.28c11.46-.04,20.77-9.38,20.77-20.84S35.44.05,23.99.01ZM23.91,35v6.27c-9.5-.04-17.21-7.78-17.21-17.29S14.41,6.74,23.91,6.7h0c7.8,0,14.15,6.35,14.15,14.15s-6.35,14.15-14.15,14.15Z"/>
+        <path fill="#fff" d="M68.08,15.33c-2.55,0-5.88.56-7.41,1.25-.71.33-1.12.7-1.3,1.16-.13.33-.2.84-.2,1.53v22.4c0,.83.29,1.15,1.04,1.15h2.17c.53,0,1.22-.12,1.22-1.15v-7.33c.87.32,2.22.47,3.27.47,5.71,0,9.02-1.65,9.02-10.11,0-6.84-2.12-9.38-7.82-9.38ZM71.42,24.75c0,4.96-.96,6.17-4.86,6.17-.99,0-2.05-.16-2.52-.38h-.02c-.25-.1-.4-.21-.4-.97v-8.52c0-.36,0-.68.1-.88.05-.15.21-.29.46-.42.81-.36,2.21-.6,3.47-.6,2.89,0,3.78,1.31,3.78,5.59Z"/>
+        <path fill="#fff" d="M113.69,15.73h-2.32c-.68,0-1.08.43-1.08,1.15v12.4c0,.64-.13.84-.2.92-.19.22-.5.34-.59.37-.71.24-1.82.35-3.38.35-1.68,0-2.52-.32-2.82-1.07-.21-.45-.23-1.45-.23-2.27v-10.69c0-.73-.38-1.15-1.04-1.15h-2.36c-.69,0-1.04.39-1.04,1.15v11.24c0,1.53.06,3.09.48,4.13.67,1.77,2.62,2.56,6.32,2.56s6.2-.38,7.96-1.14c.92-.44,1.35-1.23,1.35-2.47v-14.32c0-.73-.38-1.15-1.04-1.15Z"/>
+        <path fill="#fff" d="M127.45,23.53l-2.46-.73c-2.19-.64-2.35-1.13-2.35-1.86,0-.88.21-1.82,2.76-1.82.5,0,2.26.03,3.95.47l.1.02c.24.04.56.09.8.09.41,0,.77-.3.85-.7.2-.69.44-1.61.44-2.02,0-.56-.28-.91-.84-1.07-1.42-.43-3.67-.59-5.17-.59-6.02,0-7.28,3.13-7.28,5.76,0,2.96,1.41,4.65,4.58,5.49l2.71.72c2.25.64,2.35,1.04,2.35,1.75,0,.95-.35,1.93-2.98,1.93-1.72,0-3.22-.2-4.57-.61-.19-.06-.75-.23-1.01-.23-.44,0-.82.3-1,.79-.33.91-.52,1.5-.52,1.88,0,.5.25.88.7,1.06,1.43.64,4.17.92,6.25.92,4.93,0,7.42-1.95,7.42-5.79,0-3.45-1.6-4.56-4.75-5.49Z"/>
+        <path fill="#fff" d="M160.99,30.95c-1.03-.18-1.67-.48-1.92-.91-.24-.45-.34-1.05-.34-2.07V7.96c0-.57-.12-1.15-1.01-1.15h-2.36c-.72,0-1.08.39-1.08,1.15v20.51c0,1.85.23,3.09.72,3.88.95,1.52,2.58,2.17,5.43,2.17.53,0,1.09-.1,1.26-.85.08-.36.15-1.14.15-1.68,0-.59-.31-.96-.86-1.04Z"/>
+        <path fill="#fff" d="M166.43,7.65c-1.58,0-2.46.94-2.46,2.64s.8,2.57,2.46,2.57,2.49-.83,2.49-2.6-.79-2.6-2.49-2.6Z"/>
+        <path fill="#fff" d="M167.66,15.73h-2.36c-.69,0-1.04.4-1.04,1.19v16.35c0,.95.57,1.15,1.04,1.15h2.32c.7,0,1.08-.41,1.08-1.15v-16.38c0-.29,0-1.15-1.04-1.15Z"/>
+        <path fill="#fff" d="M182.68,30.84c-1.9-.11-2.93-.42-3.36-1h0c-.41-.55-.58-1.36-.58-2.88v-7.33h3.34c.73,0,1.15-.41,1.15-1.12v-1.63c0-.69-.45-1.08-1.22-1.08h-3.27v-3.67c0-.84-.34-1.26-1.01-1.26h-2.17c-.36,0-.98.16-1.04,1.22-.08,2.02-.12,3.25-.14,3.71h-1.86c-.68,0-1.12.44-1.12,1.12v1.63c0,.66.41,1.08,1.04,1.08h1.86v7.18c0,2.79.2,4.55,1.24,5.82,1.36,1.68,3.45,2,6.83,2,.72,0,1.14-.33,1.22-.99.04-.5.07-1.33.07-1.72,0-.66-.34-1.04-.99-1.08Z"/>
+        <path fill="#fff" d="M200.86,15.73h-2.32c-.68,0-1.08.43-1.08,1.15v12.21c0,.4-.06.67-.21.81-.18.22-.5.34-.61.38-.63.28-1.6.6-3.58.6-1.87,0-2.41-.41-2.63-1.03-.18-.47-.2-1.27-.2-1.99v-10.98c0-.72-.39-1.15-1.04-1.15h-2.36c-.48,0-1.04.2-1.04,1.15v11.85c0,1.29.05,2.62.41,3.63.63,1.67,2.38,2.46,5.53,2.46,1.73,0,4.06-.27,5.62-1.02v.42c0,1.04-.11,1.79-.35,2.39-.55,1.37-2.06,2.19-8.14,2.37-.69,0-1.12.48-1.12,1.26,0,.35.04,1.13.11,1.71.14.75.59.9,1.33.9,7.58,0,11.24-1.55,12.24-5.19.4-1.34.48-2.79.48-4.55v-16.2c0-.71-.4-1.15-1.04-1.15Z"/>
+        <path fill="#fff" d="M149.57,16.1h0c-1.69-.52-3.83-.77-6.55-.77-5.43,0-8.8,1.69-8.8,10.11,0,7.75,3.2,9.34,8,9.34,2.05,0,3.47-.27,4.36-.81.15.3.43.45.83.45h2.32c.7,0,1.08-.41,1.08-1.15v-15.26c0-1.25-.67-1.73-1.23-1.9ZM146.4,20.4v8.88c0,.32-.04.58-.1.7-.04.16-.21.3-.5.45-.74.33-1.87.49-3.36.49-2.83,0-3.74-1.36-3.74-5.59,0-4.6.66-6.13,4.58-6.13.91,0,2.13.11,2.71.31.23.09.41.22.41.89Z"/>
+        <path fill="#fff" d="M93.91,16.1h0c-1.68-.52-3.83-.77-6.55-.77-5.43,0-8.8,1.69-8.8,10.11,0,7.75,3.2,9.34,8,9.34,2.05,0,3.48-.27,4.36-.81.15.3.43.45.83.45h2.32c.7,0,1.08-.41,1.08-1.15v-15.26c0-1.25-.67-1.73-1.23-1.9ZM90.74,20.4v8.88c0,.32-.04.58-.1.7-.04.15-.21.3-.5.45-.74.33-1.87.49-3.36.49-2.83,0-3.74-1.36-3.74-5.59,0-4.6.66-6.13,4.58-6.13.91,0,2.13.11,2.71.31.23.09.41.22.41.89Z"/>
+      </svg>
+    </div>
+    <span class="nav-vol">Leading Edge &middot; Vol. 2</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-ekg">
+    <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+      <path d="M0,200 L250,200 L270,200 L280,140 L290,260 L300,100 L310,300 L320,200 L340,200 L550,200 L570,200 L580,140 L590,260 L600,100 L610,300 L620,200 L640,200 L850,200 L870,200 L880,140 L890,260 L900,100 L910,300 L920,200 L940,200 L1200,200" fill="none" stroke="white" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-badge">Exclusive &middot; Leading Edge Members</div>
+    <div class="hero-title">Vault Intelligence<br>Report <em>Volume 2</em></div>
+    <div class="hero-sub">5-day marathon session: 57 commits, 98 new concepts, 12 BioMistral queries, 9 evidence briefs. What changed, what survived, and what to do next.</div>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><span>Date:</span> March 22, 2026</div>
+      <div class="hero-meta-item"><span>Analyst:</span> Vigil</div>
+      <div class="hero-meta-item"><span>Session:</span> 30+ hours continuous</div>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">57</div><div class="stat-label">Commits</div></div>
+    <div class="stat"><div class="stat-num">152</div><div class="stat-label">Concepts (was 54)</div></div>
+    <div class="stat"><div class="stat-num">12</div><div class="stat-label">BioMistral Queries</div></div>
+    <div class="stat"><div class="stat-num">9</div><div class="stat-label">Evidence Briefs</div></div>
+    <div class="stat"><div class="stat-num">678</div><div class="stat-label">Total Vault Entries</div></div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <div class="intro">
+    This is not a bookmark report. This is an after-action report from inside the vault itself. Five days. Thirty hours of continuous orchestration. The knowledge graph tripled. Three load-bearing concepts survived deep validation. Two flagship theories need surgery. The pipeline is automated. The certification has a biomarker. And the field we thought was crowded turned out to be empty.
+  </div>
+
+  <div class="jump-nav">
+    <a href="#s1" class="jump-tag">What Changed</a>
+    <a href="#s2" class="jump-tag">What Was Built</a>
+    <a href="#s3" class="jump-tag">Competitive Landscape</a>
+    <a href="#s4" class="jump-tag">The Three Actions</a>
+    <a href="#s5" class="jump-tag">What Died</a>
+    <a href="#closing" class="jump-tag">Closing</a>
+  </div>
+
+  <!-- Priority -->
+  <div class="priority">
+    <div class="priority-label">The Single Insight That Changes Everything</div>
+    <div class="priority-body">Heart Rate Recovery is measurable on an Apple Watch. Cole 1999 showed HR=2.5 for all-cause mortality. That means Day 0 / Day 7 / Day 21 with ten CRNAs produces a publishable dataset without a lab, without IRB, without funding. The certification now has a ground-truth biomarker.</div>
+  </div>
+
+  <!-- Section 01: What Changed -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-badge">01</div>
+      <div>
+        <div class="section-num">Section 01</div>
+        <div class="section-title">What Changed</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Embodied metacognition</span>
+          <span class="valid-tag">Keystone</span>
+        </div>
+        <div class="source-desc">From zero vault presence to keystone concept. Every other concept now traces through it. This is the hub node that connects interoception, autonomic regulation, clinical expertise, and somatic practice into a single coherent framework. It did not exist in the vault five days ago.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Polyvagal Theory reframing required</span>
+          <span class="risk-tag">Needs Surgery</span>
+        </div>
+        <div class="source-desc">Grossman 2026 with 38 co-authors. The vault's most-referenced theory needs surgery. The Neurovisceral Integration model (Thayer) is the replacement. PVT language must be systematically downgraded from theoretical framework to clinical metaphor across all notes.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">NeuroHarmonics credibility risk</span>
+          <span class="risk-tag">Review Required</span>
+        </div>
+        <div class="source-desc">Only 5 of 14 studies support binaural beat entrainment. Canonical status may be premature. The evidence base is thinner than the vault currently represents. Requires honest downgrade or scope narrowing before any clinical-facing output references it.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Three concepts survived deep validation</span>
+          <span class="valid-tag">Load-Bearing</span>
+        </div>
+        <div class="source-desc">Resonant breathing frequency (meta-analytic support). HRV biofeedback (RCT-level evidence). Interoception (replicated across labs). These three are the foundation. Everything else in the vault is scaffolding around them.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Heart Rate Recovery as ground truth biomarker</span>
+          <span class="valid-tag">Game Changer</span>
+        </div>
+        <div class="source-desc">Cole 1999 NEJM: hazard ratio of 2.5 for all-cause mortality. Measurable on Apple Watch. No lab required. This changes the certification from subjective self-report to objective physiological measurement. Day 0, Day 7, Day 21.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">ISH confirmed as wide-open field</span>
+          <span class="valid-tag">Blue Ocean</span>
+        </div>
+        <div class="source-desc">Interoceptive Suppression Hypothesis: zero PubMed competitors for the intersection of interoceptive suppression and burnout in clinicians. The field literally does not exist yet. First-mover advantage is real and the evidence threads are already in the vault.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 02: What Was Built -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-badge">02</div>
+      <div>
+        <div class="section-num">Section 02</div>
+        <div class="section-title">What Was Built</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Automated mining pipeline</span>
+          <span class="source-date">Infrastructure</span>
+        </div>
+        <div class="source-desc">Processes 3-5 ChatGPT migration files per night. Knowledge miner extracts, vault writer formats, citation resolver verifies. Runs unattended. 861 files in queue, steady burn rate.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Citation health monitor</span>
+          <span class="source-date">Quality Gate</span>
+        </div>
+        <div class="source-desc">Baseline citation health: 45%. Every evidence note now tracked for DOI verification status. No note promotes to canonical without a verified DOI. The vault's credibility depends on this number moving toward 100%.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Evidence brief generator</span>
+          <span class="source-date">Output Pipeline</span>
+        </div>
+        <div class="source-desc">One command produces a formatted evidence brief from vault concepts and linked evidence. Nine briefs generated this session. Directly feeds investor materials, CEU content, and research packages.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Cognitive ethnographer bot</span>
+          <span class="source-date">9th Bot</span>
+        </div>
+        <div class="source-desc">The newest bot in the fleet. Watches how Randy works, identifies patterns in decision-making, and feeds those patterns back to all other bots. The system now observes its own operator.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Expertise reference library</span>
+          <span class="source-date">15 Sources</span>
+        </div>
+        <div class="source-desc">Ericsson through Gucciardi. The canonical literature on expertise development, deliberate practice, and performance under pressure. Plus 5 adversarial references &mdash; the papers that push back against the vault's assumptions.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Somnistics nursing theory</span>
+          <span class="source-date">13 Hypotheses</span>
+        </div>
+        <div class="source-desc">Thirteen falsifiable hypotheses. A formal theoretical framework that connects autonomic regulation to nursing practice. Each hypothesis maps to a specific vault concept and evidence chain. This is the academic backbone.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Chapter 1 of "Inside Out"</span>
+          <span class="source-date">Book Draft</span>
+        </div>
+        <div class="source-desc">First chapter drafted. The book's voice is established. Descriptive, not prescriptive. The body is always in the conversation. Framework teaching, not answer giving.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Dual-track certification spec</span>
+          <span class="source-date">CRNA + Motorsport</span>
+        </div>
+        <div class="source-desc">Two certification tracks from the same evidence base. CRNA track: clinical autonomic regulation. Motorsport track: performance under physiological stress. Same science, different language registers, different audience profiles.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">15 design constraints on evidence notes</span>
+          <span class="source-date">Standards</span>
+        </div>
+        <div class="source-desc">Hard rules for what an evidence note must contain, how it must be structured, and what it cannot claim. The vault now has a constitution for its most important layer.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 03: Competitive Landscape -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-badge">03</div>
+      <div>
+        <div class="section-num">Section 03</div>
+        <div class="section-title">Competitive Landscape Update</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Jhourney</span>
+          <span class="source-date">$4K retreats</span>
+        </div>
+        <div class="source-desc">Premium jhana meditation retreats. 40 hours of guided practice at $4,000 per seat. SRL delivers equivalent autonomic shift measurement in 63 minutes. The question is not whether the experience is different &mdash; it is whether the biomarker moves the same way.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">EightOS</span>
+          <span class="risk-tag">Zero Citations</span>
+        </div>
+        <div class="source-desc">Fractal breathing methodology. Compelling brand, zero peer-reviewed citations. The marketing is ahead of the evidence. This is exactly the credibility gap SRL is designed to exploit &mdash; by not having one.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">40 Years of Zen</span>
+          <span class="source-date">$16K program</span>
+        </div>
+        <div class="source-desc">Dave Asprey's neurofeedback intensive. $16,000 price point. Zero published studies. The premium pricing signals confidence, but the evidence gap is a liability that grows as the field matures.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Amen Clinics</span>
+          <span class="risk-tag">APA Criticism</span>
+        </div>
+        <div class="source-desc">200,000+ SPECT scans. Massive dataset, significant APA criticism of diagnostic methodology. The scale is impressive; the peer-review resistance is a cautionary tale for any neuroimaging-adjacent claim.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 04: The Three Actions -->
+  <div class="actions" id="s4">
+    <div class="actions-ekg">
+      <svg viewBox="0 0 800 300" preserveAspectRatio="none">
+        <path d="M0,150 L180,150 L200,150 L210,90 L220,210 L230,60 L240,240 L250,150 L270,150 L450,150 L470,150 L480,90 L490,210 L500,60 L510,240 L520,150 L540,150 L700,150 L720,150 L730,90 L740,210 L750,60 L760,240 L770,150 L800,150" fill="none" stroke="white" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="actions-title">The Three Actions</div>
+    <div class="horizon">
+      <div class="horizon-label">Action 1 &mdash; Get 10 CRNAs</div>
+      <div class="horizon-body">The Facebook post is written. Ten spots. A 21-day protocol with pre/post HRR measurement. Not a sales pitch &mdash; a research invitation. Clinical peers testing a clinical hypothesis. The post goes up Tuesday morning.</div>
+    </div>
+    <div class="horizon">
+      <div class="horizon-label">Action 2 &mdash; Measure HRR</div>
+      <div class="horizon-body">Baseline Heart Rate Recovery on Day 0. Repeat on Day 7. Repeat on Day 21. Apple Watch captures the data. Cole 1999 provides the normative framework. Three data points per participant, ten participants, thirty data points. That is a dataset.</div>
+    </div>
+    <div class="horizon">
+      <div class="horizon-label">Action 3 &mdash; Each Invites One</div>
+      <div class="horizon-body">10 becomes 20. Not through marketing. Through one clinician telling another clinician: "my recovery time changed." Peer-to-peer propagation, grounded in personal physiological data. The mechanism is the message.</div>
+    </div>
+  </div>
+
+  <!-- Section 05: What Died -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-badge">05</div>
+      <div>
+        <div class="section-num">Section 05</div>
+        <div class="section-title">What Died</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">V1 landing page attempt</span>
+          <span class="risk-tag">Killed</span>
+        </div>
+        <div class="source-desc">Sloppy. Did not meet the bar. Jason's standard applies: if it does not look like it was made by someone who cares about every pixel, it communicates the opposite of clinical precision. Scrapped and restarted.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Full dark mode as default format</span>
+          <span class="risk-tag">Killed</span>
+        </div>
+        <div class="source-desc">Too harsh for extended reading. The design system works for intelligence reports and dashboards, but long-form clinical content needs a lighter touch. Dark mode remains for reports; light mode for educational material.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">Overclaiming novelty</span>
+          <span class="risk-tag">Killed</span>
+        </div>
+        <div class="source-desc">"Doesn't exist" became "operationalizes an integration." The vault taught us that most of what we thought was novel is actually a new synthesis of existing work. The honest claim is stronger than the inflated one.</div>
+      </div>
+      <div class="source">
+        <div class="source-top">
+          <span class="source-title">The system as intelligence-only</span>
+          <span class="risk-tag">Killed</span>
+        </div>
+        <div class="source-desc">A knowledge graph that does not produce action is a library, not a weapon. The vault must tilt from intelligence accumulation to action propagation. The three actions above are the proof that this shift happened.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closing -->
+  <div class="closing" id="closing">
+    <div class="closing-line">The map is high-resolution. The weapon is not yet deployed.</div>
+    <div class="closing-line">The monitor reads 142. Not the patient's. <strong>Yours.</strong></div>
+    <div class="closing-line"><strong>10 spots. DM me. Tuesday morning.</strong></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      Somnistics Research Laboratories &middot; Intelligence Stream for Leading Edge Members<br>
+      Vault after-action report &middot; Mar 22, 2026 &middot; Vol. 2<br>
+      <a href="https://somnistics.com">somnistics.com</a> &middot; <a href="https://pausality.com">pausality.com</a>
+    </div>
+    <div class="footer-right">
+      <svg viewBox="0 0 44.76 47.97" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <linearGradient id="footer-grad" x1="5.12" y1="39.03" x2="38.33" y2="5.81" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#3a61ad"/>
+            <stop offset=".18" stop-color="#1479b6"/>
+            <stop offset=".52" stop-color="#58c09d"/>
+            <stop offset=".6" stop-color="#5fc89b"/>
+            <stop offset="1" stop-color="#96f0be"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#footer-grad)" d="M23.99.01h0C10.76,0,0,10.76,0,23.99s10.76,23.99,23.99,23.99v-6.28c11.46-.04,20.77-9.38,20.77-20.84S35.44.05,23.99.01ZM23.91,35v6.27c-9.5-.04-17.21-7.78-17.21-17.29S14.41,6.74,23.91,6.7h0c7.8,0,14.15,6.35,14.15,14.15s-6.35,14.15-14.15,14.15Z"/>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
