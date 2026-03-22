@@ -17,6 +17,7 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-embodied-knowledge-ontology
 - urn:srl:evidence:klein-1998-recognition-primed-decision
 - urn:srl:evidence:gibson-1979-ecological-perception
+- urn:srl:evidence:wiest-epothilone-microtubule-anesthesia-consciousness-2024
 skos:broader: []
 skos:narrower: []
 skos:related:

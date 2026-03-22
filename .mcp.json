@@ -13,6 +13,10 @@
       "env": {
         "MONDAY_TOKEN": "${MONDAY_TOKEN}"
       }
+    },
+    "openevidence": {
+      "command": "/Users/somnisticshq/Documents/Somnistics/Library-Graph/openevidence-mcp/.venv/bin/python",
+      "args": ["/Users/somnisticshq/Documents/Somnistics/Library-Graph/openevidence-mcp/server.py"]
     }
   }
 }

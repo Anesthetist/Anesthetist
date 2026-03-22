@@ -30,6 +30,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:springer-2025-remote-hrvb-mental-health-meta-analysis
 - urn:srl:evidence:luton-2023-enhanced-stress-resilience-training
 - urn:srl:evidence:ericsson-1993-deliberate-practice
+- urn:srl:evidence:lambdastrength-er-extended-exhale-clinical-validation-2026
 skos:broader:
 - titration-to-effect
 skos:narrower: []

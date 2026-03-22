@@ -40,6 +40,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:journal-nonlocality-placebo-retrocausality
 - urn:srl:evidence:gross-1998-emotion-regulation-process
 - urn:srl:evidence:klein-1998-recognition-primed-decision
+- urn:srl:evidence:wiest-epothilone-microtubule-anesthesia-consciousness-2024
 skos:broader:
 - interoception
 skos:narrower:

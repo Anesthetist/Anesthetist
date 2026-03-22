@@ -39,6 +39,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:nature-2025-global-hrv-coherence-frequencies
 - urn:srl:evidence:shirley-2024-mental-skills-orthopaedic-surgery
 - urn:srl:evidence:lehrer-2020-hrv-biofeedback-limitations
+- urn:srl:evidence:cooley-vagus-resonant-breathing-protocols-2026
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

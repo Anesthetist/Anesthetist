@@ -29,6 +29,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:milleville-2025-crna-decision-making
 - urn:srl:evidence:barrett-2017-how-emotions-are-made
 - urn:srl:evidence:lane-schwartz-1987-levels-emotional-awareness
+- urn:srl:evidence:cooley-vagus-resonant-breathing-protocols-2026
 skos:broader:
 - interoception
 skos:narrower:

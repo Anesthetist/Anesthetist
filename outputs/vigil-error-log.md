@@ -115,6 +115,53 @@ Errors, overclaims, missed opportunities, and corrected assumptions. Each entry 
 
 ---
 
+### ERROR-009: Put API token directly in committable file
+**Date:** 2026-03-22
+**Category:** compliance
+**What happened:** Wrote Monday.com API token directly into `.mcp.json` which is tracked by git and would have been pushed to a public repo. Randy had to catch this and request security reasoning.
+**What should have happened:** Vigil should have (1) checked if the target file is gitignored BEFORE writing any secret, (2) used `.claude/settings.local.json` (gitignored) for all tokens, (3) used env var references in config files, never raw secrets.
+**Root cause:** Optimized for speed ("get Monday working fast") over security. No built-in security gate for credential handling.
+**Never again:** SECURITY PROTOCOL FOR ALL CREDENTIALS — cooked into Vigil's operating logic, not dependent on Randy catching it. See Security Protocol below.
+**Status:** corrected — token moved to settings.local.json, env var reference in .mcp.json
+
+### ERROR-010: Security reasoning required human intervention
+**Date:** 2026-03-22
+**Category:** process
+**What happened:** Randy said "Use high fidelity security reasoning with api keys" and "I should not be the one doing real-time security recommendations." Vigil should have applied security reasoning automatically without being told.
+**What should have happened:** Security is not a feature Randy requests. It is a baseline that Vigil maintains. Every credential operation should trigger automatic security checks.
+**Root cause:** No security protocol existed. Security was treated as a situational consideration rather than a mandatory gate.
+**Never again:** Security Protocol is now a permanent part of Vigil's operating logic. See below.
+**Status:** systemic-fix-needed — Security Protocol created
+
+---
+
+## Security Protocol (Mandatory — Never Skip)
+
+**This protocol fires automatically whenever Vigil handles credentials, tokens, API keys, passwords, or any sensitive data. Randy should never need to remind Vigil about security.**
+
+### Before Writing Any Secret
+
+1. **Check the target file's git status.** Is it gitignored? Run `git check-ignore {filepath}`. If NOT gitignored → STOP. Do not write the secret there.
+2. **Secrets go in `.claude/settings.local.json` ONLY** (gitignored via `.claude/` in `.gitignore`). Never in `.mcp.json`, `.env` in the repo root, `CLAUDE.md`, or any tracked file.
+3. **Config files reference env vars, not raw secrets.** Use `${VAR_NAME}` or `$VAR_NAME` syntax. The secret lives in settings.local.json; the config file points to the variable.
+4. **Verify after writing.** Run `git check-ignore` on the file that received the secret. If it returns empty → the secret is exposed. Remove it immediately.
+
+### When a User Pastes a Token
+
+1. **Acknowledge receipt.** "Got it. Storing securely."
+2. **Never echo the token back** in conversation output.
+3. **Store in settings.local.json** under the `env` key.
+4. **Reference via env var** in any config file.
+5. **Confirm security.** "Token stored in gitignored settings. Config file references the env var, not the secret."
+
+### Ongoing
+
+- **Before every `git add`:** Scan staged files for patterns that look like tokens (JWT format, `hf_`, `sk-`, `ghp_`, long base64 strings). If found → unstage and alert.
+- **Before every `git push`:** Same scan on all committed-but-unpushed changes.
+- **If Randy pastes a token in chat:** It's now in the conversation transcript. Note this is unavoidable but the transcript is local and ephemeral. Never write it to a vault note or output file.
+
+---
+
 ## Session Template
 
 At the end of every session, Vigil asks:

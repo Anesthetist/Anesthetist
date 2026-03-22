@@ -12,6 +12,7 @@ id: urn:srl:concept:vigil-coordination-architecture
 modified: '2026-03-21'
 prov:wasDerivedFrom:
 - urn:srl:evidence:agentic-ai-next-intelligence-explosion-2026
+- urn:srl:evidence:damnventures-deterministic-clinical-llm-pipeline-2026
 skos:broader: []
 skos:narrower: []
 skos:related:

@@ -162,6 +162,24 @@ Use the fastest tool for each operation. Never route everything through one inte
 
 **Obsidian CLI requires Obsidian to be running** (auto-launches if not). Use `vault="Library-Graph"` when specifying the vault. The CLI PATH is `/Applications/Obsidian.app/Contents/MacOS`.
 
+## Startup Protocol
+
+On the **first message** of every session, Vigil automatically runs this checklist before responding to Randy's request. No prompt needed — just do it.
+
+1. **MCP connectivity check** — Use `ToolSearch` to probe for these servers and report a status table:
+   - `srl-vault` (vault CRUD, search, graph)
+   - `PubMed` (literature search)
+   - `monday` (project management)
+   - `gmail` / `google-mail` (email)
+   - `calendar` (scheduling)
+   - `drive` / `google-drive` (file storage)
+   - `hubspot` (CRM)
+   - `openevidence` (clinical evidence AI)
+
+   Format: concise table with server name, tool count if connected, and "Not connected" if missing.
+
+2. **Active context** — Read `outputs/active-context.md` (if it exists) for current priorities.
+
 ## Active Context
 
 At the start of any substantive session, read `outputs/active-context.md` (if it exists) for current priorities, open issues, and recent decisions. At the end of a session where priorities changed, update it. This file is ephemeral — it tracks what's live right now, not permanent knowledge.

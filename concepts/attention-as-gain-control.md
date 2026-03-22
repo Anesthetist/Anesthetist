@@ -16,6 +16,7 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-somnistics-and-attention-mechanisms
 - urn:srl:evidence:fitts-posner-1967-human-performance
 - urn:srl:evidence:hancock-warm-1989-dynamic-model-stress
+- urn:srl:evidence:mit-miller-lab-universal-anesthesia-dynamic-instability-2026
 skos:broader: []
 skos:narrower: []
 skos:related:

@@ -49,6 +49,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:alghamlas-2024-urologist-hrv-stress
 - urn:srl:evidence:queirolo-2026-hypnosis-stress-performance
 - urn:srl:evidence:abahuje-2023-residents-hrv-leadership-stress
+- urn:srl:evidence:cooley-vagus-resonant-breathing-protocols-2026
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

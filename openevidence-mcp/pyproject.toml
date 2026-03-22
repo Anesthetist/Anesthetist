@@ -1,0 +1,14 @@
+[project]
+name = "openevidence-mcp"
+version = "0.1.0"
+description = "MCP server for querying OpenEvidence clinical AI platform"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+login = [
+    "playwright>=1.40",
+]
