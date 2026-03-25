@@ -1,25 +1,27 @@
 ---
-id: "urn:srl:observation:attention-as-gain-control"
-type: observation
-title: "Somnistics Teaches Gain Control, Not Just Focus"
-status: draft
-creator: "Randy Graybeal"
+clinical_context: Reframing somnistics as attention gain-control training — precision
+  weighting of internal signals
 created: 2026-03-14
-modified: 2026-03-14
+creator: Randy Graybeal
 dc:subject:
-  - attention
-  - gain-control
-  - convergent-evolution
-  - signal-prioritization
+- attention
+- gain-control
+- convergent-evolution
+- signal-prioritization
+id: urn:srl:observation:attention-as-gain-control
+modified: 2026-03-14
 observation_type: craft-knowledge
-clinical_context: "Reframing somnistics as attention gain-control training — precision weighting of internal signals"
-years_of_evidence: 3
-prov:wasDerivedFrom: []
+prov:wasDerivedFrom:
+- urn:srl:evidence:mit-miller-lab-universal-anesthesia-dynamic-instability-2026
 skos:related:
-  - anterocept
-  - interoception
-  - relevance-realization
-  - neurogating
+- anterocept
+- interoception
+- relevance-realization
+- neurogating
+status: draft
+title: Somnistics Teaches Gain Control, Not Just Focus
+type: observation
+years_of_evidence: 3
 ---
 
 # Somnistics Teaches Gain Control, Not Just Focus
