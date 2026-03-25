@@ -48,7 +48,7 @@ John Vervaeke, a cognitive scientist at the University of Toronto, developed the
 - [[neuro-ouroboros]]
 - [[hemispheric-rebalancing]]
 - [[cognitive-variability-analysis]]
-- [[somnistics-field-definition]]
+- [[somnistics]]
 
 ## Randy's Clinical Interpretation
 

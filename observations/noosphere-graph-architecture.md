@@ -54,7 +54,7 @@ This is the architectural vision for the Library Graph's evolution: from a stati
 
 ## Related Concepts
 
-- [[somnistics-field-definition]] — the discipline modeled as a dynamic graph
+- [[somnistics]] — the discipline modeled as a dynamic graph
 - [[ontology-metadata-architecture]] — UMLS/SNOMED/MeSH as semantic node properties
 - [[neurogating]] — biometric state nodes feed the adaptive triggering graph
 - [[readyscore]] — ReadyScore as a computed property on biometric state nodes

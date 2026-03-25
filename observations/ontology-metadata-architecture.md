@@ -58,5 +58,5 @@ This ontology framework is the template for the vault's evolution toward clinica
 ## Related Concepts
 
 - [[somnistics]] — the discipline these ontologies formalize
-- [[somnistics-field-definition]] — the academic treatment that ontological rigor supports
+- [[somnistics]] — the academic treatment that ontological rigor supports
 - [[neurogating]] — the AI layer that operates over the ontology
