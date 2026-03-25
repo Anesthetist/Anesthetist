@@ -14,3 +14,6 @@ Thumbs.db
 *.mov
 *.zip
 .claude/
+openevidence-mcp/
+*.docx
+*.pptx
