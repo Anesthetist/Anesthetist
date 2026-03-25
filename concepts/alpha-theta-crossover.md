@@ -13,6 +13,13 @@ id: urn:srl:concept:alpha-theta-crossover
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-theta-and-delta-eeg-patterns
+- urn:srl:evidence:flow-state-wearable-detection-2025
+- urn:srl:evidence:robbins-symphony-in-the-brain
+- urn:srl:evidence:sullivan-geometry-staying-cool
+- urn:srl:evidence:bower-peak-performance-trading
+- urn:srl:evidence:ali-leadership-skill-holding-space-for-healing
+- urn:srl:evidence:ali-leadership-skill-owning-negative-projections
+- urn:srl:evidence:ali-leadership-skill-upgrading-your-questions
 skos:broader:
 - neuroharmonics
 skos:narrower: []

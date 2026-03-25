@@ -8,6 +8,10 @@ dc:subject:
 - existential-resilience
 id: urn:srl:concept:attentional-sovereignty
 modified: '2026-03-19'
+prov:wasDerivedFrom:
+- urn:srl:evidence:nondual-awareness-brain-eeg-2025
+- urn:srl:evidence:ali-leadership-skill-creating-strong-standards
+- urn:srl:evidence:ali-worksheet-6-levels-of-listening
 skos:related:
 - gap-moment-training
 - interoceptive-literacy

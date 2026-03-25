@@ -41,6 +41,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:gross-1998-emotion-regulation-process
 - urn:srl:evidence:klein-1998-recognition-primed-decision
 - urn:srl:evidence:wiest-epothilone-microtubule-anesthesia-consciousness-2024
+- urn:srl:evidence:elia-scale-2026-emotion-linked-interoceptive-awareness
 skos:broader:
 - interoception
 skos:narrower:
@@ -67,6 +68,10 @@ A proprietary user-adjustable continuum for sensory focus that spans simple brea
 ## Definition
 
 Anterocept™ Spectrum represents a progressive training system that guides users along a continuum from basic interoceptive awareness (noticing the breath) through increasingly complex multi-modal sensory integration. It is both a training methodology and a software module within Pausality that delivers brief guided breathing or interoceptive "check-ins" within 60-second [[neurominute]] practices.
+
+## Minimum Effective Sensor Philosophy
+
+Heart rate — not HRV, not EEG, not complex biometrics — as the simplest, most accessible physiological anchor for micro-interventions. Anterocept leverages simple physiological anchors, such as the user's own heart rate and diaphragmatic control, to achieve both immediate and long-term improvements in well-being, resilience, and professional effectiveness. The principle: start with the signal the body already knows how to read, then layer complexity as skill develops.
 
 ## Three Progressive Domains
 

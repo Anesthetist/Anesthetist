@@ -13,6 +13,7 @@ id: urn:srl:concept:state-transition-intelligence
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-synthesis-for-novel-combinatrics
+- urn:srl:evidence:douglas-trading-in-the-zone
 skos:broader: []
 skos:narrower: []
 skos:related:

@@ -2,7 +2,57 @@
 created: '2026-03-21'
 creator: vigil
 id: urn:srl:concept:tacit-knowledge-library
+library_size: 650+ cataloged texts (Kindle + Audible), physical books pending
 modified: '2026-03-21'
+prov:wasDerivedFrom:
+- urn:srl:evidence:fleisher-evidence-based-anesthesiology
+- urn:srl:evidence:macksey-pediatric-anesthesia-drug-guide
+- urn:srl:evidence:ruskin-rosenbaum-anesthesia-emergencies
+- urn:srl:evidence:field-mother-of-invention-healthcare
+- urn:srl:evidence:achieving-success-balance-physician-guide
+- urn:srl:evidence:adele-yamas-niyamas
+- urn:srl:evidence:satchidananda-yoga-sutras-patanjali
+- urn:srl:evidence:mckenna-spiritual-enlightenment-damnedest-thing
+- urn:srl:evidence:schwager-unknown-market-wizards
+- urn:srl:evidence:kahneman-thinking-fast-and-slow
+- urn:srl:evidence:douglas-trading-in-the-zone
+- urn:srl:evidence:dalio-big-debt-crises
+- urn:srl:evidence:helmer-7-powers
+- urn:srl:evidence:aurelius-meditations
+- urn:srl:evidence:homer-iliad
+- urn:srl:evidence:ries-lean-startup
+- urn:srl:evidence:adler-van-doren-how-to-read-a-book
+- urn:srl:evidence:strauss-howe-fourth-turning
+- urn:srl:evidence:allison-destined-for-war
+- urn:srl:evidence:tuchman-march-of-folly
+- urn:srl:evidence:pastoor-grip
+- urn:srl:evidence:shrier-irreversible-damage
+- urn:srl:evidence:stupple-sovereign-child
+- urn:srl:evidence:sullivan-abc-model
+- urn:srl:evidence:sullivan-laws-lifetime-growth
+- urn:srl:evidence:sullivan-geometry-staying-cool
+- urn:srl:evidence:waller-team-success
+- urn:srl:evidence:gaunt-ego-authority-failure
+- urn:srl:evidence:scheinfeld-busting-loose
+- urn:srl:evidence:rolls-east-west-paranormality
+- urn:srl:evidence:kerzen-mind-beyond-words
+- urn:srl:evidence:maggiulli-wealth-ladder
+- urn:srl:evidence:varelas-how-money-became-dangerous
+- urn:srl:evidence:davies-read-secret-life-of-money
+- urn:srl:evidence:bonnell-co-parenting
+- urn:srl:evidence:lukach-my-lovely-wife-psych-ward
+- urn:srl:evidence:robinson-enlightenment-project
+- urn:srl:evidence:goode-direct-path
+- urn:srl:evidence:rayat-trading-psychology
+- urn:srl:evidence:ryan-bulletproof-trading
+- urn:srl:evidence:gurevich-perfect-portfolio
+- urn:srl:evidence:burns-moving-averages
+- urn:srl:evidence:bower-peak-performance-trading
+- urn:srl:evidence:faber-global-asset-allocation
+- urn:srl:evidence:gray-diy-financial-advisor
+- urn:srl:evidence:sullivan-thin-green-line
+- urn:srl:evidence:chambers-dimson-financial-market-history
+- urn:srl:evidence:acho-illogical
 skos:related:
 - cross-domain-consilience-engine
 status: draft
@@ -12,6 +62,9 @@ subject:
 - cognitive-replication
 - knowledge-management
 title: Tacit Knowledge Library — Randy's Reading & Deep Study Archive
+training_institutions:
+- Rush University
+- University of Washington
 type: concept
 ---
 

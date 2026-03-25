@@ -17,6 +17,8 @@ modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-curiosity-and-burnout-prevention
 - urn:srl:evidence:mcewan-1998-allostatic-load
+- urn:srl:evidence:taleb-antifragile
+- urn:srl:evidence:sullivan-laws-lifetime-growth
 skos:broader: []
 skos:narrower: []
 skos:related:

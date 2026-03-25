@@ -12,6 +12,7 @@ id: urn:srl:concept:epistemic-layering
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-knowledge-graph-synthesis
+- urn:srl:evidence:spencer-magisteria
 skos:broader:
 - consilience
 skos:narrower: []

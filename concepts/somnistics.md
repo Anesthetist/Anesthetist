@@ -64,6 +64,31 @@ Or in fuller form: an emergent discipline integrating sleep science, neuroscienc
 
 Somnistics is both a research lens and a practical training system for "teachable nervous-system landings" — not generic stress reduction but precision regulation under cognitive load.
 
+## PubMed-Tightened Definition (v1.1)
+
+> **Somnistics** — The applied science and professional practice of micro-interoceptive regulation: deploying standardized, repeatable 60-second protocols ('NeuroMinutes') that deliberately couple respiratory mechanics, cardiac-autonomic dynamics (vagally mediated HRV), and interoceptive attention (insula-cingulate-brainstem integration) to shift state, preserve executive control, and stabilize performance during 'gap moments' in real-world professional workflows.
+
+## Three Pillars
+
+1. **Breathing** as a controllable oscillator that entrains autonomic and cardiovascular dynamics
+2. **HRV** as a measurable readout of regulatory capacity and adaptability
+3. **Interoception** as a trainable signal-processing skill supported by insula-cingulate systems
+
+## What Somnistics Is NOT
+
+- Not a replacement for diagnosis, psychotherapy, medication, or acute medical management
+- Not a promise that one minute "fixes" anything
+- Not generic relaxation or "wellness"
+
+## State Attractor Model
+
+Somnistics moves a nervous system from suboptimal attractors — hyperarousal, hypoarousal, cognitive tunnel, dyspneic panic loops — toward task-ready regulation.
+
+## Jobs To Be Done
+
+1. "When the user faces intense and emotionally charged challenges in anesthesiology, they want to develop and strengthen mental, emotional, and physiological capacities over time, so they can minimize the risk of severe psychological harm..."
+2. "When patients require the user to be at their absolute best in critical, high-consequence moments, they want a robust, integrative framework..."
+
 ## Core Insight
 
 Gap moments are naturally occurring, uncommitted slices of >=60 seconds appearing 20-25 times daily (parking lot, elevators, queues, between cases). The training repurposes these as: "release tension" (30s body scan) + "set intention" (30s choosing how you want the next interaction to feel). Hebbian plasticity ("what fires together wires together") means training in low-stakes transitions wires the nervous system for precision under real pressure.

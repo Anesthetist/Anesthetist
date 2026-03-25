@@ -19,6 +19,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:schon-1983-reflective-practitioner
 - urn:srl:evidence:nonaka-takeuchi-1995-knowledge-creating
 - urn:srl:evidence:reber-1989-implicit-learning
+- urn:srl:evidence:atlasforge-agent-language-bandwidth-2026
+- urn:srl:evidence:jorgenson-almanack-naval-ravikant
 skos:broader: []
 skos:narrower: []
 skos:related:

@@ -1,45 +1,47 @@
 ---
-id: "urn:srl:concept:trauma-informed-design"
-type: concept
-title: "Trauma-Informed Design"
-status: review
-creator: "Randy Graybeal"
+aliases:
+- trauma-sensitive design
+- trauma-aware practice
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - trauma-informed
-  - safety
-  - embodied-practice
-  - invitational-language
-  - eye-closure
-  - dissociation
-  - interoception
+creator: Randy Graybeal
 dc:source:
-  - "cowork-session:2026-03-14"
+- cowork-session:2026-03-14
+dc:subject:
+- trauma-informed
+- safety
+- embodied-practice
+- invitational-language
+- eye-closure
+- dissociation
+- interoception
+id: urn:srl:concept:trauma-informed-design
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:van-der-kolk-2014-body-keeps-score
+- urn:srl:evidence:porges-2011-polyvagal-theory
+- urn:srl:evidence:porges-2007-vagal-tone-faces-voices
+- urn:srl:evidence:craig-2009-interoception-awareness
+- urn:srl:evidence:critchley-2017-interoception-emotion
+- urn:srl:evidence:ali-awareness-exercise-failures-of-the-past
+- urn:srl:evidence:ali-leadership-skill-holding-space-for-healing
 skos:broader:
-  - somnistics
+- somnistics
 skos:narrower: []
 skos:related:
-  - anterocept
-  - neurominute
-  - script-design-invitational-language
-  - awareness-before-technique
-  - interoceptive-suppression-burnout-root
-  - polyvagal-theory
-  - co-regulation
-  - somnistics-certification
-  - diaphragmatic-blindness
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
-  - "urn:srl:evidence:porges-2011-polyvagal-theory"
-  - "urn:srl:evidence:porges-2007-vagal-tone-faces-voices"
-  - "urn:srl:evidence:craig-2009-interoception-awareness"
-  - "urn:srl:evidence:critchley-2017-interoception-emotion"
-aliases:
-  - trauma-sensitive design
-  - trauma-aware practice
+- anterocept
+- neurominute
+- script-design-invitational-language
+- awareness-before-technique
+- interoceptive-suppression-burnout-root
+- polyvagal-theory
+- co-regulation
+- somnistics-certification
+- diaphragmatic-blindness
+status: review
+title: Trauma-Informed Design
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # Trauma-Informed Design

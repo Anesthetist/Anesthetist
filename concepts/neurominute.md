@@ -70,6 +70,10 @@ A 60-second, scripted micro-intervention combining breath, interoception cues, a
 
 Each NeuroMinute is a metadata-tagged protocol unit delivered via app/Watch that targets a specific autonomic or cognitive state (e.g., vagal tone, CO₂ tolerance, insula engagement). Every session generates a tiny experiment: context → protocol → physiological response, building a longitudinal dataset on how specific nervous systems respond to specific interventions in specific environments.
 
+### Randy's Canonical Definition
+
+> "A 60-second, metadata-tagged micro-intervention that combines breath, attention, and multimodal cues (audio, haptics, visual) with a clear neurotarget (e.g., vagal tone, CO₂ tolerance, insula engagement) and tracked biometric response."
+
 ## Four-Phase Structure
 
 1. **Acknowledge the felt sense** — "Part acknowledgment" without judgment (IFS-informed)

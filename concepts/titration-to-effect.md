@@ -17,6 +17,9 @@ modified: 2026-03-14
 prov:wasDerivedFrom:
 - urn:srl:evidence:lehrer-2000-resonance-frequency
 - urn:srl:evidence:diaz-lozano-2026-stochastic-noise-hrv-coherence
+- urn:srl:evidence:macksey-pediatric-anesthesia-drug-guide
+- urn:srl:evidence:ali-awareness-exercise-stress-and-addictions
+- urn:srl:evidence:ali-leadership-skill-venting-and-sorting
 skos:broader: []
 skos:narrower:
 - minimum-effective-dose

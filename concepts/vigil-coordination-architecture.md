@@ -13,11 +13,16 @@ modified: '2026-03-21'
 prov:wasDerivedFrom:
 - urn:srl:evidence:agentic-ai-next-intelligence-explosion-2026
 - urn:srl:evidence:damnventures-deterministic-clinical-llm-pipeline-2026
+- urn:srl:evidence:atlasforge-agent-language-bandwidth-2026
+- urn:srl:evidence:marquet-turn-the-ship-around
+- urn:srl:evidence:sullivan-who-not-how
+- urn:srl:evidence:lee-qiufan-ai-2041
+- urn:srl:evidence:waller-team-success
 skos:broader: []
 skos:narrower: []
 skos:related:
-- somnistics
-- market-intelligence
+- cross-domain-consilience-engine
+- consilience-process-sfi
 status: draft
 title: 'Vigil: AI Chief-of-Staff Coordination Architecture'
 trademarked: false

@@ -12,6 +12,9 @@ id: urn:srl:concept:vertical-development
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-spiral-dynamics-level-assessment
+- urn:srl:evidence:ali-three-pager-leadership-guidance-system
+- urn:srl:evidence:ali-awareness-exercise-purpose-of-judgment
+- urn:srl:evidence:ali-leadership-skill-upgrading-your-questions
 skos:broader: []
 skos:narrower: []
 skos:related:

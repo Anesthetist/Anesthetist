@@ -15,6 +15,17 @@ id: urn:srl:concept:structured-interoception-training
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-criticality-interoception-readiness-model
+- urn:srl:evidence:mischke-reeds-somatic-psychotherapy-toolbox
+- urn:srl:evidence:kerzen-mind-beyond-words
+- urn:srl:evidence:ali-three-pager-leadership-guidance-system
+- urn:srl:evidence:ali-awareness-exercise-failures-of-the-past
+- urn:srl:evidence:ali-awareness-exercise-story-spotting
+- urn:srl:evidence:ali-leadership-skill-authentic-leadership-rating-scales
+- urn:srl:evidence:ali-leadership-skill-compassionate-self-forgiveness
+- urn:srl:evidence:ali-leadership-skill-holding-space-for-healing
+- urn:srl:evidence:ali-leadership-skill-owning-negative-projections
+- urn:srl:evidence:ali-leadership-skill-upgrading-your-questions
+- urn:srl:evidence:ali-leadership-skill-venting-and-sorting
 skos:broader:
 - gap-moment-training
 skos:narrower: []

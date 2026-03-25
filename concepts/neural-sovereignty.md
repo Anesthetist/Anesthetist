@@ -14,6 +14,7 @@ id: urn:srl:concept:neural-sovereignty
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-ai-neurophysiological-optimization-design
+- urn:srl:evidence:srinivasan-network-state
 skos:broader:
 - somnistics
 skos:narrower: []

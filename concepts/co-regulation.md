@@ -24,6 +24,26 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:powezka-2022-hrv-synchrony-surgical-teamwork
 - urn:srl:evidence:agentic-ai-next-intelligence-explosion-2026
 - urn:srl:evidence:hutchins-1995-cognition-in-the-wild
+- urn:srl:evidence:porges-2026-polyvagal-theory-status-debate
+- urn:srl:evidence:burnout-trends-us-healthcare-workers-2025
+- urn:srl:evidence:tsabary-conscious-parent
+- urn:srl:evidence:siegel-bryson-yes-brain
+- urn:srl:evidence:siegel-hartzell-parenting-inside-out
+- urn:srl:evidence:gottman-seven-principles-marriage
+- urn:srl:evidence:shrier-irreversible-damage
+- urn:srl:evidence:stupple-sovereign-child
+- urn:srl:evidence:bonnell-co-parenting
+- urn:srl:evidence:lukach-my-lovely-wife-psych-ward
+- urn:srl:evidence:ali-three-pager-leadership-guidance-system
+- urn:srl:evidence:ali-awareness-exercise-positive-boundaries
+- urn:srl:evidence:ali-awareness-exercise-relationship-cycles
+- urn:srl:evidence:ali-leadership-skill-authentic-leadership-rating-scales
+- urn:srl:evidence:ali-leadership-skill-compassionate-self-forgiveness
+- urn:srl:evidence:ali-leadership-skill-deep-listening
+- urn:srl:evidence:ali-leadership-skill-holding-space-for-healing
+- urn:srl:evidence:ali-leadership-skill-positive-boundaries
+- urn:srl:evidence:ali-leadership-skill-venting-and-sorting
+- urn:srl:evidence:ali-worksheet-6-levels-of-listening
 skos:broader:
 - polyvagal-theory
 skos:narrower: []

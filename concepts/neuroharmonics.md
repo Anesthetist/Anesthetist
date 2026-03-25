@@ -24,6 +24,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:nature-2025-global-hrv-coherence-frequencies
 - urn:srl:evidence:springer-2025-remote-hrvb-mental-health-meta-analysis
 - urn:srl:evidence:bieri-2025-flow-state-robotic-surgery-eeg
+- urn:srl:evidence:hrv-biofeedback-cardiovascular-meta-analysis-2026
+- urn:srl:evidence:jhana-7t-fmri-consciousness-2025
 skos:broader:
 - neuro-ouroboros
 skos:narrower: []

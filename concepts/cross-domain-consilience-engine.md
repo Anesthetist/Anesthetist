@@ -3,6 +3,8 @@ created: '2026-03-21'
 creator: vigil
 id: urn:srl:concept:cross-domain-consilience-engine
 modified: '2026-03-21'
+prov:wasDerivedFrom:
+- urn:srl:evidence:shiffman-nature-of-code
 skos:related:
 - vigil-coordination-architecture
 - commoncog-operating-principles

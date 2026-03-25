@@ -44,6 +44,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ma-2026-insulo-frontal-stress-cognitive-rigidity
 - urn:srl:evidence:frontiers-2026-interoception-maternal-affective-touch
 - urn:srl:evidence:gibson-1979-ecological-perception
+- urn:srl:evidence:atlasforge-agent-language-bandwidth-2026
+- urn:srl:evidence:elia-scale-2026-emotion-linked-interoceptive-awareness
+- urn:srl:evidence:lieff-secret-language-of-cells
 skos:broader: []
 skos:narrower:
 - anterocept

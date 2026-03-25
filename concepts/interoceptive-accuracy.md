@@ -12,6 +12,7 @@ id: urn:srl:concept:interoceptive-accuracy
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-interoception-crna-resilience
+- urn:srl:evidence:ali-awareness-exercise-relationship-cycles
 skos:broader:
 - interoception
 skos:narrower: []

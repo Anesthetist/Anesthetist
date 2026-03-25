@@ -40,6 +40,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:shirley-2024-mental-skills-orthopaedic-surgery
 - urn:srl:evidence:lehrer-2020-hrv-biofeedback-limitations
 - urn:srl:evidence:cooley-vagus-resonant-breathing-protocols-2026
+- urn:srl:evidence:hrv-biofeedback-mental-stress-myocardial-2026
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

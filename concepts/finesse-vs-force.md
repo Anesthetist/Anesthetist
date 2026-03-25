@@ -3,6 +3,8 @@ created: '2026-03-14'
 creator: randy
 id: urn:srl:concept:finesse-vs-force
 modified: '2026-03-14'
+prov:wasDerivedFrom:
+- urn:srl:evidence:ali-three-pager-leadership-guidance-system
 status: draft
 subjects:
 - clinical-expertise

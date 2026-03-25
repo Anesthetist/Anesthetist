@@ -37,6 +37,10 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:popov-2025-team-communication-simulation
 - urn:srl:evidence:voity-2025-or-distractions-cognitive-load
 - urn:srl:evidence:milleville-2025-crna-decision-making
+- urn:srl:evidence:hrv-biofeedback-substance-use-disorder-rct-2026
+- urn:srl:evidence:jhana-7t-fmri-consciousness-2025
+- urn:srl:evidence:ali-three-pager-leadership-guidance-system
+- urn:srl:evidence:ali-awareness-exercise-relationship-cycles
 skos:broader: []
 skos:narrower: []
 skos:related:
@@ -59,6 +63,17 @@ version: 1.1
 # State Transition
 
 The moment of shifting from one autonomic or cognitive state to another — sympathetic→parasympathetic, fragmented attention→focused attention, freeze→engagement. Gap moments are *engineered state transitions*: the somnistics insight is that these transitions are the fundamental unit of change and the primary training surface.
+
+## Suboptimal State Attractors
+
+The nervous system can become trapped in suboptimal attractors that degrade performance and wellbeing:
+
+- **Hyperarousal** — sustained sympathetic activation; residual fight-or-flight bleed between tasks
+- **Hypoarousal** — parasympathetic collapse; freeze, shutdown, dissociation
+- **Cognitive tunnel** — attentional narrowing under stress; loss of peripheral awareness and clinical flexibility
+- **Dyspneic panic loops** — breath-driven anxiety spirals where disordered breathing reinforces sympathetic activation
+
+Somnistics trains the nervous system to recognize these attractors and transition toward task-ready regulation — not calm, not aroused, but flexibly engaged.
 
 ## Neurophysiology
 

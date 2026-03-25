@@ -12,6 +12,7 @@ id: urn:srl:concept:coherence-field
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-spiral-dynamics-level-assessment
+- urn:srl:evidence:meditation-csf-fluid-dynamics-2026
 skos:broader:
 - somnistics
 skos:narrower: []

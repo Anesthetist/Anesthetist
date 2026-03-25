@@ -12,6 +12,7 @@ id: urn:srl:concept:time-wealth
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-kundalini-awakening-description
+- urn:srl:evidence:twist-soul-of-money
 skos:broader: []
 skos:narrower: []
 skos:related:

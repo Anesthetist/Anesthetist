@@ -12,6 +12,7 @@ id: urn:srl:concept:syntopical-reading-method
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-syntopical-reading-strategy
+- urn:srl:evidence:adler-van-doren-how-to-read-a-book
 skos:broader:
 - consilience
 skos:narrower: []

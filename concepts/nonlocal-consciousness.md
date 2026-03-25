@@ -20,6 +20,10 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:pear-lab-rng-studies
 - urn:srl:evidence:journal-nonlocality-placebo-retrocausality
 - urn:srl:evidence:nondual-awareness-2025-biorxiv-brain-eeg
+- urn:srl:evidence:sobhani-proof-spiritual-phenomena
+- urn:srl:evidence:sinclair-mental-radio
+- urn:srl:evidence:targ-third-eye-spies
+- urn:srl:evidence:rolls-east-west-paranormality
 skos:broader: []
 skos:narrower:
 - retrocausal-presentiment

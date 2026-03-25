@@ -12,6 +12,7 @@ id: urn:srl:concept:syntropic-positioning
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-syntopical-reading-strategy
+- urn:srl:evidence:di-corpo-vannini-syntropy
 skos:broader:
 - somnistics
 skos:narrower: []

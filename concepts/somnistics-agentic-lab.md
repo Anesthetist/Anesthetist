@@ -9,6 +9,8 @@ dc:subject:
 - agentic-systems
 id: urn:srl:concept:somnistics-agentic-lab
 modified: '2026-03-22'
+prov:wasDerivedFrom:
+- urn:srl:evidence:ismail-diamandis-exponential-organizations
 skos:related:
 - vigil-coordination-architecture
 - agent-quartet-framework

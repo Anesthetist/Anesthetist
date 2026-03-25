@@ -3,6 +3,8 @@ created: '2026-03-16'
 creator: randy+claude
 id: urn:srl:concept:compliance-metadata-layer
 modified: '2026-03-16'
+prov:wasDerivedFrom:
+- urn:srl:evidence:zuboff-age-surveillance-capitalism
 status: review
 subjects:
 - compliance

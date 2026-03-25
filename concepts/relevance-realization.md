@@ -1,38 +1,39 @@
 ---
-id: "urn:srl:concept:relevance-realization"
-type: concept
-title: "Relevance Realization"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- RR
+- salience detection
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - cognitive-science
-  - attention
-  - meaning-making
-  - salience
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:somnistics-and-inner-vision"
-  - "chatgpt-export:resonance-with-somnistics"
+- chatgpt-export:somnistics-and-inner-vision
+- chatgpt-export:resonance-with-somnistics
+dc:subject:
+- cognitive-science
+- attention
+- meaning-making
+- salience
+id: urn:srl:concept:relevance-realization
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:damasio-1996-somatic-marker
+- urn:srl:evidence:mcgilchrist-2009-master-emissary
+- urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness
+- urn:srl:evidence:vervaeke-relevance-realization
+- urn:srl:evidence:ali-awareness-exercise-story-spotting
 skos:broader:
-  - somnistics
+- somnistics
 skos:narrower: []
 skos:related:
-  - hemispheric-rebalancing
-  - self-remembering
-  - interoception
-  - state-transition
-  - cognitive-variability-analysis
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:damasio-1996-somatic-marker"
-  - "urn:srl:evidence:mcgilchrist-2009-master-emissary"
-  - "urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness"
-  - "urn:srl:evidence:vervaeke-relevance-realization"
-aliases:
-  - RR
-  - salience detection
+- hemispheric-rebalancing
+- self-remembering
+- interoception
+- state-transition
+- cognitive-variability-analysis
+status: canonical
+title: Relevance Realization
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Relevance Realization

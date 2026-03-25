@@ -30,6 +30,8 @@ prov:wasDerivedFrom:
 - urn:srl:observation:error-archetypes-qrc
 - urn:srl:evidence:diwan-2026-opioid-free-anesthesia-nurse-anesthetists
 - urn:srl:observation:somatic-certification-curriculum-architecture
+- urn:srl:evidence:young-ultralearning
+- urn:srl:evidence:ali-leadership-skill-hiring-owners-instead-of-victims
 skos:broader:
 - somnistics
 skos:narrower:

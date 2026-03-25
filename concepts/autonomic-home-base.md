@@ -20,6 +20,7 @@ modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-neuroscience-biofeedback-breathwork-framework
 - urn:srl:chat:chatgpt-thought-articulation-mastery
+- urn:srl:evidence:ali-awareness-exercise-purpose-of-judgment
 skos:broader: []
 skos:narrower: []
 skos:related:

@@ -18,6 +18,8 @@ modified: 2026-03-14
 prov:wasDerivedFrom:
 - urn:srl:evidence:porges-2007-vagal-tone-faces-voices
 - urn:srl:evidence:penn-state-2026-night-waking-cognition
+- urn:srl:evidence:sleep-consistency-academic-performance-2026
+- urn:srl:evidence:sleepgpt-foundation-model-sleep-decoding-2026
 skos:broader:
 - neuro-ouroboros
 skos:narrower: []

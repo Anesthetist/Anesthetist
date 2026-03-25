@@ -36,6 +36,17 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:vervaeke-relevance-realization
 - urn:srl:evidence:jhana-2025-7t-fmri-acam
 - urn:srl:evidence:nondual-awareness-2025-biorxiv-brain-eeg
+- urn:srl:evidence:gurdjieff-in-search-of-being
+- urn:srl:evidence:gurdjieff-life-is-real
+- urn:srl:evidence:oconnor-awareness-games
+- urn:srl:evidence:stupple-sovereign-child
+- urn:srl:evidence:ali-three-pager-leadership-guidance-system
+- urn:srl:evidence:ali-awareness-exercise-positive-boundaries
+- urn:srl:evidence:ali-awareness-exercise-relationship-cycles
+- urn:srl:evidence:ali-awareness-exercise-story-spotting
+- urn:srl:evidence:ali-leadership-skill-creating-strong-standards
+- urn:srl:evidence:ali-leadership-skill-owning-negative-projections
+- urn:srl:evidence:ali-worksheet-6-levels-of-listening
 skos:broader:
 - somnistics
 skos:narrower: []

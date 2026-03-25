@@ -13,6 +13,8 @@ id: urn:srl:concept:second-victim-phenomenon
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:evidence:scott-2010-second-victim-rapid-response
+- urn:srl:evidence:paul-moynihan-losing-million-dollars
+- urn:srl:evidence:ali-leadership-skill-compassionate-self-forgiveness
 skos:broader:
 - clinician-durability
 skos:narrower: []

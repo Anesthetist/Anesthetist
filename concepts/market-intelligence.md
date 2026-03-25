@@ -8,6 +8,22 @@ prov:wasDerivedFrom:
 - urn:srl:observation:tam-keyword-intelligence-breathwork-demand
 - urn:srl:observation:immersion-neuroscience-competitor-analysis
 - urn:srl:evidence:wiener-founders-fundraising-macro-tracking-2026
+- urn:srl:evidence:field-mother-of-invention-healthcare
+- urn:srl:evidence:helmer-7-powers
+- urn:srl:evidence:strauss-howe-fourth-turning
+- urn:srl:evidence:allison-destined-for-war
+- urn:srl:evidence:malmgren-geopolitics-for-investors
+- urn:srl:evidence:nestor-breath
+- urn:srl:evidence:sullivan-abc-model
+- urn:srl:evidence:gurevich-perfect-portfolio
+- urn:srl:evidence:chambers-dimson-financial-market-history
+- urn:srl:evidence:iskold-startup-hacks-frameworks
+- urn:srl:evidence:iskold-2048-ventures-investor-profile
+- urn:srl:evidence:iskold-bottom-up-market-sizing
+- urn:srl:evidence:rachitsky-consumer-app-first-users
+- urn:srl:evidence:rachitsky-offline-first-healthcare-growth
+- urn:srl:evidence:pausality-v108-analytics-baseline
+- urn:srl:evidence:pausality-email-engagement-decline
 skos:narrower:
 - competitive-moat-latency
 - ip-six-pillar-moat

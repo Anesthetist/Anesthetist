@@ -12,6 +12,7 @@ id: urn:srl:concept:multimodal-sensor-fusion
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-provisional-patent-draft
+- urn:srl:evidence:sleepgpt-foundation-model-sleep-decoding-2026
 skos:broader:
 - closed-loop-biofeedback
 skos:narrower: []

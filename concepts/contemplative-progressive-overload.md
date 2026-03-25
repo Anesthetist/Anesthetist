@@ -19,6 +19,7 @@ id: urn:srl:concept:contemplative-progressive-overload
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-insight-meditation-guidance
+- urn:srl:evidence:ali-awareness-exercise-failures-of-the-past
 skos:broader:
 - embodied-metacognition
 skos:narrower: []

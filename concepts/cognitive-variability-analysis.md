@@ -32,6 +32,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:bordini-2025-cognitive-errors-difficult-airway
 - urn:srl:evidence:shaheen-2025-cognitive-load-or-learning
 - urn:srl:evidence:popov-2025-team-communication-simulation
+- urn:srl:evidence:kahneman-thinking-fast-and-slow
 skos:broader:
 - somnistics
 skos:narrower: []

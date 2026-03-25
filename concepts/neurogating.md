@@ -41,6 +41,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:flow-state-2025-wearable-physiological-assessment
 - urn:srl:evidence:nondual-awareness-2025-biorxiv-brain-eeg
 - urn:srl:evidence:ochsner-gross-2005-cognitive-control-emotion
+- urn:srl:evidence:jhana-7t-fmri-consciousness-2025
 skos:broader:
 - somnistics
 skos:narrower:

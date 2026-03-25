@@ -12,6 +12,7 @@ id: urn:srl:concept:demand-sprints
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-commoncog-scaling-lessons
+- urn:srl:evidence:ries-lean-startup
 skos:broader:
 - effectuation-experimentation
 skos:narrower: []

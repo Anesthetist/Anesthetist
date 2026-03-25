@@ -13,6 +13,7 @@ id: urn:srl:concept:metasomatic-entrepreneurship
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-commoncog-scaling-lessons
+- urn:srl:evidence:colonna-reboot
 skos:broader:
 - somnistics
 skos:narrower: []

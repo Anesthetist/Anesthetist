@@ -15,6 +15,11 @@ modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-syntopical-reading-strategy
 - urn:srl:evidence:wiener-founders-fundraising-macro-tracking-2026
+- urn:srl:evidence:dalio-big-debt-crises
+- urn:srl:evidence:ferguson-when-money-dies
+- urn:srl:evidence:strauss-howe-fourth-turning
+- urn:srl:evidence:varelas-how-money-became-dangerous
+- urn:srl:evidence:chambers-dimson-financial-market-history
 skos:broader: []
 skos:narrower: []
 skos:related:

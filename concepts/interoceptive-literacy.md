@@ -30,6 +30,10 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:barrett-2017-how-emotions-are-made
 - urn:srl:evidence:lane-schwartz-1987-levels-emotional-awareness
 - urn:srl:evidence:cooley-vagus-resonant-breathing-protocols-2026
+- urn:srl:evidence:elia-scale-2026-emotion-linked-interoceptive-awareness
+- urn:srl:evidence:hrv-biofeedback-substance-use-disorder-rct-2026
+- urn:srl:evidence:brown-atlas-of-the-heart
+- urn:srl:evidence:ali-leadership-skill-hiring-owners-instead-of-victims
 skos:broader:
 - interoception
 skos:narrower:

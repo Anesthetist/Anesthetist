@@ -9,6 +9,8 @@ dc:subject:
 - existential-resilience
 id: urn:srl:concept:wanton-hamlet-agency-polarity
 modified: '2026-03-19'
+prov:wasDerivedFrom:
+- urn:srl:evidence:ali-leadership-skill-hiring-owners-instead-of-victims
 skos:related:
 - gap-moment-training
 - attentional-sovereignty

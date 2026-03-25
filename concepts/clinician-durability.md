@@ -72,6 +72,27 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:wiener-founders-fundraising-macro-tracking-2026
 - urn:srl:evidence:gucciardi-2015-mental-toughness
 - urn:srl:evidence:lambdastrength-er-extended-exhale-clinical-validation-2026
+- urn:srl:evidence:hrv-biofeedback-mental-stress-myocardial-2026
+- urn:srl:evidence:meditation-csf-fluid-dynamics-2026
+- urn:srl:evidence:burnout-trends-us-healthcare-workers-2025
+- urn:srl:evidence:ruskin-rosenbaum-anesthesia-emergencies
+- urn:srl:evidence:achieving-success-balance-physician-guide
+- urn:srl:evidence:loehr-schwartz-power-full-engagement
+- urn:srl:evidence:tuchman-march-of-folly
+- urn:srl:evidence:steenbarger-enhancing-trader-performance
+- urn:srl:evidence:ward-bulletproof-trader
+- urn:srl:evidence:sullivan-geometry-staying-cool
+- urn:srl:evidence:ryan-bulletproof-trading
+- urn:srl:evidence:sullivan-thin-green-line
+- urn:srl:evidence:lukach-my-lovely-wife-psych-ward
+- urn:srl:evidence:ali-awareness-exercise-failures-of-the-past
+- urn:srl:evidence:ali-awareness-exercise-stress-and-addictions
+- urn:srl:evidence:ali-awareness-exercise-purpose-of-judgment
+- urn:srl:evidence:ali-leadership-skill-compassionate-self-forgiveness
+- urn:srl:evidence:ali-leadership-skill-creating-strong-standards
+- urn:srl:evidence:ali-leadership-skill-owning-negative-projections
+- urn:srl:evidence:ali-leadership-skill-positive-boundaries
+- urn:srl:evidence:ali-leadership-skill-venting-and-sorting
 skos:broader:
 - somnistics
 skos:narrower: []

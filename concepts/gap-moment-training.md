@@ -56,6 +56,11 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:milleville-2025-crna-decision-making
 - urn:srl:evidence:arena-strive-2024-app-coaching-clinician-burnout
 - urn:srl:evidence:beilock-2010-choke
+- urn:srl:evidence:burnout-trends-us-healthcare-workers-2025
+- urn:srl:evidence:bellafiore-the-playbook
+- urn:srl:evidence:ali-awareness-exercise-relationship-cycles
+- urn:srl:evidence:ali-leadership-skill-creating-strong-standards
+- urn:srl:evidence:ali-leadership-skill-deep-listening
 skos:broader:
 - somnistics
 skos:narrower:
@@ -88,6 +93,10 @@ A structured training modality that repurposes short, naturally occurring transi
 **Gap Moment** (ontology primitive): Short, often-overlooked transitional windows in daily life that can be repurposed as training reps for interoception and regulation instead of remaining dead time or micro-dissociation. Approximately 30–40 gap moments occur per CRNA shift.
 
 **Gap Moment Training™** (category/method): The structured practice of using those transitions to prepare physiology and attention *before* a demanding event. It is explicitly positioned as a new category distinct from "mindfulness apps" or generic wellness — counter-positioned against tools that require long sessions disconnected from workflow.
+
+### Randy's Canonical Definition
+
+> "A structured way of using micro-transitions as the primary training surface — teaching people to recognize gap moments, run 60-second protocols, and capture biometric deltas so readiness becomes a habit, not an event."
 
 ## Mechanism
 

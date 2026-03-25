@@ -14,6 +14,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:wilson-1998-consilience
 - urn:srl:chat:chatgpt-knowledge-graph-synthesis
 - urn:srl:evidence:agentic-ai-next-intelligence-explosion-2026
+- urn:srl:evidence:bridle-ways-of-being
 skos:broader: []
 skos:narrower:
 - consilience-by-translation

@@ -12,6 +12,7 @@ id: urn:srl:concept:resonant-nonfiction
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-syntopical-reading-strategy
+- urn:srl:evidence:heinrichs-thank-you-for-arguing
 skos:broader: []
 skos:narrower: []
 skos:related:

@@ -10,6 +10,8 @@ dc:subject:
 - biofeedback
 id: urn:srl:concept:co2-tolerance-clinical-durability
 modified: '2026-03-22'
+prov:wasDerivedFrom:
+- urn:srl:evidence:mckeown-atomic-focus
 skos:related:
 - breath-hold-autonomic-signature
 - clinician-durability

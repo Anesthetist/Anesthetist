@@ -12,6 +12,7 @@ id: urn:srl:concept:effectuation-experimentation
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-genius-or-integration
+- urn:srl:evidence:burnett-evans-designing-your-life
 skos:broader: []
 skos:narrower: []
 skos:related:

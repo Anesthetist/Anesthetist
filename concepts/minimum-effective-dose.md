@@ -31,6 +31,16 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:luton-2023-enhanced-stress-resilience-training
 - urn:srl:evidence:ericsson-1993-deliberate-practice
 - urn:srl:evidence:lambdastrength-er-extended-exhale-clinical-validation-2026
+- urn:srl:evidence:hrv-biofeedback-substance-use-disorder-rct-2026
+- urn:srl:evidence:pavel-kettlebell-simple-sinister
+- urn:srl:evidence:pavel-dan-john-easy-strength
+- urn:srl:evidence:mckeown-effortless
+- urn:srl:evidence:pontzer-burn
+- urn:srl:evidence:pastoor-grip
+- urn:srl:evidence:maggiulli-wealth-ladder
+- urn:srl:evidence:faber-global-asset-allocation
+- urn:srl:evidence:ali-leadership-skill-authentic-leadership-rating-scales
+- urn:srl:evidence:ali-leadership-skill-upgrading-your-questions
 skos:broader:
 - titration-to-effect
 skos:narrower: []
@@ -48,6 +58,8 @@ version: 1.1
 # Minimum Effective Dose
 
 The smallest intervention — in time, intensity, and frequency — that produces measurable neurophysiological and behavioral change. For somnistics: 5 breaths (60 seconds) x 5 daily sessions is more effective than a single weekly 30-minute block.
+
+> "One breath is likely the minimum effective dose of therapy." — Randy Graybeal
 
 ## Definition
 

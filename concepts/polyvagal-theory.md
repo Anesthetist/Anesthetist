@@ -26,6 +26,13 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:cox-2026-interoceptomimetics-aging
 - urn:srl:evidence:alkaabi-2026-interoception-network-rat-brain
 - urn:srl:evidence:grossman-2026-polyvagal-theory-untenable
+- urn:srl:evidence:porges-2026-polyvagal-theory-status-debate
+- urn:srl:evidence:ali-awareness-exercise-failures-of-the-past
+- urn:srl:evidence:ali-awareness-exercise-stress-and-addictions
+- urn:srl:evidence:ali-leadership-skill-authentic-leadership-rating-scales
+- urn:srl:evidence:ali-leadership-skill-owning-negative-projections
+- urn:srl:evidence:ali-leadership-skill-positive-boundaries
+- urn:srl:evidence:ali-leadership-skill-venting-and-sorting
 skos:broader: []
 skos:narrower: []
 skos:related:

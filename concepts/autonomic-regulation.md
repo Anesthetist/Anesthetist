@@ -51,6 +51,13 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:longaretti-2025-mindfulness-flow-meta-analysis
 - urn:srl:evidence:boyle-2025-environmental-factors-team-performance
 - crna-resilience-toolkit-series-v1
+- urn:srl:evidence:hrv-biofeedback-mental-stress-myocardial-2026
+- urn:srl:evidence:hrv-biofeedback-substance-use-disorder-rct-2026
+- urn:srl:evidence:porges-2026-polyvagal-theory-status-debate
+- urn:srl:evidence:ali-awareness-exercise-positive-boundaries
+- urn:srl:evidence:ali-awareness-exercise-stress-and-addictions
+- urn:srl:evidence:ali-leadership-skill-hiring-owners-instead-of-victims
+- urn:srl:evidence:ali-leadership-skill-positive-boundaries
 skos:broader: []
 skos:narrower:
 - vagal-tone

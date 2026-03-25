@@ -19,6 +19,16 @@ id: urn:srl:concept:nondual-clinical-awareness
 modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-non-dual-awareness-for-anesthesia
+- urn:srl:evidence:nondual-awareness-brain-eeg-2025
+- urn:srl:evidence:mckenna-spiritual-enlightenment-damnedest-thing
+- urn:srl:evidence:ngakpa-roaring-silence
+- urn:srl:evidence:goode-direct-path
+- urn:srl:evidence:robinson-enlightenment-project
+- urn:srl:evidence:ali-awareness-exercise-story-spotting
+- urn:srl:evidence:ali-awareness-exercise-purpose-of-judgment
+- urn:srl:evidence:ali-leadership-skill-deep-listening
+- urn:srl:evidence:ali-leadership-skill-owning-negative-projections
+- urn:srl:evidence:ali-worksheet-6-levels-of-listening
 skos:broader:
 - embodied-metacognition
 skos:narrower: []

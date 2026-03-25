@@ -13,6 +13,13 @@ id: urn:srl:concept:constraint-release-grief-loop
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-grief-processing-optimization
+- urn:srl:evidence:oconnor-grieving-brain
+- urn:srl:evidence:lukach-my-lovely-wife-psych-ward
+- urn:srl:evidence:ali-awareness-exercise-failures-of-the-past
+- urn:srl:evidence:ali-awareness-exercise-stress-and-addictions
+- urn:srl:evidence:ali-leadership-skill-compassionate-self-forgiveness
+- urn:srl:evidence:ali-leadership-skill-holding-space-for-healing
+- urn:srl:evidence:ali-leadership-skill-upgrading-your-questions
 skos:broader:
 - gap-moment-training
 skos:narrower: []

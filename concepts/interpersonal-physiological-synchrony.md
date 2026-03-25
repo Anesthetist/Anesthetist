@@ -8,6 +8,9 @@ dc:subject:
 - anesthesia
 id: urn:srl:concept:interpersonal-physiological-synchrony
 modified: '2026-03-19'
+prov:wasDerivedFrom:
+- urn:srl:evidence:ali-leadership-skill-deep-listening
+- urn:srl:evidence:ali-worksheet-6-levels-of-listening
 skos:related:
 - co-regulation
 - autonomic-regulation

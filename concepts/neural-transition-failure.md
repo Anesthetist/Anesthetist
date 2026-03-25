@@ -1,34 +1,35 @@
 ---
-id: "urn:srl:concept:neural-transition-failure"
-type: concept
-title: "Neural Transition Failure"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- residual sympathetic bleed
+- autonomic carry-over
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - state-dynamics
-  - clinical-safety
-  - autonomic-residue
+creator: Randy Graybeal
 dc:source:
-  - "google-drive:2026-02-28 Somnistics Persona Project Brief Red Team.md"
+- google-drive:2026-02-28 Somnistics Persona Project Brief Red Team.md
+dc:subject:
+- state-dynamics
+- clinical-safety
+- autonomic-residue
+id: urn:srl:concept:neural-transition-failure
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:brosschot-2006-perseverative-cognition
+- urn:srl:evidence:mcewan-2007-allostatic-load-brain
+- urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd
+- urn:srl:evidence:ali-leadership-skill-authentic-leadership-rating-scales
 skos:broader:
-  - state-transition
+- state-transition
 skos:narrower: []
 skos:related:
-  - gap-moment-training
-  - bandwidth-saturation-micro-events
-  - error-archetypes-qrc
-  - clinician-durability
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:brosschot-2006-perseverative-cognition"
-  - "urn:srl:evidence:mcewan-2007-allostatic-load-brain"
-  - "urn:srl:evidence:rayani-2025-brain-stimulation-mindfulness-ptsd"
-aliases:
-  - residual sympathetic bleed
-  - autonomic carry-over
+- gap-moment-training
+- bandwidth-saturation-micro-events
+- error-archetypes-qrc
+- clinician-durability
+status: canonical
+title: Neural Transition Failure
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # Neural Transition Failure

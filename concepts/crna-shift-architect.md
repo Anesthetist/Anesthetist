@@ -9,6 +9,8 @@ dc:subject:
 - pausality
 id: urn:srl:concept:crna-shift-architect
 modified: '2026-03-19'
+prov:wasDerivedFrom:
+- urn:srl:evidence:mic-628-circadian-clock-drug-2026
 skos:related:
 - gap-moment-training
 - autonomic-regulation

@@ -18,6 +18,13 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:klein-1998-recognition-primed-decision
 - urn:srl:evidence:gibson-1979-ecological-perception
 - urn:srl:evidence:wiest-epothilone-microtubule-anesthesia-consciousness-2024
+- urn:srl:evidence:fleisher-evidence-based-anesthesiology
+- urn:srl:evidence:elder-new-trading-for-a-living
+- urn:srl:evidence:cahalan-brain-on-fire
+- urn:srl:evidence:kerzen-mind-beyond-words
+- urn:srl:evidence:gaunt-ego-authority-failure
+- urn:srl:evidence:ali-awareness-exercise-positive-boundaries
+- urn:srl:evidence:ali-leadership-skill-deep-listening
 skos:broader: []
 skos:narrower: []
 skos:related:

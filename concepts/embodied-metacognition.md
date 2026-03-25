@@ -23,6 +23,8 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-insight-meditation-guidance
 - urn:srl:evidence:barrett-2017-epic-model
 - urn:srl:evidence:schon-1983-reflective-practitioner
+- urn:srl:evidence:kross-chatter
+- urn:srl:evidence:ali-awareness-exercise-story-spotting
 skos:broader:
 - interoception
 skos:narrower:

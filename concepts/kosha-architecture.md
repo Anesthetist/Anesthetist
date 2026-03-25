@@ -1,42 +1,46 @@
 ---
-id: "urn:srl:concept:kosha-architecture"
-type: concept
-title: "Kosha Architecture"
-status: canonical
-creator: "Randy Graybeal"
+aliases:
+- five-sheath model
+- pancha kosha
+- Moongate Training Paradigm
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.1
-dc:subject:
-  - vedantic-philosophy
-  - nervous-system-training
-  - somnistics
-  - five-sheath-model
-  - progressive-training
+creator: Randy Graybeal
 dc:source:
-  - "chatgpt-export:crna-onboarding-koshas-framework"
-  - "chatgpt-export:koshas-for-crna-training"
-  - "chatgpt-export:understanding-vijnanamaya-kosha"
+- chatgpt-export:crna-onboarding-koshas-framework
+- chatgpt-export:koshas-for-crna-training
+- chatgpt-export:understanding-vijnanamaya-kosha
+dc:subject:
+- vedantic-philosophy
+- nervous-system-training
+- somnistics
+- five-sheath-model
+- progressive-training
+id: urn:srl:concept:kosha-architecture
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:evidence:josipovic-2019-nondual-awareness
+- urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025
+- urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg
+- urn:srl:evidence:van-der-kolk-2014-body-keeps-score
+- urn:srl:evidence:adele-yamas-niyamas
+- urn:srl:evidence:satchidananda-yoga-sutras-patanjali
+- urn:srl:evidence:iyengar-light-on-life
+- urn:srl:evidence:biddulph-wild-creature-mind
 skos:broader:
-  - somnistics
+- somnistics
 skos:narrower: []
 skos:related:
-  - interoception
-  - autonomic-regulation
-  - polyanchora
-  - anterocept
-  - neuro-ouroboros
-  - self-remembering
-prov:wasDerivedFrom:
-  - "urn:srl:evidence:josipovic-2019-nondual-awareness"
-  - "urn:srl:evidence:sacchet-lab-jhana-studies-2024-2025"
-  - "urn:srl:evidence:shinozuka-2025-cessation-consciousness-eeg-meg"
-  - "urn:srl:evidence:van-der-kolk-2014-body-keeps-score"
-aliases:
-  - five-sheath model
-  - pancha kosha
-  - Moongate Training Paradigm
+- interoception
+- autonomic-regulation
+- polyanchora
+- anterocept
+- neuro-ouroboros
+- self-remembering
+status: canonical
+title: Kosha Architecture
 trademarked: false
+type: concept
+version: 1.1
 ---
 
 # Kosha Architecture
