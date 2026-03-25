@@ -30,6 +30,6 @@ Published in *Sensors* (2022). Divides digital health technology metadata into c
 
 ## Neurotagging Gap
 
-DHT Metadata Framework validates the need. [[Neurotagging]] is the implementation — broader scope (not disease-specific), real-time adaptive, curriculum-aware, and designed for behavioral micro-interventions rather than device monitoring.
+DHT Metadata Framework validates the need. [[neurotagging]] is the implementation — broader scope (not disease-specific), real-time adaptive, curriculum-aware, and designed for behavioral micro-interventions rather than device monitoring.
 
 **Full text:** [PMC Article](https://pmc.ncbi.nlm.nih.gov/articles/PMC8954603/)

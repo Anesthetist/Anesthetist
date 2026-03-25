@@ -57,5 +57,5 @@ The ExO framework positions SRL as an exponential organization from founding —
 ## Related Concepts
 
 - [[somnistics]] — the discipline that the MTP serves
-- [[somnistics-field-definition]] — the academic treatment of the discipline
+- [[somnistics]] — the academic treatment of the discipline
 - [[consciousness-engineering]] — the brand positioning aligned with the MTP

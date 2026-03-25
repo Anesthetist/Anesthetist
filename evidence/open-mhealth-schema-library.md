@@ -29,6 +29,6 @@ Same coverage as IEEE 1752 — measurement-side metadata only. The "how it was c
 
 ## Neurotagging Gap
 
-Open mHealth provides the data representation patterns. [[Neurotagging]] extends with intervention semantics.
+Open mHealth provides the data representation patterns. [[neurotagging]] extends with intervention semantics.
 
 **Full text:** [Open mHealth Schemas](https://www.openmhealth.org/documentation/schema-docs/schema-library/)

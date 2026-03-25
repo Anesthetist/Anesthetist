@@ -318,7 +318,7 @@ Lifelong athletes preserve certain autonomic functions but develop unique vulner
 
 ### Interoceptive Awareness Training
 
-Interoceptive accuracy declines with age (Chen et al. 2021, *Trends Neurosci*). For 70+ athletes whose bodies are changing, the ability to accurately read autonomic signals becomes more important and simultaneously more difficult. [[Interoceptive-literacy]] training may help older adults detect early signs of autonomic dysregulation — the [[gap-moment-training]] principle applied to aging.
+Interoceptive accuracy declines with age (Chen et al. 2021, *Trends Neurosci*). For 70+ athletes whose bodies are changing, the ability to accurately read autonomic signals becomes more important and simultaneously more difficult. [[interoceptive-literacy]] training may help older adults detect early signs of autonomic dysregulation — the [[gap-moment-training]] principle applied to aging.
 
 ---
 

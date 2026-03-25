@@ -40,7 +40,7 @@ Gap moment literacy is the trained capacity to:
 
 ## Distinction from Interoceptive Literacy
 
-[[Interoceptive-literacy]] is the broader skill of perceiving and interpreting internal body signals. Gap moment literacy builds on interoceptive literacy but adds a temporal and contextual layer: it is pattern recognition applied to state transitions within professional workflow. A practitioner can have strong interoceptive literacy (accurate heartbeat detection, precise breath awareness) but poor gap moment literacy (failing to recognize that a transition window is occurring or misclassifying their state).
+[[interoceptive-literacy]] is the broader skill of perceiving and interpreting internal body signals. Gap moment literacy builds on interoceptive literacy but adds a temporal and contextual layer: it is pattern recognition applied to state transitions within professional workflow. A practitioner can have strong interoceptive literacy (accurate heartbeat detection, precise breath awareness) but poor gap moment literacy (failing to recognize that a transition window is occurring or misclassifying their state).
 
 ## Assessment in the SRB-60
 

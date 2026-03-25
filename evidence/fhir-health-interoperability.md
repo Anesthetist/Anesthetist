@@ -30,6 +30,6 @@ FHIR is a transport and interoperability standard, not a therapeutic metadata sc
 
 ## Neurotagging Gap
 
-FHIR is the transport layer. [[Neurotagging]] is the semantic layer that gives meaning to what FHIR carries. Complementary, not competing.
+FHIR is the transport layer. [[neurotagging]] is the semantic layer that gives meaning to what FHIR carries. Complementary, not competing.
 
 **Full text:** [FHIR Specification](https://hl7.org/fhir/)

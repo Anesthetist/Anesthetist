@@ -57,7 +57,7 @@ SIT provides the classification backbone for the entire vault — every concept,
 
 ## Related Concepts
 
-- [[somnistics-field-definition]] — the academic treatment; SIT is the operational taxonomy
+- [[somnistics]] — the academic treatment; SIT is the operational taxonomy
 - [[neurogating]] — PAS-ME is the core detection algorithm within Neurogating
 - [[readyscore]] — PIE-Engine selects interventions based on ReadyScore
 - [[ontology-metadata-architecture]] — SIT extends the UMLS/SNOMED/MeSH framework

@@ -31,6 +31,6 @@ Covers the biometric measurement layer well. Standardizes how HRV is represented
 
 ## Neurotagging Gap
 
-IEEE 1752 handles the biometric output layer. [[Neurotagging]] adds the intervention input layer and the target mechanism layer. SRL's biometric data could be formatted per IEEE 1752 while carrying neurotagging metadata on top.
+IEEE 1752 handles the biometric output layer. [[neurotagging]] adds the intervention input layer and the target mechanism layer. SRL's biometric data could be formatted per IEEE 1752 while carrying neurotagging metadata on top.
 
 **Full text:** [IEEE 1752.1-2021](https://standards.ieee.org/ieee/1752.1/6982/)

@@ -29,6 +29,6 @@ Designed for lab neurophysiology, not therapeutic interventions. Can tag that a 
 
 ## Neurotagging Gap
 
-NWB handles the raw neurophysiology data layer. [[Neurotagging]] adds the intervention protocol and outcome layers that NWB does not address.
+NWB handles the raw neurophysiology data layer. [[neurotagging]] adds the intervention protocol and outcome layers that NWB does not address.
 
 **Full text:** [NWB Documentation](https://nwb.org)
