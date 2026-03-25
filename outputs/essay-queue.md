@@ -15,7 +15,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Angle | Pull In | Status |
 |---|---------|-------------|-------|---------|--------|
-| 01 | anterocept | Anterocept: The Body Knows Before You Do | Anticipatory interoception is the mechanism beneath every SRL trademarked concept | interoception, polyanchora, state-transition | pending |
+| 01 | anterocept | Anterocept: The Body Knows Before You Do | Anticipatory interoception is the mechanism beneath every SRL trademarked concept | interoception, polyanchora, state-transition | completed: anterocept-2026-03-25.md |
 | 02 | neurogating | Neurogating: Why the Gate Between States Is the Skill | Reframe attention from "focus harder" to selective permeability | neurominute, cognitive-variability-analysis, state-transition | pending |
 | 03 | gap-moment-training | The 60-Second Inflection Point: Gap Moment Training as Clinical Infrastructure | GMT isn't meditation-lite — it's minimum-dose state transition training under real workflow constraints | titration-to-effect, minimum-effective-dose, anterocept | pending |
 | 04 | vagal-tone | Vagal Tone Is Not Relaxation: What RMSSD Actually Measures | The field conflates vagal tone with calm; the literature shows it's autonomic flexibility | resonant-breathing-frequency, polyvagal-theory, cognitive-variability-analysis | pending |

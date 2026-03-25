@@ -1,15 +1,17 @@
 # Active Context — SRL
 
-**Last updated:** 2026-03-20
+**Last updated:** 2026-03-25
 
 ## Current Priorities
 
 1. **Preseed fundraising** — F&F SAFE round, $250K target, $100K secured. Active investor conversations.
-2. **Don Katz follow-up** — Jason drafting response with research package.
-3. **Competitive intelligence system** — Next Sunday scan: March 22.
-4. **CE course** — AANA Category A, target CANA Virtual Spring Conference (May 30-31). Sessions 8-21 need writing.
-5. **VCU Research Collaboration** — Evidence assessment ready for Honeycutt. Three study designs costed.
-6. **Concept review + pruning** — 146 concepts, 101 at draft. Prune aggressively, promote strongest.
+2. **Massimo Ferrari driver project** — Elite motorsport audience created. Pre-engagement research package and coaching proposal in development.
+3. **Essay engine (hourly)** — Content generation pipeline for thought leadership and audience development.
+4. **Don Katz follow-up** — Jason drafting response with research package.
+5. **Competitive intelligence system** — Weekly Sunday scans active.
+6. **CE course** — AANA Category A, target CANA Virtual Spring Conference (May 30-31). Sessions 8-21 need writing.
+7. **VCU Research Collaboration** — Evidence assessment ready for Honeycutt. Three study designs costed.
+8. **Concept review + pruning** — 162 concepts, 450 evidence notes, 259 observations. Prune aggressively, promote strongest.
 
 ## Open Decisions
 
@@ -23,7 +25,7 @@
 
 ### Vault Mining
 - 60+ ChatGPT files mined across 11 waves
-- 146 concepts (up from 54), 238 evidence notes, 205 observations
+- 162 concepts (up from 146), 450 evidence notes, 259 observations
 - Automated mining pipeline built + tested (tools/mine-next-batch.sh)
 - Data-driven priority queue generated (TF-IDF gap analysis, 50 ranked files)
 - MCP update_note permission fixed
@@ -36,6 +38,7 @@
 - Vitarka-vicara-integration, alpha-theta-crossover, dmn-voluntary-control
 - Cognitive-development-arc (6 developmental phases documented)
 - Somnistics nursing theory drafted
+- 3 new concepts from KB review: autonomic-co-regulation, convergent-discovery-validation, subconscious-performance-degradation
 
 ### Biomedical Validation
 - 44 concepts validated across 8 clusters (BioMistral + PubMed, 12 queries, 150+ articles)
