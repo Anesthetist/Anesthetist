@@ -79,3 +79,15 @@ audiences:
       - focus and cognitive performance
       - quick adoption (minimal learning curve)
       - evidence that it works for high-pressure professions
+
+  elite-motorsport-driver:
+    id: "urn:srl:audience:elite-motorsport-driver"
+    title: "Elite Motorsport Driver"
+    evidence_depth: moderate
+    language_register: professional
+    key_concerns:
+      - sympathetic overdrive before and during races
+      - post-race recovery time
+      - reaction time degradation under autonomic inefficiency
+      - sustained precision under extreme G-load and heat
+      - competitive edge through nervous system optimization

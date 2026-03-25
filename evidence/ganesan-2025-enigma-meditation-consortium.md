@@ -41,8 +41,7 @@ This paper announces and describes ENIGMA-Meditation, a worldwide consortium bri
 
 ## Concepts Derived
 
-- [[clinical-credibility]]
-- [[evidence-base]]
+- [[evidence-grading-framework]]
 
 ## Randy's Clinical Interpretation
 

@@ -33,7 +33,7 @@ EPIC provides the theoretical mechanism for why [[structured-interoception-train
 - **Mode 2 (Breath-Paced Autonomic Training)** → regularizes the signals being predicted
 - **Mode 3 (Graded Exposure)** → updates prediction models under controlled challenge
 
-[[Cardiac-anchored-breathing]] makes EPIC-level sense: synchronizing breath to heartbeat provides **maximally predictable interoceptive signals**, reducing prediction error and training the brain's generative model.
+[[cardiac-anchored-breathing]] makes EPIC-level sense: synchronizing breath to heartbeat provides **maximally predictable interoceptive signals**, reducing prediction error and training the brain's generative model.
 
 ## Gap
 

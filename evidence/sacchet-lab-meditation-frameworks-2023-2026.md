@@ -62,7 +62,7 @@ This combined note covers framework, theory, and methodology papers from the Sac
 - [[state-transition]]
 - [[neurogating]]
 - [[neurominute]]
-- [[clinical-credibility]]
+- [[evidence-grading-framework]]
 
 ## Randy's Clinical Interpretation
 
