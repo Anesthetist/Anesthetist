@@ -41,3 +41,35 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #02: Neurogating
 - Pre-load: Read neurogating concept note, attention-as-gain-control, cognitive-variability-analysis
 - PubMed angle: attention gating, selective attention neural mechanisms, prefrontal cortex cognitive flexibility
+
+---
+
+## Entry 2 — neurogating-2026-03-25.md
+
+**Date:** 2026-03-25
+**Topic:** Neurogating (queue #02)
+**Word count:** ~1650
+**PubMed citations verified:** 5/5
+**Gertrude violations found:** 0
+
+### What went well
+- Zanetti et al. (2022) provided the critical real-world accuracy figure (74.5%) that grounds the essay — avoids the >90% laboratory claims that would overclaim.
+- Liu et al. (2025) multimodal fusion paper gave the specific physiological fingerprint of cognitive load: frontal theta/delta amplification, parietal alpha reduction, pupil dilation. These map directly to the Neurogating trigger architecture.
+- Three failure modes are specific and actionable: signal-to-noise collapse, automation complacency, false positive triggers during appropriate activation. The third is the most consequential — interrupting a CRNA's appropriate sympathetic response during intubation would be dangerous.
+- The 14-day test design includes a withdrawal period (days 11-14), which is methodologically important — tests skill transfer vs. system dependence.
+
+### What could improve
+- PubMed MCP was down for this session. Had to use WebSearch + WebFetch to verify citations. All 5 verified via direct PubMed page fetch, but the workflow was slower. Need a fallback protocol for MCP outages.
+- The essay could have included more on Porges' neuroception concept as the biological precedent. Referenced in the concept note but only briefly touched in the essay.
+- Confounds section could have addressed individual differences in baseline HRV — a CRNA with naturally low HRV will have different gating thresholds than one with high HRV.
+- Did not include Sacchet's volitional neuromagnetic coherence work, which is in the concept's evidence base. Worth pulling into a future essay on ReadyScore.
+
+### Patterns discovered
+- **Lab vs. real-world accuracy gap:** Lab studies claim >90%, wearable implementations show 70-85%. SRL should always cite the real-world range. This is a credibility differentiator — honesty about limitations builds trust.
+- **Systematic reviews are essay gold:** Lalanza (2023) on HRVB methods and Hassan (2025) on EEG workload both provided landscape-level context that grounded the specific claims. Always search for recent systematic reviews first.
+- **Failure modes generate the best writing.** The automation complacency failure mode ("the system should make itself progressively less necessary") became the essay's most distinctive claim. Gate 3 forced this insight.
+
+### For next essay
+- Topic #03: Gap Moment Training
+- Pre-load: Read gap-moment-training concept note, titration-to-effect, minimum-effective-dose, anterocept
+- PubMed angle: brief breathing interventions, micro-interventions workplace stress, transition-based mindfulness, dose-response breathing HRV
