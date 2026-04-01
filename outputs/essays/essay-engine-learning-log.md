@@ -73,3 +73,35 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #03: Gap Moment Training
 - Pre-load: Read gap-moment-training concept note, titration-to-effect, minimum-effective-dose, anterocept
 - PubMed angle: brief breathing interventions, micro-interventions workplace stress, transition-based mindfulness, dose-response breathing HRV
+
+---
+
+## Entry 3 — gap-moment-training-2026-03-31.md
+
+**Date:** 2026-03-31
+**Topic:** Gap Moment Training (queue #03)
+**Word count:** ~1800
+**PubMed citations verified:** 4/5 (Prinsloo 2011 not PubMed-indexed, verified via DOI/Wiley)
+**Gertrude violations found:** 0
+
+### What went well
+- Laborde et al. (2022) meta-analysis of 223 studies is the definitive citation for GMT — confirms vmHRV increases during, immediately after single sessions, and after multi-session interventions. The "immediately after single session" finding is the load-bearing evidence for the 60-second window.
+- Balban et al. (2023) Stanford cyclic sighing RCT provided the "exhale is the vagal lever" framing that connects GMT protocols to mechanism. The Radiant Exhale drill maps directly to their cyclic sighing architecture.
+- The three failure modes are the essay's strongest section: workflow pressure eliminating gaps, "wellness" framing resistance, and 60-second window being insufficient for traumatic load. The third is the most clinically important — GMT must explicitly NOT position itself as crisis intervention.
+- The falsification criteria are specific: "if gap moments work individually but don't compound across a shift, the distributed micro-dose model is wrong." This is testable.
+
+### What could improve
+- PubMed MCP was disconnected for this session (new day, new session). Fell back to WebSearch + WebFetch verification. All citations verified but workflow was 3x slower. Need MCP reconnection protocol.
+- The essay states that dose-response below 5 minutes is "sparsely studied" — this is honest but also means GMT's 60-second claim rests partly on extrapolation. SRL's own study would fill this gap directly.
+- Prinsloo (2011) is not PubMed-indexed (Applied Cognitive Psychology, Wiley). Verified via DOI but the verification table shows N/A for PMID. Future essays should prefer PubMed-indexed journals when possible.
+- Could have included Zaccaro (2018) systematic review on slow breathing and CNS/ANS effects — it's in the concept's evidence base and would have strengthened the mechanism section.
+
+### Patterns discovered
+- **The implementation gap is the real finding.** Wang (2023) and Klatt (2025) together tell the story: mindfulness works for nurses BUT traditional delivery (8 weeks, 20-45 min/day) fails on adherence. GMT's differentiation isn't the physiology — it's the delivery architecture. This should be the lead in investor conversations.
+- **Falsification criteria generate clarity.** Stating "what would prove this wrong" forced precision about what GMT actually claims (cumulative compounding, not just per-session efficacy). Gate 4 produced the essay's most important methodological contribution.
+- **Three-layer protocol stack (recognition → intervention → adaptation) mirrors anesthesia's titration principle.** This parallelism is SRL's rhetorical superpower — every protocol maps to something CRNAs already do with patients.
+
+### For next essay
+- Topic #04: Vagal Tone
+- Pre-load: Read vagal-tone concept note, resonant-breathing-frequency, polyvagal-theory, cognitive-variability-analysis
+- PubMed angle: RMSSD autonomic flexibility vs. relaxation, vagal tone cognitive function, HRV as autonomic flexibility index, Thayer neurovisceral integration model updates
