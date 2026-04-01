@@ -137,3 +137,35 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #05: Interoception
 - Pre-load: Read interoception concept note, interoceptive-literacy, anterocept, embodied-metacognition
 - PubMed angle: interoception definition models (Craig, Damasio, Barrett), interoceptive accuracy vs. sensibility, 8th sense / 10-sense model, interoception and clinical decision-making
+
+---
+
+## Entry 5 — interoception-2026-03-31.md
+
+**Date:** 2026-03-31
+**Topic:** Interoception (queue #05)
+**Word count:** ~1750
+**PubMed citations verified:** 5/5
+**Gertrude violations found:** 0
+
+### What went well
+- The opening asymmetry observation — CRNAs who can detect 2mmHg changes in patients but cannot detect 15bpm changes in themselves — is the essay's most powerful image. It frames the entire clinical gap in one paragraph.
+- Craig (2009), Garfinkel (2015), and Mehling (2012) form a clean three-paper foundation: neural architecture → dimensional taxonomy → measurement instrument. Each answered a different question, and together they define the field.
+- The three-layer developmental model (Signal Detection → Signal Interpretation → Signal Integration) mapping onto posterior → mid → anterior insula AND onto MAIA-2 subscales is a novel organizational contribution. This framework doesn't exist in the literature in this form — it's SRL's synthesis.
+- The expertise paradox failure mode — where interoceptive training could destabilize a functional suppression strategy before building a better one — is clinically important and rarely discussed. This connects directly to the interoceptive-suppression-hypothesis concept.
+
+### What could improve
+- PubMed MCP still disconnected. All 5 citations verified via WebSearch + WebFetch. The workflow is reliable but slow. Need to report this MCP issue.
+- Ohira (2015) is in a Japanese journal (Nihon Shinkei Seishin Yakurigaku Zasshi) — abstract in English on PubMed but full text likely in Japanese. Could have used Damasio (1994) Somatic Marker hypothesis directly or Critchley's 2004 Nature Neuroscience paper instead for a stronger English-language citation.
+- The essay doesn't address Barrett's (2017) constructed emotion framework, which challenges Craig's model. Barrett argues interoception provides "affect" (arousal + valence) rather than discrete body signals. This would have added the same kind of honest critique engagement that the Grossman inclusion brought to the vagal tone essay.
+- The closing exercise (estimate your heart rate) is strong but could be accompanied by a note on expected accuracy ranges for untrained individuals (~50-60% accurate).
+
+### Patterns discovered
+- **The asymmetry frame is the killer opening for CRNAs.** "You can detect a 2mmHg change in your patient but not a 15bpm change in yourself" — this single observation justifies the entire SRL training program. Use this in the CE course introduction, the investor pitch, and Chapter 1 of the book.
+- **Three-paper foundations work.** Craig (architecture) + Garfinkel (taxonomy) + Mehling (measurement) = complete picture. Every essay benefits from this structure: who mapped it, who measured it, who built the instrument. Looking for similar triads in future essays.
+- **The heartbeat detection task confound matters.** Ring and Brener's timing estimation critique means SRL should never rely solely on heartbeat counting for interoceptive assessment. MAIA-2 self-report + heartbeat task + HRV delta (SRB-60 Domain 4) = triangulated measurement. Three signals, not one.
+
+### For next essay
+- Topic #06: Polyanchora
+- Pre-load: Read polyanchora concept note, anterocept, multi-phase-interoceptive-coupling, neurominute
+- PubMed angle: multi-anchor attention, divided attention meditation, attentional capacity under load, multiple sensory integration mindfulness
