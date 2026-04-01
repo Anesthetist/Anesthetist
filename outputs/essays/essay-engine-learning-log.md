@@ -169,3 +169,35 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #06: Polyanchora
 - Pre-load: Read polyanchora concept note, anterocept, multi-phase-interoceptive-coupling, neurominute
 - PubMed angle: multi-anchor attention, divided attention meditation, attentional capacity under load, multiple sensory integration mindfulness
+
+---
+
+## Entry 6 — polyanchora-2026-03-31.md
+
+**Date:** 2026-03-31
+**Topic:** Polyanchora (queue #06)
+**Word count:** ~1650
+**PubMed citations verified:** 5/5
+**Gertrude violations found:** 0
+
+### What went well
+- The aviation redundancy metaphor ("three flight computers, not one") is the essay's structural organizing principle and the strongest reframe. Polyanchora is not "deeper meditation" — it's redundancy engineering for attention. CRNAs understand redundancy from patient monitoring. The bridge is immediate.
+- Yordanova (2021) and Tanaka (2022) together provide the neural evidence: fronto-parietal theta synchronization across meditation states + frontoparietal gamma coherence as biomarker of open monitoring expertise. These map directly to the clinical fronto-parietal demands of multi-stream OR monitoring.
+- Ferrari and Noppeney (2021) on dual-mechanism multisensory attention control (pre-stimulus reliability enhancement + post-stimulus Bayesian combination) provided the mechanistic detail that distinguishes Polyanchora from "just pay attention to more things."
+- The falsification criteria are precise: if tri-anchor shows no improvement in anchor survival over single-anchor during real interruptions, the multi-anchor model is wrong. The alternative (single robust anchor via Watch haptics) is already specified.
+
+### What could improve
+- The essay doesn't cite working memory capacity literature (Cowan 2001, Miller 1956) directly, even though the "7 anchors" design is constrained by working memory limits. Should have addressed why 7 is the upper bound explicitly.
+- Kahneman's capacity model is referenced but not cited with PMID. Future essays should verify even classic references.
+- No direct clinical study of multi-anchor meditation in healthcare settings exists. The essay is honest about extrapolating from expert meditator research to 60-second novice practice, but this gap should drive SRL's own study design urgently.
+- Farb (2013) is the oldest citation at 13 years. Could have searched for more recent interoceptive attention neuroplasticity studies (2022-2025).
+
+### Patterns discovered
+- **The redundancy frame is SRL's rhetorical superpower for Polyanchora.** "Redundant systems, not deeper concentration" — this lands with CRNAs, engineers, pilots, anyone who manages risk through redundancy. Use this in every Polyanchora description.
+- **"Notice, don't study" is the critical design instruction.** Background-level monitoring vs. focal-level processing is the line between redundancy and overload. This distinction should appear in every NeuroMinute script that uses multi-anchor protocols.
+- **Open monitoring meditation is the closest published analog to Polyanchora.** Future PubMed searches for Polyanchora evidence should use "open monitoring meditation" as the primary search term.
+
+### For next essay
+- Topic #07: NeuroMinute
+- Pre-load: Read neurominute concept note, minimum-effective-dose, gap-moment-training, resonant-breathing-frequency
+- PubMed angle: micro-interventions duration dose-response, brief breathing exercises physiological effects, 60-second interventions HRV, composable intervention design
