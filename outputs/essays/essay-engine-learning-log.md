@@ -105,3 +105,35 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #04: Vagal Tone
 - Pre-load: Read vagal-tone concept note, resonant-breathing-frequency, polyvagal-theory, cognitive-variability-analysis
 - PubMed angle: RMSSD autonomic flexibility vs. relaxation, vagal tone cognitive function, HRV as autonomic flexibility index, Thayer neurovisceral integration model updates
+
+---
+
+## Entry 4 — vagal-tone-2026-03-31.md
+
+**Date:** 2026-03-31
+**Topic:** Vagal Tone (queue #04)
+**Word count:** ~1700
+**PubMed citations verified:** 5/5 (including 2 Grossman critiques)
+**Gertrude violations found:** 0
+
+### What went well
+- The Grossman critique inclusion is the essay's distinguishing feature. Instead of ignoring the strongest challenge to PVT/vagal tone claims, the essay integrates both Grossman (2023) on the five premises and Grossman (2024) on RSA as metabolic adaptation. This is what PhD-grade rigor looks like — presenting the strongest counter-argument, acknowledging what it gets right, and showing what survives.
+- The three measurement contexts (resting/reactive/trained) framework is novel to this essay and creates a clinically actionable taxonomy. Resting tone = foundation, reactive tone = capacity, trained tone = skill. This maps cleanly to the SRB-60 assessment design.
+- Thayer & Lane (2009) as the load-bearing citation works well — it's the specific paper that establishes the HRV-cognition link via prefrontal-subcortical circuits, not just a general "HRV is good" claim.
+- The closing image (radial pulse + one breath) is the first essay to use a somatic instruction as the closer. The body is literally in the final sentence.
+
+### What could improve
+- PubMed MCP still disconnected for this session. All 5 citations verified via WebSearch + WebFetch, but the workflow is 3-4x slower. This is becoming the main pipeline bottleneck.
+- Arakaki et al. (2023) Frontiers in Neuroscience paper did not have a PubMed PMID in the search results — verified via DOI only. The Frontiers papers sometimes index with delay.
+- The essay could have included Lehrer's resonance frequency work more explicitly — it's in the concept note's evidence base and would have strengthened the mechanism section on baroreflex stimulation.
+- Failure mode #1 (reifying the number) is clinical wisdom, not published evidence. Could be strengthened with citation to Quintana & Heathers on HRV measurement pitfalls.
+
+### Patterns discovered
+- **Engaging with critics is more persuasive than ignoring them.** The Grossman inclusion transforms the essay from "vagal tone is great" to "here's the full landscape, here's the strongest objection, here's what survives." This is the Communication Philosophy in action: full spectrum before recommendation.
+- **Three-context taxonomy creates clinical structure.** The resting/reactive/trained framework is portable — it could apply to any biomarker SRL tracks. Morning baseline, stress response, trained deployment. Consider applying this to BOLT scores, EEG alpha/theta, and cardiac efficiency.
+- **The "bandwidth" metaphor works.** "Vagal tone is the bandwidth of your nervous system" is the kind of one-sentence reframe that changes how CRNAs think about HRV. It replaces "relaxation" with "capacity" — which is what they actually want. Use this in the CE course and investor deck.
+
+### For next essay
+- Topic #05: Interoception
+- Pre-load: Read interoception concept note, interoceptive-literacy, anterocept, embodied-metacognition
+- PubMed angle: interoception definition models (Craig, Damasio, Barrett), interoceptive accuracy vs. sensibility, 8th sense / 10-sense model, interoception and clinical decision-making
