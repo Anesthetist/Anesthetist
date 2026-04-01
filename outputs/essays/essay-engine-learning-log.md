@@ -201,3 +201,35 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #07: NeuroMinute
 - Pre-load: Read neurominute concept note, minimum-effective-dose, gap-moment-training, resonant-breathing-frequency
 - PubMed angle: micro-interventions duration dose-response, brief breathing exercises physiological effects, 60-second interventions HRV, composable intervention design
+
+---
+
+## Entry 7 — neurominute-2026-04-01.md
+
+**Date:** 2026-04-01
+**Topic:** NeuroMinute (queue #07)
+**Word count:** ~1700
+**PubMed citations verified:** 5/5
+**Gertrude violations found:** 0
+
+### What went well
+- You et al. (2021) is the single most important paper for the NeuroMinute thesis: 5 minutes = 20 minutes for RMSSD. This flattened dose-response curve is the evidence foundation for the 60-second design. The extrapolation gap from 5 min to 1 min is stated honestly as requiring SRL's own data.
+- The JITAI (just-in-time adaptive intervention) literature convergence is a strong finding. Hsu et al. (2025) reviewed 62 JITAIs and found them "feasible, acceptable and user-friendly." The NeuroMinute IS a JITAI — health behavior research and anesthesia practice arrived at the same design constraint independently. This convergence validates the architecture.
+- The composable layer table (breath pattern × interoceptive anchor × exteroceptive anchor × attentional mode × emotional valence) makes the NeuroMinute's modularity tangible. Not one protocol — a protocol format with interchangeable parts.
+- The four-phase structure (Acknowledge → Observe → Differentiate → Presence) prevents the "protocol trivialization" failure mode — it's not just "take a deep breath" but a specific cognitive sequence.
+
+### What could improve
+- Still on WebSearch fallback for PubMed. Citation verification is reliable but slow.
+- The essay does not address the measurement challenge of 60-second RMSSD windows. Ultra-short HRV recordings (< 2 minutes) have known reliability issues. Shaffer & Ginsberg (2017) showed that 1-minute RMSSD is a reasonable proxy but less stable than 5-minute recordings. Should have cited this directly.
+- The Ericsson deliberate practice reference (frequency > duration for skill acquisition) is mentioned but not cited with PMID. Need to verify this for future use.
+- Could have included the Six Dijkstra et al. (2019) N=877 study showing 1-minute paced breathing produces measurable HRV changes — this is in the vault evidence base and directly supports the 60-second window.
+
+### Patterns discovered
+- **The dose-response flattening is SRL's strongest evidence claim.** "5 minutes = 20 minutes" (You et al. 2021) should appear in every investor pitch, CE course, and clinical conversation. It instantly disarms the "you need more time" objection.
+- **JITAI convergence validates the architecture from a different discipline.** Health behavior science independently arrived at the same design: brief, contextual, adaptive, moment-specific. SRL should cite the JITAI literature explicitly when positioning to digital health investors — it shows the NeuroMinute fits an established intervention science framework.
+- **"Not the breathing — the delta" is the essay's strongest closing line.** The NeuroMinute's value proposition is not the breathing exercise — it's the measured change. This is the differentiator from every wellness app: they offer the practice, SRL offers the proof that the practice worked.
+
+### For next essay
+- Topic #08: Resonant Breathing Frequency
+- Pre-load: Read resonant-breathing-frequency concept note, vagal-tone, minimum-effective-dose, cardiac-anchored-breathing
+- PubMed angle: Lehrer resonance frequency individual variation, baroreflex resonance mechanism, personalized breathing rate biofeedback, resonant frequency assessment protocol
