@@ -10,6 +10,7 @@ dc:subject:
 - vagal-tone
 - clinical-measurement
 - certification
+- biomarkers
 id: urn:srl:concept:heart-rate-recovery
 modified: '2026-03-21'
 prov:wasDerivedFrom: []

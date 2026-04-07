@@ -1,36 +1,38 @@
 ---
-id: "urn:srl:observation:honeycutt-vcu-research-agenda"
-type: observation
-title: "Dr. Honeycutt VCU Research Collaboration: High-Performance Resilience Landscape + Diaphragmatic Blindness Study"
-status: draft
-creator: "Randy Graybeal"
+clinical_context: New research correspondence with Dr. Hunnicutt at VCU — started
+  week of March 10, 2026
 created: 2026-03-14
-modified: 2026-03-14
+creator: Randy Graybeal
 dc:subject:
-  - research-collaboration
-  - VCU
-  - landscape-review
-  - diaphragmatic-blindness
-  - high-performance-resilience
-  - military
-  - Monroe-Institute
+- research-collaboration
+- VCU
+- landscape-review
+- diaphragmatic-blindness
+- high-performance-resilience
+- military
+- Monroe-Institute
+id: urn:srl:observation:honeycutt-vcu-research-agenda
+modified: 2026-03-14
 observation_type: craft-knowledge
-clinical_context: "New research correspondence with Dr. Honeycutt at VCU — started week of March 10, 2026"
-years_of_evidence: 0
 prov:wasDerivedFrom: []
 skos:related:
-  - somnistics-certification
-  - diaphragmatic-blindness
-  - ptsd-prehabilitation-gap
-  - gmt-career-arc
-  - high-burnout-verticals
+- somnistics-certification
+- diaphragmatic-blindness
+- ptsd-prehabilitation-gap
+- gmt-career-arc
+- high-burnout-verticals
+status: draft
+title: 'Dr. Hunnicutt VCU Research Collaboration: High-Performance Resilience Landscape
+  + Diaphragmatic Blindness Study'
+type: observation
+years_of_evidence: 0
 ---
 
-# Dr. Honeycutt VCU Research Collaboration Agenda
+# Dr. Hunnicutt VCU Research Collaboration Agenda
 
 ## Context
 
-Research correspondence with Dr. Honeycutt at Virginia Commonwealth University initiated week of March 10, 2026. Opportunity to formalize SRL's research program with academic partnership.
+Research correspondence with Dr. Hunnicutt at Virginia Commonwealth University initiated week of March 10, 2026. Opportunity to formalize SRL's research program with academic partnership.
 
 ## Five Research Questions
 

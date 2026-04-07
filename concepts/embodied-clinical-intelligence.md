@@ -25,6 +25,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:gaunt-ego-authority-failure
 - urn:srl:evidence:ali-awareness-exercise-positive-boundaries
 - urn:srl:evidence:ali-leadership-skill-deep-listening
+- urn:srl:evidence:neurocognitive-autonomic-signatures-stress-performance-2026
 skos:broader: []
 skos:narrower: []
 skos:related:

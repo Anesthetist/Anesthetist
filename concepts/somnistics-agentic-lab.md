@@ -18,6 +18,9 @@ skos:related:
 - tacit-knowledge-library
 - multi-llm-knowledge-construction
 - crna-shift-architect
+- karpathy-llm-knowledge-bases
+- goose-block-open-source-agent
+- ganim-claude-cowork-context-architecture
 status: draft
 title: Somnistics Agentic Research Lab
 type: concept

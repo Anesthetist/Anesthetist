@@ -13,6 +13,8 @@ id: urn:srl:concept:neuroadaptive-training-system
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-anterocept-spectrum-overview
+- urn:srl:observation:neurofeedback-bci-adhd-attention-2026
+- urn:srl:evidence:vagal-neuromodulation-hrvb-ssp-review-2026
 skos:broader:
 - somnistics
 skos:narrower:

@@ -10,7 +10,7 @@
 4. **Don Katz follow-up** — Jason drafting response with research package.
 5. **Competitive intelligence system** — Weekly Sunday scans active.
 6. **CE course** — AANA Category A, target CANA Virtual Spring Conference (May 30-31). Sessions 8-21 need writing.
-7. **VCU Research Collaboration** — Evidence assessment ready for Honeycutt. Three study designs costed.
+7. **VCU Research Collaboration** — Evidence assessment ready for Hunnicutt. Three study designs costed.
 8. **Concept review + pruning** — 162 concepts, 450 evidence notes, 259 observations. Prune aggressively, promote strongest.
 
 ## Open Decisions
@@ -66,7 +66,7 @@
 - **Ron Wiener** — Venture Mechanics / Catapult accelerator.
 - **Michael Thorn** — Mayo Clinic trauma NP, SONSIEL board. Advisor.
 - **Kelly Sayce** — Strategic Earth Consulting. Reconnect April.
-- **Dr. Honeycutt** — VCU. Evidence assessment ready to send.
+- **Dr. Hunnicutt** — VCU. Evidence assessment ready to send.
 - **Open Wearables (Poland)** — Multi-platform Pausality meeting 2026-03-19.
 
 ## Fundraising State
@@ -88,4 +88,4 @@
 3. Run citation-resolver on evidence notes needing DOI verification
 4. Continue automated pipeline mining (800 files remaining)
 5. CE course sessions 8-21 (May 30 deadline)
-6. Send evidence assessment to Honeycutt
+6. Send evidence assessment to Hunnicutt

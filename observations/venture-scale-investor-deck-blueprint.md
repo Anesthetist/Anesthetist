@@ -7,6 +7,7 @@ dc:subject:
 - vc-structure
 - unit-economics
 - exit-strategy
+- investor-relations
 id: urn:srl:observation:venture-scale-investor-deck-blueprint
 modified: '2026-03-15'
 observation_type: fundraising

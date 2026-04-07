@@ -3,6 +3,10 @@ created: '2026-03-14'
 creator: randy
 id: urn:srl:concept:neuroepistemic-layer
 modified: '2026-03-14'
+skos:related:
+- embodied-metacognition
+- interoception
+- consciousness
 status: draft
 subjects:
 - interoception

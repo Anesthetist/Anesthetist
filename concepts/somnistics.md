@@ -27,6 +27,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ganesan-2025-enigma-meditation-consortium
 - urn:srl:evidence:nosbisch-2026-crna-lived-experiences-empowerment
 - urn:srl:evidence:abahuje-2023-residents-hrv-leadership-stress
+- urn:srl:evidence:crna-workforce-crisis-2026
+- urn:srl:evidence:exo-3-organizational-singularity-march-2026
 skos:broader: []
 skos:narrower:
 - gap-moment-training

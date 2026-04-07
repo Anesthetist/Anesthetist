@@ -17,6 +17,7 @@ modified: '2026-03-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-crna-expertise-and-challenges
 - urn:srl:evidence:stephan-2016-computational-psychiatry
+- urn:srl:evidence:crna-burnout-integrative-review-aana-2025
 skos:broader: []
 skos:narrower: []
 skos:related:

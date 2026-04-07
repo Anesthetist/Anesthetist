@@ -12,6 +12,7 @@ dc:subject:
 - theory
 - neuroception
 - social-engagement
+- polyvagal
 id: urn:srl:concept:polyvagal-theory
 modified: 2026-03-14
 prov:wasDerivedFrom:
@@ -33,6 +34,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ali-leadership-skill-owning-negative-projections
 - urn:srl:evidence:ali-leadership-skill-positive-boundaries
 - urn:srl:evidence:ali-leadership-skill-venting-and-sorting
+- urn:srl:observation:polyvagal-theory-untenable-debate-2026
+- urn:srl:evidence:porges-2026-response-grossman-critique
+- urn:srl:evidence:polyvagal-debate-grossman-porges-2026
 skos:broader: []
 skos:narrower: []
 skos:related:
@@ -62,6 +66,12 @@ Stephen Porges' theory of autonomic nervous system hierarchy, describing three p
 
 3. **Dorsal Vagal Complex (DVC)** — Unmyelinated vagus. Freeze/shutdown/immobilization. Metabolic suppression, dissociation, bradycardia. The *state to recover from*.
 
+## Scientific Debate (2026)
+
+Polyvagal Theory is under active scientific scrutiny. In 2026, a consortium of 39 ANS scholars led by Paul Grossman published a systematic critique arguing that five foundational premises of PVT are untenable — targeting in particular claims about the evolutionary uniqueness of mammalian social behavior and the interpretation of RSA as a specific measure of vagal function ([[grossman-2026-polyvagal-untenable]]). Porges responded in the same issue of *Clinical Neuropsychiatry*, arguing the critique evaluates a reconstructed version of PVT rather than the theory as formulated ([[porges-2026-response-grossman-critique]]).
+
+**What this means for SRL:** The debate is legitimate, ongoing, and published in peer-reviewed literature. SRL constructs that depend on PVT should be evaluated for which claims rest on PVT's specific neuroanatomical architecture versus which rest on the more durable empirical ground of HRV/RSA as autonomic markers. The functional validity of resonant breathing and HRV biofeedback does NOT require PVT to be correct. SRL's grounding in demonstrated mechanisms — breathing rate effects on autonomic function, HRV biofeedback efficacy — remains intact regardless of PVT's ultimate scientific standing.
+
 ## Key Concepts for SRL
 
 - **Neuroception:** Subconscious detection of safety vs. threat that governs autonomic state shifts. [[neurogating]] is the technological analog of neuroception.
@@ -80,6 +90,8 @@ HRV patterns differentiate ventral vs. dorsal vagal states:
 
 - [[porges-2011-polyvagal-theory]] — the foundational text; comprehensive presentation of the three-tier model
 - [[sezer-2025-meditation-autonomic-nervous-system]] — Harvard review documenting concurrent sympathetic + parasympathetic activation ("relaxed alertness") extends polyvagal framework; ventral vagal engagement during meditation
+- [[grossman-2026-polyvagal-untenable]] — 39-author consortium critique of five foundational PVT premises
+- [[porges-2026-response-grossman-critique]] — Porges' rebuttal arguing the critique misrepresents the theory
 - Slow, rhythmic breathing directly stimulates the ventral vagal pathway
 - RSA is a measurable, trainable index of vagal function
 

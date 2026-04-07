@@ -15,6 +15,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:scott-2010-second-victim-rapid-response
 - urn:srl:evidence:paul-moynihan-losing-million-dollars
 - urn:srl:evidence:ali-leadership-skill-compassionate-self-forgiveness
+- urn:srl:evidence:crna-burnout-integrative-review-aana-2025
 skos:broader:
 - clinician-durability
 skos:narrower: []

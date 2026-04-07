@@ -1,19 +1,23 @@
 ---
-id: "urn:srl:audience:investor"
-type: audience
-title: "Investor / SAFE Holder"
-status: draft
-creator: "Randy Graybeal"
 created: 2026-03-14
-modified: 2026-03-14
+creator: Randy Graybeal
+dc:subject:
+- investor-relations
+- fundraising
+- audience
 evidence_depth: minimal
-language_register: professional
+id: urn:srl:audience:investor
 key_concerns:
-  - market size and defensibility
-  - traction metrics
-  - team credibility
-  - path to $1M ARR
-  - clinical LLM moat thesis
+- market size and defensibility
+- traction metrics
+- team credibility
+- path to $1M ARR
+- clinical LLM moat thesis
+language_register: professional
+modified: 2026-03-14
+status: draft
+title: Investor / SAFE Holder
+type: audience
 ---
 
 # Investor / SAFE Holder

@@ -41,6 +41,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:lehrer-2020-hrv-biofeedback-limitations
 - urn:srl:evidence:cooley-vagus-resonant-breathing-protocols-2026
 - urn:srl:evidence:hrv-biofeedback-mental-stress-myocardial-2026
+- urn:srl:observation:breathwork-chronic-stress-technique-comparison-2025
+- urn:srl:evidence:breathwork-technique-choice-2026
+- urn:srl:evidence:a52-breathwork-rct-paramedics-2026
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

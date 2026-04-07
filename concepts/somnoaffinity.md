@@ -20,6 +20,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:penn-state-2026-night-waking-cognition
 - urn:srl:evidence:sleep-consistency-academic-performance-2026
 - urn:srl:evidence:sleepgpt-foundation-model-sleep-decoding-2026
+- urn:srl:evidence:salvi-2026-somnus-dare-sleep-cognitive-decline
 skos:broader:
 - neuro-ouroboros
 skos:narrower: []

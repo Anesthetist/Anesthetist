@@ -58,6 +58,12 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ali-awareness-exercise-stress-and-addictions
 - urn:srl:evidence:ali-leadership-skill-hiring-owners-instead-of-victims
 - urn:srl:evidence:ali-leadership-skill-positive-boundaries
+- urn:srl:observation:noninvasive-vagal-neuromodulation-hrvb-ssp-review-2025
+- urn:srl:evidence:parental-burnout-literature-review-2026
+- urn:srl:evidence:cognitive-performance-cardiac-autonomic-2026
+- urn:srl:evidence:hrvb-rct-ed-icu-workers-2026
+- urn:srl:evidence:biofeedback-systematic-review-hcp-2026
+- urn:srl:evidence:polyvagal-debate-grossman-porges-2026
 skos:broader: []
 skos:narrower:
 - vagal-tone

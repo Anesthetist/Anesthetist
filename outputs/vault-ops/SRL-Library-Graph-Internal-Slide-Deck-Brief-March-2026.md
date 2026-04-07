@@ -98,7 +98,7 @@ Clinical wisdom that doesn't exist in any textbook, organized by type:
 | Craft Knowledge | 60 | Anesthetist's Breath protocol, script design principles, 8-layer VagalBeats slider, patent architecture |
 | Pattern Observations | 26 | 6 error archetypes from QRC, bandwidth saturation, interoceptive suppression as burnout root |
 | Strategic Insights | 7 | Competitive moat, AEO strategy, revenue arrow functor |
-| Research Insights | 5 | Honeycutt research agenda, Harvard NeuroSkill integration |
+| Research Insights | 5 | Hunnicutt research agenda, Harvard NeuroSkill integration |
 | Exemplar Stories | 4 | Sleep→Code Blue→recovery, Maria 4 AM epidural, founding insight |
 | Founder Narratives | 3 | Rush care planning, Blue Angels visualization, grief to vocation |
 | Contrast Cases | 3 | HRV deprecation, BLIP Clinic universality, focal-panoramic paradox |
@@ -229,7 +229,7 @@ Three phases mapped to MAIA-2:
 
 ---
 
-## SLIDE 13: Research Collaboration — Dr. Honeycutt at VCU
+## SLIDE 13: Research Collaboration — Dr. Hunnicutt at VCU
 
 Five research questions scoped:
 
@@ -297,7 +297,7 @@ Connect to MCP → get the full knowledge base. No re-explaining. No context los
 
 1. **Ship the CE course** — write sessions 8-21, record audio (Randy's voice), launch on Teachable by CANA conference (May 30-31)
 2. **Formalize the certification** — SCP-Foundation as first tier, bundled with CE course ($100)
-3. **Publish the diaphragmatic blindness study** — N=50 pilot with Dr. Honeycutt at VCU
+3. **Publish the diaphragmatic blindness study** — N=50 pilot with Dr. Hunnicutt at VCU
 4. **Continue PubMed mining** — 7 domains, 35 queries queued, target 100+ evidence notes
 5. **Export remaining .gdoc patent files** — 30+ patent specs still locked in Google Drive streaming format
 6. **Connect vault to production** — CE courses, investor materials, Pausality dev, enterprise proposals all generated from the graph

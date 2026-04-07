@@ -41,6 +41,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:longaretti-2025-mindfulness-flow-meta-analysis
 - urn:srl:evidence:sweller-1988-cognitive-load-theory
 - urn:srl:evidence:kalyuga-2003-expertise-reversal
+- urn:srl:evidence:hrvb-rct-ed-icu-workers-2026
 skos:broader:
 - gap-moment-training
 skos:narrower: []

@@ -1,6 +1,15 @@
 ---
 created: '2026-03-14'
 creator: randy@somnistics.com
+dc:subject:
+- competitive-landscape
+- deal-flow
+- acquisition-strategy
+- newsletter-intelligence
+- wellness-tech
+- enterprise-sales
+- investor-relations
+- competitive-strategy
 id: urn:srl:concept:market-intelligence
 modified: '2026-03-15'
 prov:wasDerivedFrom:
@@ -24,6 +33,11 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:rachitsky-offline-first-healthcare-growth
 - urn:srl:evidence:pausality-v108-analytics-baseline
 - urn:srl:evidence:pausality-email-engagement-decline
+- urn:srl:observation:biohacking-trends-active-wearables-2026
+- urn:srl:observation:hormuz-crisis-intel-scan-2026-04-01
+- urn:srl:observation:hormuz-crisis-intel-scan-2026-04-03-v33
+- urn:srl:observation:hormuz-crisis-intel-scan-2026-04-03-v34
+- urn:srl:evidence:lorna-breen-act-reauthorization-2026
 skos:narrower:
 - competitive-moat-latency
 - ip-six-pillar-moat

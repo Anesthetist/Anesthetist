@@ -8,10 +8,15 @@ dc:subject:
 - clinician-durability
 - anti-fragility
 - biofeedback
+- biomarkers
 id: urn:srl:concept:co2-tolerance-clinical-durability
 modified: '2026-03-22'
 prov:wasDerivedFrom:
 - urn:srl:evidence:mckeown-atomic-focus
+- urn:srl:evidence:arce-alvarez-2022-chemoreflex-immersion
+- urn:srl:evidence:breath-hold-diving-vagal-tone-2025
+- urn:srl:evidence:kyriakoulis-2025-diving-response-panic
+- urn:srl:evidence:breath-hold-diving-review-2025
 skos:related:
 - breath-hold-autonomic-signature
 - clinician-durability

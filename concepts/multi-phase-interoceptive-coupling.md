@@ -21,6 +21,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:porges-2011-polyvagal-theory
 - urn:srl:evidence:van-der-kolk-2014-body-keeps-score
 - urn:srl:evidence:zaccaro-2018-breathing-systematic-review
+- urn:srl:evidence:neurocognitive-autonomic-signatures-stress-performance-2026
 skos:broader:
 - interoception
 skos:narrower: []

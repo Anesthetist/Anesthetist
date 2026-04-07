@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WANA Spring Conference Debrief: March 28, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #22253A;
+    --sage: #5FC89B;
+    --offwhite: #F5F5F0;
+    --sage-light: rgba(95,200,155,0.12);
+    --sage-dark: #3da87a;
+    --body-gray: #4A4D5C;
+    --caption-gray: #969696;
+    --warm-red: #E85D4A;
+    --clearwater: #3A61AD;
+    --card-bg: #EDEDED;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: var(--navy);
+    background: var(--offwhite);
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    padding: 0;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .ekg {
+    position: absolute; top: 50%; left: 0; width: 100%; height: 80px;
+    transform: translateY(-50%); pointer-events: none; z-index: 0;
+  }
+  .hero .ekg svg { opacity: 0.05; }
+  .hero .ekg svg path { stroke: #fff; fill: none; stroke-width: 2; }
+  .hero > *:not(.ekg) { position: relative; z-index: 1; }
+  .hero-logo { display: block; width: 160px; margin-bottom: 1.5rem; }
+  .hero h1 {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.1;
+  }
+  .hero .subtitle {
+    font-family: 'Figtree', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: var(--sage);
+  }
+  .hero .meta {
+    font-size: 0.85rem;
+    color: var(--caption-gray);
+    margin-top: 0.8rem;
+  }
+  .hero .copyright {
+    font-size: 0.7rem;
+    color: var(--caption-gray);
+    margin-top: 1.5rem;
+  }
+
+  /* ---- Container ---- */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* ---- Typography ---- */
+  h2 {
+    font-weight: 400;
+    font-size: 1.35rem;
+    color: var(--navy);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--sage);
+    line-height: 1.1;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin: 1.8rem 0 0.6rem;
+    line-height: 1.2;
+  }
+  p {
+    font-weight: 300;
+    font-size: 0.92rem;
+    color: var(--body-gray);
+    letter-spacing: -0.025em;
+    line-height: 1.45;
+    margin-bottom: 1rem;
+  }
+  a { color: var(--sage-dark); }
+  .section-intro {
+    font-size: 0.95rem;
+    color: var(--caption-gray);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ---- Stat Cards ---- */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .stat-card .number {
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--sage);
+    line-height: 1.1;
+  }
+  .stat-card .number.red { color: var(--warm-red); }
+  .stat-card .label {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--body-gray);
+    margin-top: 0.3rem;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+  }
+
+  /* ---- Moment Cards ---- */
+  .moment-card {
+    background: white;
+    border-left: 4px solid var(--sage);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .moment-card.insight { border-left-color: var(--clearwater); }
+  .moment-card.gold { border-left-color: var(--warm-red); }
+  .moment-card .moment-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--caption-gray);
+    margin-bottom: 0.4rem;
+  }
+  .moment-card .moment-quote {
+    font-family: 'Figtree', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    line-height: 1.35;
+  }
+  .moment-card .moment-detail {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--body-gray);
+    letter-spacing: -0.025em;
+    line-height: 1.4;
+  }
+
+  /* ---- Deck Info Box ---- */
+  .deck-info {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .deck-info .ekg {
+    position: absolute; top: 50%; left: 0; width: 100%; height: 80px;
+    transform: translateY(-50%); pointer-events: none;
+  }
+  .deck-info .ekg svg { opacity: 0.05; }
+  .deck-info .ekg svg path { stroke: #fff; fill: none; stroke-width: 2; }
+  .deck-info > *:not(.ekg) { position: relative; z-index: 1; }
+  .deck-info a { color: var(--sage); }
+  .deck-info .deck-title {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ---- Slide Outline ---- */
+  .slide-outline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  .slide-item {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+  }
+  .slide-item .slide-num {
+    font-weight: 400;
+    color: var(--sage);
+    margin-right: 0.3rem;
+  }
+
+  /* ---- Content Angle Cards ---- */
+  .angle-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin: 0.8rem 0;
+    border-left: 4px solid var(--sage);
+  }
+  .angle-card .platform {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  .angle-card .platform.linkedin { background: var(--clearwater); color: white; }
+  .angle-card .platform.facebook { background: #1877f2; color: white; }
+  .angle-card .platform.both { background: var(--navy); color: var(--sage); }
+  .angle-card .angle-title {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  .angle-card .angle-desc {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--body-gray);
+    letter-spacing: -0.025em;
+    line-height: 1.4;
+  }
+
+  /* ---- Tables ---- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th {
+    background: var(--navy);
+    color: #fff;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    font-weight: 400;
+  }
+  td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+    font-weight: 300;
+    color: var(--body-gray);
+    letter-spacing: -0.025em;
+    line-height: 1.35;
+  }
+  tr:nth-child(even) td { background: #fafaf8; }
+
+  /* ---- Tags ---- */
+  .tag {
+    display: inline-block;
+    background: var(--sage-light);
+    color: var(--sage);
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    margin: 0.15rem 0.2rem 0.15rem 0;
+  }
+
+  /* ---- Footer ---- */
+  .footer-box {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--sage-light);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: var(--body-gray);
+    letter-spacing: -0.025em;
+    line-height: 1.4;
+  }
+  .footer-copyright {
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--caption-gray);
+  }
+
+  @media (max-width: 640px) {
+    .slide-outline { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="ekg">
+    <svg width="100%" height="80" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,40 L180,40 L195,40 L205,15 L215,65 L225,30 L235,50 L245,40 L400,40 L700,40 L715,40 L725,15 L735,65 L745,30 L755,50 L765,40 L1200,40"/>
+    </svg>
+  </div>
+  <!-- Pausality logo (Gradient + White Horizontal) -->
+  <svg class="hero-logo" viewBox="0 0 201.91 47.97" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="hg" x1="5.12" y1="39.03" x2="38.33" y2="5.81" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#3a61ad"/><stop offset=".07" stop-color="#2e68af"/><stop offset=".18" stop-color="#1479b6"/><stop offset=".25" stop-color="#258baf"/><stop offset=".4" stop-color="#44aca4"/><stop offset=".52" stop-color="#58c09d"/><stop offset=".6" stop-color="#5fc89b"/><stop offset="1" stop-color="#96f0be"/>
+      </linearGradient>
+    </defs>
+    <path fill="url(#hg)" d="M23.99.01h0C10.76,0,0,10.76,0,23.99s10.76,23.99,23.99,23.99v-6.28c11.46-.04,20.77-9.38,20.77-20.84S35.44.05,23.99.01ZM23.91,35v6.27c-9.5-.04-17.21-7.78-17.21-17.29S14.41,6.74,23.91,6.7h0c7.8,0,14.15,6.35,14.15,14.15s-6.35,14.15-14.15,14.15Z"/>
+    <path fill="#fff" d="M68.08,15.33c-2.55,0-5.88.56-7.41,1.25-.71.33-1.12.7-1.3,1.16-.13.33-.2.84-.2,1.53v22.4c0,.83.29,1.15,1.04,1.15h2.17c.53,0,1.22-.12,1.22-1.15v-7.33c.87.32,2.22.47,3.27.47,5.71,0,9.02-1.65,9.02-10.11,0-6.84-2.12-9.38-7.82-9.38ZM71.42,24.75c0,4.96-.96,6.17-4.86,6.17-.99,0-2.05-.16-2.52-.38h-.02c-.25-.1-.4-.21-.4-.97v-8.52c0-.36,0-.68.1-.88.05-.15.21-.29.46-.42.81-.36,2.21-.6,3.47-.6,2.89,0,3.78,1.31,3.78,5.59Z"/>
+    <path fill="#fff" d="M113.69,15.73h-2.32c-.68,0-1.08.43-1.08,1.15v12.4c0,.64-.13.84-.2.92-.19.22-.5.34-.59.37-.71.24-1.82.35-3.38.35-1.68,0-2.52-.32-2.82-1.07-.21-.45-.23-1.45-.23-2.27v-10.69c0-.73-.38-1.15-1.04-1.15h-2.36c-.69,0-1.04.39-1.04,1.15v11.24c0,1.53.06,3.09.48,4.13.67,1.77,2.62,2.56,6.32,2.56s6.2-.38,7.96-1.14c.92-.44,1.35-1.23,1.35-2.47v-14.32c0-.73-.38-1.15-1.04-1.15Z"/>
+    <path fill="#fff" d="M127.45,23.53l-2.46-.73c-2.19-.64-2.35-1.13-2.35-1.86,0-.88.21-1.82,2.76-1.82.5,0,2.26.03,3.95.47l.1.02c.24.04.56.09.8.09.41,0,.77-.3.85-.7.2-.69.44-1.61.44-2.02,0-.56-.28-.91-.84-1.07-1.42-.43-3.67-.59-5.17-.59-6.02,0-7.28,3.13-7.28,5.76,0,2.96,1.41,4.65,4.58,5.49l2.71.72c2.25.64,2.35,1.04,2.35,1.75,0,.95-.35,1.93-2.98,1.93-1.72,0-3.22-.2-4.57-.61-.19-.06-.75-.23-1.01-.23-.44,0-.82.3-1,.79-.33.91-.52,1.5-.52,1.88,0,.5.25.88.7,1.06,1.43.64,4.17.92,6.25.92,4.93,0,7.42-1.95,7.42-5.79,0-3.45-1.6-4.56-4.75-5.49Z"/>
+    <path fill="#fff" d="M160.99,30.95c-1.03-.18-1.67-.48-1.92-.91-.24-.45-.34-1.05-.34-2.07V7.96c0-.57-.12-1.15-1.01-1.15h-2.36c-.72,0-1.08.39-1.08,1.15v20.51c0,1.85.23,3.09.72,3.88.95,1.52,2.58,2.17,5.43,2.17.53,0,1.09-.1,1.26-.85.08-.36.15-1.14.15-1.68,0-.59-.31-.96-.86-1.04Z"/>
+    <path fill="#fff" d="M166.43,7.65c-1.58,0-2.46.94-2.46,2.64s.8,2.57,2.46,2.57,2.49-.83,2.49-2.6-.79-2.6-2.49-2.6Z"/>
+    <path fill="#fff" d="M167.66,15.73h-2.36c-.69,0-1.04.4-1.04,1.19v16.35c0,.95.57,1.15,1.04,1.15h2.32c.7,0,1.08-.41,1.08-1.15v-16.38c0-.29,0-1.15-1.04-1.15Z"/>
+    <path fill="#fff" d="M182.68,30.84c-1.9-.11-2.93-.42-3.36-1h0c-.41-.55-.58-1.36-.58-2.88v-7.33h3.34c.73,0,1.15-.41,1.15-1.12v-1.63c0-.69-.45-1.08-1.22-1.08h-3.27v-3.67c0-.84-.34-1.26-1.01-1.26h-2.17c-.36,0-.98.16-1.04,1.22-.08,2.02-.12,3.25-.14,3.71h-1.86c-.68,0-1.12.44-1.12,1.12v1.63c0,.66.41,1.08,1.04,1.08h1.86v7.18c0,2.79.2,4.55,1.24,5.82,1.36,1.68,3.45,2,6.83,2,.72,0,1.14-.33,1.22-.99.04-.5.07-1.33.07-1.72,0-.66-.34-1.04-.99-1.08Z"/>
+    <path fill="#fff" d="M200.86,15.73h-2.32c-.68,0-1.08.43-1.08,1.15v12.21c0,.4-.06.67-.21.81-.18.22-.5.34-.61.38-.63.28-1.6.6-3.58.6-1.87,0-2.41-.41-2.63-1.03-.18-.47-.2-1.27-.2-1.99v-10.98c0-.72-.39-1.15-1.04-1.15h-2.36c-.48,0-1.04.2-1.04,1.15v11.85c0,1.29.05,2.62.41,3.63.63,1.67,2.38,2.46,5.53,2.46,1.73,0,4.06-.27,5.62-1.02v.42c0,1.04-.11,1.79-.35,2.39-.55,1.37-2.06,2.19-8.14,2.37-.69,0-1.12.48-1.12,1.26,0,.35.04,1.13.11,1.71.14.75.59.9,1.33.9,7.58,0,11.24-1.55,12.24-5.19.4-1.34.48-2.79.48-4.55v-16.2c0-.71-.4-1.15-1.04-1.15Z"/>
+    <path fill="#fff" d="M149.57,16.1h0c-1.69-.52-3.83-.77-6.55-.77-5.43,0-8.8,1.69-8.8,10.11,0,7.75,3.2,9.34,8,9.34,2.05,0,3.47-.27,4.36-.81.15.3.43.45.83.45h2.32c.7,0,1.08-.41,1.08-1.15v-15.26c0-1.25-.67-1.73-1.23-1.9ZM146.4,20.4v8.88c0,.32-.04.58-.1.7-.04.16-.21.3-.5.45-.74.33-1.87.49-3.36.49-2.83,0-3.74-1.36-3.74-5.59,0-4.6.66-6.13,4.58-6.13.91,0,2.13.11,2.71.31.23.09.41.22.41.89Z"/>
+    <path fill="#fff" d="M93.91,16.1h0c-1.68-.52-3.83-.77-6.55-.77-5.43,0-8.8,1.69-8.8,10.11,0,7.75,3.2,9.34,8,9.34,2.05,0,3.48-.27,4.36-.81.15.3.43.45.83.45h2.32c.7,0,1.08-.41,1.08-1.15v-15.26c0-1.25-.67-1.73-1.23-1.9ZM90.74,20.4v8.88c0,.32-.04.58-.1.7-.04.15-.21.3-.5.45-.74.33-1.87.49-3.36.49-2.83,0-3.74-1.36-3.74-5.59,0-4.6.66-6.13,4.58-6.13.91,0,2.13.11,2.71.31.23.09.41.22.41.89Z"/>
+  </svg>
+
+  <h1>WANA Spring Conference Debrief</h1>
+  <div class="subtitle">Inside Out: Interoception and High-Performance for CRNAs</div>
+  <div class="meta">March 28, 2026 · ~100 attendees · Randy Graybeal, MSN, CRNA</div>
+  <div class="copyright">&copy; 2026 Somnistics Research Labs.</div>
+</div>
+
+<div class="container">
+
+  <!-- AUDIENCE FIELD DATA -->
+  <h2>Audience Field Data</h2>
+  <p class="section-intro">Show-of-hands polling of ~100 CRNAs, students, and educators. These are not survey results; they're real-time room reads, which arguably carry more weight: people raising their hand in front of peers reveals genuine baseline, not survey-inflated self-reports.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="number red">4%</div>
+      <div class="label">Had any formal breath training<br><em>All from non-clinical sources: trumpet, singing, swimming, yoga</em></div>
+    </div>
+    <div class="stat-card">
+      <div class="number red">~0.5%</div>
+      <div class="label">Recognized the word "interoception"<br><em>One hand, halfway up, out of ~100 advanced-practice clinicians</em></div>
+    </div>
+    <div class="stat-card">
+      <div class="number">0%</div>
+      <div class="label">Received breath training from any clinical education pathway</div>
+    </div>
+  </div>
+
+  <p>The breath training sources (trumpet, singing, swimming, yoga) are the detail that lands. Every single person who had formal breath practice got it from a non-clinical discipline. Clinical education produces zero respiratory self-regulation skill, in a profession that manages other people's airways all day.</p>
+
+  <!-- KEY MOMENTS -->
+  <h2>Key Moments in the Room</h2>
+
+  <div class="moment-card">
+    <div class="moment-label">The Heart Rate Question</div>
+    <div class="moment-quote">"I wonder if my heart rate is higher or lower than the patient's right now."</div>
+    <div class="moment-detail">First reaction: a nervous giggle. Then silence as the room considered both the importance and the novelty of the question. They had never been prompted to sense their own physiology in relation to a patient's. The nervous laughter revealed recognition; they know the question matters, they've just never been given permission to ask it.</div>
+  </div>
+
+  <div class="moment-card gold">
+    <div class="moment-label">First Audience Comment</div>
+    <div class="moment-quote">"I think you're onto something here."</div>
+    <div class="moment-detail">Pre-product-market-fit language. The audience is at the awareness stage; they recognize the gap the moment it's named, but haven't yet demanded a solution. This is exactly the right stage for a conference talk: plant the seed.</div>
+  </div>
+
+  <div class="moment-card insight">
+    <div class="moment-label">Post-Talk: Student with POTS</div>
+    <div class="moment-quote">"I have POTS and I get overwhelming anxiety as I push my patient in the gurney to the OR."</div>
+    <div class="moment-detail">A student CRNA approached after the talk. She has Postural Orthostatic Tachycardia Syndrome, an autonomic condition, and experiences overwhelming anxiety during the specific transition of wheeling a patient to the operating room. Her husband is a baseball player who taught her performance anxiety and stress management skills from his sport. She's literally cobbling together tools from an entirely different domain because clinical education gave her nothing. This is the user story: a clinician with a diagnosable autonomic condition, doing clinical work that triggers it, forced to borrow tools from her spouse's athletic career because the CRNA profession offers zero standardized training for exactly this scenario.</div>
+  </div>
+
+  <div class="moment-card insight">
+    <div class="moment-label">Post-Talk: Second Student</div>
+    <div class="moment-quote">Both students felt the topics were highly relevant and resonant.</div>
+    <div class="moment-detail">A second student also approached, expressing appreciation. Neither student had heard of interoception before the talk. Both immediately recognized the gap in their training once it was named. This is the pattern: the need is invisible until someone articulates it, and then it's obvious.</div>
+  </div>
+
+  <!-- STRATEGIC NOTES -->
+  <h2>Strategic Notes</h2>
+
+  <div class="moment-card">
+    <div class="moment-label">Accreditation Constraint</div>
+    <div class="moment-detail"><strong>Pausality&#8482; was not mentioned by name during the Day 1 talk</strong> for accreditation/CE compliance reasons; the talk needed to remain educational, not promotional. The plan was to introduce Pausality more directly in Day 2 conversations. This is actually a strength: the content landed on its own scientific merit without any product pitch, which means the audience response data is uncontaminated by commercial framing.</div>
+  </div>
+
+  <div class="moment-card">
+    <div class="moment-label">Audience Composition</div>
+    <div class="moment-detail">Mix of practicing CRNAs, SRNA students, and educators. This is the ideal propagation audience: students carry the concepts into their training programs, educators can integrate them into curricula, practitioners validate clinical relevance. One talk seeds three channels.</div>
+  </div>
+
+  <!-- SLIDE DECK -->
+  <h2>Slide Deck Reference</h2>
+
+  <div class="deck-info">
+    <div class="ekg">
+      <svg width="100%" height="80" viewBox="0 0 1200 80" preserveAspectRatio="none">
+        <path d="M0,40 L180,40 L195,40 L205,15 L215,65 L225,30 L235,50 L245,40 L400,40 L700,40 L715,40 L725,15 L735,65 L745,30 L755,50 L765,40 L1200,40"/>
+      </svg>
+    </div>
+    <div class="deck-title">Inside Out: Interoception and High-Performance for CRNAs</div>
+    <p style="font-size:0.9rem; margin-bottom:0.5rem; color:rgba(255,255,255,0.75);"><a href="https://gamma.app/docs/Inside-Out-Interoception-and-High-Performance-for-CRNAs-5cpi63jgnof40qp" target="_blank">View deck</a></p>
+    <p style="font-size:0.82rem; color: var(--caption-gray);">17 slides. Framing: nervous system regulation as clinical equipment maintenance, not wellness.</p>
+  </div>
+
+  <h3>Slide Flow (Reconstructed from Vault)</h3>
+  <div class="slide-outline">
+    <div class="slide-item"><span class="slide-num">1.</span> Title: Inside Out: Interoception and High-Performance for CRNAs</div>
+    <div class="slide-item"><span class="slide-num">2.</span> The question: "Is my HR higher or lower than the patient's?"</div>
+    <div class="slide-item"><span class="slide-num">3.</span> Interoception defined: the eighth sense</div>
+    <div class="slide-item"><span class="slide-num">4.</span> Show of hands: who's heard of interoception?</div>
+    <div class="slide-item"><span class="slide-num">5.</span> Show of hands: formal breath training?</div>
+    <div class="slide-item"><span class="slide-num">6.</span> The training gap: what clinical education misses</div>
+    <div class="slide-item"><span class="slide-num">7.</span> Autonomic nervous system basics</div>
+    <div class="slide-item"><span class="slide-num">8.</span> From relaxation to regulation: the framework shift</div>
+    <div class="slide-item"><span class="slide-num">9.</span> MAIA-2: measuring interoceptive awareness (8 dimensions)</div>
+    <div class="slide-item"><span class="slide-num">10.</span> Diaphragmatic blindness concept</div>
+    <div class="slide-item"><span class="slide-num">11.</span> Gap Moment Training&#8482;: the 60-second window</div>
+    <div class="slide-item"><span class="slide-num">12.</span> Perioperative timing protocols</div>
+    <div class="slide-item"><span class="slide-num">13.</span> Evidence base: HRV, vagal tone, burnout literature</div>
+    <div class="slide-item"><span class="slide-num">14.</span> Military/NASA parallels: proactive not reactive</div>
+    <div class="slide-item"><span class="slide-num">15.</span> "Inside Out": internal state drives external performance</div>
+    <div class="slide-item"><span class="slide-num">16.</span> What you can do today: micro-practices</div>
+    <div class="slide-item"><span class="slide-num">17.</span> Q&amp;A / Contact</div>
+  </div>
+
+  <h3>Core Objection Handlers Used</h3>
+  <table>
+    <tr><th>Objection</th><th>Response</th></tr>
+    <tr><td>"I forget"</td><td>Anchor to hand-washing; you never forget that. Make it the same trigger.</td></tr>
+    <tr><td>"No time"</td><td>30 seconds between cases. You have that, always.</td></tr>
+    <tr><td>"It's woo"</td><td>Show HRV data. Measurable, not mystical.</td></tr>
+    <tr><td>"I'm fine"</td><td>Over 60% of CRNAs report burnout. "Fine" is the most dangerous state.</td></tr>
+  </table>
+
+  <!-- KEY LEARNINGS -->
+  <h2>What I Learned Giving This Talk</h2>
+
+  <h3>1. The Interoceptive Blind Spot Is Deeper Than Expected</h3>
+  <p>0.5 out of 100 advanced-practice clinicians recognizing "interoception" is not a knowledge gap; it's a cultural blind spot. The word doesn't appear in CRNA curricula. The concept isn't just untaught; it's invisible. This means the first job of any SRL content or talk is vocabulary creation: give people the word before you give them the practice.</p>
+
+  <h3>2. The Body Opens the Door Faster Than the Brain</h3>
+  <p>The heart rate question produced an immediate physiological shift in the room; the nervous giggle followed by silence was a collective interoceptive moment. The audience felt something before they understood something. That sequence (feel, think, reframe) is the pedagogical order that works. Don't start with theory; start with a body-level prompt.</p>
+
+  <h3>3. Clinicians Are Already Cobbling; They Need Standardized Tools</h3>
+  <p>The POTS student borrowing baseball performance psychology from her husband is the market in miniature. Clinicians who recognize the gap are already solving it with whatever they can find: yoga, sports psychology, music training, spouse's expertise. SRL's opportunity isn't to create demand; it's to standardize and professionalize what people are already doing in ad hoc, unvalidated ways.</p>
+
+  <h3>4. Students Are the Most Receptive Audience</h3>
+  <p>Both post-talk conversations were with students, not established practitioners. Students are in formation; their clinical identity is still being shaped. They're also the most likely to carry concepts forward into their programs and cohorts. Future conference strategy: always include content that speaks directly to students, not just credentialed practitioners.</p>
+
+  <h3>5. Separating Science from Product Works</h3>
+  <p>Not mentioning Pausality&#8482; on Day 1 was a constraint that became an advantage. The audience responded to the science, the framework, and the self-awareness prompts; not a product pitch. This confirms the Communication Philosophy: earn the relationship through depth, not pitch. The accreditation constraint forced the purest possible test of the content, and it passed.</p>
+
+  <h3>6. "Nervous Giggle Then Silence" Is the Signature Moment</h3>
+  <p>The heart rate question response pattern (giggle, then genuine silence) is the tell that you've landed something real. The giggle is the defense mechanism (this is uncomfortable); the silence is the processing (wait, this matters). Future talks should be designed to produce exactly this sequence. It's the moment of awareness-before-technique, and it's the emotional core of the whole talk.</p>
+
+  <h3>7. Show-of-Hands Beats Survey Data for This Audience</h3>
+  <p>Using show-of-hands rather than formal polling was the right call. It made the data visible to the audience themselves; they could see that nobody else raised their hand either. That collective visibility is what turns a data point into a shared realization. The room saw its own blind spot in real time. Future talks should always include at least one show-of-hands moment for this reason.</p>
+
+  <!-- CONTENT BUILDING BLOCKS -->
+  <h2>Content Building Blocks</h2>
+  <p class="section-intro">Angles, hooks, and story fragments extracted from this talk; ready to be developed into LinkedIn posts, Facebook content, future presentations, CE course material, and investor narratives.</p>
+
+  <div class="angle-card">
+    <span class="platform linkedin">LinkedIn</span>
+    <div class="angle-title">The 4% Problem</div>
+    <div class="angle-desc">I asked 100 advanced-practice clinicians: "Have you had formal breath training?" Four hands. A trumpet player, a singer, a swimmer, and someone who does yoga. Zero from clinical education. We manage other people's airways all day. Nobody taught us to use our own. <span class="tag">market-validation</span> <span class="tag">clinical-training-gap</span></div>
+  </div>
+
+  <div class="angle-card">
+    <span class="platform linkedin">LinkedIn</span>
+    <div class="angle-title">The Question That Silenced the Room</div>
+    <div class="angle-desc">"Is my heart rate higher or lower than the patient's?" When I asked 100 CRNAs this question, the room went quiet. Not because the answer is hard. Because nobody had ever asked them. We monitor every signal the patient produces. We monitor none of our own. <span class="tag">interoception</span> <span class="tag">awareness-precedes-control</span></div>
+  </div>
+
+  <div class="angle-card">
+    <span class="platform both">LinkedIn + Facebook</span>
+    <div class="angle-title">The Baseball Player's Wife</div>
+    <div class="angle-desc">A student CRNA with POTS told me she gets overwhelming anxiety pushing her patient to the OR. Her husband is a baseball player; he taught her the performance anxiety skills his sport trained him in. A clinician with an autonomic condition, borrowing tools from professional baseball, because her program taught her nothing about managing her own nervous system. This is the gap. <span class="tag">cobbling-pattern</span> <span class="tag">POTS</span> <span class="tag">user-story</span></div>
+  </div>
+
+  <div class="angle-card">
+    <span class="platform linkedin">LinkedIn</span>
+    <div class="angle-title">Interoception: The Word Nobody Knows</div>
+    <div class="angle-desc">I asked 100 advanced-practice clinicians if they'd heard the word "interoception." One hand went up. Halfway. Interoception is the ability to sense what's happening inside your own body: heart rate, breathing, muscle tension, gut signals. It has 40+ years of peer-reviewed research. It predicts emotional regulation, clinical decision-making, and burnout risk. And it doesn't appear in a single CRNA curriculum. <span class="tag">vocabulary-creation</span> <span class="tag">interoception</span></div>
+  </div>
+
+  <div class="angle-card">
+    <span class="platform facebook">Facebook</span>
+    <div class="angle-title">What I Learned Presenting to My Peers</div>
+    <div class="angle-desc">Personal/reflective angle. The vulnerability of standing in front of 100 peers and naming something nobody talks about. The nervous giggle. The silence. The students who came up after. 28 years of experience distilled into one question that changed the room. <span class="tag">founder-story</span> <span class="tag">authenticity</span></div>
+  </div>
+
+  <div class="angle-card">
+    <span class="platform linkedin">LinkedIn</span>
+    <div class="angle-title">From Relaxation to Regulation</div>
+    <div class="angle-desc">Framework-shift post. The wellness industry says "calm down." The science says "regulate." These are not the same thing. Calm is a destination. Regulation is a skill. One is passive. The other is trainable, measurable, and applicable in a 30-second window between cases. <span class="tag">framework-shift</span> <span class="tag">autonomic-flexibility</span></div>
+  </div>
+
+  <div class="angle-card">
+    <span class="platform both">LinkedIn + Facebook</span>
+    <div class="angle-title">"I'm Fine": The Most Dangerous Words in Healthcare</div>
+    <div class="angle-desc">Over 60% of CRNAs report burnout. When asked how they're doing, the universal answer is "I'm fine." What if "fine" isn't resilience; it's the interoceptive suppression pattern that clinical education trained into us? What if "fine" is the blind spot? <span class="tag">interoceptive-suppression</span> <span class="tag">burnout</span></div>
+  </div>
+
+  <div class="angle-card">
+    <span class="platform linkedin">LinkedIn</span>
+    <div class="angle-title">Equipment Maintenance for the Clinician</div>
+    <div class="angle-desc">You'd never start a case without checking your airway cart. You'd never push drugs through an unchecked line. But we start every case without checking our own autonomic state. What if a 30-second body scan between cases was as non-negotiable as checking your circuit? <span class="tag">clinical-framing</span> <span class="tag">gap-moment-training</span></div>
+  </div>
+
+  <!-- REUSABLE STORY ASSETS -->
+  <h2>Reusable Story Assets</h2>
+  <p class="section-intro">Named story beats and data points that can be dropped into any future content: talks, decks, posts, grant applications, investor conversations.</p>
+
+  <table>
+    <tr><th>Asset Name</th><th>The Beat</th><th>Use Cases</th></tr>
+    <tr>
+      <td><strong>The 4% Stat</strong></td>
+      <td>4 out of ~100 advanced-practice clinicians had formal breath training; all from non-clinical sources (trumpet, singing, swimming, yoga). Zero from clinical education.</td>
+      <td>Opening hook for any talk. LinkedIn stat post. Grant application "needs assessment." Investor deck market slide.</td>
+    </tr>
+    <tr>
+      <td><strong>The 0.5% Stat</strong></td>
+      <td>~0.5 out of 100 advanced-practice clinicians recognized the word "interoception." One hand, halfway up.</td>
+      <td>Vocabulary-creation content. Academic paper intro. CE course justification. "Why this matters" framing.</td>
+    </tr>
+    <tr>
+      <td><strong>The Heart Rate Question</strong></td>
+      <td>"Is my heart rate higher or lower than the patient's?" Nervous giggle, then silence.</td>
+      <td>Opening for any CRNA audience. Experiential moment in talks. LinkedIn/FB hook. The SRL origin story.</td>
+    </tr>
+    <tr>
+      <td><strong>The POTS Student</strong></td>
+      <td>SRNA with POTS, overwhelming anxiety pushing gurney to OR, husband (baseball player) taught her sports psychology skills. Cobbling pattern.</td>
+      <td>User story for product development. Evidence of unmet need. Investor narrative (customers already solving the problem badly). Content about cross-domain skill transfer.</td>
+    </tr>
+    <tr>
+      <td><strong>The Baseball Husband</strong></td>
+      <td>A baseball player has better performance anxiety tools than an advanced-practice clinician; because his profession standardized the training and hers didn't.</td>
+      <td>LinkedIn "status comparison" post. Enterprise pitch (why would you standardize this for athletes and not clinicians?). AANA policy advocacy.</td>
+    </tr>
+    <tr>
+      <td><strong>"Onto Something"</strong></td>
+      <td>First audience comment: "I think you're onto something here."</td>
+      <td>PMF narrative for investors. Humility in talks. The "before traction" moment in the founder story.</td>
+    </tr>
+    <tr>
+      <td><strong>The Nervous Giggle, Then Silence</strong></td>
+      <td>Room's reaction pattern: laughter (defense), then silence (processing). Collective interoceptive moment.</td>
+      <td>Meta-commentary in future talks. Teaching about awareness-precedes-control. Content about how the body reveals what the mind hasn't processed.</td>
+    </tr>
+    <tr>
+      <td><strong>Day 1/Day 2 Split</strong></td>
+      <td>Science without product name (Day 1), deeper conversation with Pausality&#8482; (Day 2). Accreditation constraint became purity test.</td>
+      <td>Conference strategy. Sales methodology content. "Content-first, product-second" narrative for founders.</td>
+    </tr>
+  </table>
+
+  <!-- VAULT CONNECTIONS -->
+  <h2>Vault Connections</h2>
+  <p class="section-intro">Concepts, evidence notes, and observations in the SRL knowledge graph that are validated or enriched by WANA field data.</p>
+
+  <table>
+    <tr><th>Vault Note</th><th>What WANA Data Adds</th></tr>
+    <tr>
+      <td><strong>diaphragmatic-blindness</strong></td>
+      <td>Primary field validation. 4/100 stat is now the canonical data point for this concept.</td>
+    </tr>
+    <tr>
+      <td><strong>interoception</strong></td>
+      <td>0.5/100 recognition rate among advanced-practice clinicians. Confirms the vocabulary-creation thesis.</td>
+    </tr>
+    <tr>
+      <td><strong>interoceptive-suppression-hypothesis</strong></td>
+      <td>The cobbling pattern (POTS student borrowing baseball tools) is direct evidence of suppression forcing ad hoc workarounds.</td>
+    </tr>
+    <tr>
+      <td><strong>gap-moment-training</strong></td>
+      <td>The "between cases" timing resonated. Audience silence at "what do you do between cases?" confirms the window.</td>
+    </tr>
+    <tr>
+      <td><strong>awareness-precedes-control</strong></td>
+      <td>The heart rate question, giggle, then silence is the live demonstration. Awareness before technique.</td>
+    </tr>
+    <tr>
+      <td><strong>convergent-discovery-validation</strong></td>
+      <td>POTS student's husband teaching her baseball skills = convergent discovery from another domain.</td>
+    </tr>
+  </table>
+
+  <!-- NEXT ACTIONS -->
+  <h2>Next Actions</h2>
+
+  <table>
+    <tr><th>Action</th><th>Priority</th><th>Notes</th></tr>
+    <tr><td>Record Day 2 outcomes and Pausality&#8482; conversations</td><td>Immediate</td><td>Capture whether Pausality resonated, any contact info gathered</td></tr>
+    <tr><td>Write 3-5 LinkedIn posts from content angles above</td><td>This week</td><td>Start with "The 4% Problem" and "The Heart Rate Question"; strongest hooks</td></tr>
+    <tr><td>Create vault observation note for the POTS student story</td><td>This week</td><td>New observation: cobbling-pattern-wana-pots-student</td></tr>
+    <tr><td>Update evidence note with new details</td><td>This week</td><td>Add POTS student, second student, nervous giggle detail to wana-conference-talk-march-2026</td></tr>
+    <tr><td>Send Honeycutt WANA update letter</td><td>This week</td><td>Draft exists at outputs/emails/honeycutt-wana-update-2026-04.md</td></tr>
+    <tr><td>Iterate deck for next conference</td><td>Before next talk</td><td>Add a "What do you do between cases?" prompt as a dedicated slide. Add emotional granularity section.</td></tr>
+    <tr><td>Design a 2-minute "body-level prompt" opening sequence</td><td>Before next talk</td><td>Formalize the heart-rate question as a repeatable opening ritual for every talk</td></tr>
+    <tr><td>Develop the "cobbling" narrative as a content pillar</td><td>Ongoing</td><td>Collect more stories like the POTS student. Pattern = clinicians borrowing tools from non-clinical domains.</td></tr>
+  </table>
+
+  <div class="footer-box">
+    <strong>Document purpose:</strong> Living debrief and content building block library for the WANA Spring Conference talk (March 28, 2026). Designed to feed LinkedIn/FB content creation, future presentations, CE course development, investor narratives, and grant applications. All field data is show-of-hands audience polling, not formal survey research; describe accordingly.
+  </div>
+  <div class="footer-copyright">&copy; 2026 Somnistics Research Labs. · pausality.health</div>
+
+</div>
+
+</body>
+</html>

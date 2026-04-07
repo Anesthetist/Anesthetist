@@ -1,14 +1,14 @@
-# Email: Randy Graybeal to Dr. Honeycutt
+# Email: Randy Graybeal to Dr. Hunnicutt
 
 **From:** Randy Graybeal, DNAP, CRNA
-**To:** Dr. Honeycutt, VCU School of Nursing
+**To:** Dr. Hunnicutt, VCU School of Nursing
 **Subject:** Research collaboration — interoceptive awareness in CRNAs and a proposed study program
 **Date:** March 2026
 **Attachments:** (1) SRL Evidence Assessment: Biomedical Validation of Core Constructs, March 2026; (2) Somnistics: A Middle-Range Nursing Theory of Autonomic Self-Regulation in High-Acuity Practice
 
 ---
 
-Dr. Honeycutt,
+Dr. Hunnicutt,
 
 I've been looking forward to putting substance behind the collaboration we've been discussing. After a thorough biomedical evidence sweep this month — 150+ PubMed articles cross-referenced against our knowledge base — I want to share what emerged, because I think there's a research program here that is both genuinely novel and highly feasible at VCU.
 

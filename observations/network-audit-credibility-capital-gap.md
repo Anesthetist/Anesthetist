@@ -1,24 +1,26 @@
 ---
-id: "urn:srl:observation:network-audit-credibility-capital-gap"
-type: observation
-title: "Network Topology: 102 Credibility Nodes vs. 19 Capital Nodes (5:1 Imbalance)"
-status: draft
-creator: "Randy Graybeal"
+clinical_context: Strategic network audit (Nov 2025) — topology mapping reveals credibility-to-capital
+  conversion gap
 created: 2026-03-14
-modified: 2026-03-14
+creator: Randy Graybeal
 dc:subject:
-  - network-analysis
-  - fundraising
-  - credibility-capital-bridge
-  - Tom-Morgan
+- network-analysis
+- fundraising
+- credibility-capital-bridge
+- Tom-Morgan
+- investor-relations
+id: urn:srl:observation:network-audit-credibility-capital-gap
+modified: 2026-03-14
 observation_type: pattern
-clinical_context: "Strategic network audit (Nov 2025) — topology mapping reveals credibility-to-capital conversion gap"
-years_of_evidence: 1
 prov:wasDerivedFrom: []
 skos:related:
-  - somnistics
-  - consciousness-engineering
-  - seven-powers-compound-loops
+- somnistics
+- consciousness-engineering
+- seven-powers-compound-loops
+status: draft
+title: 'Network Topology: 102 Credibility Nodes vs. 19 Capital Nodes (5:1 Imbalance)'
+type: observation
+years_of_evidence: 1
 ---
 
 # Network Topology: 102 Credibility Nodes vs. 19 Capital Nodes (5:1 Imbalance)

@@ -93,6 +93,15 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ali-leadership-skill-owning-negative-projections
 - urn:srl:evidence:ali-leadership-skill-positive-boundaries
 - urn:srl:evidence:ali-leadership-skill-venting-and-sorting
+- urn:srl:evidence:crna-workforce-crisis-2026
+- urn:srl:evidence:exo-3-organizational-singularity-march-2026
+- urn:srl:evidence:parental-burnout-literature-review-2026
+- urn:srl:evidence:cantone-2026-biofeedback-healthcare-systematic-review
+- urn:srl:evidence:hrvb-rct-ed-icu-workers-2026
+- urn:srl:evidence:biofeedback-systematic-review-hcp-2026
+- urn:srl:evidence:crna-burnout-integrative-review-aana-2025
+- urn:srl:evidence:a52-breathwork-rct-paramedics-2026
+- urn:srl:evidence:lorna-breen-act-reauthorization-2026
 skos:broader:
 - somnistics
 skos:narrower: []

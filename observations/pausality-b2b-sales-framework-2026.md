@@ -10,6 +10,7 @@ dc:subject:
 - market-intelligence
 - crna
 - clinical-adoption
+- enterprise-sales
 id: urn:srl:observation:pausality-b2b-sales-framework-2026
 modified: '2026-03-18'
 prov:wasDerivedFrom:

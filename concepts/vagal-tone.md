@@ -51,6 +51,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:abahuje-2023-residents-hrv-leadership-stress
 - urn:srl:evidence:cooley-vagus-resonant-breathing-protocols-2026
 - urn:srl:evidence:hrv-biofeedback-cardiovascular-meta-analysis-2026
+- urn:srl:evidence:wearable-hrvb-substance-use-disorder-2025
+- urn:srl:evidence:vagal-neuromodulation-hrvb-ssp-review-2026
+- urn:srl:evidence:polyvagal-debate-grossman-porges-2026
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

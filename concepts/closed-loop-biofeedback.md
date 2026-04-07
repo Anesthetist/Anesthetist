@@ -16,6 +16,8 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-cognitive-emotional-state-interface
 - urn:srl:evidence:lehrer-2020-hrv-biofeedback-limitations
 - urn:srl:evidence:hrv-biofeedback-substance-use-disorder-rct-2026
+- urn:srl:evidence:wearable-hrvb-substance-use-disorder-2025
+- urn:srl:evidence:vagal-neuromodulation-hrvb-ssp-review-2026
 skos:broader:
 - somnistics
 skos:narrower:
@@ -28,6 +30,7 @@ skos:related:
 - interoceptive-simulator
 - neural-sovereignty
 - multimodal-sensor-fusion
+- resonant-breathing-frequency
 status: draft
 title: Closed-Loop Biofeedback
 type: concept

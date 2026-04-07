@@ -41,6 +41,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:faber-global-asset-allocation
 - urn:srl:evidence:ali-leadership-skill-authentic-leadership-rating-scales
 - urn:srl:evidence:ali-leadership-skill-upgrading-your-questions
+- urn:srl:observation:breathwork-chronic-stress-technique-comparison-2025
+- urn:srl:evidence:remote-hrvb-mental-health-meta-analysis-2025
+- urn:srl:evidence:a52-breathwork-rct-paramedics-2026
 skos:broader:
 - titration-to-effect
 skos:narrower: []

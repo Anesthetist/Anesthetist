@@ -428,7 +428,7 @@ Prospective cohort following SIT-trained and untrained CRNAs over 2 years, measu
 ### 10.5 Collaborative Opportunities
 
 The research agenda is designed to support collaboration with:
-- VCU School of Nursing (Dr. Honeycutt) -- MAIA-2 validation in CRNA populations
+- VCU School of Nursing (Dr. Hunnicutt) -- MAIA-2 validation in CRNA populations
 - AANA Foundation -- funding for clinician wellness research
 - Wearable technology partners -- real-time HRV monitoring in clinical environments
 - Simulation centers -- high-fidelity testing of state drift and recovery dynamics

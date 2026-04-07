@@ -70,7 +70,7 @@ irb:
   status: "not-required" | "exempt" | "expedited" | "full-review" | "approved" | "pending" | "planned" | "not-applicable"
   protocol_number: "VCU-IRB-2026-XXX"
   institution: "Virginia Commonwealth University"
-  pi: "Dr. Honeycutt"
+  pi: "Dr. Hunnicutt"
   approval_date: "YYYY-MM-DD"
   expiration_date: "YYYY-MM-DD"
   amendments: []

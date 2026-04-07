@@ -47,6 +47,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:atlasforge-agent-language-bandwidth-2026
 - urn:srl:evidence:elia-scale-2026-emotion-linked-interoceptive-awareness
 - urn:srl:evidence:lieff-secret-language-of-cells
+- urn:srl:evidence:elia-scale-emotion-linked-interoceptive-awareness-2026
+- urn:srl:evidence:maternal-touch-interoceptive-development-2026
+- urn:srl:evidence:olfaction-interoception-cognition-nursing-home-2026
 skos:broader: []
 skos:narrower:
 - anterocept

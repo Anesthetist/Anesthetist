@@ -12,6 +12,7 @@ id: urn:srl:concept:5-minute-miracle
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-springetts-5-minute-miracle
+- urn:srl:observation:breathwork-chronic-stress-technique-comparison-2025
 skos:broader: []
 skos:narrower: []
 skos:related:

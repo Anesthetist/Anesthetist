@@ -3,7 +3,7 @@ created: '2026-03-16'
 creator: randy+claude
 id: urn:srl:concept:evidence-grading-framework
 modified: '2026-03-16'
-status: review
+status: canonical
 subjects:
 - evidence-grading
 - compliance

@@ -8,30 +8,29 @@ dc:subject:
 - baseline
 - v1.0.8
 id: urn:srl:evidence:pausality-v108-analytics-baseline
-modified: '2026-03-24'
+modified: '2026-04-02'
 status: draft
 title: Pausality v1.0.8 Analytics Baseline — March 2026
 type: evidence
 ---
 
-## Summary
+# Pausality Analytics Baseline — April 2026 Update
 
-First comprehensive analytics snapshot for Pausality v1.0.8 (released ~March 20, 2026).
+## RevenueCat Data (April 1, 2026)
 
-## Key Metrics
+- **MRR:** ~$115
+- **ARR:** ~$1.3K
+- **Estimated paying subscribers:** ~9 (at $12.99/mo)
+- **Growth pattern:** Staircase; doubled from ~$50 to $115 in late March 2026
+- **App Store status:** Live (iOS passed review, eligible for distribution as of April 2, 2026)
+- **Build:** Pausality 1.0.9 (Build 404) shipped to TestFlight for iOS + watchOS
 
-- **257 App Store impressions** (-38%)
-- **69 product page views**
-- **21.2% conversion rate** (+184% — exceptional vs 3–5% industry avg)
-- **35 total downloads** (+52%)
-- **$91 MRR** from 16 active subscriptions
-- **172 active customers** with 9.3% paid conversion
-- **Revenue per download:** $3.97
-- **Downloads:** 97% iPhone, 54% from organic App Store search, 29% from app referrers
-- **RevenueCat:** $139 revenue last 28 days, 114 new customers
-- **Email list:** 424 subscribers with declining engagement (open rate 72% → 53%, click rate 7.8% → 2.1% over 7 months)
-- **Geographic:** 91% US, with single downloads from Australia, Canada, UK
+## Prior Baseline (March 2026)
 
-## Somnistic Relevance
+- See original note for v1.0.8 baseline metrics
 
-Critical baseline for measuring all future growth interventions. The 21.2% App Store conversion rate validates product-market fit at the page level — people who see Pausality want it. The constraint is top-of-funnel: only 257 impressions/month. This confirms the Rachitsky offline-first strategy is the right play — Randy at conferences and Jason in the Ferrari network putting the app in people's hands, not waiting for App Store discovery. The 9.3% free-to-paid conversion (16/172) suggests onboarding optimization is a higher-leverage play than acquisition right now — 156 people downloaded and didn't subscribe. Email fatigue (declining opens/clicks) signals need for new activation channel beyond the newsletter.
+## Benchmarks
+
+- Garry Tan 90-day target: 100 paying subscribers
+- Current: ~9 (9% of target)
+- Required growth rate: ~11x in remaining window

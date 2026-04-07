@@ -23,6 +23,7 @@ skos:narrower: []
 skos:related:
 - cross-domain-consilience-engine
 - consilience-process-sfi
+- ganim-claude-cowork-context-architecture
 status: draft
 title: 'Vigil: AI Chief-of-Staff Coordination Architecture'
 trademarked: false

@@ -3,7 +3,7 @@ created: '2026-03-16'
 creator: randy+claude
 id: urn:srl:concept:faceted-classification-taxonomy
 modified: '2026-03-16'
-status: review
+status: canonical
 subjects:
 - knowledge-management
 - taxonomy

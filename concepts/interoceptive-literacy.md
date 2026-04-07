@@ -34,6 +34,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:hrv-biofeedback-substance-use-disorder-rct-2026
 - urn:srl:evidence:brown-atlas-of-the-heart
 - urn:srl:evidence:ali-leadership-skill-hiring-owners-instead-of-victims
+- urn:srl:evidence:elia-scale-emotion-linked-interoceptive-awareness-2026
 skos:broader:
 - interoception
 skos:narrower:

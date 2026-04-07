@@ -42,6 +42,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:nondual-awareness-2025-biorxiv-brain-eeg
 - urn:srl:evidence:ochsner-gross-2005-cognitive-control-emotion
 - urn:srl:evidence:jhana-7t-fmri-consciousness-2025
+- urn:srl:evidence:lieberman-sacchet-2026-consciousness-advanced-meditation
 skos:broader:
 - somnistics
 skos:narrower:

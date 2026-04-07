@@ -120,7 +120,7 @@ flowchart TD
 
         EB_CERT --> EB_MISSIMO["Missimo One-Pager\n3 cards, zero jargon\n'Train your nervous system\nlike you train your car'"]
 
-        VAULT --> HONEYCUTT["Honeycutt Email\nResearch collaboration\n3 study designs attached"]
+        VAULT --> HUNNICUTT["Hunnicutt Email\nResearch collaboration\n3 study designs attached"]
     end
 
     subgraph COMPETITIVE["🔍 COMPETITIVE INTELLIGENCE"]

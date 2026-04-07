@@ -61,6 +61,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ali-awareness-exercise-relationship-cycles
 - urn:srl:evidence:ali-leadership-skill-creating-strong-standards
 - urn:srl:evidence:ali-leadership-skill-deep-listening
+- urn:srl:evidence:salvi-2026-somnus-dare-sleep-cognitive-decline
+- urn:srl:evidence:parental-burnout-literature-review-2026
+- urn:srl:evidence:neurocognitive-autonomic-signatures-stress-performance-2026
 skos:broader:
 - somnistics
 skos:narrower:

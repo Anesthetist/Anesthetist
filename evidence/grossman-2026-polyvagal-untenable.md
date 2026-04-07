@@ -11,6 +11,9 @@ subjects:
 - RSA
 - vagal-tone
 - scientific-controversy
+- vagus-nerve
+- scientific-debate
+- evolutionary-biology
 title: 39-Author Consortium Declares Polyvagal Theory 'Untenable'
 type: evidence
 url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12937499/
@@ -18,24 +21,22 @@ url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12937499/
 
 ## Citation
 
-Grossman, P., et al. (39 co-authors). (2026). Why The Polyvagal Theory is Untenable: An international expert evaluation. *Clinical Neuropsychiatry*, 22(3). https://pmc.ncbi.nlm.nih.gov/articles/PMC12937499/
+Grossman, P., et al. (39 co-authors). (2026). Why the polyvagal theory is untenable: An international expert evaluation of the polyvagal theory and commentary upon Porges, S.W. (2025). *Clinical Neuropsychiatry*, 22(3). https://pmc.ncbi.nlm.nih.gov/articles/PMC12937499/
 
-Note: Porges responded in-kind in the same journal issue. See also: https://pmc.ncbi.nlm.nih.gov/articles/PMC12302812/ for Porges's 2025/2026 updated defense.
+Note: Porges responded in-kind in the same journal issue. See [[porges-2026-response-grossman-critique]].
 
 ## Key Findings
 
-- A consortium of 39 ANS scholars systematically refutes five foundational premises of Polyvagal Theory (PVT).
-- Primary critiques target: (1) claims about the evolutionary uniqueness of mammalian social behavior, and (2) interpretation of respiratory sinus arrhythmia (RSA) as a specific measure of vagal function.
-- Critics argue PVT's neuroanatomical claims are inconsistent with established physiology.
-- Porges authored a rebuttal in the same issue, and the debate remains scientifically open — the conversation reflects an evolving theory, not necessarily a disproven one.
+- A consortium of 39 ANS scholars systematically refutes five foundational premises of Polyvagal Theory (PVT)
+- Primary critiques target: (1) claims about the evolutionary uniqueness of mammalian social behavior, and (2) interpretation of respiratory sinus arrhythmia (RSA) as a specific measure of vagal function
+- Central criticism: PVT's claim that the mammalian ventral vagus is evolutionarily advanced while the dorsal vagus represents a "left-behind" reptilian vagus is not supported by comparative anatomy
+- Critics point to ample evidence of complex social behaviors in non-mammal vertebrates, undermining PVT's evolutionary hierarchy
+- Critics argue PVT's neuroanatomical claims are inconsistent with established physiology
 
 ## Relevance to SRL
 
-**High-priority flag.** Polyvagal Theory is foundational to several SRL constructs (Autonomic Regulation, Vagal Tone, Co-Regulation, Gap Moment Training rationale). SRL should monitor this debate carefully and consider: (1) which SRL constructs depend on PVT's specific neuroanatomical claims vs. which rest on the more durable empirical ground of HRV/RSA as autonomic markers; (2) how to communicate SRL concepts robustly regardless of PVT's ultimate scientific standing. The functional validity of resonant breathing and HRV biofeedback does NOT require PVT to be correct.
+**HIGH IMPACT** — This directly challenges the theoretical foundation of SRL's [[polyvagal-theory]] concept. SRL should carefully track this debate, as it has implications for how polyvagal frameworks are positioned in curricula, products, and scientific communications. Importantly, the clinical utility of polyvagal-informed practices remains valid even if specific evolutionary claims are revised. SRL's grounding in demonstrated mechanisms — HRV/RSA as autonomic markers, breathing rate effects on autonomic function — does NOT require PVT to be correct. SRL may need to articulate its position on the distinction between theoretical mechanism and practical application.
 
 ## Methodology
 
-- **Design:** Critical review / formal rebuttal paper
-- **Authors:** Paul Grossman (lead) + 38 ANS scientists
-- **Journal:** Clinical Neuropsychiatry, 2026, Vol. 22(3)
-- **Scope:** Evaluation of 5 foundational claims of Polyvagal Theory
+Commentary and expert evaluation paper. 39 internationally recognized experts in vagus nerve physiology, evolutionary biology, and vertebrate social behavior were invited to co-author. Published as a response to Porges' (2025) review paper in the same journal.

@@ -9,10 +9,13 @@ dc:subject:
 - entrepreneurship
 - demand-signal
 - scaling
+- biomarkers
 id: urn:srl:concept:demand-biomarkers
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-commoncog-scaling-lessons
+- urn:srl:evidence:burnout-biomarkers-systematic-review-preprint-2025
+- urn:srl:evidence:hrv-burnout-biomarker-healthcare-preprint-2025
 skos:broader:
 - metasomatic-entrepreneurship
 skos:narrower: []

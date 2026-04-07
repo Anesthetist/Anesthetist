@@ -7,6 +7,7 @@ dc:subject:
 - fundraising
 - friends-family
 - revenue-metrics
+- investor-relations
 id: urn:srl:observation:ff-safe-round-term-sheet-q1-2026
 modified: '2026-03-15'
 observation_type: fundraising

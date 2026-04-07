@@ -15,8 +15,10 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-anterocept-spectrum-overview
 - urn:srl:evidence:little-2026-breathwork-paramedicine-resilience
 - urn:srl:evidence:moore-hidden-zen
+- urn:srl:evidence:a52-breathwork-rct-paramedics-2026
 skos:broader:
 - interoception
+- interoceptive-literacy
 skos:narrower: []
 skos:related:
 - diaphragmatic-blindness

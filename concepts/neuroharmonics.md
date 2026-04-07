@@ -26,6 +26,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:bieri-2025-flow-state-robotic-surgery-eeg
 - urn:srl:evidence:hrv-biofeedback-cardiovascular-meta-analysis-2026
 - urn:srl:evidence:jhana-7t-fmri-consciousness-2025
+- urn:srl:evidence:lieberman-sacchet-2026-consciousness-advanced-meditation
 skos:broader:
 - neuro-ouroboros
 skos:narrower: []

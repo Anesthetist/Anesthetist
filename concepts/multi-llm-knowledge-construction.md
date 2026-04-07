@@ -20,6 +20,7 @@ skos:related:
 - syntopical-synthesis
 - epistemic-layering
 - integration-architecture
+- karpathy-llm-knowledge-bases
 status: draft
 title: Multi-LLM Knowledge Construction
 type: concept

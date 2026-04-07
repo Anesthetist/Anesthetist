@@ -12,6 +12,7 @@ subjects:
 - EEG
 - advanced-meditation
 - subject-object-collapse
+- contemplative-neuroscience
 title: 'Non-Duality in Brain and Experience of Advanced Meditators: Key Role for Subject-Object
   Collapse'
 type: evidence
@@ -28,11 +29,12 @@ Non-duality in brain and experience of advanced meditators – Key role for subj
 - Awareness-of-awareness, where awareness is non-propositionally, reflexively aware of itself without mediation, fully collapses the subject–object distinction
 - Rooted in contemplative traditions including Advaita Vedanta, Kashmiri Shaivism, Mahayana, and Vajrayana Buddhism
 - Demonstrates measurable EEG signatures associated with nondual states in experienced practitioners
+- "Non-representational reflexivity": the capacity to be aware without engaging in conceptual representation
 
 ## Relevance to SRL
 
-Directly supports SRL's Nondual Clinical Awareness and Springett Consciousness Stairway concepts. The subject-object collapse documented here maps to the highest stages of SRL's contemplative development arc. For clinician training, nondual awareness may represent the pinnacle of attentional sovereignty — a state where the clinician and the clinical field are unified rather than separated.
+Directly supports SRL's Nondual Clinical Awareness and Springett Consciousness Stairway concepts. The subject-object collapse documented here maps to the highest stages of SRL's contemplative development arc. Connects to **Nonlocal Consciousness**, **Self-Remembering**, and **[[neurogating]]** concepts. The "non-representational reflexivity" construct maps closely to the kind of awareness SRL cultivates through **[[gap-moment-training]]** — being present without conceptual overlay. For clinician training, nondual awareness may represent the pinnacle of attentional sovereignty — a state where the clinician and the clinical field are unified rather than separated.
 
 ## Methodology
 
-EEG recording of advanced meditators during nondual awareness states; phenomenological interviews combined with neural data analysis.
+EEG recording of advanced meditators during nondual awareness states; phenomenological interviews combined with neural data analysis. Preprint on bioRxiv (April 2025).

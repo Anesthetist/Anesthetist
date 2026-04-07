@@ -12,6 +12,7 @@ id: urn:srl:concept:haptic-biofeedback
 modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-interoception-crna-resilience
+- urn:srl:observation:biohacking-trends-active-wearables-2026
 skos:broader:
 - interoceptive-technology
 skos:narrower: []
@@ -19,6 +20,7 @@ skos:related:
 - exteroryx
 - closed-loop-biofeedback
 - multimodal-sensor-fusion
+- resonant-breathing-frequency
 status: draft
 title: Haptic Biofeedback
 type: concept

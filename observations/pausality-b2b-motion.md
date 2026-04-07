@@ -7,10 +7,12 @@ dc:subject:
 - market-strategy
 - pausality
 - product-market-fit
+- enterprise-sales
 id: urn:srl:observation:pausality-b2b-motion
 modified: '2026-03-19'
 observation_type: strategic-pattern
-prov:wasDerivedFrom: []
+prov:wasDerivedFrom:
+- urn:srl:evidence:crna-workforce-crisis-2026
 skos:related:
 - market-intelligence
 - crna-shift-architect

@@ -1,18 +1,23 @@
 ---
-id: "urn:srl:audience:corporate-executive"
-type: audience
-title: "Corporate Executive / Enterprise Buyer"
-status: draft
-creator: "Randy Graybeal"
 created: 2026-03-14
-modified: 2026-03-14
+creator: Randy Graybeal
+dc:subject:
+- enterprise-sales
+- b2b
+- corporate-wellness
+- audience
 evidence_depth: moderate
-language_register: professional
+id: urn:srl:audience:corporate-executive
 key_concerns:
-  - ROI and productivity metrics
-  - team resilience at scale
-  - competitive advantage framing
-  - integration with existing wellness programs
+- ROI and productivity metrics
+- team resilience at scale
+- competitive advantage framing
+- integration with existing wellness programs
+language_register: professional
+modified: 2026-03-14
+status: draft
+title: Corporate Executive / Enterprise Buyer
+type: audience
 ---
 
 # Corporate Executive / Enterprise Buyer

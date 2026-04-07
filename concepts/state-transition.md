@@ -41,6 +41,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:jhana-7t-fmri-consciousness-2025
 - urn:srl:evidence:ali-three-pager-leadership-guidance-system
 - urn:srl:evidence:ali-awareness-exercise-relationship-cycles
+- urn:srl:evidence:lieberman-sacchet-2026-consciousness-advanced-meditation
 skos:broader: []
 skos:narrower: []
 skos:related:

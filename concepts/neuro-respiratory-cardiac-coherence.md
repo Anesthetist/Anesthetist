@@ -23,6 +23,7 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-intro-layering-and-entrainment
 - urn:srl:chat:chatgpt-thought-articulation-mastery
 - urn:srl:chat:chatgpt-crna-breathing-resilience-program
+- urn:srl:observation:noninvasive-vagal-neuromodulation-hrvb-ssp-review-2025
 skos:broader:
 - somnistics
 skos:narrower: []
