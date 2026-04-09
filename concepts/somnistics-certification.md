@@ -103,7 +103,7 @@ The Somnistics Certification does the same for nervous system competency:
 ### Knowledge Component (Know It)
 
 Demonstrate understanding of:
-- Autonomic nervous system hierarchy ([[polyvagal-theory]])
+- Autonomic nervous system hierarchy ([[polyvagal-theory]]) — including the 2026 scientific debate and its implications for evidence-grounded practice
 - Interoception as a clinical skill ([[interoception]], [[interoceptive-literacy]])
 - Gap moments as trainable transitions ([[gap-moment-training]])
 - The evidence base (core citations from the vault's 68 evidence notes)

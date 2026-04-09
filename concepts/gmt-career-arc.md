@@ -1,48 +1,56 @@
 ---
-id: "urn:srl:concept:gmt-career-arc"
-type: concept
-title: "GMT Career Arc: Seeding → Healing → Fortifying"
-status: review
-creator: "Randy Graybeal"
+aliases:
+- Seed-Heal-Fortify
+- career-longitudinal GMT
+- three-phase clinician development
+- Career-Longitudinal GMT
 created: 2026-03-14
-modified: 2026-03-14
-version: 1.0
-dc:subject:
-  - somnistics
-  - career-development
-  - anti-fragility
-  - longitudinal-training
-  - prehabilitation
+creator: Randy Graybeal
 dc:source:
-  - "cowork-session:2026-03-14"
+- cowork-session:2026-03-14
+dc:subject:
+- somnistics
+- career-development
+- anti-fragility
+- longitudinal-training
+- prehabilitation
+id: urn:srl:concept:gmt-career-arc
+modified: 2026-03-14
+prov:wasDerivedFrom:
+- urn:srl:observation:obsessive-care-planning-rush
+- urn:srl:observation:blue-angels-embodied-visualization
+- urn:srl:observation:interoceptive-suppression-burnout-root
+- urn:srl:observation:bandwidth-saturation-micro-events
+- urn:srl:observation:ptsd-prehabilitation-gap
+- urn:srl:evidence:mcewan-2007-allostatic-load-brain
+- urn:srl:evidence:shalev-2012-ptsd-prevention
+- urn:srl:evidence:putnam-2025-anesthesiology-stress-snapshot
+- urn:srl:evidence:horvath-2021-srna-pandemic-burnout
+- urn:srl:evidence:marcucci-2007-avoiding-common-anesthesia-errors
+- urn:srl:evidence:ruskin-2015-anesthesia-emergencies
 skos:broader:
-  - gap-moment-training
+- gap-moment-training
 skos:narrower: []
 skos:related:
-  - clinician-durability
-  - neuro-ouroboros
-  - ptsd-prehabilitation-gap
-  - interoceptive-suppression-burnout-root
-  - neural-transition-failure
-  - anterocept
-  - consciousness-engineering
-prov:wasDerivedFrom:
-  - "urn:srl:observation:obsessive-care-planning-rush"
-  - "urn:srl:observation:blue-angels-embodied-visualization"
-  - "urn:srl:observation:interoceptive-suppression-burnout-root"
-  - "urn:srl:observation:bandwidth-saturation-micro-events"
-  - "urn:srl:observation:ptsd-prehabilitation-gap"
-  - "urn:srl:evidence:mcewan-2007-allostatic-load-brain"
-  - "urn:srl:evidence:shalev-2012-ptsd-prevention"
-  - "urn:srl:evidence:putnam-2025-anesthesiology-stress-snapshot"
-  - "urn:srl:evidence:horvath-2021-srna-pandemic-burnout"
-  - "urn:srl:evidence:marcucci-2007-avoiding-common-anesthesia-errors"
-  - "urn:srl:evidence:ruskin-2015-anesthesia-emergencies"
-aliases:
-  - Seed-Heal-Fortify
-  - career-longitudinal GMT
-  - three-phase clinician development
+- clinician-durability
+- neuro-ouroboros
+- ptsd-prehabilitation-gap
+- interoceptive-suppression-burnout-root
+- neural-transition-failure
+- anterocept
+- consciousness-engineering
+- nervous-system-mastery-five-stages
+- neuro-ouroboros-progressive-effects
+- awareness-before-technique
+- crna-burnout-epidemiology
+- high-burnout-verticals
+- obsessive-care-planning-rush
+- blue-angels-embodied-visualization
+status: review
+title: 'GMT Career Arc: Seeding → Healing → Fortifying'
 trademarked: false
+type: concept
+version: 1.0
 ---
 
 # GMT Career Arc: Seeding → Healing → Fortifying

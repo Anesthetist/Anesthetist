@@ -20,7 +20,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:macksey-pediatric-anesthesia-drug-guide
 - urn:srl:evidence:ali-awareness-exercise-stress-and-addictions
 - urn:srl:evidence:ali-leadership-skill-venting-and-sorting
-skos:broader: []
+skos:broader:
+- somnistics
 skos:narrower:
 - minimum-effective-dose
 skos:related:

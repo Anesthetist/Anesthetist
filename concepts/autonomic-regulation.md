@@ -64,7 +64,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:hrvb-rct-ed-icu-workers-2026
 - urn:srl:evidence:biofeedback-systematic-review-hcp-2026
 - urn:srl:evidence:polyvagal-debate-grossman-porges-2026
-skos:broader: []
+skos:broader:
+- somnistics
 skos:narrower:
 - vagal-tone
 - resonant-breathing-frequency

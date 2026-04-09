@@ -16,6 +16,7 @@ dc:subject:
 - autonomic-nervous-system
 - precognition
 - interoception
+- polyvagal-theory
 id: urn:srl:concept:retrocausal-presentiment
 modified: '2026-03-14'
 prov:wasDerivedFrom:

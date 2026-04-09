@@ -1,6 +1,14 @@
 ---
 created: '2026-03-30'
 creator: weekly-hpo-scan
+dc:subject:
+- vagal-tone
+- HRV
+- biofeedback
+- autonomic-regulation
+- respiratory-sinus-arrhythmia
+- safe-and-sound-protocol
+- polyvagal-theory
 id: urn:srl:observation:noninvasive-vagal-neuromodulation-hrvb-ssp-review-2025
 modified: '2026-03-30'
 source_type: peer-reviewed

@@ -15,6 +15,7 @@ dc:subject:
 - somnistics
 - five-sheath-model
 - progressive-training
+- polyvagal-theory
 id: urn:srl:concept:kosha-architecture
 modified: 2026-03-14
 prov:wasDerivedFrom:

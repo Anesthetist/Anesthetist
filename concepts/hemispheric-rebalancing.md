@@ -23,7 +23,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:prakash-2025-mindfulness-network-neuroscience
 - urn:srl:evidence:sezer-2022-resting-state-fmri-mindfulness
 - urn:srl:evidence:vervaeke-relevance-realization
-skos:broader: []
+skos:broader:
+- somnistics
 skos:narrower: []
 skos:related:
 - relevance-realization

@@ -60,6 +60,8 @@ These are deeply embodying techniques. Breathing practices bring people INTO the
 
 **People can't even close their eyes and feel comfortable.** Eye closure removes visual safety cues, activates neuroception of threat ([[polyvagal-theory]]), and eliminates the social engagement system's primary input (seeing other faces). For someone with trauma, closing their eyes in a room full of people — or alone — can feel dangerous.
 
+> **Note on PVT (2026):** Polyvagal Theory is under active scientific debate (see [[polyvagal-theory#Scientific Debate (2026)]]). However, the trauma-informed design principles above do not depend on PVT's specific evolutionary claims — they rest on the well-established empirical observation that interoceptive exposure can be destabilizing for trauma survivors, and that safety cues modulate autonomic state.
+
 CRNAs specifically carry:
 - Cumulative exposure to patient suffering, death, and near-misses
 - The "second victim" phenomenon from adverse events

@@ -37,7 +37,8 @@ prov:wasDerivedFrom:
 - urn:srl:observation:polyvagal-theory-untenable-debate-2026
 - urn:srl:evidence:porges-2026-response-grossman-critique
 - urn:srl:evidence:polyvagal-debate-grossman-porges-2026
-skos:broader: []
+skos:broader:
+- autonomic-regulation
 skos:narrower: []
 skos:related:
 - vagal-tone
