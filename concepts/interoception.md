@@ -50,6 +50,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:elia-scale-emotion-linked-interoceptive-awareness-2026
 - urn:srl:evidence:maternal-touch-interoceptive-development-2026
 - urn:srl:evidence:olfaction-interoception-cognition-nursing-home-2026
+- urn:srl:evidence:wittmann-2013-inner-sense-of-time
+- urn:srl:evidence:sadeghi-wittmann-2023-wrinkles-time-heart
+- urn:srl:evidence:linares-gutierrez-wittmann-2019-meditation-vagal-tone-temporal
 skos:broader: []
 skos:narrower:
 - anterocept
@@ -63,6 +66,7 @@ skos:related:
 - polyanchora
 - self-remembering
 - retrocausal-presentiment
+- embodied-time-perception
 status: canonical
 title: Interoception
 trademarked: false
@@ -111,6 +115,10 @@ The sense of the internal state of the body — awareness of heartbeat, breathin
 - [[treves-2024-mindful-brain-neural-correlates]] — increased insular cortex thickness correlates with trait mindfulness (insula = primary interoceptive cortex)
 - Insular cortex research on posterior/anterior functional distinction
 - MAIA-2 validation studies
+
+## Temporal Processing Dimension
+
+Interoception and time perception share a neural substrate — the insular cortex. Marc Wittmann's research program (83+ papers) demonstrates that subjective time is built from the cumulative representation of body states ([[wittmann-2013-inner-sense-of-time]]). People with better interoceptive accuracy have more accurate time perception ([[meissner-wittmann-2011-body-signals-cardiac-awareness]]). Time perception literally fluctuates with the cardiac cycle ([[sadeghi-wittmann-2023-wrinkles-time-heart]]), and vagal tone modulates temporal integration thresholds ([[linares-gutierrez-wittmann-2019-meditation-vagal-tone-temporal]]). This means interoceptive training simultaneously trains temporal processing — a clinician who can better detect their heartbeat can better judge durations under stress. See [[embodied-time-perception]] for the full framework.
 
 ## Clinical Observations
 

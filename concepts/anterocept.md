@@ -42,6 +42,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:klein-1998-recognition-primed-decision
 - urn:srl:evidence:wiest-epothilone-microtubule-anesthesia-consciousness-2024
 - urn:srl:evidence:elia-scale-2026-emotion-linked-interoceptive-awareness
+- urn:srl:evidence:khoshnoud-2024-brain-heart-time-perception
+- urn:srl:evidence:sadeghi-wittmann-2023-wrinkles-time-heart
+- urn:srl:evidence:wittmann-2011-moments-in-time
 skos:broader:
 - interoception
 skos:narrower:
@@ -54,6 +57,7 @@ skos:related:
 - kosha-architecture
 - retrocausal-presentiment
 - nonlocal-consciousness
+- embodied-time-perception
 status: canonical
 title: Anterocept
 trademarked: true
@@ -94,6 +98,17 @@ As a micro-module within Pausality, Anterocept™ delivers:
 - Expanding/contracting circles synchronized to breathing
 - Adaptive complexity based on user progression level
 - Real-time biofeedback confirming interoceptive accuracy
+
+## Cardiac-Temporal Dimension
+
+Anterocept Domain 2 (cardiac awareness) trains a pathway that simultaneously improves temporal processing. Wittmann's research demonstrates that heart-evoked potentials predict temporal accuracy ([[khoshnoud-2024-brain-heart-time-perception]]) and that subsecond time perception is synchronized to the cardiac cycle ([[sadeghi-wittmann-2023-wrinkles-time-heart]]). As Anterocept users progress from Domain 1 (breath awareness) to Domain 2 (heartbeat tracking), they are literally training the brain-heart interaction that underlies temporal perception.
+
+This maps the Anterocept domains onto Wittmann's temporal integration levels ([[wittmann-2011-moments-in-time]]):
+- **Domain 1** (feet, breath): Functional moment awareness — noticing basic temporal succession
+- **Domain 2** (heartbeat, pulse): Experienced moment integration — cardiac-temporal coupling within the ~2-3 second window of conscious nowness
+- **Domain 3** (full-body state): Mental presence — sustained multi-signal awareness across ~7-30 second spans
+
+See [[embodied-time-perception]] for the full Wittmann framework.
 
 ## Evidence Base
 

@@ -54,6 +54,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:wearable-hrvb-substance-use-disorder-2025
 - urn:srl:evidence:vagal-neuromodulation-hrvb-ssp-review-2026
 - urn:srl:evidence:polyvagal-debate-grossman-porges-2026
+- urn:srl:evidence:linares-gutierrez-wittmann-2019-meditation-vagal-tone-temporal
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

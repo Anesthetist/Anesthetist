@@ -64,6 +64,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:salvi-2026-somnus-dare-sleep-cognitive-decline
 - urn:srl:evidence:parental-burnout-literature-review-2026
 - urn:srl:evidence:neurocognitive-autonomic-signatures-stress-performance-2026
+- urn:srl:evidence:wittmann-2011-moments-in-time
+- urn:srl:evidence:wittmann-2015-modulations-self-time
+- urn:srl:evidence:wittmann-2025-stoicism-mindfulness-second-order-desires
 skos:broader:
 - somnistics
 skos:narrower:
@@ -80,6 +83,7 @@ skos:related:
 - minimum-effective-dose
 - gap-moment-detection-engine
 - archetype-fluidity
+- embodied-time-perception
 status: canonical
 title: Gap Moment Training
 trademarked: true
@@ -125,6 +129,14 @@ Gap Moment Training draws on deep cross-traditional resonance:
 - **Yoga/Vedānta:** Kumbhaka (breath retention between inhale/exhale) — samādhi opening
 - **Existentialism:** Heidegger's Augenblick ("moment of vision") — authentic self disclosure
 - **Modern Psychology:** Frankl's stimulus-response gap — freedom in the space between
+
+## Temporal Neuroscience of Gap Moments
+
+Gap moments operate at a specific temporal scale: Wittmann's "experienced moment" of ~2-3 seconds — the window of conscious nowness ([[wittmann-2011-moments-in-time]]). This is not coincidental. The experienced moment is the temporal unit within which conscious awareness can redirect autonomic state. A 60-second NeuroMinute contains ~20 experienced moments — 20 opportunities to notice, regulate, and choose.
+
+The self-time link ([[wittmann-2015-modulations-self-time]]) explains why gap moments subjectively "create time": heightening interoceptive self-awareness simultaneously heightens temporal awareness. Under stress, CRNAs lose both self-awareness and temporal accuracy (time compression). GMT reverses both by restoring the interoceptive anchor that grounds both self and time.
+
+Wittmann's philosophical work frames gap moments as exercises of **second-order temporal agency** — the Stoic capacity to regulate one's own impulses across time ([[wittmann-2025-stoicism-mindfulness-second-order-desires]]). The clinician recognizes a transition point (first-order awareness) and chooses to pause and regulate (second-order will). This is not relaxation. It is self-determined temporal action.
 
 ## Evidence Base
 

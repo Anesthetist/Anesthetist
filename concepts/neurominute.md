@@ -42,6 +42,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:sweller-1988-cognitive-load-theory
 - urn:srl:evidence:kalyuga-2003-expertise-reversal
 - urn:srl:evidence:hrvb-rct-ed-icu-workers-2026
+- urn:srl:evidence:wittmann-2011-moments-in-time
+- urn:srl:evidence:wittmann-2013-inner-sense-of-time
 skos:broader:
 - gap-moment-training
 skos:narrower: []
@@ -56,6 +58,7 @@ skos:related:
 - co-regulation
 - self-remembering
 - hemispheric-rebalancing
+- embodied-time-perception
 status: canonical
 title: NeuroMinute
 trademarked: true
@@ -107,6 +110,18 @@ Designed to develop neural density along pathways associated with decreased ment
 - [[zaccaro-2018-breathing-systematic-review]] — systematic evidence for autonomic and CNS effects of controlled breathing
 - [[kerr-2013-mindfulness-body-alpha-rhythms]] — somatosensory alpha modulation measurable within brief practice windows, validating 60-second intervention format
 - [[sezer-2025-meditation-autonomic-nervous-system]] — cardiac resonance and respiratory coupling effects detectable in brief meditation intervals
+
+## Temporal Architecture
+
+A NeuroMinute is a temporally structured consciousness intervention. Wittmann's three-level temporal integration model ([[wittmann-2011-moments-in-time]]) maps directly onto the 60-second format:
+
+- **Functional moments** (~30-50ms): The perceptual resolution at which the clinician detects breath texture, heartbeat rhythm, and ambient sound — the sensory grain of each NeuroMinute
+- **Experienced moments** (~2-3 seconds): The window of conscious nowness. A NeuroMinute contains ~20 experienced moments — 20 units of conscious "now" in which attentional state can shift
+- **Mental presence** (~7-30 seconds): A single breath cycle at resonant frequency (~11 seconds) spans this level. Each NeuroMinute contains ~5 complete breath cycles, each one a unit of sustained cognitive-emotional presence
+
+The 60-second duration is not arbitrary — it operates at the intersection of all three temporal levels, providing enough repetitions of experienced moments for learning while fitting within the mental presence span for coherent experience.
+
+Breathing at resonant frequency modulates the insular "climbing neural activation" that represents duration ([[wittmann-2013-inner-sense-of-time]]) — slow breathing literally slows the neural accumulator, producing the subjective time dilation CRNAs report: "60 seconds felt like enough time." See [[embodied-time-perception]].
 
 ## Clinical Observations
 
