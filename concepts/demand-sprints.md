@@ -13,6 +13,7 @@ modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-commoncog-scaling-lessons
 - urn:srl:evidence:ries-lean-startup
+- urn:srl:evidence:chin-2024-speedrunning-skill-of-demand
 skos:broader:
 - effectuation-experimentation
 skos:narrower: []

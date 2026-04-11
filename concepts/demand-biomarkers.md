@@ -16,6 +16,7 @@ prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-commoncog-scaling-lessons
 - urn:srl:evidence:burnout-biomarkers-systematic-review-preprint-2025
 - urn:srl:evidence:hrv-burnout-biomarker-healthcare-preprint-2025
+- urn:srl:evidence:chin-2024-speedrunning-skill-of-demand
 skos:broader:
 - metasomatic-entrepreneurship
 skos:narrower: []

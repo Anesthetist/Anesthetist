@@ -25,6 +25,10 @@ prov:wasDerivedFrom:
 - urn:srl:observation:revenue-arrow-functor
 - urn:srl:observation:category-theory-state-transitions
 - urn:srl:evidence:chin-2025-joy-of-small-markets
+- urn:srl:evidence:chin-2024-much-ado-ooda-loop
+- urn:srl:evidence:chin-2024-tacit-mental-model-business
+- urn:srl:evidence:chin-2024-action-produces-information
+- urn:srl:evidence:chin-2024-chaos-and-coherence
 skos:broader:
 - somnistics
 skos:narrower: []
@@ -36,6 +40,8 @@ skos:related:
 - somnistics-certification
 - consciousness-engineering
 - gap-moment-training
+- mythos-expertise-scale-triangle
+- demand-sprints
 status: review
 title: Commoncog Operating Principles
 trademarked: false
