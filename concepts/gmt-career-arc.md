@@ -28,6 +28,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:horvath-2021-srna-pandemic-burnout
 - urn:srl:evidence:marcucci-2007-avoiding-common-anesthesia-errors
 - urn:srl:evidence:ruskin-2015-anesthesia-emergencies
+- urn:srl:evidence:carstensen-2006-socioemotional-selectivity-time-motivation
+- urn:srl:evidence:dietrich-2003-transient-hypofrontality-consciousness
 skos:broader:
 - gap-moment-training
 skos:narrower: []

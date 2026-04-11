@@ -67,6 +67,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:wittmann-2011-moments-in-time
 - urn:srl:evidence:wittmann-2015-modulations-self-time
 - urn:srl:evidence:wittmann-2025-stoicism-mindfulness-second-order-desires
+- urn:srl:evidence:vickers-2007-quiet-eye-perception-cognition-decision
+- urn:srl:evidence:hancock-2005-time-distortion-under-stress
 skos:broader:
 - somnistics
 skos:narrower:

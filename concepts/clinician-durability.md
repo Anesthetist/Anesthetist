@@ -102,6 +102,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:crna-burnout-integrative-review-aana-2025
 - urn:srl:evidence:a52-breathwork-rct-paramedics-2026
 - urn:srl:evidence:lorna-breen-act-reauthorization-2026
+- urn:srl:evidence:hancock-2005-time-distortion-under-stress
+- urn:srl:evidence:eagleman-2007-time-slow-down-frightening-event
 skos:broader:
 - somnistics
 skos:narrower: []

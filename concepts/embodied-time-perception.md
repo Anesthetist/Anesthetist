@@ -36,6 +36,11 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:dobrushina-2024-haptic-heartbeat-feedback-interoception
 - urn:srl:evidence:schillings-2022-heartbeat-perception-training-3-weeks
 - urn:srl:evidence:volodina-2025-interoceptive-signals-temporal-perception-heart-rate
+- urn:srl:evidence:vickers-2007-quiet-eye-perception-cognition-decision
+- urn:srl:evidence:hancock-2005-time-distortion-under-stress
+- urn:srl:evidence:eagleman-2007-time-slow-down-frightening-event
+- urn:srl:evidence:dietrich-2003-transient-hypofrontality-consciousness
+- urn:srl:evidence:carstensen-2006-socioemotional-selectivity-time-motivation
 skos:broader:
 - interoception
 skos:narrower: []
