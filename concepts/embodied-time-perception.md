@@ -31,6 +31,11 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:wittmann-2020-altered-states-consciousness-book
 - urn:srl:evidence:time-perception-interoception-autonomic-regulation-pubmed-synthesis
 - urn:srl:evidence:temporal-distortion-neurobiological-architecture
+- urn:srl:evidence:craig-2009-emotional-moments-across-time
+- urn:srl:evidence:pollatos-2014-how-much-time-ask-your-heart
+- urn:srl:evidence:dobrushina-2024-haptic-heartbeat-feedback-interoception
+- urn:srl:evidence:schillings-2022-heartbeat-perception-training-3-weeks
+- urn:srl:evidence:volodina-2025-interoceptive-signals-temporal-perception-heart-rate
 skos:broader:
 - interoception
 skos:narrower: []

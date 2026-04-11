@@ -45,6 +45,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:khoshnoud-2024-brain-heart-time-perception
 - urn:srl:evidence:sadeghi-wittmann-2023-wrinkles-time-heart
 - urn:srl:evidence:wittmann-2011-moments-in-time
+- urn:srl:evidence:dobrushina-2024-haptic-heartbeat-feedback-interoception
+- urn:srl:evidence:schillings-2022-heartbeat-perception-training-3-weeks
 skos:broader:
 - interoception
 skos:narrower:

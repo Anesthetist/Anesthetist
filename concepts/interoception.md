@@ -53,6 +53,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:wittmann-2013-inner-sense-of-time
 - urn:srl:evidence:sadeghi-wittmann-2023-wrinkles-time-heart
 - urn:srl:evidence:linares-gutierrez-wittmann-2019-meditation-vagal-tone-temporal
+- urn:srl:evidence:craig-2009-emotional-moments-across-time
+- urn:srl:evidence:dobrushina-2024-haptic-heartbeat-feedback-interoception
+- urn:srl:evidence:schillings-2022-heartbeat-perception-training-3-weeks
 skos:broader: []
 skos:narrower:
 - anterocept
