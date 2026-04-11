@@ -189,3 +189,23 @@ At the start of any substantive session, read `outputs/active-context.md` (if it
 - Colors: Deep Navy #22253A, Soft Sage #5FC89B, Off-white #F5F5F0
 - Font: Poppins (400 headers, 300 body, tracking -0.025em)
 - Key terms: somnistics, minimum effective dose, titration to effect, BOLT scores, MAIA-2, RMSSD, HRV coherence, resonant breathing frequency, vagal tone
+
+## Skill routing
+
+When the user's request matches an available skill, ALWAYS invoke it using the Skill
+tool as your FIRST action. Do NOT answer directly, do NOT use other tools first.
+The skill has specialized workflows that produce better results than ad-hoc answers.
+
+Key routing rules:
+- Product ideas, "is this worth building", brainstorming → invoke office-hours
+- Bugs, errors, "why is this broken", 500 errors → invoke investigate
+- Ship, deploy, push, create PR → invoke ship
+- QA, test the site, find bugs → invoke qa
+- Code review, check my diff → invoke review
+- Update docs after shipping → invoke document-release
+- Weekly retro → invoke retro
+- Design system, brand → invoke design-consultation
+- Visual audit, design polish → invoke design-review
+- Architecture review → invoke plan-eng-review
+- Save progress, checkpoint, resume → invoke checkpoint
+- Code quality, health check → invoke health
