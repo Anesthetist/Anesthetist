@@ -46,7 +46,7 @@ skos:related:
 - neuro-ouroboros
 - consciousness-engineering
 - co-regulation
-status: review
+status: canonical
 title: 'Somnistics Certification: Prehabilitative Mental Hygiene Standard'
 trademarked: false
 type: concept

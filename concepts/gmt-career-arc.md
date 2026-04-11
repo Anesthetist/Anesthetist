@@ -46,7 +46,7 @@ skos:related:
 - high-burnout-verticals
 - obsessive-care-planning-rush
 - blue-angels-embodied-visualization
-status: review
+status: canonical
 title: 'GMT Career Arc: Seeding → Healing → Fortifying'
 trademarked: false
 type: concept

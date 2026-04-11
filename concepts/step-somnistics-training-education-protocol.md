@@ -18,7 +18,7 @@ skos:related:
 - neuro-ouroboros
 - clinician-durability
 - competitive-moat-latency
-status: review
+status: canonical
 title: 'S.T.E.P.: Somnistics Training and Education Protocol'
 type: concept
 ---

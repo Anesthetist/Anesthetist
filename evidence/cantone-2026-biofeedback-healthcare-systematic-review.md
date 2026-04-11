@@ -15,7 +15,7 @@ prov:wasDerivedFrom:
 - urn:srl:concept:autonomic-regulation
 - urn:srl:concept:closed-loop-biofeedback
 source_type: peer-reviewed
-status: review
+status: canonical
 title: 'Enhancing Wellness: A Systematic Review of Biofeedback Interventions for Healthcare
   Professionals (Cantone et al., 2026)'
 type: evidence

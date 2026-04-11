@@ -17,7 +17,7 @@ prov:wasDerivedFrom:
 - urn:srl:concept:clinician-durability
 - urn:srl:concept:resonant-breathing-frequency
 srl:evidence-grade: Level 2 — RCT
-status: review
+status: canonical
 title: 'Building Resilience with HRVB in Emergency Department and ICU Healthcare Workers:
   A Randomized Controlled Trial'
 type: evidence

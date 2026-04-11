@@ -19,7 +19,7 @@ prov:wasDerivedFrom:
 - urn:srl:concept:diaphragmatic-literacy
 - urn:srl:concept:clinician-durability
 srl:evidence-grade: Level 2 — RCT
-status: review
+status: canonical
 title: 'Breathwork RCT in Paramedicine Students: A52 Method Improves Resilience and
   Reduces Anxiety, Depression, Stress, and Insomnia'
 type: evidence

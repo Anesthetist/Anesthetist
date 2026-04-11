@@ -15,7 +15,7 @@ prov:wasDerivedFrom:
 - urn:srl:concept:clinician-durability
 - urn:srl:concept:market-intelligence
 srl:evidence-grade: Level N/A — Policy/Market Signal
-status: review
+status: canonical
 title: Dr. Lorna Breen Health Care Provider Protection Act Reauthorized Through 2030
 type: evidence
 ---

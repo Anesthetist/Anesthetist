@@ -16,7 +16,7 @@ prov:wasDerivedFrom:
 - urn:srl:concept:interoceptive-suppression-hypothesis
 - urn:srl:concept:second-victim-phenomenon
 srl:evidence-grade: Level 3 — Integrative Review
-status: review
+status: canonical
 title: 'Contributing Factors and Associated Outcomes of Burnout Among CRNAs: An Integrative
   Review (AANA Journal 2025)'
 type: evidence

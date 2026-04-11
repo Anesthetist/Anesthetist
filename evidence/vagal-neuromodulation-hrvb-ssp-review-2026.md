@@ -16,7 +16,7 @@ prov:wasDerivedFrom:
 - urn:srl:concept:closed-loop-biofeedback
 - urn:srl:concept:autonomic-regulation
 srl:evidence-grade: Level 3 — Narrative Review
-status: review
+status: canonical
 title: 'Harnessing Non-Invasive Vagal Neuromodulation: HRV Biofeedback and SSP for
   Cardiovascular and Autonomic Regulation (Review 2026)'
 type: evidence

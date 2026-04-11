@@ -24,7 +24,7 @@ skos:related:
 - autonomic-regulation
 - vagal-tone
 - market-intelligence
-status: review
+status: canonical
 study_design: Prospective cohort, pre-to-post, single group
 title: 'Arena Strive 2024: App-Based Asynchronous Coaching Reduces Clinician Burnout
   (JAMA Network Open)'
