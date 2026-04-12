@@ -1,73 +1,45 @@
 # Active Context — SRL
 
-**Last updated:** 2026-03-25
+**Last updated:** 2026-04-11
 
-## Current Priorities
+## Current Priorities (aligned with Monday.com)
 
-1. **Preseed fundraising** — F&F SAFE round, $250K target, $100K secured. Active investor conversations.
-2. **Massimo Ferrari driver project** — Elite motorsport audience created. Pre-engagement research package and coaching proposal in development.
-3. **Essay engine (hourly)** — Content generation pipeline for thought leadership and audience development.
-4. **Don Katz follow-up** — Jason drafting response with research package.
-5. **Competitive intelligence system** — Weekly Sunday scans active.
-6. **CE course** — AANA Category A, target CANA Virtual Spring Conference (May 30-31). Sessions 8-21 need writing.
-7. **VCU Research Collaboration** — Evidence assessment ready for Hunnicutt. Three study designs costed.
-8. **Concept review + pruning** — 162 concepts, 450 evidence notes, 259 observations. Prune aggressively, promote strongest.
+### This Week (Apr 11-18)
+1. **New Tech Northwest Seattle** — Apr 13. Status: Working on it.
+2. **iNoV8 Health Innovation Pitch Submission** — Apr 15. Status: Not Started. HIGH priority.
+3. **Sprint Phase 1: Founder Fire** — Apr 18. 3 NeuroMinutes + Landing Page CTA. Working on it.
+4. **Reconcile neurominute scripts to CE curriculum** — Day 1 blocker for CE course. Scripts exist but day numbers ≠ session numbers.
 
-## Open Decisions
+### This Month (Apr)
+5. **VCU Pre-Proposal Review + Pilot One-Pager** — Apr 22. Critical. Working on it.
+6. **Clinical Validation Workstream** — Apr 30. Critical. Not Started.
+7. **S.T.E.P. 2.0 White Paper** — Apr 30. Critical. Working on it.
 
-- Catapult accelerator: apply or not? (2-3 year commitment)
-- Epic App Market: pursue integration? (distribution to 2/3 US hospitals)
-- Concept boundary decisions: Kegan, Spiral Dynamics, Springett models → concept or evidence-only?
-- NeuroHarmonics: downgrade from canonical given Ingendoh 2023 (5/14 studies)?
-- PVT: reframe using Thayer NVI model?
+### May
+8. **CE course content for CANA** — May 28. AANA application submitted Feb 24 (Done). Course content (sessions 8-14 wrappers) needed. Sessions 15-21 follow in June.
+9. **14-day test protocol** — Design complete, needs recruitment plan. Non-blocking.
 
-## Recent Completions (March 18-20 Session)
+## CE Course State
 
-### Vault Mining
-- 60+ ChatGPT files mined across 11 waves
-- 162 concepts (up from 146), 450 evidence notes, 259 observations
-- Automated mining pipeline built + tested (tools/mine-next-batch.sh)
-- Data-driven priority queue generated (TF-IDF gap analysis, 50 ranked files)
-- MCP update_note permission fixed
+- **AANA application:** Submitted and marked Done (Feb 24, 2026)
+- **NeuroMinute scripts:** All 21 exist at `outputs/neurominutes/day-01 through day-21.md`
+- **Curriculum map:** Complete at `outputs/product/ce-course-maia2-mapped-curriculum.md`
+- **Session mapping:** NOT ALIGNED. Day-08 (Alternate Nostril) ≠ Session 8 (Body Scan). Must reconcile before writing CE wrappers.
+- **CE wrappers needed:** Learning objectives, assessment questions, didactic context, AANA formatting, contraindication protocols
+- **Quality rubric:** ≥3 PubMed-verified citations, MAIA-2 alignment, ≥2 clinical scenarios, Gertrude compliance, no prescriptive language
+- **Target:** Sessions 8-14 by May 28 (CANA). Sessions 15-21 in June.
 
-### Key Concepts Created
-- Embodied metacognition (keystone), nondual-clinical-awareness, contemplative-progressive-overload
-- State-drift, interoceptive-suppression-hypothesis, structured-interoception-training
-- Neuro-respiratory-cardiac-coherence, cardiac-anchored-breathing, autonomic-home-base
-- Adversity-visualization, attention-as-gain-control, embodied-clinical-intelligence
-- Vitarka-vicara-integration, alpha-theta-crossover, dmn-voluntary-control
-- Cognitive-development-arc (6 developmental phases documented)
-- Somnistics nursing theory drafted
-- 3 new concepts from KB review: autonomic-co-regulation, convergent-discovery-validation, subconscious-performance-degradation
+## Vault State (as of Apr 11)
 
-### Biomedical Validation
-- 44 concepts validated across 8 clusters (BioMistral + PubMed, 12 queries, 150+ articles)
-- 7 validation reports + 3 deep-dive reports in outputs/biomedical-validation/
-- Scientific evidence assessment: 621 lines, 106 PubMed references, 3 costed study designs
-- Key findings: PVT needs reframing (Grossman 2026), binaural entrainment weak (5/14), ISH zero competitors, cardiac-anchored breathing first-mover
-- "Breath first, then reappraise" resolves reappraisal-under-arousal paradox
-
-### Evidence Briefs + GUIs
-- GMT 21-day evidence brief (surgeon-readable)
-- SRNA user journey evidence map (16 outcomes, 4 evidence grades)
-- CRNA career economics brief ($3.9M at stake, 540-1083x ROI)
-- Vault graph visualization (D3.js, 146 nodes)
-- Evidence assessment reader GUI (dark mode, BioMistral callouts)
-- Reusable evidence-brief.sh tool (anyone can query the knowledge graph)
-
-### Infrastructure
-- Obsidian CLI installed + tool routing table in CLAUDE.md
-- Architecture locked — no more structural changes, focus on content
-- Somnistics nursing theory drafted (middle-range, 13 falsifiable hypotheses)
-
-## Key People in Play
-
-- **Don Katz** — Founder of Audible. Warm lead for angel/advisor.
-- **Ron Wiener** — Venture Mechanics / Catapult accelerator.
-- **Michael Thorn** — Mayo Clinic trauma NP, SONSIEL board. Advisor.
-- **Kelly Sayce** — Strategic Earth Consulting. Reconnect April.
-- **Dr. Hunnicutt** — VCU. Evidence assessment ready to send.
-- **Open Wearables (Poland)** — Multi-platform Pausality meeting 2026-03-19.
+| Layer | Count | Status |
+|-------|-------|--------|
+| Concepts | 176 | Active |
+| Evidence | 523 | 45% citation health |
+| Observations | 341 | Large, some prunable |
+| Audiences | 12 | Stable |
+| Outputs | 192 | Growing, needs cleanup |
+| ChatGPT sources | 861 | 858 unprocessed (stalled) |
+| Bots | 11 | 5 stalled, 6 missing patterns.md |
 
 ## Fundraising State
 
@@ -80,12 +52,41 @@
 | Remaining | $150K |
 | Active subscriptions | 10 |
 | MRR | $39 |
+| F&F commits | 4 (Arkhipov, Fedan, Goetter, Sliger) |
 
-## Next Session Priorities
+## Key People in Play
 
-1. Apply the 9 blocked enrichments (update_note now permitted)
-2. Prune draft concepts — merge overlaps, downgrade business ops to observations
-3. Run citation-resolver on evidence notes needing DOI verification
-4. Continue automated pipeline mining (800 files remaining)
-5. CE course sessions 8-21 (May 30 deadline)
-6. Send evidence assessment to Hunnicutt
+- **Jeremy Campbell** — Fresh signal, meeting Apr 24
+- **Aproteem Choudhury** — Reply needed with Apr 20-24 slots
+- **Ron Wiener** — Venture Mechanics, call completed
+- **Don Katz** — Warm lead for angel/advisor
+- **Crystal Hunnicutt** — VCU. Evidence assessment ready.
+- **Koki Sato** — Close pending
+
+## Monday.com Board: Pausality (5026685712)
+
+**Stuck items needing attention:**
+- HIPAA/PHI SOC2 (BAA) Supabase — due Apr 1 (overdue)
+- Apple Health/watchOS integration research — due Apr 3 (overdue)
+- Advisory board recruitment — due Apr 10 (overdue)
+- Financial model build — due Apr 3 (overdue)
+- CAC/LTV calculation — due Mar 27 (overdue)
+- GTM channel economics — due Apr 3 (overdue)
+- QSBS eligibility — due Mar 27 (overdue)
+- SAFE terms definition — due Mar 27 (overdue)
+- Cap table preparation — due Apr 3 (overdue)
+- Partnership terms mapping — due Apr 3 (overdue)
+
+## Open Decisions
+
+- Reconcile neurominute script ↔ CE session mapping
+- iNoV8 pitch: prepare or skip? (Apr 15, 4 days)
+- Clinical Validation Workstream: who owns this? (Apr 30, Critical, Not Started)
+- EA Replacement: begin search? (Apr 18, Critical, Not Started)
+
+## Review Status (from CEO + Eng review, Apr 11)
+
+- CEO review: CLEAR (selective expansion, 8 proposals, 4 accepted, 3 deferred)
+- Eng review: ISSUES (3 critical gaps — session mapping, contraindications, script alignment)
+- TODOS.md: Created with 11 items across P1/P2/P3
+- CEO plan: `~/.gstack/projects/Anesthetist-Anesthetist/ceo-plans/2026-04-11-vault-strategic-realignment.md`

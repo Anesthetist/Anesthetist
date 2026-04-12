@@ -55,6 +55,9 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:vagal-neuromodulation-hrvb-ssp-review-2026
 - urn:srl:evidence:polyvagal-debate-grossman-porges-2026
 - urn:srl:evidence:linares-gutierrez-wittmann-2019-meditation-vagal-tone-temporal
+- urn:srl:evidence:balban-huberman-2023-cyclic-sighing
+- urn:srl:evidence:feldman-2017-prebotc-locus-coeruleus-arousal
+- urn:srl:evidence:hrv-vagal-tone-longitudinal-burnout-predictor
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

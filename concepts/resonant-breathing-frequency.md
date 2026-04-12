@@ -44,6 +44,8 @@ prov:wasDerivedFrom:
 - urn:srl:observation:breathwork-chronic-stress-technique-comparison-2025
 - urn:srl:evidence:breathwork-technique-choice-2026
 - urn:srl:evidence:a52-breathwork-rct-paramedics-2026
+- urn:srl:evidence:balban-huberman-2023-cyclic-sighing
+- urn:srl:evidence:feldman-2017-prebotc-locus-coeruleus-arousal
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

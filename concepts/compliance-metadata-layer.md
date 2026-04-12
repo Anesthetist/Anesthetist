@@ -5,7 +5,7 @@ id: urn:srl:concept:compliance-metadata-layer
 modified: '2026-03-16'
 prov:wasDerivedFrom:
 - urn:srl:evidence:zuboff-age-surveillance-capitalism
-status: review
+status: canonical
 subjects:
 - compliance
 - FDA

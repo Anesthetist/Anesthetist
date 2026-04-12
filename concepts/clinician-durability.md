@@ -104,6 +104,10 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:lorna-breen-act-reauthorization-2026
 - urn:srl:evidence:hancock-2005-time-distortion-under-stress
 - urn:srl:evidence:eagleman-2007-time-slow-down-frightening-event
+- urn:srl:evidence:dean-talbot-2018-moral-injury-not-burnout-stat
+- urn:srl:evidence:anesthesia-second-victim-2024-cross-sectional
+- urn:srl:evidence:hrv-vagal-tone-longitudinal-burnout-predictor
+- urn:srl:evidence:jama-2024-2025-ambient-ai-scribe-burnout-time
 skos:broader:
 - somnistics
 skos:narrower: []

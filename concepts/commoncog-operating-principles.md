@@ -42,7 +42,7 @@ skos:related:
 - gap-moment-training
 - mythos-expertise-scale-triangle
 - demand-sprints
-status: review
+status: canonical
 title: Commoncog Operating Principles
 trademarked: false
 type: concept

@@ -38,7 +38,7 @@ skos:related:
 - co-regulation
 - somnistics-certification
 - diaphragmatic-blindness
-status: review
+status: canonical
 title: Trauma-Informed Design
 trademarked: false
 type: concept

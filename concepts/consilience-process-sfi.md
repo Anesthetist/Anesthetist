@@ -16,7 +16,7 @@ skos:related:
 - consilience-by-translation
 - cross-domain-consilience-engine
 - vigil-coordination-architecture
-status: review
+status: canonical
 title: 'Consilience Process: SFI-Inspired Cross-Domain Synthesis Protocol'
 type: concept
 ---

@@ -64,6 +64,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:hrvb-rct-ed-icu-workers-2026
 - urn:srl:evidence:biofeedback-systematic-review-hcp-2026
 - urn:srl:evidence:polyvagal-debate-grossman-porges-2026
+- urn:srl:evidence:balban-huberman-2023-cyclic-sighing
+- urn:srl:evidence:feldman-2017-prebotc-locus-coeruleus-arousal
 skos:broader:
 - somnistics
 skos:narrower:

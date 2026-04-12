@@ -16,6 +16,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:paul-moynihan-losing-million-dollars
 - urn:srl:evidence:ali-leadership-skill-compassionate-self-forgiveness
 - urn:srl:evidence:crna-burnout-integrative-review-aana-2025
+- urn:srl:evidence:dean-talbot-2018-moral-injury-not-burnout-stat
+- urn:srl:evidence:anesthesia-second-victim-2024-cross-sectional
 skos:broader:
 - clinician-durability
 skos:narrower: []
