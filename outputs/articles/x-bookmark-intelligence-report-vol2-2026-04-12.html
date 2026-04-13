@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRL Intelligence Stream | Vol. 2 | Apr 5–12, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-navy: #22253A;
+    --soft-sage: #5FC89B;
+    --off-white: #F5F5F0;
+    --card-bg: #2A2D42;
+    --card-border: #363A52;
+    --text-muted: #9B9FB0;
+    --text-bright: #EAEAF0;
+    --amber: #F5A623;
+    --coral: #E8636F;
+    --sky: #4DA8DA;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--deep-navy);
+    color: var(--text-bright);
+    line-height: 1.6;
+    padding: 0;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--deep-navy) 0%, #1a1d2e 50%, #2A2D42 100%);
+    padding: 60px 40px 50px;
+    border-bottom: 3px solid var(--soft-sage);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(95,200,155,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--soft-sage);
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--off-white);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .hero .subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .hero .vol-badge {
+    display: inline-block;
+    background: var(--soft-sage);
+    color: var(--deep-navy);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-top: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+
+  /* Stats ribbon */
+  .stats-ribbon {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-card .stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--soft-sage);
+    line-height: 1;
+  }
+
+  .stat-card .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  /* Section headers */
+  .section-header {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--soft-sage);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  /* Observation cards */
+  .obs-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+
+  .obs-card:hover { border-color: var(--soft-sage); }
+
+  .obs-card .obs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .obs-card .obs-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--off-white);
+    flex: 1;
+    margin-right: 12px;
+  }
+
+  .obs-card .obs-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .score-pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 16px;
+    white-space: nowrap;
+  }
+
+  .score-high { background: rgba(95,200,155,0.2); color: var(--soft-sage); }
+  .score-mid { background: rgba(77,168,218,0.2); color: var(--sky); }
+  .score-low { background: rgba(155,159,176,0.15); color: var(--text-muted); }
+
+  .sfi-pill { background: rgba(245,166,35,0.2); color: var(--amber); }
+
+  .obs-card .obs-author {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .obs-card .obs-desc {
+    font-size: 14px;
+    color: var(--text-bright);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+
+  .obs-card .obs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: rgba(95,200,155,0.1);
+    color: var(--soft-sage);
+    border: 1px solid rgba(95,200,155,0.2);
+  }
+
+  .arrow-tag {
+    background: rgba(232,99,111,0.12);
+    color: var(--coral);
+    border-color: rgba(232,99,111,0.25);
+  }
+
+  /* Arrow distribution */
+  .arrow-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .arrow-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .arrow-item .arrow-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-bright);
+  }
+
+  .arrow-item .arrow-count {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--soft-sage);
+  }
+
+  /* Consilience section */
+  .consilience-card {
+    background: linear-gradient(135deg, rgba(245,166,35,0.08) 0%, var(--card-bg) 100%);
+    border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 12px;
+  }
+
+  .consilience-card .cons-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--amber);
+    margin-bottom: 6px;
+  }
+
+  .consilience-card .cons-score {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .consilience-card .cons-insight {
+    font-size: 14px;
+    color: var(--text-bright);
+    line-height: 1.6;
+  }
+
+  /* Footer */
+  .report-footer {
+    margin-top: 50px;
+    padding-top: 24px;
+    border-top: 1px solid var(--card-border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .report-footer .brand {
+    color: var(--soft-sage);
+    font-weight: 600;
+  }
+
+  @media (max-width: 700px) {
+    .stats-ribbon { grid-template-columns: repeat(2, 1fr); }
+    .arrow-grid { grid-template-columns: 1fr; }
+    .hero { padding: 40px 20px 30px; }
+    .hero h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">Somnistics Research Labs</div>
+  <h1>X Bookmark Intelligence Stream</h1>
+  <div class="subtitle">Automated weekly intelligence from your X/Twitter bookmarks</div>
+  <div class="vol-badge">Vol. 2 &mdash; Apr 5–12, 2026</div>
+</div>
+
+<div class="container">
+
+  <!-- Stats Ribbon -->
+  <div class="stats-ribbon">
+    <div class="stat-card">
+      <div class="stat-number">20</div>
+      <div class="stat-label">Bookmarks Collected</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">10</div>
+      <div class="stat-label">Observations Created</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">19</div>
+      <div class="stat-label">SKOS Relations Wired</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Consilience Hits</div>
+    </div>
+  </div>
+
+  <!-- Red Arrow Distribution -->
+  <div class="section-header">Red Arrow Distribution</div>
+  <div class="arrow-grid">
+    <div class="arrow-item">
+      <div class="arrow-name">Arrow 4: Data → Clinical LLM Moat</div>
+      <div class="arrow-count">5</div>
+    </div>
+    <div class="arrow-item">
+      <div class="arrow-name">Arrow 2: Consumer Traction → Enterprise</div>
+      <div class="arrow-count">2</div>
+    </div>
+    <div class="arrow-item">
+      <div class="arrow-name">Arrow 3: Pilot → Contract</div>
+      <div class="arrow-count">2</div>
+    </div>
+    <div class="arrow-item">
+      <div class="arrow-name">Arrow 1: Clinical Credibility → Downloads</div>
+      <div class="arrow-count">1</div>
+    </div>
+  </div>
+
+  <!-- SFI Consilience Highlights -->
+  <div class="section-header">SFI Consilience Highlights</div>
+
+  <div class="consilience-card">
+    <div class="cons-title">Anthropic Managed Agents Beta</div>
+    <div class="cons-score">SFI 19/40 — Promising | Arrow 4</div>
+    <div class="cons-insight">Multi-agent orchestration as renormalization of cognitive labor. Managed Agents abstract coordination overhead the way renormalization groups abstract irrelevant degrees of freedom — directly validates Vigil's architecture pattern at infrastructure level.</div>
+  </div>
+
+  <div class="consilience-card">
+    <div class="cons-title">OpenAI GABRIEL Social Science Toolkit</div>
+    <div class="cons-score">SFI 18/40 — Promising | Arrow 4</div>
+    <div class="cons-insight">Social science instruments as phase transition detectors. GABRIEL's approach to coding qualitative data with LLMs maps directly onto SRL's tacit knowledge extraction pipeline — both are trying to move implicit clinical knowledge across the explicit boundary.</div>
+  </div>
+
+  <div class="consilience-card">
+    <div class="cons-title">GBrain: 10K+ Markdown Knowledge Recall</div>
+    <div class="cons-score">SFI 16/40 — Promising | Arrow 4</div>
+    <div class="cons-insight">Knowledge recall across 10K+ documents as power-law retrieval. The challenge of surfacing relevant knowledge from massive markdown corpora mirrors SRL's vault architecture problem — retrieval effectiveness follows a power-law distribution.</div>
+  </div>
+
+  <!-- High Signal Observations -->
+  <div class="section-header">Tier 1 — High Signal (Score 8–9)</div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">Anthropic Managed Agents Beta Launch</div>
+      <div class="obs-score">
+        <span class="score-pill score-high">Score 9</span>
+        <span class="score-pill sfi-pill">SFI 19</span>
+      </div>
+    </div>
+    <div class="obs-author">Source: Anthropic / @AnthropicAI</div>
+    <div class="obs-desc">Anthropic launches Managed Agents in beta — persistent, tool-using agents that can be orchestrated programmatically. This is the infrastructure layer Vigil needs: managed agent lifecycles with built-in tool delegation, eliminating the custom orchestration tax SRL currently pays.</div>
+    <div class="obs-tags">
+      <span class="tag">vigil-coordination-architecture</span>
+      <span class="tag">vault-architecture-v2</span>
+      <span class="tag">token-efficiency-protocol</span>
+      <span class="tag arrow-tag">Arrow 4</span>
+    </div>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">OpenAI GABRIEL Social Science Toolkit</div>
+      <div class="obs-score">
+        <span class="score-pill score-high">Score 8</span>
+        <span class="score-pill sfi-pill">SFI 18</span>
+      </div>
+    </div>
+    <div class="obs-author">Source: OpenAI Research</div>
+    <div class="obs-desc">GABRIEL is a toolkit for using LLMs to replicate social science research instruments — surveys, coding schemes, interview protocols. For SRL, this validates the approach of encoding clinical expertise into structured instruments that AI can operationalize at scale.</div>
+    <div class="obs-tags">
+      <span class="tag">tacit-knowledge-extraction</span>
+      <span class="tag">vault-architecture-v2</span>
+      <span class="tag">consilience-process-sfi</span>
+      <span class="tag arrow-tag">Arrow 4</span>
+    </div>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">GBrain: Markdown Knowledge Recall at Scale</div>
+      <div class="obs-score">
+        <span class="score-pill score-high">Score 8</span>
+        <span class="score-pill sfi-pill">SFI 16</span>
+      </div>
+    </div>
+    <div class="obs-author">Source: @garrytan</div>
+    <div class="obs-desc">Garry Tan highlights GBrain for knowledge recall across 10,000+ markdown files — the exact scale problem SRL faces with the vault. Confirms market pull for structured knowledge retrieval and validates the vault-as-knowledge-graph architecture.</div>
+    <div class="obs-tags">
+      <span class="tag">vault-architecture-v2</span>
+      <span class="tag">tacit-knowledge-library</span>
+      <span class="tag">vigil-coordination-architecture</span>
+      <span class="tag arrow-tag">Arrow 4</span>
+    </div>
+  </div>
+
+  <!-- Moderate Signal -->
+  <div class="section-header">Tier 2 — Moderate Signal (Score 6–7)</div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">LinkedIn + HubSpot Agent Enrichment Pipeline</div>
+      <div class="obs-score"><span class="score-pill score-mid">Score 7</span></div>
+    </div>
+    <div class="obs-author">Source: @caborleon (Cody Schneider)</div>
+    <div class="obs-desc">AI agent that enriches HubSpot contacts by scraping LinkedIn profiles — automated GTM intelligence. Pattern applicable to SRL's enterprise outreach: agent-driven prospect enrichment before human contact.</div>
+    <div class="obs-tags">
+      <span class="tag">syntropic-positioning</span>
+      <span class="tag arrow-tag">Arrow 3</span>
+    </div>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">AI Marketing Agent Swarm Pattern</div>
+      <div class="obs-score"><span class="score-pill score-mid">Score 7</span></div>
+    </div>
+    <div class="obs-author">Source: @caborleon (Cody Schneider)</div>
+    <div class="obs-desc">Multi-agent swarm for marketing operations — content generation, distribution, analytics in parallel. Architecture pattern mirrors Vigil's multi-agent coordination for different cognitive tasks.</div>
+    <div class="obs-tags">
+      <span class="tag">syntropic-positioning</span>
+      <span class="tag">vigil-coordination-architecture</span>
+      <span class="tag arrow-tag">Arrow 2</span>
+    </div>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">KPI Dashboard Agent in 10 Minutes</div>
+      <div class="obs-score"><span class="score-pill score-mid">Score 7</span></div>
+    </div>
+    <div class="obs-author">Source: @caborleon (Cody Schneider)</div>
+    <div class="obs-desc">Demonstrates building a full KPI dashboard with an AI agent in under 10 minutes. Speed-to-insight pattern relevant for SRL pilot demonstrations — showing enterprise prospects real-time clinical analytics capability.</div>
+    <div class="obs-tags">
+      <span class="tag">vigil-coordination-architecture</span>
+      <span class="tag arrow-tag">Arrow 3</span>
+    </div>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">Building for Agents, Not Consumers</div>
+      <div class="obs-score"><span class="score-pill score-mid">Score 7</span></div>
+    </div>
+    <div class="obs-author">Source: @zemariamacedo</div>
+    <div class="obs-desc">Thesis that the next platform shift is building products for AI agents as primary users, not humans. Directly supports SRL's anterocept concept — the system that anticipates and prepares context before the clinician needs it.</div>
+    <div class="obs-tags">
+      <span class="tag">syntropic-positioning</span>
+      <span class="tag">anterocept</span>
+      <span class="tag arrow-tag">Arrow 4</span>
+    </div>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">Exceptional Cold Email Craft</div>
+      <div class="obs-score"><span class="score-pill score-mid">Score 6</span></div>
+    </div>
+    <div class="obs-author">Source: @taborleon (Tim Ferriss)</div>
+    <div class="obs-desc">Breakdown of what makes a cold email exceptional — specificity, demonstrated knowledge, clear ask. Applicable to SRL's enterprise outreach and partnership development communications.</div>
+    <div class="obs-tags">
+      <span class="tag">syntropic-positioning</span>
+      <span class="tag arrow-tag">Arrow 2</span>
+    </div>
+  </div>
+
+  <!-- Context Signal -->
+  <div class="section-header">Tier 3 — Context Signal (Score 5)</div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">Player-Coach Model: YC Partners Coding</div>
+      <div class="obs-score"><span class="score-pill score-low">Score 5</span></div>
+    </div>
+    <div class="obs-author">Source: @garrytan</div>
+    <div class="obs-desc">Garry Tan on YC partners still writing code — the player-coach model where leaders maintain hands-on craft. Resonates with Randy's clinician-who-builds identity and the durability thesis.</div>
+    <div class="obs-tags">
+      <span class="tag">clinician-durability</span>
+      <span class="tag">syntropic-positioning</span>
+      <span class="tag arrow-tag">Arrow 5</span>
+    </div>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-header">
+      <div class="obs-title">MIT Presentation Masterclass</div>
+      <div class="obs-score"><span class="score-pill score-low">Score 5</span></div>
+    </div>
+    <div class="obs-author">Source: @ValaAfshar</div>
+    <div class="obs-desc">MIT-sourced principles for exceptional presentations — clarity, narrative arc, visual restraint. Directly applicable to SRL's conference speaking and enterprise pitch deck delivery.</div>
+    <div class="obs-tags">
+      <span class="tag">clinician-durability</span>
+      <span class="tag arrow-tag">Arrow 1</span>
+    </div>
+  </div>
+
+  <!-- Weekly Synthesis -->
+  <div class="section-header">Weekly Synthesis</div>
+
+  <div class="obs-card" style="border-color: var(--soft-sage); border-width: 2px;">
+    <div class="obs-title" style="font-size: 15px; margin-bottom: 14px;">This week's dominant signal is the accelerating convergence of agentic infrastructure and knowledge systems (Arrow 4, 5 of 10 observations).</div>
+    <div class="obs-desc">
+      Three developments tell a coherent story: Anthropic's Managed Agents provide the orchestration layer, OpenAI's GABRIEL validates LLM-powered knowledge instruments, and GBrain confirms market demand for structured knowledge retrieval at scale. Together, they reinforce SRL's strategic bet that the clinical knowledge graph + multi-agent coordination architecture is the right foundation.
+    </div>
+    <div class="obs-desc" style="margin-top: 12px;">
+      The GTM signal (Schneider's agent patterns) suggests the tooling for automated outreach and analytics is maturing fast — the window to deploy agent-driven enterprise sales motions is opening now. The craft signals (cold email, presentations, player-coach) provide tactical ammunition for Randy's direct engagement strategy.
+    </div>
+  </div>
+
+  <div class="report-footer">
+    <span class="brand">Somnistics Research Labs</span> &mdash; Pausality Intelligence Pipeline<br>
+    Generated autonomously by Vigil Bookmark Intelligence Agent &bull; April 12, 2026<br>
+    10 observations &bull; 19 SKOS relations &bull; 3 consilience hits &bull; 0 duplicates
+  </div>
+
+</div>
+
+</body>
+</html>
