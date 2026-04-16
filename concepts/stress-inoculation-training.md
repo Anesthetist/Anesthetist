@@ -14,6 +14,7 @@ modified: '2026-03-19'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-interoception-crna-resilience
 - urn:srl:evidence:staal-2004-stress-cognition-performance
+- urn:srl:evidence:lopez-blanco-tyler-2025-vagus-performance-review
 skos:broader:
 - gap-moment-training
 skos:narrower: []

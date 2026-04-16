@@ -26,6 +26,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:ali-leadership-skill-owning-negative-projections
 - urn:srl:evidence:ali-leadership-skill-upgrading-your-questions
 - urn:srl:evidence:ali-leadership-skill-venting-and-sorting
+- urn:srl:evidence:lopez-blanco-tyler-2025-vagus-performance-review
 skos:broader:
 - gap-moment-training
 skos:narrower: []

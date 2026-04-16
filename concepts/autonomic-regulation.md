@@ -66,6 +66,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:polyvagal-debate-grossman-porges-2026
 - urn:srl:evidence:balban-huberman-2023-cyclic-sighing
 - urn:srl:evidence:feldman-2017-prebotc-locus-coeruleus-arousal
+- urn:srl:evidence:lopez-blanco-tyler-2025-vagus-performance-review
 skos:broader:
 - somnistics
 skos:narrower:

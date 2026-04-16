@@ -108,6 +108,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:anesthesia-second-victim-2024-cross-sectional
 - urn:srl:evidence:hrv-vagal-tone-longitudinal-burnout-predictor
 - urn:srl:evidence:jama-2024-2025-ambient-ai-scribe-burnout-time
+- urn:srl:evidence:lopez-blanco-tyler-2025-vagus-performance-review
 skos:broader:
 - somnistics
 skos:narrower: []

@@ -17,6 +17,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:breath-hold-diving-vagal-tone-2025
 - urn:srl:evidence:kyriakoulis-2025-diving-response-panic
 - urn:srl:evidence:breath-hold-diving-review-2025
+- urn:srl:evidence:lopez-blanco-tyler-2025-vagus-performance-review
 skos:related:
 - breath-hold-autonomic-signature
 - clinician-durability

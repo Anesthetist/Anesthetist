@@ -13,7 +13,8 @@ dc:subject:
 - biomarkers
 id: urn:srl:concept:heart-rate-recovery
 modified: '2026-03-21'
-prov:wasDerivedFrom: []
+prov:wasDerivedFrom:
+- urn:srl:evidence:lopez-blanco-tyler-2025-vagus-performance-review
 skos:broader:
 - autonomic-regulation
 skos:narrower: []

@@ -58,6 +58,7 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:balban-huberman-2023-cyclic-sighing
 - urn:srl:evidence:feldman-2017-prebotc-locus-coeruleus-arousal
 - urn:srl:evidence:hrv-vagal-tone-longitudinal-burnout-predictor
+- urn:srl:evidence:lopez-blanco-tyler-2025-vagus-performance-review
 skos:broader:
 - autonomic-regulation
 skos:narrower: []
