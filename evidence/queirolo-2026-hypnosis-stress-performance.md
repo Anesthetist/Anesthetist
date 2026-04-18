@@ -11,7 +11,7 @@ dc:subject:
 - autonomic-regulation
 - executive-function
 - single-session
-- HRV
+- hrv
 - stress-intervention
 dc:type: journal-article
 id: urn:srl:evidence:queirolo-2026-hypnosis-stress-performance

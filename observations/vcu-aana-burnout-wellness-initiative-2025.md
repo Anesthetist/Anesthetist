@@ -8,7 +8,7 @@ dc:subject:
 - burnout
 - wellness
 - CE curriculum
-- AANA
+- aana
 - VCU
 - partnership
 - CRNA education

@@ -9,9 +9,9 @@ modified: 2026-03-14
 dc:creator: ["A. Gitler et al."]
 dc:date: 2025
 dc:subject:
-  - HRV-biofeedback
+  - hrv-biofeedback
   - polyvagal-theory
-  - Safe-and-Sound-Protocol
+  - safe-and-sound-protocol
   - resonance-frequency
   - wearable-monitoring
 dc:identifier: "doi:10.3892/mi.2025.236"

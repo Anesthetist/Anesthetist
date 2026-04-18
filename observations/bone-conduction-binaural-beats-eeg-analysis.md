@@ -6,9 +6,9 @@ creator: randy
 dc:subject:
 - binaural-beats
 - bone-conduction
-- EEG
-- Muse
-- Mind-Monitor
+- eeg
+- muse
+- mind-monitor
 - entrainment
 - experimental-design
 id: urn:srl:observation:bone-conduction-binaural-beats-eeg-analysis

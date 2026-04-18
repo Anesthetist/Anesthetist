@@ -15,7 +15,7 @@ dc:subject:
 - organizational-design
 - agentic-workflows
 - exponential-organizations
-- AI-transformation
+- ai-transformation
 - transaction-costs
 - intelligence-stack
 - domain-collapse

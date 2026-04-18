@@ -6,7 +6,7 @@ dc:subject:
 - autonomic regulation
 - cognitive performance
 - stress
-- HRV
+- hrv
 - psychophysiology
 - performance under pressure
 id: urn:srl:evidence:neurocognitive-autonomic-signatures-stress-performance-2026

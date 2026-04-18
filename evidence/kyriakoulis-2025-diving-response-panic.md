@@ -7,7 +7,7 @@ dc:bibliographicCitation: Kyriakoulis P, Caballero A. The implications of the di
   Psychiatry. 2025;16:1533019.
 dc:source: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1533019/full
 dc:subject:
-- CO2-tolerance
+- co2-tolerance
 - panic-disorder
 - diving-response
 - interoception

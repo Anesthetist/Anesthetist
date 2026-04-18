@@ -9,11 +9,11 @@ modified: 2026-03-14
 dc:creator: ["Sylvain Laborde", "Emma Mosley", "Julian F. Thayer"]
 dc:date: 2017
 dc:subject:
-  - HRV
+  - hrv
   - vagal-tone
   - psychophysiology
   - measurement
-  - RMSSD
+  - rmssd
 dc:identifier: "doi:10.3389/fpsyg.2017.00213"
 dc:type: "review"
 dc:publisher: "Frontiers in Psychology"

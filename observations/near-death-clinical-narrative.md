@@ -9,7 +9,7 @@ dc:subject:
 - clinical-composure
 - gap-moment-training
 - clinician-durability
-- CRNA
+- crna
 id: urn:srl:observation:near-death-clinical-narrative
 modified: '2026-03-18'
 observation_type: exemplar-story

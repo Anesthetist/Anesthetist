@@ -10,7 +10,7 @@ dc:publisher: Nursing in Critical Care
 dc:subject:
 - burnout-prevention
 - ICU-nursing
-- HRV
+- hrv
 - fatigue
 - cortisol
 - shift-work

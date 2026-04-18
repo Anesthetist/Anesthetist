@@ -13,7 +13,7 @@ dc:source:
 dc:subject:
 - coherence
 - binaural-beats
-- HRV
+- hrv
 - breathwork
 - protocol-design
 - integration

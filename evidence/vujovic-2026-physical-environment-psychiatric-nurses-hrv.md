@@ -10,7 +10,7 @@ dc:publisher: PLoS One
 dc:subject:
 - physical-environment
 - nurse-wellbeing
-- HRV
+- hrv
 - wearable
 - mixed-methods
 dc:type: journal-article

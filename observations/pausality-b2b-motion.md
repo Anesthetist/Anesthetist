@@ -13,6 +13,8 @@ modified: '2026-03-19'
 observation_type: strategic-pattern
 prov:wasDerivedFrom:
 - urn:srl:evidence:crna-workforce-crisis-2026
+skos:broader:
+- pausality
 skos:related:
 - market-intelligence
 - crna-shift-architect

@@ -3,7 +3,7 @@ created: '2026-04-06'
 creator: srl-researcher-agent
 dc:source: 'AANA Journal, June 2025. PMID: 40440194'
 dc:subject:
-- CRNA
+- crna
 - burnout
 - nurse anesthetist
 - autonomy

@@ -9,7 +9,7 @@ modified: 2026-03-14
 dc:creator: ["Paul M. Lehrer", "Richard Gevirtz"]
 dc:date: 2014
 dc:subject:
-  - HRV-biofeedback
+  - hrv-biofeedback
   - baroreflex
   - resonance-frequency
   - meta-analysis

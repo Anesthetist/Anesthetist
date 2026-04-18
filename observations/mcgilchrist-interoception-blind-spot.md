@@ -5,7 +5,7 @@ created: '2026-03-18'
 creator: randy
 dc:subject:
 - interoception
-- McGilchrist
+- mcgilchrist
 - literature-gap
 - hemispheric-processing
 id: urn:srl:observation:mcgilchrist-interoception-blind-spot

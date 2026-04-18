@@ -10,7 +10,7 @@ dc:publisher: Journal of Surgical Education
 dc:subject:
 - WHOOP
 - wearable
-- HRV
+- hrv
 - surgical-residents
 - sleep
 - physiological-stress

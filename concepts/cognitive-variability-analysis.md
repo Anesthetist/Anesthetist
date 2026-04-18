@@ -7,7 +7,7 @@ dc:source:
 - chatgpt-export:cva-framework-exploration
 dc:subject:
 - cognitive-science
-- EEG
+- eeg
 - biofeedback
 - analytics
 - AI-driven

@@ -8,7 +8,7 @@ dc:identifier:
 - PMID:41632457
 dc:publisher: AANA Journal
 dc:subject:
-- CRNA
+- crna
 - lived-experience
 - empowerment
 - professional-identity

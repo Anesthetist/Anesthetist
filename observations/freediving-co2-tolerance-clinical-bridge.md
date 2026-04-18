@@ -2,7 +2,7 @@
 created: '2026-03-29'
 creator: vigil
 dc:subject:
-- CO2-tolerance
+- co2-tolerance
 - freediving
 - clinician-durability
 - interoceptive-literacy

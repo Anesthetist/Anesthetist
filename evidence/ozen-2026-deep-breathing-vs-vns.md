@@ -12,7 +12,7 @@ dc:subject:
   - deep-breathing
   - vagus-nerve-stimulation
   - caregiver-resilience
-  - RCT
+  - rct
 dc:identifier: "doi:10.1080/01942638.2026.2628830"
 dc:type: "journal-article"
 dc:publisher: "Physical & Occupational Therapy in Pediatrics"

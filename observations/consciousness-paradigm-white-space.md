@@ -9,7 +9,7 @@ dc:subject:
 - materialism
 - embodied-cognition
 - right-hemisphere
-- McGilchrist
+- mcgilchrist
 id: urn:srl:observation:consciousness-paradigm-white-space
 modified: '2026-03-14'
 observation_type: strategic-insight

@@ -12,7 +12,7 @@ dc:subject:
 - breathing
 - temporal-integration
 - auditory-perception
-- HRV
+- hrv
 - autonomic-regulation
 dc:type: journal-article
 id: urn:srl:evidence:linares-gutierrez-wittmann-2019-meditation-vagal-tone-temporal

@@ -4,7 +4,7 @@ creator: srl-researcher-agent
 dc:source: Frontiers in Neurology
 dc:subject:
 - sleep
-- HRV-biofeedback
+- hrv-biofeedback
 - autonomic-regulation
 - recovery
 evidence_grade: Level 1 — Systematic Review / Meta-Analysis

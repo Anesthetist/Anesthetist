@@ -5,7 +5,7 @@ dc:source: Frontiers in Medicine
 dc:subject:
 - autonomic-regulation
 - cognitive-performance
-- HRV-biofeedback
+- hrv-biofeedback
 evidence_grade: Level 3 — Cross-Sectional / Observational
 id: urn:srl:evidence:cognitive-performance-cardiac-autonomic-2026
 modified: '2026-04-04'

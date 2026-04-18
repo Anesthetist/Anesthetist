@@ -6,7 +6,7 @@ dc:source:
 dc:subject:
 - organizational-design
 - agentic-workflows
-- AI-transformation
+- ai-transformation
 - transaction-costs
 id: urn:srl:concept:organizational-singularity
 modified: '2026-04-01'

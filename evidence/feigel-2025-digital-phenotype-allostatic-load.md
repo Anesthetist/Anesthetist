@@ -11,7 +11,7 @@ dc:publisher: American Journal of Physiology - Regulatory, Integrative and Compa
 dc:subject:
 - allostatic-load
 - wearable
-- HRV
+- hrv
 - digital-phenotype
 - military
 - stress-accumulation

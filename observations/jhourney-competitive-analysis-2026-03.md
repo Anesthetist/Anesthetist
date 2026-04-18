@@ -6,7 +6,7 @@ dc:subject:
 - competitive-intelligence
 - jhana
 - meditation
-- EEG
+- eeg
 - consciousness
 - retreat-model
 id: urn:srl:observation:jhourney-competitive-analysis-2026-03

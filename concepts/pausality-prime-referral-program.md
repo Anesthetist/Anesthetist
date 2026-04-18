@@ -3,6 +3,8 @@ created: '2026-03-21'
 creator: vigil
 id: urn:srl:concept:pausality-prime-referral-program
 modified: '2026-03-21'
+skos:broader:
+- pausality
 skos:related:
 - urn:srl:observation:to-market-gap-analysis
 - urn:srl:concept:vigil-soul-randy-cognitive-model

@@ -10,7 +10,7 @@ dc:subject:
 - mobile-health
 - wearables
 - data-standard
-- HRV
+- hrv
 - sleep
 - biometrics
 dc:type: standard

@@ -5,7 +5,7 @@ dc:source:
 - https://github.com/NeuroTechX/awesome-bci
 dc:subject:
 - BCI
-- EEG
+- eeg
 - neurotechnology
 - hardware
 - software

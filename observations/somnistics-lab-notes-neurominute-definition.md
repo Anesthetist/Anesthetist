@@ -6,7 +6,7 @@ creator: Randy Graybeal
 dc:subject:
 - neurominute
 - self-remembering
-- McGilchrist
+- mcgilchrist
 - somatic-regulation
 - synthesis
 id: urn:srl:observation:somnistics-lab-notes-neurominute-definition

@@ -7,7 +7,7 @@ dc:subject:
 - organizational-design
 - agentic-workflows
 - decision-architecture
-- AI-transformation
+- ai-transformation
 id: urn:srl:concept:human-ai-decision-boundary
 modified: '2026-04-01'
 prov:wasDerivedFrom:

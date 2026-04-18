@@ -12,7 +12,7 @@ dc:subject:
   - jhana
   - cessation
   - consciousness-monitoring
-  - EEG
+  - eeg
   - meditation-neuroscience
 observation_type: craft-knowledge
 clinical_context: "Strategic integration analysis — merging NeuroSkill EEG platform with Harvard Meditation Research Program (11 papers, 2025-2026)"

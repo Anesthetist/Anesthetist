@@ -12,7 +12,7 @@ dc:subject:
 - breathwork
 - MAIA-2
 - burnout-prevention
-- CEU
+- ceu
 - competency-framework
 id: urn:srl:observation:somatic-certification-curriculum-architecture
 modified: '2026-03-16'

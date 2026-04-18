@@ -9,7 +9,7 @@ dc:identifier:
 dc:publisher: JAMA Surgery
 dc:subject:
 - surgeon-stress
-- HRV
+- hrv
 - surgical-complications
 - autonomic-regulation
 - patient-outcomes

@@ -12,7 +12,7 @@ dc:subject:
 - flow-state
 - meta-analysis
 - attention
-- RCT
+- rct
 dc:type: review
 id: urn:srl:evidence:longaretti-2025-mindfulness-flow-meta-analysis
 modified: '2026-03-16'

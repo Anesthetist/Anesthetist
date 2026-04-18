@@ -5,7 +5,7 @@ dc:source: 'Little et al. 2026. Stress and Health. Wiley. DOI: 10.1002/smi.70161
 dc:subject:
 - breathwork
 - slow breathing
-- RCT
+- rct
 - paramedicine
 - first responders
 - resilience

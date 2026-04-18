@@ -5,7 +5,7 @@ dc:source:
 - urn:srl:evidence:ismail-organizational-singularity-2026
 dc:subject:
 - organizational-design
-- AI-transformation
+- ai-transformation
 - accountability
 - healthcare-regulation
 id: urn:srl:concept:fiduciary-wedge

@@ -7,7 +7,7 @@ dc:subject:
 - organizational-design
 - exponential-organizations
 - agentic-workflows
-- AI-transformation
+- ai-transformation
 id: urn:srl:concept:exo-3-mtp-drive-shape
 modified: '2026-04-01'
 prov:wasDerivedFrom:

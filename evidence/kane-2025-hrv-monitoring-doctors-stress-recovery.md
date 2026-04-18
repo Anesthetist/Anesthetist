@@ -8,7 +8,7 @@ dc:identifier:
 - PMID:41157926
 dc:publisher: Occupational Medicine
 dc:subject:
-- HRV
+- hrv
 - clinician-stress
 - burnout-prevention
 - wearable

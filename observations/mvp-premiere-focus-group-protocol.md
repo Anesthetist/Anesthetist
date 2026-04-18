@@ -8,7 +8,7 @@ dc:subject:
 - user-research
 - focus-group
 - MVP
-- Pausality
+- pausality
 - CRNA-feedback
 id: urn:srl:observation:mvp-premiere-focus-group-protocol
 modified: '2026-03-15'

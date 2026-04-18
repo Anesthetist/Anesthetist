@@ -9,10 +9,10 @@ dc:identifier:
 dc:publisher: The Gerontologist
 dc:subject:
 - mindfulness
-- HRV
+- hrv
 - caregiver-burnout
 - hybrid-delivery
-- RCT
+- rct
 dc:type: clinical-trial
 id: urn:srl:evidence:kor-2025-hybrid-mindfulness-hrv-caregivers-rct
 modified: '2026-03-15'

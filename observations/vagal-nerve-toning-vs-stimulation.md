@@ -6,7 +6,7 @@ creator: Randy Graybeal
 dc:subject:
 - vagus-nerve
 - VNT
-- VNS
+- vns
 - neurotech
 - consumer-wellness
 - FDA-boundary

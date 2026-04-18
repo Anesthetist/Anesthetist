@@ -2,7 +2,7 @@
 created: '2026-03-22'
 creator: Randy Graybeal
 dc:subject:
-- AI-agents
+- ai-agents
 - research-operations
 - tacit-knowledge
 - commercialization

@@ -12,8 +12,8 @@ dc:subject:
 - surgery
 - physiological-monitoring
 - systematic-review
-- HRV
-- EEG
+- hrv
+- eeg
 dc:type: review
 id: urn:srl:evidence:almukhtar-2024-cognitive-workload-surgery-systematic-review
 modified: '2026-03-16'

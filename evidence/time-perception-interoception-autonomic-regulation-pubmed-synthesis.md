@@ -29,7 +29,7 @@ dc:subject:
 - meditation
 - heartbeat
 - breathing
-- HRV
+- hrv
 - temporal-distortion
 - clinical-performance
 - pacemaker-accumulator

@@ -9,7 +9,7 @@ dc:identifier: https://hl7.org/fhir/
 dc:subject:
 - healthcare-data
 - interoperability
-- EHR
+- ehr
 - wearables
 - data-standard
 dc:type: standard

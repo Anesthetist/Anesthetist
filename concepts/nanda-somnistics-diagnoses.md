@@ -11,7 +11,7 @@ dc:subject:
 - clinical-integration
 - certification
 - CE-accreditation
-- EHR
+- ehr
 id: urn:srl:concept:nanda-somnistics-diagnoses
 modified: '2026-03-22'
 prov:wasDerivedFrom: []

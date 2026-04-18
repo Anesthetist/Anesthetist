@@ -14,7 +14,7 @@ dc:subject:
   - body-based-therapies
   - autonomic-dysregulation
   - somatic-experiencing
-  - PTSD
+  - ptsd
   - yoga-therapy
   - neuroscience-of-trauma
   - embodied-cognition

@@ -12,8 +12,8 @@ dc:subject:
   - humming-breathing
   - bhramari-pranayama
   - resonance-frequency
-  - HRV
-  - RMSSD
+  - hrv
+  - rmssd
 dc:identifier: "doi:10.1007/s10484-026-09772-y"
 dc:type: "journal-article"
 dc:publisher: "Applied Psychophysiology and Biofeedback"

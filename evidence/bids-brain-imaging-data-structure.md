@@ -11,8 +11,8 @@ dc:subject:
 - data-standard
 - metadata
 - MRI
-- EEG
-- MEG
+- eeg
+- meg
 dc:type: standard
 id: urn:srl:evidence:bids-brain-imaging-data-structure
 modified: '2026-03-21'

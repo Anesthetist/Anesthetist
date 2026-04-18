@@ -9,8 +9,8 @@ dc:subject:
 - slow-paced-breathing
 - dose-response
 - cardiac-vagal-activity
-- RMSSD
-- HRV
+- rmssd
+- hrv
 - resonant-breathing
 dc:type: journal-article
 id: urn:srl:evidence:you-laborde-2021-spb-dose-response-vagal

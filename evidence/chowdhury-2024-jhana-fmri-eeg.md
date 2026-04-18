@@ -12,7 +12,7 @@ dc:subject:
   - jhana
   - ACAM
   - fMRI
-  - EEG
+  - eeg
   - brain-entropy
   - phenomenology
   - Sacchet-Lab

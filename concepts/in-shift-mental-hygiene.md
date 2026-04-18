@@ -10,9 +10,11 @@ dc:subject:
 - gap-moment-training
 - clinical-performance
 id: urn:srl:concept:in-shift-mental-hygiene
-modified: '2026-03-19'
+modified: '2026-04-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-hack4health-application-summary
+prov:wasInformedBy:
+- urn:srl:evidence:jarl-2025-nants-swedish
 skos:broader:
 - gap-moment-training
 skos:narrower: []

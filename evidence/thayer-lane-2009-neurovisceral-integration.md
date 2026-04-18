@@ -10,7 +10,7 @@ dc:creator: ["Julian F. Thayer", "Richard D. Lane"]
 dc:date: 2009
 dc:subject:
   - neurovisceral-integration
-  - HRV
+  - hrv
   - prefrontal-cortex
   - autonomic-regulation
   - cognitive-function

@@ -11,7 +11,7 @@ dc:date: 2025
 dc:subject:
   - jhana
   - ACAM
-  - 7T-fMRI
+  - 7t-fmri
   - functional-connectivity
   - cortical-gradients
   - Sacchet-Lab

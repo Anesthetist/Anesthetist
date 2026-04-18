@@ -1,0 +1,802 @@
+# SRL Knowledge Vault — Subject Vocabulary
+#
+# SKOS-lite controlled vocabulary for `dc:subject` tags.
+# Initial version 0.1 — 2026-04-18 governance cleanup.
+#
+# Scope of v0.1:
+#   - canonical: tags with ≥5 documented usages in the vault. Preferred labels
+#                established and alt_labels cover known case/hyphen variants.
+#   - provisional: tags with 3-4 usages. Preferred label accepted tentatively;
+#                  broader/narrower relations not yet wired.
+#   - The long tail (1,551 tags with 1-2 usages) is not enumerated here.
+#     New writes should prefer canonical or provisional labels. Genuinely new
+#     subjects are allowed but should graduate to provisional → canonical on
+#     review cycles.
+#
+# Casing rule: lowercase kebab-case. Acronyms lowercased. No trademarks or
+# proper nouns preserved in casing (those belong in `aliases` on the relevant
+# concept or evidence note, not in dc:subject).
+#
+# Validation:
+#   - vault-writer bot checks dc:subject values against this file
+#   - unknown tags → warning for now, block after 2026-05-01 (hard gate date)
+#   - alt_labels are resolved to preferred at write time where feasible
+#
+# Format:
+#   subject-slug:
+#     preferred_label: human-readable name
+#     alt_labels: [list of known variant spellings to canonicalize]
+#     broader: [list of parent subject slugs]
+#     narrower: [list of child subject slugs]   # rare; mostly derived from broader
+#     scope_note: short definition or usage constraint
+#     tier: canonical | provisional
+
+version: "0.1"
+created: "2026-04-18"
+hard_gate_date: "2026-05-01"
+
+# =============================================================================
+# CANONICAL TIER — ≥5 documented usages, reviewed casing, alt_labels covered
+# =============================================================================
+
+subjects:
+
+  # --- Top-level domain anchors ---
+
+  interoception:
+    preferred_label: Interoception
+    alt_labels: []
+    broader: []
+    narrower: [interoceptive-literacy, interoceptive-accuracy, interoceptive-awareness, interoceptive-training, insular-cortex]
+    tier: canonical
+
+  somnistics:
+    preferred_label: Somnistics (platform / namespace)
+    alt_labels: []
+    broader: []
+    scope_note: "Namespace marker for SRL-native concepts. Candidate for migration to a separate `namespace:` field in schema v2."
+    tier: canonical
+
+  autonomic-regulation:
+    preferred_label: Autonomic regulation
+    alt_labels: [autonomic]
+    broader: []
+    narrower: [autonomic-nervous-system, vagal-tone, polyvagal-theory, hrv]
+    tier: canonical
+
+  hrv:
+    preferred_label: Heart rate variability (HRV)
+    alt_labels: [HRV]
+    broader: [autonomic-regulation]
+    narrower: [hrv-biofeedback, rmssd, vagal-tone]
+    tier: canonical
+
+  hrv-biofeedback:
+    preferred_label: HRV biofeedback
+    alt_labels: [HRV-biofeedback]
+    broader: [hrv, biofeedback]
+    tier: canonical
+
+  biofeedback:
+    preferred_label: Biofeedback
+    alt_labels: []
+    broader: []
+    narrower: [hrv-biofeedback, neurofeedback]
+    tier: canonical
+
+  vagal-tone:
+    preferred_label: Vagal tone
+    alt_labels: []
+    broader: [autonomic-regulation]
+    tier: canonical
+
+  polyvagal-theory:
+    preferred_label: Polyvagal theory
+    alt_labels: [polyvagal]
+    broader: [autonomic-regulation]
+    tier: canonical
+
+  consciousness:
+    preferred_label: Consciousness
+    alt_labels: []
+    broader: []
+    narrower: [altered-states, self-awareness, metacognition, phenomenology]
+    tier: canonical
+
+  expertise:
+    preferred_label: Expertise
+    alt_labels: []
+    broader: []
+    narrower: [clinical-expertise, cognitive-expertise, tacit-knowledge]
+    tier: canonical
+
+  breathwork:
+    preferred_label: Breathwork
+    alt_labels: []
+    broader: []
+    narrower: [breathing, breath-hold, slow-breathing, nasal-breathing, resonant-breathing-frequency]
+    tier: canonical
+
+  breathing:
+    preferred_label: Breathing (general)
+    alt_labels: []
+    broader: [breathwork]
+    tier: canonical
+
+  breath-hold:
+    preferred_label: Breath-hold
+    alt_labels: []
+    broader: [breathwork]
+    tier: canonical
+
+  slow-breathing:
+    preferred_label: Slow breathing
+    alt_labels: []
+    broader: [breathwork]
+    tier: canonical
+
+  time-perception:
+    preferred_label: Time perception
+    alt_labels: []
+    broader: []
+    narrower: [temporal-distortion]
+    tier: canonical
+
+  temporal-distortion:
+    preferred_label: Temporal distortion
+    alt_labels: []
+    broader: [time-perception]
+    tier: canonical
+
+  cognitive-science:
+    preferred_label: Cognitive science
+    alt_labels: []
+    broader: []
+    narrower: [cognitive-load, cognitive-expertise, cognitive-development]
+    tier: canonical
+
+  cognitive-load:
+    preferred_label: Cognitive load
+    alt_labels: []
+    broader: [cognitive-science]
+    tier: canonical
+
+  cognitive-development:
+    preferred_label: Cognitive development
+    alt_labels: []
+    broader: [cognitive-science]
+    tier: canonical
+
+  cognitive-expertise:
+    preferred_label: Cognitive expertise
+    alt_labels: []
+    broader: [cognitive-science, expertise]
+    tier: canonical
+
+  attention:
+    preferred_label: Attention
+    alt_labels: []
+    broader: [cognitive-science]
+    tier: canonical
+
+  meditation:
+    preferred_label: Meditation
+    alt_labels: []
+    broader: [contemplative-practice]
+    narrower: [mindfulness, mindfulness-meditation, jhana]
+    tier: canonical
+
+  mindfulness:
+    preferred_label: Mindfulness
+    alt_labels: []
+    broader: [meditation]
+    tier: canonical
+
+  contemplative-practice:
+    preferred_label: Contemplative practice
+    alt_labels: []
+    broader: []
+    narrower: [meditation]
+    tier: canonical
+
+  jhana:
+    preferred_label: Jhāna
+    alt_labels: []
+    broader: [meditation]
+    tier: canonical
+
+  phenomenology:
+    preferred_label: Phenomenology
+    alt_labels: []
+    broader: [consciousness]
+    tier: canonical
+
+  metacognition:
+    preferred_label: Metacognition
+    alt_labels: []
+    broader: [consciousness]
+    tier: canonical
+
+  self-awareness:
+    preferred_label: Self-awareness
+    alt_labels: []
+    broader: [consciousness]
+    tier: canonical
+
+  altered-states:
+    preferred_label: Altered states of consciousness
+    alt_labels: []
+    broader: [consciousness]
+    tier: canonical
+
+  # --- Clinical / CRNA domain ---
+
+  crna:
+    preferred_label: CRNA (Certified Registered Nurse Anesthetist, US)
+    alt_labels: [CRNA]
+    broader: []
+    narrower: [nurse-anesthetist, anesthesia]
+    scope_note: "Use `crna` for US CRNA-specific content. Use `nurse-anesthetist` for non-US or role-generic content (e.g. Swedish NANTS work)."
+    tier: canonical
+
+  nurse-anesthetist:
+    preferred_label: Nurse anesthetist (role, international)
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  anesthesia:
+    preferred_label: Anesthesia
+    alt_labels: []
+    broader: []
+    narrower: [anesthesiology]
+    tier: canonical
+
+  clinical-performance:
+    preferred_label: Clinical performance
+    alt_labels: []
+    broader: []
+    narrower: [clinical-expertise]
+    tier: canonical
+
+  clinical-expertise:
+    preferred_label: Clinical expertise
+    alt_labels: []
+    broader: [expertise, clinical-performance]
+    tier: canonical
+
+  clinician-durability:
+    preferred_label: Clinician durability
+    alt_labels: []
+    broader: []
+    scope_note: "SRL-native framing. Preferred over `clinician-wellbeing` or `clinician-burnout` in positioning contexts."
+    tier: canonical
+
+  clinician-wellbeing:
+    preferred_label: Clinician wellbeing
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  clinician-burnout:
+    preferred_label: Clinician burnout
+    alt_labels: []
+    broader: [burnout]
+    tier: canonical
+
+  burnout:
+    preferred_label: Burnout
+    alt_labels: []
+    broader: []
+    narrower: [clinician-burnout, burnout-prevention]
+    tier: canonical
+
+  burnout-prevention:
+    preferred_label: Burnout prevention
+    alt_labels: []
+    broader: [burnout]
+    tier: canonical
+
+  patient-safety:
+    preferred_label: Patient safety
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  decision-making:
+    preferred_label: Decision making
+    alt_labels: []
+    broader: [cognitive-science]
+    tier: canonical
+
+  emotional-regulation:
+    preferred_label: Emotional regulation
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  emotion:
+    preferred_label: Emotion
+    alt_labels: []
+    broader: []
+    narrower: [emotional-regulation]
+    tier: canonical
+
+  # --- Somnistics product & strategy tags ---
+
+  novel-concept:
+    preferred_label: Novel concept (SRL-native)
+    alt_labels: []
+    broader: [somnistics]
+    scope_note: "Applied to concepts coined within SRL. Candidate for promotion to a structured `provenance:` or `origin:` field in schema v2."
+    tier: canonical
+
+  gap-moment-training:
+    preferred_label: Gap Moment Training™
+    alt_labels: []
+    broader: [somnistics]
+    tier: canonical
+
+  gap-moments:
+    preferred_label: Gap moments (phenomenon)
+    alt_labels: []
+    broader: [somnistics]
+    scope_note: "Distinct from `gap-moment-training` (the intervention). This tag marks the underlying phenomenon."
+    tier: canonical
+
+  neurominute:
+    preferred_label: NeuroMinute™
+    alt_labels: []
+    broader: [somnistics]
+    tier: canonical
+
+  pausality:
+    preferred_label: Pausality™
+    alt_labels: [Pausality]
+    broader: [somnistics]
+    tier: canonical
+
+  interoceptive-literacy:
+    preferred_label: Interoceptive literacy
+    alt_labels: []
+    broader: [interoception, somnistics]
+    tier: canonical
+
+  # --- Methodology / measurement ---
+
+  eeg:
+    preferred_label: EEG
+    alt_labels: [EEG]
+    broader: []
+    tier: canonical
+
+  maia-2:
+    preferred_label: MAIA-2
+    alt_labels: [MAIA-2]
+    broader: [interoception, measurement]
+    tier: canonical
+
+  wearable:
+    preferred_label: Wearable
+    alt_labels: [wearables]
+    broader: []
+    narrower: [apple-watch]
+    tier: canonical
+
+  apple-watch:
+    preferred_label: Apple Watch
+    alt_labels: [Apple-Watch]
+    broader: [wearable]
+    tier: canonical
+
+  rct:
+    preferred_label: Randomized controlled trial (RCT)
+    alt_labels: [RCT]
+    broader: []
+    tier: canonical
+
+  systematic-review:
+    preferred_label: Systematic review
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  rmssd:
+    preferred_label: RMSSD
+    alt_labels: [RMSSD]
+    broader: [hrv]
+    tier: canonical
+
+  measurement:
+    preferred_label: Measurement
+    alt_labels: []
+    broader: []
+    narrower: [rmssd, maia-2, wearable, biomarkers]
+    tier: canonical
+
+  biomarkers:
+    preferred_label: Biomarkers
+    alt_labels: []
+    broader: [measurement]
+    tier: canonical
+
+  methodology:
+    preferred_label: Methodology
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  data-standard:
+    preferred_label: Data standard
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  neurofeedback:
+    preferred_label: Neurofeedback
+    alt_labels: []
+    broader: [biofeedback]
+    tier: canonical
+
+  neuroscience:
+    preferred_label: Neuroscience
+    alt_labels: []
+    broader: []
+    narrower: [neurophysiology, insular-cortex, prefrontal-cortex, vagus-nerve]
+    tier: canonical
+
+  neurophysiology:
+    preferred_label: Neurophysiology
+    alt_labels: []
+    broader: [neuroscience]
+    tier: canonical
+
+  insular-cortex:
+    preferred_label: Insular cortex
+    alt_labels: []
+    broader: [neuroscience, interoception]
+    tier: canonical
+
+  prefrontal-cortex:
+    preferred_label: Prefrontal cortex
+    alt_labels: []
+    broader: [neuroscience]
+    tier: canonical
+
+  vagus-nerve:
+    preferred_label: Vagus nerve
+    alt_labels: []
+    broader: [neuroscience, autonomic-regulation]
+    tier: canonical
+
+  autonomic-nervous-system:
+    preferred_label: Autonomic nervous system
+    alt_labels: []
+    broader: [autonomic-regulation, neuroscience]
+    tier: canonical
+
+  neuroplasticity:
+    preferred_label: Neuroplasticity
+    alt_labels: []
+    broader: [neuroscience]
+    tier: canonical
+
+  embodied-cognition:
+    preferred_label: Embodied cognition
+    alt_labels: []
+    broader: [cognitive-science]
+    tier: canonical
+
+  tacit-knowledge:
+    preferred_label: Tacit knowledge
+    alt_labels: []
+    broader: [expertise]
+    tier: canonical
+
+  co-regulation:
+    preferred_label: Co-regulation
+    alt_labels: []
+    broader: [autonomic-regulation]
+    tier: canonical
+
+  resilience:
+    preferred_label: Resilience
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  self-regulation:
+    preferred_label: Self-regulation
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  stress:
+    preferred_label: Stress
+    alt_labels: []
+    broader: []
+    narrower: [allostatic-load, anxiety]
+    tier: canonical
+
+  anxiety:
+    preferred_label: Anxiety
+    alt_labels: []
+    broader: [stress]
+    tier: canonical
+
+  allostatic-load:
+    preferred_label: Allostatic load
+    alt_labels: []
+    broader: [stress]
+    tier: canonical
+
+  trauma:
+    preferred_label: Trauma
+    alt_labels: []
+    broader: []
+    narrower: [ptsd]
+    tier: canonical
+
+  ptsd:
+    preferred_label: PTSD
+    alt_labels: [PTSD]
+    broader: [trauma]
+    tier: canonical
+
+  sleep:
+    preferred_label: Sleep
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  # --- Professional / organizational ---
+
+  heartbeat:
+    preferred_label: Heartbeat (perception, signal)
+    alt_labels: []
+    broader: [interoception]
+    tier: canonical
+
+  flow-state:
+    preferred_label: Flow state
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  competitive-intelligence:
+    preferred_label: Competitive intelligence
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  market-intelligence:
+    preferred_label: Market intelligence
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  competitive-landscape:
+    preferred_label: Competitive landscape
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  competitive-strategy:
+    preferred_label: Competitive strategy
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  organizational-design:
+    preferred_label: Organizational design
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  exponential-organizations:
+    preferred_label: Exponential organizations
+    alt_labels: []
+    broader: [organizational-design]
+    tier: canonical
+
+  ai-transformation:
+    preferred_label: AI transformation
+    alt_labels: [AI-transformation]
+    broader: []
+    tier: canonical
+
+  agentic-workflows:
+    preferred_label: Agentic workflows
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  agentic-ai-architecture:
+    preferred_label: Agentic AI architecture
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  developer-tooling-build:
+    preferred_label: Developer tooling & build
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  entrepreneurship:
+    preferred_label: Entrepreneurship
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  content-strategy:
+    preferred_label: Content strategy
+    alt_labels: []
+    broader: []
+    narrower: [linkedin-content]
+    tier: canonical
+
+  linkedin-content:
+    preferred_label: LinkedIn content
+    alt_labels: []
+    broader: [content-strategy]
+    tier: canonical
+
+  curriculum-design:
+    preferred_label: Curriculum design
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  certification:
+    preferred_label: Certification
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  # --- Philosophy / epistemology ---
+
+  epistemology:
+    preferred_label: Epistemology
+    alt_labels: []
+    broader: []
+    narrower: [consilience, knowledge-construction]
+    tier: canonical
+
+  consilience:
+    preferred_label: Consilience
+    alt_labels: []
+    broader: [epistemology]
+    tier: canonical
+
+  knowledge-construction:
+    preferred_label: Knowledge construction
+    alt_labels: []
+    broader: [epistemology]
+    tier: canonical
+
+  developmental-psychology:
+    preferred_label: Developmental psychology
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  # --- State / intervention concepts ---
+
+  state-transition:
+    preferred_label: State transition
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  pattern-recognition:
+    preferred_label: Pattern recognition
+    alt_labels: []
+    broader: [cognitive-science]
+    tier: canonical
+
+  binaural-beats:
+    preferred_label: Binaural beats
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  awareness-exercise:
+    preferred_label: Awareness exercise
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  adversarial-literature:
+    preferred_label: Adversarial literature
+    alt_labels: []
+    broader: []
+    scope_note: "Evidence notes on critiques / null results / counterarguments to SRL-relevant positions."
+    tier: canonical
+
+  product:
+    preferred_label: Product
+    alt_labels: []
+    broader: []
+    narrower: [product-architecture]
+    tier: canonical
+
+  product-architecture:
+    preferred_label: Product architecture
+    alt_labels: []
+    broader: [product]
+    tier: canonical
+
+  system-architecture:
+    preferred_label: System architecture
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  metadata:
+    preferred_label: Metadata
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  military:
+    preferred_label: Military
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  patent:
+    preferred_label: Patent
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  presence:
+    preferred_label: Presence
+    alt_labels: []
+    broader: []
+    tier: canonical
+
+  vigil:
+    preferred_label: Vigil (orchestrator heartbeat marker)
+    alt_labels: []
+    broader: []
+    scope_note: "Applied to Vigil's own session and heartbeat artifacts. Candidate for migration to a `system:` namespace in schema v2."
+    tier: canonical
+
+# =============================================================================
+# PROVISIONAL TIER — 3-4 usages, preferred label accepted, relations deferred
+# =============================================================================
+# These are tags that appear enough to warrant a controlled entry but have not
+# been reviewed for hierarchical placement. vault-writer should accept them but
+# not treat them as authoritative parents for new work.
+
+provisional:
+  # acronym case variants already normalized to lowercase
+  aana: {alt_labels: [AANA]}
+  adhd: {alt_labels: [ADHD]}
+  ai: {alt_labels: [AI]}
+  ceu: {alt_labels: [CEU]}
+  co2-tolerance: {alt_labels: [CO2-tolerance]}
+  ehr: {alt_labels: [EHR]}
+  fhir: {alt_labels: [FHIR]}
+  meg: {alt_labels: [MEG]}
+  vns: {alt_labels: [VNS]}
+  # proper-noun kebab variants
+  mayo-clinic: {alt_labels: [Mayo-Clinic]}
+  mcgilchrist: {alt_labels: [McGilchrist]}
+  iyengar: {alt_labels: [Iyengar]}
+  safe-and-sound-protocol: {alt_labels: [Safe-and-Sound-Protocol]}
+  # remaining 3-4-use tags accepted as-is; see outputs/subject-tag-inventory-2026-04-18.txt
+  # for the full inventory pending review
+  note: "Full 3-4-usage list pending Randy's review pass. Accept these tags on write; canonicalize on next sweep."
+
+# =============================================================================
+# DEPRECATED / BANNED
+# =============================================================================
+# Tags that appeared historically but should not be written going forward.
+# Migration rules specified for each.
+
+deprecated: {}
+# (Empty in v0.1. Candidates for deprecation — e.g. redundant `autonomic` vs
+# `autonomic-regulation` — will be added after Randy reviews v0.1.)

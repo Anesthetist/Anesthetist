@@ -12,7 +12,7 @@ dc:subject:
 - aana-journal
 - research-frontier
 id: urn:srl:concept:crna-interior-ecology-literature-gap
-modified: '2026-04-11'
+modified: '2026-04-18'
 prov:wasDerivedFrom:
 - urn:srl:evidence:craig-2009-interoception-awareness
 - urn:srl:evidence:balban-huberman-2023-cyclic-sighing
@@ -21,6 +21,8 @@ prov:wasDerivedFrom:
 - urn:srl:evidence:jama-2024-2025-ambient-ai-scribe-burnout-time
 - urn:srl:evidence:hrv-vagal-tone-longitudinal-burnout-predictor
 - urn:srl:evidence:anesthesia-second-victim-2024-cross-sectional
+prov:wasInformedBy:
+- urn:srl:evidence:jarl-2025-nants-swedish
 skos:broader:
 - somnistics-category-definition
 skos:narrower: []

@@ -10,7 +10,7 @@ dc:subject:
 - product
 - app-store
 - iOS
-- Apple-Watch
+- apple-watch
 - biometric-feedback
 - breathing
 - competitive-landscape

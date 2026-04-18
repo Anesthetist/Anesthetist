@@ -11,7 +11,7 @@ dc:subject:
 - neurophysiology
 - autonomic-nervous-system
 - parasympathetic
-- HRV
+- hrv
 - biomarker
 id: urn:srl:concept:vagal-tone
 modified: 2026-03-14

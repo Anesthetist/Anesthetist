@@ -9,7 +9,7 @@ modified: 2026-03-14
 dc:creator: ["Arieh Y. Shalev", "Yael Ankri", "Yossi Israeli-Shalev", "Tamy Peleg", "Rhonda Adessky", "Sara Freedman"]
 dc:date: 2012
 dc:subject:
-  - PTSD
+  - ptsd
   - prevention
   - early-intervention
   - trauma

@@ -6,7 +6,7 @@ created: '2026-03-16'
 creator: Randy Graybeal
 dc:subject:
 - SRNA
-- AI
+- ai
 - anesthesia-app
 - community
 - next-generation

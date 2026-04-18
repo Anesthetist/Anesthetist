@@ -9,7 +9,7 @@ dc:identifier:
 dc:publisher: Annals of Surgical Oncology
 dc:subject:
 - wearable
-- HRV
+- hrv
 - surgical-stress
 - clinician-performance
 - learning-curve

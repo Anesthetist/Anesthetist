@@ -13,7 +13,7 @@ dc:subject:
   - mindfulness
   - wearable-biofeedback
   - stress-reduction
-  - HRV
+  - hrv
 dc:identifier: "doi:10.1016/j.explore.2024.103022"
 dc:type: "journal-article"
 dc:publisher: "Explore"

@@ -8,8 +8,8 @@ created: 2026-03-14
 modified: 2026-03-14
 dc:subject:
   - measurement
-  - Apple-Watch
-  - HRV
+  - apple-watch
+  - hrv
   - product-design
   - clinical-humility
 observation_type: contrast-case

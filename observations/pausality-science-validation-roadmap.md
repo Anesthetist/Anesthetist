@@ -4,7 +4,7 @@ created: '2026-03-14'
 creator: Randy Graybeal
 dc:subject:
 - validation
-- RCT
+- rct
 - evidence-ladder
 - research-design
 - pausality

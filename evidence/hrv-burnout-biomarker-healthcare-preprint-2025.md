@@ -3,7 +3,7 @@ created: '2026-04-04'
 creator: srl-researcher-agent
 dc:source: medRxiv (preprint)
 dc:subject:
-- HRV-biofeedback
+- hrv-biofeedback
 - clinician-burnout
 - biomarkers
 - healthcare-workers

@@ -6,7 +6,7 @@ dc:subject:
 - competitive-intelligence
 - fractal-breathing
 - DFA-alpha
-- HRV
+- hrv
 - breathwork
 id: urn:srl:observation:eightos-competitive-analysis-2026-03
 modified: '2026-03-20'

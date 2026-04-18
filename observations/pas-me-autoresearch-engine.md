@@ -10,7 +10,7 @@ dc:subject:
   - machine-learning
   - autonomic-classification
   - edge-computing
-  - Apple-Watch
+  - apple-watch
   - autoresearch
 observation_type: craft-knowledge
 clinical_context: "AI research — autonomous ML pipeline for real-time autonomic state classification on Apple Watch"

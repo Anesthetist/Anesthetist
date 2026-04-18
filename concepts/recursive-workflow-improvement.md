@@ -7,7 +7,7 @@ dc:subject:
 - agentic-workflows
 - recursive-self-improvement
 - organizational-design
-- AI-transformation
+- ai-transformation
 id: urn:srl:concept:recursive-workflow-improvement
 modified: '2026-04-01'
 prov:wasDerivedFrom:

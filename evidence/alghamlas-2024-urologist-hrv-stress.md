@@ -9,9 +9,9 @@ dc:identifier:
 dc:publisher: French Journal of Urology
 dc:subject:
 - surgeon-stress
-- HRV
+- hrv
 - experience-level
-- RMSSD
+- rmssd
 dc:type: journal-article
 id: urn:srl:evidence:alghamlas-2024-urologist-hrv-stress
 modified: '2026-03-16'

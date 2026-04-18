@@ -12,7 +12,7 @@ dc:subject:
 - neurophysiology
 - autonomic-nervous-system
 - somnistics
-- HRV
+- hrv
 - GSR
 id: urn:srl:concept:autonomic-regulation
 modified: 2026-03-14

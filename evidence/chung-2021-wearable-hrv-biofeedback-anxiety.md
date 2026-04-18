@@ -10,9 +10,9 @@ dc:creator: ["A.H. Chung et al."]
 dc:date: 2021
 dc:subject:
   - wearable
-  - HRV-biofeedback
+  - hrv-biofeedback
   - anxiety
-  - RMSSD
+  - rmssd
   - remote-coaching
 dc:identifier: "doi:10.1007/s10484-021-09519-x"
 dc:type: "journal-article"

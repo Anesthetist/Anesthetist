@@ -6,7 +6,7 @@ creator: randy
 dc:subject:
 - market-positioning
 - AI-resistance
-- CRNA
+- crna
 - O*NET
 - adaptability
 - stress-tolerance

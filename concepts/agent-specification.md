@@ -7,7 +7,7 @@ dc:subject:
 - agentic-workflows
 - intelligence-stack
 - organizational-design
-- AI-transformation
+- ai-transformation
 id: urn:srl:concept:agent-specification
 modified: '2026-04-01'
 prov:wasDerivedFrom:

@@ -9,7 +9,7 @@ dc:identifier:
 dc:publisher: BJS Open
 dc:subject:
 - surgeon-stress
-- HRV
+- hrv
 - vascular-surgery
 - stress-topography
 dc:type: journal-article

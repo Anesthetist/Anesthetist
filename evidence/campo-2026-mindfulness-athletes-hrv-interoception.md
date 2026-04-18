@@ -14,7 +14,7 @@ dc:identifier: doi:10.3389/fpsyg.2026.1755043
 dc:publisher: Frontiers in Psychology
 dc:subject:
 - interoception
-- HRV
+- hrv
 - mindfulness
 - autonomic-regulation
 - athletes

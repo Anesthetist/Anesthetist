@@ -14,7 +14,7 @@ dc:publisher: Journal of Physiological Sciences
 dc:subject:
 - respiration
 - attention
-- HRV
+- hrv
 - cardiorespiratory-coupling
 - cognitive-performance
 dc:type: journal-article

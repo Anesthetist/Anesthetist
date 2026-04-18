@@ -7,7 +7,7 @@ dc:subject:
 - polyvagal theory
 - critique
 - vagal tone
-- HRV
+- hrv
 - autonomic nervous system
 - clinical applications
 - Porges

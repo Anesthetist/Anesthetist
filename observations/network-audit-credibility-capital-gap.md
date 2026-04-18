@@ -7,7 +7,7 @@ dc:subject:
 - network-analysis
 - fundraising
 - credibility-capital-bridge
-- Tom-Morgan
+- tom-morgan
 - investor-relations
 id: urn:srl:observation:network-audit-credibility-capital-gap
 modified: 2026-03-14

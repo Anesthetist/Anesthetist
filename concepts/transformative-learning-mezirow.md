@@ -11,9 +11,9 @@ dc:subject:
 - physiological-sovereignty
 - pedagogy
 - cohort-learning
-- Mayo-Clinic
+- mayo-clinic
 - VCU
-- AANA
+- aana
 - partnership
 id: urn:srl:concept:transformative-learning-mezirow
 modified: '2026-03-19'

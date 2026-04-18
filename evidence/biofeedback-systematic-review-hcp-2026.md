@@ -6,7 +6,7 @@ dc:subject:
 - biofeedback
 - healthcare professionals
 - systematic review
-- HRV
+- hrv
 - respiratory sinus arrhythmia
 - stress
 - emotional regulation

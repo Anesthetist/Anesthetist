@@ -2,7 +2,7 @@
 created: '2026-03-22'
 creator: Randy Graybeal
 dc:subject:
-- CO2-tolerance
+- co2-tolerance
 - breath-hold
 - autonomic-regulation
 - clinician-durability

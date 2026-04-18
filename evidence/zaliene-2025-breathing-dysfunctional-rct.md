@@ -11,10 +11,10 @@ dc:date: 2025
 dc:subject:
   - breathing-intervention
   - autonomic-function
-  - HRV
+  - hrv
   - mouth-taping
   - nasal-breathing
-  - RCT
+  - rct
 dc:identifier: "doi:10.3390/arm93060056"
 dc:type: "journal-article"
 dc:publisher: "Advances in Respiratory Medicine"

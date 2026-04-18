@@ -13,7 +13,7 @@ dc:subject:
   - diaphragmatic
   - nasal-breathing
   - vagal-tone
-  - PTSD
+  - ptsd
   - cortisol
 dc:identifier: "doi:10.1002/smi.70098"
 dc:type: "review"

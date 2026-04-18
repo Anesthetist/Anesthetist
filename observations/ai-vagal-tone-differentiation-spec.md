@@ -2,7 +2,7 @@
 created: '2026-03-15'
 creator: claude
 dc:subject:
-- polyvagal
+- polyvagal-theory
 - vagal-tone
 - ai-differentiation
 - ventral-dorsal

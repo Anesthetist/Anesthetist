@@ -8,7 +8,7 @@ dc:identifier:
 - PMID:41689450
 dc:publisher: Psychiatry and Clinical Neurosciences
 dc:subject:
-- PTSD
+- ptsd
 - autonomic-biomarkers
 - sleep
 - wearable

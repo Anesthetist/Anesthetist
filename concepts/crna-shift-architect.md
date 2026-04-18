@@ -8,9 +8,11 @@ dc:subject:
 - agent-system
 - pausality
 id: urn:srl:concept:crna-shift-architect
-modified: '2026-03-19'
+modified: '2026-04-18'
 prov:wasDerivedFrom:
 - urn:srl:evidence:mic-628-circadian-clock-drug-2026
+prov:wasInformedBy:
+- urn:srl:evidence:jarl-2025-nants-swedish
 skos:related:
 - gap-moment-training
 - autonomic-regulation

@@ -11,7 +11,7 @@ dc:source:
 - chatgpt-export:breathing-protocol-comparison
 dc:subject:
 - breathwork
-- HRV
+- hrv
 - biofeedback
 - baroreflex
 - cardiorespiratory-coupling

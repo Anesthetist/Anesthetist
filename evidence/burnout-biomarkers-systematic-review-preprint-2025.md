@@ -5,7 +5,7 @@ dc:source: medRxiv (preprint)
 dc:subject:
 - clinician-burnout
 - biomarkers
-- HRV-biofeedback
+- hrv-biofeedback
 - cortisol
 - allostatic-load
 evidence_grade: Level 1 — Systematic Review (preprint)

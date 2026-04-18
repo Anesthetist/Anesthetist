@@ -12,7 +12,7 @@ dc:subject:
 - nurse-anesthetist
 - non-pharmacological
 - knowledge-gap
-- CEU
+- ceu
 dc:type: journal-article
 id: urn:srl:evidence:diwan-2026-opioid-free-anesthesia-nurse-anesthetists
 modified: '2026-03-15'

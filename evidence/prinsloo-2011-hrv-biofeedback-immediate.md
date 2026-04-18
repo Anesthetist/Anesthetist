@@ -9,7 +9,7 @@ modified: 2026-03-14
 dc:creator: ["Gabriell E. Prinsloo", "H.G. Laurie Rauch", "Wayne E. Derman"]
 dc:date: 2011
 dc:subject:
-  - HRV-biofeedback
+  - hrv-biofeedback
   - cognitive-function
   - cognitive-stress
   - immediate-effects

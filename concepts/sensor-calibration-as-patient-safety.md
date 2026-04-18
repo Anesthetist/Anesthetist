@@ -11,12 +11,14 @@ dc:subject:
 - wellness-critique
 - clinician-as-sensor
 id: urn:srl:concept:sensor-calibration-as-patient-safety
-modified: '2026-04-11'
+modified: '2026-04-18'
 prov:wasDerivedFrom:
 - urn:srl:evidence:craig-2009-interoception-awareness
 - urn:srl:evidence:dean-talbot-2018-moral-injury-not-burnout-stat
 - urn:srl:evidence:jama-2024-2025-ambient-ai-scribe-burnout-time
 - urn:srl:evidence:hrv-vagal-tone-longitudinal-burnout-predictor
+prov:wasInformedBy:
+- urn:srl:evidence:jarl-2025-nants-swedish
 skos:broader:
 - crna-as-closed-loop-controller
 skos:narrower: []

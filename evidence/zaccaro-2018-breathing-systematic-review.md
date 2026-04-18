@@ -11,11 +11,11 @@ dc:date: 2018
 dc:subject:
   - slow-breathing
   - autonomic-regulation
-  - HRV
+  - hrv
   - systematic-review
   - psychophysiology
   - respiratory-sinus-arrhythmia
-  - EEG
+  - eeg
   - cortical-activity
   - parasympathetic-activation
   - anxiety-reduction

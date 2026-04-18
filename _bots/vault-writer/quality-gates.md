@@ -1,5 +1,47 @@
 # Vault Writer Bot — Quality Gates
 
+<!-- v1.1 — 2026-04-18 governance update: URN-only IDs, extraction_depth, prov semantics, duplicate-detection rigor, subjects.yaml vocabulary gate -->
+
+## Governance Rules (load-bearing — never violate)
+
+### ID Scheme (effective 2026-04-18)
+- **Evidence IDs MUST use `urn:srl:evidence:{author-year-slug}`**
+- **Concept IDs MUST use `urn:srl:concept:{slug}`**
+- **Observation IDs MUST use `urn:srl:observation:{slug}`**
+- **Instrument IDs MUST use `urn:srl:instrument:{slug}`**
+- `EVD-YYYYMMDD-NNN` and any other date-sequence IDs are **deprecated**. If seen in the wild, flag for migration. Never emit a new one.
+
+### Duplicate Detection (mandatory before any CREATE)
+Run **at least four** vault searches before creating any new note:
+1. `search_vault` with the proposed title
+2. `search_vault` with the proposed slug
+3. `search_vault` with 2–3 key terms from the content
+4. `search_vault` with alternate phrasings (e.g. "non-technical" + "nontechnical", "CRNA" + "nurse anesthetist")
+
+Narrow search coverage is the primary cause of duplicate records. If any search returns a candidate match, convert to enrichment.
+
+### Subjects Vocabulary Gate
+- `dc:subject` values MUST resolve to entries in `_schema/subjects.yaml` once that file exists.
+- Until `subjects.yaml` ships, continue using existing tag conventions but prefer existing tags over coining new ones. Check `_index/by-subject.md` for live usage.
+
+### Extraction Depth (effective 2026-05-01 for new notes)
+- Every evidence note MUST carry `extraction_depth: abstract | partial | full`.
+- `abstract` = title + abstract only.
+- `partial` = abstract + key figures/tables/findings but not full methods or discussion.
+- `full` = complete paper read.
+- Backfill existing notes with `partial` (conservative default) during the next sweep.
+
+### Provenance Link Semantics
+- `prov:wasDerivedFrom` — the source directly supports the concept's claim. Use for primary citations.
+- `prov:wasInformedBy` — the source informs or positions the concept interpretively but does not make the claim. Use for framing/context links.
+- Do not use `wasDerivedFrom` for interpretive links. Overclaiming provenance damages evidence-chain integrity.
+
+### Dublin Core Field Expectations (evidence)
+- Required: `dc:creator`, `dc:date`, `dc:subject`, `dc:identifier`, `dc:type`, `extraction_depth`
+- Strongly encouraged: `dc:isPartOf` (journal/book title), `dc:language`, `dc:rights`
+- `dc:publisher` = publisher organization (e.g. "BioMed Central"), NOT the journal name. Journal goes in `dc:isPartOf`.
+- `dc:relation` = URNs of parent instruments, prior versions, related works. Use when the paper validates an instrument, extends prior work, or is part of a series.
+
 ## Decision: Create vs. Update vs. Skip vs. Flag
 
 ```

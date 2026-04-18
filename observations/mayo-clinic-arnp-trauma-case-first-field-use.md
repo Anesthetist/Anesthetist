@@ -9,7 +9,7 @@ dc:subject:
 - clinical-field-use
 - trauma
 - night-shift
-- Mayo-Clinic
+- mayo-clinic
 - ARNP
 - pre-procedure
 - post-procedure

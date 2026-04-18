@@ -11,12 +11,14 @@ dc:subject:
 - clinician-as-sensor
 - autonomic-regulation
 id: urn:srl:concept:crna-as-closed-loop-controller
-modified: '2026-04-11'
+modified: '2026-04-18'
 prov:wasDerivedFrom:
 - urn:srl:evidence:craig-2009-interoception-awareness
 - urn:srl:evidence:balban-huberman-2023-cyclic-sighing
 - urn:srl:evidence:feldman-2017-prebotc-locus-coeruleus-arousal
 - urn:srl:evidence:hrv-vagal-tone-longitudinal-burnout-predictor
+prov:wasInformedBy:
+- urn:srl:evidence:jarl-2025-nants-swedish
 skos:broader:
 - interoception
 - clinician-durability

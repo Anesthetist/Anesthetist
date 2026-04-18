@@ -8,7 +8,7 @@ dc:subject:
 - competitor-analysis
 - neuromarketing
 - oxytocin
-- HRV
+- hrv
 - wearable-sensors
 - engagement-measurement
 id: urn:srl:observation:immersion-neuroscience-competitor-analysis

@@ -7,7 +7,7 @@ creator: "Randy Graybeal"
 created: 2026-03-14
 modified: 2026-03-14
 dc:subject:
-  - Iyengar
+  - iyengar
   - pranayama
   - thoracic-cage
   - respiratory-physiology

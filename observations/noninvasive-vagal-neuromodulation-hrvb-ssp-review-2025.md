@@ -3,7 +3,7 @@ created: '2026-03-30'
 creator: weekly-hpo-scan
 dc:subject:
 - vagal-tone
-- HRV
+- hrv
 - biofeedback
 - autonomic-regulation
 - respiratory-sinus-arrhythmia

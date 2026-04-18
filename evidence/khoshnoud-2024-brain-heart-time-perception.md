@@ -12,7 +12,7 @@ dc:subject:
 - brain-heart-interaction
 - interoception
 - insular-cortex
-- HRV
+- hrv
 dc:type: journal-article
 id: urn:srl:evidence:khoshnoud-2024-brain-heart-time-perception
 modified: '2026-04-10'

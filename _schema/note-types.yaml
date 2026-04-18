@@ -14,13 +14,14 @@ types:
       - created
       - modified
       - version
-      - dc:subject    # list of subject tags
+      - dc:subject    # list of subject tags (must resolve in _schema/subjects.yaml once that file exists)
       - dc:source     # list of source URNs
       - skos:broader  # parent concepts
       - skos:narrower # child concepts
       - skos:related  # sibling/lateral links
-      - prov:wasDerivedFrom  # evidence + observation URNs
+      - prov:wasDerivedFrom  # evidence + observation URNs that directly ground a concept's claims
     optional_fields:
+      - prov:wasInformedBy   # evidence URNs that inform/position but do not directly ground the concept (interpretive links)
       - prov:reviewedBy
       - prov:reviewDate
       - aliases       # alternate names / synonyms
@@ -29,6 +30,7 @@ types:
   evidence:
     description: "Dublin Core source note — study, book, paper, foundational text"
     layer: 0
+    id_rule: "MUST match urn:srl:evidence:{author-year-slug}. EVD-YYYYMMDD-NNN and other legacy schemes are deprecated as of 2026-04-18."
     required_fields:
       - id            # urn:srl:evidence:{author-year-slug}
       - type          # "evidence"
@@ -39,12 +41,18 @@ types:
       - modified
       - dc:creator    # original work's author(s)
       - dc:date       # publication year
-      - dc:subject
+      - dc:subject    # must resolve in _schema/subjects.yaml once that file exists
       - dc:identifier # DOI, PubMed ID, ISBN, URL
       - dc:type       # journal-article | book | book-chapter | review | clinical-trial | thesis | report
+      - extraction_depth  # abstract | partial | full (required for new notes from 2026-05-01)
     optional_fields:
-      - dc:publisher
-      - dc:description  # abstract or summary
+      - dc:publisher       # publisher organization (not journal name)
+      - dc:isPartOf        # parent work: journal title, book series, conference proceedings
+      - dc:language        # ISO 639-1 or -2 code for the source's primary language
+      - dc:rights          # license: "CC BY 4.0", "All rights reserved", etc.
+      - dc:relation        # lineage: URNs of parent instruments, prior versions, related works
+      - dc:spatial         # geographic scope of the study
+      - dc:description     # abstract or summary
       - clinical_interpretation  # Randy's clinical read of this evidence
 
   observation:
@@ -101,6 +109,32 @@ types:
     optional_fields:
       - version
       - dc:format     # pdf | md | pptx | mp3
+
+  instrument:
+    description: "Measurement instrument, assessment tool, scale, or validated questionnaire (e.g. NANTS, ANTS, MAIA-2, BOLT, PHQ-9). Distinct from the evidence notes that validate or use them."
+    layer: 0
+    id_rule: "urn:srl:instrument:{slug}"
+    required_fields:
+      - id            # urn:srl:instrument:{slug}
+      - type          # "instrument"
+      - title         # e.g. "Nurse Anesthetists' Non-Technical Skills (NANTS)"
+      - status
+      - creator
+      - created
+      - modified
+      - dc:subject
+      - instrument_type  # scale | checklist | questionnaire | observation-tool | battery
+      - domains          # list of categories/subscales the instrument measures
+    optional_fields:
+      - dc:creator       # original instrument developers
+      - dc:date          # year of original publication
+      - dc:identifier    # DOI / URL for the foundational paper
+      - dc:relation      # URNs of parent instruments this derives from, and child adaptations
+      - dc:language      # language(s) the instrument has been validated in
+      - dc:rights        # license / permissions status
+      - psychometrics    # summary of reliability / validity / ICC / Cronbach α where known
+      - prov:wasDerivedFrom  # evidence URN(s) documenting this instrument
+      - aliases          # alternate names
 
   chat-import:
     description: "Imported AI conversation — raw or lightly processed"

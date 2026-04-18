@@ -9,7 +9,7 @@ modified: 2026-03-14
 dc:creator: ["Vera C. Goessl", "Jill E. Curtiss", "Stefan G. Hofmann"]
 dc:date: 2017
 dc:subject:
-  - HRV-biofeedback
+  - hrv-biofeedback
   - stress
   - anxiety
   - meta-analysis

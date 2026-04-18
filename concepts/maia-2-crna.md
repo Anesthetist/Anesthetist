@@ -8,7 +8,7 @@ dc:subject:
 - MAIA-2
 - interoception
 - assessment
-- CRNA
+- crna
 - psychometrics
 - clinical-instrument
 id: urn:srl:concept:maia-2-crna

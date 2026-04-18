@@ -5,7 +5,7 @@ dc:subject:
 - state-drift
 - cognitive-fatigue
 - autonomic-regulation
-- EEG
+- eeg
 - performance
 - motorsport
 - clinical-practice

@@ -7,11 +7,11 @@ dc:subject:
 - Apple-Neural-Engine
 - wearables
 - multiplatform
-- HRV-biofeedback
+- hrv-biofeedback
 - product-roadmap
-- Open-Wearables
+- open-wearables
 - Momentum
-- FHIR
+- fhir
 - EHR-integration
 - Garmin
 - WHOOP

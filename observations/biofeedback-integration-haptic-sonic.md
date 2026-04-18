@@ -10,7 +10,7 @@ dc:subject:
   - biofeedback
   - haptic-cueing
   - heart-rate-soundscape
-  - Apple-Watch
+  - apple-watch
   - HealthKit
 observation_type: craft-knowledge
 clinical_context: "BLIP Archive IP — Biofeedback Integration Plan specifying haptic and sonic feedback layers"

@@ -8,7 +8,7 @@ dc:identifier:
 - PMID:41329173
 dc:publisher: AANA Journal
 dc:subject:
-- CRNA
+- crna
 - decision-making
 - stress
 - fatigue

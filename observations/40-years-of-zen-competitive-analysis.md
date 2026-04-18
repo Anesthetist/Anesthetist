@@ -5,7 +5,7 @@ creator: randy
 dc:subject:
 - competitive-intelligence
 - neurofeedback
-- EEG
+- eeg
 - biohacking
 - alpha-training
 id: urn:srl:observation:40-years-of-zen-competitive-analysis

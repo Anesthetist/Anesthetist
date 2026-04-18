@@ -6,7 +6,7 @@ dc:source:
 - pubmed:11163422
 dc:subject:
 - neurovisceral-integration
-- HRV
+- hrv
 - emotion-regulation
 - autonomic-regulation
 - vagal-tone

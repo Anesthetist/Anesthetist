@@ -7,7 +7,7 @@ dc:date: '2019'
 dc:identifier: 'DOI: 10.1007/s10484-018-9422-4 | PMID: 30506478 | PMC: PMC6505487'
 dc:publisher: Applied Psychophysiology and Biofeedback
 dc:subject:
-- HRV
+- hrv
 - 1-minute-protocol
 - paced-breathing
 - occupational-health

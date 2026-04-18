@@ -13,7 +13,7 @@ dc:subject:
   - worry
   - rumination
   - prolonged-stress
-  - HRV
+  - hrv
 dc:identifier: "doi:10.1016/j.jpsychores.2005.06.074"
 dc:type: "review"
 dc:publisher: "Journal of Psychosomatic Research"

@@ -9,7 +9,7 @@ dc:identifier:
 dc:publisher: Scientific Reports
 dc:subject:
 - flow-state
-- EEG
+- eeg
 - surgical-performance
 - theta-activity
 - neurofeedback

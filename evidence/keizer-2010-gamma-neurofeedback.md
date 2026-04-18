@@ -12,7 +12,7 @@ dc:subject:
   - gamma-neurofeedback
   - cognitive-binding
   - intelligence
-  - EEG
+  - eeg
   - attention
 dc:identifier: "pmid:19895855"
 dc:type: "journal-article"

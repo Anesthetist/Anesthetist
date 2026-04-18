@@ -3,7 +3,7 @@ created: '2026-04-04'
 creator: srl-researcher-agent
 dc:source: Frontiers in Psychiatry
 dc:subject:
-- HRV-biofeedback
+- hrv-biofeedback
 - clinician-burnout
 - autonomic-regulation
 - healthcare-workers

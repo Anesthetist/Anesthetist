@@ -12,7 +12,7 @@ dc:description: 'Embedding stochastic noise in slow-tempo music amplified HRV co
 dc:identifier: doi:10.1016/j.physbeh.2025.115181
 dc:publisher: Physiology & Behavior
 dc:subject:
-- HRV
+- hrv
 - coherence
 - stochastic-resonance
 - music

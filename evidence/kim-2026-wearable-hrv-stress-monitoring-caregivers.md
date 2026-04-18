@@ -9,7 +9,7 @@ dc:identifier:
 dc:publisher: Computers, Informatics, Nursing
 dc:subject:
 - wearable
-- HRV
+- hrv
 - caregiver-stress
 - feasibility
 - Oura-ring

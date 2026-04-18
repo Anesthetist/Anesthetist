@@ -12,7 +12,7 @@ dc:subject:
 - theory
 - neuroception
 - social-engagement
-- polyvagal
+- polyvagal-theory
 id: urn:srl:concept:polyvagal-theory
 modified: 2026-03-14
 prov:wasDerivedFrom:

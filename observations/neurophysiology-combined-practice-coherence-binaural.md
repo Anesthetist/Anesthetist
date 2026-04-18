@@ -7,7 +7,7 @@ dc:subject:
 - neurophysiology
 - coherence-breathing
 - binaural-beats
-- HRV-biofeedback
+- hrv-biofeedback
 - multi-system-integration
 - phenomenology
 id: urn:srl:observation:neurophysiology-combined-practice-coherence-binaural

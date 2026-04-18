@@ -10,7 +10,7 @@ dc:creator: ["Paul Lehrer", "Evgeny Vaschillo", "Bronya Vaschillo"]
 dc:date: 2000
 dc:subject:
   - resonant-frequency-breathing
-  - HRV-biofeedback
+  - hrv-biofeedback
   - autonomic-regulation
   - cardiac-variability
   - baroreflex

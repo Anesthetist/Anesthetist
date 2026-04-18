@@ -5,7 +5,7 @@ dc:bibliographicCitation: 'Arce-Álvarez A, et al. Chemoreflex Control as the Co
   in Immersion Water Sports: Possible Role on Breath-Hold. Front Physiol. 2022;13:894921.'
 dc:source: https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2022.894921/full
 dc:subject:
-- CO2-tolerance
+- co2-tolerance
 - chemoreflex
 - freediving
 - breath-hold
