@@ -9,6 +9,8 @@ dc:subject:
 - CRNA-market
 id: urn:srl:concept:pausality-b2b-motion
 modified: '2026-03-22'
+skos:broader:
+- pausality
 skos:related:
 - market-intelligence
 - somnistics-certified-professional
