@@ -18,3 +18,9 @@ openevidence-mcp/
 *.docx
 *.pptx
 .gstack/
+
+# Quality-gate sweep artifacts (regenerated daily by LaunchAgent)
+outputs/quality-sweep-report.md
+outputs/quality-sweep-stdout.log
+outputs/quality-sweep-stderr.log
+outputs/citation-health-report.md
