@@ -8,7 +8,7 @@ dc:subject:
 - commercialization
 - agentic-systems
 id: urn:srl:concept:somnistics-agentic-lab
-modified: '2026-03-22'
+modified: '2026-04-18'
 prov:wasDerivedFrom:
 - urn:srl:evidence:ismail-diamandis-exponential-organizations
 skos:related:
@@ -69,6 +69,26 @@ Randy's legitimate concern about personal exposure shapes the architecture:
 - **Agent-as-Brand**: outputs are "Somnistics Research Labs clinical decision support" — not "Randy's advice"
 - **Aggregate Insights**: "AQRC data shows..." not "In my practice, I..."
 - **Peer Review Layer**: agents flag any first-person clinical recommendations for veto
+
+## The Explicit/Tacit Boundary
+
+The lab's defensibility rests on a single architectural rule: AI operates on explicit knowledge only. Tacit judgment is not automated, it is gated.
+
+The vault encodes this rule structurally. Three layers, one enforcement point:
+
+- **Evidence layer** — explicit (papers, protocols, numbers, DOIs). Bots read, extract, file, verify, and summarize here without restriction.
+- **Observation layer** — tacit (pattern recognition, somatic markers, clinical exemplars, craft knowledge). Bots may read; they do not generate.
+- **Concept layer** — the meeting point. Every concept carries a `clinical_interpretation` field that bots must leave as "Pending review." That field is where tacit judgment lands. Only Randy writes it.
+
+Polanyi's distinction (see [[tacit-knowledge-extraction]]) applied as infrastructure. Explicit knowledge compresses and gets commodified by AI. Tacit knowledge does not. When the AI is confined to the compressible layer, the tacit layer becomes a moat. It is not hidden, it is unrecoverable. The specific pattern-recognition a CRNA builds across decades of real surgical cases does not exist in the literature and cannot be reconstructed from it.
+
+## Provenance Discipline
+
+The boundary holds only if provenance holds. Every evidence note carries an `extraction_depth` field (`abstract | partial | full`) signaling what was actually read. `full` requires intro, lit review, methods, results, discussion, and bibliography. The narrative scaffolding counts as much as the findings. Intros and lit reviews are load-bearing: they carry the cross-domain graph edges, and reveal definitional drift.
+
+Derived concept claims inherit the depth of their evidence. Claims resting on abstract-only sources are marked inline (`[abstract-only]`) so no shallow source masquerades as a deep one. `canonical` status requires full-depth citations for load-bearing claims.
+
+This is the mechanism that keeps the bots on the explicit side of the line. They can only strengthen the vault by reading more deeply, never by synthesizing past verification.
 
 ## Why This Matters for SRL
 
