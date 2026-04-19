@@ -8,7 +8,7 @@ prov:wasDerivedFrom:
 - urn:srl:observation:clinical-measurement-instruments-compendium
 - urn:srl:evidence:wana-conference-talk-march-2026
 - urn:srl:evidence:goessl-2017-hrv-biofeedback-stress-anxiety
-- urn:srl:evidence:springer-2025-remote-hrvb-mental-health-meta-analysis
+- urn:srl:evidence:remote-hrvb-mental-health-meta-analysis-2025
 status: draft
 subject:
 - IRB
@@ -24,7 +24,7 @@ title: IRB Pilot Protocol Outline — CRNA HRV Biofeedback + Interoceptive Aware
 type: output
 ---
 
-# IRB Pilot Protocol Outline — CRNA HRV Biofeedback + Interoceptive Awareness Training
+# IRB Pilot Protocol Outline: CRNA HRV Biofeedback + Interoceptive Awareness Training
 
 ## Summary
 
@@ -34,7 +34,7 @@ Working draft IRB protocol for a pilot RCT (N=40, 6-week intervention, waitlist 
 
 - **6-week intervention** based on comparable RCTs (2026 ED/ICU HRVB trial used 4 weeks, d=0.79)
 - **Three-component intervention**: daily HRV biofeedback, transition-window micro-practices, weekly interoceptive awareness modules
-- **All free instruments** — no licensing costs for the measurement battery
+- **All free instruments**: no licensing costs for the measurement battery
 - **MAIA-2 subscales only** (Noticing + Self-Regulation) to keep battery brief while capturing interoceptive change
 - **Dual primary focus**: feasibility metrics AND preliminary effect sizes
 - **Physiological data from consumer wearables** under FDA Jan 2026 General Wellness Policy
