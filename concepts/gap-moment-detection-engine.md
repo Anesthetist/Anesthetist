@@ -1,4 +1,9 @@
 ---
+clinical_interpretation: 'Reframe pending (2026-04-18): Randy wants detection built
+  on activity-to-activity transitions (walking to OR, case-end to case-start, meeting
+  to meeting), not purely physiological threshold crossings. Physiology should confirm
+  a transition the activity context has already indicated. Thresholds are deferred
+  until the conceptual reframe lands.'
 created: '2026-03-15'
 creator: Randy Graybeal
 dc:source:
@@ -10,7 +15,7 @@ dc:subject:
 - context-awareness
 - biometrics
 id: urn:srl:concept:gap-moment-detection-engine
-modified: '2026-03-15'
+modified: '2026-04-18'
 prov:wasDerivedFrom:
 - urn:srl:chat:chatgpt-multi-phase-interoceptiv-analysis
 - urn:srl:evidence:flow-state-2025-wearable-physiological-assessment
