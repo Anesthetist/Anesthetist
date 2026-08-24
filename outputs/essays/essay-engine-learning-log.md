@@ -411,3 +411,68 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #11: Interoceptive Literacy
 - Pre-load: Read interoceptive-literacy concept note, anterocept, diaphragmatic-blindness, maia-2-crna
 - PubMed angle: interoceptive accuracy clinical decision-making, MAIA interoceptive awareness scales, interoceptive training healthcare workers, body awareness professional performance
+
+---
+
+## Entry 11 — interoceptive-literacy-2026-08-24.md
+
+**Date:** 2026-08-24
+**Topic:** Interoceptive Literacy (queue #11)
+**Word count:** ~1620
+**PubMed citations verified:** 5/5
+**Gertrude violations found:** 0
+
+### What went well
+- The Garfinkel et al. (2015) three-dimension paper (PMID 25451381) is the essay's load-bearing theoretical contribution. Accuracy, sensibility, and metacognitive awareness are dissociable — this finding does not exist in any current vault concept note and is the essay's primary new contribution to the knowledge graph.
+- The 28/30 diaphragmatic blindness observation (from diaphragmatic-blindness-30-clinician-test observation note) provides the perfect clinical opening. It grounds an abstract concept in a concrete, startling measurement from Randy's own practice. Always read observation notes — the clinical texture lives there.
+- Milleville et al. (2025) AANA Journal study (PMID 41329173) is the only PubMed-verified study directly on CRNA decision-making in the vault's evidence base. Its finding that psychological and emotional states affect cognitive performance completes the bridge from interoceptive literacy to clinical outcome.
+- Mehling et al. (2018) MAIA-2 (PMID 30513087) supersedes the 2012 original as the current instrument — confirmed via PubMed search for "Mehling multidimensional assessment interoceptive awareness 2018."
+- Price et al. (2025) 12-month MABT RCT (PMID 40784065) provides the strongest longitudinal evidence that interoceptive awareness is trainable in clinical populations. N=303, significant improvements in interoceptive awareness, emotion regulation, and PTSD symptoms.
+- The four-layer framework (Detect → Interpret → Respond → Trust calibration) maps cleanly onto MAIA-2 subscales AND onto Garfinkel's three dimensions, creating a clinical-to-theoretical bridge that is novel in the vault.
+
+### What could improve
+- Could not locate Ferentzi 2022 heartbeat counting paper via PubMed (search returned zero results). The vault evidence note exists but the PMID could not be verified this session — did not cite it.
+- The essay does not include a study directly measuring interoceptive accuracy under cognitive load in a healthcare setting. This is a genuine literature gap (confirmed by the measurement-taxonomy observation note). The essay is honest about it but the gap is the obvious next study for SRL.
+- Garfinkel et al. (2015) has an epub date of November 2014 per PubMed metadata, and the print publication year is 2015 (Biological Psychology, Vol. 104). Cited as 2015 per print volume convention — this is standard practice but worth flagging.
+- Did not include the Campo 2026 mindfulness-athletes-hrv-interoception paper (referenced in concept note) — could not find and verify PMID in this session. Did not cite what couldn't be verified.
+
+### PubMed searches that worked
+- "MAIA interoceptive awareness multidimensional validation" → PMID 23133619 (Mehling 2012), 38287385 (Dutch validation 2024)
+- "Garfinkel interoceptive accuracy sensibility awareness dimensions" → PMID 25451381 (the canonical three-dimension paper)
+- "Milleville nurse anesthetist decision making clinical performance" → PMID 41329173 (CRNA qualitative study)
+- "Mehling multidimensional assessment interoceptive awareness MAIA 2018" → PMID 30513087 (MAIA-2)
+- "Kerr mindfulness body somatosensory alpha rhythms attention" → PMID 23408771
+- "interoceptive awareness training mindfulness body awareness clinical" → PMID 40784065 (Price 2025 MABT RCT)
+
+### PubMed searches that failed
+- "Ferentzi heartbeat counting interoception reliability" → zero results (name not indexed in PubMed, or indexed differently)
+- "interoceptive accuracy cognitive load stress performance healthcare" → zero results (too many AND terms)
+- "Craig interoception awareness feelings body internal state" → zero results (too many AND terms)
+- "interoception body awareness professional expert performance" → zero results (too many AND terms)
+- "interoception emotional regulation occupational stress resilience" → zero results (too many AND terms)
+
+### Vault gaps discovered
+- Garfinkel et al. (2015) three-dimension paper — not yet in vault evidence base as standalone note; this is the foundational citation for any interoceptive literacy work
+- Mehling et al. (2018) MAIA-2 — the vault concept note references MAIA-2 but the evidence note for the 2018 paper may not exist separately from the 2012 original
+- Milleville et al. (2025) AANA Journal — not in vault evidence base; new citation, should be added
+- Price et al. (2025) MABT 12-month RCT — not in vault evidence base; new citation
+- No vault evidence note for interoceptive accuracy under cognitive load in healthcare professionals — confirmed literature gap, future SRL study opportunity
+
+### Citation verification issues
+- None. All 5 PMIDs returned full metadata. All author names, years, journals, and DOIs confirmed.
+- Garfinkel 2015: epub Nov 2014, print vol. 104 (2015); cited as 2015 per print convention.
+
+### Style corrections applied
+- Confirmed no prescriptive language ("you should," "you must") throughout
+- All mechanism claims attributed to named researchers by last name and co-authors listed
+- Closing image revised: "the literature suggests this moment is not recovery but calibration" — descriptive of what the evidence indicates, not prescriptive to the reader
+- Gertrude check: no device claims, no "treats/prevents/cures," no "clinically proven," directional language ("the literature suggests," "published research demonstrates," "associated with") used throughout
+- Confounds section in Failure Mode names six variables that co-change under procedural load — isolates the interoceptive accuracy reduction as the study target while acknowledging what else changes
+
+### Quality gate that was hardest
+- Gate 5 (deepens the vault). The challenge was identifying what was genuinely new. The four-step sequence (Detect → Interpret → Respond → Trust) was already in the concept note. The new contribution required: (1) importing the Garfinkel et al. dissociability framework explicitly, (2) showing how it explains why existing clinical intuition is unreliable without training, and (3) generating a specific falsification criterion (if MAIA-2 and heartbeat task don't dissociate, the three-layer framework requires revision) that doesn't appear anywhere in the current vault.
+
+### For next essay
+- Topic #12: Self-Remembering
+- Pre-load: Read self-remembering concept note, embodied-metacognition, relevance-realization, kosha-architecture
+- PubMed angle: self-referential processing dual awareness, Gurdjieff fourth way practices neuroscience, metacognitive monitoring clinical performance, divided attention self-awareness task performance
