@@ -593,3 +593,73 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #14: Minimum Effective Dose
 - Pre-load: Read minimum-effective-dose concept note, titration-to-effect, neurominute, resonant-breathing-frequency
 - PubMed angle: dose-response curves HRV, minimum effective dose pharmacology analogies, micro-intervention frequency dose, optimal dosing brief interventions
+
+---
+
+## Entry 14 — minimum-effective-dose-2026-08-24.md
+
+**Date:** 2026-08-24
+**Topic:** Minimum Effective Dose (queue #14)
+**Word count:** ~1340
+**PubMed citations verified:** 6/6
+**Gertrude violations found:** 0
+
+### What went well
+- PubMed MCP fully connected — all citations verified via mcp__PubMed__get_article_metadata before writing.
+- Chen (2026) [PMID 41583131] Internet Interventions RCT is the essay's most precise MED evidence: single daily prompts were explicitly labeled the "minimal effective dose for engagement" in the abstract. The paper found single prompts sufficient for initial skill acquisition, higher frequency for long-term maintenance — a tiered dose architecture that maps directly to the titration principle.
+- Prinsloo et al. (2013) [PMID 23435801] — confirmed as 2013, not 2011 as listed in the vault note. The vault has a metadata error on the publication year. The PMID returned a 2013 publication in Applied Psychophysiology and Biofeedback.
+- Spruit et al. (2016) [PMID 27988169] on spaced surgical skills training was a genuine cross-domain find — the spaced-vs-massed effect sizes (0.20–0.37) are specific enough to cite with confidence and create the frequency-beats-duration argument without needing breathing-specific evidence for that claim.
+- Im et al. (2026) [PMID 41697528] provides the five-minute acute physiology evidence, mapping the SDNN/TP/LF increase during slow-paced breathing as baroreflex-vagal coupling reorganization, not simple vagal amplification. This nuance matters for the mechanism section.
+- Balban et al. (2023) [PMID 36630953] confirmed: Stanford RCT, five-minute daily breathing, cyclic sighing outperforms mindfulness meditation. Exact duration match for the MED argument.
+- Lehrer et al. (2000) [PMID 10999236] confirmed from vault: foundational resonance frequency paper, Applied Psychophysiology and Biofeedback, DOI 10.1023/a:1009554825745.
+- Three failure modes are specific: incomplete presence invalidates the dose (attention split), clustering defeats the spacing advantage, and "minimum" as ceiling rather than floor produces stagnation.
+
+### What could improve
+- Many broad PubMed queries returned zero results: "minimum effective dose breathing intervention autonomic nervous system HRV," "brief mindfulness intervention dose-response frequency duration neuroplasticity," "microintervention micro-dose breathing stress reduction clinical workers," "pharmacological dose response titration anesthesia behavioral intervention analogy." The MED phrase is not PubMed vocabulary — the concept is indexed under more specific terms. Strategy: search for specific components (slow breathing + acute effect, spaced training + retention, prompt frequency + outcomes) rather than the integrating concept.
+- The myelination/frequency argument is in the concept note and in the titration observation note, but no PubMed-verified citation supports it directly. Searched for "myelination learning frequency practice repetition spaced training neuroplasticity" — zero results. This claim is described in the essay as "the neuroplasticity literature suggests" (directional, not attributed to a named researcher with PMID) — honest, but a dedicated future search for Bengtsson myelin training frequency or Fields myelin activity may yield verifiable evidence.
+- The essay does not include a study on 60-second HRV outcomes specifically. The Balban and Im papers use 5-minute sessions; Prinsloo uses "short duration" (~15 min) biofeedback. The gap from 5 minutes to 60 seconds is stated honestly as an extrapolation in the essay ("below 5 minutes, the dose-response literature is sparse").
+- The learning log note from Entry 13 suggested "micro-intervention frequency dose" as a PubMed angle — this did not yield results. Future sessions should try "daily practice duration frequency randomized trial," "emotion regulation brief intervention frequency dose comparison," or specific named researchers (Shapiro, Kabat-Zinn, Lehrer) with frequency terms.
+
+### PubMed searches that worked
+- "brief breathing exercise heart rate variability acute effect single session" → PMID 42383502
+- "dose frequency mindfulness meditation practice clinical outcomes randomized trial" → PMIDs 39018321, 41583131
+- "slow breathing 5 minutes heart rate variability autonomic stress response" → PMIDs 41697528, 38432795, 34788206, 34886206
+- "HRV biofeedback acute session single session autonomic modulation" → PMID 23435801
+- "spaced practice distributed training skill acquisition motor learning superior massed" → PMID 27988169
+- "Balban cyclic sighing breathing mood Cell Reports Medicine 2023" → PMID 36630953
+- Direct PMID lookup 10999236 (Lehrer 2000) → confirmed
+
+### PubMed searches that failed
+- "minimum effective dose breathing intervention autonomic nervous system HRV" → zero results
+- "brief mindfulness intervention dose-response frequency duration neuroplasticity" → zero results
+- "microintervention micro-dose breathing stress reduction clinical workers" → zero results
+- "pharmacological dose response titration anesthesia behavioral intervention analogy" → zero results
+- "myelination learning frequency practice repetition spaced training neuroplasticity" → zero results
+- "short duration breathing exercise nurses burnout stress workplace" → zero results
+
+### Vault gaps discovered
+- Vault note for Prinsloo has publication year as 2011; PubMed metadata confirms 2013. The vault evidence note `prinsloo-2011-hrv-biofeedback-immediate` needs its date corrected.
+- Chen (2026) Internet Interventions MED paper not yet in vault evidence base.
+- Im et al. (2026) slow-paced breathing caregiver study not yet in vault evidence base.
+- Spruit et al. (2016) surgical skill spacing study not yet in vault evidence base.
+- No vault evidence note documents the dose-frequency relationship for behavioral interventions specifically. Future knowledge-miner run should sweep for spacing effect literature in clinical skills training.
+
+### Citation verification issues
+- Prinsloo vault note year discrepancy: vault says 2011, PubMed confirms 2013. Cited as 2013 in essay (correct). Flag for vault-writer correction.
+- All 6 PMIDs confirmed via mcp__PubMed__get_article_metadata with complete metadata.
+
+### Style corrections applied
+- Confirmed no prescriptive language throughout ("you should," "you must" absent).
+- "Titrate to effect" and "MED" kept as descriptive pharmacological terms, not prescriptions.
+- No "clinically proven," no "treats/prevents/cures," no "groundbreaking" or "revolutionary."
+- All mechanism claims attributed to named researchers by last name.
+- The protocol section uses numbered steps — framed as architectural description of the SRL framework, not personal directives.
+- Confounds section in Mechanism names six variables that change simultaneously in Im et al. (2026) and explains the isolation approach.
+
+### Quality gate that was hardest
+- Gate 4 (testable hypothesis with measurement criteria). The MED claim requires showing what dose-response looks like below 5 minutes, which the literature hasn't yet done at 60 seconds. The falsification design required specifying what would prove the MED wrong (no RMSSD elevation at 60 seconds, or distributed sessions showing no advantage over clustered ones) — which required committing to a specific prediction the current literature can't fully anchor.
+
+### For next essay
+- Topic #15: Interoceptive Suppression Hypothesis
+- Pre-load: Read interoceptive-suppression-hypothesis concept note, clinician-durability, state-drift, diaphragmatic-blindness
+- PubMed angle: interoceptive suppression high performers, interoceptive avoidance stress healthcare, body signal suppression expert clinicians, interoceptive shut-down chronic stress
