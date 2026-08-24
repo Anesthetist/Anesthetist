@@ -289,3 +289,64 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #09: Clinician Durability
 - Pre-load: Read clinician-durability concept note, vagal-tone, gap-moment-training, second-victim-phenomenon
 - PubMed angle: CRNA burnout HRV longitudinal, nurse anesthetist resilience autonomic, second victim syndrome support, career durability autonomic reserve
+
+---
+
+## Entry 9 — clinician-durability-2026-08-24.md
+
+**Date:** 2026-08-24
+**Topic:** Clinician Durability (queue #09)
+**Word count:** ~1820
+**PubMed citations verified:** 6/6
+**Gertrude violations found:** 0
+
+### What went well
+- Von Känel et al. (2023) Biological Psychology paper is the most mechanistically important citation: burned-out physicians show blunted sympathoadrenal response (smaller epinephrine increase under acute stress). This reframes burnout from "too much stress" to "system that can no longer mount a stress response" — the allostatic load endpoint. This is the essay's load-bearing mechanism.
+- Zafiriou et al. (2026) PLoS One study on resilience in anesthesia professionals is the conceptual key: CD-RISC resilience score doesn't predict acute physiological response in anesthesia staff. Resilience is long-term adaptation, not acute reactivity. This directly supports the "build capacity between moments" argument for GMT.
+- Barac et al. (2024) JMIR scoping review establishes the longitudinal gap clearly: 10 wearable studies included, none longer than 12 months, none with predictive burnout biomarkers. The literature gap is documented, not speculative.
+- The three-layer framework (daily recovery capacity → incident absorption → decade-scale compounding) is a novel organizational contribution that maps GMT's mechanism across different career timescales.
+- Literature-gaps-clinician-durability-2026.md observation note surfaced seven research gaps that SRL is positioned to fill — used this to frame the essay's "The Test" section and validate the longitudinal claim.
+
+### What could improve
+- PubMed complex multi-keyword queries returned 0 results repeatedly. The MCP PubMed parser is very literal with multi-term AND queries. Future sessions should use simpler 3-4 term queries and iterate, rather than trying to capture everything in one search.
+- Could not find a strong longitudinal HRV-to-burnout prospective study. Barac (2024) documents this gap exists — the essay correctly references it as a gap, not as a finding. This is the honest position.
+- The second victim citations (Scott 2009, Fisher 2025) are strong but the Scott paper is now 16 years old. A more recent second victim prevalence study would have been preferable. PMID 40528566 (Fisher 2025 integrative review of 19 studies) partially compensates.
+- The $3.9M career calculation is based on BLS median salary × 20-year career. This is a reasonable illustration but the essay should note it is illustrative, not a published figure. Confirmed this language is in the essay.
+
+### PubMed searches that worked
+- "nurse anesthetist burnout[Title/Abstract]" → 47 results, yielded PMID 40440194 (Congdon 2025 integrative review), 42228700 (Zafiriou 2026 resilience/HRV)
+- "heart rate variability burnout occupational stress nurses physicians" → 6 results, yielded PMID 38916948 (Barac 2024 wearables scoping review)
+- "allostatic load burnout autonomic nervous system healthcare workers" → 1 result, yielded PMID 37716520 (von Känel 2023 sympathoadrenal burnout)
+- "second victim phenomenon healthcare adverse event PTSD" → 2 results, yielded PMID 19812092 (Scott 2009) and PMID 40528566 (Fisher 2025)
+
+### PubMed searches that failed
+- "CRNA nurse anesthetist burnout resilience career longevity workforce" → 0 results (too many AND terms, CRNA parsed as journal)
+- "HRV heart rate variability longitudinal burnout predictor healthcare clinician" → 0 results (too complex)
+- "heart rate variability resting burnout prediction longitudinal physician nurse" → 0 results
+- "healthcare worker burnout autonomic flexibility recovery capacity physiological" → 0 results
+- "CRNA nurse anesthetist workforce shortage retention turnover" → 0 results (CRNA journal tag conflict)
+
+### Vault gaps discovered
+- `second-victim-phenomenon` concept not yet in vault as a standalone concept note (referenced in queue and essay as a related concept but no concept file found)
+- Von Känel (2023) is not currently in vault evidence base (new citation)
+- Barac et al. (2024) is not currently in vault evidence base (new citation)
+- Zafiriou et al. (2026) is not currently in vault evidence base (new citation)
+- Fisher et al. (2025) is not currently in vault evidence base (new citation)
+
+### Citation verification issues
+- None. All 6 PMIDs returned full metadata. All author names, years, journals, and DOIs confirmed.
+- Note: PubMed's jq extraction of author lists created Cartesian products in one query format — resolved with `.authors | map(...)` format.
+
+### Style corrections applied
+- Confirmed no prescriptive language ("you should") anywhere in text
+- Confirmed all mechanism claims attributed to named researchers
+- Removed one instance of "significantly" where the source used that word in a specific statistical context — kept it where directly quoting the statistical finding
+- Gertrude review: no device claims, no "clinically proven," no "treats/prevents," directional language used throughout ("the literature suggests," "published research demonstrates," "associated with")
+
+### Quality gate that was hardest
+- Gate 2 (mechanism isolable, novel claim separated from established science). The novel contribution required distinguishing: (1) cross-sectional burnout prevalence data (established) from (2) longitudinal HRV biomarker evidence (gap) from (3) the new Zafiriou 2026 finding (resilience ≠ acute physiological reactivity). Separating these three claims and being honest about what exists vs. what is still missing was the hardest editorial task.
+
+### For next essay
+- Topic #10: State Transition
+- Pre-load: Read state-transition concept note, neural-transition-failure, gap-moment-training, neurogating
+- PubMed angle: state transitions neural mechanisms, autonomic state switching performance, error physiology cognitive state, prefrontal cortex state regulation
