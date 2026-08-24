@@ -12,6 +12,21 @@ Retrospective entries after each essay generation run. The engine improves every
 
 ---
 
+## 2026-08-24 — Essay #15: Why High Performers Go Numb
+
+- **Topic:** interoceptive-suppression-hypothesis (queue #15)
+- **PubMed searches that worked:** "interoception burnout emotional exhaustion" (2 results); "interoceptive accuracy heartbeat detection anxiety stress" (5 results); "Stephan 2016 interoception computational psychiatry predictive coding" (1 result); "Mehling interoceptive awareness questionnaire MAIA validation mindfulness" (2 results); "CRNA nurse anesthesia burnout prevalence survey" (3 results); "hidden curriculum medical training emotional regulation physician wellness" (1 result)
+- **PubMed searches that failed:** Queries with 5+ Boolean compound terms consistently returned 0 results; PubMed translator over-expands multi-term searches and finds no intersection. Simpler 3-4 term queries with the most distinctive keywords outperformed. "MAIA-2 burnout healthcare workers interoceptive awareness" returned 0 because PubMed treats "MAIA" as a journal name, not an acronym — should use "Multidimensional Assessment Interoceptive Awareness" as phrase.
+- **Vault gaps discovered:** No observation notes directly address the Stephan allostatic self-efficacy framework in relation to ISH; the connection between predictive coding failure and burnout mechanism is this essay's original synthesis.
+- **Citation verification issues:** Day et al. (2022) PMID 36413190 has no DOI in PubMed record — noted in table as "No DOI in PubMed record" rather than fabricated. The PMID was confirmed.
+- **Style corrections applied:** Removed one instance of "clinically validated" → reframed as "published research demonstrates." Removed one "proven" from protocol section. Verified no prescriptive "you should" language throughout.
+- **Quality gate that was hardest:** Gate 2 (mechanism isolable; novel claim separated from established science). The suppression hypothesis is SRL-original — no PubMed paper directly tests it. The essay had to separate the verified components (interoceptive accuracy buffers stress; training improves MAIA; interoception and burnout co-move) from the SRL-original synthesis (clinical training disables this system deliberately). This required explicit confound disclosure in each evidence section.
+- **Key pattern for future essays:** When the core concept is SRL-original (no direct literature match), build the essay around the mechanism's verified *components* rather than searching for the whole hypothesis. Component papers exist even when the synthesis doesn't.
+
+---
+
+---
+
 ## Entry 1 — anterocept-2026-03-25.md
 
 **Date:** 2026-03-25
