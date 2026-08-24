@@ -537,3 +537,59 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #13: Kosha Architecture
 - Pre-load: Read kosha-architecture concept note, interoception, self-remembering, polyanchora
 - PubMed angle: progressive training models nervous system, five-layer cognition models, Vedantic framework neuroscience mapping, interoceptive layer model consciousness
+
+---
+
+## Entry 13 — kosha-architecture-2026-08-24.md
+
+**Date:** 2026-08-24
+**Topic:** Kosha Architecture (queue #13)
+**Word count:** 1487
+**PubMed citations verified:** 8/8
+**Gertrude violations found:** 0
+
+### What went well
+- Eight verified citations across all five kosha layers — the essay has a citation anchoring every layer of the mechanism section, which prevents any single layer from being an unsupported claim.
+- The Lopez Blanco & Tyler (2025) vagus nerve review is a particularly strong find: its explicit listing of vagal functions in sequence (cardio-respiratory → emotional → cognitive → team cohesion) mirrors the Pranamaya → Manomaya → Vijnanamaya → Anandamaya progression without the essay needing to manufacture the connection.
+- The Steinberg et al. (2017) ICU mindfulness study provides direct clinical population evidence (surgical ICU personnel, not general population). The finding that "recognizing their stress response" was participants' primary benefit maps cleanly to Manomaya training — the capacity to notice rather than be consumed by reactive emotion.
+- The essay successfully separated what the literature shows at each layer from the integrated SRL framework — the kosha model is presented as the structural architecture that the science keeps discovering from the bottom up, not as an import from Eastern philosophy.
+- Gertrude compliance: no device claims, no prescriptions, all mechanism language is directional ("the literature shows," "research demonstrates"), no "treats/cures/prevents."
+
+### What could improve
+- No direct PubMed evidence found for the Vijnanamaya layer specifically (clinical intuition, embodied judgment). The Lopez Blanco & Tyler review covers vagal → cognitive pathways but a more targeted paper on clinical expertise and somatic awareness would strengthen Gate 4.
+- The Annamaya kosha evidence is thin — Vinay et al. (2016) covers integrated yoga (asanas + pranayama + meditation) rather than specifically isolating the physical body layer. A pure postural/proprioception study would be stronger.
+- Searches for "pancha kosha neuroscience," "kosha model clinical," "five sheath embodied cognition" all returned zero results — the vocabulary gap between traditional and scientific literature is real. Future searches should enter via the neuroscience end (interoceptive hierarchy, embodied expertise, somatic processing layers) rather than the Vedantic terminology end.
+
+### PubMed searches that worked
+- "pranayama yoga breathing HRV heart rate variability" → 24 results, 5 strong citations
+- "yoga mindfulness burnout healthcare professionals performance resilience" → 2 results, 1 strong
+- "breath control vagal tone emotion regulation cognitive performance" → 1 result, excellent (Lopez Blanco & Tyler 2025)
+
+### PubMed searches that failed
+- "yoga philosophy pancha kosha neuroscience embodied cognition" → 0 results
+- "interoceptive hierarchy hierarchical predictive processing insular cortex clinical decision" → 0 results
+- "progressive meditation training stages physiological cognitive emotional wellbeing" → 0 results
+- "embodied expertise clinical intuition tacit knowledge performance" → 0 results
+- "meditation contemplative training hierarchical stages brain neuroplasticity" → 0 results
+
+### Vault gaps discovered
+- No evidence note in vault for Lopez Blanco & Tyler (2025) Front Psychol PMID 40718569 — vagus nerve and performance optimization review; should be added
+- No evidence note for Cohen et al. (2023) BMJ Open PMID 37385740 — workplace burnout interventions systematic review; directly relevant to Anandamaya layer and clinician-durability
+- No evidence note for Kuppusamy et al. (2020) Integr Med Res PMID 32025489 — 6-month pranayama RCT; directly supports resonant-breathing-frequency and Pranamaya kosha claims
+- The gap between Vijnanamaya (clinical intuition/judgment) and the neuroscience literature remains. Future vault additions should target Dreyfus model of expertise (physical → intuitive progression), Klein's Recognition-Primed Decision model, and Klein & Kahneman literature on expert intuition.
+
+### Citation verification issues
+- None. All 8 PMIDs verified via mcp__PubMed__get_article_metadata before inclusion. All author names, years, journals, and DOIs confirmed.
+
+### Style corrections applied
+- No prescriptive language throughout — "the literature shows," "research demonstrates," "the data suggests"
+- All mechanism claims attributed to named researchers
+- Failure mode section specifies exact misapplication (entering at wrong layer, layer-skipping) rather than vague "this can fail"
+
+### Quality gate that was hardest
+- Gate 5 (Does it deepen the vault? New connection?). The essay's novel contribution is naming the correlation structure prediction in "The Test" — that improvements at each kosha layer should correlate with baseline stability in the layer beneath it. This is a testable, specific prediction that the vault didn't contain before. The kosha model predicts not just that training works, but that it works in a specific order with measurable inter-layer dependencies.
+
+### For next essay
+- Topic #14: Minimum Effective Dose
+- Pre-load: Read minimum-effective-dose concept note, titration-to-effect, neurominute, resonant-breathing-frequency
+- PubMed angle: dose-response curves HRV, minimum effective dose pharmacology analogies, micro-intervention frequency dose, optimal dosing brief interventions
