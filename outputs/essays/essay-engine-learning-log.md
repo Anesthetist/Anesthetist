@@ -233,3 +233,59 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #08: Resonant Breathing Frequency
 - Pre-load: Read resonant-breathing-frequency concept note, vagal-tone, minimum-effective-dose, cardiac-anchored-breathing
 - PubMed angle: Lehrer resonance frequency individual variation, baroreflex resonance mechanism, personalized breathing rate biofeedback, resonant frequency assessment protocol
+
+---
+
+## Entry 8 — resonant-breathing-frequency-2026-08-24.md
+
+**Date:** 2026-08-24
+**Topic:** Resonant Breathing Frequency (queue #08)
+**Word count:** ~1682
+**PubMed citations verified:** 6/6
+**Gertrude violations found:** 0
+
+### What went well
+- PubMed MCP was fully connected this session — citation verification was fast and complete. All 6 PMIDs confirmed via metadata lookup.
+- Sumińska et al. (2026) is a crucial nuance paper: a 4-week RCT showing no significant difference between individualized RF and fixed 0.1 Hz for symptom outcomes. Including this honestly — rather than ignoring it — is the essay's most important scientific integrity decision. The mechanistic case for personalization stands; the short-horizon outcome case does not yet.
+- Sakakibara et al. (2020) on LF-peak spectral identification of RF is a methodological advance not yet in the vault's existing evidence base. It suggests more precise calibration produces greater BRS gains — the precision argument strengthened.
+- Meehan & Shaffer (2024) settled the IE ratio question cleanly: within the RF range, ratio doesn't matter. This redirects attention to what does matter (rate), and the two-study replication design makes it credible.
+- The three failure modes are operationally specific: (1) using reference as prescription, (2) over-engineering ratio while under-engineering rate, (3) assuming rest-trained RF transfers automatically to procedural load. The third is the most clinically important for CRNAs.
+
+### What could improve
+- The Sumińska 2026 DOI (10.1038/s41598-026-53333-6) has an unusual format for Scientific Reports — the year embedded in the DOI (026) is unconventional. The paper came through PubMed with PMID 42156977 and all metadata checked internally consistent. No reason to drop it, but flagged for future verification if questions arise.
+- The calibration protocol in "The Protocol" section requires a wearable with real-time LF amplitude display — this is not universally accessible. A future essay or tool design note should address the low-tech equivalent (counting beats per breath across multiple paced rates, tracking subjective relaxation depth as proxy).
+- Could have included Lehrer & Gevirtz (2014) review — cited by Meehan & Shaffer as the authoritative source on the 4.5–6.5 BPM range — but the paper was not directly findable via PubMed in this session. Did not include what couldn't be verified.
+- The "The Test" section's Bayesian framing of Sumińska 2026 ("anecdotal evidence favoring the null hypothesis") is correctly sourced from the abstract but could use more explanation for a clinical audience unfamiliar with Bayesian terminology.
+
+### PubMed searches that worked
+- "paced breathing heart rate variability individual resonant frequency determination" → PMID 42156977, 38507210, 31781925
+- "Zaccaro breathing autonomic central nervous system systematic review 2018" → PMID 30245619
+- "slow breathing vagal tone parasympathetic activation healthcare workers resilience" → PMID 40792649
+- Direct PMID lookup for Lehrer 2000 (10999236) → confirmed
+
+### PubMed searches that failed
+- "resonance frequency breathing heart rate variability biofeedback individual variation" → returned only PMID 19163284 (conference paper, 2008, not suitable)
+- "Lehrer Gevirtz HRV biofeedback mechanism resonance frequency" → zero results
+- "HRV biofeedback resonant frequency clinical performance stress reduction" → returned PMID 33148502 (RSA biofeedback in depression, adjacent but not directly useful)
+
+### Vault gaps discovered
+- Sumińska et al. (2026) is not yet an evidence note in the vault — this is new literature that should be added via vault-writer
+- Sakakibara et al. (2020) may not be in vault — the concept note's evidence base references "lehrer-2000-resonance-frequency" and "zaccaro-2018-breathing-systematic-review" but not this paper
+- Meehan & Shaffer (2024) IE ratio paper is not referenced in the concept note and should be added
+
+### Citation verification issues
+- None. All 6 PMIDs returned full metadata. All author names, years, and journals confirmed.
+
+### Style corrections applied
+- Removed "significantly" when referencing outcomes not from verified significance tests
+- Confirmed all researcher name attributions ("Lehrer discovered..." format throughout)
+- Removed one passive construction ("has been shown") and replaced with named attribution
+- Confirmed no prescriptive language ("you should") anywhere in text
+
+### Quality gate that was hardest
+- Gate 5 (deepens the vault). The core mechanism is well-established — the challenge was finding the new contribution. Found it in: (1) Sumińska 2026's honest complication of the personalization claim, (2) Sakakibara 2020's spectral precision advance, and (3) the IE ratio dismissal from Meehan & Shaffer 2024 that redirects attention to what actually matters.
+
+### For next essay
+- Topic #09: Clinician Durability
+- Pre-load: Read clinician-durability concept note, vagal-tone, gap-moment-training, second-victim-phenomenon
+- PubMed angle: CRNA burnout HRV longitudinal, nurse anesthetist resilience autonomic, second victim syndrome support, career durability autonomic reserve
