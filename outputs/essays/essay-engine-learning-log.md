@@ -350,3 +350,64 @@ Retrospective entries after each essay generation run. The engine improves every
 - Topic #10: State Transition
 - Pre-load: Read state-transition concept note, neural-transition-failure, gap-moment-training, neurogating
 - PubMed angle: state transitions neural mechanisms, autonomic state switching performance, error physiology cognitive state, prefrontal cortex state regulation
+
+---
+
+## Entry 10 — state-transition-2026-08-24.md
+
+**Date:** 2026-08-24
+**Topic:** State Transition (queue #10)
+**Word count:** ~1680
+**PubMed citations verified:** 8/8
+**Gertrude violations found:** 0
+
+### What went well
+- Awtry et al. (2025) in JAMA Surgery is the essay's load-bearing citation: 793 procedures, 38 surgeons, continuous intraoperative HRV monitoring. Surgeon sympathovagal balance at case entry predicts major surgical complications (AOR 0.63). This transforms state transition training from a wellness argument into a patient safety argument. Found via PubMed search for "Awtry surgeon HRV surgical complications."
+- Bordini et al. (2025) in British Journal of Anaesthesia confirmed cognitive error prevalence in 2,801 difficult airway cases — 17.4% incidence, fixation error (state-transition failure) most common at 11.5%. Each error increased complications by 1.86×. This is the error anatomy that makes the mechanism concrete.
+- Ottaviani, Thayer, Brosschot et al. (2015) meta-analysis of 60 studies (PMID 26689087) is the mechanistic anchor for perseverative cognition / residual sympathetic bleed. Effect sizes for HRV (g=.15–.27) and cortisol (g=.36) are specific enough to quote.
+- Costello et al. (2025) on repeated stress adaptation was a novel find — shows ruminators fail to habituate between successive stressors in the SAME testing session. This is direct experimental evidence for the "residual carry-over" phenomenon in compressed transition windows.
+- Having 8 verified PubMed citations across physiology, operating room studies, and intervention research produces a balanced scientific foundation.
+
+### What could improve
+- Multi-keyword AND queries to PubMed returned zero results repeatedly. The PubMed MCP parser aggressively intersects every term. Solution (confirmed working): use 3-4 keyword queries, accept broader results, then verify promising PMIDs individually.
+- Could not find a prospective study specifically on CRNA (as opposed to surgeon) autonomic state and patient outcomes. The Awtry surgeon data is the best available proxy. This gap should be flagged as SRL's longitudinal research opportunity.
+- The essay's protocol section uses numbered steps. These are framed as protocol architecture, not personal prescriptions — kept them but worth monitoring in future Gertrude reviews.
+- A prior April 11 essay on state-transition existed but had gertrude_status: pending and no verified PubMed citations. Today's essay supersedes it with full verification. The queue was not updated after the April run — confirming that queue-update discipline must be enforced every run.
+
+### PubMed searches that worked
+- "perseverative cognition cardiovascular prolonged stress" → PMID 26689087, 40166904, 31082164
+- "allostatic load stress cumulative neural" → PMID 31252304
+- "surgeon stress intraoperative cardiovascular autonomic" → PMID 23370764
+- "Awtry surgeon HRV heart rate variability surgical complications outcomes" → PMID 39813063
+- "Bordini cognitive errors difficult airway anaesthesia fixation" → PMID 40447486
+- "Pozzato paced breathing HRV injured" → PMID 39778745
+- "Elbers McCraty HeartMath coherence physiological regulation" → PMID 41445965
+
+### PubMed searches that failed
+- "autonomic state transition sympathetic parasympathetic recovery clinical performance stress" → zero results (too many AND terms)
+- "amygdala recovery time stress cortisol prefrontal reactivation decision making" → zero results (too many AND terms)
+- "HRV recovery post-stress physician nurse cognitive performance" → zero results (too many AND terms)
+- "mindfulness between-case recovery anesthesia physician resilience" → zero results
+
+### Vault gaps discovered
+- No vault evidence note for Awtry et al. (2025) JAMA Surgery — landmark study, should be added
+- No vault evidence note for Bordini et al. (2025) British Journal of Anaesthesia — directly relevant to error-archetypes-qrc
+- Costello et al. (2025) Stress and Health — repeated stress adaptation study — not in vault
+- Rieger et al. (2013) surgeon sleep HRV study — not in vault
+
+### Citation verification issues
+- None. All 8 PMIDs returned full metadata. All author names, years, journals, and DOIs confirmed.
+
+### Style corrections applied
+- Confirmed no prescriptive language throughout
+- Gertrude review: no device claims, no "treats/prevents/cures," no "clinically proven" — directional language used throughout
+- All mechanism claims attributed to named researchers by last name
+- The Awtry finding was carefully framed: "higher sympathovagal balance" ≠ "more calm" — the essay preserves the nuance that this is appropriate-arousal-relative-to-baseline, not calm
+
+### Quality gate that was hardest
+- Gate 2 (mechanism isolable, novel claim separated from established science). The novel contribution is the connection between perseverative cognition physiology (established) → repeated-stress adaptation failure (Costello 2025, novel to SRL context) → surgical outcome data (Awtry 2025, newest finding) as a coherent causal chain. Assembling this chain without overclaiming required careful staging of the evidence.
+
+### For next essay
+- Topic #11: Interoceptive Literacy
+- Pre-load: Read interoceptive-literacy concept note, anterocept, diaphragmatic-blindness, maia-2-crna
+- PubMed angle: interoceptive accuracy clinical decision-making, MAIA interoceptive awareness scales, interoceptive training healthcare workers, body awareness professional performance
