@@ -50,3 +50,4 @@ Agent picks the next uncompleted topic each hour.
 |---|---------|-------------|--------|
 | 25 | heart-rate-recovery | Heart Rate Recovery: The Body's Report Card After Every Case | completed: heart-rate-recovery-2026-08-25.md |
 | 26 | autonomic-home-base | Autonomic Home Base: Why the Destination Matters More Than the Technique | completed: autonomic-home-base-2026-08-25.md |
+| 27 | crna-as-closed-loop-controller | The CRNA as Closed-Loop Physiological Controller | completed: crna-as-closed-loop-controller-2026-08-25.md |
