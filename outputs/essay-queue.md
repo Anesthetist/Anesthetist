@@ -54,3 +54,4 @@ Agent picks the next uncompleted topic each hour.
 | 28 | contemplative-progressive-overload | Contemplative Progressive Overload: Training Awareness Like You'd Train a Muscle | completed: contemplative-progressive-overload-2026-08-25.md |
 | 29 | embodied-time-perception | The Temporal Body: How the Heart Builds Clinical Time | completed: embodied-time-perception-2026-08-25.md |
 | 30 | sensor-calibration-as-patient-safety | The Sensor Is the Clinician | completed: sensor-calibration-as-patient-safety-2026-08-25.md |
+| 31 | autonomic-co-regulation | The Nervous System Is Never Alone | completed: autonomic-co-regulation-2026-08-25.md |
