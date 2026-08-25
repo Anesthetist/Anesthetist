@@ -55,3 +55,4 @@ Agent picks the next uncompleted topic each hour.
 | 29 | embodied-time-perception | The Temporal Body: How the Heart Builds Clinical Time | completed: embodied-time-perception-2026-08-25.md |
 | 30 | sensor-calibration-as-patient-safety | The Sensor Is the Clinician | completed: sensor-calibration-as-patient-safety-2026-08-25.md |
 | 31 | autonomic-co-regulation | The Nervous System Is Never Alone | completed: autonomic-co-regulation-2026-08-25.md |
+| 32 | breath-hold-autonomic-signature | The Breath You Hold Without Knowing It | completed: breath-hold-autonomic-signature-2026-08-25.md |
