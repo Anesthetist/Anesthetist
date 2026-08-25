@@ -11,6 +11,10 @@ modified: 2026-03-23
 24 topics prioritized by: canonical/review status, SKOS connectivity, lane diversity.
 Agent picks the next uncompleted topic each hour.
 
+**Queue complete as of 2026-08-25.** All 24 topics completed. Subsequent essays continue from draft concepts not yet covered. See overflow section below.
+
+## Overflow — Draft Concepts (Post-Queue)
+
 ## Queue
 
 | # | Concept | Essay Title | Angle | Pull In | Status |
@@ -39,3 +43,9 @@ Agent picks the next uncompleted topic each hour.
 | 22 | polyvagal-theory | Polyvagal Theory After Grossman: What Survives the Critique | Honest assessment — Grossman's critique is real, but the clinical utility of the hierarchy survives | vagal-tone, autonomic-regulation, autonomic-co-regulation | completed: polyvagal-theory-2026-08-25.md |
 | 23 | second-victim-phenomenon | The Second Victim: When the Clinician Becomes the Casualty | After an adverse event, no system supports the clinician — GMT and co-regulation fill the gap | clinician-durability, autonomic-co-regulation, stress-inoculation-training | completed: second-victim-phenomenon-2026-08-25.md |
 | 24 | neuro-ouroboros | The Neuro-Ouroboros: When the Observer Changes the Observed System | The self-referential loop at the heart of somnistics — observing your state changes your state | polyanchora, hemispheric-rebalancing, neuroharmonics | completed: neuro-ouroboros-2026-08-25.md |
+
+## Overflow — Draft Concepts (Post-Queue)
+
+| # | Concept | Essay Title | Status |
+|---|---------|-------------|--------|
+| 25 | heart-rate-recovery | Heart Rate Recovery: The Body's Report Card After Every Case | completed: heart-rate-recovery-2026-08-25.md |
