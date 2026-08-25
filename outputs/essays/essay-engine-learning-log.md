@@ -66,6 +66,19 @@ Retrospective entries after each essay generation run. The engine improves every
 
 ---
 
+## 2026-08-25 — Essay #22: Polyvagal Theory After Grossman — What Survives the Critique
+
+- **Topic:** polyvagal-theory (queue #22)
+- **PubMed searches that worked:** "Grossman polyvagal theory untenable international expert evaluation 2026" → PMID 41768017 (Grossman et al. 2026, confirmed full metadata); "Porges polyvagal theory social engagement system neuroception clinical applications" → PMID 40735382 (Porges 2025 status paper); Porges 2026 response found via PMID 41768026 (same journal issue as Grossman, paired papers); "HRV biofeedback clinical efficacy autonomic regulation systematic review" → PMIDs 41935670 (da Cunha E Silva 2026 HRVB working memory) and 33804817 (Blase/Lehrer/Gevirtz 2021 HRVB systematic review); "respiratory sinus arrhythmia vagal tone measurement RSA HRV" → PMID 30779926 (Campbell et al. 2019 RSA-PTSD meta-analysis)
+- **PubMed searches that failed:** "Thayer Lane neurovisceral integration model heart rate variability cognition emotion 2009" → 0 results (PubMed over-expands multi-term query); "Thayer Lane neurovisceral integration HRV vagal tone prefrontal cortex" → 0 results — the Thayer & Lane (2009) paper is frequently cited in vault but could not be found via PubMed author+title search this session; dropped rather than fabricate
+- **Vault gaps discovered:** The polyvagal-theory concept note has 40+ `prov:wasDerivedFrom` entries but most are not directly cited in the essay — the vault is over-linked here. The Grossman critique's five specific premises are not clearly enumerated in any single vault note — this essay does that enumeration from the PubMed abstract for the first time. No vault evidence note exists for Campbell et al. (2019) RSA-PTSD meta-analysis (PMID 30779926), despite RSA being a core SRL biomarker.
+- **Citation verification issues:** None. All 6 PMIDs verified via mcp__PubMed__get_article_metadata before inclusion. Author names, years, journals, volumes, pages, and DOIs all confirmed from PubMed metadata. Thayer & Lane dropped entirely because PMID could not be found (two different search queries returned 0 results).
+- **Style corrections applied:** No prescriptive language. No "clinically proven." No Pausality medical device claims. No "treats/cures/prevents." Mechanism claims use "the literature documents" or direct researcher attribution. "Untenable" quoted directly from paper title rather than adopted as editorial position — important given Porges' rebuttal. The three-tier vocabulary framework (Tier 1/2/3) is original to this essay — a practical clinical guidance structure not present in either the Grossman or Porges papers.
+- **Quality gate that was hardest:** Gate 5 (deepens the vault — new connection or research gap). The challenge: this essay's job is to stabilize SRL's theoretical ground, not generate a new clinical concept. The deepening is epistemic rather than empirical: it draws the line between what SRL can claim without qualification (Tier 1), what it can use with caveats (Tier 2), and what it should not claim at all (Tier 3). That three-tier structure is the vault's new contribution from this essay.
+- **Key pattern for future essays:** The Grossman-Porges debate is a case study in level-of-analysis errors. When SRL references theories from contested literature, always identify which claims belong to which level: evolutionary narrative (contested), functional mechanism (empirically supported), clinical vocabulary (useful shorthand). This three-tier framing applies broadly to polyvagal language throughout the vault.
+
+---
+
 ## Entry 1 — anterocept-2026-03-25.md
 
 **Date:** 2026-03-25
