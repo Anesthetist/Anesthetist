@@ -59,3 +59,4 @@ Agent picks the next uncompleted topic each hour.
 | 33 | interpersonal-physiological-synchrony | The Asymmetric Dyad: Interpersonal Physiological Synchrony and the Hidden Cost of Every Induction | completed: interpersonal-physiological-synchrony-2026-08-25.md |
 | 34 | structured-interoception-training | The Three-Mode Architecture: What Structured Interoception Training Actually Is | completed: structured-interoception-training-2026-08-25.md |
 | 35 | attentional-sovereignty | Attentional Sovereignty: The Skill William James Named and Neuroscience Finally Measured | completed: attentional-sovereignty-2026-08-25.md |
+| 36 | awe-as-regulation | The Small Self: Awe as Physiology in the Operating Room | completed: awe-as-regulation-2026-08-25.md |
