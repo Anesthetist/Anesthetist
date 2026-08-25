@@ -12,6 +12,19 @@ Retrospective entries after each essay generation run. The engine improves every
 
 ---
 
+## 2026-08-25 — Essay #18: CO2 Tolerance — The Biomarker That Predicts Who Breaks Under Pressure
+
+- **Topic:** co2-tolerance-clinical-durability (queue #18)
+- **PubMed searches that worked:** "breath holding vagal tone training" (2 results); "hypercapnic ventilatory response chemoreflex sensitivity diving" (1 result); "apnea training chemoreflex HRV heart rate variability" (2 results); "hypercapnia panic disorder CO2 sensitivity anxiety" (5 results); "Zaccaro breathing systematic review autonomic brain" (1 result)
+- **PubMed searches that failed:** Any query with 5+ compound Boolean terms returned 0 results consistently — PubMed's auto-translation over-expands multi-term queries. "carbon dioxide tolerance breath holding autonomic nervous system heart rate variability" returned 0 despite all terms being present in literature. "hypercapnia mild cognitive performance executive function arousal" returned 0 — needs simpler formulation. "hypercapnic ventilatory response stress resilience cognitive performance" returned 0.
+- **Vault gaps discovered:** No vault note directly bridges BOLT score (wellness-grade metric) to HCVR (academic metric) with a calibration protocol. The 25-second threshold cited in the queue title could not be sourced to a specific PubMed paper in this session — it may be a McKeown/Oxygen Advantage wellness claim; needs independent verification before use in clinical materials.
+- **Citation verification issues:** The Arce-Álvarez et al. (2022) review paper (vault note: chemoreflex-immersion) was not independently verified via PubMed metadata in this session; its 2021 companion paper by the same first author was verified (PMID 33716781). The Kyriakoulis & Caballero (2025) paper (vault note) was not independently verified via PubMed — DOI was not searched. Both papers are cited in vault evidence notes but excluded from the verification table.
+- **Style corrections applied:** Removed "the 25-second threshold" from the essay (queue title uses it, but no PubMed paper verified this specific cutoff — the BOLT scale norms are practitioner-facing, not peer-reviewed). Confirmed no prescriptive language ("you should do X"). Confirmed no medical device claims about Pausality. Used "the literature suggests" for all BOLT norm claims.
+- **Quality gate that was hardest:** Gate 4 (testable hypothesis with measurement criteria). The challenge: the BOLT → clinical composure correlation has never been tested in CRNAs; the 14-day test design is the minimum viable experiment that would generate the first signal without requiring clinical outcomes. Had to separate the trainable mechanism (confirmed in freediving/swimming literature) from the clinical application (SRL-original hypothesis).
+- **Key pattern for future essays:** The three-population spectrum structure (panic → untrained clinical → trained athlete) is a powerful essay architecture when the literature contains studies on both extremes but the middle (clinical professionals) remains unstudied. It lets the essay derive the SRL position precisely from the documented extremes without overclaiming.
+
+---
+
 ## 2026-08-24 — Essay #15: Why High Performers Go Numb
 
 - **Topic:** interoceptive-suppression-hypothesis (queue #15)
