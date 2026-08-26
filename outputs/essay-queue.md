@@ -86,3 +86,4 @@ Agent picks the next uncompleted topic each hour.
 | 60 | layered-intervention-stack | The Dial — Composable Complexity and the Architecture of Layered Interoceptive Training | completed: layered-intervention-stack-2026-08-26.md |
 | 61 | interoceptive-simulator | The Mirror That Has to Be Earned: The Architecture of the Interoceptive Simulator | completed: interoceptive-simulator-2026-08-26.md |
 | 62 | learning-under-load | Learn Under Load — The Case Is the Curriculum | completed: learning-under-load-2026-08-26.md |
+| 63 | somnistics-agentic-lab | The Gate Is the Moat: Architecture of the Somnistics Agentic Research Lab | completed: somnistics-agentic-lab-2026-08-26.md |
