@@ -12,6 +12,18 @@ Retrospective entries after each essay generation run. The engine improves every
 
 ---
 
+## 2026-08-26 — Essay #45: The Career You Compound
+
+- **Topic:** interoceptive-compounding-over-clinical-career (draft concept; 4 skos:related entries: interoception, crna-as-closed-loop-controller, clinician-durability, sensor-calibration-as-patient-safety. Selected as highest connectivity draft concept without an essay — matched five other concepts at 4 relations; chosen for conceptual richness of the note and strategic relevance to SRL's compounding thesis from active-context.md.)
+- **PubMed searches that worked:** "meditation long-term heart rate variability autonomic" → 5 PMIDs (41024568, 40265989, 40204160, 35805328, 34858638); "yoga nidra sleep cognitive performance" → 2 PMIDs (34727178, 27847492); "loving kindness compassion meditation self-compassion burnout healthcare" → 2 PMIDs (41516942, 30766824); "yoga nidra anxiety stress reduction randomized" → 2 PMIDs (40373021, 35689170); "heartbeat detection interoceptive accuracy decision-making performance" → 4 PMIDs (41898167, 34591785, 32206084, 24348438).
+- **PubMed searches that failed:** "interoception clinical expertise development longitudinal" → 0 (too many AND terms); "pranayama breathing training heart rate variability longitudinal study" → 0 (too many AND terms); "moral injury healthcare burnout cumulative adverse events clinician" → 0 (query over-constrained); "Dean Talbot moral injury physicians recognition treatment" → 0 (Stat News 2018 opinion piece not indexed in PubMed); "stress inoculation training resilience performance high-stakes" → 0.
+- **Vault gaps discovered:** No evidence note for Malhotra et al. 2025 (PMID 41024568 — pranayama HRV/EEG study). No evidence note for Lin et al. 2022 (PMID 35805328 — long-term yoga practitioners vs. sedentary autonomic resilience). No evidence note for Moszeik et al. 2025 (PMID 40373021 — online yoga nidra RCT). Dean & Talbot moral injury paper (Stat News 2018) referenced in vault concept note but not available via PubMed — should be tracked as a grey-literature source.
+- **Citation verification issues:** Malhotra et al. 2025 has no DOI in PubMed metadata (journal: Mymensingh Medical Journal). Noted in references table. The Taleb anti-fragility framework cited in the concept note is a book, not a PubMed source — referenced as conceptual framing, not a verified citation.
+- **Style corrections applied:** Stated confound explicitly for Moccia et al. 2021 (gambling disorder population, not CRNAs — mechanism may differ in expert populations). Reframed "yoga nidra helps you recover" as "yoga nidra produces a physiologically distinct recovery state" to avoid prescription framing. Removed any language suggesting specific minutes/counts as required.
+- **Quality gate that was hardest:** Gate 5 (Deepens the vault / new connection). The compounding thesis is the most ambitious frame in the vault — connecting Taleb, moral injury, pranayama physiology, yoga nidra neuroscience, and interoceptive accuracy into a single mechanistic argument. Took two passes to confirm all three channels (arousal metabolism, adverse event processing, physiological recovery) had distinct verified citations.
+
+---
+
 ## 2026-08-26 — Essay #44: Five Breaths — The Closed-Loop Architecture That Fixed-Rate Protocols Miss
 
 - **Topic:** five-breath-re-embodiment (draft concept; selected as highest skos:related count among unwritten draft concepts — 4 related entries: neurominute, neuro-ouroboros, resonant-breathing-frequency, closed-loop-biofeedback. Chosen because it is the core patentable novelty in SRL's provisional patent application and directly advances Arrow 2 and Arrow 4.)
