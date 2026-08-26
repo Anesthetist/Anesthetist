@@ -12,6 +12,18 @@ Retrospective entries after each essay generation run. The engine improves every
 
 ---
 
+## 2026-08-26 — Essay #52: The Layered Body — Multi-Phase Interoceptive Coupling
+
+- **Topic:** multi-phase-interoceptive-coupling (canonical concept; 6 skos:related entries: anterocept, polyanchora, neurominute, autonomic-regulation, vagal-tone, neuroharmonics. Selected as highest skos:related unwritten draft/canonical concept after queue completion.)
+- **PubMed searches that worked:** "interoception[MeSH Terms] AND insular cortex AND attention" → 17 results, 3 top PMIDs retrieved (Haruki & Ogawa 2021, Wang et al. 2019, Hudson et al. 2025); "interoception[MeSH Terms] AND mindfulness AND body awareness" → 16 results including Schwartz et al. 2025 meta-analysis; "heartbeat counting task interoceptive accuracy training" → 29 results including Müller et al. 2025 RCT; "interoception[MeSH Terms] AND heart rate variability AND mindfulness AND emotion" → Delgado-Pastor et al. 2015 critical dissociation study; "I can feel my heartbeat dancers interoceptive" → Christensen et al. 2017.
+- **PubMed searches that failed:** "interoception multi-modal attention simultaneous body signal awareness" → 0 results (too many AND constraints); "heartbeat evoked potential meditation interoceptive training insula" → 0 results (overconstrained); "heartbeat perception cardiac interoception training RCT" → 0 results (overconstrained); "insular cortex interoception progressive training emotion regulation" → 0 results; "interoception body awareness training mindfulness multiple signals insula cortex" → 0 results. Lesson: use MeSH[MeSH Terms] for broad anchor terms, then add 1-2 natural language terms; avoid stringing 4+ constrained clauses.
+- **Vault gaps discovered:** No evidence note exists for Haruki & Ogawa (2021) "Role of anatomical insular subdivisions in interoception" — dissociable substrates for interoceptive attention vs. accuracy. No evidence note for Wang et al. (2019) eLife "Anterior insular cortex plays a critical role in interoceptive attention" — lesion study establishing AIC necessity. Both are foundational to MPIC's mechanistic claim and should be created as evidence notes.
+- **Citation verification issues:** None — all 7 citations confirmed via PMID metadata lookup before inclusion. Lovero et al. (2009) PMID 19280711 retrieved but dropped from essay (anterior insula anticipation finding is touch-specific, more relevant to anterocept than MPIC directly).
+- **Style corrections applied:** Removed one instance of "clinicians should practice" → replaced with "the protocol is explicit" (no prescription language); confirmed no "biofeedback therapy" language; replaced "the data proves" with "the literature suggests."
+- **Quality gate that was hardest:** Gate 2 (mechanism isolable). The insula gradient inference — from fMRI attention tasks to MPIC's training progression — required careful confound statement. The specific claim (MPIC trains the posterior→anterior insula gradient) is mechanistically grounded but has not been directly tested with MPIC protocols; stated this explicitly in the essay.
+
+---
+
 ## 2026-08-26 — Essay #51: The Adaptive Loop — Interoceptive Flow OS
 
 - **Topic:** interoceptive-flow-os (draft concept; 5 skos:related entries: anterocept, gap-moment-training, neurominute, neurogating, closed-loop-biofeedback. Selected as highest skos:related draft concept after scanning 10+ draft concepts. Other candidates: dmn-voluntary-control (4), micro-interoceptive-regulation (4), interoceptive-accuracy (3).)
