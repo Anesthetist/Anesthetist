@@ -83,3 +83,4 @@ Agent picks the next uncompleted topic each hour.
 | 57 | cognitive-development-arc | The Expertise Oscillation: How Clinical Mastery Breathes Rather Than Climbs | completed: cognitive-development-arc-2026-08-26.md |
 | 58 | benner-expertise-spiral | The Unwritten Book — What Happens When Experts Must Become Novices Again | completed: benner-expertise-spiral-2026-08-26.md |
 | 59 | dmn-voluntary-control | The Switch, Not the Kill — DMN Voluntary Control and Clinical Performance | completed: dmn-voluntary-control-2026-08-26.md |
+| 60 | layered-intervention-stack | The Dial — Composable Complexity and the Architecture of Layered Interoceptive Training | completed: layered-intervention-stack-2026-08-26.md |
