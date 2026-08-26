@@ -79,3 +79,4 @@ Agent picks the next uncompleted topic each hour.
 | 53 | subconscious-performance-degradation | I Feel Fine — The Physiology of Performance Degradation Below Conscious Awareness | completed: subconscious-performance-degradation-2026-08-26.md |
 | 54 | hemispheric-rebalancing | The Master's Attention — Hemispheric Rebalancing and the Attentional Architecture of Clinical Awareness | completed: hemispheric-rebalancing-2026-08-26.md |
 | 55 | micro-interoceptive-regulation | The Verb Somnistics Needs: Micro-Interoceptive Regulation as the Operative Mechanism | completed: micro-interoceptive-regulation-2026-08-26.md |
+| 56 | crna-interior-ecology-literature-gap | The Literature That Does Not Exist: The Interior Ecology of CRNA Practice | completed: crna-interior-ecology-literature-gap-2026-08-26.md |
