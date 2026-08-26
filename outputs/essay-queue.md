@@ -76,3 +76,4 @@ Agent picks the next uncompleted topic each hour.
 | 50 | nanda-somnistics-diagnoses | What NANDA Cannot Name | completed: nanda-somnistics-diagnoses-2026-08-26.md |
 | 51 | interoceptive-flow-os | The Adaptive Loop: Why Fixed Biofeedback Protocols Fail and What Replaces Them | completed: interoceptive-flow-os-2026-08-26.md |
 | 52 | multi-phase-interoceptive-coupling | The Layered Body: Multi-Phase Interoceptive Coupling and the Architecture of Internal Monitoring | completed: multi-phase-interoceptive-coupling-2026-08-26.md |
+| 53 | subconscious-performance-degradation | I Feel Fine — The Physiology of Performance Degradation Below Conscious Awareness | completed: subconscious-performance-degradation-2026-08-26.md |
