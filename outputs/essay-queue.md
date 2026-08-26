@@ -81,3 +81,4 @@ Agent picks the next uncompleted topic each hour.
 | 55 | micro-interoceptive-regulation | The Verb Somnistics Needs: Micro-Interoceptive Regulation as the Operative Mechanism | completed: micro-interoceptive-regulation-2026-08-26.md |
 | 56 | crna-interior-ecology-literature-gap | The Literature That Does Not Exist: The Interior Ecology of CRNA Practice | completed: crna-interior-ecology-literature-gap-2026-08-26.md |
 | 57 | cognitive-development-arc | The Expertise Oscillation: How Clinical Mastery Breathes Rather Than Climbs | completed: cognitive-development-arc-2026-08-26.md |
+| 58 | benner-expertise-spiral | The Unwritten Book — What Happens When Experts Must Become Novices Again | completed: benner-expertise-spiral-2026-08-26.md |
