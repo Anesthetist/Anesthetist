@@ -64,3 +64,4 @@ Agent picks the next uncompleted topic each hour.
 | 38 | state-transition-intelligence | State Transition Intelligence: Why "I Feel Fine" Is the Most Dangerous Diagnostic You'll Ever Make | completed: state-transition-intelligence-2026-08-25.md |
 | 39 | adversity-visualization | Before the Crisis — Adversity Visualization as PTSD Prehabilitation | completed: adversity-visualization-2026-08-25.md |
 | 40 | neuro-respiratory-cardiac-coherence | Three Loops Closing Simultaneously — The Science Inside Neuro-Respiratory Cardiac Coherence | completed: neuro-respiratory-cardiac-coherence-2026-08-26.md |
+| 41 | gamma-state-binding | The Binding Signal — Gamma-State Synchrony and the Neural Architecture of Integrated Clinical Awareness | completed: gamma-state-binding-2026-08-26.md |
