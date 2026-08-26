@@ -67,3 +67,4 @@ Agent picks the next uncompleted topic each hour.
 | 41 | gamma-state-binding | The Binding Signal — Gamma-State Synchrony and the Neural Architecture of Integrated Clinical Awareness | completed: gamma-state-binding-2026-08-26.md |
 | 42 | pausality | Pausality — The Resonant Window | completed: pausality-2026-08-26.md |
 | 43 | awareness-as-neuroplastic-surface-area | Awareness Is the Training | completed: awareness-as-neuroplastic-surface-area-2026-08-26.md |
+| 44 | five-breath-re-embodiment | Five Breaths — The Closed-Loop Architecture That Fixed-Rate Protocols Miss | completed: five-breath-re-embodiment-2026-08-26.md |
