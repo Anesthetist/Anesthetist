@@ -74,3 +74,4 @@ Agent picks the next uncompleted topic each hour.
 | 48 | attention-as-gain-control | The Gain Dial — Why Attention Is Not a Spotlight | completed: attention-as-gain-control-2026-08-26.md |
 | 49 | vitarka-vicara-integration | Castle-Field Vision — The Attentional Architecture of Expert Clinical Presence | completed: vitarka-vicara-integration-2026-08-26.md |
 | 50 | nanda-somnistics-diagnoses | What NANDA Cannot Name | completed: nanda-somnistics-diagnoses-2026-08-26.md |
+| 51 | interoceptive-flow-os | The Adaptive Loop: Why Fixed Biofeedback Protocols Fail and What Replaces Them | completed: interoceptive-flow-os-2026-08-26.md |
