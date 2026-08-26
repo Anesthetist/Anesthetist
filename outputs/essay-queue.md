@@ -70,3 +70,4 @@ Agent picks the next uncompleted topic each hour.
 | 44 | five-breath-re-embodiment | Five Breaths — The Closed-Loop Architecture That Fixed-Rate Protocols Miss | completed: five-breath-re-embodiment-2026-08-26.md |
 | 45 | interoceptive-compounding-over-clinical-career | The Career You Compound: Interoceptive Skills as Multiplicative Career Infrastructure | completed: interoceptive-compounding-over-clinical-career-2026-08-26.md |
 | 46 | maia-2-crna | MAIA-2-CRNA — A New Measurement Problem | completed: maia-2-crna-2026-08-26.md |
+| 47 | curiosity-as-clinical-stance | Curiosity as Clinical Stance | completed: curiosity-as-clinical-stance-2026-08-26.md |
