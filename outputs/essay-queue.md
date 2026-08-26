@@ -66,3 +66,4 @@ Agent picks the next uncompleted topic each hour.
 | 40 | neuro-respiratory-cardiac-coherence | Three Loops Closing Simultaneously — The Science Inside Neuro-Respiratory Cardiac Coherence | completed: neuro-respiratory-cardiac-coherence-2026-08-26.md |
 | 41 | gamma-state-binding | The Binding Signal — Gamma-State Synchrony and the Neural Architecture of Integrated Clinical Awareness | completed: gamma-state-binding-2026-08-26.md |
 | 42 | pausality | Pausality — The Resonant Window | completed: pausality-2026-08-26.md |
+| 43 | awareness-as-neuroplastic-surface-area | Awareness Is the Training | completed: awareness-as-neuroplastic-surface-area-2026-08-26.md |
