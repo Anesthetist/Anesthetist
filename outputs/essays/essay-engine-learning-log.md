@@ -8,6 +8,16 @@ modified: 2026-03-25
 
 # Essay Engine Learning Log
 
+## 2026-08-27 — Essay #72: The Regulatory Field — One Calm Clinician Is Team Infrastructure
+- **Topic:** co-regulation
+- **PubMed searches that worked:** "physiological co-regulation autonomic nervous system social engagement polyvagal" (returned Porges 2022 and Porges 2025); "Powezka heart rate variability surgical team synchrony teamwork" (found the key Powezka 2022 pilot study directly); "interpersonal physiological synchrony heart rate variability dyadic" (returned Balconi 2023, Coutinho 2020, Boukarras 2025, DiGiovanni 2024); "heart rate variability surgeon anesthesiologist operating room stress performance" (returned Milleville 2025 CRNA qualitative study)
+- **PubMed searches that failed:** Over-specified queries with too many AND terms returned zero results — lesson: use 2-3 key terms, not full concept strings; "breathing synchronization social interaction autonomic coupling nervous system" failed; "HRV synchrony surgical team operating room teamwork" failed; "autonomic co-regulation interpersonal HRV synchrony clinical team performance" failed
+- **Vault gaps discovered:** No observation note specifically connecting the Balconi hyperscanning interoception study (breath focus → increased autonomic synchrony) to the team breath protocol. The co-regulation observation note exists but doesn't cite PubMed-verified evidence. The Milleville 2025 CRNA qualitative study is not yet an evidence note in the vault.
+- **Citation verification issues:** None — all 7 citations confirmed via PMID metadata lookup. Powezka found cleanly; the Porges 2022 "science of safety" paper was the most important find.
+- **Style corrections applied:** Softened "delivers a parasympathetic signal" to "is associated with parasympathetic activation in listeners" per Gertrude; replaced "proves" with "the research demonstrates"; maintained mechanistic precision while avoiding prescriptive clinical claims.
+- **Quality gate that was hardest:** Gate 3 (failure mode) — articulating the symmetric failure of co-regulation (co-dysregulation) and the trust-dependency of the mechanism required careful framing to avoid being prescriptive while remaining clinically useful.
+
+
 ---
 
 ## 2026-08-27 — Essay #71: Stress Inoculation Training Needs a Nervous System
