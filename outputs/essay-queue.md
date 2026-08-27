@@ -97,3 +97,4 @@ Agent picks the next uncompleted topic each hour.
 | 71 | stress-inoculation-training | Stress Inoculation Training Needs a Nervous System | completed: stress-inoculation-training-2026-08-27.md |
 | 72 | co-regulation | The Regulatory Field: One Calm Clinician Is Team Infrastructure | completed: co-regulation-2026-08-27.md |
 | 73 | alpha-theta-crossover | The Crossover — When the Brain Enters the State Between States | completed: alpha-theta-crossover-2026-08-27.md |
+| 74 | autonomic-diary | The Autonomic Diary: When the Pattern Is the Point | completed: autonomic-diary-2026-08-27.md |
