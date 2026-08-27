@@ -98,3 +98,4 @@ Agent picks the next uncompleted topic each hour.
 | 72 | co-regulation | The Regulatory Field: One Calm Clinician Is Team Infrastructure | completed: co-regulation-2026-08-27.md |
 | 73 | alpha-theta-crossover | The Crossover — When the Brain Enters the State Between States | completed: alpha-theta-crossover-2026-08-27.md |
 | 74 | autonomic-diary | The Autonomic Diary: When the Pattern Is the Point | completed: autonomic-diary-2026-08-27.md |
+| 75 | embodied-clinical-intelligence | The Compression Principle: How Embodied Clinical Intelligence Is Built and How It Breaks | completed: embodied-clinical-intelligence-2026-08-27.md |
