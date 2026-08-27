@@ -8,6 +8,16 @@ modified: 2026-03-25
 
 # Essay Engine Learning Log
 
+## 2026-08-27 — Essay #84: What Somnistics Is — The Applied Science Nobody Named Until Now
+- **Topic:** somnistics
+- **PubMed searches that worked:** "resonant frequency breathing HRV autonomic regulation," "slow paced breathing biofeedback HRV autonomic nervous system," "meditation mindfulness autonomic nervous system HRV systematic review," "interoception heartbeat detection cardiac awareness training"
+- **PubMed searches that failed:** "interoception training measurable clinical performance professionals" (0 results), "HRV clinical decision making healthcare professionals performance" (0 results), "micro-break short rest intervention healthcare worker" (0 results) — complex multi-term queries overspecified
+- **Vault gaps discovered:** No essay yet on `titration-to-effect` or `relevance-realization` — both are foundational and now linked in this essay; the `somniotics` concept is canonical but had never been the primary subject of an essay
+- **Citation verification issues:** None — all 5 citations verified via PMID metadata lookup; Gross 2016 (PMID 26782084) is particularly useful as it directly tests abbreviated resonance training in non-athlete professional populations
+- **Style corrections applied:** Removed several instances of "demonstrates" language; replaced with "the literature suggests" and "the data show"; confirmed no prescriptions ("you should") crept in
+- **Quality gate that was hardest:** Gate 2 (mechanism isolable) — distinguishing the novel claim (all three substrates are simultaneously volitional, measurable, and compoundable) from the established science (each substrate is individually trainable) required careful framing
+
+
 ## 2026-08-27 — Essay #83: The Library Inside the Workflow — Gap Moment Codex
 - **Topic:** gap-moment-codex (draft concept; 5 skos:related entries — neurominute, minimum-effective-dose, kosha-architecture, stairway-meta-awareness-protocol, time-between-worlds-gap-minute; most connected draft concept without an essay at time of selection)
 - **PubMed searches that worked:** "heart rate variability biofeedback brief intervention stress reduction" (returned 7 results including PMID 41734245 Cortez-Neavel 2026 ED/ICU RCT and PMID 34456827 Di Nota 2021 police 1-day intervention); "adaptive biofeedback autonomic regulation protocol clinical stress" (returned PMID 38656642 Andersen 2024 iPREP law enforcement protocol); "brief mindfulness nursing burnout randomized controlled trial" (returned PMID 32840621 Ameli 2020 NIH Clinical Center RCT and PMID 39936312 Al-Jdeetawey 2025 PICU nurses); final compassion/HRV paper (PMID 42381991 Sun 2026) came from the first HRV biofeedback search batch
