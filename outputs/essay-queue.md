@@ -101,3 +101,4 @@ Agent picks the next uncompleted topic each hour.
 | 75 | embodied-clinical-intelligence | The Compression Principle: How Embodied Clinical Intelligence Is Built and How It Breaks | completed: embodied-clinical-intelligence-2026-08-27.md |
 | 76 | crna-shift-architect | The Pre-Shift That Isn't: Reading Your Nervous System Before the First Case | completed: crna-shift-architect-2026-08-27.md |
 | 77 | phantom-limb-protocol | The Phantom Limb Protocol — How the Nervous System Carries the People Who Steady It | completed: phantom-limb-protocol-2026-08-27.md |
+| 78 | exteroryx | ExterOryx — The Toggle No One Trained | completed: exteroryx-2026-08-27.md |
