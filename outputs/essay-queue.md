@@ -96,3 +96,4 @@ Agent picks the next uncompleted topic each hour.
 | 70 | interoceptive-accuracy | The Three-Dimensional Body: Interoceptive Accuracy and the Miscalibration Problem | completed: interoceptive-accuracy-2026-08-27.md |
 | 71 | stress-inoculation-training | Stress Inoculation Training Needs a Nervous System | completed: stress-inoculation-training-2026-08-27.md |
 | 72 | co-regulation | The Regulatory Field: One Calm Clinician Is Team Infrastructure | completed: co-regulation-2026-08-27.md |
+| 73 | alpha-theta-crossover | The Crossover — When the Brain Enters the State Between States | completed: alpha-theta-crossover-2026-08-27.md |
