@@ -94,3 +94,4 @@ Agent picks the next uncompleted topic each hour.
 | 68 | nondual-clinical-awareness | Vigilance Without the Loop: The Neural Mechanism of Nondual Clinical Awareness | completed: nondual-clinical-awareness-2026-08-27.md |
 | 69 | stairway-meta-awareness-protocol | Five Steps Up: The Stairway Meta-Awareness Protocol as Clinical Architecture | completed: stairway-meta-awareness-protocol-2026-08-27.md |
 | 70 | interoceptive-accuracy | The Three-Dimensional Body: Interoceptive Accuracy and the Miscalibration Problem | completed: interoceptive-accuracy-2026-08-27.md |
+| 71 | stress-inoculation-training | Stress Inoculation Training Needs a Nervous System | completed: stress-inoculation-training-2026-08-27.md |
