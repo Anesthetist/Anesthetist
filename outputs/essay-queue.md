@@ -105,3 +105,4 @@ Agent picks the next uncompleted topic each hour.
 | 79 | gmt-career-arc | The Seed That Becomes the Medicine That Becomes the Armor | completed: gmt-career-arc-2026-08-27.md |
 | 80 | haptic-biofeedback | The Fifth Channel — Haptic Biofeedback and the Body That Has No Attention to Spare | completed: haptic-biofeedback-2026-08-27.md |
 | 81 | neurohike | The Moving Laboratory — NeuroHike as Compound Autonomic Training | completed: neurohike-2026-08-27.md |
+| 82 | transformative-learning-mezirow | The Frame That Has to Break First — Transformative Learning and the Somnistics Curriculum | completed: transformative-learning-mezirow-2026-08-27.md |
