@@ -103,3 +103,4 @@ Agent picks the next uncompleted topic each hour.
 | 77 | phantom-limb-protocol | The Phantom Limb Protocol — How the Nervous System Carries the People Who Steady It | completed: phantom-limb-protocol-2026-08-27.md |
 | 78 | exteroryx | ExterOryx — The Toggle No One Trained | completed: exteroryx-2026-08-27.md |
 | 79 | gmt-career-arc | The Seed That Becomes the Medicine That Becomes the Armor | completed: gmt-career-arc-2026-08-27.md |
+| 80 | haptic-biofeedback | The Fifth Channel — Haptic Biofeedback and the Body That Has No Attention to Spare | completed: haptic-biofeedback-2026-08-27.md |
