@@ -100,3 +100,4 @@ Agent picks the next uncompleted topic each hour.
 | 74 | autonomic-diary | The Autonomic Diary: When the Pattern Is the Point | completed: autonomic-diary-2026-08-27.md |
 | 75 | embodied-clinical-intelligence | The Compression Principle: How Embodied Clinical Intelligence Is Built and How It Breaks | completed: embodied-clinical-intelligence-2026-08-27.md |
 | 76 | crna-shift-architect | The Pre-Shift That Isn't: Reading Your Nervous System Before the First Case | completed: crna-shift-architect-2026-08-27.md |
+| 77 | phantom-limb-protocol | The Phantom Limb Protocol — How the Nervous System Carries the People Who Steady It | completed: phantom-limb-protocol-2026-08-27.md |
