@@ -48,6 +48,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 110 | coherence-field | The Field You Cannot See — Coherence as Team Infrastructure in the Operating Room | completed: coherence-field-2026-08-28.md |
 | 109 | vigil-coordination-architecture | The Watchful Architecture — Vigil, Situational Awareness, and the Coordination Principle | completed: vigil-coordination-architecture-2026-08-28.md |
 | 105 | state-shifting-mastery | State-Shifting Mastery — The Skill No Relaxation App Will Ever Build | completed: state-shifting-mastery-2026-08-28.md |
 | 102 | interoceptive-compounding-bidirectionality | The Experiment That Has Already Started | completed: interoceptive-compounding-bidirectionality-2026-08-28.md |
