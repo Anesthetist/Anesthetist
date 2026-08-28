@@ -118,3 +118,4 @@ Agent picks the next uncompleted topic each hour.
 | 103 | secure-attachment-to-reality | Secure Attachment to Reality — The Physiological Endpoint of the Somnistics Curriculum | completed: secure-attachment-to-reality-2026-08-28.md |
 | 104 | in-shift-mental-hygiene | In-Shift Mental Hygiene — The Training That Lives Inside the Gap | completed: in-shift-mental-hygiene-2026-08-28.md |
 | 106 | wanton-hamlet-agency-polarity | Neither Wanton Nor Hamlet — The Reflective Gap as Clinical Agency | completed: wanton-hamlet-agency-polarity-2026-08-28.md |
+| 107 | intelligence-stack | The Architecture You're Already Running — Intelligence Stack as Clinical Epistemology | completed: intelligence-stack-2026-08-28.md |
