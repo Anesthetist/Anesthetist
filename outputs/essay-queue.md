@@ -48,6 +48,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 86 | transmetachora | TransMetachora™: The Safety Gate Before the Training | completed: transmetachora-2026-08-28.md |
 | 85 | relevance-realization | The Filter You Cannot See — Relevance Realization and the Architecture of Clinical Intuition | completed: relevance-realization-2026-08-27.md |
 | 25 | heart-rate-recovery | Heart Rate Recovery: The Body's Report Card After Every Case | completed: heart-rate-recovery-2026-08-25.md |
 | 26 | autonomic-home-base | Autonomic Home Base: Why the Destination Matters More Than the Technique | completed: autonomic-home-base-2026-08-25.md |
