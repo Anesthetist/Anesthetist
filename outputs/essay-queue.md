@@ -48,6 +48,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 119 | embodied-probability-fields | The Probability Field — What the Body Knows Before the Monitor Shows It | completed: embodied-probability-fields-2026-08-28.md |
 | 118 | agape-framework | AGAPÉ — The Physiology of Partnership | completed: agape-framework-2026-08-28.md |
 | 117 | somnistics-certification | The Certification That Medicine Is Missing | completed: somnistics-certification-2026-08-28.md |
 | 116 | dual-use-technology-frame | The Common Denominator — Why the Operating Room Is Also Every Other High-Stakes Room | completed: dual-use-technology-frame-2026-08-28.md |
