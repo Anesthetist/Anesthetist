@@ -48,6 +48,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 115 | neuroharmonics | The Adaptive Soundscape — Why NeuroHarmonics™ Is Not a Playlist | completed: neuroharmonics-2026-08-28.md |
 | 114 | agentic-time-weaving | The Fork You Cannot See — Agentic Time Weaving and the Temporal Skill at the Heart of Clinical Excellence | completed: agentic-time-weaving-2026-08-28.md |
 | 113 | diaphragmatic-blindness | The Sensor Nobody Calibrated — Diaphragmatic Blindness and the Gateway Deficit | completed: diaphragmatic-blindness-2026-08-28.md |
 | 112 | trauma-informed-design | The Risk Inside the Remedy — Trauma-Informed Design as Clinical Infrastructure | completed: trauma-informed-design-2026-08-28.md |
