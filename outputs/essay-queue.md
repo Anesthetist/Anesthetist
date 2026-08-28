@@ -114,3 +114,4 @@ Agent picks the next uncompleted topic each hour.
 | 82 | transformative-learning-mezirow | The Frame That Has to Break First — Transformative Learning and the Somnistics Curriculum | completed: transformative-learning-mezirow-2026-08-27.md |
 | 83 | gap-moment-codex | The Library Inside the Workflow — Gap Moment Codex as Adaptive Autonomic Training System | completed: gap-moment-codex-2026-08-27.md |
 | 84 | somnistics | What Somnistics Is — The Applied Science Nobody Named Until Now | completed: somnistics-2026-08-27.md |
+| 103 | secure-attachment-to-reality | Secure Attachment to Reality — The Physiological Endpoint of the Somnistics Curriculum | completed: secure-attachment-to-reality-2026-08-28.md |
