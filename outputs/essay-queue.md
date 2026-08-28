@@ -119,3 +119,4 @@ Agent picks the next uncompleted topic each hour.
 | 104 | in-shift-mental-hygiene | In-Shift Mental Hygiene — The Training That Lives Inside the Gap | completed: in-shift-mental-hygiene-2026-08-28.md |
 | 106 | wanton-hamlet-agency-polarity | Neither Wanton Nor Hamlet — The Reflective Gap as Clinical Agency | completed: wanton-hamlet-agency-polarity-2026-08-28.md |
 | 107 | intelligence-stack | The Architecture You're Already Running — Intelligence Stack as Clinical Epistemology | completed: intelligence-stack-2026-08-28.md |
+| 108 | non-ergodic-risk | The Structure of the Game — Non-Ergodic Risk and the Physiology of the Absorbing State | completed: non-ergodic-risk-2026-08-28.md |
