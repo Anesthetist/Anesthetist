@@ -48,6 +48,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 100 | neural-sovereignty | Neural Sovereignty — Who Owns Your Nervous System at Work | completed: neural-sovereignty-2026-08-28.md |
 | 86 | transmetachora | TransMetachora™: The Safety Gate Before the Training | completed: transmetachora-2026-08-28.md |
 | 87 | somnistics-readiness-battery | Not Seat Time — The SRB-60 and What It Means to Be Certified in Your Own Nervous System | completed: somnistics-readiness-battery-2026-08-28.md |
 | 85 | relevance-realization | The Filter You Cannot See — Relevance Realization and the Architecture of Clinical Intuition | completed: relevance-realization-2026-08-27.md |
