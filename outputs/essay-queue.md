@@ -15,6 +15,10 @@ Agent picks the next uncompleted topic each hour.
 
 ## Overflow — Draft Concepts (Post-Queue)
 
+| # | Concept | Essay Title | Status |
+|---|---------|-------------|--------|
+| 138 | agency-consciousness-integration | The Hinge — Agency, Consciousness, and the Clinical Development Arc Nobody Teaches | completed: agency-consciousness-integration-2026-08-29.md |
+
 ## Queue
 
 | # | Concept | Essay Title | Angle | Pull In | Status |
