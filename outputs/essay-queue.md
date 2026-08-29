@@ -48,6 +48,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 134 | language-of-the-nurse | The Language Is the Drug | completed: language-of-the-nurse-2026-08-29.md |
 | 132 | interoceptive-technology | The Category Nobody's Building | completed: interoceptive-technology-2026-08-29.md |
 | 128 | convergent-discovery-validation | When Three Traditions Find the Same Frequency | completed: convergent-discovery-validation-2026-08-29.md |
 | 129 | metasomatic-entrepreneurship | The Founder's Body Is the Business | completed: metasomatic-entrepreneurship-2026-08-29.md |
