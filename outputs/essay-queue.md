@@ -133,3 +133,4 @@ Agent picks the next uncompleted topic each hour.
 | 107 | intelligence-stack | The Architecture You're Already Running — Intelligence Stack as Clinical Epistemology | completed: intelligence-stack-2026-08-28.md |
 | 108 | non-ergodic-risk | The Structure of the Game — Non-Ergodic Risk and the Physiology of the Absorbing State | completed: non-ergodic-risk-2026-08-28.md |
 | 120 | titration-to-effect | Titrate to Effect — Why Every Nervous System Has Its Own Dose | completed: titration-to-effect-2026-08-28.md |
+| 121 | neurominutes-meta-glasses | The Invisible Intervention — Why Ambient Biofeedback Is Not a Convenience Feature | completed: neurominutes-meta-glasses-2026-08-29.md |
