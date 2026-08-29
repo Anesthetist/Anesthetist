@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 144 | constraint-release-grief-loop | The Incomplete Cycle — Grief in the Operating Room and the Protocol That Isn't There | completed: constraint-release-grief-loop-2026-08-29.md |
 | 143 | pausality-b2b-motion | The First Witness — How Professional Behaviors Actually Propagate in Clinical Communities | completed: pausality-b2b-motion-2026-08-29.md |
 | 142 | sbir-sttr-nondilutive-funding-path | The Evidence That Isn't There — HRV Biofeedback, CRNA Performance, and Why the Missing Study Is the Proposal | completed: sbir-sttr-nondilutive-funding-path-2026-08-29.md |
 | 141 | consilience | The Same Signal — How Four Independent Traditions Found One Biological Fact | completed: consilience-2026-08-29.md |
