@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 139 | neuroexperiential-architecture | The Pattern That Connects — Neuroexperiential Architecture and the Design of Internal States | completed: neuroexperiential-architecture-2026-08-29.md |
 | 138 | agency-consciousness-integration | The Hinge — Agency, Consciousness, and the Clinical Development Arc Nobody Teaches | completed: agency-consciousness-integration-2026-08-29.md |
 
 ## Queue
