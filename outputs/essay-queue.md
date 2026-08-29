@@ -139,3 +139,4 @@ Agent picks the next uncompleted topic each hour.
 | 124 | neuroadaptive-training-system | The Adaptive Stack — Why Fixed-Rate Biofeedback Fails and What the Neuroadaptive Training System Does Instead | completed: neuroadaptive-training-system-2026-08-29.md |
 | 125 | consilience-by-translation | The Same Signal — Why Consilience by Translation Is a Research Method | completed: consilience-by-translation-2026-08-29.md |
 | 126 | human-ai-decision-boundary | The Line That Moves — Human/AI Decision Boundary in Clinical Practice | completed: human-ai-decision-boundary-2026-08-29.md |
+| 127 | agent-specification | The Eight Properties — What Clinical AI Must Earn to Be Trusted | completed: agent-specification-2026-08-29.md |
