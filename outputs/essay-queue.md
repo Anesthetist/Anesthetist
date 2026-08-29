@@ -48,6 +48,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 136 | vertical-development | The Observer Gets Bigger — Vertical Development and the Altitude Problem in Clinical Expertise | completed: vertical-development-2026-08-29.md |
 | 135 | multi-llm-knowledge-construction | The Quality Gate — Multi-LLM Knowledge Construction and the Human as Interrogator | completed: multi-llm-knowledge-construction-2026-08-29.md |
 | 134 | language-of-the-nurse | The Language Is the Drug | completed: language-of-the-nurse-2026-08-29.md |
 | 132 | interoceptive-technology | The Category Nobody's Building | completed: interoceptive-technology-2026-08-29.md |
