@@ -137,3 +137,4 @@ Agent picks the next uncompleted topic each hour.
 | 122 | pediatric-dental-as-ideal-crna-hrv-pilot-environment | The Controlled Variable — Why Pediatric Dental Is the Right Research Environment | completed: pediatric-dental-as-ideal-crna-hrv-pilot-environment-2026-08-29.md |
 | 123 | tacit-knowledge-extraction | The Asset Nobody Can Steal — Tacit Knowledge Extraction and the SRL Pipeline | completed: tacit-knowledge-extraction-2026-08-29.md |
 | 124 | neuroadaptive-training-system | The Adaptive Stack — Why Fixed-Rate Biofeedback Fails and What the Neuroadaptive Training System Does Instead | completed: neuroadaptive-training-system-2026-08-29.md |
+| 125 | consilience-by-translation | The Same Signal — Why Consilience by Translation Is a Research Method | completed: consilience-by-translation-2026-08-29.md |
