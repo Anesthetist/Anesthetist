@@ -48,6 +48,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 132 | interoceptive-technology | The Category Nobody's Building | completed: interoceptive-technology-2026-08-29.md |
 | 128 | convergent-discovery-validation | When Three Traditions Find the Same Frequency | completed: convergent-discovery-validation-2026-08-29.md |
 | 129 | metasomatic-entrepreneurship | The Founder's Body Is the Business | completed: metasomatic-entrepreneurship-2026-08-29.md |
 | 130 | infinite-game-vigilance-frame | The Vigilance You Can't Sustain | completed: infinite-game-vigilance-frame-2026-08-29.md |
