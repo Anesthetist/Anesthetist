@@ -50,6 +50,7 @@ Agent picks the next uncompleted topic each hour.
 |---|---------|-------------|--------|
 | 128 | convergent-discovery-validation | When Three Traditions Find the Same Frequency | completed: convergent-discovery-validation-2026-08-29.md |
 | 129 | metasomatic-entrepreneurship | The Founder's Body Is the Business | completed: metasomatic-entrepreneurship-2026-08-29.md |
+| 130 | infinite-game-vigilance-frame | The Vigilance You Can't Sustain | completed: infinite-game-vigilance-frame-2026-08-29.md |
 | 120 | neuroepistemic-layer | The Governance Problem — NeuroEpistemic Layer and the Biometric Infrastructure of Clinical Knowing | completed: neuroepistemic-layer-2026-08-28.md |
 | 119 | embodied-probability-fields | The Probability Field — What the Body Knows Before the Monitor Shows It | completed: embodied-probability-fields-2026-08-28.md |
 | 118 | agape-framework | AGAPÉ — The Physiology of Partnership | completed: agape-framework-2026-08-28.md |
