@@ -13,10 +13,13 @@ Agent picks the next uncompleted topic each hour.
 
 **Queue complete as of 2026-08-25.** All 24 topics completed. Subsequent essays continue from draft concepts not yet covered. See overflow section below.
 
+**Overflow continued 2026-08-30 (scheduled run):** Essay #155 on `exo-3-mtp-drive-shape` completed.
+
 ## Overflow — Draft Concepts (Post-Queue)
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 167 | exo-3-mtp-drive-shape | The Architecture You Cannot Half-Build — Why DRIVE Without SHAPE Is a Patient Safety Problem | completed: exo-3-mtp-drive-shape-2026-08-30.md |
 | 166 | demand-sprints | The Body Knows First — Demand Sprints and the Interoceptive Edge | completed: demand-sprints-2026-08-30.md |
 | 165 | diaphragmatic-literacy | The Skill That Has to Come First — Diaphragmatic Literacy as the Entry Gate for Autonomic Training | completed: diaphragmatic-literacy-2026-08-30.md |
 | 164 | intelligence-density | The Inverted Ratio — Intelligence Density and Medicine's Most Expensive Design Error | completed: intelligence-density-2026-08-30.md |
