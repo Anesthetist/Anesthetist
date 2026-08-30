@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 164 | intelligence-density | The Inverted Ratio — Intelligence Density and Medicine's Most Expensive Design Error | completed: intelligence-density-2026-08-30.md |
 | 163 | recursive-workflow-improvement | The Correction Is the Training — Recursive Workflow Improvement and the Biology of Clinical Expertise | completed: recursive-workflow-improvement-2026-08-30.md |
 | 162 | effectuation-experimentation | Act to State — The Decision Architecture Expert Clinicians Already Use | completed: effectuation-experimentation-2026-08-30.md |
 | 161 | syntopical-synthesis | The Collision That Creates Knowledge — Syntopical Synthesis and the Architecture of Expert Clinical Insight | completed: syntopical-synthesis-2026-08-30.md |
