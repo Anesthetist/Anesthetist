@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 149 | somnistics-certified-professional | The Credential That Doesn't Know What It's Certifying | completed: somnistics-certified-professional-2026-08-30.md |
 | 148 | 5-minute-miracle | The Wrong Five Minutes — Structural Specificity, Not Duration, Is the Active Ingredient | completed: 5-minute-miracle-2026-08-30.md |
 | 147 | adaptive-intervention-protocol | The Adaptive Protocol — When the Intervention Reads You Back | completed: adaptive-intervention-protocol-2026-08-30.md |
 | 146 | cognitive-expansion-cycle | The Expansion You Cannot Force — How the Default Mode Network Does Its Work After You Stop Working | completed: cognitive-expansion-cycle-2026-08-30.md |
