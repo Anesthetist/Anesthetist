@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 165 | diaphragmatic-literacy | The Skill That Has to Come First — Diaphragmatic Literacy as the Entry Gate for Autonomic Training | completed: diaphragmatic-literacy-2026-08-30.md |
 | 164 | intelligence-density | The Inverted Ratio — Intelligence Density and Medicine's Most Expensive Design Error | completed: intelligence-density-2026-08-30.md |
 | 163 | recursive-workflow-improvement | The Correction Is the Training — Recursive Workflow Improvement and the Biology of Clinical Expertise | completed: recursive-workflow-improvement-2026-08-30.md |
 | 162 | effectuation-experimentation | Act to State — The Decision Architecture Expert Clinicians Already Use | completed: effectuation-experimentation-2026-08-30.md |
