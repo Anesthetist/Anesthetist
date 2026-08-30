@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 147 | adaptive-intervention-protocol | The Adaptive Protocol — When the Intervention Reads You Back | completed: adaptive-intervention-protocol-2026-08-30.md |
 | 146 | cognitive-expansion-cycle | The Expansion You Cannot Force — How the Default Mode Network Does Its Work After You Stop Working | completed: cognitive-expansion-cycle-2026-08-30.md |
 | 145 | neural-capital-operating-system | The Operating System Inside the Operator — Neural Capital and the Governance Instrument No One Audits | completed: neural-capital-operating-system-2026-08-29.md |
 | 144 | constraint-release-grief-loop | The Incomplete Cycle — Grief in the Operating Room and the Protocol That Isn't There | completed: constraint-release-grief-loop-2026-08-29.md |
