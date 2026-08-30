@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 156 | organizational-singularity | The Residual — AI, Transaction Costs, and the Irreducible CRNA | completed: organizational-singularity-2026-08-30.md |
 | 155 | integration-architecture | The Genius Is the Integration — The Neuroscience of Cross-Domain Thinking | completed: integration-architecture-2026-08-30.md |
 | 154 | domain-collapse | After Collapse — What Remains When Anesthesia Becomes Compute-Bound | completed: domain-collapse-2026-08-30.md |
 | 153 | finesse-vs-force | Finesse vs. Force — The Neurophysiology of Clinical Economy | completed: finesse-vs-force-2026-08-30.md |
