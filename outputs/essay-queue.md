@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 162 | effectuation-experimentation | Act to State — The Decision Architecture Expert Clinicians Already Use | completed: effectuation-experimentation-2026-08-30.md |
 | 161 | syntopical-synthesis | The Collision That Creates Knowledge — Syntopical Synthesis and the Architecture of Expert Clinical Insight | completed: syntopical-synthesis-2026-08-30.md |
 | 160 | pausality-prime-referral-program | Proof First — When the Clinical Mechanism Becomes the Growth Mechanism | completed: pausality-prime-referral-program-2026-08-30.md |
 | 159 | fiduciary-wedge | The Gap That Doesn't Close — Fiduciary Wedge and the Anatomy of Irreducible Accountability | completed: fiduciary-wedge-2026-08-30.md |
