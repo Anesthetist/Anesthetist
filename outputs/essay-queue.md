@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 157 | syntropic-positioning | Against Entropy — The Biological Case for Syntropic Positioning | completed: syntropic-positioning-2026-08-30.md |
 | 156 | organizational-singularity | The Residual — AI, Transaction Costs, and the Irreducible CRNA | completed: organizational-singularity-2026-08-30.md |
 | 155 | integration-architecture | The Genius Is the Integration — The Neuroscience of Cross-Domain Thinking | completed: integration-architecture-2026-08-30.md |
 | 154 | domain-collapse | After Collapse — What Remains When Anesthesia Becomes Compute-Bound | completed: domain-collapse-2026-08-30.md |
