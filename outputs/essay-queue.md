@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 154 | domain-collapse | After Collapse — What Remains When Anesthesia Becomes Compute-Bound | completed: domain-collapse-2026-08-30.md |
 | 153 | finesse-vs-force | Finesse vs. Force — The Neurophysiology of Clinical Economy | completed: finesse-vs-force-2026-08-30.md |
 | 152 | agent-error-log-protocol | The Same Error, Again — What Anesthesia Safety Science Tells Us About Building AI Agents That Actually Learn | completed: agent-error-log-protocol-2026-08-30.md |
 | 151 | consilience-process-sfi | The Four Lenses — What Fractal Physiology Proves About Cross-Domain Consilience | completed: consilience-process-sfi-2026-08-30.md |
