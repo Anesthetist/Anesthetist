@@ -15,6 +15,28 @@ Agent picks the next uncompleted topic each hour.
 
 ## Overflow — Draft Concepts (Post-Queue)
 
+| # | Concept | Essay Title | Status |
+|---|---------|-------------|--------|
+| 156 | organizational-singularity | The Residual — AI, Transaction Costs, and the Irreducible CRNA | completed: organizational-singularity-2026-08-30.md |
+| 155 | integration-architecture | The Genius Is the Integration — The Neuroscience of Cross-Domain Thinking | completed: integration-architecture-2026-08-30.md |
+| 154 | domain-collapse | After Collapse — What Remains When Anesthesia Becomes Compute-Bound | completed: domain-collapse-2026-08-30.md |
+| 153 | finesse-vs-force | Finesse vs. Force — The Neurophysiology of Clinical Economy | completed: finesse-vs-force-2026-08-30.md |
+| 152 | agent-error-log-protocol | The Same Error, Again — What Anesthesia Safety Science Tells Us About Building AI Agents That Actually Learn | completed: agent-error-log-protocol-2026-08-30.md |
+| 151 | consilience-process-sfi | The Four Lenses — What Fractal Physiology Proves About Cross-Domain Consilience | completed: consilience-process-sfi-2026-08-30.md |
+| 150 | springett-consciousness-stairway | The Phase Diagram of Awareness — Why Consciousness Is Not a Staircase | completed: springett-consciousness-stairway-2026-08-30.md |
+| 149 | somnistics-certified-professional | The Credential That Doesn't Know What It's Certifying | completed: somnistics-certified-professional-2026-08-30.md |
+| 148 | 5-minute-miracle | The Wrong Five Minutes — Structural Specificity, Not Duration, Is the Active Ingredient | completed: 5-minute-miracle-2026-08-30.md |
+| 147 | adaptive-intervention-protocol | The Adaptive Protocol — When the Intervention Reads You Back | completed: adaptive-intervention-protocol-2026-08-30.md |
+| 146 | cognitive-expansion-cycle | The Expansion You Cannot Force — How the Default Mode Network Does Its Work After You Stop Working | completed: cognitive-expansion-cycle-2026-08-30.md |
+| 145 | neural-capital-operating-system | The Operating System Inside the Operator — Neural Capital and the Governance Instrument No One Audits | completed: neural-capital-operating-system-2026-08-29.md |
+| 144 | constraint-release-grief-loop | The Incomplete Cycle — Grief in the Operating Room and the Protocol That Isn't There | completed: constraint-release-grief-loop-2026-08-29.md |
+| 143 | pausality-b2b-motion | The First Witness — How Professional Behaviors Actually Propagate in Clinical Communities | completed: pausality-b2b-motion-2026-08-29.md |
+| 142 | sbir-sttr-nondilutive-funding-path | The Evidence That Isn't There — HRV Biofeedback, CRNA Performance, and Why the Missing Study Is the Proposal | completed: sbir-sttr-nondilutive-funding-path-2026-08-29.md |
+| 141 | consilience | The Same Signal — How Four Independent Traditions Found One Biological Fact | completed: consilience-2026-08-29.md |
+| 140 | time-between-worlds-gap-minute | The Time Between Worlds — The Gap Moment Hiding in Every Anesthesia Case | completed: time-between-worlds-gap-minute-2026-08-29.md |
+| 139 | neuroexperiential-architecture | The Pattern That Connects — Neuroexperiential Architecture and the Design of Internal States | completed: neuroexperiential-architecture-2026-08-29.md |
+| 138 | agency-consciousness-integration | The Hinge — Agency, Consciousness, and the Clinical Development Arc Nobody Teaches | completed: agency-consciousness-integration-2026-08-29.md |
+
 ## Queue
 
 | # | Concept | Essay Title | Angle | Pull In | Status |
@@ -48,6 +70,33 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 137 | somnoaffinity | SomnoAffinity™ — When the Voice You Trust Is Your Own | completed: somnoaffinity-2026-08-29.md |
+| 136 | vertical-development | The Observer Gets Bigger — Vertical Development and the Altitude Problem in Clinical Expertise | completed: vertical-development-2026-08-29.md |
+| 135 | multi-llm-knowledge-construction | The Quality Gate — Multi-LLM Knowledge Construction and the Human as Interrogator | completed: multi-llm-knowledge-construction-2026-08-29.md |
+| 134 | language-of-the-nurse | The Language Is the Drug | completed: language-of-the-nurse-2026-08-29.md |
+| 132 | interoceptive-technology | The Category Nobody's Building | completed: interoceptive-technology-2026-08-29.md |
+| 128 | convergent-discovery-validation | When Three Traditions Find the Same Frequency | completed: convergent-discovery-validation-2026-08-29.md |
+| 129 | metasomatic-entrepreneurship | The Founder's Body Is the Business | completed: metasomatic-entrepreneurship-2026-08-29.md |
+| 130 | infinite-game-vigilance-frame | The Vigilance You Can't Sustain | completed: infinite-game-vigilance-frame-2026-08-29.md |
+| 120 | neuroepistemic-layer | The Governance Problem — NeuroEpistemic Layer and the Biometric Infrastructure of Clinical Knowing | completed: neuroepistemic-layer-2026-08-28.md |
+| 119 | embodied-probability-fields | The Probability Field — What the Body Knows Before the Monitor Shows It | completed: embodied-probability-fields-2026-08-28.md |
+| 118 | agape-framework | AGAPÉ — The Physiology of Partnership | completed: agape-framework-2026-08-28.md |
+| 117 | somnistics-certification | The Certification That Medicine Is Missing | completed: somnistics-certification-2026-08-28.md |
+| 116 | dual-use-technology-frame | The Common Denominator — Why the Operating Room Is Also Every Other High-Stakes Room | completed: dual-use-technology-frame-2026-08-28.md |
+| 115 | neuroharmonics | The Adaptive Soundscape — Why NeuroHarmonics™ Is Not a Playlist | completed: neuroharmonics-2026-08-28.md |
+| 114 | agentic-time-weaving | The Fork You Cannot See — Agentic Time Weaving and the Temporal Skill at the Heart of Clinical Excellence | completed: agentic-time-weaving-2026-08-28.md |
+| 113 | diaphragmatic-blindness | The Sensor Nobody Calibrated — Diaphragmatic Blindness and the Gateway Deficit | completed: diaphragmatic-blindness-2026-08-28.md |
+| 112 | trauma-informed-design | The Risk Inside the Remedy — Trauma-Informed Design as Clinical Infrastructure | completed: trauma-informed-design-2026-08-28.md |
+| 111 | archetype-fluidity | Archetype Lock — Why Burnout in the OR Is a Configuration Problem, Not a Deficit | completed: archetype-fluidity-2026-08-28.md |
+| 110 | coherence-field | The Field You Cannot See — Coherence as Team Infrastructure in the Operating Room | completed: coherence-field-2026-08-28.md |
+| 109 | vigil-coordination-architecture | The Watchful Architecture — Vigil, Situational Awareness, and the Coordination Principle | completed: vigil-coordination-architecture-2026-08-28.md |
+| 105 | state-shifting-mastery | State-Shifting Mastery — The Skill No Relaxation App Will Ever Build | completed: state-shifting-mastery-2026-08-28.md |
+| 102 | interoceptive-compounding-bidirectionality | The Experiment That Has Already Started | completed: interoceptive-compounding-bidirectionality-2026-08-28.md |
+| 101 | nonlocal-consciousness | The Problem the Monitor Cannot Solve | completed: nonlocal-consciousness-2026-08-28.md |
+| 100 | neural-sovereignty | Neural Sovereignty — Who Owns Your Nervous System at Work | completed: neural-sovereignty-2026-08-28.md |
+| 86 | transmetachora | TransMetachora™: The Safety Gate Before the Training | completed: transmetachora-2026-08-28.md |
+| 87 | somnistics-readiness-battery | Not Seat Time — The SRB-60 and What It Means to Be Certified in Your Own Nervous System | completed: somnistics-readiness-battery-2026-08-28.md |
+| 85 | relevance-realization | The Filter You Cannot See — Relevance Realization and the Architecture of Clinical Intuition | completed: relevance-realization-2026-08-27.md |
 | 25 | heart-rate-recovery | Heart Rate Recovery: The Body's Report Card After Every Case | completed: heart-rate-recovery-2026-08-25.md |
 | 26 | autonomic-home-base | Autonomic Home Base: Why the Destination Matters More Than the Technique | completed: autonomic-home-base-2026-08-25.md |
 | 27 | crna-as-closed-loop-controller | The CRNA as Closed-Loop Physiological Controller | completed: crna-as-closed-loop-controller-2026-08-25.md |
@@ -107,3 +156,18 @@ Agent picks the next uncompleted topic each hour.
 | 81 | neurohike | The Moving Laboratory — NeuroHike as Compound Autonomic Training | completed: neurohike-2026-08-27.md |
 | 82 | transformative-learning-mezirow | The Frame That Has to Break First — Transformative Learning and the Somnistics Curriculum | completed: transformative-learning-mezirow-2026-08-27.md |
 | 83 | gap-moment-codex | The Library Inside the Workflow — Gap Moment Codex as Adaptive Autonomic Training System | completed: gap-moment-codex-2026-08-27.md |
+| 84 | somnistics | What Somnistics Is — The Applied Science Nobody Named Until Now | completed: somnistics-2026-08-27.md |
+| 103 | secure-attachment-to-reality | Secure Attachment to Reality — The Physiological Endpoint of the Somnistics Curriculum | completed: secure-attachment-to-reality-2026-08-28.md |
+| 104 | in-shift-mental-hygiene | In-Shift Mental Hygiene — The Training That Lives Inside the Gap | completed: in-shift-mental-hygiene-2026-08-28.md |
+| 106 | wanton-hamlet-agency-polarity | Neither Wanton Nor Hamlet — The Reflective Gap as Clinical Agency | completed: wanton-hamlet-agency-polarity-2026-08-28.md |
+| 107 | intelligence-stack | The Architecture You're Already Running — Intelligence Stack as Clinical Epistemology | completed: intelligence-stack-2026-08-28.md |
+| 108 | non-ergodic-risk | The Structure of the Game — Non-Ergodic Risk and the Physiology of the Absorbing State | completed: non-ergodic-risk-2026-08-28.md |
+| 120 | titration-to-effect | Titrate to Effect — Why Every Nervous System Has Its Own Dose | completed: titration-to-effect-2026-08-28.md |
+| 121 | neurominutes-meta-glasses | The Invisible Intervention — Why Ambient Biofeedback Is Not a Convenience Feature | completed: neurominutes-meta-glasses-2026-08-29.md |
+| 122 | pediatric-dental-as-ideal-crna-hrv-pilot-environment | The Controlled Variable — Why Pediatric Dental Is the Right Research Environment | completed: pediatric-dental-as-ideal-crna-hrv-pilot-environment-2026-08-29.md |
+| 123 | tacit-knowledge-extraction | The Asset Nobody Can Steal — Tacit Knowledge Extraction and the SRL Pipeline | completed: tacit-knowledge-extraction-2026-08-29.md |
+| 124 | neuroadaptive-training-system | The Adaptive Stack — Why Fixed-Rate Biofeedback Fails and What the Neuroadaptive Training System Does Instead | completed: neuroadaptive-training-system-2026-08-29.md |
+| 125 | consilience-by-translation | The Same Signal — Why Consilience by Translation Is a Research Method | completed: consilience-by-translation-2026-08-29.md |
+| 126 | human-ai-decision-boundary | The Line That Moves — Human/AI Decision Boundary in Clinical Practice | completed: human-ai-decision-boundary-2026-08-29.md |
+| 127 | agent-specification | The Eight Properties — What Clinical AI Must Earn to Be Trusted | completed: agent-specification-2026-08-29.md |
+| 133 | agent-quartet-framework | The Four Files That Save Lives — Clinical AI Specification Architecture | completed: agent-quartet-framework-2026-08-29.md |
