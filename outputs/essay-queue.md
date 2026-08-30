@@ -17,6 +17,7 @@ Agent picks the next uncompleted topic each hour.
 
 | # | Concept | Essay Title | Status |
 |---|---------|-------------|--------|
+| 159 | fiduciary-wedge | The Gap That Doesn't Close — Fiduciary Wedge and the Anatomy of Irreducible Accountability | completed: fiduciary-wedge-2026-08-30.md |
 | 158 | multimodal-sensor-fusion | The Insufficient Reading — Why Single-Channel Biofeedback Misses What the Body Is Actually Doing | completed: multimodal-sensor-fusion-2026-08-30.md |
 | 157 | syntropic-positioning | Against Entropy — The Biological Case for Syntropic Positioning | completed: syntropic-positioning-2026-08-30.md |
 | 156 | organizational-singularity | The Residual — AI, Transaction Costs, and the Irreducible CRNA | completed: organizational-singularity-2026-08-30.md |
